@@ -1,0 +1,105 @@
+@prefix :      <http://www.semanticweb.org/eckstaedt/ontologies/2021/2/alignment_BRICK_Modelica_210317#> .
+@prefix schema: <http://schema.org#> .
+@prefix qudt:  <http://qudt.org/schema/qudt/> .
+@prefix bf:    <https://brickschema.org/schema/1.1/BrickFrame#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix aix:   <http://www.eas.iis.fraunhofer.de/aix#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix terms: <http://purl.org/dc/terms#> .
+@prefix brick: <https://brickschema.org/schema/1.1/Brick#> .
+@prefix gera:  <http://GeraArkada.com#> .
+
+<http://www.semanticweb.org/eckstaedt/ontologies/2021/2/alignment_BRICK_Modelica_210317>
+        a            owl:Ontology ;
+        owl:imports  <file:/C:/_DATEN/Prototyp/2103/RDFModelle/aix_2103082215_short.ttl> , <https://brickschema.org/schema/1.1/Brick> .
+
+bf:hasTag  a    owl:AnnotationProperty .
+
+gera:KM01  a         owl:NamedIndividual , brick:Heat_Exchanger ;
+        bf:feeds     gera:P01 ;
+        bf:feedsAir  gera:airend2 ;
+        bf:hasTag    brick:Supply_Air , brick:Water ;
+        bf:isFedBy   gera:WaterMerg1 , gera:airstart1 .
+
+brick:Outside_Air  a  owl:Class .
+
+brick:Pump  a   owl:Class .
+
+gera:RK01  a         owl:NamedIndividual , brick:Heat_Exchanger ;
+        bf:feeds     gera:WaterMerg1 ;
+        bf:feedsAir  gera:airMerg2 ;
+        bf:hasTag    brick:Air , brick:Supply_Air , brick:Water ;
+        bf:isFedBy   gera:Watersplit1 , gera:airsplit1 .
+
+bf:feeds  a     owl:AnnotationProperty .
+
+brick:Valve  a  owl:Class .
+
+bf:feedsAir  a  owl:AnnotationProperty .
+
+gera:Watersplit1  a  owl:NamedIndividual , brick:Valve ;
+        bf:feeds    gera:RK01 , gera:RK02 ;
+        bf:hasTag   brick:Supply_Air , brick:Water ;
+        bf:isFedBy  gera:P01 .
+
+gera:P01  a         owl:NamedIndividual , brick:Pump ;
+        bf:feeds    gera:Watersplit1 ;
+        bf:hasTag   brick:Supply_Air , brick:Water ;
+        bf:isFedBy  gera:KM01 .
+
+gera:WaterMerg1  a  owl:NamedIndividual , brick:Valve ;
+        bf:feeds    gera:KM01 ;
+        bf:hasTag   brick:Supply_Air , brick:Water ;
+        bf:isFedBy  gera:RK01 , gera:RK02 .
+
+[ a       owl:Ontology ] .
+
+brick:HVAC_Zone  a  owl:Class .
+
+gera:airend2  a     owl:NamedIndividual , brick:Exhaust_Air ;
+        bf:isFedBy  gera:KM01 .
+
+gera:airsplit1  a    owl:NamedIndividual , brick:Valve ;
+        bf:feedsAir  gera:RK01 , gera:RK02 ;
+        bf:hasTag    brick:Air , brick:Supply_Air ;
+        bf:isFedBy   gera:airStart1 .
+
+aix:AixLib.Fluid.Movers.FlowControlled_m_flow
+        owl:equivalentClass  brick:Water_Pump .
+
+bf:isFedBy  a   owl:AnnotationProperty .
+
+gera:airStart1  a    owl:NamedIndividual , brick:Outside_Air ;
+        bf:feedsAir  gera:airsplit1 ;
+        bf:hasTag    brick:Air , brick:Supply_Air .
+
+gera:airend1  a     owl:NamedIndividual , brick:Exhaust_Air ;
+        bf:hasTag   brick:Air , brick:Exhaust_Air ;
+        bf:isFedBy  gera:airZone1 .
+
+gera:airstart1  a    owl:NamedIndividual , brick:Outside_Air ;
+        bf:feedsAir  gera:KM01 ;
+        bf:hasTag    brick:Supply_Air .
+
+brick:Exhaust_Air  a  owl:Class .
+
+gera:airZone1  a     owl:NamedIndividual , brick:HVAC_Zone ;
+        bf:feedsAir  gera:airend1 ;
+        bf:hasTag    brick:Air , brick:Exhaust_Air , brick:Supply_Air , brick:Zone_Air ;
+        bf:isFedBy   gera:airMerg2 .
+
+brick:Heat_Exchanger  a  owl:Class .
+
+gera:airMerg2  a     owl:NamedIndividual , brick:Valve ;
+        bf:feedsAir  gera:airZone1 ;
+        bf:hasTag    brick:Air , brick:Supply_Air ;
+        bf:isFedBy   gera:RK01 , gera:RK02 .
+
+gera:RK02  a         owl:NamedIndividual , brick:Heat_Exchanger ;
+        bf:feeds     gera:WaterMerg1 ;
+        bf:feedsAir  gera:airMerg2 ;
+        bf:hasTag    brick:Air , brick:Supply_Air , brick:Water ;
+        bf:isFedBy   gera:Watersplit1 , gera:airsplit1 .
