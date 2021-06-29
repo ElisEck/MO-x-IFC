@@ -70,11 +70,12 @@ public class ModelicaLibrary {
         }
     }
 
-    public void writeAllToTTL(String filename) {
+    public void serializeAsTTL(String filename) {
         try {
             FileWriter myWriter = new FileWriter(filename);
+
             myWriter.write("@prefix "+prefix+":    <http://www.eas.iis.fraunhofer.de/"+ prefix+"#> ." + NEWLINE);
-            myWriter.write("@prefix moont:    <http://www.eas.iis.fraunhofer.de/moont#> ." + NEWLINE);
+            myWriter.write("@prefix moont:    <https://www.eas.iis.fraunhofer.de/MoOnt#> ." + NEWLINE);
             myWriter.write("@prefix msl:    <http://www.eas.iis.fraunhofer.de/msl#> ." + NEWLINE);
             myWriter.write("@prefix aix:    <http://www.eas.iis.fraunhofer.de/aix#> ." + NEWLINE);
             myWriter.write("@prefix mbl:    <http://www.eas.iis.fraunhofer.de/mbl#> ." + NEWLINE);
@@ -82,9 +83,12 @@ public class ModelicaLibrary {
             myWriter.write("@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> ." + NEWLINE);
             myWriter.write("@prefix owl:  <http://www.w3.org/2002/07/owl#> ." + NEWLINE);
             myWriter.write("@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> ." + NEWLINE);
+            myWriter.write(prefix + ": rdf:type owl:Ontology ;" + NEWLINE);
+            myWriter.write("\t owl:imports <https://www.eas.iis.fraunhofer.de/MoOnt> ." + NEWLINE);
+
             for (ModelicaFile mf : mfs) {
                 for (ModelicaClass mk : mf.mks) {
-                    myWriter.write(mk.writeToTTL());
+                    myWriter.write(mk.serializeAsTTL());
                 }
             }
             myWriter.close();

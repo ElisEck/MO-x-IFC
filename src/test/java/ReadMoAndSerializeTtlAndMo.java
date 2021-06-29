@@ -1,5 +1,4 @@
-package mo.parser;
-
+import mo.parser.ModelicaFileAntlrParser;
 import model.ModelicaFile;
 import model.ModelicaLibrary;
 
@@ -10,27 +9,30 @@ import java.nio.file.Path;
 
 import static java.nio.file.Files.readString;
 
-public class ModelicaFilesRegExer {
+public class ReadMoAndSerializeTtlAndMo {
 
     public static void main(String[] args) {
-//        String name = "aix";
-//        String prefix = "aix";
-//        Path dir = Path.of("c:\\_DATEN\\Modelica\\_Libraries_extern\\AixLib\\AixLib\\");
+  /*      String name = "aix";
+        String prefix = "aix";
+        Path dir = Path.of("c:\\_DATEN\\Modelica\\_Libraries_extern\\AixLib\\AixLib\\");*/
+        String name = "lvbmin";
+        String prefix = "lvbmin";
+        Path dir = Path.of("c:\\TMP\\LVBmin\\");
 //                String name = "mbl";
 //        String prefix = "mbl";
 //        Path dir = Path.of("c:\\_DATEN\\Modelica\\_Libraries_extern\\modelica-buildings\\Buildings\\");
 //                String name = "bs";
 //        String prefix = "bs";
 //        Path dir = Path.of("c:\\_DATEN\\Modelica\\_Libraries_extern\\BuildingSystems\\BuildingSystems\\");
-        String name = "ibpsa";
+/*        String name = "ibpsa";
         String prefix = "ibpsa";
-        Path dir = Path.of("c:\\_DATEN\\Modelica\\_Libraries_extern\\modelica-ibpsa\\IBPSA\\");
+        Path dir = Path.of("c:\\_DATEN\\Modelica\\_Libraries_extern\\modelica-ibpsa\\IBPSA\\");*/
 //                        String name = "ideas";
 //        String prefix = "ideas";
 //        Path dir = Path.of("c:\\_DATEN\\Modelica\\_Libraries_extern\\IDEAS\\IDEAS\\");
 
 
-//                String name = "RLT4";
+//        String name = "RLT4";
 //        String prefix = "eas";
 //        Path dir = Path.of("c:\\_DATEN\\Prototyp\\2103\\RDFModelle\\minimal\\");
 //        String name = "coo";
@@ -70,40 +72,10 @@ public class ModelicaFilesRegExer {
             System.err.println(e.getMessage());
         }
 //        ml.generatePackageHierarchyFromPackageList();
-        ml.writeAllToTTL("c:\\_DATEN\\Prototyp\\2103\\RDFModelle\\"+name+"_210419_2144.ttl");
-        ml.serializeAsMo("C:/TMP/ModelicaTestSerialisation/");
+        ml.serializeAsTTL(name+"_210610_1653.ttl");
+//        ml.serializeAsMo("C:/TMP/ModelicaTestSerialisation/");
     }
 
-//    public static void mainalt(String[] args) {
-//        Path path = checkArgs(args);
-//        if (path == null) return;
-//        ModelicaLibrary ml = new ModelicaLibrary(path.toString());
-//        try {
-//            Files.walk(path)
-//                    .filter(file -> file.toFile().isFile())
-//                    .filter(file -> file.toFile().getAbsolutePath().toLowerCase().endsWith(".mo"))
-//                    .forEach(file -> {
-//                                System.out.print(file + "\t");
-//                                ModelicaFile mf1 = new ModelicaFile(file);
-//                                mf1.erzeugeKlassenAusString();
-//                                ml.addFile(mf1);
-//                                ml.addPackage(mf1.container);
-//                                for (ModelicaKlasse mk1 : mf1.mks) {
-//                                    mk1.BeschreibungAusInhalt();
-//                                    mk1.ParentAusInhalt(mk1.klasseninhalt);
-//                                    mk1.sort_parent();
-////                                    mk1.ParameterAusInhalt();
-//                                    System.out.println(mk1.container + "." + mk1.name + "\t" + mk1.printParent());
-//                                }
-//                            }
-//                    );
-//        } catch (IOException e) {
-//            System.err.println(e.getMessage());
-//        }
-////        ml.generatePackageHierarchyFromPackageList();
-//        ml.writeParametersToTTL();
-//        ml.writeExtendsToTTL();
-//    }
        private static Path checkArgs(String[] args) {
         if(args.length != 1) {
             System.err.println("Usage: ModelicaRegex <StartDirectory>");

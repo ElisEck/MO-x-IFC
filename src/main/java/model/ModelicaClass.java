@@ -162,16 +162,16 @@ public class ModelicaClass {
         String zf = "";
         for (ModelicaParameter mp : parameters)
         {
+            zf = zf.concat(owlPrefix +":"+ container + "." + name + " moont:hasPart " + owlPrefix +":"+ container + "." + name + "." + mp.getName() + "." + NEWLINE);
             zf = zf.concat(owlPrefix +":"+ container + "." + name + "." + mp.getName()   + " a moont:MParameterComponent;" + NEWLINE);
-            zf = zf.concat("\t" + " rdfs:domain " + owlPrefix +":"+ container + "." + name + ";" + NEWLINE);
             if ((mp.getTypeSpecifier().equals("Real"))) {//für Komponenten aus der MSL wird die Klasse nicht angegeben
-                zf = zf.concat("\t" + " rdfs:range " + "xsd:Real." + NEWLINE);
+                zf = zf.concat("\t" + " moont:type " + "xsd:Real." + NEWLINE);
             } else if ((mp.getTypeSpecifier().equals("Integer"))) {//für Komponenten aus der MSL wird die Klasse nicht angegeben
-                zf = zf.concat("\t" + " rdfs:range " + "xsd:Integer." + NEWLINE);
+                zf = zf.concat("\t" + " moont:type " + "xsd:Integer." + NEWLINE);
             } else if ((mp.getTypeSpecifier().equals("Boolean"))) {//für Komponenten aus der MSL wird die Klasse nicht angegeben
-                zf = zf.concat("\t" + " rdfs:range " + "xsd:Boolean." + NEWLINE);
+                zf = zf.concat("\t" + " moont:type " + "xsd:Boolean." + NEWLINE);
             } else {//für Komponenten aus der MSL wird die Klasse nicht angegeben
-                zf = zf.concat("\t" + " rdfs:range " + owlPrefix +":" + mp.getTypeSpecifier() + "." + NEWLINE);
+                zf = zf.concat("\t" + " moont:type " + owlPrefix +":" + mp.getTypeSpecifier() + "." + NEWLINE);
             }
 //Achtung: wenn Zeile wieder rein, Semikolon in Vorzeile oder Subjekt ergänzen
             //            parameterString = parameterString.concat("\t rdfs:range " +"aix:" + mp.klasse + "." + NEWLINE);
@@ -190,17 +190,17 @@ public class ModelicaClass {
                 continue; //TODO kommt bei redeclare replaceable
             }
             else  if ((mo.modelicaClass.name.startsWith("Modelica"))) {
-                zf += "\t" + " a " + "msl:" + mo.modelicaClass.name + "." + NEWLINE;
+                zf += "\t" + " moont:type " + "msl:" + mo.modelicaClass.name + "." + NEWLINE;
             }
             else  if ((mo.modelicaClass.name.startsWith("Buildings"))) {
-                zf += "\t" + " a " + "mbl:" + mo.modelicaClass.name + "." + NEWLINE;
+                zf += "\t" + " moont:type " + "mbl:" + mo.modelicaClass.name + "." + NEWLINE;
             }
             else  if ((mo.modelicaClass.name.startsWith("AixLib"))) {
-                zf += "\t" + " a " + "aix:" + mo.modelicaClass.name + "." + NEWLINE;
+                zf += "\t" + " moont:type " + "aix:" + mo.modelicaClass.name + "." + NEWLINE;
             }
             else  {
 //                zf = zf.concat("aix:"+ container + "." + name + "." + mo.name + " rdfs:range " + "aix:" + mo.klasse.name + "." + NEWLINE);
-                zf += "\t" + " a " + owlPrefix +":" + mo.modelicaClass.name + "." + NEWLINE;
+                zf += "\t" + " moont:type " + owlPrefix +":" + mo.modelicaClass.name + "." + NEWLINE;
             }
         }
         return zf;
@@ -251,33 +251,41 @@ public class ModelicaClass {
         return zf;
     }*/
 
-    String writeToTTL() {
+    String serializeAsTTL() {
         String zf = "";
-//            if (container.isBlank()) {
-//                zf = zf.concat(owlPrefix +":" + name + " a owl:class." + NEWLINE);
-//            } else {
-//                zf = zf.concat(owlPrefix +":" + container + "." + name + " a owl:class." + NEWLINE);
-//            }
-          if (container.isBlank()) {
+        //ausführbare Modelle und Packages werden als Instanzen modelliert
+        if (parentsIcons.contains("Modelica.Icons.Example") | getTypeAsMoont().equals("MPackage") ) {
+            if (container.isBlank()) {
                 zf = zf.concat(owlPrefix +":" + name + " a moont:" + getTypeAsMoont() );
             } else {
                 zf = zf.concat(owlPrefix +":" + container + "." + name + " a moont:" + getTypeAsMoont() + ";" + NEWLINE );
-                zf = zf.concat("\t"                                    + " moont:containedIn aix:" + container);
             }
-          if (type_prefix.isEmpty()) {
-              zf = zf.concat("." + NEWLINE);
-          } else {
-              zf = zf.concat(";" + NEWLINE);
-              if (type_prefix.contains("partial")) {
-                  zf = zf.concat("\t moont:isPartial moont:TRUE." + NEWLINE);
-              } else {
-                  zf = zf.concat("." + NEWLINE);
+        // alles andere wird als Subclass modelliert
+        } else {
+            if (container.isBlank()) {
+                zf = zf.concat(owlPrefix +":" + name + " rdfs:subclassOf moont:" + getTypeAsMoont() );
+            } else {
+                zf = zf.concat(owlPrefix +":" + container + "." + name + " rdfs:subclassOf moont:" + getTypeAsMoont() + ";" + NEWLINE );
+            }
+            zf = zf.concat("\t" + " rdf:type owl:Class;"+ NEWLINE);
+        }
+        if (!container.isBlank()) {
+            zf = zf.concat("\t" + " moont:containedIn " + owlPrefix + ":" + container);
+        }
+        if (type_prefix.isEmpty()) {
+            zf = zf.concat("." + NEWLINE);
+        } else {
+            zf = zf.concat(";" + NEWLINE);
+            if (type_prefix.contains("partial")) {
+                zf = zf.concat("\t moont:isPartial moont:TRUE." + NEWLINE);
+            } else {
+                zf = zf.concat("." + NEWLINE);
 
-              }
-          }
-            zf = zf.concat(writeParentToTTL());
-            zf = zf.concat(writeComponentsToTTL());
-            zf = zf.concat(writeParametersToTTL());
+            }
+        }
+        zf = zf.concat(writeParentToTTL());
+        zf = zf.concat(writeComponentsToTTL());
+        zf = zf.concat(writeParametersToTTL());
 //            zf = zf.concat(writeConnectionsToTTL());
         return zf;
     }
@@ -286,14 +294,15 @@ public class ModelicaClass {
         String zf = "";
         for (String el : parents) {
             if (container.isBlank()) { //18.4.21: es passiert beides mal das Gleiche?!
-                zf = zf.concat(owlPrefix +":" + container + "." + name + " rdfs:subClassOf " + owlPrefix +":" + el + "." + NEWLINE);
+                zf = zf.concat(owlPrefix +":" + container + "." + name + " moont:extends " + owlPrefix +":" + el + "." + NEWLINE);
             } else {
-                zf = zf.concat(owlPrefix +":" + container + "." + name + " rdfs:subClassOf " + owlPrefix +":" + el + "." + NEWLINE);
+                zf = zf.concat(owlPrefix +":" + container + "." + name + " moont:extends " + owlPrefix +":" + el + "." + NEWLINE);
             }
             if (!(parents.contains(el))) { //18.4.21: Wann soll das denn eintreffen?
                 parents.add(el);
             }
         }
+
         return zf;
     }
 
