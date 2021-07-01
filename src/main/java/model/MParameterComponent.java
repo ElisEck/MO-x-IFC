@@ -1,13 +1,13 @@
 package model;
 
-public class ModelicaParameter {
+public class MParameterComponent {
     private String typeSpecifier ;
     private String name;
     private String modification;
     private String stringComment;
     private String annotation;
 
-    public ModelicaParameter(String typeSpecifier, String name, String modification, String stringComment, String annotation) {
+    public MParameterComponent(String typeSpecifier, String name, String modification, String stringComment, String annotation) {
         this.typeSpecifier = typeSpecifier;
         this.name = name;
         this.modification = modification;

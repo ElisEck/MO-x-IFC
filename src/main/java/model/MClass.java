@@ -1,12 +1,19 @@
 package model;
 
-import java.io.FileWriter;
-import java.io.IOException;
+import org.apache.jena.rdf.model.Model;
+import org.apache.jena.rdf.model.ModelFactory;
+import org.apache.jena.rdf.model.Resource;
+import org.apache.jena.rdf.model.ResourceFactory;
+import org.apache.jena.riot.RIOT;
+import org.apache.jena.sparql.vocabulary.FOAF;
+import org.apache.jena.vocabulary.RDF;
+
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.*;
 
-public class ModelicaClass {
+public class MClass {
 
     public static final String NEWLINE = System.lineSeparator();
     String container;
@@ -18,14 +25,14 @@ public class ModelicaClass {
     String description = "";
     Set<String> parents = new HashSet<>();
     Set<String> parentsIcons = new HashSet<>();
-    Set<ModelicaParameter> parameters = new HashSet<>();
+    Set<MParameterComponent> parameters = new HashSet<>();
     Set<ModelicaObject> components = new HashSet<>();
-    Set<ModelicaClass> childClasses = new HashSet<>();
+    Set<MClass> childClasses = new HashSet<>();
     String annotation = "";
     String classContent;
     String file = "";
     int parentCount = 0;
-    private final List<ModelicaConnection> connections = new LinkedList();
+    private final List<MConnection> connections = new LinkedList();
 
     /**
      * alles Strings
@@ -36,7 +43,7 @@ public class ModelicaClass {
      * @param file
      * @param owlPrefix
      */
-    public ModelicaClass(String container, String type, String name, String classContent, String file, String owlPrefix) {
+    public MClass(String container, String type, String name, String classContent, String file, String owlPrefix) {
         container = container.stripLeading();
         container = container.stripTrailing();
         this.container = container;
@@ -46,11 +53,11 @@ public class ModelicaClass {
         this.classContent = classContent;
     }
 
-    public ModelicaClass(String owlPrefix) {
+    public MClass(String owlPrefix) {
         this.owlPrefix = owlPrefix;
     }
 
-    public void addConnection(ModelicaConnection connection) {
+    public void addConnection(MConnection connection) {
         connections.add(connection);
     }
 
@@ -160,7 +167,7 @@ public class ModelicaClass {
 
     String writeParametersToTTL() {
         String zf = "";
-        for (ModelicaParameter mp : parameters)
+        for (MParameterComponent mp : parameters)
         {
             zf = zf.concat(owlPrefix +":"+ container + "." + name + " moont:hasPart " + owlPrefix +":"+ container + "." + name + "." + mp.getName() + "." + NEWLINE);
             zf = zf.concat(owlPrefix +":"+ container + "." + name + "." + mp.getName()   + " a moont:MParameterComponent;" + NEWLINE);
@@ -186,21 +193,22 @@ public class ModelicaClass {
             zf += owlPrefix + ":"+ container + "." + name +" moont:hasPart " + owlPrefix +":" + container + "." + name + "." + mo.name+ "." + NEWLINE;
             zf += owlPrefix +":"+ container + "." + name + "." + mo.name   + " a moont:MComponent ;"+ NEWLINE;
 //            zf += "\t"                                             + " a owl:NamedIndividual;" + NEWLINE;
-            if (mo.modelicaClass.name.equals("")) { //wenn es keine
+            if (mo.mClass.name.equals("")) { //wenn es keine
                 continue; //TODO kommt bei redeclare replaceable
             }
-            else  if ((mo.modelicaClass.name.startsWith("Modelica"))) {
-                zf += "\t" + " moont:type " + "msl:" + mo.modelicaClass.name + "." + NEWLINE;
+            else  if ((mo.mClass.name.startsWith("Modelica"))) {
+//                zf += "\t" + " moont:type " + "msl:" + mo.mClass.name + "." + NEWLINE;
+                zf += "\t" + " a " + "msl:" + mo.mClass.name + "." + NEWLINE;
             }
-            else  if ((mo.modelicaClass.name.startsWith("Buildings"))) {
-                zf += "\t" + " moont:type " + "mbl:" + mo.modelicaClass.name + "." + NEWLINE;
+            else  if ((mo.mClass.name.startsWith("Buildings"))) {
+                zf += "\t" + " a " + "mbl:" + mo.mClass.name + "." + NEWLINE;
             }
-            else  if ((mo.modelicaClass.name.startsWith("AixLib"))) {
-                zf += "\t" + " moont:type " + "aix:" + mo.modelicaClass.name + "." + NEWLINE;
+            else  if ((mo.mClass.name.startsWith("AixLib"))) {
+                zf += "\t" + " a " + "aix:" + mo.mClass.name + "." + NEWLINE;
             }
             else  {
 //                zf = zf.concat("aix:"+ container + "." + name + "." + mo.name + " rdfs:range " + "aix:" + mo.klasse.name + "." + NEWLINE);
-                zf += "\t" + " moont:type " + owlPrefix +":" + mo.modelicaClass.name + "." + NEWLINE;
+                zf += "\t" + " a " + owlPrefix +":" + mo.mClass.name + "." + NEWLINE;
             }
         }
         return zf;
@@ -208,7 +216,7 @@ public class ModelicaClass {
 
     String writeConnectionsToTTL() {
         String zf = "";
-        for (ModelicaConnection mc : connections)
+        for (MConnection mc : connections)
         {
             //left component
             if (mc.getLeftComponent() == null) {
@@ -252,15 +260,18 @@ public class ModelicaClass {
     }*/
 
     String serializeAsTTL() {
+
+
+
         String zf = "";
-        //ausführbare Modelle und Packages werden als Instanzen modelliert
-        if (parentsIcons.contains("Modelica.Icons.Example") | getTypeAsMoont().equals("MPackage") ) {
+/*        //ausführbare Modelle und Packages werden als Instanzen modelliert
+        if (parentsIcons.contains("Modelica.Icons.Example") | getTypeAsMoont().equals("MPackage") ) {*/
             if (container.isBlank()) {
                 zf = zf.concat(owlPrefix +":" + name + " a moont:" + getTypeAsMoont() );
             } else {
                 zf = zf.concat(owlPrefix +":" + container + "." + name + " a moont:" + getTypeAsMoont() + ";" + NEWLINE );
             }
-        // alles andere wird als Subclass modelliert
+/*        // alles andere wird als Subclass modelliert
         } else {
             if (container.isBlank()) {
                 zf = zf.concat(owlPrefix +":" + name + " rdfs:subclassOf moont:" + getTypeAsMoont() );
@@ -268,7 +279,7 @@ public class ModelicaClass {
                 zf = zf.concat(owlPrefix +":" + container + "." + name + " rdfs:subclassOf moont:" + getTypeAsMoont() + ";" + NEWLINE );
             }
             zf = zf.concat("\t" + " rdf:type owl:Class;"+ NEWLINE);
-        }
+        }*/
         if (!container.isBlank()) {
             zf = zf.concat("\t" + " moont:containedIn " + owlPrefix + ":" + container);
         }
@@ -286,7 +297,7 @@ public class ModelicaClass {
         zf = zf.concat(writeParentToTTL());
         zf = zf.concat(writeComponentsToTTL());
         zf = zf.concat(writeParametersToTTL());
-//            zf = zf.concat(writeConnectionsToTTL());
+        zf = zf.concat(writeConnectionsToTTL());
         return zf;
     }
 
@@ -326,7 +337,7 @@ public class ModelicaClass {
 
                 parameters.stream()
                         .sorted(Comparator
-                                .comparing((ModelicaParameter p) -> p.getTypeSpecifier())
+                                .comparing((MParameterComponent p) -> p.getTypeSpecifier())
                                 .thenComparing(p -> p.getName()))
                         .forEach(p -> str.append("\t parameter " + p.getTypeSpecifier() + " " + p.getName() +  p.getModification() + "\t" + p.getStringComment() + " " + p.getAnnotation() +";" + NEWLINE))                ;
 
@@ -335,7 +346,7 @@ public class ModelicaClass {
                 components.stream()
                         .sorted(Comparator
                                 .comparing((ModelicaObject c) -> c.typePrefix)
-                                .thenComparing(c -> c.modelicaClass.name)
+                                .thenComparing(c -> c.mClass.name)
                                 .thenComparing(c -> c.name))
                         .forEach(c -> str.append("\t" + c.getTypePrefix() + " " + c.getTypeSpecifier() + " " + c.getName() +  c.getModification() + "\t" + c.getStringComment() + " " + c.getAnnotation() +";" + NEWLINE));
 
@@ -353,7 +364,7 @@ public class ModelicaClass {
         }
     }
 
-    private String huppifluppi(ModelicaParameter p) {
+    private String huppifluppi(MParameterComponent p) {
         return p.getName();
     }
 
@@ -406,11 +417,11 @@ public class ModelicaClass {
         this.file = file;
     }
 
-    public Set<ModelicaClass> getChildClasses() {
+    public Set<MClass> getChildClasses() {
         return childClasses;
     }
 
-    public void appendChildClass(ModelicaClass child) {
+    public void appendChildClass(MClass child) {
         childClasses.add(child);
     }
 
@@ -418,7 +429,7 @@ public class ModelicaClass {
         parents.add(newParent);
     }
 
-    public void appendParameter(ModelicaParameter mp) {
+    public void appendParameter(MParameterComponent mp) {
         parameters.add(mp);
     }
 

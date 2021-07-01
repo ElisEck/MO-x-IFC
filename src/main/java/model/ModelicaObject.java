@@ -4,7 +4,7 @@ public class ModelicaObject {
     String owlPrefix;
     String typePrefix;
     String typeSpecifier;
-    ModelicaClass modelicaClass;
+    MClass mClass;
     String name = "";
     String modification;
     String stringComment;
@@ -25,8 +25,8 @@ public class ModelicaObject {
         this.annotation = annotation;
     }
 
-    public void setModelicaClass(ModelicaClass modelicaClass) {
-        this.modelicaClass = modelicaClass;
+    public void setModelicaClass(MClass mClass) {
+        this.mClass = mClass;
     }
 
     public void setName(String name) {
@@ -43,12 +43,12 @@ public class ModelicaObject {
 
     public void setTypeSpecifier(String typeSpecifier) {
         this.typeSpecifier = typeSpecifier;
-        this.modelicaClass = new ModelicaClass(owlPrefix);
-        this.modelicaClass.setName(typeSpecifier);
+        this.mClass = new MClass(owlPrefix);
+        this.mClass.setName(typeSpecifier);
     }
 
-    public ModelicaClass getModelicaClass() {
-        return modelicaClass;
+    public MClass getModelicaClass() {
+        return mClass;
     }
 
     public String getName() {
