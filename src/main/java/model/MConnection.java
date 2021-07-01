@@ -1,13 +1,13 @@
 package model;
 
-public class ModelicaConnection {
+public class MConnection {
     private String leftComponent;
     private String leftPort;
     private String rightComponent;
     private String rightPort;
     private String annotation;
 
-    public ModelicaConnection() {
+    public MConnection() {
     }
 
     public void setConnectees(String left, String right) {

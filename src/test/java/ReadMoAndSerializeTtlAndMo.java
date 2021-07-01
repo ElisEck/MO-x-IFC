@@ -12,12 +12,12 @@ import static java.nio.file.Files.readString;
 public class ReadMoAndSerializeTtlAndMo {
 
     public static void main(String[] args) {
-  /*      String name = "aix";
+        String name = "aix";
         String prefix = "aix";
-        Path dir = Path.of("c:\\_DATEN\\Modelica\\_Libraries_extern\\AixLib\\AixLib\\");*/
-        String name = "lvbmin";
+        Path dir = Path.of("c:\\_DATEN\\Modelica\\_Libraries_extern\\AixLib\\AixLib\\");
+/*        String name = "lvbmin";
         String prefix = "lvbmin";
-        Path dir = Path.of("c:\\TMP\\LVBmin\\");
+        Path dir = Path.of("c:\\TMP\\LVBmin\\");*/
 //                String name = "mbl";
 //        String prefix = "mbl";
 //        Path dir = Path.of("c:\\_DATEN\\Modelica\\_Libraries_extern\\modelica-buildings\\Buildings\\");
@@ -72,7 +72,7 @@ public class ReadMoAndSerializeTtlAndMo {
             System.err.println(e.getMessage());
         }
 //        ml.generatePackageHierarchyFromPackageList();
-        ml.serializeAsTTL(name+"_210610_1653.ttl");
+        ml.serializeAsTTL(name+"_210629_1404.ttl");
 //        ml.serializeAsMo("C:/TMP/ModelicaTestSerialisation/");
     }
 

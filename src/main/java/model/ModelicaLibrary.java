@@ -1,7 +1,23 @@
 package model;
 
-import java.io.FileWriter;
-import java.io.IOException;
+import org.apache.jena.query.*;
+import org.apache.jena.rdf.model.Model;
+import org.apache.jena.rdf.model.ModelFactory;
+import org.apache.jena.rdf.model.Resource;
+import org.apache.jena.rdf.model.ResourceFactory;
+import org.apache.jena.riot.Lang;
+import org.apache.jena.riot.RIOT;
+import org.apache.jena.sparql.core.Quad;
+import org.apache.jena.sparql.engine.http.QueryEngineHTTP;
+import org.apache.jena.sparql.vocabulary.FOAF;
+import org.apache.jena.tdb.TDBFactory;
+import org.apache.jena.tdb.TDBLoader;
+import org.apache.jena.tdb.base.file.Location;
+import org.apache.jena.tdb.sys.TDBInternal;
+import org.apache.jena.util.FileManager;
+import org.apache.jena.vocabulary.RDF;
+
+import java.io.*;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -54,7 +70,7 @@ public class ModelicaLibrary {
             myWriter.write("@prefix aix:    <http://www.buildingsmart-tech.org/ifcOWL/IFC4_ADD1#> .\r\n");
             myWriter.write("@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .\r\n");
             for (ModelicaFile mf : mfs) {
-                for (ModelicaClass mk : mf.mks) {
+                for (MClass mk : mf.mks) {
                         myWriter.write(mk.writeParentToTTL());
                     }
                 }
@@ -70,7 +86,10 @@ public class ModelicaLibrary {
         }
     }
 
+
+
     public void serializeAsTTL(String filename) {
+
         try {
             FileWriter myWriter = new FileWriter(filename);
 
@@ -87,7 +106,7 @@ public class ModelicaLibrary {
             myWriter.write("\t owl:imports <https://www.eas.iis.fraunhofer.de/MoOnt> ." + NEWLINE);
 
             for (ModelicaFile mf : mfs) {
-                for (ModelicaClass mk : mf.mks) {
+                for (MClass mk : mf.mks) {
                     myWriter.write(mk.serializeAsTTL());
                 }
             }

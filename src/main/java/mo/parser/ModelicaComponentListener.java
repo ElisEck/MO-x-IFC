@@ -2,10 +2,10 @@ package mo.parser;
 
 import mo.parser.antlr.modelicaBaseListener;
 import mo.parser.antlr.modelicaParser;
-import model.ModelicaClass;
-import model.ModelicaConnection;
+import model.MClass;
+import model.MConnection;
 import model.ModelicaObject;
-import model.ModelicaParameter;
+import model.MParameterComponent;
 
 import java.util.EmptyStackException;
 import java.util.HashSet;
@@ -14,13 +14,13 @@ import java.util.Stack;
 
 public class ModelicaComponentListener extends modelicaBaseListener {
 
-    Set<ModelicaClass> mks = new HashSet<>();
-    Stack<ModelicaClass> mkstack = new Stack<>();
+    Set<MClass> mks = new HashSet<>();
+    Stack<MClass> mkstack = new Stack<>();
     /**
      * gecleart für jede neue ModelicaClass
      */
     ModelicaObject curObject;
-    private ModelicaConnection curConnection;
+    private MConnection curConnection;
     String container = "";
     /**
      * flow/stream input/output parameter
@@ -165,7 +165,7 @@ public class ModelicaComponentListener extends modelicaBaseListener {
     @Override
     public void exitComponent_declaration(modelicaParser.Component_declarationContext ctx) {
         if (curObject.getTypePrefix().equals("parameter")) {
-            mkstack.peek().appendParameter(new ModelicaParameter(curObject.getTypeSpecifier(), curObject.getName(), curObject.getModification(), curObject.getStringComment(), curObject.getAnnotation()));
+            mkstack.peek().appendParameter(new MParameterComponent(curObject.getTypeSpecifier(), curObject.getName(), curObject.getModification(), curObject.getStringComment(), curObject.getAnnotation()));
         } else {
             mkstack.peek().appendComponent(curObject);
         }
@@ -184,14 +184,14 @@ public class ModelicaComponentListener extends modelicaBaseListener {
     public void enterClass_definition(modelicaParser.Class_definitionContext ctx) {
 //        String class_prefixes = ctx.class_prefixes().toString();
 //        ctx.class_specifier(
-        mkstack.push(new ModelicaClass(owlPrefix));
+        mkstack.push(new MClass(owlPrefix));
         mkstack.peek().setType(ctx.class_prefixes().getText());
         mkstack.peek().setContainer(container);
     }
 
     @Override
     public void exitClass_definition(modelicaParser.Class_definitionContext ctx) {
-        ModelicaClass mkAkt = mkstack.pop();
+        MClass mkAkt = mkstack.pop();
         mkAkt.sortParent();
 
         try {
@@ -203,7 +203,7 @@ public class ModelicaComponentListener extends modelicaBaseListener {
 
     @Override
     public void enterConnect_clause(modelicaParser.Connect_clauseContext ctx) {
-        curConnection = new ModelicaConnection();
+        curConnection = new MConnection();
         curConnection.setConnectees(ctx.component_reference(0).getText(), ctx.component_reference(1).getText());
         mkstack.peek().addConnection(curConnection);
     }

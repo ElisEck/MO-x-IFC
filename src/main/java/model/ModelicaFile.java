@@ -7,11 +7,11 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class ModelicaFile {
-    public Set<ModelicaClass> mks = new HashSet<>();
+    public Set<MClass> mks = new HashSet<>();
     String path;
     String fileRemainder;
     String containerName;
-    ModelicaPackage containerPackage;
+    MPackage containerPackage;
 
     public ModelicaFile(Path file)
     {
@@ -29,12 +29,12 @@ public class ModelicaFile {
     }
 
     void serializeAsMo(String rootpath) {
-        for (ModelicaClass mk : mks) {
+        for (MClass mk : mks) {
             mk.serializeAsMo(rootpath);
         }
     }
 
-    public Set<ModelicaClass> getMks() {
+    public Set<MClass> getMks() {
         return mks;
     }
 /*    public void generateClassesFromString() {

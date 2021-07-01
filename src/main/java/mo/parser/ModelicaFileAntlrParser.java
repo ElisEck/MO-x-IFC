@@ -2,7 +2,7 @@ package mo.parser;
 
 import mo.parser.antlr.modelicaLexer;
 import mo.parser.antlr.modelicaParser;
-import model.ModelicaClass;
+import model.MClass;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
@@ -17,7 +17,7 @@ public class ModelicaFileAntlrParser {
         this.prefix = prefix;
     }
 
-    public Set<ModelicaClass> parseFile(String content) {
+    public Set<MClass> parseFile(String content) {
         modelicaLexer lexer = new modelicaLexer(CharStreams.fromString(content));
 
         CommonTokenStream tokens = new CommonTokenStream(lexer);
