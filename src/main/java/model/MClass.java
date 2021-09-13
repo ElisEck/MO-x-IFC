@@ -1,13 +1,5 @@
 package model;
 
-import org.apache.jena.rdf.model.Model;
-import org.apache.jena.rdf.model.ModelFactory;
-import org.apache.jena.rdf.model.Resource;
-import org.apache.jena.rdf.model.ResourceFactory;
-import org.apache.jena.riot.RIOT;
-import org.apache.jena.sparql.vocabulary.FOAF;
-import org.apache.jena.vocabulary.RDF;
-
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -220,20 +212,26 @@ public class MClass {
         {
             //left component
             if (mc.getLeftComponent() == null) {
-                zf += owlPrefix + ":"+ container + "." + name + "." + mc.getLeftPort();
+                zf += writeClassNamespace() + mc.getLeftPort();
             } else {
-                zf += owlPrefix + ":"+ container + "." + name + "." + mc.getLeftComponent() + "." + mc.getLeftPort();
+                zf +=  writeClassNamespace() + mc.getLeftComponent() + " moont:hasPart " + writeClassNamespace() + mc.getRightComponent() + "." + mc.getLeftPort() + "." + NEWLINE;
+                zf +=  writeClassNamespace() + mc.getLeftComponent() +  "." + mc.getLeftPort() + " a moont:MConnector." + NEWLINE;
+                zf +=  writeClassNamespace() + mc.getLeftComponent() + "." + mc.getLeftPort();
             }
             zf += " moont:connectedTo ";
             //right component
             if (mc.getRightComponent() == null) {
-                zf += owlPrefix + ":"+ container + "." + name + "." + mc.getRightPort();
+                zf += writeClassNamespace() + mc.getRightPort() + "." + NEWLINE;
             } else {
-                zf += owlPrefix + ":"+ container + "." + name + "." + mc.getRightComponent() + "." + mc.getRightPort();
+                zf +=  writeClassNamespace() + mc.getRightComponent() + "." + mc.getRightPort() + "." + NEWLINE;
+                zf +=  writeClassNamespace() + mc.getRightComponent() + " moont:hasPart " + writeClassNamespace() + mc.getRightComponent() + "." + mc.getRightPort() + "." + NEWLINE;
+                zf +=  writeClassNamespace() + mc.getRightComponent() + "." + mc.getRightPort() + " a moont:MConnector." + NEWLINE;
             }          
-            zf += "." + NEWLINE;
         }
         return zf;
+    }
+    String writeClassNamespace() {
+        return owlPrefix + ":"+ container + "." + name + ".";
     }
     /*
     String writeKomponentenToTTL() {

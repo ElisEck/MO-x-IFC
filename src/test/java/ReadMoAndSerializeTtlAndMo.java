@@ -14,38 +14,8 @@ public class ReadMoAndSerializeTtlAndMo {
     public static void main(String[] args) {
         String name = "aix";
         String prefix = "aix";
-        Path dir = Path.of("c:\\_DATEN\\Modelica\\_Libraries_extern\\AixLib\\AixLib\\");
-/*        String name = "lvbmin";
-        String prefix = "lvbmin";
-        Path dir = Path.of("c:\\TMP\\LVBmin\\");*/
-//                String name = "mbl";
-//        String prefix = "mbl";
-//        Path dir = Path.of("c:\\_DATEN\\Modelica\\_Libraries_extern\\modelica-buildings\\Buildings\\");
-//                String name = "bs";
-//        String prefix = "bs";
-//        Path dir = Path.of("c:\\_DATEN\\Modelica\\_Libraries_extern\\BuildingSystems\\BuildingSystems\\");
-/*        String name = "ibpsa";
-        String prefix = "ibpsa";
-        Path dir = Path.of("c:\\_DATEN\\Modelica\\_Libraries_extern\\modelica-ibpsa\\IBPSA\\");*/
-//                        String name = "ideas";
-//        String prefix = "ideas";
-//        Path dir = Path.of("c:\\_DATEN\\Modelica\\_Libraries_extern\\IDEAS\\IDEAS\\");
 
-
-//        String name = "RLT4";
-//        String prefix = "eas";
-//        Path dir = Path.of("c:\\_DATEN\\Prototyp\\2103\\RDFModelle\\minimal\\");
-//        String name = "coo";
-//        String prefix = "eas";
-//        Path dir = Path.of("c:\\_DATEN\\2021-04-22_FullPaper_LDAC\\");
-//        String name = "rlt4";
-//        String prefix = "rlt4";
-//        Path dir = Path.of("c:\\_DATEN\\Modelica\\_Modelle\\EASNeubau\\");
-//        String name = "msl";
-//        String prefix = "msl";
-//        Path dir = Path.of("C:\\Program Files\\Dymola 2021\\Modelica\\Library\\Modelica 3.2.3\\");
-
-//        Path dir = checkArgs(args);
+        Path dir = checkArgs(args);
 
         if (dir == null) return;
         ModelicaLibrary ml = new ModelicaLibrary(dir.toString(), name, prefix);

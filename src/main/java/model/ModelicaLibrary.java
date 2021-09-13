@@ -100,6 +100,7 @@ public class ModelicaLibrary {
             myWriter.write("@prefix mbl:    <http://www.eas.iis.fraunhofer.de/mbl#> ." + NEWLINE);
             myWriter.write("@prefix ibpsa:    <http://www.eas.iis.fraunhofer.de/ibpsa#> ." + NEWLINE);
             myWriter.write("@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> ." + NEWLINE);
+            myWriter.write("@prefix rdf:  <http://www.w3.org/2000/01/rdf#> ." + NEWLINE);
             myWriter.write("@prefix owl:  <http://www.w3.org/2002/07/owl#> ." + NEWLINE);
             myWriter.write("@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> ." + NEWLINE);
             myWriter.write(prefix + ": rdf:type owl:Ontology ;" + NEWLINE);
@@ -114,5 +115,9 @@ public class ModelicaLibrary {
         } catch (IOException ioException) {
             ioException.printStackTrace();
         }
+    }
+
+    public String getName() {
+        return name;
     }
 }
