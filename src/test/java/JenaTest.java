@@ -1,4 +1,3 @@
-import org.apache.commons.lang3.ObjectUtils;
 import org.apache.jena.graph.Graph;
 import org.apache.jena.query.*;
 import org.apache.jena.rdf.model.*;
@@ -16,14 +15,101 @@ import org.apache.jena.update.*;
 import org.apache.jena.util.FileManager;
 import org.apache.jena.vocabulary.RDF;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import rdf.helper.ModelEE;
+import rdf.helper.ResultSetEE;
 
 import java.io.*;
 import java.util.Iterator;
+import java.util.Map;
 
 import static rdf.helper.serialize.serialize;
-import static rdf.helper.stats.*;
 
 public class JenaTest {
+    private static final Logger LOGGER = LoggerFactory.getLogger(JenaTest.class);
+
+    static String PREFIXSTRING =
+            "PREFIX ifc: <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD1/OWL#>" + System.lineSeparator() +
+            "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>" + System.lineSeparator() +
+            "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>" + System.lineSeparator() +
+            "PREFIX list: <https://w3id.org/list#> " + System.lineSeparator() +
+            "PREFIX cc: <http://creativecommons.org/ns#> " + System.lineSeparator() +
+            "PREFIX vann: <http://purl.org/vocab/vann/> " + System.lineSeparator() +
+            "PREFIX dc: <http://purl.org/dc/elements/1.1/> " + System.lineSeparator() +
+            "PREFIX express: <https://w3id.org/express#> " + System.lineSeparator() +
+            "PREFIX owl: <http://www.w3.org/2002/07/owl#> " + System.lineSeparator();
+
+    @Test
+    public void Kaelte() {
+        LOGGER.info("Start");
+        String filepath1 = "c:\\_DATEN\\_FMI4BIM\\BIM\\Ontologien und Alignments\\2_IFC\\IFC4_ADD2_TC1.ttl";
+        String filepath2 = "c:\\_DATEN\\_FMI4BIM\\BIM\\RDF Modelle\\2_IFC\\NeubauEAS\\210823_KälteErzeugung_MU.ttl";
+        String filename3 = "model3.ttl";
+
+        Model model = RDFDataMgr.loadModel(filepath1);
+        LOGGER.info("read "+filepath1+" with "+new ModelEE(model).countTriples() + " Triples");
+
+        Model model2 = RDFDataMgr.loadModel(filepath2);
+        LOGGER.info("read "+filepath2+" with "+new ModelEE(model2).countTriples() + " Triples");
+
+        Model model3 = model.add(model2);
+        LOGGER.info("merged to "+new ModelEE(model3).countTriples() + " Triples");
+
+        serialize(model3, filename3);
+        LOGGER.info("serialized as "+filename3);
+
+        Model model4 = deleteSubClassNodes(model3, "<https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#IfcRepresentationItem>");
+        ModelEE model4ee = new ModelEE(model4);
+        LOGGER.info("reduced to "+model4ee.countTriples() + " Triples");
+
+        LOGGER.info(model4ee.countDistinctPredicates());
+        LOGGER.info(model4ee.countPredicatesByName(150));
+        ResultSetEE rse = model4ee.countPredicatesByName2(150);
+        rse.printNamespaceCountSorted();
+        LOGGER.info("calculateNodedegrees");
+        model4ee.calculateNodeDegrees();
+        model4ee.printNode2DegreeMap();
+
+    }
+    @Test
+    public void Kaelte2() {
+        LOGGER.info("Start");
+        String filepath1 = "c:\\_DATEN\\_FMI4BIM\\BIM\\Ontologien und Alignments\\2_IFC\\IFC4_ADD2_TC1.ttl";
+        String filepath2 = "c:\\_DATEN\\_FMI4BIM\\BIM\\RDF Modelle\\2_IFC\\NeubauEAS\\210823_KälteErzeugung_MU.ttl";
+        String filename3 = "model3.ttl";
+
+        Model model = RDFDataMgr.loadModel(filepath1);
+        LOGGER.info("read " + filepath1 + " with " + new ModelEE(model).countTriples());
+
+        System.out.println(model.listSubjects().next());
+        System.out.println(model.listObjects().next());
+
+        System.out.println(model.listStatements().next().getSubject());
+        System.out.println(model.listStatements().next().getPredicate());
+        System.out.println(model.listStatements().next().getObject());
+//
+//        model4.listResourcesWithProperty(new ObjectPropertyImpl());
+//        Property
+//
+//
+//        private void acquireClasses() {
+//            ResIterator it = null;
+//
+//            if (m_inferred) {
+//                it = m_inferred_model.listResourcesWithProperty(RDF.type, OWL.Class);
+//            } else {
+//                it = m_raw_model.listResourcesWithProperty(RDF.type, OWL.Class);
+//            }
+//
+//            m_classes = acquireResources(it);
+//        }
+////
+//        Property property = model.createProperty(RDF_TYPE);
+////
+//        ResIterator iterator = model.listSubjectsWithProperty(getPropertyFromUri("<https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#IfcRepresentationItem>"));
+//        ResourceFactory.createResource("http://www.w3.org/2011/http-statusCodes#BadRequest"));
+    }
 
     @Test //funktioniert 24.8.21 10:30
     public void FileReadingAndChanging () {
@@ -92,8 +178,7 @@ public class JenaTest {
         Model model = FileManager.get().loadModel("c:\\_DATEN\\_FMI4BIM\\BIM\\RDF Modelle\\2_IFC\\NeubauEAS\\210823_KälteErzeugung_MU.ttl");
 
         String queryString =
-                "PREFIX ifc: <http://standards.buildingsmart.org/IFC/DEV/IFC4/ADD1/OWL#> " +
-                "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " +
+                PREFIXSTRING +
                 "SELECT "+
                     "(COUNT(?p) AS ?pcount) "+
                     "?p "+
@@ -126,8 +211,50 @@ public class JenaTest {
         String filename = "deletedSubClassOfGeometricRepresentation";
 //        Model model = FileManager.get().loadModel("c:\\_DATEN\\WORKSPACES\\IntelliJ\\mo-x-ifc\\deletedPath2.ttl");
         Model model = FileManager.get().loadModel("deletedSubClassOfGeometricRepresentation.ttl");
-        System.out.println(countNodesByClass(model, 20));
+        System.out.println(new ModelEE(model).countNodesByClass(20));
 //        stats(model, filename);
+    }
+
+    @Test
+    public void queryCartesianPointList2() {
+        FileManager.get().addLocatorClassLoader(JenaTest.class.getClassLoader());
+        Model model = FileManager.get().loadModel("c:\\_DATEN\\WORKSPACES\\IntelliJ\\mo-x-ifc\\model3.ttl");
+        try {
+            FileWriter myWriter = null;
+            myWriter = new FileWriter("output.ttl");
+            myWriter.write(new ModelEE(model).getTriplesByNodeClass("<https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#IfcCartesianPoint_List>"));
+            myWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void queryPolyloop() {
+        FileManager.get().addLocatorClassLoader(JenaTest.class.getClassLoader());
+        Model model = FileManager.get().loadModel("c:\\_DATEN\\WORKSPACES\\IntelliJ\\mo-x-ifc\\model3.ttl");
+        try {
+            FileWriter myWriter = null;
+            myWriter = new FileWriter("outputPolyLoop.ttl");
+            myWriter.write(new ModelEE(model).getTriplesByNodeClass("<https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#IfcPolyLoop>"));
+            myWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void queryIfcFaceOuterBound() {
+        FileManager.get().addLocatorClassLoader(JenaTest.class.getClassLoader());
+        Model model = FileManager.get().loadModel("c:\\_DATEN\\WORKSPACES\\IntelliJ\\mo-x-ifc\\model3.ttl");
+        try {
+            FileWriter myWriter = null;
+            myWriter = new FileWriter("outputIfcFaceOuterBound.ttl");
+            myWriter.write(new ModelEE(model).getTriplesByNodeClass("<https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#IfcFaceOuterBound>"));
+            myWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Test
@@ -135,12 +262,10 @@ public class JenaTest {
         FileManager.get().addLocatorClassLoader(JenaTest.class.getClassLoader());
         Model model = FileManager.get().loadModel("c:\\_DATEN\\_FMI4BIM\\BIM\\RDF Modelle\\2_IFC\\NeubauEAS\\210823_KälteErzeugung_MU.ttl");
         //        Model model = FileManager.get().loadModel("c:\\_DATEN\\WORKSPACES\\IntelliJ\\mo-x-ifc\\deletedPath.ttl");
-        countTriples(model);
+        new ModelEE(model).countTriples();
 
         String queryString =
-                "PREFIX ifc: <http://standards.buildingsmart.org/IFC/DEV/IFC4/ADD1/OWL#> " +
-                        "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " +
-                        "PREFIX list: <https://w3id.org/list#> " +
+                PREFIXSTRING +
                         "SELECT " +
 //                        " ?p1 " +
 //                        " ?p2 " +
@@ -182,28 +307,27 @@ public class JenaTest {
         FileManager.get().addLocatorClassLoader(JenaTest.class.getClassLoader());
         Model model = FileManager.get().loadModel("c:\\_DATEN\\_FMI4BIM\\BIM\\RDF Modelle\\2_IFC\\NeubauEAS\\210823_KälteErzeugung_MU.ttl");
 //        Model model = FileManager.get().loadModel("c:\\_DATEN\\WORKSPACES\\IntelliJ\\mo-x-ifc\\deletedPath.ttl");
-        countTriples(model);
+        new ModelEE(model).countTriples();
 
+        // language=sparql
         String queryString =
-                "PREFIX ifc: <http://standards.buildingsmart.org/IFC/DEV/IFC4/ADD1/OWL#> " +
-                "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " +
-                "PREFIX list: <https://w3id.org/list#> " +
+                PREFIXSTRING +
                 "SELECT " +
                     " ?start " +
                     " ?ende " +
                 "WHERE {" +
-                "    ?start ifc:representations_IfcProductRepresentation    ?b." +
-                "    ?b     list:hasContents                                ?c." +
-                "    ?c     ifc:items_IfcRepresentation                     ?d." +
-                "    ?d     ifc:mappingSource_IfcMappedItem                 ?e." +
-                "    ?e     ifc:mappedRepresentation_IfcRepresentationMap   ?f." +
-                "    ?f     ifc:items_IfcRepresentation                     ?g." +
-                "    ?g     ifc:outer_IfcManifoldSolidBrep                  ?h." +
-                "    ?h     ifc:cfsFaces_IfcConnectedFaceSet                ?i." +
-                "    ?i     ifc:bounds_IfcFace                              ?k." +
-                "    ?k     ifc:bound_IfcFaceBound                          ?l." +
-                "    ?l     ifc:polygon_IfcPolyLoop                         ?ende." +
-                "    }";
+                    "?start ifc:representations_IfcProductRepresentation    ?b." +
+                    "?b     list:hasContents                                ?c." +
+                    "?c     ifc:items_IfcRepresentation                     ?d." +
+                    "?d     ifc:mappingSource_IfcMappedItem                 ?e." +
+                    "?e     ifc:mappedRepresentation_IfcRepresentationMap   ?f." +
+                    "?f     ifc:items_IfcRepresentation                     ?g." +
+                    "?g     ifc:outer_IfcManifoldSolidBrep                  ?h." +
+                    "?h     ifc:cfsFaces_IfcConnectedFaceSet                ?i." +
+                    "?i     ifc:bounds_IfcFace                              ?k." +
+                    "?k     ifc:bound_IfcFaceBound                          ?l." +
+                    "?l     ifc:polygon_IfcPolyLoop                         ?ende." +
+                    "}";
 
         Query query = QueryFactory.create(queryString);
         QueryExecution qexec = QueryExecutionFactory.create(query, model);
@@ -229,10 +353,7 @@ public class JenaTest {
         FileManager.get().addLocatorClassLoader(JenaTest.class.getClassLoader());
         Model model = FileManager.get().loadModel("c:\\_DATEN\\WORKSPACES\\IntelliJ\\mo-x-ifc\\model3.ttl");
         String queryString =
-                "PREFIX ifc: <http://standards.buildingsmart.org/IFC/DEV/IFC4/ADD1/OWL#> " +
-                        "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " +
-                        "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> " +
-                        "PREFIX list: <https://w3id.org/list#> " +
+                PREFIXSTRING +
                         "SELECT " +
                         " ?a " +
 //                        " ?s " +
@@ -276,12 +397,10 @@ public class JenaTest {
         FileManager.get().addLocatorClassLoader(JenaTest.class.getClassLoader());
         Model model = FileManager.get().loadModel("c:\\_DATEN\\_FMI4BIM\\BIM\\RDF Modelle\\2_IFC\\NeubauEAS\\210823_KälteErzeugung_MU.ttl");
 //                Model model = FileManager.get().loadModel("c:\\_DATEN\\WORKSPACES\\IntelliJ\\mo-x-ifc\\deletedPath.ttl");
-        countTriples(model);
+        new ModelEE(model).countTriples();
 
         String queryString =
-                "PREFIX ifc: <http://standards.buildingsmart.org/IFC/DEV/IFC4/ADD1/OWL#> " +
-                "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " +
-                "PREFIX list: <https://w3id.org/list#> " +
+                PREFIXSTRING +
                 "SELECT " +
                     " ?a " +
                     " ?l " +
@@ -329,12 +448,10 @@ public class JenaTest {
         FileManager.get().addLocatorClassLoader(JenaTest.class.getClassLoader());
         Model model = FileManager.get().loadModel("c:\\_DATEN\\_FMI4BIM\\BIM\\RDF Modelle\\2_IFC\\NeubauEAS\\210823_KälteErzeugung_MU.ttl");
         //        Model model = FileManager.get().loadModel("c:\\_DATEN\\WORKSPACES\\IntelliJ\\mo-x-ifc\\deletedPath.ttl");
-        countTriples(model);
+        new ModelEE(model).countTriples();
 
         String queryString =
-                "PREFIX ifc: <http://standards.buildingsmart.org/IFC/DEV/IFC4/ADD1/OWL#> " +
-                        "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " +
-                        "PREFIX list: <https://w3id.org/list#> " +
+                PREFIXSTRING +
                         "SELECT " +
                         " ?start " +
                         " ?b " +
@@ -398,7 +515,7 @@ public class JenaTest {
     public void deletePropertyPathALT() {
         FileManager.get().addLocatorClassLoader(JenaTest.class.getClassLoader());
         Model model = FileManager.get().loadModel("c:\\_DATEN\\_FMI4BIM\\BIM\\RDF Modelle\\2_IFC\\NeubauEAS\\210823_KälteErzeugung_MU.ttl");
-        countTriples(model);
+        new ModelEE(model).countTriples();
         String queryString =
                         "DELETE " +
                         "WHERE {" +
@@ -419,20 +536,19 @@ public class JenaTest {
         UpdateRequest update = UpdateFactory.create(queryString);
         Graph graph = model.getGraph();
         UpdateProcessor qexec = UpdateExecutionFactory.create(update, (DatasetGraph) graph);
-        countTriples(model);
+        new ModelEE(model).countTriples();
         qexec.execute();
     }
 
     @Test
     public void deletePropertyPath() {
         Dataset dataset = RDFDataMgr.loadDataset("c:\\_DATEN\\_FMI4BIM\\BIM\\RDF Modelle\\2_IFC\\NeubauEAS\\210823_KälteErzeugung_MU.ttl") ;
-        countTriples(dataset);
+        new ModelEE(dataset.getDefaultModel()).countTriples();
         serialize(dataset, "original.ttl" );
         UpdateRequest request = UpdateFactory.create() ;
-        request.add("PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>");
-        request.add("PREFIX ifc: <http://standards.buildingsmart.org/IFC/DEV/IFC4/ADD1/OWL#>");
-        request.add("PREFIX list: <https://w3id.org/list#>");
-        request.add("DELETE WHERE {" +
+        request.add(
+                PREFIXSTRING +
+                "DELETE WHERE {" +
                 "?start ifc:representations_IfcProductRepresentation    ?b." +
                 "?b     list:hasContents                                ?c." +
                 "?c     ifc:items_IfcRepresentation                     ?d." +
@@ -447,20 +563,19 @@ public class JenaTest {
                 "} ");
         // And perform the operations.
         UpdateAction.execute(request, dataset) ;
-        countTriples(dataset);
+        new ModelEE(dataset.getDefaultModel()). countTriples();
         serialize(dataset, "deletedPath.ttl" );
     }
 
     @Test
     public void deletePropertyPath2() {
         Dataset dataset = RDFDataMgr.loadDataset("c:\\_DATEN\\_FMI4BIM\\BIM\\RDF Modelle\\2_IFC\\NeubauEAS\\210823_KälteErzeugung_MU.ttl") ;
-        countTriples(dataset);
+        new ModelEE(dataset.getDefaultModel()).countTriples();
         serialize(dataset, "original.ttl" );
         UpdateRequest request = UpdateFactory.create() ;
-        request.add("PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>");
-        request.add("PREFIX ifc: <http://standards.buildingsmart.org/IFC/DEV/IFC4/ADD1/OWL#>");
-        request.add("PREFIX list: <https://w3id.org/list#>");
-        request.add("DELETE WHERE {" +
+        request.add(
+                PREFIXSTRING +
+                "DELETE WHERE {" +
                 "?a ifc:representations_IfcProductRepresentation ?b. " +
                 "?b list:hasContents ?c. " +
                 "?c ifc:items_IfcRepresentation ?d ." +
@@ -474,7 +589,7 @@ public class JenaTest {
                 "} ");
         // And perform the operations.
         UpdateAction.execute(request, dataset) ;
-        countTriples(dataset);
+        new ModelEE(dataset.getDefaultModel()).countTriples();
         serialize(dataset, "deletedPath2.ttl" );
     }
 
@@ -482,13 +597,11 @@ public class JenaTest {
     public void deleteSubClassesShort() {
         Dataset dataset = RDFDataMgr.loadDataset("c:\\_DATEN\\WORKSPACES\\IntelliJ\\mo-x-ifc\\model3.ttl") ;
         serialize(dataset, "original.ttl");
-        System.out.println(countTriples(dataset));
+        System.out.println(new ModelEE(dataset.getDefaultModel()).countTriples());
         UpdateRequest request = UpdateFactory.create() ;
-        request.add("PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>");
-        request.add("PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>");
-        request.add("PREFIX ifc: <http://standards.buildingsmart.org/IFC/DEV/IFC4/ADD1/OWL#>");
-        request.add("PREFIX list: <https://w3id.org/list#>");
-        request.add("DELETE  WHERE {" +
+        request.add(
+                PREFIXSTRING +
+                "DELETE  WHERE {" +
                 "    ?s    ?p ?a." +
                 "    ?a    rdf:type ?sc1." +
 //                "    ?sc rdfs:subClassOf ?sc1." +
@@ -497,7 +610,7 @@ public class JenaTest {
                 "} ");
         // And perform the operations.
         UpdateAction.execute(request, dataset) ;
-        System.out.println(countTriples(dataset));
+        System.out.println(new ModelEE(dataset.getDefaultModel()).countTriples());
         serialize(dataset, "deletedSubClassOfGeometricRepresentationShort.ttl" );
     }
 
@@ -505,13 +618,11 @@ public class JenaTest {
     public void deleteSubClasses() {
         Dataset dataset = RDFDataMgr.loadDataset("c:\\_DATEN\\WORKSPACES\\IntelliJ\\mo-x-ifc\\model3.ttl") ;
         serialize(dataset, "original.ttl");
-        System.out.println(countTriples(dataset));
+        System.out.println(new ModelEE(dataset.getDefaultModel()).countTriples());
         UpdateRequest request = UpdateFactory.create() ;
-        request.add("PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>");
-        request.add("PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>");
-        request.add("PREFIX ifc: <http://standards.buildingsmart.org/IFC/DEV/IFC4/ADD1/OWL#>");
-        request.add("PREFIX list: <https://w3id.org/list#>");
-        request.add("DELETE {" +
+        request.add(
+                PREFIXSTRING +
+                "DELETE {" +
                 "?s ?p ?a." +
                 "} WHERE {" +
                 " {?s ?p ?a.}" +
@@ -521,8 +632,10 @@ public class JenaTest {
                 "} ");
         // And perform the operations.
         UpdateAction.execute(request, dataset) ;
-        System.out.println(countTriples(dataset));
-        request.add("DELETE {" +
+        System.out.println(new ModelEE(dataset.getDefaultModel()).countTriples());
+        request.add(
+                PREFIXSTRING +
+                "DELETE {" +
                 "?a ?p ?o." +
                 "} WHERE {" +
                         "{?a ?p ?o.}" +
@@ -532,23 +645,41 @@ public class JenaTest {
                 "} ");
         // And perform the operations.
         UpdateAction.execute(request, dataset) ;
-        System.out.println(countTriples(dataset));
+        System.out.println(new ModelEE(dataset.getDefaultModel()).countTriples());
         serialize(dataset, "deletedSubClassOfGeometricRepresentation.ttl" );
-        System.out.println(countNodesByClass(dataset.getDefaultModel(), 20));
+        System.out.println(new ModelEE(dataset.getDefaultModel()).countNodesByClass(20));
     }
 
+    public Model deleteSubClassNodes(Model model, String fatherClass) {
+        UpdateRequest request = UpdateFactory.create();
+        request.add(
+                PREFIXSTRING +
+                "DELETE {" +
+                        "?a ?p ?o." +
+                        "?s ?p ?a." +
+                "} WHERE {" +
+                        "{?a ?p ?o.}" +
+                    "UNION" +
+                        " {?s ?p ?a.}" +
+                    "?a rdf:type ?sc." +
+                    "?sc rdfs:subClassOf* " + fatherClass + "." +
+                "}");
+        // And perform the operations.
+        UpdateAction.execute(request, model);
+        return model;
+    }
 
     @Test
     public void deleteSimple() {
         Dataset dataset = RDFDataMgr.loadDataset("c:\\_DATEN\\_FMI4BIM\\BIM\\RDF Modelle\\2_IFC\\NeubauEAS\\210823_KälteErzeugung_MU.ttl") ;
-        countTriples(dataset);
+        new ModelEE(dataset.getDefaultModel()).countTriples();
         serialize(dataset, "original.ttl" );
         UpdateRequest request = UpdateFactory.create() ;
-        request.add("PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>");
+        request.add(PREFIXSTRING);
         request.add("DELETE WHERE {?s rdf:type ?o.} ");
         // And perform the operations.
         UpdateAction.execute(request, dataset) ;
-        countTriples(dataset);
+        new ModelEE(dataset.getDefaultModel()).countTriples();
         serialize(dataset, "deletedSimple.ttl" );
     }
 
@@ -556,34 +687,15 @@ public class JenaTest {
     public void merge() {
         FileManager.get().addLocatorClassLoader(JenaTest.class.getClassLoader());
         Model model = FileManager.get().loadModel("c:\\_DATEN\\_FMI4BIM\\BIM\\Ontologien und Alignments\\2_IFC\\IFC4_ADD2_TC1.ttl");
-        System.out.println(countTriples(model));
+        System.out.println(new ModelEE(model).countTriples());
         Model model2 = FileManager.get().loadModel("c:\\_DATEN\\_FMI4BIM\\BIM\\RDF Modelle\\2_IFC\\NeubauEAS\\210823_KälteErzeugung_MU.ttl");
-        System.out.println(countTriples(model2));
+        System.out.println(new ModelEE(model2).countTriples());
         Model model3 = model.add(model2);
-        System.out.println(countTriples(model3));
+        System.out.println(new ModelEE(model3).countTriples());
         serialize(model3, "model3.ttl");
     }
 
-    public void stats(Model model, String filename) {
-        try {
-            FileWriter myWriter = new FileWriter(filename+"_STATS.txt");
-            myWriter.write(countTriples(model)+System.lineSeparator());
-            myWriter.write(countDistinctSubjects(model)+System.lineSeparator());
-            myWriter.write(countDistinctObjects(model)+System.lineSeparator());
-            myWriter.write(countDistinctNodes(model)+System.lineSeparator());
-            myWriter.write(countDistinctPredicates(model)+System.lineSeparator());
-            myWriter.write(countNodeClasses(model)+System.lineSeparator());
-            myWriter.write(countObjectClasses(model)+System.lineSeparator());
-            myWriter.write(countSubjectClasses(model)+System.lineSeparator());
-            myWriter.write(countPredicatesByName(model, 120)+System.lineSeparator());
-            myWriter.write(countNodesByClass(model, 80)+System.lineSeparator());
-            myWriter.write(countObjectsByClass(model, 80)+System.lineSeparator());
-            myWriter.write(countSubjectsByClass(model, 80)+System.lineSeparator());
-            myWriter.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+
 
 
 }
