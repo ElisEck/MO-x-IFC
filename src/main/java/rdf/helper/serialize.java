@@ -7,6 +7,8 @@ import org.apache.jena.riot.RDFWriter;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class serialize {
 
@@ -30,6 +32,16 @@ public class serialize {
                     .base("http://base/")
                     .output(new FileOutputStream(filename));
         } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void stringToFile(String inhalt, String filename) {
+        try {
+            FileWriter myWriter = new FileWriter(filename);
+            myWriter.write(inhalt);
+            myWriter.close();
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

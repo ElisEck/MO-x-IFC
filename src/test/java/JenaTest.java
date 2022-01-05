@@ -18,19 +18,21 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import rdf.helper.ModelEE;
+import rdf.helper.ResultLine;
 import rdf.helper.ResultSetEE;
 
 import java.io.*;
 import java.util.Iterator;
-import java.util.Map;
+import java.util.List;
 
 import static rdf.helper.serialize.serialize;
+import static rdf.helper.serialize.stringToFile;
 
 public class JenaTest {
     private static final Logger LOGGER = LoggerFactory.getLogger(JenaTest.class);
 
     static String PREFIXSTRING =
-            "PREFIX ifc: <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD1/OWL#>" + System.lineSeparator() +
+            "PREFIX ifc: <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#>" + System.lineSeparator() +
             "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>" + System.lineSeparator() +
             "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>" + System.lineSeparator() +
             "PREFIX list: <https://w3id.org/list#> " + System.lineSeparator() +
@@ -38,14 +40,16 @@ public class JenaTest {
             "PREFIX vann: <http://purl.org/vocab/vann/> " + System.lineSeparator() +
             "PREFIX dc: <http://purl.org/dc/elements/1.1/> " + System.lineSeparator() +
             "PREFIX express: <https://w3id.org/express#> " + System.lineSeparator() +
-            "PREFIX owl: <http://www.w3.org/2002/07/owl#> " + System.lineSeparator();
+            "PREFIX owl: <http://www.w3.org/2002/07/owl#> " + System.lineSeparator() +
+            "PREFIX inst: <http://linkedbuildingdata.net/ifc/resources20210823_160347/> " + System.lineSeparator();
 
     @Test
     public void Kaelte() {
         LOGGER.info("Start");
-        String filepath1 = "c:\\_DATEN\\_FMI4BIM\\BIM\\Ontologien und Alignments\\2_IFC\\IFC4_ADD2_TC1.ttl";
+        String filepath1 = "c:\\_DATEN\\_FMI4BIM\\BIM\\Ontologien und Alignments\\2_IFC\\IFC4_ADD2_TC1__korrigiert2.ttl";
         String filepath2 = "c:\\_DATEN\\_FMI4BIM\\BIM\\RDF Modelle\\2_IFC\\NeubauEAS\\210823_KälteErzeugung_MU.ttl";
         String filename3 = "model3.ttl";
+        String filename4 = "model4.ttl";
 
         Model model = RDFDataMgr.loadModel(filepath1);
         LOGGER.info("read "+filepath1+" with "+new ModelEE(model).countTriples() + " Triples");
@@ -56,20 +60,34 @@ public class JenaTest {
         Model model3 = model.add(model2);
         LOGGER.info("merged to "+new ModelEE(model3).countTriples() + " Triples");
 
-        serialize(model3, filename3);
-        LOGGER.info("serialized as "+filename3);
 
         Model model4 = deleteSubClassNodes(model3, "<https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#IfcRepresentationItem>");
+//        model4 = deleteSubClassNodes(model4, "<https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#IfcBuildingElement>"); //macht keine Änderung
+//        model4 = deleteSubClassNodes(model4, "<https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#NOTDEFINED>"); //macht keine Änderung
+        model4 = deleteSubClassNodes(model4, "<https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#IfcLengthMeasure_List>");
+        model4 = deleteSubClassNodes(model4, "<https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#IfcLengthMeasure>");
+//        model4 = deleteByPredicate(model4, "owl:onProperty");
+        model4 = deleteByPredicateNamesspace(model4, "http://www.w3.org/2002/07/owl#", "owl"); //TODO umbauen, so dass man nur eins von beiden angeben muss
         ModelEE model4ee = new ModelEE(model4);
         LOGGER.info("reduced to "+model4ee.countTriples() + " Triples");
+        serialize(model4, filename4);
+        LOGGER.info("serialized as "+filename4);
 
         LOGGER.info(model4ee.countDistinctPredicates());
-        LOGGER.info(model4ee.countPredicatesByName(150));
+        LOGGER.info(model4ee.countDistinctNodes());
+//        LOGGER.info(model4ee.countNodesByClass(150));
+
+        stringToFile(model4ee.countPredicatesByName(150), "model4_countPredicatesByName.txt");
+        LOGGER.info("printed countPredicatesByName to model4_countPredicatesByName.txt");
+
         ResultSetEE rse = model4ee.countPredicatesByName2(150);
+        LOGGER.info("Predicates - NamespaceCountSorted:");
         rse.printNamespaceCountSorted();
+
         LOGGER.info("calculateNodedegrees");
-        model4ee.calculateNodeDegrees();
-        model4ee.printNode2DegreeMap();
+        model4ee.calculateNodeDegrees(); //ausfüllen der Node2DegreeMap am model4ee
+        stringToFile(model4ee.printNode2DegreeMap(), "model4_nodedegrees.txt");
+        LOGGER.info("printed Node2DegreeMap to model4_nodedegrees.txt");
 
     }
     @Test
@@ -650,6 +668,12 @@ public class JenaTest {
         System.out.println(new ModelEE(dataset.getDefaultModel()).countNodesByClass(20));
     }
 
+    /**
+     * löscht alle Triple deren Subjekt oder Objekt vom Typ fatherClass ist (auch indirekt)
+     * @param model
+     * @param fatherClass
+     * @return
+     */
     public Model deleteSubClassNodes(Model model, String fatherClass) {
         UpdateRequest request = UpdateFactory.create();
         request.add(
@@ -669,17 +693,58 @@ public class JenaTest {
         return model;
     }
 
+    /**
+     * löscht alle Triple, die ein bestimmtes Prädikat haben
+     * @param model
+     * @param predicate
+     * @return
+     */
+    public Model deleteByPredicate(Model model, String predicate) {
+        UpdateRequest request = UpdateFactory.create();
+        request.add(
+                PREFIXSTRING +
+                    "DELETE {" +
+                        "?s ?p ?o." +
+                    "} WHERE {" +
+                        "?s ?p ?o." +
+                        "?s " + predicate + " ?o." +
+                    "}");
+        // And perform the operations.
+        UpdateAction.execute(request, model);
+        return model;
+    }
+
+    /**
+     * löscht alle Triple mit Prädikaten eines bestimmten Namespace
+     * indem es mehrfahr die Funktion deletByPredicate aufruft
+     * //TODO als große SPARQL query implementieren
+     * @param model
+     * @param namespace
+     * @return
+     */
+    public Model deleteByPredicateNamesspace(Model model, String namespace, String namespacekuerzel) {
+        ModelEE modelee = new ModelEE(model);
+        ResultSetEE rse = modelee.countPredicatesByName2(-1);
+        List<ResultLine> predicateList = rse.getResultLinesGroupedByNamespace().get(namespace);
+        for (ResultLine predicate:predicateList) {
+                model = deleteByPredicate(model, namespacekuerzel + ":" + predicate.name);
+        }
+        return model;
+    }
+
     @Test
     public void deleteSimple() {
-        Dataset dataset = RDFDataMgr.loadDataset("c:\\_DATEN\\_FMI4BIM\\BIM\\RDF Modelle\\2_IFC\\NeubauEAS\\210823_KälteErzeugung_MU.ttl") ;
-        new ModelEE(dataset.getDefaultModel()).countTriples();
-        serialize(dataset, "original.ttl" );
+//        Dataset dataset = RDFDataMgr.loadDataset("c:\\_DATEN\\_FMI4BIM\\BIM\\RDF Modelle\\2_IFC\\NeubauEAS\\210823_KälteErzeugung_MU.ttl") ;
+        Dataset dataset = RDFDataMgr.loadDataset("model4.ttl") ;
+        System.out.println(new ModelEE(dataset.getDefaultModel()).countTriples());
+//        serialize(dataset, "original.ttl" );
         UpdateRequest request = UpdateFactory.create() ;
         request.add(PREFIXSTRING);
-        request.add("DELETE WHERE {?s rdf:type ?o.} ");
+//        request.add("DELETE WHERE {?s rdf:type ?o.} ");
+        request.add("DELETE WHERE {?s owl:onProperty ?o.} ");
         // And perform the operations.
         UpdateAction.execute(request, dataset) ;
-        new ModelEE(dataset.getDefaultModel()).countTriples();
+        System.out.println(new ModelEE(dataset.getDefaultModel()).countTriples());
         serialize(dataset, "deletedSimple.ttl" );
     }
 
