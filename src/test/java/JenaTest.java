@@ -1,6 +1,13 @@
 import org.apache.jena.graph.Graph;
+import org.apache.jena.ontology.Individual;
+import org.apache.jena.ontology.OntClass;
+import org.apache.jena.ontology.OntModel;
+import org.apache.jena.ontology.OntModelSpec;
 import org.apache.jena.query.*;
 import org.apache.jena.rdf.model.*;
+import org.apache.jena.reasoner.Reasoner;
+import org.apache.jena.reasoner.ReasonerRegistry;
+import org.apache.jena.reasoner.ValidityReport;
 import org.apache.jena.riot.Lang;
 import org.apache.jena.riot.RDFDataMgr;
 import org.apache.jena.riot.RIOT;
@@ -25,6 +32,7 @@ import java.io.*;
 import java.util.Iterator;
 import java.util.List;
 
+import static java.lang.System.in;
 import static rdf.helper.serialize.serialize;
 import static rdf.helper.serialize.stringToFile;
 
@@ -44,6 +52,11 @@ public class JenaTest {
             "PREFIX inst: <http://linkedbuildingdata.net/ifc/resources20210823_160347/> " + System.lineSeparator();
 
     @Test
+    /**
+     * einlesen von IFC-Modell (Kälte Erzeugung Matthias) und IFC-Standard als ttl
+     * mergen
+     * gemergten Graph reduzieren um alles was Geometrie ist
+     */
     public void Kaelte() {
         LOGGER.info("Start");
         String filepath1 = "c:\\_DATEN\\_FMI4BIM\\BIM\\Ontologien und Alignments\\2_IFC\\IFC4_ADD2_TC1__korrigiert2.ttl";
@@ -73,6 +86,11 @@ public class JenaTest {
         serialize(model4, filename4);
         LOGGER.info("serialized as "+filename4);
 
+//        Model model5 = RDFDataMgr.loadModel("c:\\_DATEN\\_FMI4BIM\\BIM\\Ontologien und Alignments\\6_AlignmentIFCModelica\\AlignmentModelicaIFC_220106.ttl");
+//        Model model6 = model4.add(model5);
+//        serialize(model6, "model6.ttl");
+
+
         LOGGER.info(model4ee.countDistinctPredicates());
         LOGGER.info(model4ee.countDistinctNodes());
 //        LOGGER.info(model4ee.countNodesByClass(150));
@@ -90,6 +108,97 @@ public class JenaTest {
         LOGGER.info("printed Node2DegreeMap to model4_nodedegrees.txt");
 
     }
+
+    /**
+     * liest zwei turtle-Files, fügt sie zusammen und serialisiert das Ergebnis
+     * @param file1 input filename
+     * @param file2 input filename
+     * @param file3 output filename
+     */
+    public void merge(String file1, String file2, String file3) {
+        Model model1 = RDFDataMgr.loadModel(file1);
+        Model model2 = RDFDataMgr.loadModel(file2);
+        Model model3 = model1.add(model2);
+        serialize(model3, file3);
+    }
+
+    @Test
+    /**
+     * zeigt Reasoning anhand des Alignments
+     * aus C:\_DATEN\WORKSPACES\IntelliJ\jena-examples\src\main\java\org\apache\jena\examples\ExampleONT_01.java
+     */
+    public void Reasoning() throws FileNotFoundException {
+        OntModel base = ModelFactory.createOntologyModel( OntModelSpec.OWL_MEM );
+//        base.read( sourceURL, "RDF/XML" );
+
+//        model6 ist merge aus IFC-Instanz + IFC-Standard (=model4) + Alignment
+        merge("model4.ttl", "c:\\_DATEN\\_FMI4BIM\\BIM\\Ontologien und Alignments\\6_AlignmentIFCModelica\\AlignmentModelicaIFC_220106.ttl", "model6.ttl");
+        InputStream in = new FileInputStream("model6.ttl");
+        base.read(in, "", "ttl");
+
+        String namespace = "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#";
+
+        OntModel inf = ModelFactory.createOntologyModel( OntModelSpec.OWL_MEM_MICRO_RULE_INF, base );
+
+//        OntClass pipeFittingClass = base.getOntClass( namespace + "IfcPipeFitting" );
+//        Individual pipeFitting = base.createIndividual( namespace + "pf1", pipeFittingClass );
+
+        OntClass spaceClass = base.getOntClass( namespace + "IfcSpace" );
+        Individual space = base.createIndividual( namespace + "sp1", spaceClass );
+
+        System.out.println("---- Assertions in the data ----");
+        for (Iterator<Resource> i = space.listRDFTypes(false); i.hasNext(); ) {
+            System.out.println( space.getURI() + " is a " + i.next() );
+        }
+
+        Property property = inf.getProperty("http://www.w3.org/1999/02/22-rdf-syntax-ns#type");
+
+//        Individual individual2 = base.getIndividual("http://linkedbuildingdata.net/ifc/resources20210823_160347/IfcPipeFitting_763");
+
+        System.out.println("\n---- Inferred assertions ----");
+        Resource sp = base.getResource("https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#IfcPipeFitting");
+        ResIterator iterator = inf.listResourcesWithProperty(property, sp) ; //1. Versuch
+        for (Iterator<Individual> pipeFittingIterator = inf.listIndividuals(sp); pipeFittingIterator.hasNext(); ) {
+            Individual pipeFittingIndividual = pipeFittingIterator.next();
+            LOGGER.info(pipeFittingIndividual.toString());
+            for (Iterator<Resource> i = pipeFittingIndividual.listRDFTypes(false); i.hasNext(); ) {
+                System.out.println(pipeFittingIndividual.getURI() + " is a " + i.next());
+            }
+        }
+
+
+
+
+    }
+
+    @Test
+    /**
+     * aus C:\_DATEN\WORKSPACES\IntelliJ\jena-examples\src\main\java\org\apache\jena\examples\ExampleONT_02.java
+     * läuft in seiner Originalumgebung! (6.1.22)
+     */
+    public void validity() {
+        FileManager.get().addLocatorClassLoader(JenaTest.class.getClassLoader());
+
+        Model tbox = FileManager.get().loadModel("data/inference/tbox.owl", null, "RDF/XML"); // http://en.wikipedia.org/wiki/Tbox
+        Reasoner reasoner = ReasonerRegistry.getOWLReasoner().bindSchema(tbox.getGraph());
+        Model abox = FileManager.get().loadModel("data/inference/abox.owl", null, "RDF/XML"); // http://en.wikipedia.org/wiki/Abox
+
+        InfModel inf = ModelFactory.createInfModel(reasoner, abox);
+
+        ValidityReport validityReport = inf.validate();
+
+        if ( !validityReport.isValid() ) {
+            System.out.println("Inconsistent");
+            Iterator<ValidityReport.Report> iter = validityReport.getReports();
+            while ( iter.hasNext() ) {
+                ValidityReport.Report report = iter.next();
+                System.out.println(report);
+            }
+        } else {
+            System.out.println("Valid");
+        }
+    }
+
     @Test
     public void Kaelte2() {
         LOGGER.info("Start");

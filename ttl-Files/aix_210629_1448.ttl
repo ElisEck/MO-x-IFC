@@ -1,0 +1,991 @@
+@prefix aix:    <http://www.eas.iis.fraunhofer.de/aix#> .
+@prefix moont:    <https://www.eas.iis.fraunhofer.de/MoOnt#> .
+@prefix msl:    <http://www.eas.iis.fraunhofer.de/msl#> .
+@prefix aix:    <http://www.eas.iis.fraunhofer.de/aix#> .
+@prefix mbl:    <http://www.eas.iis.fraunhofer.de/mbl#> .
+@prefix ibpsa:    <http://www.eas.iis.fraunhofer.de/ibpsa#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+aix:AixLib.Airflow.AirCurtain.AirCurtainSimplified a moont:MModel;
+	 moont:containedIn aix:AixLib.Airflow.AirCurtain.
+aix:AixLib.Airflow.AirCurtain.AirCurtainSimplified moont:hasPart aix:AixLib.Airflow.AirCurtain.AirCurtainSimplified.TAmb.
+aix:AixLib.Airflow.AirCurtain.AirCurtainSimplified.TAmb a moont:MComponent ;
+	 a msl:Modelica.Blocks.Interfaces.RealInput.
+aix:AixLib.Airflow.AirCurtain.AirCurtainSimplified moont:hasPart aix:AixLib.Airflow.AirCurtain.AirCurtainSimplified.Power.
+aix:AixLib.Airflow.AirCurtain.AirCurtainSimplified.Power a moont:MComponent ;
+	 a msl:Modelica.Blocks.Interfaces.RealOutput.
+aix:AixLib.Airflow.AirCurtain.AirCurtainSimplified moont:hasPart aix:AixLib.Airflow.AirCurtain.AirCurtainSimplified.mixedTemperature.
+aix:AixLib.Airflow.AirCurtain.AirCurtainSimplified.mixedTemperature a moont:MComponent ;
+	 a aix:Utilities.Psychrometrics.MixedTemperature.
+aix:AixLib.Airflow.AirCurtain.AirCurtainSimplified moont:hasPart aix:AixLib.Airflow.AirCurtain.AirCurtainSimplified.schedule.
+aix:AixLib.Airflow.AirCurtain.AirCurtainSimplified.schedule a moont:MComponent ;
+	 a msl:Modelica.Blocks.Interfaces.RealInput.
+aix:AixLib.Airflow.AirCurtain.AirCurtainSimplified moont:hasPart aix:AixLib.Airflow.AirCurtain.AirCurtainSimplified.port_b.
+aix:AixLib.Airflow.AirCurtain.AirCurtainSimplified.port_b a moont:MComponent ;
+	 a msl:Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_b.
+aix:AixLib.Airflow.AirCurtain.AirCurtainSimplified moont:hasPart aix:AixLib.Airflow.AirCurtain.AirCurtainSimplified.etaAirCur.
+aix:AixLib.Airflow.AirCurtain.AirCurtainSimplified.etaAirCur a moont:MParameterComponent;
+	 moont:type xsd:Real.
+aix:AixLib.Airflow.AirCurtain.AirCurtainSimplified moont:hasPart aix:AixLib.Airflow.AirCurtain.AirCurtainSimplified.TBou.
+aix:AixLib.Airflow.AirCurtain.AirCurtainSimplified.TBou a moont:MParameterComponent;
+	 moont:type aix:Modelica.SIunits.Temperature.
+aix:AixLib.Airflow.AirCurtain.AirCurtainSimplified moont:hasPart aix:AixLib.Airflow.AirCurtain.AirCurtainSimplified.TAddAirCur.
+aix:AixLib.Airflow.AirCurtain.AirCurtainSimplified.TAddAirCur a moont:MParameterComponent;
+	 moont:type aix:Modelica.SIunits.TemperatureDifference.
+aix:AixLib.Airflow.AirCurtain.AirCurtainSimplified moont:hasPart aix:AixLib.Airflow.AirCurtain.AirCurtainSimplified.c.
+aix:AixLib.Airflow.AirCurtain.AirCurtainSimplified.c a moont:MParameterComponent;
+	 moont:type aix:Modelica.SIunits.SpecificHeatCapacity.
+aix:AixLib.Airflow.AirCurtain.AirCurtainSimplified moont:hasPart aix:AixLib.Airflow.AirCurtain.AirCurtainSimplified.PAirCur.
+aix:AixLib.Airflow.AirCurtain.AirCurtainSimplified.PAirCur a moont:MParameterComponent;
+	 moont:type aix:Modelica.SIunits.Power.
+aix:AixLib.Airflow.AirCurtain.AirCurtainSimplified moont:hasPart aix:AixLib.Airflow.AirCurtain.AirCurtainSimplified.V_flowAirCur.
+aix:AixLib.Airflow.AirCurtain.AirCurtainSimplified.V_flowAirCur a moont:MParameterComponent;
+	 moont:type aix:Modelica.SIunits.VolumeFlowRate.
+aix:AixLib.Airflow.AirCurtain.AirCurtainSimplified moont:hasPart aix:AixLib.Airflow.AirCurtain.AirCurtainSimplified.rho.
+aix:AixLib.Airflow.AirCurtain.AirCurtainSimplified.rho a moont:MParameterComponent;
+	 moont:type aix:Modelica.SIunits.Density.
+aix:AixLib.Airflow.AirCurtain.AirCurtainSimplified.TAmb moont:connectedTo aix:AixLib.Airflow.AirCurtain.AirCurtainSimplified.mixedTemperature.temperature_flow2.
+aix:AixLib.Airflow.AirCurtain.Examples.AirCurtain a moont:MModel;
+	 moont:containedIn aix:AixLib.Airflow.AirCurtain.Examples.
+aix:AixLib.Airflow.AirCurtain.Examples.AirCurtain moont:hasPart aix:AixLib.Airflow.AirCurtain.Examples.AirCurtain.airload.
+aix:AixLib.Airflow.AirCurtain.Examples.AirCurtain.airload a moont:MComponent ;
+	 a aix:ThermalZones.HighOrder.Components.DryAir.Airload.
+aix:AixLib.Airflow.AirCurtain.Examples.AirCurtain moont:hasPart aix:AixLib.Airflow.AirCurtain.Examples.AirCurtain.airCurtainSimplyfied.
+aix:AixLib.Airflow.AirCurtain.Examples.AirCurtain.airCurtainSimplyfied a moont:MComponent ;
+	 a aix:AirCurtainSimplified.
+aix:AixLib.Airflow.AirCurtain.Examples.AirCurtain moont:hasPart aix:AixLib.Airflow.AirCurtain.Examples.AirCurtain.weaBus.
+aix:AixLib.Airflow.AirCurtain.Examples.AirCurtain.weaBus a moont:MComponent ;
+	 a aix:BoundaryConditions.WeatherData.Bus.
+aix:AixLib.Airflow.AirCurtain.Examples.AirCurtain moont:hasPart aix:AixLib.Airflow.AirCurtain.Examples.AirCurtain.pulse.
+aix:AixLib.Airflow.AirCurtain.Examples.AirCurtain.pulse a moont:MComponent ;
+	 a msl:Modelica.Blocks.Sources.Pulse.
+aix:AixLib.Airflow.AirCurtain.Examples.AirCurtain moont:hasPart aix:AixLib.Airflow.AirCurtain.Examples.AirCurtain.weaDat.
+aix:AixLib.Airflow.AirCurtain.Examples.AirCurtain.weaDat a moont:MComponent ;
+	 a aix:BoundaryConditions.WeatherData.ReaderTMY3.
+aix:AixLib.Airflow.AirCurtain.Examples.AirCurtain.airCurtainSimplyfied.port_b moont:connectedTo aix:AixLib.Airflow.AirCurtain.Examples.AirCurtain.airload.port.
+aix:AixLib.Airflow.AirCurtain.Examples.AirCurtain.pulse.y moont:connectedTo aix:AixLib.Airflow.AirCurtain.Examples.AirCurtain.airCurtainSimplyfied.schedule.
+aix:AixLib.Airflow.AirCurtain.Examples.AirCurtain.weaDat.weaBus moont:connectedTo aix:AixLib.Airflow.AirCurtain.Examples.AirCurtain.weaBus.
+aix:AixLib.Airflow.AirCurtain.Examples.AirCurtain.weaBus.TDryBul moont:connectedTo aix:AixLib.Airflow.AirCurtain.Examples.AirCurtain.airCurtainSimplyfied.TAmb.
+aix:AixLib.Airflow.AirCurtain.Examples a moont:MPackage;
+	 moont:containedIn aix:AixLib.Airflow.AirCurtain.
+aix:AixLib.Airflow.AirCurtain a moont:MPackage;
+	 moont:containedIn aix:AixLib.Airflow.
+aix:AixLib.Airflow.AirHandlingUnit.AHU a moont:MModel;
+	 moont:containedIn aix:AixLib.Airflow.AirHandlingUnit.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:extends aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.stateToDeHuHRS_true.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.stateToDeHuHRS_true a moont:MComponent ;
+	 a aix:Boolean.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.phi_sup.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.phi_sup a moont:MComponent ;
+	 a aix:Real.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.stateExtra.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.stateExtra a moont:MComponent ;
+	 a aix:StateExtra.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.TsupplyAirOut.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.TsupplyAirOut a moont:MComponent ;
+	 a msl:Modelica.SIunits.Temp_K.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.T_sup.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.T_sup a moont:MComponent ;
+	 a msl:Modelica.SIunits.Temp_K.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.stateToDeHuHRS_false.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.stateToDeHuHRS_false a moont:MComponent ;
+	 a aix:Boolean.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.onlyHeatingHRS_false.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.onlyHeatingHRS_false a moont:MComponent ;
+	 a aix:OnlyHeatingHRS_false.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.X_odaRaw.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.X_odaRaw a moont:MComponent ;
+	 a msl:Modelica.SIunits.MassFraction.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.phi_t.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.phi_t a moont:MComponent ;
+	 a aix:Real.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.T_oda.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.T_oda a moont:MComponent ;
+	 a msl:Modelica.SIunits.Temp_K.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.c_pL_iG.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.c_pL_iG a moont:MComponent ;
+	 a msl:Modelica.SIunits.SpecificHeatCapacityAtConstantPressure.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.stateToHuPreHHRS_true.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.stateToHuPreHHRS_true a moont:MComponent ;
+	 a aix:Boolean.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.V_dot_eta.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.V_dot_eta a moont:MComponent ;
+	 a msl:Modelica.SIunits.VolumeFlowRate.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.stateToOnlyHeatingHRS_true.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.stateToOnlyHeatingHRS_true a moont:MComponent ;
+	 a aix:Boolean.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.periodicClock.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.periodicClock a moont:MComponent ;
+	 a msl:Modelica_Synchronous.ClockSignals.Clocks.PeriodicRealClock.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.rho.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.rho a moont:MComponent ;
+	 a msl:Modelica.SIunits.Density.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.P_el_sup.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.P_el_sup a moont:MComponent ;
+	 a msl:Modelica.SIunits.Power.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.TsupAirOut.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.TsupAirOut a moont:MComponent ;
+	 a msl:Modelica.Blocks.Sources.RealExpression.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.dTFan.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.dTFan a moont:MComponent ;
+	 a msl:Modelica.SIunits.TemperatureDifference.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.stateToOnlyHeatingHRS_false.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.stateToOnlyHeatingHRS_false a moont:MComponent ;
+	 a aix:Boolean.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.sample.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.sample a moont:MComponent ;
+	 a msl:Modelica_Synchronous.RealSignals.Sampler.SampleVectorizedAndClocked.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.dhV.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.dhV a moont:MComponent ;
+	 a msl:Modelica.SIunits.SpecificEnthalpy.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.deHuHRS_true.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.deHuHRS_true a moont:MComponent ;
+	 a aix:DeHuHRS_true.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.phi_t_withoutHRS.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.phi_t_withoutHRS a moont:MComponent ;
+	 a aix:Real.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.X_eta.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.X_eta a moont:MComponent ;
+	 a msl:Modelica.SIunits.MassFraction.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.p_0.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.p_0 a moont:MComponent ;
+	 a msl:Modelica.SIunits.Pressure.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.stateToHuPreHHRS_false.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.stateToHuPreHHRS_false a moont:MComponent ;
+	 a aix:Boolean.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.T_0.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.T_0 a moont:MComponent ;
+	 a msl:Modelica.SIunits.Temp_K.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.huCHRS_false.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.huCHRS_false a moont:MComponent ;
+	 a aix:HuCHRS_false.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.startState.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.startState a moont:MComponent ;
+	 a aix:StartState.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.hold_phi_sup.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.hold_phi_sup a moont:MComponent ;
+	 a msl:Modelica.Blocks.Sources.RealExpression.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.onlyHeatingHRS_true.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.onlyHeatingHRS_true a moont:MComponent ;
+	 a aix:OnlyHeatingHRS_true.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.tooHighX.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.tooHighX a moont:MComponent ;
+	 a aix:Boolean.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.allCond.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.allCond a moont:MComponent ;
+	 a aix:Boolean.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.Q_dot_H.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.Q_dot_H a moont:MComponent ;
+	 a msl:Modelica.SIunits.HeatFlowRate.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.huCHRS_true.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.huCHRS_true a moont:MComponent ;
+	 a aix:HuCHRS_true.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.X_odaSat.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.X_odaSat a moont:MComponent ;
+	 a msl:Modelica.SIunits.MassFraction.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.choiceX.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.choiceX a moont:MComponent ;
+	 a aix:Boolean.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.molarMassRatio.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.molarMassRatio a moont:MComponent ;
+	 a aix:Real.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.deHuHRS_false.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.deHuHRS_false a moont:MComponent ;
+	 a aix:DeHuHRS_false.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.tooLowX.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.tooLowX a moont:MComponent ;
+	 a aix:Boolean.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.X_supMin.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.X_supMin a moont:MComponent ;
+	 a msl:Modelica.SIunits.MassFraction.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.T_5.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.T_5 a moont:MComponent ;
+	 a msl:Modelica.SIunits.Temp_K.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.c_pW_iG.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.c_pW_iG a moont:MComponent ;
+	 a msl:Modelica.SIunits.SpecificHeatCapacityAtConstantPressure.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.stateToOnlyCoolingHRS_false.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.stateToOnlyCoolingHRS_false a moont:MComponent ;
+	 a aix:Boolean.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.T_eta.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.T_eta a moont:MComponent ;
+	 a msl:Modelica.SIunits.Temp_K.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.stateToOnlyCoolingHRS_true.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.stateToOnlyCoolingHRS_true a moont:MComponent ;
+	 a aix:Boolean.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.V_dot_sup.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.V_dot_sup a moont:MComponent ;
+	 a msl:Modelica.SIunits.VolumeFlowRate.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.r_0.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.r_0 a moont:MComponent ;
+	 a msl:Modelica.SIunits.SpecificEnthalpy.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.X_supplyMin.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.X_supplyMin a moont:MComponent ;
+	 a msl:Modelica.SIunits.MassFraction.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.Q_dot_C.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.Q_dot_C a moont:MComponent ;
+	 a msl:Modelica.SIunits.HeatFlowRate.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.X_extractAir.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.X_extractAir a moont:MComponent ;
+	 a msl:Modelica.SIunits.MassFraction.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.P_el_eta.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.P_el_eta a moont:MComponent ;
+	 a msl:Modelica.SIunits.Power.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.stateToHuCHRS_true.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.stateToHuCHRS_true a moont:MComponent ;
+	 a aix:Boolean.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.X_supplyMax.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.X_supplyMax a moont:MComponent ;
+	 a msl:Modelica.SIunits.MassFraction.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.phi_t_withHRS.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.phi_t_withHRS a moont:MComponent ;
+	 a aix:Real.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.huPreHHRS_true.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.huPreHHRS_true a moont:MComponent ;
+	 a aix:HuPreHHRS_true.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.huPreHHRS_false.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.huPreHHRS_false a moont:MComponent ;
+	 a aix:HuPreHHRS_false.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.T_1.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.T_1 a moont:MComponent ;
+	 a msl:Modelica.SIunits.Temp_K.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.onlyCoolingHRS_false.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.onlyCoolingHRS_false a moont:MComponent ;
+	 a aix:OnlyCoolingHRS_false.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.T_6.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.T_6 a moont:MComponent ;
+	 a msl:Modelica.SIunits.Temp_K.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.X_supMax.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.X_supMax a moont:MComponent ;
+	 a msl:Modelica.SIunits.MassFraction.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.onlyCoolingHRS_true.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.onlyCoolingHRS_true a moont:MComponent ;
+	 a aix:OnlyCoolingHRS_true.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.stateToHuCHRS_false.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.stateToHuCHRS_false a moont:MComponent ;
+	 a aix:Boolean.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.X_sup.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.X_sup a moont:MComponent ;
+	 a msl:Modelica.SIunits.MassFraction.
+aix:AixLib.Airflow.AirHandlingUnit.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.AHU.X_oda.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.X_oda a moont:MComponent ;
+	 a msl:Modelica.SIunits.MassFraction.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.periodicClock.y moont:connectedTo aix:AixLib.Airflow.AirHandlingUnit.AHU.sample.clock.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.T_outdoorAir moont:connectedTo aix:AixLib.Airflow.AirHandlingUnit.AHU.sample.u1.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.X_outdoorAir moont:connectedTo aix:AixLib.Airflow.AirHandlingUnit.AHU.sample.u2.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.T_supplyAir moont:connectedTo aix:AixLib.Airflow.AirHandlingUnit.AHU.sample.u3.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.T_extractAir moont:connectedTo aix:AixLib.Airflow.AirHandlingUnit.AHU.sample.u4.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.Vflow_in moont:connectedTo aix:AixLib.Airflow.AirHandlingUnit.AHU.sample.u8.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.Vflow_in_extractAir_internal moont:connectedTo aix:AixLib.Airflow.AirHandlingUnit.AHU.sample.u9.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.hold_phi_sup.y moont:connectedTo aix:AixLib.Airflow.AirHandlingUnit.AHU.phi_supply.
+aix:AixLib.Airflow.AirHandlingUnit.AHU.TsupAirOut.y moont:connectedTo aix:AixLib.Airflow.AirHandlingUnit.AHU.T_supplyAirOut.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses a moont:MPackage;
+	 moont:containedIn aix:AixLib.Airflow.AirHandlingUnit.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU a moont:MModel;
+	 moont:containedIn aix:AixLib.Airflow.AirHandlingUnit.BaseClasses;
+	 moont:isPartial moont:TRUE.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.Vflow_out.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.Vflow_out a moont:MComponent ;
+	 a msl:Modelica.Blocks.Interfaces.RealOutput.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.QflowH.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.QflowH a moont:MComponent ;
+	 a msl:Modelica.Blocks.Interfaces.RealOutput.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.humidification.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.humidification a moont:MComponent ;
+	 a aix:Boolean.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.dehumidification.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.dehumidification a moont:MComponent ;
+	 a aix:Boolean.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.T_outdoorAir.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.T_outdoorAir a moont:MComponent ;
+	 a msl:Modelica.Blocks.Interfaces.RealInput.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.QflowC.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.QflowC a moont:MComponent ;
+	 a msl:Modelica.Blocks.Interfaces.RealOutput.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.Vflow_in.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.Vflow_in a moont:MComponent ;
+	 a msl:Modelica.Blocks.Interfaces.RealInput.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.X_outdoorAir.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.X_outdoorAir a moont:MComponent ;
+	 a msl:Modelica.Blocks.Interfaces.RealInput.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.T_extractAir.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.T_extractAir a moont:MComponent ;
+	 a msl:Modelica.Blocks.Interfaces.RealInput.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.phi_supplyAir.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.phi_supplyAir a moont:MComponent ;
+	 a msl:Modelica.Blocks.Interfaces.RealInput.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.Vflow_in_extractAir_internal.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.Vflow_in_extractAir_internal a moont:MComponent ;
+	 a msl:Modelica.Blocks.Interfaces.RealInput.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.Vflow_in_extractAir.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.Vflow_in_extractAir a moont:MComponent ;
+	 a msl:Modelica.Blocks.Interfaces.RealInput.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.T_supplyAir.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.T_supplyAir a moont:MComponent ;
+	 a msl:Modelica.Blocks.Interfaces.RealInput.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.phi_supply.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.phi_supply a moont:MComponent ;
+	 a msl:Modelica.Blocks.Interfaces.RealOutput.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.T_supplyAirOut.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.T_supplyAirOut a moont:MComponent ;
+	 a msl:Modelica.Blocks.Interfaces.RealOutput.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.phi_extractAir.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.phi_extractAir a moont:MComponent ;
+	 a msl:Modelica.Blocks.Interfaces.RealInput.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.Pel.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.Pel a moont:MComponent ;
+	 a msl:Modelica.Blocks.Interfaces.RealOutput.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.dehumidificationSet.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.dehumidificationSet a moont:MParameterComponent;
+	 moont:type xsd:Boolean.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.eta_sup.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.eta_sup a moont:MParameterComponent;
+	 moont:type aix:Modelica.SIunits.Efficiency.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.BPF_DeHu.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.BPF_DeHu a moont:MParameterComponent;
+	 moont:type xsd:Real.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.heating.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.heating a moont:MParameterComponent;
+	 moont:type xsd:Boolean.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.use_Vflow_in_extractAir.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.use_Vflow_in_extractAir a moont:MParameterComponent;
+	 moont:type xsd:Boolean.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.efficiencyHRS_enabled.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.efficiencyHRS_enabled a moont:MParameterComponent;
+	 moont:type xsd:Real.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.efficiencyHRS_disabled.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.efficiencyHRS_disabled a moont:MParameterComponent;
+	 moont:type xsd:Real.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.clockPeriodGeneric.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.clockPeriodGeneric a moont:MParameterComponent;
+	 moont:type xsd:Real.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.HRS.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.HRS a moont:MParameterComponent;
+	 moont:type xsd:Boolean.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.dp_sup.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.dp_sup a moont:MParameterComponent;
+	 moont:type aix:Modelica.SIunits.Pressure.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.cooling.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.cooling a moont:MParameterComponent;
+	 moont:type xsd:Boolean.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.humidificationSet.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.humidificationSet a moont:MParameterComponent;
+	 moont:type xsd:Boolean.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.dp_eta.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.dp_eta a moont:MParameterComponent;
+	 moont:type aix:Modelica.SIunits.Pressure.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.eta_eta.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.eta_eta a moont:MParameterComponent;
+	 moont:type aix:Modelica.SIunits.Efficiency.
+aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.Vflow_in_extractAir moont:connectedTo aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.Vflow_in_extractAir_internal.
+aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU a moont:MModel;
+	 moont:containedIn aix:AixLib.Airflow.AirHandlingUnit.Examples.
+aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU.PEl.
+aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU.PEl a moont:MComponent ;
+	 a msl:Modelica.Blocks.Interfaces.RealOutput.
+aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU.ahu.
+aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU.ahu a moont:MComponent ;
+	 a aix:AixLib.Airflow.AirHandlingUnit.AHU.
+aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU.Vflow_in.
+aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU.Vflow_in a moont:MComponent ;
+	 a msl:Modelica.Blocks.Sources.Constant.
+aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU.addToExtractTemp.
+aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU.addToExtractTemp a moont:MComponent ;
+	 a msl:Modelica.Blocks.Math.Add.
+aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU.QFlowCool.
+aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU.QFlowCool a moont:MComponent ;
+	 a msl:Modelica.Blocks.Interfaces.RealOutput.
+aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU.desiredT_sup.
+aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU.desiredT_sup a moont:MComponent ;
+	 a msl:Modelica.Blocks.Sources.Constant.
+aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU.phi_roomMin.
+aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU.phi_roomMin a moont:MComponent ;
+	 a msl:Modelica.Blocks.Sources.Constant.
+aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU.phi_roomMax.
+aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU.phi_roomMax a moont:MComponent ;
+	 a msl:Modelica.Blocks.Sources.Constant.
+aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU.QFlowHeat.
+aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU.QFlowHeat a moont:MComponent ;
+	 a msl:Modelica.Blocks.Interfaces.RealOutput.
+aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU.waterLoadOutside.
+aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU.waterLoadOutside a moont:MComponent ;
+	 a msl:Modelica.Blocks.Sources.Sine.
+aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU.tempOutside.
+aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU.tempOutside a moont:MComponent ;
+	 a msl:Modelica.Blocks.Sources.Sine.
+aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU.phi_RoomExtractAir.
+aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU.phi_RoomExtractAir a moont:MComponent ;
+	 a msl:Modelica.Blocks.Sources.Constant.
+aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU.tempAddInRoom.
+aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU.tempAddInRoom a moont:MComponent ;
+	 a msl:Modelica.Blocks.Sources.Sine.
+aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU.desiredT_sup.y moont:connectedTo aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU.ahu.T_supplyAir.
+aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU.tempOutside.y moont:connectedTo aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU.ahu.T_outdoorAir.
+aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU.Vflow_in.y moont:connectedTo aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU.ahu.Vflow_in.
+aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU.phi_roomMin.y moont:connectedTo aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU.ahu.phi_supplyAir1.
+aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU.waterLoadOutside.y moont:connectedTo aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU.ahu.X_outdoorAir.
+aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU.phi_RoomExtractAir.y moont:connectedTo aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU.ahu.phi_extractAir.
+aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU.phi_roomMax.y moont:connectedTo aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU.ahu.phi_supplyAir2.
+aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU.ahu.T_extractAir moont:connectedTo aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU.addToExtractTemp.y.
+aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU.tempAddInRoom.y moont:connectedTo aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU.addToExtractTemp.u1.
+aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU.desiredT_sup.y moont:connectedTo aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU.addToExtractTemp.u2.
+aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU.ahu.QflowC moont:connectedTo aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU.QFlowCool.
+aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU.ahu.QflowH moont:connectedTo aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU.QFlowHeat.
+aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU.ahu.Pel moont:connectedTo aix:AixLib.Airflow.AirHandlingUnit.Examples.AHU.PEl.
+aix:AixLib.Airflow.AirHandlingUnit.Examples a moont:MPackage;
+	 moont:containedIn aix:AixLib.Airflow.AirHandlingUnit.
+aix:AixLib.Airflow.AirHandlingUnit.NoAHU a moont:MModel;
+	 moont:containedIn aix:AixLib.Airflow.AirHandlingUnit.
+aix:AixLib.Airflow.AirHandlingUnit.NoAHU moont:extends aix:AixLib.Airflow.AirHandlingUnit.BaseClasses.PartialAHU.
+aix:AixLib.Airflow.AirHandlingUnit.NoAHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.NoAHU.dummyPhi_supply.
+aix:AixLib.Airflow.AirHandlingUnit.NoAHU.dummyPhi_supply a moont:MComponent ;
+	 a msl:Modelica.Blocks.Sources.Constant.
+aix:AixLib.Airflow.AirHandlingUnit.NoAHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.NoAHU.dummyT_supplyAirOut.
+aix:AixLib.Airflow.AirHandlingUnit.NoAHU.dummyT_supplyAirOut a moont:MComponent ;
+	 a msl:Modelica.Blocks.Sources.Constant.
+aix:AixLib.Airflow.AirHandlingUnit.NoAHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.NoAHU.zeroVFlowOut.
+aix:AixLib.Airflow.AirHandlingUnit.NoAHU.zeroVFlowOut a moont:MComponent ;
+	 a msl:Modelica.Blocks.Sources.Constant.
+aix:AixLib.Airflow.AirHandlingUnit.NoAHU moont:hasPart aix:AixLib.Airflow.AirHandlingUnit.NoAHU.zeroPowerElAndHeat1.
+aix:AixLib.Airflow.AirHandlingUnit.NoAHU.zeroPowerElAndHeat1 a moont:MComponent ;
+	 a msl:Modelica.Blocks.Sources.CombiTimeTable.
+aix:AixLib.Airflow.AirHandlingUnit.NoAHU.dummyPhi_supply.y moont:connectedTo aix:AixLib.Airflow.AirHandlingUnit.NoAHU.phi_supply.
+aix:AixLib.Airflow.AirHandlingUnit.NoAHU.zeroVFlowOut.y moont:connectedTo aix:AixLib.Airflow.AirHandlingUnit.NoAHU.Vflow_out.
+aix:AixLib.Airflow.AirHandlingUnit.NoAHU.dummyT_supplyAirOut.y moont:connectedTo aix:AixLib.Airflow.AirHandlingUnit.NoAHU.T_supplyAirOut.
+aix:AixLib.Airflow.AirHandlingUnit.NoAHU.zeroPowerElAndHeat1.y1 moont:connectedTo aix:AixLib.Airflow.AirHandlingUnit.NoAHU.QflowC.
+aix:AixLib.Airflow.AirHandlingUnit.NoAHU.zeroPowerElAndHeat1.y1 moont:connectedTo aix:AixLib.Airflow.AirHandlingUnit.NoAHU.QflowH.
+aix:AixLib.Airflow.AirHandlingUnit.NoAHU.zeroPowerElAndHeat1.y1 moont:connectedTo aix:AixLib.Airflow.AirHandlingUnit.NoAHU.Pel.
+aix:AixLib.Airflow.AirHandlingUnit a moont:MPackage;
+	 moont:containedIn aix:AixLib.Airflow.
+aix:AixLib.Airflow.FacadeVentilationUnit.BaseClasses a moont:MPackage;
+	 moont:containedIn aix:AixLib.Airflow.FacadeVentilationUnit.
+aix:AixLib.Airflow.FacadeVentilationUnit.BaseClasses.SetPower a moont:MModel;
+	 moont:containedIn aix:AixLib.Airflow.FacadeVentilationUnit.BaseClasses.
+aix:AixLib.Airflow.FacadeVentilationUnit.BaseClasses.SetPower moont:extends aix:Modelica.Fluid.Interfaces.PartialTwoPort.
+aix:AixLib.Airflow.FacadeVentilationUnit.BaseClasses.SetPower moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.BaseClasses.SetPower.volumeFlow.
+aix:AixLib.Airflow.FacadeVentilationUnit.BaseClasses.SetPower.volumeFlow a moont:MComponent ;
+	 a msl:Modelica.Blocks.Tables.CombiTable1D.
+aix:AixLib.Airflow.FacadeVentilationUnit.BaseClasses.SetPower moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.BaseClasses.SetPower.powerShare.
+aix:AixLib.Airflow.FacadeVentilationUnit.BaseClasses.SetPower.powerShare a moont:MComponent ;
+	 a msl:Modelica.Blocks.Interfaces.RealInput.
+aix:AixLib.Airflow.FacadeVentilationUnit.BaseClasses.SetPower moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.BaseClasses.SetPower.fan.
+aix:AixLib.Airflow.FacadeVentilationUnit.BaseClasses.SetPower.fan a moont:MComponent ;
+	 a aix:AixLib.Fluid.Movers.FlowControlled_m_flow.
+aix:AixLib.Airflow.FacadeVentilationUnit.BaseClasses.SetPower moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.BaseClasses.SetPower.transforMassFlow.
+aix:AixLib.Airflow.FacadeVentilationUnit.BaseClasses.SetPower.transforMassFlow a moont:MComponent ;
+	 a msl:Modelica.Blocks.Math.Gain.
+aix:AixLib.Airflow.FacadeVentilationUnit.BaseClasses.SetPower moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.BaseClasses.SetPower.dp_nominal.
+aix:AixLib.Airflow.FacadeVentilationUnit.BaseClasses.SetPower.dp_nominal a moont:MParameterComponent;
+	 moont:type aix:Modelica.SIunits.PressureDifference.
+aix:AixLib.Airflow.FacadeVentilationUnit.BaseClasses.SetPower moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.BaseClasses.SetPower.m_flow_nominal.
+aix:AixLib.Airflow.FacadeVentilationUnit.BaseClasses.SetPower.m_flow_nominal a moont:MParameterComponent;
+	 moont:type aix:Modelica.SIunits.MassFlowRate.
+aix:AixLib.Airflow.FacadeVentilationUnit.BaseClasses.SetPower moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.BaseClasses.SetPower.noUnits.
+aix:AixLib.Airflow.FacadeVentilationUnit.BaseClasses.SetPower.noUnits a moont:MParameterComponent;
+	 moont:type xsd:Integer.
+aix:AixLib.Airflow.FacadeVentilationUnit.BaseClasses.SetPower moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.BaseClasses.SetPower.p_start.
+aix:AixLib.Airflow.FacadeVentilationUnit.BaseClasses.SetPower.p_start a moont:MParameterComponent;
+	 moont:type aix:Medium.AbsolutePressure.
+aix:AixLib.Airflow.FacadeVentilationUnit.BaseClasses.SetPower moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.BaseClasses.SetPower.T_start.
+aix:AixLib.Airflow.FacadeVentilationUnit.BaseClasses.SetPower.T_start a moont:MParameterComponent;
+	 moont:type aix:Medium.Temperature.
+aix:AixLib.Airflow.FacadeVentilationUnit.BaseClasses.SetPower.port_a moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.BaseClasses.SetPower.fan.port_a.
+aix:AixLib.Airflow.FacadeVentilationUnit.BaseClasses.SetPower.fan.port_b moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.BaseClasses.SetPower.port_b.
+aix:AixLib.Airflow.FacadeVentilationUnit.BaseClasses.SetPower.powerShare moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.BaseClasses.SetPower.volumeFlow.u1.
+aix:AixLib.Airflow.FacadeVentilationUnit.BaseClasses.SetPower.transforMassFlow.u moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.BaseClasses.SetPower.volumeFlow.y1.
+aix:AixLib.Airflow.FacadeVentilationUnit.BaseClasses.SetPower.transforMassFlow.y moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.BaseClasses.SetPower.fan.m_flow_in.
+aix:AixLib.Airflow.FacadeVentilationUnit.DataBase.FVUBaseRecord a moont:MRecord;
+	 moont:containedIn aix:AixLib.Airflow.FacadeVentilationUnit.DataBase.
+aix:AixLib.Airflow.FacadeVentilationUnit.DataBase.FVUBaseRecord moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.DataBase.FVUBaseRecord.dp1_nominal_cooler.
+aix:AixLib.Airflow.FacadeVentilationUnit.DataBase.FVUBaseRecord.dp1_nominal_cooler a moont:MParameterComponent;
+	 moont:type aix:Modelica.SIunits.Pressure.
+aix:AixLib.Airflow.FacadeVentilationUnit.DataBase.FVUBaseRecord moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.DataBase.FVUBaseRecord.p_default.
+aix:AixLib.Airflow.FacadeVentilationUnit.DataBase.FVUBaseRecord.p_default a moont:MParameterComponent;
+	 moont:type aix:Modelica.SIunits.Pressure.
+aix:AixLib.Airflow.FacadeVentilationUnit.DataBase.FVUBaseRecord moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.DataBase.FVUBaseRecord.damperRiseTimeLong.
+aix:AixLib.Airflow.FacadeVentilationUnit.DataBase.FVUBaseRecord.damperRiseTimeLong a moont:MParameterComponent;
+	 moont:type aix:Modelica.SIunits.Time.
+aix:AixLib.Airflow.FacadeVentilationUnit.DataBase.FVUBaseRecord moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.DataBase.FVUBaseRecord.damperRiseTimeShort.
+aix:AixLib.Airflow.FacadeVentilationUnit.DataBase.FVUBaseRecord.damperRiseTimeShort a moont:MParameterComponent;
+	 moont:type aix:Modelica.SIunits.Time.
+aix:AixLib.Airflow.FacadeVentilationUnit.DataBase.FVUBaseRecord moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.DataBase.FVUBaseRecord.UA_heater.
+aix:AixLib.Airflow.FacadeVentilationUnit.DataBase.FVUBaseRecord.UA_heater a moont:MParameterComponent;
+	 moont:type aix:Modelica.SIunits.ThermalConductance.
+aix:AixLib.Airflow.FacadeVentilationUnit.DataBase.FVUBaseRecord moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.DataBase.FVUBaseRecord.m2_flow_nominal_heater.
+aix:AixLib.Airflow.FacadeVentilationUnit.DataBase.FVUBaseRecord.m2_flow_nominal_heater a moont:MParameterComponent;
+	 moont:type aix:Modelica.SIunits.MassFlowRate.
+aix:AixLib.Airflow.FacadeVentilationUnit.DataBase.FVUBaseRecord moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.DataBase.FVUBaseRecord.dp_nominal_damper.
+aix:AixLib.Airflow.FacadeVentilationUnit.DataBase.FVUBaseRecord.dp_nominal_damper a moont:MParameterComponent;
+	 moont:type aix:Modelica.SIunits.Pressure.
+aix:AixLib.Airflow.FacadeVentilationUnit.DataBase.FVUBaseRecord moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.DataBase.FVUBaseRecord.m2_flow_nominal_cooler.
+aix:AixLib.Airflow.FacadeVentilationUnit.DataBase.FVUBaseRecord.m2_flow_nominal_cooler a moont:MParameterComponent;
+	 moont:type aix:Modelica.SIunits.MassFlowRate.
+aix:AixLib.Airflow.FacadeVentilationUnit.DataBase.FVUBaseRecord moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.DataBase.FVUBaseRecord.m_flow_nominal_damper.
+aix:AixLib.Airflow.FacadeVentilationUnit.DataBase.FVUBaseRecord.m_flow_nominal_damper a moont:MParameterComponent;
+	 moont:type aix:Modelica.SIunits.MassFlowRate.
+aix:AixLib.Airflow.FacadeVentilationUnit.DataBase.FVUBaseRecord moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.DataBase.FVUBaseRecord.dp1_nominal_heater.
+aix:AixLib.Airflow.FacadeVentilationUnit.DataBase.FVUBaseRecord.dp1_nominal_heater a moont:MParameterComponent;
+	 moont:type aix:Modelica.SIunits.Pressure.
+aix:AixLib.Airflow.FacadeVentilationUnit.DataBase.FVUBaseRecord moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.DataBase.FVUBaseRecord.dp2_nominal_heater.
+aix:AixLib.Airflow.FacadeVentilationUnit.DataBase.FVUBaseRecord.dp2_nominal_heater a moont:MParameterComponent;
+	 moont:type aix:Modelica.SIunits.Pressure.
+aix:AixLib.Airflow.FacadeVentilationUnit.DataBase.FVUBaseRecord moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.DataBase.FVUBaseRecord.UA_cooler.
+aix:AixLib.Airflow.FacadeVentilationUnit.DataBase.FVUBaseRecord.UA_cooler a moont:MParameterComponent;
+	 moont:type aix:Modelica.SIunits.ThermalConductance.
+aix:AixLib.Airflow.FacadeVentilationUnit.DataBase.FVUBaseRecord moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.DataBase.FVUBaseRecord.m1_flow_nominal_heater.
+aix:AixLib.Airflow.FacadeVentilationUnit.DataBase.FVUBaseRecord.m1_flow_nominal_heater a moont:MParameterComponent;
+	 moont:type aix:Modelica.SIunits.MassFlowRate.
+aix:AixLib.Airflow.FacadeVentilationUnit.DataBase.FVUBaseRecord moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.DataBase.FVUBaseRecord.m1_flow_nominal_cooler.
+aix:AixLib.Airflow.FacadeVentilationUnit.DataBase.FVUBaseRecord.m1_flow_nominal_cooler a moont:MParameterComponent;
+	 moont:type aix:Modelica.SIunits.MassFlowRate.
+aix:AixLib.Airflow.FacadeVentilationUnit.DataBase.FVUBaseRecord moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.DataBase.FVUBaseRecord.noUnits.
+aix:AixLib.Airflow.FacadeVentilationUnit.DataBase.FVUBaseRecord.noUnits a moont:MParameterComponent;
+	 moont:type xsd:Integer.
+aix:AixLib.Airflow.FacadeVentilationUnit.DataBase.FVUBaseRecord moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.DataBase.FVUBaseRecord.dp2_nominal_cooler.
+aix:AixLib.Airflow.FacadeVentilationUnit.DataBase.FVUBaseRecord.dp2_nominal_cooler a moont:MParameterComponent;
+	 moont:type aix:Modelica.SIunits.Pressure.
+aix:AixLib.Airflow.FacadeVentilationUnit.DataBase a moont:MPackage;
+	 moont:containedIn aix:AixLib.Airflow.FacadeVentilationUnit.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit a moont:MModel;
+	 moont:containedIn aix:AixLib.Airflow.FacadeVentilationUnit.Examples.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.exhaustAirSink.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.exhaustAirSink a moont:MComponent ;
+	 a aix:AixLib.Fluid.Sources.Boundary_pT.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.FVU.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.FVU a moont:MComponent ;
+	 a aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.freshAirSource.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.freshAirSource a moont:MComponent ;
+	 a aix:AixLib.Fluid.Sources.Boundary_pT.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.FVUController.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.FVUController a moont:MComponent ;
+	 a aix:AixLib.Controls.AirHandling.FVUController.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.coolingWaterTemperature.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.coolingWaterTemperature a moont:MComponent ;
+	 a msl:Modelica.Blocks.Sources.Constant.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.heatingSnk.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.heatingSnk a moont:MComponent ;
+	 a aix:AixLib.Fluid.Sources.Boundary_pT.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.outdoorTemperature.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.outdoorTemperature a moont:MComponent ;
+	 a msl:Modelica.Blocks.Sources.Sine.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.extractAirSource.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.extractAirSource a moont:MComponent ;
+	 a aix:AixLib.Fluid.Sources.Boundary_pT.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.roomSetTemperature.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.roomSetTemperature a moont:MComponent ;
+	 a msl:Modelica.Blocks.Sources.Sine.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.coolingSource.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.coolingSource a moont:MComponent ;
+	 a aix:AixLib.Fluid.Sources.Boundary_pT.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.supplyAirSink.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.supplyAirSink a moont:MComponent ;
+	 a aix:AixLib.Fluid.Sources.Boundary_pT.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.heatingWaterTemperature.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.heatingWaterTemperature a moont:MComponent ;
+	 a msl:Modelica.Blocks.Sources.Constant.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.supplyAirTemperature.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.supplyAirTemperature a moont:MComponent ;
+	 a aix:AixLib.Fluid.Sensors.TemperatureTwoPort.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.roomTemperature.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.roomTemperature a moont:MComponent ;
+	 a msl:Modelica.Blocks.Sources.Sine.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.co2Concentration.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.co2Concentration a moont:MComponent ;
+	 a msl:Modelica.Blocks.Sources.Constant.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.fVUControlBus.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.fVUControlBus a moont:MComponent ;
+	 a aix:AixLib.Controls.Interfaces.FVUControlBus.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.heatingSource.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.heatingSource a moont:MComponent ;
+	 a aix:AixLib.Fluid.Sources.Boundary_pT.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.coolingSink.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.coolingSink a moont:MComponent ;
+	 a aix:AixLib.Fluid.Sources.Boundary_pT.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.FVU.extractAirConnector moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.extractAirSource.ports1.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.heatingSnk.ports1 moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.FVU.heaterReturnConnector.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.coolingSource.ports1 moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.FVU.coolerFlowConnector.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.heatingWaterTemperature.y moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.heatingSource.T_in.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.coolingWaterTemperature.y moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.coolingSource.T_in.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.FVU.coolerReturnConnector moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.coolingSink.ports1.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.heatingSource.ports1 moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.FVU.heaterFlowConnector.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.exhaustAirSink.ports1 moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.FVU.exhaustAirConnector.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.freshAirSource.ports1 moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.FVU.freshAirConnector.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.FVU.supplyAirConnector moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.supplyAirTemperature.port_a.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.supplyAirTemperature.port_b moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.supplyAirSink.ports1.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.FVU.fVUControlBus moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.FVUController.fVUControlBus.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.FVUController.fVUControlBus moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.fVUControlBus.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.roomTemperature.y moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.extractAirSource.T_in.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.outdoorTemperature.y moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.freshAirSource.T_in.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.roomTemperature.y moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.fVUControlBus.roomTemperature.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.outdoorTemperature.y moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.fVUControlBus.outdoorTemperature.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.roomSetTemperature.y moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.fVUControlBus.roomSetTemperature.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.co2Concentration.y moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.Examples.FacadeVentilationUnit.fVUControlBus.co2Concentration.
+aix:AixLib.Airflow.FacadeVentilationUnit.Examples a moont:MPackage;
+	 moont:containedIn aix:AixLib.Airflow.FacadeVentilationUnit.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit a moont:MModel;
+	 moont:containedIn aix:AixLib.Airflow.FacadeVentilationUnit.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.fVUControlBus.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.fVUControlBus a moont:MComponent ;
+	 a aix:AixLib.Controls.Interfaces.FVUControlBus.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.heaterFlowConnector.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.heaterFlowConnector a moont:MComponent ;
+	 a msl:Modelica.Fluid.Interfaces.FluidPort_a.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.heater.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.heater a moont:MComponent ;
+	 a aix:AixLib.Fluid.HeatExchangers.ConstantEffectiveness.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.heaterTemperature.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.heaterTemperature a moont:MComponent ;
+	 a msl:Modelica.Fluid.Sensors.Temperature.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.coolerTemperature.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.coolerTemperature a moont:MComponent ;
+	 a msl:Modelica.Fluid.Sensors.Temperature.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.one.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.one a moont:MComponent ;
+	 a msl:Modelica.Blocks.Sources.Constant.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.system.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.system a moont:MComponent ;
+	 a msl:Modelica.Fluid.System.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.cooler.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.cooler a moont:MComponent ;
+	 a aix:AixLib.Fluid.HeatExchangers.ConstantEffectiveness.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.damperBypass.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.damperBypass a moont:MComponent ;
+	 a aix:AixLib.Fluid.Actuators.Valves.TwoWayQuickOpening.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.damperFreshAir.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.damperFreshAir a moont:MComponent ;
+	 a aix:AixLib.Fluid.Actuators.Valves.TwoWayQuickOpening.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.fanSupplyAir.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.fanSupplyAir a moont:MComponent ;
+	 a aix:AixLib.Airflow.FacadeVentilationUnit.BaseClasses.SetPower.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.coolingValve.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.coolingValve a moont:MComponent ;
+	 a aix:AixLib.Fluid.Actuators.Valves.TwoWayQuickOpening.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.supplyAirConnector.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.supplyAirConnector a moont:MComponent ;
+	 a msl:Modelica.Fluid.Interfaces.FluidPort_b.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.exhaustAirConnector.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.exhaustAirConnector a moont:MComponent ;
+	 a msl:Modelica.Fluid.Interfaces.FluidPort_b.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.coolerReturnConnector.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.coolerReturnConnector a moont:MComponent ;
+	 a msl:Modelica.Fluid.Interfaces.FluidPort_b.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.coolerFlowConnector.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.coolerFlowConnector a moont:MComponent ;
+	 a msl:Modelica.Fluid.Interfaces.FluidPort_a.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.freshAirConnector.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.freshAirConnector a moont:MComponent ;
+	 a msl:Modelica.Fluid.Interfaces.FluidPort_a.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.damperHeatRecovery.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.damperHeatRecovery a moont:MComponent ;
+	 a aix:AixLib.Fluid.Actuators.Valves.TwoWayQuickOpening.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.recuperator.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.recuperator a moont:MComponent ;
+	 a aix:AixLib.Fluid.HeatExchangers.ConstantEffectiveness.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.exhaustAirTemperature.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.exhaustAirTemperature a moont:MComponent ;
+	 a msl:Modelica.Fluid.Sensors.Temperature.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.mixAirTemperature.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.mixAirTemperature a moont:MComponent ;
+	 a msl:Modelica.Fluid.Sensors.Temperature.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.fanExhaustAir.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.fanExhaustAir a moont:MComponent ;
+	 a aix:AixLib.Airflow.FacadeVentilationUnit.BaseClasses.SetPower.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.extractAirConnector.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.extractAirConnector a moont:MComponent ;
+	 a msl:Modelica.Fluid.Interfaces.FluidPort_a.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.volume.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.volume a moont:MComponent ;
+	 a msl:Modelica.Fluid.Vessels.ClosedVolume.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.extractAirTemperature.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.extractAirTemperature a moont:MComponent ;
+	 a msl:Modelica.Fluid.Sensors.Temperature.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.heatingValve.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.heatingValve a moont:MComponent ;
+	 a aix:AixLib.Fluid.Actuators.Valves.TwoWayQuickOpening.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.heaterReturnConnector.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.heaterReturnConnector a moont:MComponent ;
+	 a msl:Modelica.Fluid.Interfaces.FluidPort_b.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.oppositeOpening.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.oppositeOpening a moont:MComponent ;
+	 a msl:Modelica.Blocks.Math.Add.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.heatRecoveryTemperature.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.heatRecoveryTemperature a moont:MComponent ;
+	 a msl:Modelica.Fluid.Sensors.Temperature.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.freshAirTemperature.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.freshAirTemperature a moont:MComponent ;
+	 a msl:Modelica.Fluid.Sensors.Temperature.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.damperCirculationAir.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.damperCirculationAir a moont:MComponent ;
+	 a aix:AixLib.Fluid.Actuators.Valves.TwoWayQuickOpening.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.fVUParam.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.fVUParam a moont:MParameterComponent;
+	 moont:type aix:AixLib.Airflow.FacadeVentilationUnit.DataBase.FVUBaseRecord.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit moont:hasPart aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.T_start.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.T_start a moont:MParameterComponent;
+	 moont:type aix:Modelica.SIunits.ThermodynamicTemperature.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.cooler.port_b2 moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.supplyAirConnector.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.extractAirTemperature.port moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.extractAirConnector.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.freshAirTemperature.port moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.freshAirConnector.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.exhaustAirTemperature.port moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.fanExhaustAir.port_b.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.cooler.port_b2 moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.coolerTemperature.port.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.oppositeOpening.u2 moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.one.y.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.mixAirTemperature.port moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.fanSupplyAir.port_a.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.freshAirConnector moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.freshAirConnector.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.oppositeOpening.y moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.damperBypass.y.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.extractAirConnector moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.extractAirConnector.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.heaterTemperature.port moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.heater.port_b2.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.damperFreshAir.port_b moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.damperHeatRecovery.port_a.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.freshAirConnector moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.damperFreshAir.port_a.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.damperFreshAir.port_b moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.damperBypass.port_a.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.fanSupplyAir.port_b moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.heater.port_a2.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.extractAirConnector moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.recuperator.port_a2.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.recuperator.port_b2 moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.fanExhaustAir.port_a.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.recuperator.port_b1 moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.volume.ports1.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.damperBypass.port_b moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.volume.ports2.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.damperCirculationAir.port_b moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.volume.ports3.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.fanSupplyAir.port_a moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.volume.ports4.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.heatRecoveryTemperature.port moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.recuperator.port_b1.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.heater.port_b2 moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.cooler.port_a2.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.heater.port_a1 moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.heatingValve.port_a.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.heatingValve.port_b moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.heaterFlowConnector.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.coolerReturnConnector moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.cooler.port_b1.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.cooler.port_a1 moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.coolingValve.port_a.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.coolingValve.port_b moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.coolerFlowConnector.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.heaterReturnConnector moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.heater.port_b1.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.extractAirConnector moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.damperCirculationAir.port_a.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.damperCirculationAir.y moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.fVUControlBus.circulationDamperOpening.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.fanSupplyAir.powerShare moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.fVUControlBus.fanSupplyAirPower.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.fanExhaustAir.powerShare moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.fVUControlBus.fanExhaustAirPower.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.damperFreshAir.y moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.fVUControlBus.freshAirDamperOpening.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.damperHeatRecovery.y moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.fVUControlBus.hRCDamperOpening.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.oppositeOpening.u1 moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.fVUControlBus.hRCDamperOpening.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.heatingValve.y moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.fVUControlBus.heatingValveOpening.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.coolingValve.y moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.fVUControlBus.coolingValveOpening.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.damperHeatRecovery.port_b moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.recuperator.port_a1.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.fanExhaustAir.port_b moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.exhaustAirConnector.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.coolerTemperature.T moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.fVUControlBus.supplyTemperature.
+aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.mixAirTemperature.T moont:connectedTo aix:AixLib.Airflow.FacadeVentilationUnit.FacadeVentilationUnit.fVUControlBus.mixTemperature.
+aix:AixLib.Airflow.FacadeVentilationUnit a moont:MPackage;
+	 moont:containedIn aix:AixLib.Airflow.
+aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized a moont:MModel;
+	 moont:containedIn aix:AixLib.Airflow.Multizone.BaseClasses;
+	 moont:isPartial moont:TRUE.
+aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized moont:extends aix:AixLib.Airflow.Multizone.BaseClasses.TwoWayFlowElementBuoyancy.
+aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized.dVAB_flow.
+aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized.dVAB_flow a moont:MComponent ;
+	 a msl:Modelica.SIunits.VolumeFlowRate.
+aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized.vTop.
+aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized.vTop a moont:MComponent ;
+	 a msl:Modelica.SIunits.Velocity.
+aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized.dpAB.
+aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized.dpAB a moont:MComponent ;
+	 a msl:Modelica.SIunits.PressureDifference.
+aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized.VZerCom_flow.
+aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized.VZerCom_flow a moont:MComponent ;
+	 a msl:Modelica.SIunits.VolumeFlowRate.
+aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized.dV_flow.
+aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized.dV_flow a moont:MComponent ;
+	 a msl:Modelica.SIunits.VolumeFlowRate.
+aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized.dA.
+aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized.dA a moont:MComponent ;
+	 a msl:Modelica.SIunits.Area.
+aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized.dVBA_flow.
+aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized.dVBA_flow a moont:MComponent ;
+	 a msl:Modelica.SIunits.VolumeFlowRate.
+aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized.gaiFlo.
+aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized.gaiFlo a moont:MComponent ;
+	 a aix:Real.
+aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized.vBot.
+aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized.vBot a moont:MComponent ;
+	 a msl:Modelica.SIunits.Velocity.
+aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized.m.
+aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized.m a moont:MComponent ;
+	 a aix:Real.
+aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized.kVal.
+aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized.kVal a moont:MComponent ;
+	 a aix:Real.
+aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized.pA.
+aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized.pA a moont:MComponent ;
+	 a msl:Modelica.SIunits.AbsolutePressure.
+aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized.pB.
+aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized.pB a moont:MComponent ;
+	 a msl:Modelica.SIunits.AbsolutePressure.
+aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized.v.
+aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized.v a moont:MComponent ;
+	 a msl:Modelica.SIunits.Velocity.
+aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized.nCom.
+aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized.nCom a moont:MParameterComponent;
+	 moont:type xsd:Integer.
+aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized.dh.
+aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized.dh a moont:MParameterComponent;
+	 moont:type aix:Modelica.SIunits.Length.
+aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized.rho_default.
+aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized.rho_default a moont:MParameterComponent;
+	 moont:type aix:Modelica.SIunits.Density.
+aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized.dp_turbulent.
+aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized.dp_turbulent a moont:MParameterComponent;
+	 moont:type aix:Modelica.SIunits.PressureDifference.
+aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized.sta_default.
+aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized.sta_default a moont:MParameterComponent;
+	 moont:type aix:Medium.ThermodynamicState.
+aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized.hBg.
+aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized.hBg a moont:MParameterComponent;
+	 moont:type xsd:Real.
+aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized.hAg.
+aix:AixLib.Airflow.Multizone.BaseClasses.DoorDiscretized.hAg a moont:MParameterComponent;
+	 moont:type xsd:Real.
+aix:AixLib.Airflow.Multizone.BaseClasses.ErrorControl a moont:MModel;
+	 moont:containedIn aix:AixLib.Airflow.Multizone.BaseClasses.
+aix:AixLib.Airflow.Multizone.BaseClasses.ErrorControl moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.ErrorControl.forceErrorControlOnFlow.
+aix:AixLib.Airflow.Multizone.BaseClasses.ErrorControl.forceErrorControlOnFlow a moont:MParameterComponent;
+	 moont:type xsd:Boolean.
+aix:AixLib.Airflow.Multizone.BaseClasses.Examples a moont:MPackage;
+	 moont:containedIn aix:AixLib.Airflow.Multizone.BaseClasses.
+aix:AixLib.Airflow.Multizone.BaseClasses.Examples.PowerLaw a moont:MModel;
+	 moont:containedIn aix:AixLib.Airflow.Multizone.BaseClasses.Examples.
+aix:AixLib.Airflow.Multizone.BaseClasses.Examples.PowerLaw moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.Examples.PowerLaw.V_flow.
+aix:AixLib.Airflow.Multizone.BaseClasses.Examples.PowerLaw.V_flow a moont:MComponent ;
+	 a msl:Modelica.SIunits.VolumeFlowRate.
+aix:AixLib.Airflow.Multizone.BaseClasses.Examples.PowerLaw moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.Examples.PowerLaw.dp.
+aix:AixLib.Airflow.Multizone.BaseClasses.Examples.PowerLaw.dp a moont:MComponent ;
+	 a msl:Modelica.SIunits.PressureDifference.
+aix:AixLib.Airflow.Multizone.BaseClasses.Examples.PowerLaw moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.Examples.PowerLaw.k.
+aix:AixLib.Airflow.Multizone.BaseClasses.Examples.PowerLaw.k a moont:MParameterComponent;
+	 moont:type xsd:Real.
+aix:AixLib.Airflow.Multizone.BaseClasses.Examples.PowerLaw moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.Examples.PowerLaw.m.
+aix:AixLib.Airflow.Multizone.BaseClasses.Examples.PowerLaw.m a moont:MParameterComponent;
+	 moont:type xsd:Real.
+aix:AixLib.Airflow.Multizone.BaseClasses.Examples.PowerLaw moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.Examples.PowerLaw.dp_turbulent.
+aix:AixLib.Airflow.Multizone.BaseClasses.Examples.PowerLaw.dp_turbulent a moont:MParameterComponent;
+	 moont:type aix:Modelica.SIunits.PressureDifference.
+aix:AixLib.Airflow.Multizone.BaseClasses.Examples.PowerLawFixedM a moont:MModel;
+	 moont:containedIn aix:AixLib.Airflow.Multizone.BaseClasses.Examples.
+aix:AixLib.Airflow.Multizone.BaseClasses.Examples.PowerLawFixedM moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.Examples.PowerLawFixedM.d.
+aix:AixLib.Airflow.Multizone.BaseClasses.Examples.PowerLawFixedM.d a moont:MComponent ;
+	 a aix:Real.
+aix:AixLib.Airflow.Multizone.BaseClasses.Examples.PowerLawFixedM moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.Examples.PowerLawFixedM.dp.
+aix:AixLib.Airflow.Multizone.BaseClasses.Examples.PowerLawFixedM.dp a moont:MComponent ;
+	 a msl:Modelica.SIunits.PressureDifference.
+aix:AixLib.Airflow.Multizone.BaseClasses.Examples.PowerLawFixedM moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.Examples.PowerLawFixedM.V_flow.
+aix:AixLib.Airflow.Multizone.BaseClasses.Examples.PowerLawFixedM.V_flow a moont:MComponent ;
+	 a msl:Modelica.SIunits.VolumeFlowRate.
+aix:AixLib.Airflow.Multizone.BaseClasses.Examples.PowerLawFixedM moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.Examples.PowerLawFixedM.VFixed_flow.
+aix:AixLib.Airflow.Multizone.BaseClasses.Examples.PowerLawFixedM.VFixed_flow a moont:MComponent ;
+	 a msl:Modelica.SIunits.VolumeFlowRate.
+aix:AixLib.Airflow.Multizone.BaseClasses.Examples.PowerLawFixedM moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.Examples.PowerLawFixedM.m.
+aix:AixLib.Airflow.Multizone.BaseClasses.Examples.PowerLawFixedM.m a moont:MComponent ;
+	 a aix:Real.
+aix:AixLib.Airflow.Multizone.BaseClasses.Examples.PowerLawFixedM moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.Examples.PowerLawFixedM.c.
+aix:AixLib.Airflow.Multizone.BaseClasses.Examples.PowerLawFixedM.c a moont:MComponent ;
+	 a aix:Real.
+aix:AixLib.Airflow.Multizone.BaseClasses.Examples.PowerLawFixedM moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.Examples.PowerLawFixedM.b.
+aix:AixLib.Airflow.Multizone.BaseClasses.Examples.PowerLawFixedM.b a moont:MComponent ;
+	 a aix:Real.
+aix:AixLib.Airflow.Multizone.BaseClasses.Examples.PowerLawFixedM moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.Examples.PowerLawFixedM.a.
+aix:AixLib.Airflow.Multizone.BaseClasses.Examples.PowerLawFixedM.a a moont:MComponent ;
+	 a aix:Real.
+aix:AixLib.Airflow.Multizone.BaseClasses.Examples.PowerLawFixedM moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.Examples.PowerLawFixedM.gamma.
+aix:AixLib.Airflow.Multizone.BaseClasses.Examples.PowerLawFixedM.gamma a moont:MComponent ;
+	 a aix:Real.
+aix:AixLib.Airflow.Multizone.BaseClasses.Examples.PowerLawFixedM moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.Examples.PowerLawFixedM.dp_turbulent.
+aix:AixLib.Airflow.Multizone.BaseClasses.Examples.PowerLawFixedM.dp_turbulent a moont:MParameterComponent;
+	 moont:type aix:Modelica.SIunits.PressureDifference.
+aix:AixLib.Airflow.Multizone.BaseClasses.Examples.PowerLawFixedM moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.Examples.PowerLawFixedM.k.
+aix:AixLib.Airflow.Multizone.BaseClasses.Examples.PowerLawFixedM.k a moont:MParameterComponent;
+	 moont:type xsd:Real.
+aix:AixLib.Airflow.Multizone.BaseClasses.Examples.WindPressureLowRise a moont:MModel;
+	 moont:containedIn aix:AixLib.Airflow.Multizone.BaseClasses.Examples.
+aix:AixLib.Airflow.Multizone.BaseClasses.Examples.WindPressureLowRise moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.Examples.WindPressureLowRise.Cp.
+aix:AixLib.Airflow.Multizone.BaseClasses.Examples.WindPressureLowRise.Cp a moont:MComponent ;
+	 a aix:Real.
+aix:AixLib.Airflow.Multizone.BaseClasses.Examples.WindPressureLowRise moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.Examples.WindPressureLowRise.incAng.
+aix:AixLib.Airflow.Multizone.BaseClasses.Examples.WindPressureLowRise.incAng a moont:MComponent ;
+	 a msl:Modelica.SIunits.Angle.
+aix:AixLib.Airflow.Multizone.BaseClasses.Examples.WindPressureLowRise moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.Examples.WindPressureLowRise.G.
+aix:AixLib.Airflow.Multizone.BaseClasses.Examples.WindPressureLowRise.G a moont:MParameterComponent;
+	 moont:type xsd:Real.
+aix:AixLib.Airflow.Multizone.BaseClasses.Examples.WindPressureLowRise moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.Examples.WindPressureLowRise.Cp0.
+aix:AixLib.Airflow.Multizone.BaseClasses.Examples.WindPressureLowRise.Cp0 a moont:MParameterComponent;
+	 moont:type xsd:Real.
+aix:AixLib.Airflow.Multizone.BaseClasses a moont:MPackage;
+	 moont:containedIn aix:AixLib.Airflow.Multizone.
+aix:AixLib.Airflow.Multizone.BaseClasses.powerLaw a moont:MFunction;
+	 moont:containedIn aix:AixLib.Airflow.Multizone.BaseClasses.
+aix:AixLib.Airflow.Multizone.BaseClasses.powerLaw moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.powerLaw.gamma.
+aix:AixLib.Airflow.Multizone.BaseClasses.powerLaw.gamma a moont:MComponent ;
+	 a aix:Real.
+aix:AixLib.Airflow.Multizone.BaseClasses.powerLaw moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.powerLaw.b.
+aix:AixLib.Airflow.Multizone.BaseClasses.powerLaw.b a moont:MComponent ;
+	 a aix:Real.
+aix:AixLib.Airflow.Multizone.BaseClasses.powerLaw moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.powerLaw.dp_turbulent.
+aix:AixLib.Airflow.Multizone.BaseClasses.powerLaw.dp_turbulent a moont:MComponent ;
+	 a msl:Modelica.SIunits.PressureDifference.
+aix:AixLib.Airflow.Multizone.BaseClasses.powerLaw moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.powerLaw.m.
+aix:AixLib.Airflow.Multizone.BaseClasses.powerLaw.m a moont:MComponent ;
+	 a aix:Real.
+aix:AixLib.Airflow.Multizone.BaseClasses.powerLaw moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.powerLaw.pi.
+aix:AixLib.Airflow.Multizone.BaseClasses.powerLaw.pi a moont:MComponent ;
+	 a aix:Real.
+aix:AixLib.Airflow.Multizone.BaseClasses.powerLaw moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.powerLaw.k.
+aix:AixLib.Airflow.Multizone.BaseClasses.powerLaw.k a moont:MComponent ;
+	 a aix:Real.
+aix:AixLib.Airflow.Multizone.BaseClasses.powerLaw moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.powerLaw.pi2.
+aix:AixLib.Airflow.Multizone.BaseClasses.powerLaw.pi2 a moont:MComponent ;
+	 a aix:Real.
+aix:AixLib.Airflow.Multizone.BaseClasses.powerLaw moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.powerLaw.d.
+aix:AixLib.Airflow.Multizone.BaseClasses.powerLaw.d a moont:MComponent ;
+	 a aix:Real.
+aix:AixLib.Airflow.Multizone.BaseClasses.powerLaw moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.powerLaw.V_flow.
+aix:AixLib.Airflow.Multizone.BaseClasses.powerLaw.V_flow a moont:MComponent ;
+	 a msl:Modelica.SIunits.VolumeFlowRate.
+aix:AixLib.Airflow.Multizone.BaseClasses.powerLaw moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.powerLaw.dp.
+aix:AixLib.Airflow.Multizone.BaseClasses.powerLaw.dp a moont:MComponent ;
+	 a msl:Modelica.SIunits.PressureDifference.
+aix:AixLib.Airflow.Multizone.BaseClasses.powerLaw moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.powerLaw.c.
+aix:AixLib.Airflow.Multizone.BaseClasses.powerLaw.c a moont:MComponent ;
+	 a aix:Real.
+aix:AixLib.Airflow.Multizone.BaseClasses.powerLaw moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.powerLaw.a.
+aix:AixLib.Airflow.Multizone.BaseClasses.powerLaw.a a moont:MComponent ;
+	 a aix:Real.
+aix:AixLib.Airflow.Multizone.BaseClasses.powerLawFixedM a moont:MFunction;
+	 moont:containedIn aix:AixLib.Airflow.Multizone.BaseClasses.
+aix:AixLib.Airflow.Multizone.BaseClasses.powerLawFixedM moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.powerLawFixedM.a.
+aix:AixLib.Airflow.Multizone.BaseClasses.powerLawFixedM.a a moont:MComponent ;
+	 a aix:Real.
+aix:AixLib.Airflow.Multizone.BaseClasses.powerLawFixedM moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.powerLawFixedM.pi.
+aix:AixLib.Airflow.Multizone.BaseClasses.powerLawFixedM.pi a moont:MComponent ;
+	 a aix:Real.
+aix:AixLib.Airflow.Multizone.BaseClasses.powerLawFixedM moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.powerLawFixedM.dp.
+aix:AixLib.Airflow.Multizone.BaseClasses.powerLawFixedM.dp a moont:MComponent ;
+	 a msl:Modelica.SIunits.PressureDifference.
+aix:AixLib.Airflow.Multizone.BaseClasses.powerLawFixedM moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.powerLawFixedM.d.
+aix:AixLib.Airflow.Multizone.BaseClasses.powerLawFixedM.d a moont:MComponent ;
+	 a aix:Real.
+aix:AixLib.Airflow.Multizone.BaseClasses.powerLawFixedM moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.powerLawFixedM.dp_turbulent.
+aix:AixLib.Airflow.Multizone.BaseClasses.powerLawFixedM.dp_turbulent a moont:MComponent ;
+	 a msl:Modelica.SIunits.PressureDifference.
+aix:AixLib.Airflow.Multizone.BaseClasses.powerLawFixedM moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.powerLawFixedM.c.
+aix:AixLib.Airflow.Multizone.BaseClasses.powerLawFixedM.c a moont:MComponent ;
+	 a aix:Real.
+aix:AixLib.Airflow.Multizone.BaseClasses.powerLawFixedM moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.powerLawFixedM.V_flow.
+aix:AixLib.Airflow.Multizone.BaseClasses.powerLawFixedM.V_flow a moont:MComponent ;
+	 a msl:Modelica.SIunits.VolumeFlowRate.
+aix:AixLib.Airflow.Multizone.BaseClasses.powerLawFixedM moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.powerLawFixedM.gamma.
+aix:AixLib.Airflow.Multizone.BaseClasses.powerLawFixedM.gamma a moont:MComponent ;
+	 a aix:Real.
+aix:AixLib.Airflow.Multizone.BaseClasses.powerLawFixedM moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.powerLawFixedM.k.
+aix:AixLib.Airflow.Multizone.BaseClasses.powerLawFixedM.k a moont:MComponent ;
+	 a aix:Real.
+aix:AixLib.Airflow.Multizone.BaseClasses.powerLawFixedM moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.powerLawFixedM.m.
+aix:AixLib.Airflow.Multizone.BaseClasses.powerLawFixedM.m a moont:MComponent ;
+	 a aix:Real.
+aix:AixLib.Airflow.Multizone.BaseClasses.powerLawFixedM moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.powerLawFixedM.pi2.
+aix:AixLib.Airflow.Multizone.BaseClasses.powerLawFixedM.pi2 a moont:MComponent ;
+	 a aix:Real.
+aix:AixLib.Airflow.Multizone.BaseClasses.powerLawFixedM moont:hasPart aix:AixLib.Airflow.Multizone.BaseClasses.powerLawFixedM.b.
+aix:AixLib.Airflow.Multizone.BaseClasses.powerLawFixedM.b a moont:MComponent ;
+	 a aix:Real.

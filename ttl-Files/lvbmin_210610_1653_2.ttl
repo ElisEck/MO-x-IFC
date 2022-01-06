@@ -1,0 +1,15 @@
+@prefix lvbmin:    <http://www.eas.iis.fraunhofer.de/lvbmin#> .
+@prefix moont:    <https://www.eas.iis.fraunhofer.de/MoOnt#> .
+@prefix msl:    <http://www.eas.iis.fraunhofer.de/msl#> .
+@prefix aix:    <http://www.eas.iis.fraunhofer.de/aix#> .
+@prefix mbl:    <http://www.eas.iis.fraunhofer.de/mbl#> .
+@prefix ibpsa:    <http://www.eas.iis.fraunhofer.de/ibpsa#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+lvbmin: rdf:type owl:Ontology .
+lvbmin:LVBmin.Nahwaerme.Komponenten.Erzeuger.BHKW_mit_Speicher_2 a moont:MModel.
+lvbmin:LVBmin.Nahwaerme.Komponenten.Erzeuger.BHKW_mit_Speicher rdfs:subclassOf moont:MModel.
+lvbmin:LVBmin.Nahwaerme.Komponenten.Erzeuger.BHKW_mit_Speicher rdf:type owl:Class.
+lvbmin:LVBmin.Nahwaerme.Gesamtmodell.Basis a moont:MPackage;
+	moont:containedIn lvbmin:LVBmin.Nahwaerme.Gesamtmodell.
