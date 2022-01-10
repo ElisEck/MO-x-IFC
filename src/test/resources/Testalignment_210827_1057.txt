@@ -1,0 +1,4 @@
+@prefix : <https://www.eas.iis.fraunhofer.de/MoOnt#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix eas:    <http://www.eas.iis.fraunhofer.de/eas#> .
+:fromPort owl:equivalentClass eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F;

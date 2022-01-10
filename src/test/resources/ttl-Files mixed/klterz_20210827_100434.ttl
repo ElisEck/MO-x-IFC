@@ -1,0 +1,305 @@
+@prefix eas:    <http://www.eas.iis.fraunhofer.de/eas#> .
+@prefix moont:    <https://www.eas.iis.fraunhofer.de/MoOnt#> .
+@prefix msl:    <http://www.eas.iis.fraunhofer.de/msl#> .
+@prefix aix:    <http://www.eas.iis.fraunhofer.de/aix#> .
+@prefix mbl:    <http://www.eas.iis.fraunhofer.de/mbl#> .
+@prefix ibpsa:    <http://www.eas.iis.fraunhofer.de/ibpsa#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:  <http://www.w3.org/2000/01/rdf#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+eas: rdf:type owl:Ontology ;
+	 owl:imports <https://www.eas.iis.fraunhofer.de/MoOnt> .
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F a moont:MModel;
+	 moont:containedIn eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.stor_Top.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.stor_Top a moont:MComponent ;
+	 a aix:AixLib.Fluid.Storage.BufferStorage.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.EvaOutletSetPoint.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.EvaOutletSetPoint a moont:MComponent ;
+	 a msl:Modelica.Blocks.Sources.RealExpression.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.bou.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.bou a moont:MComponent ;
+	 a mbl:Buildings.Fluid.Sources.Boundary_pT.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_storage.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_storage a moont:MComponent ;
+	 a mbl:Buildings.Fluid.Sensors.TemperatureTwoPort.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.dp_building.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.dp_building a moont:MComponent ;
+	 a eas:LibEAS.Sensors.PressureDrop_Display.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.from_degC.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.from_degC a moont:MComponent ;
+	 a msl:Modelica.Blocks.Math.UnitConversions.From_degC.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.PumpEvaOut_mf.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.PumpEvaOut_mf a moont:MComponent ;
+	 a msl:Modelica.Blocks.Sources.RealExpression.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.building.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.building a moont:MComponent ;
+	 a mbl:Buildings.Fluid.HeatExchangers.HeaterCooler_u.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_toBuiliding.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_toBuiliding a moont:MComponent ;
+	 a mbl:Buildings.Fluid.Sensors.TemperatureTwoPort.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.PumpConIn_mf.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.PumpConIn_mf a moont:MComponent ;
+	 a msl:Modelica.Blocks.Sources.RealExpression.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.dp_storage.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.dp_storage a moont:MComponent ;
+	 a eas:LibEAS.Sensors.PressureDrop_Display.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.energiezaehler.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.energiezaehler a moont:MComponent ;
+	 a eas:LibEAS.Auswertungen.Energiezaehler.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.pump_R.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.pump_R a moont:MComponent ;
+	 a aix:AixLib.Fluid.Movers.FlowControlled_m_flow.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.recooling.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.recooling a moont:MComponent ;
+	 a mbl:Buildings.Fluid.HeatExchangers.CoolingTowers.Merkel.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.pump_Chiller.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.pump_Chiller a moont:MComponent ;
+	 a aix:AixLib.Fluid.Movers.FlowControlled_m_flow.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_fromBuilding.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_fromBuilding a moont:MComponent ;
+	 a mbl:Buildings.Fluid.Sensors.TemperatureTwoPort.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.stor_Bottom.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.stor_Bottom a moont:MComponent ;
+	 a aix:AixLib.Fluid.Storage.BufferStorage.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.jahresgang1.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.jahresgang1 a moont:MComponent ;
+	 a eas:LibEAS.BoundaryConditions.Jahresgang.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.ChillerCompController.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.ChillerCompController a moont:MComponent ;
+	 a mbl:Buildings.Controls.Continuous.LimPID.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.chiller.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.chiller a moont:MComponent ;
+	 a mbl:Buildings.Fluid.Chillers.Carnot_y.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_R_fromCond.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_R_fromCond a moont:MComponent ;
+	 a mbl:Buildings.Fluid.Sensors.TemperatureTwoPort.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_fromEva.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_fromEva a moont:MComponent ;
+	 a mbl:Buildings.Fluid.Sensors.TemperatureTwoPort.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_R_toCond.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_R_toCond a moont:MComponent ;
+	 a mbl:Buildings.Fluid.Sensors.TemperatureTwoPort.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.dp_Chiller.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.dp_Chiller a moont:MComponent ;
+	 a eas:LibEAS.Sensors.PressureDrop_Display.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.jahresgang.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.jahresgang a moont:MComponent ;
+	 a eas:LibEAS.BoundaryConditions.Jahresgang.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.bou_R.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.bou_R a moont:MComponent ;
+	 a mbl:Buildings.Fluid.Sources.Boundary_pT.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_toEva.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_toEva a moont:MComponent ;
+	 a mbl:Buildings.Fluid.Sensors.TemperatureTwoPort.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.realExpression1.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.realExpression1 a moont:MComponent ;
+	 a msl:Modelica.Blocks.Sources.RealExpression.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.load_ratio.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.load_ratio a moont:MParameterComponent;
+	 moont:type xsd:Real.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.m2_flow_nominal.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.m2_flow_nominal a moont:MParameterComponent;
+	 moont:type eas:Modelica.SIunits.MassFlowRate.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.m1_flow_nominal.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.m1_flow_nominal a moont:MParameterComponent;
+	 moont:type eas:Modelica.SIunits.MassFlowRate.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.dTEva_nominal.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.dTEva_nominal a moont:MParameterComponent;
+	 moont:type eas:Modelica.SIunits.TemperatureDifference.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.dTCon_nominal.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.dTCon_nominal a moont:MParameterComponent;
+	 moont:type eas:Modelica.SIunits.TemperatureDifference.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.P_nominal.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.P_nominal a moont:MParameterComponent;
+	 moont:type eas:Modelica.SIunits.Power.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.COPc_nominal.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.COPc_nominal a moont:MParameterComponent;
+	 moont:type xsd:Real.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.stor_Top moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_toEva.fluidportTop2.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.fluidportTop2 a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.stor_Top.fluidportTop2.
+ moont:connectedTo eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_toEva.port_a.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_toEva moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_toEva.port_a.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.port_a a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_fromEva moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.pump_Chiller.port_b.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.port_b a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_fromEva.port_b.
+ moont:connectedTo eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.pump_Chiller.port_a.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.pump_Chiller moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.pump_Chiller.port_a.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.port_a a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_fromEva moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.ChillerCompController.T.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.T a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_fromEva.T.
+ moont:connectedTo eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.ChillerCompController.u_m.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.ChillerCompController moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.ChillerCompController.u_m.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.u_m a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.EvaOutletSetPoint moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.ChillerCompController.y.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.y a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.EvaOutletSetPoint.y.
+ moont:connectedTo eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.ChillerCompController.u_s.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.ChillerCompController moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.ChillerCompController.u_s.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.u_s a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.PumpConIn_mf moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.pump_R.y.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.y a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.PumpConIn_mf.y.
+ moont:connectedTo eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.pump_R.m_flow_in.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.pump_R moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.pump_R.m_flow_in.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.m_flow_in a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.pump_Chiller moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.PumpEvaOut_mf.m_flow_in.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.m_flow_in a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.pump_Chiller.m_flow_in.
+ moont:connectedTo eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.PumpEvaOut_mf.y.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.PumpEvaOut_mf moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.PumpEvaOut_mf.y.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.y a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.ChillerCompController moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.chiller.y.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.y a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.ChillerCompController.y.
+ moont:connectedTo eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.chiller.y.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.chiller moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.chiller.y.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.y a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.realExpression1 moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.recooling.y.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.y a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.realExpression1.y.
+ moont:connectedTo eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.recooling.y.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.recooling moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.recooling.y.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.y a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.building moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.dp_building.port_b.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.port_b a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.building.port_b.
+ moont:connectedTo eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.dp_building.port_a.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.dp_building moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.dp_building.port_a.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.port_a a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.dp_building moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_fromBuilding.port_b.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.port_b a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.dp_building.port_b.
+ moont:connectedTo eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_fromBuilding.port_a.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_fromBuilding moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_fromBuilding.port_a.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.port_a a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.pump_Chiller moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.dp_Chiller.port_b.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.port_b a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.pump_Chiller.port_b.
+ moont:connectedTo eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.dp_Chiller.port_a.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.dp_Chiller moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.dp_Chiller.port_a.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.port_a a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.dp_Chiller moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.stor_Bottom.port_b.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.port_b a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.dp_Chiller.port_b.
+ moont:connectedTo eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.stor_Bottom.fluidportBottom2.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.stor_Bottom moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.stor_Bottom.fluidportBottom2.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.fluidportBottom2 a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.stor_Bottom moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.dp_storage.fluidportTop1.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.fluidportTop1 a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.stor_Bottom.fluidportTop1.
+ moont:connectedTo eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.dp_storage.port_a.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.dp_storage moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.dp_storage.port_a.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.port_a a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_storage moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.stor_Top.port_b.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.port_b a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_storage.port_b.
+ moont:connectedTo eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.stor_Top.fluidportBottom2.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.stor_Top moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.stor_Top.fluidportBottom2.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.fluidportBottom2 a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_storage moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.dp_storage.port_a.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.port_a a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_storage.port_a.
+ moont:connectedTo eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.dp_storage.port_b.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.dp_storage moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.dp_storage.port_b.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.port_b a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_fromBuilding moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.stor_Top.port_b.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.port_b a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_fromBuilding.port_b.
+ moont:connectedTo eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.stor_Top.fluidportTop1.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.stor_Top moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.stor_Top.fluidportTop1.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.fluidportTop1 a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_toBuiliding moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.building.port_b.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.port_b a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_toBuiliding.port_b.
+ moont:connectedTo eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.building.port_a.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.building moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.building.port_a.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.port_a a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_toBuiliding moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.stor_Bottom.port_a.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.port_a a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_toBuiliding.port_a.
+ moont:connectedTo eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.stor_Bottom.fluidportBottom1.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.stor_Bottom moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.stor_Bottom.fluidportBottom1.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.fluidportBottom1 a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.chiller moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_R_fromCond.port_b1.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.port_b1 a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.chiller.port_b1.
+ moont:connectedTo eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_R_fromCond.port_a.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_R_fromCond moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_R_fromCond.port_a.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.port_a a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_R_fromCond moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.recooling.port_b.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.port_b a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_R_fromCond.port_b.
+ moont:connectedTo eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.recooling.port_a.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.recooling moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.recooling.port_a.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.port_a a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_R_toCond moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.chiller.port_b.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.port_b a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_R_toCond.port_b.
+ moont:connectedTo eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.chiller.port_a1.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.chiller moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.chiller.port_a1.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.port_a1 a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.pump_R moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_R_toCond.port_b.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.port_b a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.pump_R.port_b.
+ moont:connectedTo eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_R_toCond.port_a.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_R_toCond moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_R_toCond.port_a.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.port_a a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_fromEva moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.chiller.port_a.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.port_a a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_fromEva.port_a.
+ moont:connectedTo eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.chiller.port_b2.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.chiller moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.chiller.port_b2.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.port_b2 a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.chiller moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_toEva.port_a2.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.port_a2 a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.chiller.port_a2.
+ moont:connectedTo eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_toEva.port_b.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_toEva moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.senT_toEva.port_b.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.port_b a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.bou_R moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.recooling.ports[1].
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.ports[1] a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.bou_R.ports[1].
+ moont:connectedTo eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.recooling.port_a.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.recooling moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.recooling.port_a.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.port_a a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.recooling moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.pump_R.port_b.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.port_b a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.recooling.port_b.
+ moont:connectedTo eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.pump_R.port_a.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.pump_R moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.pump_R.port_a.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.port_a a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.jahresgang moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.from_degC.y.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.y a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.jahresgang.y.
+ moont:connectedTo eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.from_degC.u.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.from_degC moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.from_degC.u.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.u a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.from_degC moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.recooling.y.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.y a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.from_degC.y.
+ moont:connectedTo eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.recooling.TAir.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.recooling moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.recooling.TAir.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.TAir a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.jahresgang1 moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.building.y.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.y a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.jahresgang1.y.
+ moont:connectedTo eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.building.u.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.building moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.building.u.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.u a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.chiller moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.energiezaehler.P.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.P a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.chiller.P.
+ moont:connectedTo eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.energiezaehler.Leistung.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.energiezaehler moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.energiezaehler.Leistung.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.Leistung a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.bou moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.dp_Chiller.ports[1].
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.ports[1] a moont:MConnector.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.bou.ports[1].
+ moont:connectedTo eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.dp_Chiller.port_a.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.dp_Chiller moont:hasPart eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.dp_Chiller.port_a.
+eas:FMI4BIM.Demonstratoren.NeubauEAS.Anlagen.KLT.F.port_a a moont:MConnector.

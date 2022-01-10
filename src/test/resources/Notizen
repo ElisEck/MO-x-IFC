@@ -1,0 +1,13 @@
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#name_IfcRoot
+:name_IfcRoot rdf:type owl:ObjectProperty ,
+                       owl:FunctionalProperty ;
+              rdfs:domain :IfcRoot ;
+              rdfs:range :IfcLabel ;
+              rdfs:label "Name" .
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#globalId_IfcRoot
+:globalId_IfcRoot rdf:type owl:ObjectProperty ,
+                           owl:FunctionalProperty ;
+                  rdfs:domain :IfcRoot ;
+                  rdfs:range :IfcGloballyUniqueId ;
+                  rdfs:label "GlobalId" .
