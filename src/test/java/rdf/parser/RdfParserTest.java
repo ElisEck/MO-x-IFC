@@ -1,6 +1,6 @@
 package rdf.parser;
 
-import de.elisabetheckstaedt.moxifc.rdf.helper.ModelEE;
+import de.elisabetheckstaedt.moxifc.rdf.helper.ModelHelper;
 import de.elisabetheckstaedt.moxifc.rdf.parser.RdfParser;
 import org.apache.jena.rdf.model.*;
 import org.apache.jena.reasoner.Reasoner;
@@ -37,11 +37,11 @@ public class RdfParserTest {
         Model modelm = modelKLT.union(alignment);
 
         System.out.println("KLT:");
-        ModelEE.printAllStatements(modelKLT);
+        ModelHelper.printAllStatements(modelKLT);
         System.out.println("alignemnt:");
-        ModelEE.printAllStatements(alignment);
+        ModelHelper.printAllStatements(alignment);
         System.out.println("merge:");
-        ModelEE.printAllStatements(modelm);
+        ModelHelper.printAllStatements(modelm);
         Model min=modelm;
         try {
             FileWriter origWriter = new FileWriter("Originalmodell.ttl");
@@ -62,7 +62,7 @@ public class RdfParserTest {
             FileWriter infWriter = new FileWriter("Inferenzmodell_OWL.ttl");
             Reasoner reasoner = ReasonerRegistry.getOWLReasoner();
             InfModel inf = ModelFactory.createInfModel(reasoner, min);
-            ModelEE.printAllStatements(inf);
+            ModelHelper.printAllStatements(inf);
             inf.write(infWriter, "TTL" );
         } catch (IOException e) {
             e.printStackTrace();

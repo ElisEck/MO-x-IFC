@@ -1,0 +1,207 @@
+@prefix :       <http://www.semanticweb.org/eckstaedt/ontologies/2021/2/alignment_BRICK_Modelica_210317#> .
+@prefix aix:    <http://www.eas.iis.fraunhofer.de/aix#> .
+@prefix bf:     <https://brickschema.org/schema/1.1/BrickFrame#> .
+@prefix brick:  <https://brickschema.org/schema/1.1/Brick#> .
+@prefix gera:   <http://GeraArkada.com#> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix qudt:   <http://qudt.org/schema/qudt/> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org#> .
+@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
+@prefix terms:  <http://purl.org/dc/terms#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+
+rdf:rest  rdf:type          rdf:Property , rdfs:Resource ;
+        rdfs:domain         rdf:List ;
+        rdfs:range          rdf:List ;
+        rdfs:subPropertyOf  rdf:rest .
+
+rdf:List  rdf:type       rdfs:Class , rdfs:Resource ;
+        rdfs:subClassOf  rdfs:Resource , rdf:List .
+
+rdf:predicate  rdf:type     rdf:Property , rdfs:Resource ;
+        rdfs:domain         rdf:Statement ;
+        rdfs:subPropertyOf  rdf:predicate .
+
+rdf:Property  rdf:type   rdfs:Class , rdfs:Resource ;
+        rdfs:subClassOf  rdfs:Resource , rdf:Property .
+
+rdfs:label  rdf:type  rdf:Property , rdfs:Resource ;
+        rdfs:range  rdfs:Literal .
+
+rdf:Statement  rdf:type  rdfs:Class , rdfs:Resource ;
+        rdfs:subClassOf  rdfs:Resource , rdf:Statement .
+
+rdfs:Class  rdf:type     rdfs:Class , rdfs:Resource ;
+        rdfs:subClassOf  rdfs:Resource , rdfs:Class .
+
+rdf:type  rdf:type  rdf:Property , rdfs:Resource ;
+        rdfs:range  rdfs:Class .
+
+rdfs:Resource  rdf:type  rdfs:Class , rdfs:Resource ;
+        rdfs:subClassOf  rdfs:Resource .
+
+rdf:subject  rdf:type       rdf:Property , rdfs:Resource ;
+        rdfs:domain         rdf:Statement ;
+        rdfs:subPropertyOf  rdf:subject .
+
+rdf:XMLLiteral  rdf:type  rdfs:Datatype , rdfs:Class , rdfs:Resource .
+
+rdfs:comment  rdf:type  rdf:Property , rdfs:Resource ;
+        rdfs:range  rdfs:Literal .
+
+rdfs:range  rdf:type  rdf:Property , rdfs:Resource ;
+        rdfs:domain  rdf:Property ;
+        rdfs:range   rdfs:Class .
+
+rdfs:subPropertyOf  rdf:type  rdf:Property , rdfs:Resource ;
+        rdfs:domain  rdf:Property ;
+        rdfs:range   rdf:Property .
+
+rdf:object  rdf:type        rdf:Property , rdfs:Resource ;
+        rdfs:domain         rdf:Statement ;
+        rdfs:subPropertyOf  rdf:object .
+
+rdf:nil  rdf:type  rdf:List , rdfs:Resource .
+
+rdfs:domain  rdf:type  rdf:Property , rdfs:Resource ;
+        rdfs:domain  rdf:Property ;
+        rdfs:range   rdfs:Class .
+
+rdfs:Literal  rdf:type   rdfs:Class , rdfs:Resource ;
+        rdfs:subClassOf  rdfs:Resource , rdfs:Literal .
+
+rdf:first  rdf:type         rdf:Property , rdfs:Resource ;
+        rdfs:domain         rdf:List ;
+        rdfs:subPropertyOf  rdf:first .
+
+rdfs:subClassOf  rdf:type  rdf:Property , rdfs:Resource ;
+        rdfs:domain  rdfs:Class ;
+        rdfs:range   rdfs:Class .
+
+<http://www.semanticweb.org/eckstaedt/ontologies/2021/2/alignment_BRICK_Modelica_210317>
+        rdf:type     owl:Ontology ;
+        owl:imports  <file:/C:/_DATEN/Prototyp/2103/RDFModelle/aix_2103082215_short.ttl> , <https://brickschema.org/schema/1.1/Brick> .
+
+bf:hasTag  rdf:type  owl:AnnotationProperty .
+
+gera:KM01  rdf:type  owl:NamedIndividual , brick:Heat_Exchanger ;
+        bf:feeds     gera:P01 ;
+        bf:feedsAir  gera:airend2 ;
+        bf:hasTag    brick:Supply_Air , brick:Water ;
+        bf:isFedBy   gera:WaterMerg1 , gera:airstart1 .
+
+brick:Outside_Air  rdf:type  owl:Class , rdfs:Class , rdfs:Resource .
+
+brick:Pump  rdf:type  owl:Class , rdfs:Class , rdfs:Resource .
+
+gera:RK01  rdf:type  owl:NamedIndividual , brick:Heat_Exchanger ;
+        bf:feeds     gera:WaterMerg1 ;
+        bf:feedsAir  gera:airMerg2 ;
+        bf:hasTag    brick:Air , brick:Supply_Air , brick:Water ;
+        bf:isFedBy   gera:Watersplit1 , gera:airsplit1 .
+
+bf:feeds  rdf:type  owl:AnnotationProperty .
+
+brick:Valve  rdf:type  owl:Class , rdfs:Class , rdfs:Resource .
+
+bf:feedsAir  rdf:type  owl:AnnotationProperty .
+
+[ rdf:type  owl:Ontology ] .
+
+gera:Watersplit1  rdf:type  owl:NamedIndividual , brick:Valve ;
+        bf:feeds    gera:RK01 , gera:RK02 ;
+        bf:hasTag   brick:Supply_Air , brick:Water ;
+        bf:isFedBy  gera:P01 .
+
+gera:P01  rdf:type  owl:NamedIndividual , brick:Pump ;
+        bf:feeds    gera:Watersplit1 ;
+        bf:hasTag   brick:Supply_Air , brick:Water ;
+        bf:isFedBy  gera:KM01 .
+
+gera:WaterMerg1  rdf:type  owl:NamedIndividual , brick:Valve ;
+        bf:feeds    gera:KM01 ;
+        bf:hasTag   brick:Supply_Air , brick:Water ;
+        bf:isFedBy  gera:RK01 , gera:RK02 .
+
+brick:HVAC_Zone  rdf:type  owl:Class , rdfs:Class , rdfs:Resource .
+
+gera:airend2  rdf:type  owl:NamedIndividual , brick:Exhaust_Air ;
+        bf:isFedBy  gera:KM01 .
+
+gera:airsplit1  rdf:type  owl:NamedIndividual , brick:Valve ;
+        bf:feedsAir  gera:RK01 , gera:RK02 ;
+        bf:hasTag    brick:Air , brick:Supply_Air ;
+        bf:isFedBy   gera:airStart1 .
+
+aix:AixLib.Fluid.Movers.FlowControlled_m_flow
+        owl:equivalentClass  brick:Water_Pump .
+
+bf:isFedBy  rdf:type  owl:AnnotationProperty .
+
+gera:airStart1  rdf:type  owl:NamedIndividual , brick:Outside_Air ;
+        bf:feedsAir  gera:airsplit1 ;
+        bf:hasTag    brick:Air , brick:Supply_Air .
+
+gera:airend1  rdf:type  owl:NamedIndividual , brick:Exhaust_Air ;
+        bf:hasTag   brick:Air , brick:Exhaust_Air ;
+        bf:isFedBy  gera:airZone1 .
+
+gera:airstart1  rdf:type  owl:NamedIndividual , brick:Outside_Air ;
+        bf:feedsAir  gera:KM01 ;
+        bf:hasTag    brick:Supply_Air .
+
+brick:Exhaust_Air  rdf:type  owl:Class , rdfs:Class , rdfs:Resource .
+
+gera:airZone1  rdf:type  owl:NamedIndividual , brick:HVAC_Zone ;
+        bf:feedsAir  gera:airend1 ;
+        bf:hasTag    brick:Air , brick:Exhaust_Air , brick:Supply_Air , brick:Zone_Air ;
+        bf:isFedBy   gera:airMerg2 .
+
+brick:Heat_Exchanger  rdf:type  owl:Class , rdfs:Class , rdfs:Resource .
+
+gera:airMerg2  rdf:type  owl:NamedIndividual , brick:Valve ;
+        bf:feedsAir  gera:airZone1 ;
+        bf:hasTag    brick:Air , brick:Supply_Air ;
+        bf:isFedBy   gera:RK01 , gera:RK02 .
+
+gera:RK02  rdf:type  owl:NamedIndividual , brick:Heat_Exchanger ;
+        bf:feeds     gera:WaterMerg1 ;
+        bf:feedsAir  gera:airMerg2 ;
+        bf:hasTag    brick:Air , brick:Supply_Air , brick:Water ;
+        bf:isFedBy   gera:Watersplit1 , gera:airsplit1 .
+
+rdf:Bag  rdf:type        rdfs:Class , rdfs:Resource ;
+        rdfs:subClassOf  rdf:Bag , rdfs:Container .
+
+rdf:Seq  rdf:type        rdfs:Class , rdfs:Resource ;
+        rdfs:subClassOf  rdf:Seq , rdfs:Container .
+
+rdfs:Datatype  rdf:type  rdfs:Class , rdfs:Resource ;
+        rdfs:subClassOf  rdfs:Datatype , rdfs:Class , rdfs:Resource .
+
+rdf:Alt  rdf:type        rdfs:Class , rdfs:Resource ;
+        rdfs:subClassOf  rdf:Alt , rdfs:Container .
+
+rdfs:Container  rdf:type  rdfs:Class , rdfs:Resource ;
+        rdfs:subClassOf  rdfs:Container .
+
+rdfs:ContainerMembershipProperty
+        rdf:type         rdfs:Class , rdfs:Resource ;
+        rdfs:subClassOf  rdfs:ContainerMembershipProperty , rdf:Property , rdfs:Resource .
+
+rdfs:isDefinedBy  rdf:type  rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  rdfs:isDefinedBy , rdfs:seeAlso .
+
+rdfs:seeAlso  rdf:type      rdf:Property , rdfs:Resource ;
+        rdfs:subPropertyOf  rdfs:seeAlso .
+
+owl:Class  rdf:type  rdfs:Class , rdfs:Resource .
+
+owl:NamedIndividual  rdf:type  rdfs:Class , rdfs:Resource .
+
+owl:Ontology  rdf:type  rdfs:Class , rdfs:Resource .
+
+owl:AnnotationProperty
+        rdf:type  rdfs:Class , rdfs:Resource .
