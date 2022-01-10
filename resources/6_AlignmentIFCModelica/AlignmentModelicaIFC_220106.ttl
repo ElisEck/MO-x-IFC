@@ -1,0 +1,15 @@
+@prefix algn:  <https://eas.iis.fraunhofer.de/AlignmentModelicaIFC#>.
+@prefix ifc:  <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix brick: 	<https://brickschema.org/schema/1.1/Brick#> .
+@prefix IBPSA: 	<https://eas.iis.fraunhofer.de/IBPSA#> .
+@prefix LibEAS: 	<https://eas.iis.fraunhofer.de/LibEAS#> .
+@prefix psd:	<https://www.linkedbuildingdata.net/IFC4-PSD> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+IBPSA:Buildings.Fluid.MixingVolumes.MixingVolume rdf:type owl:Class.
+ifc:IfcSpace owl:equivalentClass IBPSA:Buildings.Fluid.MixingVolumes.MixingVolume .
+ifc:IfcFlowSegment owl:equivalentClass IBPSA:Buildings.Fluid.FixedResistances.PressureDrop .
+ifc:IfcFlowController owl:equivalentClass IBPSA:BuildingsFluidActuatorsValvesTwoWayEqualPercentage .
+ifc:IfcPipeFitting owl:equivalentClass IBPSA:Buildings.Fluid.FixedResistances.PressureDrop .
