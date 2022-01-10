@@ -1,3 +1,4 @@
+import de.elisabetheckstaedt.moxifc.rdf.helper.serialize;
 import org.apache.jena.graph.Graph;
 import org.apache.jena.ontology.Individual;
 import org.apache.jena.ontology.OntClass;
@@ -24,17 +25,16 @@ import org.apache.jena.vocabulary.RDF;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import rdf.helper.ModelEE;
-import rdf.helper.ResultLine;
-import rdf.helper.ResultSetEE;
+import de.elisabetheckstaedt.moxifc.rdf.helper.ModelEE;
+import de.elisabetheckstaedt.moxifc.rdf.helper.ResultLine;
+import de.elisabetheckstaedt.moxifc.rdf.helper.ResultSetEE;
 
 import java.io.*;
 import java.util.Iterator;
 import java.util.List;
 
-import static java.lang.System.in;
-import static rdf.helper.serialize.serialize;
-import static rdf.helper.serialize.stringToFile;
+import static de.elisabetheckstaedt.moxifc.rdf.helper.serialize.serialize;
+import static de.elisabetheckstaedt.moxifc.rdf.helper.serialize.stringToFile;
 
 public class JenaTest {
     private static final Logger LOGGER = LoggerFactory.getLogger(JenaTest.class);
@@ -83,7 +83,7 @@ public class JenaTest {
         model4 = deleteByPredicateNamesspace(model4, "http://www.w3.org/2002/07/owl#", "owl"); //TODO umbauen, so dass man nur eins von beiden angeben muss
         ModelEE model4ee = new ModelEE(model4);
         LOGGER.info("reduced to "+model4ee.countTriples() + " Triples");
-        serialize(model4, filename4);
+        serialize.serialize(model4, filename4);
         LOGGER.info("serialized as "+filename4);
 
 //        Model model5 = RDFDataMgr.loadModel("c:\\_DATEN\\_FMI4BIM\\BIM\\Ontologien und Alignments\\6_AlignmentIFCModelica\\AlignmentModelicaIFC_220106.ttl");
@@ -119,7 +119,7 @@ public class JenaTest {
         Model model1 = RDFDataMgr.loadModel(file1);
         Model model2 = RDFDataMgr.loadModel(file2);
         Model model3 = model1.add(model2);
-        serialize(model3, file3);
+        serialize.serialize(model3, file3);
     }
 
     @Test
@@ -866,7 +866,7 @@ public class JenaTest {
         System.out.println(new ModelEE(model2).countTriples());
         Model model3 = model.add(model2);
         System.out.println(new ModelEE(model3).countTriples());
-        serialize(model3, "model3.ttl");
+        serialize.serialize(model3, "model3.ttl");
     }
 
 

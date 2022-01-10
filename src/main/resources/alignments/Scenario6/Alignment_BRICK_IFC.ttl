@@ -1,5 +1,0 @@
-@prefix ifc:  <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#> .
-@prefix owl:  <http://www.w3.org/2002/07/owl#> .
-@prefix brick: 	<https://brickschema.org/schema/1.1/Brick#> .
-
-brick:Hot_Water_Pump owl:equivalentClass ifc:IfcPump .

@@ -1,23 +1,25 @@
 package rdf.parser;
 
+import de.elisabetheckstaedt.moxifc.rdf.parser.RdfParser;
 import org.apache.jena.rdf.model.*;
 import org.apache.jena.reasoner.Reasoner;
 import org.apache.jena.reasoner.ReasonerRegistry;
-import org.apache.jena.vocabulary.RDF;
 import org.junit.Test;
 
 import java.io.FileWriter;
 import java.io.IOException;
-
-import static org.junit.Assert.*;
 
 public class RdfParserTest {
 
     private RdfParser rdfParser = new RdfParser();
 
     @Test
+    /**
+     * liest ein rdf-Modell
+     * wandelt es intern um
+     * schreibt es anschließend in verschiedenen Formen (mit und ohne Inferenzstatements) wieder raus (als ttl)
+     */
     public void readRDF() {
-
 //        rdfParser.parseFile("c:\\_DATEN\\WORKSPACES\\Notebooks\\owlready\\pizzaElli"); //RDF Pizza Ontologie
 //        rdfParser.parseFile("c:\\_DATEN\\_FMI4BIM\\BIM\\RDF Modelle\\BRICK\\EASNeubau\\RLT\\neubau_EE.ttl"); //ttl BRICK Neubau RLT -- geht nicht
 //        rdfParser.parseFile("c:\\_DATEN\\_FMI4BIM\\BIM\\RDF Modelle\\BRICK\\EASNeubau\\RLT\\neubau_EE.rdf"); //ttl BRICK Neubau RLT von Protege umgewandelt in RDF
@@ -46,7 +48,6 @@ public class RdfParserTest {
             e.printStackTrace();
         }
 
-
         try {
             FileWriter infWriter = new FileWriter("Inferenzmodell_RDFS.ttl");
             InfModel inf = ModelFactory.createRDFSModel(min);
@@ -64,32 +65,15 @@ public class RdfParserTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
 //        return new ModelicaClass("bsp");
     }
-    public void printAllTypes(Model m){
-        StmtIterator iter = m.listStatements();
-        int i = 0;
-        if (iter.hasNext()) {
-            System.out.println("Alle Statements:");
-            while (iter.hasNext()) {
-                Statement stm = iter.nextStatement();
-                System.out.println(
-                        i +"  " + stm.getSubject().toString() +
-                                "  " + stm.getPredicate().toString() +
-                                "  " + stm.getObject().toString()
-                );
-                i = i+1;
 
-            }
-        } else {
-            System.out.println("No vcards were found in the database");
-        }
-    }
 
-    public void printAllPredicates(Model m) {
-
-    }
+    /**
+     * iteriert über alle Statesments
+     * printet alle Subjekte, Prädikate und Objekte auf die Console
+     * @param m
+     */
     public void printAllStatements(Model m) {
         StmtIterator iter = m.listStatements();
         int i = 0;
@@ -106,7 +90,7 @@ public class RdfParserTest {
 
             }
         } else {
-            System.out.println("No vcards were found in the database");
+            System.out.println("keine weiteren Statements");
         }
     }
 }

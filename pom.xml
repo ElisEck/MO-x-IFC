@@ -84,7 +84,7 @@
                 <artifactId>antlr4-maven-plugin</artifactId>
                 <version>4.8</version>
                 <configuration>
-                    <outputDirectory>src/main/java/mo/parser/antlr</outputDirectory>
+                    <outputDirectory>src/main/java/de/elisabetheckstaedt/moxifc/modelicatranscriptor/parser/antlr</outputDirectory>
                     <arguments>
                         <argument>-package</argument>
                         <argument>mo.parser.antlr</argument>
