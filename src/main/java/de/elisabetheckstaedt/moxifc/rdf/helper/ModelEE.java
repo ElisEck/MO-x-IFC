@@ -3,9 +3,14 @@ package de.elisabetheckstaedt.moxifc.rdf.helper;
 import org.apache.jena.graph.Node;
 import org.apache.jena.query.*;
 import org.apache.jena.rdf.model.*;
+import org.apache.jena.riot.Lang;
+import org.apache.jena.riot.RDFDataMgr;
+import org.apache.jena.riot.RDFWriter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
@@ -507,6 +512,30 @@ public class ModelEE {
         return string;
     }
 
+    /**
+     * iteriert über alle Statesments
+     * printet alle Subjekte, Prädikate und Objekte auf die Console
+     */
+    public static void printAllStatements(Model m) {
+        StmtIterator iter = m.listStatements();
+        int i = 0;
+        if (iter.hasNext()) {
+            System.out.println("Alle Statements:");
+            while (iter.hasNext()) {
+                Statement stm = iter.nextStatement();
+                System.out.println(
+                        i +"  " + stm.getSubject().toString() +
+                                "  " + stm.getPredicate().toString() +
+                                "  " + stm.getObject().toString()
+                );
+                i = i+1;
+
+            }
+        } else {
+            System.out.println("keine weiteren Statements");
+        }
+    }
+
 //    public void printFileNode2DegreeMap(String outputfilename) {
 //        try {
 //            FileWriter myWriter = new FileWriter(outputfilename);
@@ -520,5 +549,68 @@ public class ModelEE {
 //        }
 //
 //    }
+
+
+    /**
+     *
+     * @param dataset org.apache.jena.query.Dataset
+     * @param filename
+     */
+    public static void serialize(Dataset dataset, String filename) {
+        try {
+            RDFWriter.create()
+                    .source(dataset.getDefaultModel())
+                    .lang(Lang.TTL)
+                    .base("http://base/")
+                    .output(new FileOutputStream(filename));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * schreibt ein Modell in ein File
+     * @param model org.apache.jena.rdf.model.Model
+     * @param filename
+     */
+    public static void serialize(Model model, String filename) {
+        try {
+            RDFWriter.create()
+                    .source(model)
+                    .lang(Lang.TTL)
+                    .base("http://base/")
+                    .output(new FileOutputStream(filename));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     *
+     * @param inhalt String
+     * @param filename String
+     */
+    public static void stringToFile(String inhalt, String filename) {
+        try {
+            FileWriter myWriter = new FileWriter(filename);
+            myWriter.write(inhalt);
+            myWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * liest zwei turtle-Files, fügt sie zusammen und serialisiert das Ergebnis
+     * @param file1 input filename
+     * @param file2 input filename
+     * @param file3 output filename
+     */
+    public static void merge(String file1, String file2, String file3) {
+        Model model1 = RDFDataMgr.loadModel(file1);
+        Model model2 = RDFDataMgr.loadModel(file2);
+        Model model3 = model1.add(model2);
+        ModelEE.serialize(model3, file3);
+    }
 
 }

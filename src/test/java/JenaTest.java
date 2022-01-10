@@ -1,4 +1,3 @@
-import de.elisabetheckstaedt.moxifc.rdf.helper.serialize;
 import org.apache.jena.graph.Graph;
 import org.apache.jena.ontology.Individual;
 import org.apache.jena.ontology.OntClass;
@@ -33,8 +32,8 @@ import java.io.*;
 import java.util.Iterator;
 import java.util.List;
 
-import static de.elisabetheckstaedt.moxifc.rdf.helper.serialize.serialize;
-import static de.elisabetheckstaedt.moxifc.rdf.helper.serialize.stringToFile;
+import static de.elisabetheckstaedt.moxifc.rdf.helper.ModelEE.serialize;
+import static de.elisabetheckstaedt.moxifc.rdf.helper.ModelEE.stringToFile;
 
 public class JenaTest {
     private static final Logger LOGGER = LoggerFactory.getLogger(JenaTest.class);
@@ -83,7 +82,7 @@ public class JenaTest {
         model4 = deleteByPredicateNamesspace(model4, "http://www.w3.org/2002/07/owl#", "owl"); //TODO umbauen, so dass man nur eins von beiden angeben muss
         ModelEE model4ee = new ModelEE(model4);
         LOGGER.info("reduced to "+model4ee.countTriples() + " Triples");
-        serialize.serialize(model4, filename4);
+        ModelEE.serialize(model4, filename4);
         LOGGER.info("serialized as "+filename4);
 
 //        Model model5 = RDFDataMgr.loadModel("c:\\_DATEN\\_FMI4BIM\\BIM\\Ontologien und Alignments\\6_AlignmentIFCModelica\\AlignmentModelicaIFC_220106.ttl");
@@ -95,7 +94,7 @@ public class JenaTest {
         LOGGER.info(model4ee.countDistinctNodes());
 //        LOGGER.info(model4ee.countNodesByClass(150));
 
-        stringToFile(model4ee.countPredicatesByName(150), "model4_countPredicatesByName.txt");
+        ModelEE.stringToFile(model4ee.countPredicatesByName(150), "model4_countPredicatesByName.txt");
         LOGGER.info("printed countPredicatesByName to model4_countPredicatesByName.txt");
 
         ResultSetEE rse = model4ee.countPredicatesByName2(150);
@@ -104,23 +103,12 @@ public class JenaTest {
 
         LOGGER.info("calculateNodedegrees");
         model4ee.calculateNodeDegrees(); //ausfüllen der Node2DegreeMap am model4ee
-        stringToFile(model4ee.printNode2DegreeMap(), "model4_nodedegrees.txt");
+        ModelEE.stringToFile(model4ee.printNode2DegreeMap(), "model4_nodedegrees.txt");
         LOGGER.info("printed Node2DegreeMap to model4_nodedegrees.txt");
 
     }
 
-    /**
-     * liest zwei turtle-Files, fügt sie zusammen und serialisiert das Ergebnis
-     * @param file1 input filename
-     * @param file2 input filename
-     * @param file3 output filename
-     */
-    public void merge(String file1, String file2, String file3) {
-        Model model1 = RDFDataMgr.loadModel(file1);
-        Model model2 = RDFDataMgr.loadModel(file2);
-        Model model3 = model1.add(model2);
-        serialize.serialize(model3, file3);
-    }
+
 
     @Test
     /**
@@ -132,7 +120,7 @@ public class JenaTest {
 //        base.read( sourceURL, "RDF/XML" );
 
 //        model6 ist merge aus IFC-Instanz + IFC-Standard (=model4) + Alignment
-        merge("model4.ttl", "c:\\_DATEN\\_FMI4BIM\\BIM\\Ontologien und Alignments\\6_AlignmentIFCModelica\\AlignmentModelicaIFC_220106.ttl", "model6.ttl");
+        ModelEE.merge("model4.ttl", "c:\\_DATEN\\_FMI4BIM\\BIM\\Ontologien und Alignments\\6_AlignmentIFCModelica\\AlignmentModelicaIFC_220106.ttl", "model6.ttl");
         InputStream in = new FileInputStream("model6.ttl");
         base.read(in, "", "ttl");
 
@@ -165,10 +153,6 @@ public class JenaTest {
                 System.out.println(pipeFittingIndividual.getURI() + " is a " + i.next());
             }
         }
-
-
-
-
     }
 
     @Test
@@ -199,47 +183,14 @@ public class JenaTest {
         }
     }
 
+
+
     @Test
-    public void Kaelte2() {
-        LOGGER.info("Start");
-        String filepath1 = "c:\\_DATEN\\_FMI4BIM\\BIM\\Ontologien und Alignments\\2_IFC\\IFC4_ADD2_TC1.ttl";
-        String filepath2 = "c:\\_DATEN\\_FMI4BIM\\BIM\\RDF Modelle\\2_IFC\\NeubauEAS\\210823_KälteErzeugung_MU.ttl";
-        String filename3 = "model3.ttl";
-
-        Model model = RDFDataMgr.loadModel(filepath1);
-        LOGGER.info("read " + filepath1 + " with " + new ModelEE(model).countTriples());
-
-        System.out.println(model.listSubjects().next());
-        System.out.println(model.listObjects().next());
-
-        System.out.println(model.listStatements().next().getSubject());
-        System.out.println(model.listStatements().next().getPredicate());
-        System.out.println(model.listStatements().next().getObject());
-//
-//        model4.listResourcesWithProperty(new ObjectPropertyImpl());
-//        Property
-//
-//
-//        private void acquireClasses() {
-//            ResIterator it = null;
-//
-//            if (m_inferred) {
-//                it = m_inferred_model.listResourcesWithProperty(RDF.type, OWL.Class);
-//            } else {
-//                it = m_raw_model.listResourcesWithProperty(RDF.type, OWL.Class);
-//            }
-//
-//            m_classes = acquireResources(it);
-//        }
-////
-//        Property property = model.createProperty(RDF_TYPE);
-////
-//        ResIterator iterator = model.listSubjectsWithProperty(getPropertyFromUri("<https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#IfcRepresentationItem>"));
-//        ResourceFactory.createResource("http://www.w3.org/2011/http-statusCodes#BadRequest"));
-    }
-
-    @Test //funktioniert 24.8.21 10:30
-    public void FileReadingAndChanging () {
+    /**
+     * fügt "Alice" und "Bob"-Triple zu einem beliebigen eingelesenen TTL-File hinzu und schreibt es anschließend wieder raus
+     * funktioniert 24.8.21 10:30
+     */
+    public void addTriplesToFile() {
         InputStream in = null;
         try {
             in = new FileInputStream("c:\\TMP\\MoOnt.ttl");
@@ -299,6 +250,7 @@ public class JenaTest {
             dataset.end();
         }
     }
+
     @Test
     public void querySimple() {
         FileManager.get().addLocatorClassLoader(JenaTest.class.getClassLoader());
@@ -866,7 +818,7 @@ public class JenaTest {
         System.out.println(new ModelEE(model2).countTriples());
         Model model3 = model.add(model2);
         System.out.println(new ModelEE(model3).countTriples());
-        serialize.serialize(model3, "model3.ttl");
+        ModelEE.serialize(model3, "model3.ttl");
     }
 
 

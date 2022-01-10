@@ -21,11 +21,11 @@ public class ModelicaFileAntlrParserTest {
     @Test
     /**
      * liest ein Modelica-File (*.mo) ein und erzeugt daraus ein Set<MClass>
+     *     läuft: 10.1.22 18:33
      */
-    public void testAntlrParser() throws IOException {
+    public void readModelicaClassesFromMo() throws IOException {
         ModelicaFileAntlrParser parser = new ModelicaFileAntlrParser("test");
-//        String content = Files.readString(Paths.get("c:\\TMP\\AixLib\\Fluid\\Chillers\\Examples\\Carnot_TEva.mo"));
-        String content = Files.readString(Paths.get("c:\\_DATEN\\Modelica\\_Modelle\\FMI4BIM\\Demonstratoren\\NeubauEAS\\Anlagen\\KLT\\F.mo"));
+        String content = Files.readString(Paths.get("c:\\_DATEN\\Modelica\\_Modelle\\FMI4BIM\\Demonstratoren\\NeubauEAS\\Erzeugungsanlagen\\KLT\\F.mo"));
         Set<MClass> result = parser.parseFile(content);
         result.size();
     }
@@ -33,8 +33,9 @@ public class ModelicaFileAntlrParserTest {
     @Test
     /**
      * liest ein Modelica-File (*.mo) ein in eine interne ModelicaLibrary und schreibt diese anschließend als ttl wieder raus
+     * läuft: 10.1.22 18:33
      */
-    public void ReadMoAndSerialize(){
+    public void readModelicaLibraryFromMoAndSerialize(){
 //        ModelicaLibrary ml = ReadMo("ibpsa", "ibpsa", Path.of("c:\\_DATEN\\Modelica\\_Libraries_extern\\modelica-ibpsa\\IBPSA\\"));
 //        ModelicaLibrary ml = ReadMo("msl", "msl", Path.of("C:\\Program Files\\Dymola 2021\\Modelica\\Library\\Modelica 3.2.3\\"));
 //        ModelicaLibrary ml = ReadMo("mbl", "mbl", Path.of("c:\\_DATEN\\Modelica\\_Libraries_extern\\modelica-buildings\\Buildings\\"));
@@ -45,11 +46,11 @@ public class ModelicaFileAntlrParserTest {
 //        ModelicaLibrary ml = ReadMo("RLT4", "eas", Path.of("c:\\_DATEN\\Prototyp\\2103\\RDFModelle\\minimal\\"));
 //        ModelicaLibrary ml = ReadMo("coo", "eas", Path.of("c:\\_DATEN\\2021-04-22_FullPaper_LDAC\\"));
 //        ModelicaLibrary ml = ReadMo("rlt4", "rlt4", Path.of("c:\\_DATEN\\Modelica\\_Modelle\\EASNeubau\\"));
-        ModelicaLibrary ml = new ModelicaLibrary("klterz", "eas", Path.of("c:\\_DATEN\\Modelica\\_Modelle\\FMI4BIM\\Demonstratoren\\NeubauEAS\\Anlagen\\KLT\\F.mo"));
+        ModelicaLibrary ml = new ModelicaLibrary("klterz", "eas", Path.of("c:\\_DATEN\\Modelica\\_Modelle\\FMI4BIM\\Demonstratoren\\NeubauEAS\\Erzeugungsanlagen\\KLT\\F.mo"));
 //        ml.generatePackageHierarchyFromPackageList();
 
         SimpleDateFormat sdf3 = new SimpleDateFormat("yyyyMMdd_HHmm");
-        ml.serializeAsTTL(ml.getName()+"_"+sdf3.format(new Timestamp(System.currentTimeMillis()))+ ".ttl");
+        ml.serializeAsTTL("C:\\_DATEN\\WORKSPACES\\IntelliJ\\mo-x-ifc\\src\\test\\java\\output\\" + ml.getName()+"_"+sdf3.format(new Timestamp(System.currentTimeMillis()))+ ".ttl");
 //        ml.serializeAsMo("C:/TMP/ModelicaTestSerialisation/");
     }
 
