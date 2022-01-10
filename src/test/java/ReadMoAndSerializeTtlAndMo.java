@@ -9,6 +9,11 @@ import java.nio.file.Path;
 
 import static java.nio.file.Files.readString;
 
+/**
+ * main()-Methode
+ * parst ein vorgegebenes ttl-File
+ * schreibt es als ttl wieder raus
+ */
 public class ReadMoAndSerializeTtlAndMo {
 
     public static void main(String[] args) {
