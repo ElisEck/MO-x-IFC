@@ -13,3 +13,5 @@ ifc:IfcSpace owl:equivalentClass IBPSA:Buildings.Fluid.MixingVolumes.MixingVolum
 ifc:IfcFlowSegment owl:equivalentClass IBPSA:Buildings.Fluid.FixedResistances.PressureDrop .
 ifc:IfcFlowController owl:equivalentClass IBPSA:BuildingsFluidActuatorsValvesTwoWayEqualPercentage .
 ifc:IfcPipeFitting owl:equivalentClass IBPSA:Buildings.Fluid.FixedResistances.PressureDrop .
+
+#ifc:name_IfcRoot owl: moont:Identifier_MAbstractClass.

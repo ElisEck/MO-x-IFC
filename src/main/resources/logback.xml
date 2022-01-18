@@ -8,9 +8,9 @@
         </layout>
     </appender>
 
-    <logger name="org.apache.jena" level="warn" additivity="false">
-        <appender-ref ref="CONSOLE"/>
-    </logger>
+    <logger name="org.apache.jena" level="warn" additivity="false" />
+    <logger name="org.apache.http" level="warn" additivity="false" />
+    <logger name="openllet.jena.graph" level="error" additivity="false" />
 
     <root level="debug">
         <appender-ref ref="CONSOLE"/>

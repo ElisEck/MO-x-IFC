@@ -43,50 +43,7 @@ public class JenaTest {
             "PREFIX owl: <http://www.w3.org/2002/07/owl#> " + System.lineSeparator() +
             "PREFIX inst: <http://linkedbuildingdata.net/ifc/resources20210823_160347/> " + System.lineSeparator();
 
-    @Test
-    /**
-     * zeigt Reasoning anhand des Alignments
-     * aus C:\_DATEN\WORKSPACES\IntelliJ\jena-examples\src\main\java\org\apache\jena\examples\ExampleONT_01.java
-     */
-    public void Reasoning() throws FileNotFoundException {
-        OntModel base = ModelFactory.createOntologyModel( OntModelSpec.OWL_MEM );
-//        base.read( sourceURL, "RDF/XML" );
 
-//        model6 ist merge aus IFC-Instanz + IFC-Standard (=model4) + Alignment
-        ModelHelper.merge("model4.ttl", "c:\\_DATEN\\_FMI4BIM\\BIM\\Ontologien und Alignments\\6_AlignmentIFCModelica\\AlignmentModelicaIFC_220106.ttl", "model6.ttl");
-        InputStream in = new FileInputStream("model6.ttl");
-        base.read(in, "", "ttl");
-
-        String namespace = "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#";
-
-        OntModel inf = ModelFactory.createOntologyModel( OntModelSpec.OWL_MEM_MICRO_RULE_INF, base );
-
-//        OntClass pipeFittingClass = base.getOntClass( namespace + "IfcPipeFitting" );
-//        Individual pipeFitting = base.createIndividual( namespace + "pf1", pipeFittingClass );
-
-        OntClass spaceClass = base.getOntClass( namespace + "IfcSpace" );
-        Individual space = base.createIndividual( namespace + "sp1", spaceClass );
-
-        System.out.println("---- Assertions in the data ----");
-        for (Iterator<Resource> i = space.listRDFTypes(false); i.hasNext(); ) {
-            System.out.println( space.getURI() + " is a " + i.next() );
-        }
-
-        Property property = inf.getProperty("http://www.w3.org/1999/02/22-rdf-syntax-ns#type");
-
-//        Individual individual2 = base.getIndividual("http://linkedbuildingdata.net/ifc/resources20210823_160347/IfcPipeFitting_763");
-
-        System.out.println("\n---- Inferred assertions ----");
-        Resource sp = base.getResource("https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#IfcPipeFitting");
-        ResIterator iterator = inf.listResourcesWithProperty(property, sp) ; //1. Versuch
-        for (Iterator<Individual> pipeFittingIterator = inf.listIndividuals(sp); pipeFittingIterator.hasNext(); ) {
-            Individual pipeFittingIndividual = pipeFittingIterator.next();
-            LOGGER.info(pipeFittingIndividual.toString());
-            for (Iterator<Resource> i = pipeFittingIndividual.listRDFTypes(false); i.hasNext(); ) {
-                System.out.println(pipeFittingIndividual.getURI() + " is a " + i.next());
-            }
-        }
-    }
 
     @Test
     /**

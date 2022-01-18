@@ -9,11 +9,40 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <maven.compiler.target>11</maven.compiler.target>
+<!--        JDK level needed for openllet-->
+        <maven.compiler.target>17</maven.compiler.target>
         <maven.compiler.source>11</maven.compiler.source>
     </properties>
 
+<!--    to build openllet, but it was broken (&ndash;&gt; has to be built manually), therefore not necessary anymore-->
+<!--    <repositories>-->
+<!--        <repository>-->
+<!--            <id>jitpack.io</id>-->
+<!--            <url>https://jitpack.io</url>-->
+<!--        </repository>-->
+<!--    </repositories>-->
+
+
     <dependencies>
+
+
+<!--        <dependency>-->
+<!--            <groupId>com.github.Galigator</groupId>-->
+<!--            <artifactId>openllet</artifactId>-->
+<!--            <version>integration-SNAPSHOT</version>-->
+<!--        </dependency>-->
+
+        <!--        <dependency>-->
+<!--            <groupId>com.github.galigator.openllet</groupId>-->
+<!--            <artifactId>openllet-owlapi</artifactId>-->
+<!--            <version>2.6.5</version>-->
+<!--        </dependency>-->
+        <dependency>
+<!--            manually built 18.1.22-->
+            <groupId>com.github.galigator.openllet</groupId>
+            <artifactId>openllet-jena</artifactId>
+            <version>2.6.6-SNAPSHOT</version>
+        </dependency>
         <dependency>
             <groupId>org.apache.jena</groupId>
             <artifactId>apache-jena-libs</artifactId>
