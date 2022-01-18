@@ -1,0 +1,21 @@
+@prefix ifc:  <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#> .
+@prefix elli:  <http://linkedbuildingdata.net/ifc/resources_Elli/> .
+@prefix list:  <https://w3id.org/list#> .
+@prefix express:  <https://w3id.org/express#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+
+elli:   rdf:type     owl:Ontology ;
+        owl:imports  ifc: .
+		
+elli:relDefinesByProperty_IfcObjectDefinition owl:inverseOf ifc:relatedObjects_IfcRelDefinesByProperties. #proved to be working 14.1.22
+
+elli:stringNominalValue rdf:type owl:ObjectProperty ;
+	owl:propertyChainAxiom ( ifc:relatingPropertyDefinition_IfcRelDefinesByProperties ifc:hasProperties_IfcPropertySet ) .
+
+elli:abc ifc:relatingPropertyDefinition_IfcRelDefinesByProperties elli:def .
+elli:def ifc:hasProperties_IfcPropertySet elli:ghi .
+
+#elli:stringNominalValueEE owl:propertyChainAxiom ( ifc:relatingPropertyDefinition_IfcRelDefinesByProperties ifc:hasProperties_IfcPropertySet ) .
+
