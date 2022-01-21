@@ -383,7 +383,7 @@
 ###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#assignedToFlowElement_IfcDistributionControlElement
 :assignedToFlowElement_IfcDistributionControlElement rdf:type owl:ObjectProperty ;
                                                      owl:inverseOf :relatedControlElements_IfcRelFlowControlElements ;
-                                                     rdf:type owl:FunctionalProperty ;
+                                                     #rdf:type owl:FunctionalProperty ;
                                                      rdfs:domain :IfcDistributionControlElement ;
                                                      rdfs:range :IfcRelFlowControlElements ;
                                                      rdfs:label "AssignedToFlowElement" .
@@ -18951,11 +18951,11 @@
                                                [ rdf:type owl:Restriction ;
                                                  owl:onProperty :assignedToFlowElement_IfcDistributionControlElement ;
                                                  owl:allValuesFrom :IfcRelFlowControlElements
-                                               ] ,
-                                               [ rdf:type owl:Restriction ;
-                                                 owl:onProperty :assignedToFlowElement_IfcDistributionControlElement ;
-                                                 owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                 owl:onClass :IfcRelFlowControlElements
+#                                               ] ,
+#                                               [ rdf:type owl:Restriction ;
+#                                                 owl:onProperty :assignedToFlowElement_IfcDistributionControlElement ;
+#                                                 owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+#                                                 owl:onClass :IfcRelFlowControlElements
                                                ] ;
                                owl:disjointWith :IfcDistributionFlowElement .
 
@@ -34591,6 +34591,11 @@
                                    owl:allValuesFrom :IfcSurfaceSide
                                  ] ,
                                  [ rdf:type owl:Restriction ;
+                                   owl:onProperty :side_IfcSurfaceStyle ;
+                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass :IfcSurfaceSide
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
                                    owl:onProperty :styles_IfcSurfaceStyle ;
                                    owl:allValuesFrom :IfcSurfaceStyleElementSelect
                                  ] ,
@@ -34598,11 +34603,6 @@
                                    owl:onProperty :styles_IfcSurfaceStyle ;
                                    owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                    owl:onClass :IfcSurfaceStyleElementSelect
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty :side_IfcSurfaceStyle ;
-                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                   owl:onClass :IfcSurfaceSide
                                  ] ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty :styles_IfcSurfaceStyle ;
