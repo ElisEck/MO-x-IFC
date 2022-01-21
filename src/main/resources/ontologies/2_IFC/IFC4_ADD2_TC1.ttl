@@ -16722,12 +16722,12 @@
                                         ] ,
                                         [ rdf:type owl:Restriction ;
                                           owl:onProperty :profiles_IfcCompositeProfileDef ;
-                                          owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                           owl:onClass :IfcProfileDef
                                         ] ,
                                         [ rdf:type owl:Restriction ;
                                           owl:onProperty :label_IfcCompositeProfileDef ;
-                                          owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                          owl:maxQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
                                           owl:onClass :IfcLabel
                                         ] ;
                         owl:disjointWith :IfcDerivedProfileDef ,
