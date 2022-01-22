@@ -6,8 +6,10 @@
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl:  <http://www.w3.org/2002/07/owl#> .
 
-elli:   rdf:type     owl:Ontology ;
-        owl:imports  ifc: .
+elli:   rdf:type     owl:Ontology .
+
+#elli:   rdf:type     owl:Ontology ;
+#        owl:imports  ifc: .
 		
 elli:relDefinesByProperty_IfcObjectDefinition owl:inverseOf ifc:relatedObjects_IfcRelDefinesByProperties. #proved to be working 14.1.22
 

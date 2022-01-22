@@ -50,9 +50,12 @@ public class KomplextestKaelte {
     public void Kaelte() {
         LOGGER.info("Start");
         String filepath1 = "C:\\_DATEN\\WORKSPACES\\IntelliJ\\mo-x-ifc\\src\\main\\resources\\ontologies\\2_IFC\\IFC4_ADD2_TC1.ttl";
-        String filepath2 = "C:\\_DATEN\\WORKSPACES\\IntelliJ\\mo-x-ifc\\src\\test\\resources\\B_COOplant\\KälteErzeugung_MU.ttl";
+//        String filepath2 = "C:\\_DATEN\\WORKSPACES\\IntelliJ\\mo-x-ifc\\src\\test\\resources\\B_COOplant\\KälteErzeugung_MU.ttl";
+        String filepath2 = "C:\\_DATEN\\WORKSPACES\\IntelliJ\\mo-x-ifc\\src\\test\\resources\\B_COOplant\\220122_KälteErzeugung_MU_fixed2.ttl";
+//        String filepath2 = "C:\\_DATEN\\WORKSPACES\\IntelliJ\\mo-x-ifc\\src\\test\\resources\\B_COOplant\\KälteErzeugung_MU_mitPumpenparametern.ttl";
         String filename3 = "C:\\_DATEN\\WORKSPACES\\IntelliJ\\mo-x-ifc\\src\\test\\java\\output\\model3.ttl";
         String filename4 = "C:\\_DATEN\\WORKSPACES\\IntelliJ\\mo-x-ifc\\src\\test\\java\\output\\model4.ttl";
+        String filename5 = "C:\\_DATEN\\WORKSPACES\\IntelliJ\\mo-x-ifc\\src\\test\\java\\output\\model5.ttl";
 
         Model model = RDFDataMgr.loadModel(filepath1);
         LOGGER.info("read "+filepath1+" with "+ ModelHelper.countTriples(model) + " Triples");
@@ -62,13 +65,17 @@ public class KomplextestKaelte {
 
         Model model3 = model.add(model2);
         LOGGER.info("merged to "+ ModelHelper.countTriples(model3) + " Triples");
+        ModelHelper.serialize(model3, filename3);
 
         Model model4 = deleteIFCGeometry(model3);
-        model4 = deleteOWL(model4);
-
         LOGGER.info("reduced to "+ ModelHelper.countTriples(model4) + " Triples");
         ModelHelper.serialize(model4, filename4);
         LOGGER.info("serialized as "+filename4);
+
+        Model model5 = deleteOWL(model4);
+        LOGGER.info("reduced to "+ ModelHelper.countTriples(model5) + " Triples");
+        ModelHelper.serialize(model5, filename5);
+        LOGGER.info("serialized as "+filename5);
 
         //        Model model5 = RDFDataMgr.loadModel("c:\\_DATEN\\_FMI4BIM\\BIM\\Ontologien und Alignments\\6_AlignmentIFCModelica\\AlignmentModelicaIFC_220106.ttl");
         //        Model model6 = model4.add(model5);
@@ -90,6 +97,34 @@ public class KomplextestKaelte {
         Map<String, Integer> node2DegreeMap = ModelHelper.calculateNodeDegrees(model4); //ausfüllen der Node2DegreeMap am model4ee
         ModelHelper.stringToFile(ModelHelper.printNode2DegreeMap(node2DegreeMap), "C:\\_DATEN\\WORKSPACES\\IntelliJ\\mo-x-ifc\\src\\test\\java\\output\\STAT-Files\\model4_nodedegrees.txt");
         LOGGER.info("printed Node2DegreeMap to model4_nodedegrees.txt");
+    }
+
+
+    /**
+     * hier wird versucht mit dem Kürzel für die PropertyChain eine Query zu starten
+     */
+    @Test
+    public void propertyChainAbgekuerzt(){
+//        Model model = RDFDataMgr.loadModel("C:\\_DATEN\\WORKSPACES\\IntelliJ\\mo-x-ifc\\src\\test\\java\\output\\model4.ttl");
+//        model = model.add(RDFDataMgr.loadModel("C:\\_DATEN\\WORKSPACES\\IntelliJ\\mo-x-ifc\\src\\main\\resources\\alignments\\alignment1.ttl"));
+        //        Model model = RDFDataMgr.loadModel("C:\\_DATEN\\WORKSPACES\\IntelliJ\\mo-x-ifc\\src\\main\\resources\\alignments\\alignment1.ttl");
+                ModelHelper.merge(  "C:\\_DATEN\\WORKSPACES\\IntelliJ\\mo-x-ifc\\src\\test\\java\\output\\model4.ttl",
+                        "C:\\_DATEN\\WORKSPACES\\IntelliJ\\mo-x-ifc\\src\\main\\resources\\alignments\\alignment1.ttl",
+                        "C:\\_DATEN\\WORKSPACES\\IntelliJ\\mo-x-ifc\\src\\test\\java\\output\\model7_1251.ttl");
+                Model model = RDFDataMgr.loadModel("C:\\_DATEN\\WORKSPACES\\IntelliJ\\mo-x-ifc\\src\\test\\java\\output\\model7_1251.ttl");
+        System.out.println("Triples model: " +      countTriples(model));
+        OntModel inf = ModelFactory.createOntologyModel( PelletReasonerFactory.THE_SPEC, model );
+        //        System.out.println("Triples inf: " +      countTriples(inf));
+        String queryString =
+                PREFIXSTRING +
+                        "SELECT "+
+                        "?object ?rel"+
+                        " WHERE {"+
+                        "?object elli:stringNominalValue ?rel . " + //eigentlich richtig //TODO
+                        //                        "?object owl:minQualifiedCardinality ?rel . " + //Testquery
+                        //                        "?object ?p ?rel . " + //Testquery für alle Statements
+                        "}";
+        System.out.println(printSelects(inf, queryString));
     }
 
     @Test
@@ -157,6 +192,7 @@ public class KomplextestKaelte {
     @Test
     /**
      * hiermit wird gezeigt, dass die eigene Definition einer Property funktioniert
+     * außerdem wird die PropertyChain für PropertyWerte herausgearbeitet
      */
     public void queryByPropertyChain(){
         Model model = RDFDataMgr.loadModel("C:\\_DATEN\\WORKSPACES\\IntelliJ\\mo-x-ifc\\src\\test\\java\\output\\model4.ttl");
@@ -238,54 +274,6 @@ public class KomplextestKaelte {
         System.out.println(printSelects(inf, queryString));
     }
 
-
-    /**
-     * hier wird versucht mit dem Kürzel für die PropertyChain eine Query zu starten
-     */
-    @Test
-    public void propertyChainAbgekuerzt(){
-        Model model = RDFDataMgr.loadModel("C:\\_DATEN\\WORKSPACES\\IntelliJ\\mo-x-ifc\\src\\test\\java\\output\\model4.ttl");
-        model = model.add(RDFDataMgr.loadModel("C:\\_DATEN\\WORKSPACES\\IntelliJ\\mo-x-ifc\\src\\main\\resources\\alignments\\alignment1.ttl"));
-        OntModel inf = ModelFactory.createOntologyModel( PelletReasonerFactory.THE_SPEC, model );
-        String queryString =
-                PREFIXSTRING +
-                        "SELECT "+
-                        "?object ?rel"+
-                        " WHERE {"+
-                        "?object elli:stringNominalValue ?rel . " + //unfortunately no results
-                        "}";
-        System.out.println(printSelects(inf, queryString));
-    }
-
-//    public void openPellet() {
-//        final String ns = "http://www.example.org/test#";
-//
-//        final OntModel model = ModelFactory.createOntologyModel(PelletReasonerFactory.THE_SPEC);
-//        model.read(_base + "uncle.owl");
-//
-//        final Individual Bob = model.getIndividual(ns + "Bob");
-//        final Individual Sam = model.getIndividual(ns + "Sam");
-//
-//        final Property uncleOf = model.getProperty(ns + "uncleOf");
-//
-//        final Model uncleValues = ModelFactory.createDefaultModel();
-//        addStatements(uncleValues, Bob, uncleOf, Sam);
-//        assertPropertyValues(model, uncleOf, uncleValues);
-//    }
-//
-//    public void hermitReasoning(){
-//        //https://stackoverflow.com/questions/49558673/hermit-reasoner-sparql-query
-//        OWLOntologyManager manager= OWLManager.createOWLOntologyManager(); //create the manager
-//        OWLOntology ontology=manager.loadOntologyFromOntologyDocument(new File("ontologies/E1G1.owl"));
-//
-//        OWLDataFactory datafact=manager.getOWLDataFactory();
-//        Configuration config= new Configuration();
-//        Reasoner reasoner= new Reasoner(config, ontology);
-//        reasoner.classifyClasses();
-//        reasoner.classifyDataProperties();
-//        reasoner.classifyObjectProperties();
-//        System.out.println(reasoner.isConsistent());
-//    }
 
 
     /**

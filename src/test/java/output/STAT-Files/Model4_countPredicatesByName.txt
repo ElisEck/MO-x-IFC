@@ -1,7 +1,7 @@
 
 Predicates
-11817	http://www.w3.org/1999/02/22-rdf-syntax-ns#type
-5058	http://www.w3.org/2000/01/rdf-schema#subClassOf
+11815	http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+5057	http://www.w3.org/2000/01/rdf-schema#subClassOf
 2744	http://www.w3.org/2000/01/rdf-schema#label
 1585	http://www.w3.org/2000/01/rdf-schema#domain
 1585	http://www.w3.org/2000/01/rdf-schema#range
