@@ -19,6 +19,10 @@ public class MParameterComponent {
         return typeSpecifier;
     }
 
+    public void setTypeSpecifier(String typeSpecifier) {
+        this.typeSpecifier = typeSpecifier;
+    }
+
     public String getName() {
         return name;
     }

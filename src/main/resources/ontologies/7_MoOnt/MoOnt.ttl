@@ -109,6 +109,7 @@ moont:equation rdf:type owl:ObjectProperty ;
 ###  http://www.eas.iis.fraunhofer.de/moont#extends
 moont:extends rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf moont:ModelicaObjectProperty ;
+#			  owl:equivalentProperty rdfs:subClassOf ;
               rdfs:domain moont:MAbstractClass ;
               rdfs:range moont:MExtends ;
               rdfs:label "extends"@en .
@@ -173,6 +174,7 @@ moont:toPort rdf:type owl:ObjectProperty ;
 ###  http://www.eas.iis.fraunhofer.de/moont#type
 moont:type rdf:type owl:ObjectProperty ;
            rdfs:subPropertyOf moont:ModelicaObjectProperty ;
+   #        owl:equivalentProperty rdf:type ;
            rdfs:domain moont:MComponent ;
            rdfs:range moont:MAbstractClass ;
            rdfs:label "type"@en .

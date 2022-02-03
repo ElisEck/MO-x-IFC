@@ -6,15 +6,37 @@
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl:  <http://www.w3.org/2002/07/owl#> .
 
-elli:   rdf:type     owl:Ontology ;
-        owl:imports  ifc: .
-		
+elli:   rdf:type     owl:Ontology .
+
 elli:relDefinesByProperty_IfcObjectDefinition owl:inverseOf ifc:relatedObjects_IfcRelDefinesByProperties. #proved to be working 14.1.22
 
 #elli:stringNominalValue a owl:ObjectProperty ;
-#	owl:propertyChainAxiom (elli:relDefinesByProperty_IfcObjectDefinition ifc:relatingPropertyDefinition_IfcRelDefinesByProperties 		ifc:hasProperties_IfcPropertySet ifc:nominalValue_IfcPropertySingleValue express:hasString ) .
+#	owl:propertyChainAxiom (elli:relDefinesByProperty_IfcObjectDefinition ifc:relatingPropertyDefinition_IfcRelDefinesByProperties ifc:hasProperties_IfcPropertySet ifc:nominalValue_IfcPropertySingleValue express:hasString ) .
 
 elli:stringNominalValue rdf:type owl:ObjectProperty ;
-	owl:propertyChainAxiom ( ifc:relatingPropertyDefinition_IfcRelDefinesByProperties ifc:hasProperties_IfcPropertySet ) .
+	owl:propertyChainAxiom ( elli:relDefinesByProperty_IfcObjectDefinition ifc:relatingPropertyDefinition_IfcRelDefinesByProperties ifc:hasProperties_IfcPropertySet ifc:nominalValue_IfcPropertySingleValue ) .
 
+elli:propertyIdentifier rdf:type owl:ObjectProperty ;
+	owl:propertyChainAxiom ( elli:relDefinesByProperty_IfcObjectDefinition ifc:relatingPropertyDefinition_IfcRelDefinesByProperties ifc:hasProperties_IfcPropertySet ifc:name_ifcProperty ) .
 
+elli:propertySetIdentifier rdf:type owl:ObjectProperty ;
+	owl:propertyChainAxiom ( elli:relDefinesByProperty_IfcObjectDefinition ifc:relatingPropertyDefinition_IfcRelDefinesByProperties ifc:name_IfcRoot ) .
+
+elli:ps rdf:type owl:ObjectProperty ;
+	owl:propertyChainAxiom ( elli:relDefinesByProperty_IfcObjectDefinition ifc:relatingPropertyDefinition_IfcRelDefinesByProperties ) .
+
+# elli:psn rdf:type owl:ObjectProperty ;
+#	owl:propertyChainAxiom ( ifc:name_IfcRoot express:hasString ) .
+#	owl:propertyChainAxiom ( elli:relDefinesByProperty_IfcObjectDefinition ifc:relatingPropertyDefinition_IfcRelDefinesByProperties ifc:name_IfcRoot express:hasElliString ) .
+elli:psn owl:propertyChainAxiom ( ifc:name_IfcRoot express:hasString ) .
+
+#elli:psvv rdf:type owl:DataProperty ; #zwar im Netz gefunden aber nicht im OWL.ttl!
+#elli:psvv rdf:type owl:DatatypeProperty ;
+#	owl:propertyChainAxiom ( ifc:nominalValue_IfcPropertySingleValue express:hasString ) .
+elli:psvv owl:propertyChainAxiom ( ifc:nominalValue_IfcPropertySingleValue express:hasString ) .
+
+elli:psvn rdf:type owl:ObjectProperty ;
+	owl:propertyChainAxiom ( ifc:name_IfcProperty express:hasString ) .
+
+#express:hasElliString rdf:type owl:ObjectProperty.
+express:hasElliString rdf:type owl:DatatypeProperty.

@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="User Entered Import Resolution" name="http://www.eas.iis.fraunhofer.de/moont#" uri="file:/C:/_DATEN/WORKSPACES/IntelliJ/mo-x-ifc/src/main/resources/ontologies/7_MoOnt/MoOnt.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://www.eas.iis.fraunhofer.de/MoOnt#" uri="file:/C:/_DATEN/WORKSPACES/IntelliJ/mo-x-ifc/src/main/resources/ontologies/7_MoOnt/MoOnt.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://www.eas.iis.fraunhofer.de/MoOnt" uri="file:/C:/_DATEN/WORKSPACES/IntelliJ/mo-x-ifc/src/main/resources/ontologies/7_MoOnt/MoOnt.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://linkedbuildingdata.net/ifc/resources_Elli/" uri="file:/C:/_DATEN/WORKSPACES/IntelliJ/mo-x-ifc/src/main/resources/alignments/alignment2.ttl"/>
     <uri id="Imports Wizard Entry" name="http://linkedbuildingdata.net/ifc/resources_Elli/" uri="file:/C:/_DATEN/WORKSPACES/IntelliJ/mo-x-ifc/src/main/resources/alignments/alignment1.ttl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base=""/>
 </catalog>

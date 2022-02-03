@@ -1,10 +1,12 @@
 package de.elisabetheckstaedt.moxifc.modelicatranscriptor.model;
 
 import de.elisabetheckstaedt.moxifc.modelicatranscriptor.parser.ModelicaFileAntlrParser;
+import de.elisabetheckstaedt.moxifc.modelicatranscriptor.parser.TreeNode;
 
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -119,7 +121,7 @@ public class ModelicaLibrary {
             FileWriter myWriter = new FileWriter(filename);
 
             myWriter.write("@prefix "+prefix+":    <http://www.eas.iis.fraunhofer.de/"+ prefix+"#> ." + NEWLINE);
-            myWriter.write("@prefix moont:    <https://www.eas.iis.fraunhofer.de/MoOnt#> ." + NEWLINE);
+            myWriter.write("@prefix moont:    <http://www.eas.iis.fraunhofer.de/moont#> ." + NEWLINE);
             myWriter.write("@prefix msl:    <http://www.eas.iis.fraunhofer.de/msl#> ." + NEWLINE);
             myWriter.write("@prefix aix:    <http://www.eas.iis.fraunhofer.de/aix#> ." + NEWLINE);
             myWriter.write("@prefix mbl:    <http://www.eas.iis.fraunhofer.de/mbl#> ." + NEWLINE);
@@ -128,8 +130,25 @@ public class ModelicaLibrary {
             myWriter.write("@prefix owl:  <http://www.w3.org/2002/07/owl#> ." + NEWLINE);
             myWriter.write("@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> ." + NEWLINE);
             myWriter.write(prefix + ": rdf:type owl:Ontology ;" + NEWLINE);
-            myWriter.write("\t owl:imports <https://www.eas.iis.fraunhofer.de/MoOnt> ." + NEWLINE);
+            myWriter.write("\t owl:imports moont: ." + NEWLINE);
 
+            String rootName = "AixLib";
+            TreeNode<String> root = new TreeNode<>(rootName, new HashMap<>());
+            for (ModelicaFile mf : mfs) {
+                for (MClass mk : mf.mks) {
+                    String[] pathParts = mk.container.split("\\.");
+                    TreeNode<String> currentNode = root;
+                    for (String pathPart : pathParts) {
+                        if (!rootName.equals(pathPart)) {
+                        currentNode= currentNode.addChild(pathPart);}
+                    }
+                }
+            }
+            for (ModelicaFile mf : mfs) {
+                for (MClass mk : mf.mks) {
+                    mk.replaceRelativePaths("AixLib.", root);
+                }
+            }
             for (ModelicaFile mf : mfs) {
                 for (MClass mk : mf.mks) {
                     myWriter.write(mk.serializeAsTTL());

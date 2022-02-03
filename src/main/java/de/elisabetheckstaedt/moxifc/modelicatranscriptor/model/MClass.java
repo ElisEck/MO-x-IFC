@@ -1,12 +1,6 @@
 package de.elisabetheckstaedt.moxifc.modelicatranscriptor.model;
 
-import org.apache.jena.rdf.model.Model;
-import org.apache.jena.rdf.model.ModelFactory;
-import org.apache.jena.rdf.model.Resource;
-import org.apache.jena.rdf.model.ResourceFactory;
-import org.apache.jena.riot.RIOT;
-import org.apache.jena.sparql.vocabulary.FOAF;
-import org.apache.jena.vocabulary.RDF;
+import de.elisabetheckstaedt.moxifc.modelicatranscriptor.parser.TreeNode;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -171,19 +165,34 @@ public class MClass {
         {
             zf = zf.concat(owlPrefix +":"+ container + "." + name + " moont:hasPart " + owlPrefix +":"+ container + "." + name + "." + mp.getName() + "." + NEWLINE);
             zf = zf.concat(owlPrefix +":"+ container + "." + name + "." + mp.getName()   + " a moont:MParameterComponent;" + NEWLINE);
+
             if ((mp.getTypeSpecifier().equals("Real"))) {//für Komponenten aus der MSL wird die Klasse nicht angegeben
-                zf = zf.concat("\t" + " moont:type " + "xsd:Real." + NEWLINE);
+                zf = zf.concat("\t" + " moont:type " + "xsd:Real" );
             } else if ((mp.getTypeSpecifier().equals("Integer"))) {//für Komponenten aus der MSL wird die Klasse nicht angegeben
-                zf = zf.concat("\t" + " moont:type " + "xsd:Integer." + NEWLINE);
+                zf = zf.concat("\t" + " moont:type " + "xsd:Integer");
             } else if ((mp.getTypeSpecifier().equals("Boolean"))) {//für Komponenten aus der MSL wird die Klasse nicht angegeben
-                zf = zf.concat("\t" + " moont:type " + "xsd:Boolean." + NEWLINE);
+                zf = zf.concat("\t" + " moont:type " + "xsd:Boolean");
             } else {//für Komponenten aus der MSL wird die Klasse nicht angegeben
-                zf = zf.concat("\t" + " moont:type " + owlPrefix +":" + mp.getTypeSpecifier() + "." + NEWLINE);
+                zf = zf.concat("\t" + " moont:type " + owlPrefix +":" + mp.getTypeSpecifier()) ;
+            }
+
+            if (mp.getModification().equals("")) {
+                zf = zf.concat("." + NEWLINE);
+            } else {
+                zf += ";" + NEWLINE + "\t" + " moont:modification \"" + maskSpecialCharacter(mp.getModification()) + "\"^^xsd:string." + NEWLINE;
             }
 //Achtung: wenn Zeile wieder rein, Semikolon in Vorzeile oder Subjekt ergänzen
             //            parameterString = parameterString.concat("\t rdfs:range " +"aix:" + mp.klasse + "." + NEWLINE);
         }
         return zf;
+    }
+
+    String maskSpecialCharacter(String oldString) {
+        String newString = oldString;
+        if (newString.contains("\"")) {
+            newString = newString.replace("\"", "\\\"");
+        }
+        return newString;
     }
 
     String writeComponentsToTTL() {
@@ -193,6 +202,11 @@ public class MClass {
             zf += owlPrefix + ":"+ container + "." + name +" moont:hasPart " + owlPrefix +":" + container + "." + name + "." + mo.name+ "." + NEWLINE;
             zf += owlPrefix +":"+ container + "." + name + "." + mo.name   + " a moont:MComponent ;"+ NEWLINE;
 //            zf += "\t"                                             + " a owl:NamedIndividual;" + NEWLINE;
+            if (mo.getModification().equals("")) {
+                String a = "";
+            } else {
+                zf += "\t" + " moont:modification \"" + maskSpecialCharacter(mo.getModification()) + "\"^^xsd:string;" + NEWLINE;
+            }
             if (mo.mClass.name.equals("")) { //wenn es keine
                 continue; //TODO kommt bei redeclare replaceable
             }
@@ -214,26 +228,76 @@ public class MClass {
         return zf;
     }
 
+    String cleanName(String nameOld) { //TODO cleanName ersetzen
+        String nameNew = nameOld;
+        if (nameOld.contains("[")) {
+            nameNew = nameNew.replace("[", "_");
+            nameNew = nameNew.replace("]", "");
+        } if (nameOld.contains("+")) {
+            nameNew = nameNew.replace("+", "plus");
+        } if (nameOld.contains(",")) {
+            nameNew = nameNew.replace(",", "comma");
+        } if (nameOld.contains(":")) {
+            nameNew = nameNew.replace(":", "TO");
+        } if (nameOld.contains("*")) {
+            nameNew = nameNew.replace("*", "TIMES");
+        } if (nameOld.contains("(")) {
+            nameNew = nameNew.replace("(", "_");
+            nameNew = nameNew.replace(")", "");
+        } if (nameOld.contains(">")) {
+            nameNew = nameNew.replace(">", "GREATER");
+        } if (nameOld.contains("<")) {
+            nameNew = nameNew.replace("<", "SMALLER");
+        } if (nameOld.contains("-")) {
+            nameNew = nameNew.replace("*", "MINUS");
+        }
+        return nameNew;
+    }
+
     String writeConnectionsToTTL() {
         String zf = "";
         for (MConnection mc : connections)
         {
+            String leftPortName = cleanName(mc.getLeftPort());
             //left component
-            if (mc.getLeftComponent() == null) {
-                zf += owlPrefix + ":"+ container + "." + name + "." + mc.getLeftPort();
-            } else {
-                zf += owlPrefix + ":"+ container + "." + name + "." + mc.getLeftComponent() + "." + mc.getLeftPort();
+            if (mc.getLeftPort().contains("[")) {
+                zf += writeClassNamespace() + leftPortName + " a moont:Vector." + NEWLINE;
             }
+            if (mc.getLeftComponent() == null) { //wenn  Verbindung von einem Konnektor des Modells ausgeht
+                zf += writeClassNamespace() + leftPortName;
+            } else { //wenn Verbindung vom Konnektor einer Komponente des Modells ausgeht
+                String leftComponentName = cleanName(mc.getLeftComponent());
+                if (mc.getLeftComponent().contains("[")) {
+                    zf += writeClassNamespace() + leftComponentName + " a moont:Vector." + NEWLINE;
+                }
+                zf +=  writeClassNamespace() + leftComponentName + " moont:hasPart " + writeClassNamespace() + leftComponentName + "." + leftPortName + "." + NEWLINE;
+                zf +=  writeClassNamespace() + leftComponentName +  "." + leftPortName + " a moont:MConnectorComponent." + NEWLINE;
+                zf +=  writeClassNamespace() + leftComponentName + "." + leftPortName;
+            }
+
             zf += " moont:connectedTo ";
+
             //right component
+            String rightPortName = cleanName(mc.getRightPort());
             if (mc.getRightComponent() == null) {
-                zf += owlPrefix + ":"+ container + "." + name + "." + mc.getRightPort();
+                zf += writeClassNamespace() + rightPortName + "." + NEWLINE;
+                if (mc.getRightPort().contains("[")) {
+                    zf += writeClassNamespace() + rightPortName + " a moont:Vector." + NEWLINE;
+                }
             } else {
-                zf += owlPrefix + ":"+ container + "." + name + "." + mc.getRightComponent() + "." + mc.getRightPort();
-            }          
-            zf += "." + NEWLINE;
+                String rightComponentName = cleanName(mc.getRightComponent());
+                zf +=  writeClassNamespace() + rightComponentName + "." + rightPortName + "." + NEWLINE;
+                zf +=  writeClassNamespace() + rightComponentName + " moont:hasPart " + writeClassNamespace() + rightComponentName + "." + rightPortName + "." + NEWLINE;
+                zf +=  writeClassNamespace() + rightComponentName + "." + rightPortName + " a moont:MConnectorComponent." + NEWLINE;
+                if (mc.getRightComponent().contains("[")) {
+                    zf += writeClassNamespace() + rightComponentName + " a moont:Vector." + NEWLINE;
+                }
+            }
         }
         return zf;
+    }
+    String writeClassNamespace() {
+        return owlPrefix + ":"+ container + "." + name + ".";
     }
     /*
     String writeKomponentenToTTL() {
@@ -267,9 +331,9 @@ public class MClass {
 /*        //ausführbare Modelle und Packages werden als Instanzen modelliert
         if (parentsIcons.contains("Modelica.Icons.Example") | getTypeAsMoont().equals("MPackage") ) {*/
             if (container.isBlank()) {
-                zf = zf.concat(owlPrefix +":" + name + " a moont:" + getTypeAsMoont() );
+                zf = zf.concat(owlPrefix +":" + name + " rdfs:subClassOf moont:" + getTypeAsMoont() );
             } else {
-                zf = zf.concat(owlPrefix +":" + container + "." + name + " a moont:" + getTypeAsMoont() + ";" + NEWLINE );
+                zf = zf.concat(owlPrefix +":" + container + "." + name + " rdfs:subClassOf moont:" + getTypeAsMoont() + ";" + NEWLINE );
             }
 /*        // alles andere wird als Subclass modelliert
         } else {
@@ -288,15 +352,15 @@ public class MClass {
         } else {
             zf = zf.concat(";" + NEWLINE);
             if (type_prefix.contains("partial")) {
-                zf = zf.concat("\t moont:isPartial moont:TRUE." + NEWLINE);
+                zf = zf.concat("\t moont:isPartial \"true\"^^xsd:boolean." + NEWLINE);
             } else {
                 zf = zf.concat("." + NEWLINE);
 
             }
         }
         zf = zf.concat(writeParentToTTL());
-        zf = zf.concat(writeComponentsToTTL());
         zf = zf.concat(writeParametersToTTL());
+        zf = zf.concat(writeComponentsToTTL());
         zf = zf.concat(writeConnectionsToTTL());
         return zf;
     }
@@ -448,7 +512,7 @@ public class MClass {
     public String getTypeAsMoont() {
         switch(type) {
             case "class": return "MClass";
-            case "de/elisabetheckstaedt/moxifc/modelicatranscriptor/model": return "MModel";
+            case "model": return "MModel";
             case "record": return "MRecord";
             case "block": return "MBlock";
             case "connector": return "MConnector";
@@ -460,4 +524,73 @@ public class MClass {
         }
         return type;
     }
+
+    String findParentNodeOfSearchString(TreeNode<String> root, String startPath, String searchString) {
+        return findParentNodeOfSearchString(root.findTreeNode(startPath), searchString);
+
+    }
+
+    private String findParentNodeOfSearchString(TreeNode<String> startNode, String searchString) {
+//        Optional<TreeNode<String>> optionalHit = startNode.getSiblings()
+        Optional<TreeNode<String>> optionalHit = startNode.getParent().getChildren()
+                .stream()
+                .filter(c -> c.getData().equals(searchString))
+                .findAny();
+        if(optionalHit.isPresent()) {
+            return startNode.getParent().getFullPath();
+        } else {
+            if(startNode.isRoot()) {
+//                throw new RuntimeException("Reached root node while searching for " + searchString);
+                System.out.println("Reached root node while searching for " + searchString);
+            }
+            return findParentNodeOfSearchString(startNode.getParent(), searchString);
+        }
+    }
+
+    private boolean hasChildWithName(TreeNode<String> node, String name) {
+        return node.getChildren().stream().anyMatch((TreeNode<String> t) -> t.getData().equals(name));
+    }
+
+    public void replaceRelativePaths(String sollstart, TreeNode<String> packageTree) {
+        for (MParameterComponent mp :  parameters) {
+            mp.setTypeSpecifier(replace(sollstart, packageTree, mp.getTypeSpecifier()));
+        }
+        for (ModelicaObject mp :  components) {
+            mp.setTypeSpecifier(replace(sollstart, packageTree, mp.getTypeSpecifier()));
+        }
+        Set<ModelicaObject> components = new HashSet<>();
+    }
+
+    private String replace(String sollstart, TreeNode<String> packageTree, String typeSpecifier) {
+        if (typeSpecifier.startsWith(sollstart) ||
+                typeSpecifier.startsWith("Medium") ||
+                typeSpecifier.startsWith("SI") ||
+                typeSpecifier.startsWith("SDF") ||
+                typeSpecifier.startsWith("Modelica")) {
+            return typeSpecifier;
+        } else if (typeSpecifier.equalsIgnoreCase("Real") ||
+                typeSpecifier.equalsIgnoreCase("Integer") ||
+                typeSpecifier.equalsIgnoreCase("String") ||
+                typeSpecifier.equalsIgnoreCase("Boolean")) {
+            return typeSpecifier;
+        } else {
+            String newTypeSpecifier = "";
+            String vorpfad = "";
+            String[] nameparts = typeSpecifier.split("\\.",0);
+           if (typeSpecifier.contains(".")) {
+               if (hasChildWithName(packageTree.getIndex().get(container), nameparts[0])) { //erstmal "nach unten" suchen
+                   newTypeSpecifier = container + "." + typeSpecifier;
+               } else {
+                   vorpfad = findParentNodeOfSearchString(packageTree, container, nameparts[0]);
+                   newTypeSpecifier = vorpfad + "." + typeSpecifier;
+               }
+           } else {
+               newTypeSpecifier = container + "." + typeSpecifier;
+           }
+           return newTypeSpecifier;
+
+        }
+    }
+
+
 }
