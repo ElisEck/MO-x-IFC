@@ -36,7 +36,7 @@ public class ModelicaComponentListener extends modelicaBaseListener {
     private int modificationLevel = 0;
 
 
-    public ModelicaComponentListener(String owlPrefix) {
+    public  ModelicaComponentListener(String owlPrefix) {
         this.owlPrefix = owlPrefix;
     }
 
@@ -55,6 +55,21 @@ public class ModelicaComponentListener extends modelicaBaseListener {
     @Override
     public void enterComponent_declaration(modelicaParser.Component_declarationContext ctx) {
         insideComponentDeclaration = true;
+    }
+
+    @Override
+    public void exitComponent_declaration(modelicaParser.Component_declarationContext ctx) {
+        if (curObject.getTypePrefix().equals("parameter")) {
+            mkstack.peek().appendParameter(new MParameterComponent(curObject.getTypeSpecifier(), curObject.getName(), curObject.getModification(), curObject.getStringComment(), curObject.getAnnotation()));
+        } else {
+            mkstack.peek().appendComponent(curObject);
+        }
+        insideComponentDeclaration = false;
+    }
+
+    @Override
+    public void exitComponent_declaration1(modelicaParser.Component_declaration1Context ctx) {
+        insideComponentDeclaration = false;
     }
 
 
@@ -76,10 +91,7 @@ public class ModelicaComponentListener extends modelicaBaseListener {
 
     }
 
-    @Override
-    public void exitComponent_declaration1(modelicaParser.Component_declaration1Context ctx) {
-        insideComponentDeclaration = false;
-    }
+
 
     @Override
     public void enterDeclaration(modelicaParser.DeclarationContext ctx) {
@@ -162,14 +174,7 @@ public class ModelicaComponentListener extends modelicaBaseListener {
         insideConstrainingClause = false;
     }
 
-    @Override
-    public void exitComponent_declaration(modelicaParser.Component_declarationContext ctx) {
-        if (curObject.getTypePrefix().equals("parameter")) {
-            mkstack.peek().appendParameter(new MParameterComponent(curObject.getTypeSpecifier(), curObject.getName(), curObject.getModification(), curObject.getStringComment(), curObject.getAnnotation()));
-        } else {
-            mkstack.peek().appendComponent(curObject);
-        }
-    }
+
 
     @Override
     public void enterStored_definition(modelicaParser.Stored_definitionContext ctx) {

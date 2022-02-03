@@ -1,13 +1,13 @@
 
 Predicates
-11815	http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+11818	http://www.w3.org/1999/02/22-rdf-syntax-ns#type
 5057	http://www.w3.org/2000/01/rdf-schema#subClassOf
 2744	http://www.w3.org/2000/01/rdf-schema#label
 1585	http://www.w3.org/2000/01/rdf-schema#domain
 1585	http://www.w3.org/2000/01/rdf-schema#range
 536	http://www.w3.org/1999/02/22-rdf-syntax-ns#first
 536	http://www.w3.org/1999/02/22-rdf-syntax-ns#rest
-497	https://w3id.org/express#hasString
+499	https://w3id.org/express#hasString
 246	https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#globalId_IfcRoot
 150	https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#name_IfcRoot
 88	https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#description_IfcRoot
@@ -17,12 +17,12 @@ Predicates
 56	https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#representationIdentifier_IfcRepresentation
 56	https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#representationType_IfcRepresentation
 49	https://w3id.org/list#hasContents
-34	https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#name_IfcProperty
+35	https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#name_IfcProperty
+33	https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#hasProperties_IfcPropertySet
 33	https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedPort_IfcRelConnectsPorts
 33	https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingPort_IfcRelConnectsPorts
-32	https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#hasProperties_IfcPropertySet
+29	https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#nominalValue_IfcPropertySingleValue
 28	https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#mappedRepresentation_IfcRepresentationMap
-28	https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#nominalValue_IfcPropertySingleValue
 28	https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#representations_IfcProductRepresentation
 19	https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedObjects_IfcRelDefinesByProperties
 17	https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#ownerHistory_IfcRoot

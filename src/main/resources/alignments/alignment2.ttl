@@ -1,0 +1,22 @@
+@prefix ifc:  <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#> .
+@prefix elli:  <http://linkedbuildingdata.net/ifc/resources_Elli/> .
+@prefix list:  <https://w3id.org/list#> .
+@prefix express:  <https://w3id.org/express#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+
+elli:   rdf:type     owl:Ontology .
+
+elli:relDefinesByProperty_IfcObjectDefinition owl:inverseOf ifc:relatedObjects_IfcRelDefinesByProperties.
+
+elli:ps rdf:type owl:ObjectProperty ;
+	owl:propertyChainAxiom ( elli:relDefinesByProperty_IfcObjectDefinition ifc:relatingPropertyDefinition_IfcRelDefinesByProperties ) .
+
+#mixed (ObjectProperty/DatatypeProperty) properties in PropertyChainAxiom obviously not suppoerted
+#elli:psn rdf:type owl:DatatypeProperty ;
+#        owl:propertyChainAxiom ( ifc:name_IfcRoot express:hasString ) .
+#elli:psvv owl:propertyChainAxiom ( ifc:nominalValue_IfcPropertySingleValue express:hasString ) .
+#elli:psvn owl:propertyChainAxiom ( ifc:name_IfcProperty express:hasString ) .
+
+

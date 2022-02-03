@@ -16,7 +16,6 @@ inst:IfcGloballyUniqueId_16021: 0
 inst:IfcShapeRepresentation_12717: 0
 inst:IfcApplication_12: 0
 inst:IfcShapeRepresentation_12713: 0
-inst:IfcPropertySet_1313: 0
 inst:IfcRepresentation_List_19864: 0
 inst:IfcRepresentationMap_12176: 0
 inst:IfcShapeRepresentation_3313: 0
@@ -350,6 +349,7 @@ inst:IfcGloballyUniqueId_15071: 0
 inst:IfcGloballyUniqueId_15063: 0
 inst:IfcGloballyUniqueId_15067: 0
 inst:IfcProductDefinitionShape_10050: 0
+inst:IfcPropertySingleValue_13137: 0
 inst:IfcPropertySingleValue_13136: 0
 inst:IfcPerson_10: 0
 inst:IfcValve_13144: 0
@@ -905,6 +905,7 @@ inst:IfcLabel_21867: 0
 inst:IfcLabel_21930: 0
 inst:IfcValve_3307: 0
 inst:IfcShapeRepresentation_11540: 0
+inst:IfcLabel_21953: 0
 inst:IfcRelAggregates_13067: 0
 inst:IfcLabel_21952: 0
 inst:IfcLabel_21951: 0
@@ -969,6 +970,7 @@ inst:IfcShapeRepresentation_3027: 0
 inst:IfcReal_21924: 0
 inst:IfcReal_21925: 0
 inst:IfcIdentifier_21874: 0
+inst:IfcIdentifier_21875: 0
 inst:IfcShapeRepresentation_8707: 0
 inst:IfcReal_21929: 0
 inst:IfcText_15069: 0
@@ -5036,7 +5038,7 @@ ifc:IfcRepresentation_List: 35
 ifc:IfcProductDefinitionShape: 35
 ifc:IfcAppliedValue: 36
 ifc:IfcReinforcingMeshType: 37
-ifc:IfcPropertySingleValue: 37
+ifc:IfcPropertySingleValue: 38
 ifc:IfcWindowLiningProperties: 39
 ifc:IfcAsymmetricIShapeProfileDef: 39
 ifc:IfcRepresentationMap: 40
@@ -5054,8 +5056,8 @@ list:OWLList: 56
 ifc:IfcTaskTime: 56
 list:EmptyList: 56
 ifc:IfcShapeRepresentation: 59
-ifc:IfcIdentifier: 59
 express:SELECT: 60
+ifc:IfcIdentifier: 60
 ifc:IfcDocumentInformation: 64
 ifc:IfcDerivedMeasureValue: 74
 ifc:IfcRelNests: 75
@@ -5068,7 +5070,7 @@ ifc:USERDEFINED: 165
 ifc:NOTDEFINED: 178
 express:ENUMERATION: 207
 ifc:IfcGloballyUniqueId: 246
-ifc:IfcLabel: 338
+ifc:IfcLabel: 339
 owl:NamedIndividual: 1159
 owl:Class: 1408
 owl:FunctionalProperty: 1449

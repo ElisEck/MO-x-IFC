@@ -98,8 +98,6 @@ ifc:precision_IfcGeometricRepresentationContext
         rdfs:label   "Precision" ;
         rdfs:range   ifc:IfcReal .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:predefinedType_IfcStructuralSurfaceAction
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
         rdfs:domain  ifc:IfcStructuralSurfaceAction ;
@@ -163,14 +161,14 @@ ifc:enclosure_IfcBoxedHalfSpace
         rdfs:label   "Enclosure" ;
         rdfs:range   ifc:IfcBoundingBox .
 
+[ rdf:type  owl:Restriction ] .
+
 inst:IfcGloballyUniqueId_22127
         rdf:type           ifc:IfcGloballyUniqueId ;
         express:hasString  "ELEMENTCONNECT0037" .
 
 inst:IfcLabel_15076  rdf:type  ifc:IfcLabel ;
         express:hasString  "Name_WT" .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:SPEAKER  rdf:type  ifc:IfcAudioVisualApplianceTypeEnum , owl:NamedIndividual ;
         rdfs:label  "SPEAKER" .
@@ -301,6 +299,8 @@ ifc:IfcRamp  rdf:type    owl:Class ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:IfcTableRow  rdf:type  owl:Class ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
@@ -317,10 +317,10 @@ ifc:surfaceReinforcement1_IfcSurfaceReinforcementArea
 ifc:IfcExtendedProperties
         rdf:type         owl:Class ;
         rdfs:subClassOf  ifc:IfcPropertyAbstraction ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Class ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
@@ -346,6 +346,8 @@ ifc:IfcTimeSeriesValue
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:IfcLuminousIntensityMeasure
         rdf:type         owl:Class ;
@@ -453,14 +455,16 @@ ifc:predefinedType_IfcSubContractResource
         rdfs:label   "PredefinedType" ;
         rdfs:range   ifc:IfcSubContractResourceTypeEnum .
 
-ifc:IfcUnitEnum  rdf:type  owl:Class ;
-        rdfs:subClassOf  express:ENUMERATION .
-
 ifc:theActor_IfcActor
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
         rdfs:domain  ifc:IfcActor ;
         rdfs:label   "TheActor" ;
         rdfs:range   ifc:IfcActorSelect .
+
+ifc:IfcUnitEnum  rdf:type  owl:Class ;
+        rdfs:subClassOf  express:ENUMERATION .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:IfcActorRole  rdf:type  owl:Class ;
         rdfs:subClassOf  ifc:IfcResourceObjectSelect ;
@@ -470,6 +474,8 @@ ifc:IfcActorRole  rdf:type  owl:Class ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:IfcPreDefinedPropertySet
         rdf:type         owl:Class ;
@@ -553,8 +559,6 @@ ifc:predefinedType_IfcCableCarrierFitting
         rdfs:label   "PredefinedType" ;
         rdfs:range   ifc:IfcCableCarrierFittingTypeEnum .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:IfcSweptAreaSolid
         rdf:type         owl:Class ;
         rdfs:subClassOf  ifc:IfcSolidModel ;
@@ -607,6 +611,8 @@ ifc:webThickness_IfcUShapeProfileDef
         rdfs:label   "WebThickness" ;
         rdfs:range   ifc:IfcPositiveLengthMeasure .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:uKnots_IfcBSplineSurfaceWithKnots
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
         rdfs:domain  ifc:IfcBSplineSurfaceWithKnots ;
@@ -616,13 +622,13 @@ ifc:uKnots_IfcBSplineSurfaceWithKnots
 inst:IfcLabel_21885  rdf:type  ifc:IfcLabel ;
         express:hasString  "Pset_HeatExchangerTypeCommon" .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:massExponent_IfcDimensionalExponents
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
         rdfs:domain  ifc:IfcDimensionalExponents ;
         rdfs:label   "MassExponent" ;
         rdfs:range   express:INTEGER .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:AUDIOVISUALOUTLET
         rdf:type    ifc:IfcOutletTypeEnum , owl:NamedIndividual ;
@@ -706,6 +712,7 @@ inst:IfcRelConnectsPorts_13290
 ifc:IfcRepresentation
         rdf:type         owl:Class ;
         rdfs:subClassOf  ifc:IfcLayeredItem ;
+        rdfs:subClassOf  [ rdf:type  owl:Class ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
@@ -715,8 +722,7 @@ ifc:IfcRepresentation
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Class ] .
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
 
 inst:IfcLabel_21936  rdf:type  ifc:IfcLabel ;
         express:hasString  "Kaeltemaschine" .
@@ -756,6 +762,8 @@ ifc:IfcTextureCoordinateGenerator
 inst:IfcGloballyUniqueId_22095
         rdf:type           ifc:IfcGloballyUniqueId ;
         express:hasString  "PORT0029" .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:PRICEDBILLOFQUANTITIES
         rdf:type    ifc:IfcCostScheduleTypeEnum , owl:NamedIndividual ;
@@ -826,6 +834,8 @@ ifc:predefinedType_IfcStairFlightType
         rdfs:domain  ifc:IfcStairFlightType ;
         rdfs:label   "PredefinedType" ;
         rdfs:range   ifc:IfcStairFlightTypeEnum .
+
+[ rdf:type  owl:Restriction ] .
 
 inst:IfcRelConnectsPorts_13304
         rdf:type              ifc:IfcRelConnectsPorts ;
@@ -963,6 +973,8 @@ ifc:IfcCoil  rdf:type    owl:Class ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
 
+[ rdf:type  owl:Restriction ] .
+
 inst:IfcPropertySingleValue_13005
         rdf:type              ifc:IfcPropertySingleValue ;
         ifc:name_IfcProperty  inst:IfcIdentifier_21854 ;
@@ -1012,10 +1024,10 @@ ifc:IfcStructuralActivity
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Class ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Class ] .
 
 ifc:level_IfcApproval
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
@@ -1187,6 +1199,8 @@ ifc:approvedResources_IfcApproval
 ifc:IfcTime  rdf:type    owl:Class ;
         rdfs:subClassOf  express:STRING , ifc:IfcSimpleValue .
 
+[ rdf:type  owl:Restriction ] .
+
 inst:IfcRepresentation_List_20141
         rdf:type          ifc:IfcRepresentation_List ;
         list:hasContents  inst:IfcShapeRepresentation_9630 .
@@ -1315,6 +1329,8 @@ inst:IfcShapeRepresentation_9630
         ifc:representationType_IfcRepresentation
                 inst:IfcLabel_13258 .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:parameterTakesPrecedence_IfcWindowType
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
         rdfs:domain  ifc:IfcWindowType ;
@@ -1389,8 +1405,6 @@ ifc:sourceCRS_IfcCoordinateOperation
         rdfs:label   "SourceCRS" ;
         rdfs:range   ifc:IfcCoordinateReferenceSystemSelect .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:curveOnRelatedElement_IfcConnectionCurveGeometry
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
         rdfs:domain  ifc:IfcConnectionCurveGeometry ;
@@ -1441,14 +1455,14 @@ ifc:intersectingAxes_IfcVirtualGridIntersection
         rdfs:label   "IntersectingAxes" ;
         rdfs:range   ifc:IfcGridAxis_List .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:IfcAnnotationFillArea
         rdf:type         owl:Class ;
         rdfs:subClassOf  ifc:IfcGeometricRepresentationItem ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:CENTRIFUGALAIRFOIL
         rdf:type    ifc:IfcFanTypeEnum , owl:NamedIndividual ;
@@ -1462,8 +1476,8 @@ ifc:predefinedType_IfcProtectiveDeviceTrippingUnit
 
 ifc:IfcControl  rdf:type  owl:Class ;
         rdfs:subClassOf  ifc:IfcObject ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Class ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
 
@@ -1475,8 +1489,6 @@ inst:IfcDerivedUnit_13120
         rdf:type                     ifc:IfcDerivedUnit ;
         ifc:elements_IfcDerivedUnit  inst:IfcDerivedUnitElement_13121 ;
         ifc:unitType_IfcDerivedUnit  ifc:SOUNDPRESSUREUNIT .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:IfcStyleAssignmentSelect
         rdf:type         owl:Class ;
@@ -1580,6 +1592,8 @@ ifc:predefinedType_IfcEngine
 
 ifc:ADVISORY  rdf:type  ifc:IfcConstraintEnum , owl:NamedIndividual ;
         rdfs:label  "ADVISORY" .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:DIRECTEXPANSIONBRAZEDPLATE
         rdf:type    ifc:IfcEvaporatorTypeEnum , owl:NamedIndividual ;
@@ -1765,6 +1779,8 @@ inst:IfcRelNests_13221
         ifc:relatedObjects_IfcRelNests  inst:IfcHeatExchanger_1941 ;
         ifc:relatingObject_IfcRelNests  inst:IfcDistributionPort_13217 .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:predefinedType_IfcStairType
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
         rdfs:domain  ifc:IfcStairType ;
@@ -1794,8 +1810,6 @@ inst:IfcLabel_22231  rdf:type  ifc:IfcLabel ;
 ifc:START_FINISH  rdf:type  ifc:IfcSequenceEnum , owl:NamedIndividual ;
         rdfs:label  "START_FINISH" .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:unitType_IfcDerivedUnit
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
         rdfs:domain  ifc:IfcDerivedUnit ;
@@ -1811,8 +1825,6 @@ ifc:CARPENTRY  rdf:type  ifc:IfcLaborResourceTypeEnum , owl:NamedIndividual ;
 inst:IfcLabel_22106  rdf:type  ifc:IfcLabel ;
         express:hasString  "KM_Sekundaer_Ausgang" .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:COUPLING  rdf:type  ifc:IfcMotorConnectionTypeEnum , owl:NamedIndividual ;
         rdfs:label  "COUPLING" .
 
@@ -1826,8 +1838,6 @@ ifc:predefinedType_IfcCoveringType
         rdfs:label   "PredefinedType" ;
         rdfs:range   ifc:IfcCoveringTypeEnum .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:MODULUSOFSUBGRADEREACTIONUNIT
         rdf:type    ifc:IfcDerivedUnitEnum , owl:NamedIndividual ;
         rdfs:label  "MODULUSOFSUBGRADEREACTIONUNIT" .
@@ -1840,8 +1850,6 @@ ifc:bendingParameters_IfcReinforcingBarType
         rdfs:domain  ifc:IfcReinforcingBarType ;
         rdfs:label   "BendingParameters" ;
         rdfs:range   ifc:IfcBendingParameterSelect_List .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:ADIABATICULTRASONIC
         rdf:type    ifc:IfcHumidifierTypeEnum , owl:NamedIndividual ;
@@ -1879,8 +1887,6 @@ ifc:IfcNormalisedRatioMeasure
         rdf:type         owl:Class ;
         rdfs:subClassOf  ifc:IfcSizeSelect , ifc:IfcRatioMeasure , ifc:IfcMeasureValue , ifc:IfcColourOrFactor .
 
-[ rdf:type  owl:Restriction ] .
-
 inst:IfcRelNests_13259
         rdf:type                        ifc:IfcRelNests ;
         ifc:globalId_IfcRoot            inst:IfcGloballyUniqueId_22164 ;
@@ -1894,8 +1900,6 @@ ifc:IfcCondenser  rdf:type  owl:Class ;
 
 ifc:ATSTART  rdf:type  ifc:IfcConnectionTypeEnum , owl:NamedIndividual ;
         rdfs:label  "ATSTART" .
-
-[ rdf:type  owl:Restriction ] .
 
 inst:IfcPropertySet_13138
         rdf:type              ifc:IfcPropertySet ;
@@ -1982,6 +1986,8 @@ ifc:jurisdiction_IfcInventory
 
 ifc:IfcFontWeight  rdf:type  owl:Class ;
         rdfs:subClassOf  express:STRING .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:IfcFillAreaStyleHatching
         rdf:type         owl:Class ;
@@ -2182,6 +2188,10 @@ ifc:linearMomentZ_IfcStructuralLoadLinearForce
         rdfs:label   "LinearMomentZ" ;
         rdfs:range   ifc:IfcLinearMomentMeasure .
 
+[ rdf:type  owl:Restriction ] .
+
+[ rdf:type  owl:Restriction ] .
+
 ifc:TYPE_A  rdf:type  ifc:IfcLightDistributionCurveEnum , owl:NamedIndividual ;
         rdfs:label  "TYPE_A" .
 
@@ -2208,13 +2218,9 @@ ifc:IfcFlowInstrumentType
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
 
-[ rdf:type  owl:Restriction ] .
-
 inst:IfcGloballyUniqueId_22272
         rdf:type           ifc:IfcGloballyUniqueId ;
         express:hasString  "PORTCONNECT031" .
-
-[ rdf:type  owl:Restriction ] .
 
 inst:IfcGloballyUniqueId_22059
         rdf:type           ifc:IfcGloballyUniqueId ;
@@ -2269,6 +2275,8 @@ inst:IfcRelConnectsPorts_13305
 ifc:LANDSCAPING  rdf:type  ifc:IfcLaborResourceTypeEnum , owl:NamedIndividual ;
         rdfs:label  "LANDSCAPING" .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:fontVariant_IfcTextStyleFontModel
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
         rdfs:domain  ifc:IfcTextStyleFontModel ;
@@ -2313,13 +2321,13 @@ ifc:IfcFastenerTypeEnum
         rdf:type         owl:Class ;
         rdfs:subClassOf  express:ENUMERATION .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:processType_IfcTypeProcess
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
         rdfs:domain  ifc:IfcTypeProcess ;
         rdfs:label   "ProcessType" ;
         rdfs:range   ifc:IfcLabel .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:predefinedType_IfcLampType
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
@@ -2398,8 +2406,6 @@ ifc:forProfileEndSet_IfcMaterialProfileSetUsageTapering
         rdfs:label   "ForProfileEndSet" ;
         rdfs:range   ifc:IfcMaterialProfileSet .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:IfcOutletType  rdf:type  owl:Class ;
         rdfs:subClassOf  ifc:IfcFlowTerminalType ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
@@ -2455,8 +2461,6 @@ ifc:HYDRAULICACTUATOR
 ifc:DIRECTEVAPORATIVEPACKAGEDROTARYAIRCOOLER
         rdf:type    ifc:IfcEvaporativeCoolerTypeEnum , owl:NamedIndividual ;
         rdfs:label  "DIRECTEVAPORATIVEPACKAGEDROTARYAIRCOOLER" .
-
-[ rdf:type  owl:Restriction ] .
 
 inst:IfcGloballyUniqueId_21940
         rdf:type           ifc:IfcGloballyUniqueId ;
@@ -2614,11 +2618,15 @@ ifc:partOfComplex_IfcPhysicalQuantity
         rdfs:label   "PartOfComplex" ;
         rdfs:range   ifc:IfcPhysicalComplexQuantity .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:predefinedType_IfcAirTerminalType
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
         rdfs:domain  ifc:IfcAirTerminalType ;
         rdfs:label   "PredefinedType" ;
         rdfs:range   ifc:IfcAirTerminalTypeEnum .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:IfcBoundaryCurve  rdf:type  owl:Class ;
         rdfs:subClassOf  ifc:IfcCompositeCurveOnSurface .
@@ -2626,8 +2634,6 @@ ifc:IfcBoundaryCurve  rdf:type  owl:Class ;
 inst:IfcSIUnit_13099  rdf:type     ifc:IfcSIUnit ;
         ifc:name_IfcSIUnit         ifc:PASCAL ;
         ifc:unitType_IfcNamedUnit  ifc:PRESSUREUNIT .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:orientation_IfcFaceBound
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
@@ -2812,8 +2818,6 @@ ifc:basisCurve_IfcPointOnCurve
         rdfs:label   "BasisCurve" ;
         rdfs:range   ifc:IfcCurve .
 
-[ rdf:type  owl:Restriction ] .
-
 inst:IfcGloballyUniqueId_22166
         rdf:type           ifc:IfcGloballyUniqueId ;
         express:hasString  "PORT0050" .
@@ -2868,9 +2872,13 @@ ifc:warpingMoment_IfcStructuralLoadSingleForceWarping
 ifc:P_REFERENCEVALUE  rdf:type  ifc:IfcSimplePropertyTemplateTypeEnum , owl:NamedIndividual ;
         rdfs:label  "P_REFERENCEVALUE" .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:IfcWindowTypeEnum
         rdf:type         owl:Class ;
         rdfs:subClassOf  express:ENUMERATION .
+
+[ rdf:type  owl:Restriction ] .
 
 inst:IfcGloballyUniqueId_22129
         rdf:type           ifc:IfcGloballyUniqueId ;
@@ -2888,22 +2896,19 @@ inst:IfcPropertySingleValue_13062
 ifc:HERMETIC  rdf:type  ifc:IfcCompressorTypeEnum , owl:NamedIndividual ;
         rdfs:label  "HERMETIC" .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:offsetDirection_IfcMaterialLayerWithOffsets
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
         rdfs:domain  ifc:IfcMaterialLayerWithOffsets ;
         rdfs:label   "OffsetDirection" ;
         rdfs:range   ifc:IfcLayerSetDirectionEnum .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:ARCHITECT  rdf:type  ifc:IfcRoleEnum , owl:NamedIndividual ;
         rdfs:label  "ARCHITECT" .
 
 ifc:GAMBREL_ROOF  rdf:type  ifc:IfcRoofTypeEnum , owl:NamedIndividual ;
         rdfs:label  "GAMBREL_ROOF" .
-
-ifc:VENDINGMACHINE  rdf:type  ifc:IfcElectricApplianceTypeEnum , owl:NamedIndividual ;
-        rdfs:label  "VENDINGMACHINE" .
 
 ifc:IfcElectricFlowStorageDevice
         rdf:type         owl:Class ;
@@ -2915,12 +2920,17 @@ ifc:AMOUNTOFSUBSTANCEUNIT
         rdf:type    ifc:IfcUnitEnum , owl:NamedIndividual ;
         rdfs:label  "AMOUNTOFSUBSTANCEUNIT" .
 
+ifc:VENDINGMACHINE  rdf:type  ifc:IfcElectricApplianceTypeEnum , owl:NamedIndividual ;
+        rdfs:label  "VENDINGMACHINE" .
+
 ifc:ELECTRICVOLTAGEUNIT
         rdf:type    ifc:IfcUnitEnum , owl:NamedIndividual ;
         rdfs:label  "ELECTRICVOLTAGEUNIT" .
 
 ifc:Q_VOLUME  rdf:type  ifc:IfcSimplePropertyTemplateTypeEnum , owl:NamedIndividual ;
         rdfs:label  "Q_VOLUME" .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:IfcRelAssociatesLibrary
         rdf:type         owl:Class ;
@@ -3008,8 +3018,6 @@ ifc:overallWidth_IfcDoor
         rdfs:domain  ifc:IfcDoor ;
         rdfs:label   "OverallWidth" ;
         rdfs:range   ifc:IfcPositiveLengthMeasure .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:predefinedType_IfcHeatExchanger
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
@@ -3114,8 +3122,6 @@ ifc:radius_IfcCylindricalSurface
         rdfs:domain  ifc:IfcCylindricalSurface ;
         rdfs:label   "Radius" ;
         rdfs:range   ifc:IfcPositiveLengthMeasure .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:IfcSeamCurve  rdf:type  owl:Class ;
         rdfs:subClassOf  ifc:IfcSurfaceCurve .
@@ -3309,6 +3315,8 @@ ifc:description_IfcCoordinateReferenceSystem
         rdfs:label   "Description" ;
         rdfs:range   ifc:IfcText .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:PHYSICAL  rdf:type  ifc:IfcPhysicalOrVirtualEnum , owl:NamedIndividual ;
         rdfs:label  "PHYSICAL" .
 
@@ -3432,6 +3440,8 @@ ifc:IfcTriangulatedFaceSet
 ifc:LIVE_LOAD_Q  rdf:type  ifc:IfcActionSourceTypeEnum , owl:NamedIndividual ;
         rdfs:label  "LIVE_LOAD_Q" .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:IfcObjectDefinition_List
         rdf:type         owl:Class ;
         rdfs:subClassOf  list:OWLList ;
@@ -3518,8 +3528,6 @@ inst:IfcRelDefinesByType_13133
                 inst:IfcPump_12711 ;
         ifc:relatingType_IfcRelDefinesByType
                 inst:IfcPumpType_13132 .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:BECQUEREL  rdf:type  ifc:IfcSIUnitName , owl:NamedIndividual ;
         rdfs:label  "BECQUEREL" .
@@ -3662,8 +3670,6 @@ inst:IfcRelNests_13204
         ifc:relatedObjects_IfcRelNests  inst:IfcPipeFitting_4420 ;
         ifc:relatingObject_IfcRelNests  inst:IfcDistributionPort_13201 .
 
-[ rdf:type  owl:Restriction ] .
-
 inst:IfcLabel_22126  rdf:type  ifc:IfcLabel ;
         express:hasString  "UmschaltventilPrimKMAus" .
 
@@ -3719,8 +3725,6 @@ ifc:predefinedType_IfcBuildingSystem
         rdfs:label   "PredefinedType" ;
         rdfs:range   ifc:IfcBuildingSystemTypeEnum .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:directrix_IfcFixedReferenceSweptAreaSolid
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
         rdfs:domain  ifc:IfcFixedReferenceSweptAreaSolid ;
@@ -3729,6 +3733,8 @@ ifc:directrix_IfcFixedReferenceSweptAreaSolid
 
 ifc:DECA  rdf:type  ifc:IfcSIPrefix , owl:NamedIndividual ;
         rdfs:label  "DECA" .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:relatedDocuments_IfcDocumentInformationRelationship
         rdf:type     owl:ObjectProperty ;
@@ -3817,13 +3823,9 @@ ifc:IfcGridAxis_List  rdf:type  owl:Class ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:IfcTrimmingPreference
         rdf:type         owl:Class ;
         rdfs:subClassOf  express:ENUMERATION .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:IfcProtectiveDevice
         rdf:type         owl:Class ;
@@ -3966,8 +3968,6 @@ ifc:vertices_IfcTextureMap
         rdfs:label   "Vertices" ;
         rdfs:range   ifc:IfcTextureVertex_List .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:instanceName_IfcReference
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
         rdfs:domain  ifc:IfcReference ;
@@ -3985,8 +3985,6 @@ ifc:scheduleStart_IfcTaskTime
         rdfs:domain  ifc:IfcTaskTime ;
         rdfs:label   "ScheduleStart" ;
         rdfs:range   ifc:IfcDateTime .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:IfcResourceObjectSelect
         rdf:type         owl:Class ;
@@ -4055,6 +4053,8 @@ ifc:predefinedType_IfcReinforcingMesh
         rdfs:label   "PredefinedType" ;
         rdfs:range   ifc:IfcReinforcingMeshTypeEnum .
 
+[ rdf:type  owl:Restriction ] .
+
 inst:IfcGloballyUniqueId_22079
         rdf:type           ifc:IfcGloballyUniqueId ;
         express:hasString  "PORT0023" .
@@ -4086,8 +4086,6 @@ ifc:usageName_IfcComplexPropertyTemplate
         rdfs:domain  ifc:IfcComplexPropertyTemplate ;
         rdfs:label   "UsageName" ;
         rdfs:range   ifc:IfcLabel .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:intensity_IfcLightSource
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
@@ -4139,8 +4137,6 @@ inst:IfcRepresentation_List_15087
         rdf:type          ifc:IfcRepresentation_List ;
         list:hasContents  inst:IfcShapeRepresentation_2485 .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:objectPlacement_IfcProduct
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
         rdfs:domain  ifc:IfcProduct ;
@@ -4152,6 +4148,8 @@ inst:IfcPropertySingleValue_13063
         ifc:name_IfcProperty  inst:IfcIdentifier_21907 ;
         ifc:nominalValue_IfcPropertySingleValue
                 inst:IfcLabel_21908 .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:predefinedType_IfcAirToAirHeatRecoveryType
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
@@ -4232,6 +4230,8 @@ inst:IfcGloballyUniqueId_21872
         rdf:type           ifc:IfcGloballyUniqueId ;
         express:hasString  "01spv4LtL0Ye8pYARgRTai" .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:GRAM  rdf:type  ifc:IfcSIUnitName , owl:NamedIndividual ;
         rdfs:label  "GRAM" .
 
@@ -4247,8 +4247,6 @@ ifc:secondOperand_IfcBooleanResult
 inst:IfcLabel_22233  rdf:type  ifc:IfcLabel ;
         express:hasString  "KMaus_VentilKM" .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:IfcLaborResourceType
         rdf:type         owl:Class ;
         rdfs:subClassOf  ifc:IfcConstructionResourceType ;
@@ -4260,8 +4258,6 @@ ifc:predefinedType_IfcActionRequest
         rdfs:domain  ifc:IfcActionRequest ;
         rdfs:label   "PredefinedType" ;
         rdfs:range   ifc:IfcActionRequestTypeEnum .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:isRelatedBy_IfcOrganization
         rdf:type     owl:ObjectProperty ;
@@ -4412,6 +4408,8 @@ ifc:IfcBuildingElementType
         rdfs:subClassOf  ifc:IfcElementType ;
         rdfs:subClassOf  [ rdf:type  owl:Class ] .
 
+[ rdf:type  owl:Restriction ] .
+
 inst:IfcProductDefinitionShape_764
         rdf:type  ifc:IfcProductDefinitionShape ;
         ifc:representations_IfcProductRepresentation
@@ -4428,6 +4426,8 @@ ifc:orientation_IfcLightSourceSpot
         rdfs:domain  ifc:IfcLightSourceSpot ;
         rdfs:label   "Orientation" ;
         rdfs:range   ifc:IfcDirection .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:referencePath_IfcTableColumn
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
@@ -4630,8 +4630,6 @@ inst:IfcRelConnectsPorts_13293
         ifc:relatingPort_IfcRelConnectsPorts
                 inst:IfcDistributionPort_13201 .
 
-[ rdf:type  owl:Restriction ] .
-
 inst:IfcLabel_21939  rdf:type  ifc:IfcLabel ;
         express:hasString  "Verteiler" .
 
@@ -4685,6 +4683,8 @@ ifc:IfcGroup  rdf:type   owl:Class ;
         rdfs:subClassOf  ifc:IfcObject ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:IfcSlabElementedCase
         rdf:type         owl:Class ;
         rdfs:subClassOf  ifc:IfcSlab .
@@ -4700,8 +4700,6 @@ ifc:INTERSECTION  rdf:type  ifc:IfcBooleanOperator , owl:NamedIndividual ;
 
 inst:IfcLabel_22001  rdf:type  ifc:IfcLabel ;
         express:hasString  "Dry" .
-
-[ rdf:type  owl:Restriction ] .
 
 inst:IfcShapeRepresentation_12713
         rdf:type  ifc:IfcShapeRepresentation ;
@@ -4748,6 +4746,8 @@ ifc:IfcLightSourceSpot
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:REFRIGERATOR  rdf:type  ifc:IfcElectricApplianceTypeEnum , owl:NamedIndividual ;
         rdfs:label  "REFRIGERATOR" .
 
@@ -4770,8 +4770,6 @@ inst:IfcLabel_15098  rdf:type  ifc:IfcLabel ;
 inst:IfcIdentifier_21971
         rdf:type           ifc:IfcIdentifier ;
         express:hasString  "MotorAbsperrventil2" .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:IfcAppliedValue  rdf:type  owl:Class ;
         rdfs:subClassOf  ifc:IfcMetricValueSelect , ifc:IfcResourceObjectSelect , ifc:IfcObjectReferenceSelect ;
@@ -4841,10 +4839,6 @@ ifc:isRelatedWith_IfcApproval
         rdfs:domain  ifc:IfcApproval ;
         rdfs:label   "IsRelatedWith" ;
         rdfs:range   ifc:IfcApprovalRelationship .
-
-[ rdf:type  owl:Restriction ] .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:FREEFORM  rdf:type  ifc:IfcStairFlightTypeEnum , ifc:IfcRoofTypeEnum , owl:NamedIndividual ;
         rdfs:label  "FREEFORM" .
@@ -4931,18 +4925,18 @@ ifc:IfcCoilType  rdf:type  owl:Class ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
 
-ifc:relatingDocument_IfcRelAssociatesDocument
-        rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
-        rdfs:domain  ifc:IfcRelAssociatesDocument ;
-        rdfs:label   "RelatingDocument" ;
-        rdfs:range   ifc:IfcDocumentSelect .
-
 ifc:IfcFaceSurface  rdf:type  owl:Class ;
         rdfs:subClassOf  ifc:IfcSurfaceOrFaceSurface , ifc:IfcFace ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
+
+ifc:relatingDocument_IfcRelAssociatesDocument
+        rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
+        rdfs:domain  ifc:IfcRelAssociatesDocument ;
+        rdfs:label   "RelatingDocument" ;
+        rdfs:range   ifc:IfcDocumentSelect .
 
 ifc:PIPE  rdf:type  ifc:IfcDistributionPortTypeEnum , owl:NamedIndividual ;
         rdfs:label  "PIPE" .
@@ -5014,6 +5008,8 @@ ifc:overallDepth_IfcAsymmetricIShapeProfileDef
         rdfs:label   "OverallDepth" ;
         rdfs:range   ifc:IfcPositiveLengthMeasure .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:RULED_SURF  rdf:type  ifc:IfcBSplineSurfaceForm , owl:NamedIndividual ;
         rdfs:label  "RULED_SURF" .
 
@@ -5037,8 +5033,6 @@ ifc:startTime_IfcTimePeriod
         rdfs:domain  ifc:IfcTimePeriod ;
         rdfs:label   "StartTime" ;
         rdfs:range   ifc:IfcTime .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:IfcPropertyReferenceValue
         rdf:type         owl:Class ;
@@ -5090,6 +5084,8 @@ ifc:spineCurve_IfcSectionedSpine
         rdfs:domain  ifc:IfcSectionedSpine ;
         rdfs:label   "SpineCurve" ;
         rdfs:range   ifc:IfcCompositeCurve .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:compressionFailureY_IfcFailureConnectionCondition
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
@@ -5271,8 +5267,6 @@ ifc:IfcElectricApplianceType
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:IfcCoolingTowerType
         rdf:type         owl:Class ;
         rdfs:subClassOf  ifc:IfcEnergyConversionDeviceType ;
@@ -5311,9 +5305,9 @@ ifc:IfcTopologicalRepresentationItem
         rdfs:subClassOf  [ rdf:type  owl:Class ] .
 
 ifc:IfcRoot  rdf:type    owl:Class ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Class ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
@@ -5330,6 +5324,8 @@ ifc:IfcCableCarrierSegmentTypeEnum
 
 ifc:IfcAreaMeasure  rdf:type  owl:Class ;
         rdfs:subClassOf  express:REAL , ifc:IfcMeasureValue .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:additionalConditions_IfcRelConnectsStructuralMember
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
@@ -5493,17 +5489,15 @@ ifc:IfcMonetaryUnit  rdf:type  owl:Class ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
 
+ifc:IfcStructuralSurfaceMemberVarying
+        rdf:type         owl:Class ;
+        rdfs:subClassOf  ifc:IfcStructuralSurfaceMember .
+
 ifc:propertiesForConstraint_IfcConstraint
         rdf:type     owl:ObjectProperty ;
         rdfs:domain  ifc:IfcConstraint ;
         rdfs:label   "PropertiesForConstraint" ;
         rdfs:range   ifc:IfcResourceConstraintRelationship .
-
-ifc:IfcStructuralSurfaceMemberVarying
-        rdf:type         owl:Class ;
-        rdfs:subClassOf  ifc:IfcStructuralSurfaceMember .
-
-[ rdf:type  owl:Restriction ] .
 
 inst:IfcRelNests_13173
         rdf:type                        ifc:IfcRelNests ;
@@ -5695,20 +5689,16 @@ ifc:predefinedType_IfcStructuralSurfaceMember
         rdfs:label   "PredefinedType" ;
         rdfs:range   ifc:IfcStructuralSurfaceMemberTypeEnum .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:IfcDamper  rdf:type  owl:Class ;
         rdfs:subClassOf  ifc:IfcFlowController ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
 
-inst:IfcPropertySet_1313
-        ifc:hasProperties_IfcPropertySet
-                inst:IfcPropertySingleValue_13136 .
-
 ifc:COMMISSIONINGENGINEER
         rdf:type    ifc:IfcRoleEnum , owl:NamedIndividual ;
         rdfs:label  "COMMISSIONINGENGINEER" .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:rasterCode_IfcBlobTexture
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
@@ -5748,8 +5738,6 @@ ifc:mappingTarget_IfcMappedItem
         rdfs:domain  ifc:IfcMappedItem ;
         rdfs:label   "MappingTarget" ;
         rdfs:range   ifc:IfcCartesianTransformationOperator .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:unit_IfcDerivedUnitElement
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
@@ -6353,8 +6341,6 @@ ifc:IfcPermeableCoveringOperationEnum
         rdf:type         owl:Class ;
         rdfs:subClassOf  express:ENUMERATION .
 
-[ rdf:type  owl:Restriction ] .
-
 inst:IfcValue_List_21997
         rdf:type          ifc:IfcValue_List ;
         list:hasContents  inst:IfcLabel_22000 ;
@@ -6370,13 +6356,13 @@ ifc:IfcProperty  rdf:type  owl:Class ;
         rdfs:subClassOf  ifc:IfcPropertyAbstraction ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Class ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
 
@@ -6393,11 +6379,11 @@ ifc:IfcSurfaceTexture
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Class ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
@@ -6460,6 +6446,8 @@ ifc:IfcReinforcingMesh
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:QUADRIC_SURF  rdf:type  ifc:IfcBSplineSurfaceForm , owl:NamedIndividual ;
         rdfs:label  "QUADRIC_SURF" .
@@ -6582,8 +6570,6 @@ inst:IfcGloballyUniqueId_22043
         rdf:type           ifc:IfcGloballyUniqueId ;
         express:hasString  "ELEMENTCONNECT0010" .
 
-[ rdf:type  owl:Restriction ] .
-
 inst:IfcLabel_21996  rdf:type  ifc:IfcLabel ;
         express:hasString  "CircuitType" .
 
@@ -6640,6 +6626,8 @@ ifc:IfcThermalExpansionCoefficientMeasure
 ifc:IfcWindowStyleOperationEnum
         rdf:type         owl:Class ;
         rdfs:subClassOf  express:ENUMERATION .
+
+[ rdf:type  owl:Restriction ] .
 
 inst:IfcDistributionPort_13223
         rdf:type                  ifc:IfcDistributionPort ;
@@ -6736,6 +6724,8 @@ ifc:predefinedType_IfcLaborResource
         rdfs:domain  ifc:IfcLaborResource ;
         rdfs:label   "PredefinedType" ;
         rdfs:range   ifc:IfcLaborResourceTypeEnum .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:IfcWindowStandardCase
         rdf:type         owl:Class ;
@@ -6852,8 +6842,6 @@ ifc:IfcBurner  rdf:type  owl:Class ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
 
-[ rdf:type  owl:Restriction ] .
-
 inst:IfcLabel_22184  rdf:type  ifc:IfcLabel ;
         express:hasString  "TstkPrimaerSplitAusRK2" .
 
@@ -6875,8 +6863,6 @@ inst:IfcGeometricRepresentationContext_12990
                 inst:IfcDimensionCount_21833 ;
         ifc:precision_IfcGeometricRepresentationContext
                 inst:IfcReal_21834 .
-
-[ rdf:type  owl:Restriction ] .
 
 inst:IfcRelDefinesByProperties_13054
         rdf:type              ifc:IfcRelDefinesByProperties ;
@@ -6940,8 +6926,6 @@ inst:IfcValve_3307  rdf:type         ifc:IfcValve ;
         ifc:name_IfcRoot             inst:IfcLabel_15094 ;
         ifc:predefinedType_IfcValve  ifc:ISOLATING .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:coordinateSpaceDimension_IfcGeometricRepresentationContext
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
         rdfs:domain  ifc:IfcGeometricRepresentationContext ;
@@ -6953,15 +6937,9 @@ inst:IfcRepresentationMap_2217
         ifc:mappedRepresentation_IfcRepresentationMap
                 inst:IfcShapeRepresentation_2219 .
 
-[ rdf:type  owl:Restriction ] .
-
-[ rdf:type  owl:Restriction ] .
-
 ifc:IfcTransformerTypeEnum
         rdf:type         owl:Class ;
         rdfs:subClassOf  express:ENUMERATION .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:FREESTANDINGWATERHEATER
         rdf:type    ifc:IfcElectricApplianceTypeEnum , owl:NamedIndividual ;
@@ -7029,8 +7007,6 @@ ifc:IfcStructuralCurveConnection
         rdfs:subClassOf  ifc:IfcStructuralConnection ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:description_IfcDocumentReference
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
@@ -7108,8 +7084,6 @@ ifc:STRIP_FOOTING  rdf:type  ifc:IfcFootingTypeEnum , owl:NamedIndividual ;
 inst:IfcLabel_21903  rdf:type  ifc:IfcLabel ;
         express:hasString  "Pset_FlowStorageDeviceTank" .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:AREA  rdf:type  ifc:IfcProfileTypeEnum , owl:NamedIndividual ;
         rdfs:label  "AREA" .
 
@@ -7152,15 +7126,15 @@ ifc:IfcFaceBasedSurfaceModel
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
 
+ifc:VERTICALTURBINE  rdf:type  ifc:IfcPumpTypeEnum , owl:NamedIndividual ;
+        rdfs:label  "VERTICALTURBINE" .
+
 inst:IfcDistributionPort_13191
         rdf:type                  ifc:IfcDistributionPort ;
         ifc:description_IfcRoot   inst:IfcText_22056 ;
         ifc:globalId_IfcRoot      inst:IfcGloballyUniqueId_22054 ;
         ifc:name_IfcRoot          inst:IfcLabel_22055 ;
         ifc:objectType_IfcObject  inst:IfcLabel_22006 .
-
-ifc:VERTICALTURBINE  rdf:type  ifc:IfcPumpTypeEnum , owl:NamedIndividual ;
-        rdfs:label  "VERTICALTURBINE" .
 
 ifc:DUCT  rdf:type  ifc:IfcDistributionPortTypeEnum , owl:NamedIndividual ;
         rdfs:label  "DUCT" .
@@ -7176,8 +7150,6 @@ ifc:location_IfcLibraryInformation
         rdfs:domain  ifc:IfcLibraryInformation ;
         rdfs:label   "Location" ;
         rdfs:range   ifc:IfcURIReference .
-
-[ rdf:type  owl:Restriction ] .
 
 inst:IfcCoil_1673  rdf:type      ifc:IfcCoil ;
         ifc:description_IfcRoot  inst:IfcText_15073 ;
@@ -7305,8 +7277,6 @@ inst:IfcRepresentationMap_481
         ifc:mappedRepresentation_IfcRepresentationMap
                 inst:IfcShapeRepresentation_483 .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:TOGGLESWITCH  rdf:type  ifc:IfcSwitchingDeviceTypeEnum , owl:NamedIndividual ;
         rdfs:label  "TOGGLESWITCH" .
 
@@ -7392,6 +7362,8 @@ inst:IfcShapeRepresentation_1679
         ifc:representationType_IfcRepresentation
                 inst:IfcLabel_13269 .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:INDIRECTEVAPORATIVECOOLINGTOWERORCOILCOOLER
         rdf:type    ifc:IfcEvaporativeCoolerTypeEnum , owl:NamedIndividual ;
         rdfs:label  "INDIRECTEVAPORATIVECOOLINGTOWERORCOILCOOLER" .
@@ -7457,20 +7429,18 @@ ifc:valueSource_IfcMetric
         rdfs:label   "ValueSource" ;
         rdfs:range   ifc:IfcLabel .
 
-[ rdf:type  owl:Restriction ] .
-
-ifc:nominalDiameter_IfcMechanicalFastenerType
-        rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
-        rdfs:domain  ifc:IfcMechanicalFastenerType ;
-        rdfs:label   "NominalDiameter" ;
-        rdfs:range   ifc:IfcPositiveLengthMeasure .
-
 inst:IfcShapeRepresentation_1943
         rdf:type  ifc:IfcShapeRepresentation ;
         ifc:representationIdentifier_IfcRepresentation
                 inst:IfcLabel_13257 ;
         ifc:representationType_IfcRepresentation
                 inst:IfcLabel_13258 .
+
+ifc:nominalDiameter_IfcMechanicalFastenerType
+        rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
+        rdfs:domain  ifc:IfcMechanicalFastenerType ;
+        rdfs:label   "NominalDiameter" ;
+        rdfs:range   ifc:IfcPositiveLengthMeasure .
 
 ifc:predefinedType_IfcFlowInstrument
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
@@ -7480,6 +7450,8 @@ ifc:predefinedType_IfcFlowInstrument
 
 ifc:GUTTER  rdf:type  ifc:IfcPipeSegmentTypeEnum , owl:NamedIndividual ;
         rdfs:label  "GUTTER" .
+
+[ rdf:type  owl:Restriction ] .
 
 inst:IfcReal_List_13264
         rdf:type          ifc:IfcReal_List ;
@@ -7585,8 +7557,6 @@ ifc:predefinedType_IfcFlowMeterType
         rdfs:label   "PredefinedType" ;
         rdfs:range   ifc:IfcFlowMeterTypeEnum .
 
-[ rdf:type  owl:Restriction ] .
-
 inst:IfcRelNests_13244
         rdf:type                        ifc:IfcRelNests ;
         ifc:globalId_IfcRoot            inst:IfcGloballyUniqueId_22140 ;
@@ -7651,8 +7621,6 @@ ifc:IfcRelAssociatesMaterial
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:STAPLE  rdf:type  ifc:IfcMechanicalFastenerTypeEnum , owl:NamedIndividual ;
         rdfs:label  "STAPLE" .
 
@@ -7701,8 +7669,6 @@ ifc:OBSTRUCTION  rdf:type  ifc:IfcPipeFittingTypeEnum , ifc:IfcDuctFittingTypeEn
 
 ifc:ATTO  rdf:type  ifc:IfcSIPrefix , owl:NamedIndividual ;
         rdfs:label  "ATTO" .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:predefinedType_IfcActuatorType
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
@@ -7889,6 +7855,8 @@ ifc:actualDuration_IfcTaskTime
         rdfs:label   "ActualDuration" ;
         rdfs:range   ifc:IfcDuration .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:facsimileNumbers_IfcTelecomAddress
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
         rdfs:domain  ifc:IfcTelecomAddress ;
@@ -8054,6 +8022,8 @@ inst:IfcGloballyUniqueId_22007
         rdf:type           ifc:IfcGloballyUniqueId ;
         express:hasString  "PORT0002" .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:IfcAirTerminalBoxType
         rdf:type         owl:Class ;
         rdfs:subClassOf  ifc:IfcFlowControllerType ;
@@ -8127,8 +8097,6 @@ ifc:IfcSectionReinforcementProperties_List
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:MODULUSOFROTATIONALSUBGRADEREACTIONUNIT
         rdf:type    ifc:IfcDerivedUnitEnum , owl:NamedIndividual ;
         rdfs:label  "MODULUSOFROTATIONALSUBGRADEREACTIONUNIT" .
@@ -8139,8 +8107,6 @@ ifc:IfcEllipse  rdf:type  owl:Class ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:IfcOutlet  rdf:type  owl:Class ;
         rdfs:subClassOf  ifc:IfcFlowTerminal ;
@@ -8290,6 +8256,8 @@ ifc:IfcMaterialSelect
 inst:IfcText_15091  rdf:type  ifc:IfcText ;
         express:hasString  "Description_Ventil_sek_KM" .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:sort_IfcClassificationReference
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
         rdfs:domain  ifc:IfcClassificationReference ;
@@ -8351,6 +8319,8 @@ ifc:IfcTessellatedItem
         rdfs:subClassOf  ifc:IfcGeometricRepresentationItem ;
         rdfs:subClassOf  [ rdf:type  owl:Class ] .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:SYSTEM_IMPERFECTION
         rdf:type    ifc:IfcActionSourceTypeEnum , owl:NamedIndividual ;
         rdfs:label  "SYSTEM_IMPERFECTION" .
@@ -8364,6 +8334,8 @@ ifc:relatedMonetaryUnit_IfcCurrencyRelationship
 ifc:GASDETECTIONPANEL
         rdf:type    ifc:IfcUnitaryControlElementTypeEnum , owl:NamedIndividual ;
         rdfs:label  "GASDETECTIONPANEL" .
+
+[ rdf:type  owl:Restriction ] .
 
 inst:IfcPropertySet_13142
         rdf:type              ifc:IfcPropertySet ;
@@ -8454,11 +8426,15 @@ ifc:IfcMolecularWeightMeasure
         rdf:type         owl:Class ;
         rdfs:subClassOf  express:REAL , ifc:IfcDerivedMeasureValue .
 
+[ rdf:type  owl:Restriction ] .
+
 inst:IfcText_22120  rdf:type  ifc:IfcText ;
         express:hasString  "UmschaltventilWTPrimundAus" .
 
 ifc:GLOBAL_COORDS  rdf:type  ifc:IfcGlobalOrLocalEnum , owl:NamedIndividual ;
         rdfs:label  "GLOBAL_COORDS" .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:deltaTZ_IfcStructuralLoadTemperature
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
@@ -8521,8 +8497,6 @@ inst:IfcOwnerHistory_1
         ifc:owningApplication_IfcOwnerHistory
                 inst:IfcApplication_3 ;
         ifc:owningUser_IfcOwnerHistory  inst:IfcPersonAndOrganization_2 .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:CHAMFER  rdf:type  ifc:IfcVoidingFeatureTypeEnum , owl:NamedIndividual ;
         rdfs:label  "CHAMFER" .
@@ -8648,8 +8622,6 @@ ifc:IfcElectricMotor  rdf:type  owl:Class ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:IfcRelConnectsStructuralMember
         rdf:type         owl:Class ;
         rdfs:subClassOf  ifc:IfcRelConnects ;
@@ -8701,6 +8673,8 @@ ifc:IfcWorkCalendarTypeEnum
 inst:IfcGloballyUniqueId_22114
         rdf:type           ifc:IfcGloballyUniqueId ;
         express:hasString  "ELEMENTCONNECT0034" .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:isVentilated_IfcMaterialLayer
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
@@ -8796,6 +8770,8 @@ ifc:IfcProfileDef_List
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:GUARDRAIL  rdf:type  ifc:IfcRailingTypeEnum , owl:NamedIndividual ;
         rdfs:label  "GUARDRAIL" .
 
@@ -8861,10 +8837,10 @@ ifc:IfcPort  rdf:type    owl:Class ;
         rdfs:subClassOf  ifc:IfcProduct ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Class ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
 
 ifc:axis2_IfcCartesianTransformationOperator
@@ -9130,18 +9106,18 @@ ifc:IfcCondenserType  rdf:type  owl:Class ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
 
-ifc:nominalDiameter_IfcTendon
-        rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
-        rdfs:domain  ifc:IfcTendon ;
-        rdfs:label   "NominalDiameter" ;
-        rdfs:range   ifc:IfcPositiveLengthMeasure .
-
 ifc:IfcPointOnCurve  rdf:type  owl:Class ;
         rdfs:subClassOf  ifc:IfcPoint ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
+
+ifc:nominalDiameter_IfcTendon
+        rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
+        rdfs:domain  ifc:IfcTendon ;
+        rdfs:label   "NominalDiameter" ;
+        rdfs:range   ifc:IfcPositiveLengthMeasure .
 
 ifc:CIVILENGINEER  rdf:type  ifc:IfcRoleEnum , owl:NamedIndividual ;
         rdfs:label  "CIVILENGINEER" .
@@ -9177,8 +9153,6 @@ inst:IfcRepresentationMap_3311
         rdf:type  ifc:IfcRepresentationMap ;
         ifc:mappedRepresentation_IfcRepresentationMap
                 inst:IfcShapeRepresentation_3313 .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:LANDING  rdf:type  ifc:IfcSlabTypeEnum , owl:NamedIndividual ;
         rdfs:label  "LANDING" .
@@ -9310,6 +9284,8 @@ ifc:responsiblePerson_IfcAsset
         rdfs:label   "ResponsiblePerson" ;
         rdfs:range   ifc:IfcPerson .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:IfcTextureVertexList
         rdf:type         owl:Class ;
         rdfs:subClassOf  ifc:IfcPresentationItem ;
@@ -9340,6 +9316,8 @@ ifc:predefinedType_IfcColumnType
         rdfs:label   "PredefinedType" ;
         rdfs:range   ifc:IfcColumnTypeEnum .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:CABLETRUNKINGSEGMENT
         rdf:type    ifc:IfcCableCarrierSegmentTypeEnum , owl:NamedIndividual ;
         rdfs:label  "CABLETRUNKINGSEGMENT" .
@@ -9361,15 +9339,17 @@ ifc:IfcPresentationLayerAssignment
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
 
-ifc:QTO_TYPEDRIVENOVERRIDE
-        rdf:type    ifc:IfcPropertySetTemplateTypeEnum , owl:NamedIndividual ;
-        rdfs:label  "QTO_TYPEDRIVENOVERRIDE" .
+[ rdf:type  owl:Restriction ] .
 
 ifc:edgeRadius_IfcZShapeProfileDef
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
         rdfs:domain  ifc:IfcZShapeProfileDef ;
         rdfs:label   "EdgeRadius" ;
         rdfs:range   ifc:IfcNonNegativeLengthMeasure .
+
+ifc:QTO_TYPEDRIVENOVERRIDE
+        rdf:type    ifc:IfcPropertySetTemplateTypeEnum , owl:NamedIndividual ;
+        rdfs:label  "QTO_TYPEDRIVENOVERRIDE" .
 
 ifc:FORMWORK  rdf:type  ifc:IfcConstructionProductResourceTypeEnum , owl:NamedIndividual ;
         rdfs:label  "FORMWORK" .
@@ -9521,6 +9501,8 @@ ifc:confidentiality_IfcDocumentInformation
         rdfs:label   "Confidentiality" ;
         rdfs:range   ifc:IfcDocumentConfidentialityEnum .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:totalCrossSectionArea_IfcReinforcementBarProperties
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
         rdfs:domain  ifc:IfcReinforcementBarProperties ;
@@ -9554,8 +9536,6 @@ ifc:durationType_IfcTaskTime
         rdfs:domain  ifc:IfcTaskTime ;
         rdfs:label   "DurationType" ;
         rdfs:range   ifc:IfcTaskDurationEnum .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:TORQUEUNIT  rdf:type  ifc:IfcDerivedUnitEnum , owl:NamedIndividual ;
         rdfs:label  "TORQUEUNIT" .
@@ -9678,8 +9658,6 @@ ifc:internalLocation_IfcPostalAddress
 ifc:IfcWorkControl  rdf:type  owl:Class ;
         rdfs:subClassOf  ifc:IfcControl ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Class ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
@@ -9690,7 +9668,11 @@ ifc:IfcWorkControl  rdf:type  owl:Class ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:IfcBoolean  rdf:type  owl:Class ;
         rdfs:subClassOf  express:BOOLEAN , ifc:IfcWarpingStiffnessSelect , ifc:IfcTranslationalStiffnessSelect , ifc:IfcSimpleValue , ifc:IfcRotationalStiffnessSelect , ifc:IfcModulusOfTranslationalSubgradeReactionSelect , ifc:IfcModulusOfSubgradeReactionSelect , ifc:IfcModulusOfRotationalSubgradeReactionSelect .
@@ -9726,6 +9708,10 @@ ifc:IfcSoundPressureMeasure
 
 inst:IfcLabel_22186  rdf:type  ifc:IfcLabel ;
         express:hasString  "TstkPrimaerSplitEin" .
+
+[ rdf:type  owl:Restriction ] .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:destabilizingLoad_IfcStructuralAction
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
@@ -9804,6 +9790,8 @@ ifc:boundaries_IfcCurveBoundedSurface
         rdfs:domain  ifc:IfcCurveBoundedSurface ;
         rdfs:label   "Boundaries" ;
         rdfs:range   ifc:IfcBoundaryCurve .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:formula_IfcQuantityWeight
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
@@ -9925,8 +9913,6 @@ ifc:IONCONCENTRATIONUNIT
         rdf:type    ifc:IfcDerivedUnitEnum , owl:NamedIndividual ;
         rdfs:label  "IONCONCENTRATIONUNIT" .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:IfcPropertySetTemplateTypeEnum
         rdf:type         owl:Class ;
         rdfs:subClassOf  express:ENUMERATION .
@@ -9934,6 +9920,8 @@ ifc:IfcPropertySetTemplateTypeEnum
 ifc:IfcLightFixtureTypeEnum
         rdf:type         owl:Class ;
         rdfs:subClassOf  express:ENUMERATION .
+
+[ rdf:type  owl:Restriction ] .
 
 inst:IfcGeometricRepresentationSubContext_12985
         rdf:type  ifc:IfcGeometricRepresentationSubContext ;
@@ -10008,8 +9996,6 @@ ifc:TERRAIN  rdf:type  ifc:IfcGeographicElementTypeEnum , owl:NamedIndividual ;
 ifc:GRAVITYRELIEFDAMPER
         rdf:type    ifc:IfcDamperTypeEnum , owl:NamedIndividual ;
         rdfs:label  "GRAVITYRELIEFDAMPER" .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:predefinedType_IfcReinforcingMeshType
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
@@ -10090,6 +10076,8 @@ inst:IfcProductDefinitionShape_1942
         ifc:representations_IfcProductRepresentation
                 inst:IfcRepresentation_List_15078 .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:layerThickness_IfcMaterialLayer
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
         rdfs:domain  ifc:IfcMaterialLayer ;
@@ -10121,6 +10109,10 @@ ifc:points_IfcPolyline
         rdfs:label   "Points" ;
         rdfs:range   ifc:IfcCartesianPoint_List .
 
+[ rdf:type  owl:Restriction ] .
+
+[ rdf:type  owl:Restriction ] .
+
 ifc:SINGLE_PANEL  rdf:type  ifc:IfcWindowTypePartitioningEnum , ifc:IfcWindowStyleOperationEnum , owl:NamedIndividual ;
         rdfs:label  "SINGLE_PANEL" .
 
@@ -10140,8 +10132,6 @@ inst:IfcRelConnectsPorts_13297
         ifc:relatingPort_IfcRelConnectsPorts
                 inst:IfcDistributionPort_13208 .
 
-[ rdf:type  owl:Restriction ] .
-
 inst:IfcPropertySingleValue_13011
         rdf:type              ifc:IfcPropertySingleValue ;
         ifc:name_IfcProperty  inst:IfcIdentifier_21861 ;
@@ -10157,8 +10147,6 @@ ifc:relatedObjects_IfcRelDefinesByProperties
         rdfs:domain  ifc:IfcRelDefinesByProperties ;
         rdfs:label   "RelatedObjects" ;
         rdfs:range   ifc:IfcObjectDefinition .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:IfcAxis2Placement
         rdf:type         owl:Class ;
@@ -10228,8 +10216,6 @@ ifc:AXIS3  rdf:type  ifc:IfcLayerSetDirectionEnum , owl:NamedIndividual ;
 inst:IfcGloballyUniqueId_22278
         rdf:type           ifc:IfcGloballyUniqueId ;
         express:hasString  "TF-3WMV" .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:steelGrade_IfcReinforcingElement
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
@@ -10325,8 +10311,6 @@ inst:IfcRepresentationMap_3883
 ifc:DIMMERSWITCH  rdf:type  ifc:IfcSwitchingDeviceTypeEnum , owl:NamedIndividual ;
         rdfs:label  "DIMMERSWITCH" .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:predefinedType_IfcElectricGeneratorType
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
         rdfs:domain  ifc:IfcElectricGeneratorType ;
@@ -10346,6 +10330,12 @@ ifc:predefinedType_IfcStair
         rdfs:domain  ifc:IfcStair ;
         rdfs:label   "PredefinedType" ;
         rdfs:range   ifc:IfcStairTypeEnum .
+
+inst:IfcPropertySingleValue_13137
+        rdf:type              ifc:IfcPropertySingleValue ;
+        ifc:name_IfcProperty  inst:IfcIdentifier_21875 ;
+        ifc:nominalValue_IfcPropertySingleValue
+                inst:IfcLabel_21953 .
 
 ifc:referencedInStructures_IfcElement
         rdf:type     owl:ObjectProperty ;
@@ -10487,6 +10477,8 @@ ifc:IfcDocumentStatusEnum
         rdf:type         owl:Class ;
         rdfs:subClassOf  express:ENUMERATION .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:IfcBuildingStorey
         rdf:type         owl:Class ;
         rdfs:subClassOf  ifc:IfcSpatialStructureElement ;
@@ -10544,6 +10536,8 @@ ifc:hasColours_IfcTessellatedFaceSet
         rdfs:label   "HasColours" ;
         rdfs:range   ifc:IfcIndexedColourMap .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:name_IfcContextDependentUnit
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
         rdfs:domain  ifc:IfcContextDependentUnit ;
@@ -10574,6 +10568,8 @@ ifc:suffixTitles_IfcPerson
 inst:IfcSIUnit_13118  rdf:type     ifc:IfcSIUnit ;
         ifc:name_IfcSIUnit         ifc:KELVIN ;
         ifc:unitType_IfcNamedUnit  ifc:THERMODYNAMICTEMPERATUREUNIT .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:BUSBARSEGMENT  rdf:type  ifc:IfcCableSegmentTypeEnum , owl:NamedIndividual ;
         rdfs:label  "BUSBARSEGMENT" .
@@ -10625,6 +10621,10 @@ ifc:IfcPresentationStyle
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Class ] .
+
+[ rdf:type  owl:Restriction ] .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:ELEMENT  rdf:type  ifc:IfcElementCompositionEnum , ifc:IfcBuildingElementProxyTypeEnum , owl:NamedIndividual ;
         rdfs:label  "ELEMENT" .
@@ -10705,6 +10705,8 @@ ifc:IfcPlanarBox  rdf:type  owl:Class ;
         rdfs:subClassOf  ifc:IfcPlanarExtent ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:description_IfcConstraint
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
@@ -10828,11 +10830,15 @@ inst:IfcProductDefinitionShape_15
 ifc:RADIAN  rdf:type  ifc:IfcSIUnitName , owl:NamedIndividual ;
         rdfs:label  "RADIAN" .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:side_IfcSurfaceStyle
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
         rdfs:domain  ifc:IfcSurfaceStyle ;
         rdfs:label   "Side" ;
         rdfs:range   ifc:IfcSurfaceSide .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:depth_IfcTShapeProfileDef
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
@@ -11326,6 +11332,8 @@ ifc:item_IfcStyledItem
         rdfs:label   "Item" ;
         rdfs:range   ifc:IfcRepresentationItem .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:scale_IfcMapConversion
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
         rdfs:domain  ifc:IfcMapConversion ;
@@ -11479,8 +11487,6 @@ inst:IfcGloballyUniqueId_22190
         rdf:type           ifc:IfcGloballyUniqueId ;
         express:hasString  "PORT0058" .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:MECHANICALINDUCEDDRAFT
         rdf:type    ifc:IfcCoolingTowerTypeEnum , owl:NamedIndividual ;
         rdfs:label  "MECHANICALINDUCEDDRAFT" .
@@ -11547,15 +11553,15 @@ ifc:IfcSoundPressureLevelMeasure
         rdf:type         owl:Class ;
         rdfs:subClassOf  express:REAL , ifc:IfcDerivedMeasureValue .
 
+inst:IfcGloballyUniqueId_22028
+        rdf:type           ifc:IfcGloballyUniqueId ;
+        express:hasString  "PORT0008" .
+
 ifc:translationalStiffnessByAreaX_IfcBoundaryFaceCondition
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
         rdfs:domain  ifc:IfcBoundaryFaceCondition ;
         rdfs:label   "TranslationalStiffnessByAreaX" ;
         rdfs:range   ifc:IfcModulusOfSubgradeReactionSelect .
-
-inst:IfcGloballyUniqueId_22028
-        rdf:type           ifc:IfcGloballyUniqueId ;
-        express:hasString  "PORT0008" .
 
 inst:IfcProductDefinitionShape_12173
         rdf:type  ifc:IfcProductDefinitionShape ;
@@ -11611,6 +11617,8 @@ inst:IfcGloballyUniqueId_22204
         rdf:type           ifc:IfcGloballyUniqueId ;
         express:hasString  "PORTCONNECT003" .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:IfcRationalBSplineCurveWithKnots
         rdf:type         owl:Class ;
         rdfs:subClassOf  ifc:IfcBSplineCurveWithKnots ;
@@ -11637,8 +11645,6 @@ inst:IfcRelConnectsPorts_13298
 inst:IfcText_21828  rdf:type  ifc:IfcText ;
         express:hasString  "Description" .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:workMethod_IfcTask
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
         rdfs:domain  ifc:IfcTask ;
@@ -11660,8 +11666,6 @@ ifc:IfcRelDefinesByType
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:IfcPresentableText
         rdf:type         owl:Class ;
@@ -11702,6 +11706,8 @@ ifc:IfcDistributionChamberElementTypeEnum
 ifc:IfcAreaDensityMeasure
         rdf:type         owl:Class ;
         rdfs:subClassOf  express:REAL , ifc:IfcDerivedMeasureValue .
+
+[ rdf:type  owl:Restriction ] .
 
 inst:IfcLabel_22006  rdf:type  ifc:IfcLabel ;
         express:hasString  ".SINK." .
@@ -11757,8 +11763,6 @@ ifc:flangeEdgeRadius_IfcTShapeProfileDef
         rdfs:label   "FlangeEdgeRadius" ;
         rdfs:range   ifc:IfcNonNegativeLengthMeasure .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:category_IfcMaterialProfile
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
         rdfs:domain  ifc:IfcMaterialProfile ;
@@ -11776,8 +11780,6 @@ ifc:mappedRepresentation_IfcRepresentationMap
         rdfs:domain  ifc:IfcRepresentationMap ;
         rdfs:label   "MappedRepresentation" ;
         rdfs:range   ifc:IfcRepresentation .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:thresholdDepth_IfcDoorLiningProperties
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
@@ -11822,11 +11824,15 @@ ifc:dir_IfcLine  rdf:type  owl:FunctionalProperty , owl:ObjectProperty ;
 ifc:P_TABLEVALUE  rdf:type  ifc:IfcSimplePropertyTemplateTypeEnum , owl:NamedIndividual ;
         rdfs:label  "P_TABLEVALUE" .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:IfcContextDependentUnit
         rdf:type         owl:Class ;
         rdfs:subClassOf  ifc:IfcResourceObjectSelect , ifc:IfcNamedUnit ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:identification_IfcTypeResource
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
@@ -11872,8 +11878,8 @@ ifc:IfcExternalReference
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Class ] .
+        rdfs:subClassOf  [ rdf:type  owl:Class ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
 
 inst:IfcText_22053  rdf:type  ifc:IfcText ;
         express:hasString  "VerbindungPS1-PS2" .
@@ -12135,6 +12141,8 @@ inst:IfcProductDefinitionShape_4851
         ifc:representations_IfcProductRepresentation
                 inst:IfcRepresentation_List_16055 .
 
+[ rdf:type  owl:Restriction ] .
+
 inst:IfcGloballyUniqueId_22172
         rdf:type           ifc:IfcGloballyUniqueId ;
         express:hasString  "ELEMENTCONNECT0050" .
@@ -12150,13 +12158,13 @@ inst:IfcDistributionPort_13176
         ifc:name_IfcRoot          inst:IfcLabel_22029 ;
         ifc:objectType_IfcObject  inst:IfcLabel_22010 .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:basisCurve_IfcTrimmedCurve
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
         rdfs:domain  ifc:IfcTrimmedCurve ;
         rdfs:label   "BasisCurve" ;
         rdfs:range   ifc:IfcCurve .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:WIRE  rdf:type  ifc:IfcTendonTypeEnum , owl:NamedIndividual ;
         rdfs:label  "WIRE" .
@@ -12171,8 +12179,6 @@ inst:IfcGloballyUniqueId_22260
         rdf:type           ifc:IfcGloballyUniqueId ;
         express:hasString  "PORT0061" .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:IfcRelConnectsPortToElement
         rdf:type         owl:Class ;
         rdfs:subClassOf  ifc:IfcRelConnects ;
@@ -12180,8 +12186,6 @@ ifc:IfcRelConnectsPortToElement
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
-
-[ rdf:type  owl:Restriction ] .
 
 inst:IfcRepresentation_List_15092
         rdf:type          ifc:IfcRepresentation_List ;
@@ -12217,6 +12221,8 @@ ifc:predefinedType_IfcJunctionBoxType
         rdfs:domain  ifc:IfcJunctionBoxType ;
         rdfs:label   "PredefinedType" ;
         rdfs:range   ifc:IfcJunctionBoxTypeEnum .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:ELECTRICALENGINEER
         rdf:type    ifc:IfcRoleEnum , owl:NamedIndividual ;
@@ -12267,12 +12273,8 @@ ifc:predefinedType_IfcHumidifier
         rdfs:label   "PredefinedType" ;
         rdfs:range   ifc:IfcHumidifierTypeEnum .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:CURVED  rdf:type  ifc:IfcStairFlightTypeEnum , owl:NamedIndividual ;
         rdfs:label  "CURVED" .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:relatedConnectionType_IfcRelConnectsPathElements
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
@@ -12297,6 +12299,8 @@ inst:IfcRepresentationMap_8709
         rdf:type  ifc:IfcRepresentationMap ;
         ifc:mappedRepresentation_IfcRepresentationMap
                 inst:IfcShapeRepresentation_8711 .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:status_IfcProjectOrder
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
@@ -12642,8 +12646,6 @@ ifc:position_IfcElementarySurface
 ifc:SIGNAL  rdf:type  ifc:IfcDistributionSystemEnum , owl:NamedIndividual ;
         rdfs:label  "SIGNAL" .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:shapeOfProduct_IfcProductDefinitionShape
         rdf:type     owl:ObjectProperty ;
         rdfs:domain  ifc:IfcProductDefinitionShape ;
@@ -12714,6 +12716,8 @@ ifc:userDefinedTargetView_IfcGeometricRepresentationSubContext
 ifc:MODELVIEW  rdf:type  ifc:IfcObjectiveEnum , owl:NamedIndividual ;
         rdfs:label  "MODELVIEW" .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:hasProperties_IfcPropertySet
         rdf:type     owl:ObjectProperty ;
         rdfs:domain  ifc:IfcPropertySet ;
@@ -12751,8 +12755,6 @@ ifc:IfcExternalSpatialElement
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:relatingObject_IfcRelAggregates
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
         rdfs:domain  ifc:IfcRelAggregates ;
@@ -12779,8 +12781,6 @@ ifc:levelingDelay_IfcResourceTime
 
 ifc:VOLTAGE  rdf:type  ifc:IfcTransformerTypeEnum , owl:NamedIndividual ;
         rdfs:label  "VOLTAGE" .
-
-[ rdf:type  owl:Restriction ] .
 
 inst:IfcRelConnectsPorts_13312
         rdf:type              ifc:IfcRelConnectsPorts ;
@@ -12834,6 +12834,8 @@ ifc:relatingPort_IfcRelConnectsPorts
         rdfs:domain  ifc:IfcRelConnectsPorts ;
         rdfs:label   "RelatingPort" ;
         rdfs:range   ifc:IfcPort .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:endSweptArea_IfcExtrudedAreaSolidTapered
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
@@ -12908,6 +12910,8 @@ ifc:barSurface_IfcReinforcingBar
 ifc:QTO_OCCURRENCEDRIVEN
         rdf:type    ifc:IfcPropertySetTemplateTypeEnum , owl:NamedIndividual ;
         rdfs:label  "QTO_OCCURRENCEDRIVEN" .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:userDefinedSequenceType_IfcRelSequence
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
@@ -12984,6 +12988,8 @@ ifc:IfcFlowFittingType
         rdf:type         owl:Class ;
         rdfs:subClassOf  ifc:IfcDistributionFlowElementType ;
         rdfs:subClassOf  [ rdf:type  owl:Class ] .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:referencedSource_IfcClassificationReference
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
@@ -13087,6 +13093,8 @@ inst:IfcRelNests_13248
 ifc:VERBAL  rdf:type  ifc:IfcActionRequestTypeEnum , owl:NamedIndividual ;
         rdfs:label  "VERBAL" .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:axis_IfcStructuralCurveConnection
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
         rdfs:domain  ifc:IfcStructuralCurveConnection ;
@@ -13101,6 +13109,8 @@ ifc:IfcConstructionMaterialResource
         rdfs:subClassOf  ifc:IfcConstructionResource ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:BOOSTER  rdf:type  ifc:IfcCompressorTypeEnum , owl:NamedIndividual ;
         rdfs:label  "BOOSTER" .
@@ -13154,6 +13164,8 @@ ifc:IfcAlarm  rdf:type   owl:Class ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:IfcStructuralLoadOrResult_List
         rdf:type         owl:Class ;
         rdfs:subClassOf  list:OWLList ;
@@ -13204,6 +13216,8 @@ ifc:internalOrExternalBoundary_IfcRelSpaceBoundary
         rdfs:label   "InternalOrExternalBoundary" ;
         rdfs:range   ifc:IfcInternalOrExternalEnum .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:description_IfcLibraryInformation
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
         rdfs:domain  ifc:IfcLibraryInformation ;
@@ -13251,9 +13265,9 @@ ifc:userDefinedGrade_IfcConstraint
 ifc:IfcObjectDefinition
         rdf:type         owl:Class ;
         rdfs:subClassOf  ifc:IfcRoot , ifc:IfcDefinitionSelect ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Class ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
@@ -13267,6 +13281,8 @@ ifc:IfcSpaceHeaterType
 ifc:IfcTextTransformation
         rdf:type         owl:Class ;
         rdfs:subClassOf  express:STRING .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:innerBoundaries_IfcRelSpaceBoundary1stLevel
         rdf:type     owl:ObjectProperty ;
@@ -13327,8 +13343,6 @@ ifc:IfcProductRepresentation
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Class ] .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:IfcRailingType  rdf:type  owl:Class ;
         rdfs:subClassOf  ifc:IfcBuildingElementType ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
@@ -13382,8 +13396,6 @@ ifc:IfcPumpType  rdf:type  owl:Class ;
         rdfs:subClassOf  ifc:IfcFlowMovingDeviceType ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:WAVE  rdf:type  ifc:IfcActionSourceTypeEnum , owl:NamedIndividual ;
         rdfs:label  "WAVE" .
@@ -13471,8 +13483,6 @@ ifc:linearForceX_IfcStructuralLoadLinearForce
 ifc:SPACEINVENTORY  rdf:type  ifc:IfcInventoryTypeEnum , owl:NamedIndividual ;
         rdfs:label  "SPACEINVENTORY" .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:DIRECTEVAPORATIVEAIRWASHER
         rdf:type    ifc:IfcEvaporativeCoolerTypeEnum , owl:NamedIndividual ;
         rdfs:label  "DIRECTEVAPORATIVEAIRWASHER" .
@@ -13503,8 +13513,6 @@ ifc:IfcDerivedUnit  rdf:type  owl:Class ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:IfcLibraryInformation
         rdf:type         owl:Class ;
@@ -13590,8 +13598,8 @@ ifc:IfcConstructionResource
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Class ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Class ] .
 
 inst:IfcText_15095  rdf:type  ifc:IfcText ;
         express:hasString  "Description_Ventil_sek_WT" .
@@ -13758,8 +13766,6 @@ ifc:overallHeight_IfcDoor
         rdfs:label   "OverallHeight" ;
         rdfs:range   ifc:IfcPositiveLengthMeasure .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:predefinedType_IfcMember
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
         rdfs:domain  ifc:IfcMember ;
@@ -13887,8 +13893,6 @@ ifc:DIRECTEXPANSIONSHELLANDTUBE
 ifc:MICROPHONE  rdf:type  ifc:IfcAudioVisualApplianceTypeEnum , owl:NamedIndividual ;
         rdfs:label  "MICROPHONE" .
 
-[ rdf:type  owl:Restriction ] .
-
 inst:IfcGloballyUniqueId_15089
         rdf:type           ifc:IfcGloballyUniqueId ;
         express:hasString  "2lqrxghQz0701234202GOw" .
@@ -13980,6 +13984,8 @@ inst:IfcShapeRepresentation_765
         ifc:representationType_IfcRepresentation
                 inst:IfcLabel_13258 .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:IfcCrewResource  rdf:type  owl:Class ;
         rdfs:subClassOf  ifc:IfcConstructionResource ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
@@ -14053,8 +14059,6 @@ ifc:COMPACTFLUORESCENT
 ifc:IfcBoilerTypeEnum
         rdf:type         owl:Class ;
         rdfs:subClassOf  express:ENUMERATION .
-
-[ rdf:type  owl:Restriction ] .
 
 inst:IfcGloballyUniqueId_22118
         rdf:type           ifc:IfcGloballyUniqueId ;
@@ -14153,8 +14157,6 @@ ifc:relatingConstraint_IfcResourceConstraintRelationship
         rdfs:domain  ifc:IfcResourceConstraintRelationship ;
         rdfs:label   "RelatingConstraint" ;
         rdfs:range   ifc:IfcConstraint .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:MOLECULARWEIGHTUNIT
         rdf:type    ifc:IfcDerivedUnitEnum , owl:NamedIndividual ;
@@ -14318,6 +14320,8 @@ ifc:pointOfReferenceHatchLine_IfcFillAreaStyleHatching
 
 inst:IfcLabel_22259  rdf:type  ifc:IfcLabel ;
         express:hasString  "TstkRKSplit_RK1" .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:IfcDuctSilencer  rdf:type  owl:Class ;
         rdfs:subClassOf  ifc:IfcFlowTreatmentDevice ;
@@ -14503,8 +14507,6 @@ ifc:IfcReinforcementBarProperties
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:IfcTubeBundle  rdf:type  owl:Class ;
         rdfs:subClassOf  ifc:IfcEnergyConversionDevice ;
@@ -14976,6 +14978,8 @@ ifc:ALARMPANEL  rdf:type  ifc:IfcUnitaryControlElementTypeEnum , owl:NamedIndivi
 ifc:SAFETYCUTOFF  rdf:type  ifc:IfcValveTypeEnum , owl:NamedIndividual ;
         rdfs:label  "SAFETYCUTOFF" .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:IfcIrregularTimeSeriesValue_List
         rdf:type         owl:Class ;
         rdfs:subClassOf  list:OWLList ;
@@ -15004,6 +15008,8 @@ ifc:diffuseTransmissionColour_IfcSurfaceStyleLighting
         rdfs:domain  ifc:IfcSurfaceStyleLighting ;
         rdfs:label   "DiffuseTransmissionColour" ;
         rdfs:range   ifc:IfcColourRgb .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:PHASEANGLEMETER  rdf:type  ifc:IfcFlowInstrumentTypeEnum , owl:NamedIndividual ;
         rdfs:label  "PHASEANGLEMETER" .
@@ -15094,9 +15100,13 @@ ifc:IfcOpeningStandardCase
         rdf:type         owl:Class ;
         rdfs:subClassOf  ifc:IfcOpeningElement .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:IfcDistributionPortTypeEnum
         rdf:type         owl:Class ;
         rdfs:subClassOf  express:ENUMERATION .
+
+[ rdf:type  owl:Restriction ] .
 
 inst:IfcLabel_21895  rdf:type  ifc:IfcLabel ;
         express:hasString  "Motorabsperrventil_sek_KM" .
@@ -15581,11 +15591,11 @@ ifc:DXCOOLINGCOIL  rdf:type  ifc:IfcCoilTypeEnum , owl:NamedIndividual ;
 
 ifc:IfcLightSource  rdf:type  owl:Class ;
         rdfs:subClassOf  ifc:IfcGeometricRepresentationItem ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Class ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
@@ -15972,6 +15982,8 @@ ifc:parentEdge_IfcSubedge
         rdfs:label   "ParentEdge" ;
         rdfs:range   ifc:IfcEdge .
 
+[ rdf:type  owl:Restriction ] .
+
 inst:IfcDistributionPort_13267
         rdf:type                  ifc:IfcDistributionPort ;
         ifc:description_IfcRoot   inst:IfcLabel_22176 ;
@@ -16028,6 +16040,8 @@ inst:IfcGloballyUniqueId_22226
 
 inst:IfcText_21975  rdf:type  ifc:IfcText ;
         express:hasString  "Description_Ventil_prim_WT" .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:ELECTRICCOOKER  rdf:type  ifc:IfcElectricApplianceTypeEnum , owl:NamedIndividual ;
         rdfs:label  "ELECTRICCOOKER" .
@@ -16255,6 +16269,8 @@ ifc:projectedOrTrue_IfcStructuralCurveAction
         rdfs:label   "ProjectedOrTrue" ;
         rdfs:range   ifc:IfcProjectedOrTrueLengthEnum .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:MODIFIED  rdf:type  ifc:IfcChangeActionEnum , owl:NamedIndividual ;
         rdfs:label  "MODIFIED" .
 
@@ -16286,8 +16302,6 @@ ifc:WARPINGMOMENTUNIT
 
 ifc:SOUNDPOWERUNIT  rdf:type  ifc:IfcDerivedUnitEnum , owl:NamedIndividual ;
         rdfs:label  "SOUNDPOWERUNIT" .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:EXPANSION  rdf:type  ifc:IfcTankTypeEnum , owl:NamedIndividual ;
         rdfs:label  "EXPANSION" .
@@ -16494,6 +16508,8 @@ ifc:IfcLightDistributionCurveEnum
         rdf:type         owl:Class ;
         rdfs:subClassOf  express:ENUMERATION .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:identification_IfcAsset
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
         rdfs:domain  ifc:IfcAsset ;
@@ -16527,8 +16543,6 @@ ifc:realizingElement_IfcRelConnectsPorts
 
 ifc:COLLAR  rdf:type  ifc:IfcMemberTypeEnum , owl:NamedIndividual ;
         rdfs:label  "COLLAR" .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:edgeGeometry_IfcEdgeCurve
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
@@ -16616,6 +16630,8 @@ ifc:name_IfcStyledItem
 inst:IfcGloballyUniqueId_22194
         rdf:type           ifc:IfcGloballyUniqueId ;
         express:hasString  "PORT0060" .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:IfcElectricMotorType
         rdf:type         owl:Class ;
@@ -16925,8 +16941,6 @@ inst:IfcShapeRepresentation_12174
 ifc:WELD  rdf:type  ifc:IfcFastenerTypeEnum , owl:NamedIndividual ;
         rdfs:label  "WELD" .
 
-[ rdf:type  owl:Restriction ] .
-
 inst:IfcLabel_13254  rdf:type  ifc:IfcLabel ;
         express:hasString  "Name_TempfuehlerVL" .
 
@@ -17037,6 +17051,10 @@ ifc:tilingScale_IfcFillAreaStyleTiles
         rdfs:label   "TilingScale" ;
         rdfs:range   ifc:IfcPositiveRatioMeasure .
 
+[ rdf:type  owl:Restriction ] .
+
+[ rdf:type  owl:Restriction ] .
+
 ifc:transverseBarNominalDiameter_IfcReinforcingMesh
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
         rdfs:domain  ifc:IfcReinforcingMesh ;
@@ -17072,6 +17090,8 @@ ifc:SINK  rdf:type  ifc:IfcSanitaryTerminalTypeEnum , ifc:IfcFlowDirectionEnum ,
 ifc:LOAD_COMBINATION  rdf:type  ifc:IfcLoadGroupTypeEnum , owl:NamedIndividual ;
         rdfs:label  "LOAD_COMBINATION" .
 
+[ rdf:type  owl:Restriction ] .
+
 inst:IfcShapeRepresentation_4422
         rdf:type  ifc:IfcShapeRepresentation ;
         ifc:representationIdentifier_IfcRepresentation
@@ -17103,8 +17123,8 @@ ifc:IfcCartesianTransformationOperator
         rdf:type         owl:Class ;
         rdfs:subClassOf  ifc:IfcGeometricRepresentationItem ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Class ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
@@ -17223,8 +17243,6 @@ ifc:projectsElements_IfcFeatureElementAddition
         rdfs:label   "ProjectsElements" ;
         rdfs:range   ifc:IfcRelProjectsElement .
 
-[ rdf:type  owl:Restriction ] .
-
 inst:IfcProductDefinitionShape_1130
         rdf:type  ifc:IfcProductDefinitionShape ;
         ifc:representations_IfcProductRepresentation
@@ -17238,6 +17256,8 @@ ifc:predefinedType_IfcPileType
 
 ifc:BUILDING  rdf:type  ifc:IfcPermitTypeEnum , owl:NamedIndividual ;
         rdfs:label  "BUILDING" .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:BASIN  rdf:type  ifc:IfcTankTypeEnum , owl:NamedIndividual ;
         rdfs:label  "BASIN" .
@@ -17428,8 +17448,6 @@ ifc:axis1_IfcCartesianTransformationOperator
         rdfs:label   "Axis1" ;
         rdfs:range   ifc:IfcDirection .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:IfcWarpingMomentMeasure
         rdf:type         owl:Class ;
         rdfs:subClassOf  express:REAL , ifc:IfcWarpingStiffnessSelect , ifc:IfcDerivedMeasureValue .
@@ -17558,8 +17576,12 @@ ifc:predefinedType_IfcMechanicalFastener
 ifc:IfcPileTypeEnum  rdf:type  owl:Class ;
         rdfs:subClassOf  express:ENUMERATION .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:IfcLanguageId  rdf:type  owl:Class ;
         rdfs:subClassOf  ifc:IfcIdentifier .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:Q_LENGTH  rdf:type  ifc:IfcSimplePropertyTemplateTypeEnum , owl:NamedIndividual ;
         rdfs:label  "Q_LENGTH" .
@@ -17596,6 +17618,8 @@ ifc:predefinedType_IfcOutletType
         rdfs:label   "PredefinedType" ;
         rdfs:range   ifc:IfcOutletTypeEnum .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:rasterFormat_IfcBlobTexture
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
         rdfs:domain  ifc:IfcBlobTexture ;
@@ -17623,8 +17647,6 @@ ifc:IfcNonNegativeLengthMeasure
 inst:IfcLabel_21897  rdf:type  ifc:IfcLabel ;
         express:hasString  "3-Wege-Ventil" .
 
-[ rdf:type  owl:Restriction ] .
-
 inst:IfcGloballyUniqueId_22032
         rdf:type           ifc:IfcGloballyUniqueId ;
         express:hasString  "PORT0009" .
@@ -17636,17 +17658,15 @@ ifc:IfcTextureVertex_List
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
 
-[ rdf:type  owl:Restriction ] .
+inst:IfcRepresentation_List_21120
+        rdf:type          ifc:IfcRepresentation_List ;
+        list:hasContents  inst:IfcShapeRepresentation_11269 .
 
 ifc:representationIdentifier_IfcRepresentation
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
         rdfs:domain  ifc:IfcRepresentation ;
         rdfs:label   "RepresentationIdentifier" ;
         rdfs:range   ifc:IfcLabel .
-
-inst:IfcRepresentation_List_21120
-        rdf:type          ifc:IfcRepresentation_List ;
-        list:hasContents  inst:IfcShapeRepresentation_11269 .
 
 ifc:INCLUDES  rdf:type  ifc:IfcBenchmarkEnum , owl:NamedIndividual ;
         rdfs:label  "INCLUDES" .
@@ -17688,8 +17708,6 @@ inst:IfcOwnerHistory_8
                 inst:IfcApplication_12 ;
         ifc:owningUser_IfcOwnerHistory  inst:IfcPersonAndOrganization_9 ;
         ifc:state_IfcOwnerHistory       ifc:READWRITE .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:IfcVirtualGridIntersection
         rdf:type         owl:Class ;
@@ -18041,6 +18059,14 @@ ifc:MUNICIPALSOLIDWASTE
         rdf:type    ifc:IfcDistributionSystemEnum , owl:NamedIndividual ;
         rdfs:label  "MUNICIPALSOLIDWASTE" .
 
+ifc:IfcLocalPlacement
+        rdf:type         owl:Class ;
+        rdfs:subClassOf  ifc:IfcObjectPlacement ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
+
 ifc:IfcAxis2Placement2D
         rdf:type         owl:Class ;
         rdfs:subClassOf  ifc:IfcPlacement , ifc:IfcAxis2Placement ;
@@ -18054,14 +18080,6 @@ ifc:IfcMagneticFluxDensityMeasure
 ifc:IfcDiscreteAccessory
         rdf:type         owl:Class ;
         rdfs:subClassOf  ifc:IfcElementComponent ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
-
-ifc:IfcLocalPlacement
-        rdf:type         owl:Class ;
-        rdfs:subClassOf  ifc:IfcObjectPlacement ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
 
@@ -18091,6 +18109,8 @@ ifc:liningOffset_IfcWindowLiningProperties
         rdfs:domain  ifc:IfcWindowLiningProperties ;
         rdfs:label   "LiningOffset" ;
         rdfs:range   ifc:IfcLengthMeasure .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:IfcTrimmedCurve  rdf:type  owl:Class ;
         rdfs:subClassOf  ifc:IfcBoundedCurve ;
@@ -18140,8 +18160,6 @@ ifc:IfcSectionProperties
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:GLASS  rdf:type  ifc:IfcReflectanceMethodEnum , owl:NamedIndividual ;
         rdfs:label  "GLASS" .
@@ -18222,8 +18240,6 @@ ifc:location_IfcDocumentInformation
         rdfs:label   "Location" ;
         rdfs:range   ifc:IfcURIReference .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:VARIABLEFLOWPRESSUREINDEPENDANT
         rdf:type    ifc:IfcAirTerminalBoxTypeEnum , owl:NamedIndividual ;
         rdfs:label  "VARIABLEFLOWPRESSUREINDEPENDANT" .
@@ -18266,9 +18282,9 @@ ifc:IfcObject  rdf:type  owl:Class ;
         rdfs:subClassOf  ifc:IfcObjectDefinition ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Class ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
@@ -18360,8 +18376,6 @@ inst:IfcDistributionPort_13231
         ifc:globalId_IfcRoot      inst:IfcGloballyUniqueId_22115 ;
         ifc:name_IfcRoot          inst:IfcLabel_22116 ;
         ifc:objectType_IfcObject  inst:IfcLabel_22006 .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:bottomFlangeSlope_IfcAsymmetricIShapeProfileDef
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
@@ -18509,8 +18523,6 @@ inst:IfcGloballyUniqueId_22089
         rdf:type           ifc:IfcGloballyUniqueId ;
         express:hasString  "ELEMENTCONNECT0025" .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:IfcIrregularTimeSeries
         rdf:type         owl:Class ;
         rdfs:subClassOf  ifc:IfcTimeSeries ;
@@ -18548,10 +18560,6 @@ inst:IfcGloballyUniqueId_22177
 ifc:IfcPhysicalQuantity_EmptyList
         rdf:type         owl:Class ;
         rdfs:subClassOf  list:EmptyList , ifc:IfcPhysicalQuantity_List .
-
-[ rdf:type  owl:Restriction ] .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:IfcDoorLiningProperties
         rdf:type         owl:Class ;
@@ -18676,6 +18684,8 @@ ifc:locations_IfcStructuralLoadConfiguration
         rdfs:label   "Locations" ;
         rdfs:range   ifc:IfcLengthMeasure_List_List .
 
+[ rdf:type  owl:Restriction ] .
+
 inst:IfcPropertySet_13061
         rdf:type              ifc:IfcPropertySet ;
         ifc:globalId_IfcRoot  inst:IfcGloballyUniqueId_21904 ;
@@ -18728,12 +18738,14 @@ ifc:isGroupedBy_IfcGroup
         rdfs:label   "IsGroupedBy" ;
         rdfs:range   ifc:IfcRelAssignsToGroup .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:IfcProcess  rdf:type  owl:Class ;
         rdfs:subClassOf  ifc:IfcProcessSelect , ifc:IfcObject ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Class ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Class ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
@@ -18763,8 +18775,6 @@ ifc:predefinedType_IfcCableCarrierFittingType
         rdfs:domain  ifc:IfcCableCarrierFittingType ;
         rdfs:label   "PredefinedType" ;
         rdfs:range   ifc:IfcCableCarrierFittingTypeEnum .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:baseQuantity_IfcConstructionResourceType
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
@@ -18835,11 +18845,17 @@ ifc:xDim_IfcBoundingBox
         rdfs:label   "XDim" ;
         rdfs:range   ifc:IfcPositiveLengthMeasure .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:predefinedType_IfcElectricDistributionBoard
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
         rdfs:domain  ifc:IfcElectricDistributionBoard ;
         rdfs:label   "PredefinedType" ;
         rdfs:range   ifc:IfcElectricDistributionBoardTypeEnum .
+
+[ rdf:type  owl:Restriction ] .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:priority_IfcMaterialLayer
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
@@ -18915,8 +18931,6 @@ ifc:IfcTendonAnchorType
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:IfcParameterValue
         rdf:type         owl:Class ;
         rdfs:subClassOf  express:REAL , ifc:IfcTrimmingSelect , ifc:IfcMeasureValue .
@@ -18930,10 +18944,6 @@ ifc:IfcCartesianPoint_EmptyList
 
 ifc:PICO  rdf:type  ifc:IfcSIPrefix , owl:NamedIndividual ;
         rdfs:label  "PICO" .
-
-[ rdf:type  owl:Restriction ] .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:literal_IfcTextLiteral
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
@@ -19028,8 +19038,6 @@ inst:IfcLabel_21898  rdf:type  ifc:IfcLabel ;
 ifc:LINTEL  rdf:type  ifc:IfcBeamTypeEnum , owl:NamedIndividual ;
         rdfs:label  "LINTEL" .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:predefinedType_IfcCableFitting
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
         rdfs:domain  ifc:IfcCableFitting ;
@@ -19074,8 +19082,6 @@ ifc:userDefinedOperationType_IfcDoor
 
 inst:IfcText_13247  rdf:type  ifc:IfcText ;
         express:hasString  "Research University Karlsruhe" .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:IfcRelDefinesByTemplate
         rdf:type         owl:Class ;
@@ -19169,9 +19175,6 @@ inst:IfcShapeRepresentation_769
         ifc:representationType_IfcRepresentation
                 inst:IfcLabel_13269 .
 
-ifc:GRAPH_VIEW  rdf:type  ifc:IfcGeometricProjectionEnum , owl:NamedIndividual ;
-        rdfs:label  "GRAPH_VIEW" .
-
 ifc:IfcRepresentationMap
         rdf:type         owl:Class ;
         rdfs:subClassOf  ifc:IfcProductRepresentationSelect ;
@@ -19180,6 +19183,9 @@ ifc:IfcRepresentationMap
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
+
+ifc:GRAPH_VIEW  rdf:type  ifc:IfcGeometricProjectionEnum , owl:NamedIndividual ;
+        rdfs:label  "GRAPH_VIEW" .
 
 ifc:quantityInProcess_IfcRelAssignsToProcess
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
@@ -19311,8 +19317,6 @@ ifc:predefinedType_IfcTask
         rdfs:label   "PredefinedType" ;
         rdfs:range   ifc:IfcTaskTypeEnum .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:predefinedType_IfcBoilerType
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
         rdfs:domain  ifc:IfcBoilerType ;
@@ -19438,10 +19442,10 @@ ifc:refDirection_IfcOffsetCurve3D
 
 ifc:IfcRelAssigns  rdf:type  owl:Class ;
         rdfs:subClassOf  ifc:IfcRelationship ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Class ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
 
 ifc:electronicMailAddresses_IfcTelecomAddress
@@ -19465,10 +19469,6 @@ ifc:sizeable_IfcDoorStyle
         rdfs:label   "Sizeable" ;
         rdfs:range   ifc:IfcBoolean .
 
-[ rdf:type  owl:Restriction ] .
-
-[ rdf:type  owl:Restriction ] .
-
 ifc:predefinedType_IfcLightFixtureType
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
         rdfs:domain  ifc:IfcLightFixtureType ;
@@ -19491,6 +19491,10 @@ ifc:predefinedType_IfcSpatialZone
         rdfs:domain  ifc:IfcSpatialZone ;
         rdfs:label   "PredefinedType" ;
         rdfs:range   ifc:IfcSpatialZoneTypeEnum .
+
+[ rdf:type  owl:Restriction ] .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:visibleSegmentLength_IfcCurveStyleFontPattern
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
@@ -19523,6 +19527,8 @@ ifc:relatingElement_IfcRelConnectsElements
         rdfs:label   "RelatingElement" ;
         rdfs:range   ifc:IfcElement .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:PASSIVE  rdf:type  ifc:IfcCooledBeamTypeEnum , owl:NamedIndividual ;
         rdfs:label  "PASSIVE" .
 
@@ -19534,8 +19540,6 @@ ifc:IfcDamperType  rdf:type  owl:Class ;
 ifc:IfcThermalResistanceMeasure
         rdf:type         owl:Class ;
         rdfs:subClassOf  express:REAL , ifc:IfcDerivedMeasureValue .
-
-[ rdf:type  owl:Restriction ] .
 
 inst:IfcGloballyUniqueId_21117
         rdf:type           ifc:IfcGloballyUniqueId ;
@@ -19856,6 +19860,8 @@ inst:IfcGloballyUniqueId_22178
 ifc:EXTERNAL_WATER  rdf:type  ifc:IfcInternalOrExternalEnum , ifc:IfcExternalSpatialElementTypeEnum , owl:NamedIndividual ;
         rdfs:label  "EXTERNAL_WATER" .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:MONTHLY_BY_DAY_OF_MONTH
         rdf:type    ifc:IfcRecurrenceTypeEnum , owl:NamedIndividual ;
         rdfs:label  "MONTHLY_BY_DAY_OF_MONTH" .
@@ -19876,6 +19882,10 @@ inst:IfcShapeRepresentation_10487
                 inst:IfcLabel_13257 ;
         ifc:representationType_IfcRepresentation
                 inst:IfcLabel_13258 .
+
+inst:IfcIdentifier_21875
+        rdf:type           ifc:IfcIdentifier ;
+        express:hasString  "Foerderhoehe" .
 
 inst:IfcRelNests_13183
         rdf:type                        ifc:IfcRelNests ;
@@ -20165,8 +20175,6 @@ ifc:VENT  rdf:type  ifc:IfcDistributionSystemEnum , owl:NamedIndividual ;
 ifc:MOVEMENTSENSOR  rdf:type  ifc:IfcSensorTypeEnum , owl:NamedIndividual ;
         rdfs:label  "MOVEMENTSENSOR" .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:FLUSHING  rdf:type  ifc:IfcValveTypeEnum , owl:NamedIndividual ;
         rdfs:label  "FLUSHING" .
 
@@ -20261,8 +20269,6 @@ ifc:operationType_IfcDoorType
         rdfs:label   "OperationType" ;
         rdfs:range   ifc:IfcDoorTypeOperationEnum .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:THERMODYNAMICTEMPERATUREUNIT
         rdf:type    ifc:IfcUnitEnum , owl:NamedIndividual ;
         rdfs:label  "THERMODYNAMICTEMPERATUREUNIT" .
@@ -20303,8 +20309,6 @@ inst:IfcDistributionPort_13163
 
 inst:IfcLabel_21899  rdf:type  ifc:IfcLabel ;
         express:hasString  "Ger\\X\\E4te Untergeschoss|PS 1" .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:colourComponents_IfcPixelTexture
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
@@ -20348,6 +20352,8 @@ ifc:predefinedType_IfcRoof
 ifc:TWO_STRAIGHT_RUN_STAIR
         rdf:type    ifc:IfcStairTypeEnum , owl:NamedIndividual ;
         rdfs:label  "TWO_STRAIGHT_RUN_STAIR" .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:rotationalStiffnessByLengthX_IfcBoundaryEdgeCondition
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
@@ -20393,6 +20399,8 @@ ifc:layerFrozen_IfcPresentationLayerWithStyle
 ifc:IfcFlowSegment  rdf:type  owl:Class ;
         rdfs:subClassOf  ifc:IfcDistributionFlowElement .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:representationContexts_IfcContext
         rdf:type     owl:ObjectProperty ;
         rdfs:domain  ifc:IfcContext ;
@@ -20429,6 +20437,8 @@ ifc:IfcLibraryReference
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:lastModifyingApplication_IfcOwnerHistory
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
@@ -20511,6 +20521,8 @@ ifc:actualFinish_IfcTaskTime
         rdfs:label   "ActualFinish" ;
         rdfs:range   ifc:IfcDateTime .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:predefinedType_IfcGrid
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
         rdfs:domain  ifc:IfcGrid ;
@@ -20522,6 +20534,8 @@ ifc:IfcStructuralMember
         rdfs:subClassOf  ifc:IfcStructuralItem ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Class ] .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:IfcTransitionCode
         rdf:type         owl:Class ;
@@ -20626,6 +20640,8 @@ inst:IfcRelNests_13253
         ifc:relatedObjects_IfcRelNests  inst:IfcPump_12441 ;
         ifc:relatingObject_IfcRelNests  inst:IfcDistributionPort_13251 .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:IfcWindowLiningProperties
         rdf:type         owl:Class ;
         rdfs:subClassOf  ifc:IfcPreDefinedPropertySet ;
@@ -20694,8 +20710,6 @@ ifc:ROOFING  rdf:type  ifc:IfcLaborResourceTypeEnum , ifc:IfcCoveringTypeEnum , 
 
 inst:IfcLabel_22263  rdf:type  ifc:IfcLabel ;
         express:hasString  "RK1Aus" .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:ENDEVENT  rdf:type  ifc:IfcEventTypeEnum , owl:NamedIndividual ;
         rdfs:label  "ENDEVENT" .
@@ -20788,6 +20802,8 @@ ifc:scheduleWork_IfcResourceTime
 ifc:FIRESAFETY  rdf:type  ifc:IfcSpatialZoneTypeEnum , owl:NamedIndividual ;
         rdfs:label  "FIRESAFETY" .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:referenceSurface_IfcSurfaceCurveSweptAreaSolid
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
         rdfs:domain  ifc:IfcSurfaceCurveSweptAreaSolid ;
@@ -20846,6 +20862,8 @@ inst:IfcLabel_21880  rdf:type  ifc:IfcLabel ;
 
 ifc:POWERGENERATION  rdf:type  ifc:IfcDistributionSystemEnum , owl:NamedIndividual ;
         rdfs:label  "POWERGENERATION" .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:editors_IfcDocumentInformation
         rdf:type     owl:ObjectProperty ;
@@ -20941,6 +20959,8 @@ ifc:IfcFlowInstrumentTypeEnum
         rdf:type         owl:Class ;
         rdfs:subClassOf  express:ENUMERATION .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:COUPLER  rdf:type  ifc:IfcTendonAnchorTypeEnum , owl:NamedIndividual ;
         rdfs:label  "COUPLER" .
 
@@ -20976,6 +20996,8 @@ inst:IfcGloballyUniqueId_15075
         rdf:type           ifc:IfcGloballyUniqueId ;
         express:hasString  "2lqrrghQz070010000122H" .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:purpose_IfcStructuralLoadGroup
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
         rdfs:domain  ifc:IfcStructuralLoadGroup ;
@@ -21005,8 +21027,6 @@ ifc:name_IfcApproval  rdf:type  owl:FunctionalProperty , owl:ObjectProperty ;
         rdfs:label   "Name" ;
         rdfs:range   ifc:IfcLabel .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:IfcTank  rdf:type    owl:Class ;
         rdfs:subClassOf  ifc:IfcFlowStorageDevice ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
@@ -21018,8 +21038,6 @@ ifc:IfcCoordinateReferenceSystemSelect
 
 ifc:FREEZER  rdf:type  ifc:IfcElectricApplianceTypeEnum , owl:NamedIndividual ;
         rdfs:label  "FREEZER" .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:predefinedType_IfcSurfaceFeature
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
@@ -21033,6 +21051,8 @@ ifc:TWO_QUARTER_TURN_RAMP
 
 ifc:SCANNER  rdf:type  ifc:IfcCommunicationsApplianceTypeEnum , owl:NamedIndividual ;
         rdfs:label  "SCANNER" .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:wordSpacing_IfcTextStyleTextModel
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
@@ -21081,11 +21101,11 @@ ifc:IfcElement  rdf:type  owl:Class ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Class ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
@@ -21145,8 +21165,6 @@ ifc:sameSense_IfcCompositeCurveSegment
 ifc:IfcReinforcingBarRoleEnum
         rdf:type         owl:Class ;
         rdfs:subClassOf  express:ENUMERATION .
-
-[ rdf:type  owl:Restriction ] .
 
 inst:IfcPropertySingleValue_13000
         rdf:type              ifc:IfcPropertySingleValue ;
@@ -21356,8 +21374,6 @@ ifc:constantAttenuation_IfcLightSourcePositional
         rdfs:domain  ifc:IfcLightSourcePositional ;
         rdfs:label   "ConstantAttenuation" ;
         rdfs:range   ifc:IfcReal .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:IfcComplexNumber  rdf:type  owl:Class ;
         rdfs:subClassOf  express:REAL_List , ifc:IfcMeasureValue ;
@@ -21625,6 +21641,8 @@ ifc:IfcHalfSpaceSolid
 ifc:IfcObjectiveEnum  rdf:type  owl:Class ;
         rdfs:subClassOf  express:ENUMERATION .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:THERMALADMITTANCEUNIT
         rdf:type    ifc:IfcDerivedUnitEnum , owl:NamedIndividual ;
         rdfs:label  "THERMALADMITTANCEUNIT" .
@@ -21739,6 +21757,8 @@ inst:IfcDistributionPort_13252
 
 ifc:WCSEAT  rdf:type  ifc:IfcSanitaryTerminalTypeEnum , owl:NamedIndividual ;
         rdfs:label  "WCSEAT" .
+
+[ rdf:type  owl:Restriction ] .
 
 inst:IfcGloballyUniqueId_22123
         rdf:type           ifc:IfcGloballyUniqueId ;
@@ -21855,6 +21875,8 @@ ifc:givingApproval_IfcApproval
         rdfs:domain  ifc:IfcApproval ;
         rdfs:label   "GivingApproval" ;
         rdfs:range   ifc:IfcActorSelect .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:enumerationValues_IfcPropertyEnumeratedValue
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
@@ -22056,6 +22078,8 @@ ifc:PREDICTED  rdf:type  ifc:IfcDataOriginEnum , owl:NamedIndividual ;
 inst:IfcLabel_22227  rdf:type  ifc:IfcLabel ;
         express:hasString  "VentilKM_KM" .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:IfcEventType  rdf:type  owl:Class ;
         rdfs:subClassOf  ifc:IfcTypeProcess ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
@@ -22149,6 +22173,8 @@ ifc:bottomFlangeFilletRadius_IfcAsymmetricIShapeProfileDef
         rdfs:domain  ifc:IfcAsymmetricIShapeProfileDef ;
         rdfs:label   "BottomFlangeFilletRadius" ;
         rdfs:range   ifc:IfcNonNegativeLengthMeasure .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:sweptCurve_IfcSweptSurface
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
@@ -22361,6 +22387,8 @@ ifc:THERMALCONDUCTANCEUNIT
         rdf:type    ifc:IfcDerivedUnitEnum , owl:NamedIndividual ;
         rdfs:label  "THERMALCONDUCTANCEUNIT" .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:ELECTRICRESISTANCEUNIT
         rdf:type    ifc:IfcUnitEnum , owl:NamedIndividual ;
         rdfs:label  "ELECTRICRESISTANCEUNIT" .
@@ -22387,6 +22415,8 @@ ifc:scheduleFinish_IfcResourceTime
 inst:IfcGloballyUniqueId_22054
         rdf:type           ifc:IfcGloballyUniqueId ;
         express:hasString  "PORT0015" .
+
+[ rdf:type  owl:Restriction ] .
 
 inst:IfcDistributionPort_13271
         rdf:type                  ifc:IfcDistributionPort ;
@@ -22553,6 +22583,8 @@ ifc:IfcLibrarySelect  rdf:type  owl:Class ;
 ifc:HOSEREEL  rdf:type  ifc:IfcFireSuppressionTerminalTypeEnum , owl:NamedIndividual ;
         rdfs:label  "HOSEREEL" .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:IfcLagTime  rdf:type  owl:Class ;
         rdfs:subClassOf  ifc:IfcSchedulingTime ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
@@ -22610,6 +22642,8 @@ ifc:profileType_IfcProfileDef
         rdfs:label   "ProfileType" ;
         rdfs:range   ifc:IfcProfileTypeEnum .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:IfcMaterialDefinition
         rdf:type         owl:Class ;
         rdfs:subClassOf  ifc:IfcResourceObjectSelect , ifc:IfcObjectReferenceSelect , ifc:IfcMaterialSelect ;
@@ -22654,14 +22688,14 @@ ifc:IfcBSplineSurface
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Class ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
@@ -22729,6 +22763,8 @@ ifc:IfcMechanicalFastenerType
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
 
+[ rdf:type  owl:Restriction ] .
+
 inst:IfcReal_List_21922
         rdf:type          ifc:IfcReal_List ;
         list:hasContents  inst:IfcReal_21925 ;
@@ -22789,17 +22825,19 @@ ifc:IfcGeometricRepresentationSubContext
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
 
-ifc:HEATPIPE  rdf:type  ifc:IfcAirToAirHeatRecoveryTypeEnum , owl:NamedIndividual ;
-        rdfs:label  "HEATPIPE" .
-
 inst:INTEGER_21933  rdf:type  express:INTEGER ;
         express:hasInteger  1 .
+
+ifc:HEATPIPE  rdf:type  ifc:IfcAirToAirHeatRecoveryTypeEnum , owl:NamedIndividual ;
+        rdfs:label  "HEATPIPE" .
 
 inst:IfcLabel_22209  rdf:type  ifc:IfcLabel ;
         express:hasString  "VerteilerRLaus_PS2ein" .
 
 ifc:MULTIPOSITION  rdf:type  ifc:IfcControllerTypeEnum , owl:NamedIndividual ;
         rdfs:label  "MULTIPOSITION" .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:IfcElectricAppliance
         rdf:type         owl:Class ;
@@ -22825,8 +22863,6 @@ ifc:isLinear_IfcStructuralResultGroup
 
 ifc:BED  rdf:type   ifc:IfcFurnitureTypeEnum , owl:NamedIndividual ;
         rdfs:label  "BED" .
-
-[ rdf:type  owl:Restriction ] .
 
 inst:IfcRepresentationMap_10489
         rdf:type  ifc:IfcRepresentationMap ;
@@ -22900,8 +22936,6 @@ ifc:IfcRelVoidsElement
 ifc:IfcSegmentIndexSelect
         rdf:type         owl:Class ;
         rdfs:subClassOf  express:SELECT .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:nominalDiameter_IfcReinforcingBar
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
@@ -23143,8 +23177,8 @@ ifc:siteAddress_IfcSite
 ifc:IfcTypeResource  rdf:type  owl:Class ;
         rdfs:subClassOf  ifc:IfcResourceSelect , ifc:IfcTypeObject ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Class ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Class ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
@@ -23240,6 +23274,8 @@ ifc:QUASI_UNIFORM_KNOTS
         rdf:type    ifc:IfcKnotType , owl:NamedIndividual ;
         rdfs:label  "QUASI_UNIFORM_KNOTS" .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:rotationalStiffnessY_IfcBoundaryNodeCondition
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
         rdfs:domain  ifc:IfcBoundaryNodeCondition ;
@@ -23254,8 +23290,6 @@ ifc:predefinedType_IfcVoidingFeature
         rdfs:domain  ifc:IfcVoidingFeature ;
         rdfs:label   "PredefinedType" ;
         rdfs:range   ifc:IfcVoidingFeatureTypeEnum .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:IfcSweptDiskSolid
         rdf:type         owl:Class ;
@@ -23312,8 +23346,6 @@ ifc:IfcActionSourceTypeEnum
         rdf:type         owl:Class ;
         rdfs:subClassOf  express:ENUMERATION .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:hasPropertyTemplates_IfcComplexPropertyTemplate
         rdf:type     owl:ObjectProperty ;
         rdfs:domain  ifc:IfcComplexPropertyTemplate ;
@@ -23341,6 +23373,8 @@ ifc:lengthValue_IfcQuantityLength
         rdfs:domain  ifc:IfcQuantityLength ;
         rdfs:label   "LengthValue" ;
         rdfs:range   ifc:IfcLengthMeasure .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:IfcDistributionElementType
         rdf:type         owl:Class ;
@@ -23414,15 +23448,15 @@ inst:IfcLabel_21882  rdf:type  ifc:IfcLabel ;
 ifc:IfcBSplineCurve  rdf:type  owl:Class ;
         rdfs:subClassOf  ifc:IfcBoundedCurve ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Class ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
 
@@ -23473,6 +23507,8 @@ ifc:radius_IfcSphere  rdf:type  owl:FunctionalProperty , owl:ObjectProperty ;
         rdfs:domain  ifc:IfcSphere ;
         rdfs:label   "Radius" ;
         rdfs:range   ifc:IfcPositiveLengthMeasure .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:IfcOffsetCurve2D  rdf:type  owl:Class ;
         rdfs:subClassOf  ifc:IfcCurve ;
@@ -23537,8 +23573,6 @@ ifc:IfcCompositeCurveSegment_List
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
 
-[ rdf:type  owl:Restriction ] .
-
 inst:IfcGloballyUniqueId_22180
         rdf:type           ifc:IfcGloballyUniqueId ;
         express:hasString  "ELEMENTCONNECT0054" .
@@ -23548,6 +23582,10 @@ ifc:IfcSubContractResource
         rdfs:subClassOf  ifc:IfcConstructionResource ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
+
+[ rdf:type  owl:Restriction ] .
+
+[ rdf:type  owl:Restriction ] .
 
 inst:IfcDistributionPort_13272
         rdf:type                  ifc:IfcDistributionPort ;
@@ -23690,8 +23728,6 @@ inst:IfcRelFlowControlElements_13425
         ifc:relatingFlowElement_IfcRelFlowControlElements
                 inst:IfcValve_13148 .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:conditionCoordinateSystem_IfcRelConnectsStructuralMember
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
         rdfs:domain  ifc:IfcRelConnectsStructuralMember ;
@@ -23707,9 +23743,13 @@ inst:IfcRelConnectsPorts_13288
         ifc:relatingPort_IfcRelConnectsPorts
                 inst:IfcDistributionPort_13181 .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:DOMESTICCOLDWATER
         rdf:type    ifc:IfcDistributionSystemEnum , owl:NamedIndividual ;
         rdfs:label  "DOMESTICCOLDWATER" .
+
+[ rdf:type  owl:Restriction ] .
 
 inst:IfcPropertySingleValue_13002
         rdf:type              ifc:IfcPropertySingleValue ;
@@ -23853,6 +23893,8 @@ ifc:KELVIN  rdf:type  ifc:IfcSIUnitName , owl:NamedIndividual ;
 
 inst:IfcLabel_13240  rdf:type  ifc:IfcLabel ;
         express:hasString  "Simplebim" .
+
+[ rdf:type  owl:Restriction ] .
 
 inst:IfcText_15065  rdf:type  ifc:IfcText ;
         express:hasString  "Description_VerteilerRL" .
@@ -24106,16 +24148,14 @@ ifc:CABLETRAYSEGMENT  rdf:type  ifc:IfcCableCarrierSegmentTypeEnum , owl:NamedIn
 ifc:GIRDER  rdf:type  ifc:IfcElementAssemblyTypeEnum , owl:NamedIndividual ;
         rdfs:label  "GIRDER" .
 
-[ rdf:type  owl:Restriction ] .
-
-[ rdf:type  owl:Restriction ] .
-
 inst:IfcLabel_21864  rdf:type  ifc:IfcLabel ;
         express:hasString  "Pset_BuildingUse" .
 
 ifc:IfcLabel_EmptyList
         rdf:type         owl:Class ;
         rdfs:subClassOf  list:EmptyList , ifc:IfcLabel_List .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:directionSense_IfcMaterialLayerSetUsage
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
@@ -24130,8 +24170,6 @@ ifc:IfcTableRow_EmptyList
         rdf:type         owl:Class ;
         rdfs:subClassOf  list:EmptyList , ifc:IfcTableRow_List .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:MEMBRANE  rdf:type  ifc:IfcCoveringTypeEnum , owl:NamedIndividual ;
         rdfs:label  "MEMBRANE" .
 
@@ -24141,8 +24179,6 @@ ifc:IfcFlowMovingDevice
 
 inst:IfcLabel_21952  rdf:type  ifc:IfcLabel ;
         express:hasString  "Label Pumpe Sekundaer" .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:predefinedType_IfcConstructionProductResource
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
@@ -24192,8 +24228,6 @@ inst:IfcSIUnit_13109  rdf:type     ifc:IfcSIUnit ;
         ifc:name_IfcSIUnit         ifc:METRE ;
         ifc:unitType_IfcNamedUnit  ifc:LENGTHUNIT .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:IfcIdentifier_EmptyList
         rdf:type         owl:Class ;
         rdfs:subClassOf  list:EmptyList , ifc:IfcIdentifier_List .
@@ -24203,6 +24237,8 @@ ifc:userDefinedDataOrigin_IfcTimeSeries
         rdfs:domain  ifc:IfcTimeSeries ;
         rdfs:label   "UserDefinedDataOrigin" ;
         rdfs:range   ifc:IfcLabel .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:definingUnit_IfcPropertyTableValue
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
@@ -24228,8 +24264,6 @@ ifc:IfcTableColumn  rdf:type  owl:Class ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:IfcShapeModel_List
         rdf:type         owl:Class ;
         rdfs:subClassOf  list:OWLList ;
@@ -24240,8 +24274,6 @@ ifc:IfcShapeModel_List
 inst:IfcGloballyUniqueId_22074
         rdf:type           ifc:IfcGloballyUniqueId ;
         express:hasString  "PORT0022" .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:version_IfcLibraryInformation
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
@@ -24298,8 +24330,6 @@ ifc:riserHeight_IfcStairFlight
         rdfs:domain  ifc:IfcStairFlight ;
         rdfs:label   "RiserHeight" ;
         rdfs:range   ifc:IfcPositiveLengthMeasure .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:propertyDependsOn_IfcProperty
         rdf:type     owl:ObjectProperty ;
@@ -24362,8 +24392,6 @@ ifc:IfcProfileProperties
         rdfs:subClassOf  ifc:IfcExtendedProperties ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:CENTI  rdf:type  ifc:IfcSIPrefix , owl:NamedIndividual ;
         rdfs:label  "CENTI" .
@@ -24492,10 +24520,6 @@ inst:IfcValue_List_21972
         rdf:type          ifc:IfcValue_List ;
         list:hasContents  inst:IfcLabel_21958 .
 
-[ rdf:type  owl:Restriction ] .
-
-[ rdf:type  owl:Restriction ] .
-
 ifc:finishTime_IfcWorkControl
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
         rdfs:domain  ifc:IfcWorkControl ;
@@ -24594,11 +24618,11 @@ ifc:elements_IfcDerivedUnit
         rdfs:label   "Elements" ;
         rdfs:range   ifc:IfcDerivedUnitElement .
 
-[ rdf:type  owl:Restriction ] .
-
 inst:IfcPropertySet_13135
         rdf:type              ifc:IfcPropertySet ;
         ifc:globalId_IfcRoot  inst:IfcGloballyUniqueId_21950 ;
+        ifc:hasProperties_IfcPropertySet
+                inst:IfcPropertySingleValue_13136 , inst:IfcPropertySingleValue_13137 ;
         ifc:name_IfcRoot      inst:IfcLabel_21951 .
 
 ifc:THIRD_ORDER_THEORY
@@ -24683,15 +24707,11 @@ ifc:rotationalStiffnessByLengthZ_IfcBoundaryEdgeCondition
         rdfs:label   "RotationalStiffnessByLengthZ" ;
         rdfs:range   ifc:IfcModulusOfRotationalSubgradeReactionSelect .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:CABLESEGMENT  rdf:type  ifc:IfcCableSegmentTypeEnum , owl:NamedIndividual ;
         rdfs:label  "CABLESEGMENT" .
 
 ifc:CONTACTOR  rdf:type  ifc:IfcSwitchingDeviceTypeEnum , owl:NamedIndividual ;
         rdfs:label  "CONTACTOR" .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:IfcStructuralLoadSingleForce
         rdf:type         owl:Class ;
@@ -24787,10 +24807,6 @@ ifc:IfcBuildingElementPartTypeEnum
         rdf:type         owl:Class ;
         rdfs:subClassOf  express:ENUMERATION .
 
-[ rdf:type  owl:Restriction ] .
-
-[ rdf:type  owl:Restriction ] .
-
 ifc:coordinates_IfcCartesianPoint
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
         rdfs:domain  ifc:IfcCartesianPoint ;
@@ -24830,8 +24846,6 @@ ifc:predefinedType_IfcDistributionPort
         rdfs:domain  ifc:IfcDistributionPort ;
         rdfs:label   "PredefinedType" ;
         rdfs:range   ifc:IfcDistributionPortTypeEnum .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:IfcEnergyConversionDeviceType
         rdf:type         owl:Class ;
@@ -24897,8 +24911,6 @@ ifc:IfcOpeningElementTypeEnum
         rdf:type         owl:Class ;
         rdfs:subClassOf  express:ENUMERATION .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:LOUVRE  rdf:type  ifc:IfcAirTerminalTypeEnum , owl:NamedIndividual ;
         rdfs:label  "LOUVRE" .
 
@@ -24960,6 +24972,10 @@ ifc:predefinedType_IfcJunctionBox
         rdfs:label   "PredefinedType" ;
         rdfs:range   ifc:IfcJunctionBoxTypeEnum .
 
+[ rdf:type  owl:Restriction ] .
+
+[ rdf:type  owl:Restriction ] .
+
 inst:IfcGloballyUniqueId_22107
         rdf:type           ifc:IfcGloballyUniqueId ;
         express:hasString  "PORT0033" .
@@ -24990,6 +25006,8 @@ ifc:predefinedType_IfcCondenser
 ifc:FEEDANDEXPANSION  rdf:type  ifc:IfcTankTypeEnum , owl:NamedIndividual ;
         rdfs:label  "FEEDANDEXPANSION" .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:VAPORPERMEABILITYUNIT
         rdf:type    ifc:IfcDerivedUnitEnum , owl:NamedIndividual ;
         rdfs:label  "VAPORPERMEABILITYUNIT" .
@@ -25018,6 +25036,8 @@ inst:IfcRelConnectsPorts_13289
                 inst:IfcDistributionPort_13191 ;
         ifc:relatingPort_IfcRelConnectsPorts
                 inst:IfcDistributionPort_13180 .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:IfcRelAssociatesConstraint
         rdf:type         owl:Class ;
@@ -25088,6 +25108,8 @@ ifc:luminousIntensity_IfcLightDistributionData
         rdfs:label   "LuminousIntensity" ;
         rdfs:range   ifc:IfcLuminousIntensityDistributionMeasure_List .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:IfcDoorTypeEnum  rdf:type  owl:Class ;
         rdfs:subClassOf  express:ENUMERATION .
 
@@ -25095,8 +25117,8 @@ ifc:IfcCsgPrimitive3D
         rdf:type         owl:Class ;
         rdfs:subClassOf  ifc:IfcGeometricRepresentationItem , ifc:IfcCsgSelect , ifc:IfcBooleanOperand ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Class ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Class ] .
 
 ifc:IfcStructuralSurfaceAction
         rdf:type         owl:Class ;
@@ -25269,6 +25291,8 @@ inst:IfcRelNests_13275
         ifc:relatedObjects_IfcRelNests  inst:IfcPipeFitting_9628 ;
         ifc:relatingObject_IfcRelNests  inst:IfcDistributionPort_13272 .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:COMMUNICATION  rdf:type  ifc:IfcDistributionSystemEnum , owl:NamedIndividual ;
         rdfs:label  "COMMUNICATION" .
 
@@ -25380,6 +25404,8 @@ ifc:IfcShapeModel_EmptyList
         rdf:type         owl:Class ;
         rdfs:subClassOf  list:EmptyList , ifc:IfcShapeModel_List .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:IfcPropertySingleValue
         rdf:type         owl:Class ;
         rdfs:subClassOf  ifc:IfcSimpleProperty ;
@@ -25395,11 +25421,11 @@ ifc:PIECEWISE_BEZIER_KNOTS
         rdf:type    ifc:IfcKnotType , owl:NamedIndividual ;
         rdfs:label  "PIECEWISE_BEZIER_KNOTS" .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:IfcParameterValue_EmptyList
         rdf:type         owl:Class ;
         rdfs:subClassOf  list:EmptyList , ifc:IfcParameterValue_List .
+
+[ rdf:type  owl:Restriction ] .
 
 inst:IfcSIUnit_13096  rdf:type     ifc:IfcSIUnit ;
         ifc:name_IfcSIUnit         ifc:METRE ;
@@ -25494,6 +25520,9 @@ ifc:userDefinedType_IfcDerivedUnit
 ifc:MEGA  rdf:type  ifc:IfcSIPrefix , owl:NamedIndividual ;
         rdfs:label  "MEGA" .
 
+inst:IfcLabel_21953  rdf:type  ifc:IfcLabel ;
+        express:hasString  "Foerderhoehe_3m" .
+
 ifc:UP  rdf:type    ifc:IfcTextPath , owl:NamedIndividual ;
         rdfs:label  "UP" .
 
@@ -25507,18 +25536,14 @@ ifc:IfcDuctFittingTypeEnum
         rdf:type         owl:Class ;
         rdfs:subClassOf  express:ENUMERATION .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:IfcStructuralPointReaction
         rdf:type         owl:Class ;
         rdfs:subClassOf  ifc:IfcStructuralReaction .
 
 ifc:IfcTimeSeries  rdf:type  owl:Class ;
         rdfs:subClassOf  ifc:IfcMetricValueSelect , ifc:IfcObjectReferenceSelect , ifc:IfcResourceObjectSelect ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
@@ -25529,9 +25554,13 @@ ifc:IfcTimeSeries  rdf:type  owl:Class ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:HVAC  rdf:type  ifc:IfcLaborResourceTypeEnum , owl:NamedIndividual ;
         rdfs:label  "HVAC" .
@@ -25540,15 +25569,11 @@ inst:IfcGloballyUniqueId_15097
         rdf:type           ifc:IfcGloballyUniqueId ;
         express:hasString  "2lqapwnQz0701136524Ad2" .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:IfcDuration  rdf:type  owl:Class ;
         rdfs:subClassOf  express:STRING , ifc:IfcTimeOrRatioSelect , ifc:IfcSimpleValue .
 
 ifc:LOGICALXOR  rdf:type  ifc:IfcLogicalOperatorEnum , owl:NamedIndividual ;
         rdfs:label  "LOGICALXOR" .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:IfcQuantityWeight
         rdf:type         owl:Class ;
@@ -25591,13 +25616,13 @@ ifc:EMERGENCYSTOP  rdf:type  ifc:IfcSwitchingDeviceTypeEnum , owl:NamedIndividua
 ifc:LIGHTSENSOR  rdf:type  ifc:IfcSensorTypeEnum , owl:NamedIndividual ;
         rdfs:label  "LIGHTSENSOR" .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:nominalValue_IfcPropertySingleValue
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
         rdfs:domain  ifc:IfcPropertySingleValue ;
         rdfs:label   "NominalValue" ;
         rdfs:range   ifc:IfcValue .
-
-[ rdf:type  owl:Restriction ] .
 
 inst:IfcGloballyUniqueId_22163
         rdf:type           ifc:IfcGloballyUniqueId ;
@@ -25709,15 +25734,15 @@ ifc:IfcConstraint  rdf:type  owl:Class ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Class ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
 
 ifc:PRESSUREUNIT  rdf:type  ifc:IfcUnitEnum , owl:NamedIndividual ;
@@ -25752,8 +25777,6 @@ inst:IfcDistributionPort_13218
         ifc:globalId_IfcRoot      inst:IfcGloballyUniqueId_22097 ;
         ifc:name_IfcRoot          inst:IfcLabel_22098 ;
         ifc:objectType_IfcObject  inst:IfcLabel_22010 .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:IfcOrientedEdge  rdf:type  owl:Class ;
         rdfs:subClassOf  ifc:IfcEdge ;
@@ -25791,8 +25814,8 @@ ifc:messagingIDs_IfcTelecomAddress
 ifc:IfcPreDefinedItem
         rdf:type         owl:Class ;
         rdfs:subClassOf  ifc:IfcPresentationItem ;
-        rdfs:subClassOf  [ rdf:type  owl:Class ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Class ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
 
 ifc:applicationDeveloper_IfcApplication
@@ -25834,8 +25857,6 @@ inst:IfcLocalPlacement_13079
 ifc:FORMEDDUCT  rdf:type  ifc:IfcDistributionChamberElementTypeEnum , owl:NamedIndividual ;
         rdfs:label  "FORMEDDUCT" .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:LUMEN  rdf:type  ifc:IfcSIUnitName , owl:NamedIndividual ;
         rdfs:label  "LUMEN" .
 
@@ -25851,8 +25872,6 @@ ifc:propertyReference_IfcPropertyReferenceValue
         rdfs:label   "PropertyReference" ;
         rdfs:range   ifc:IfcObjectReferenceSelect .
 
-[ rdf:type  owl:Restriction ] .
-
 inst:IfcLabel_22104  rdf:type  ifc:IfcLabel ;
         express:hasString  "KM_Sekundaer_Eingang" .
 
@@ -25862,8 +25881,6 @@ ifc:DATAOUTLET  rdf:type  ifc:IfcOutletTypeEnum , owl:NamedIndividual ;
 ifc:INTERNALCOMBUSTION
         rdf:type    ifc:IfcEngineTypeEnum , owl:NamedIndividual ;
         rdfs:label  "INTERNALCOMBUSTION" .
-
-[ rdf:type  owl:Restriction ] .
 
 ifc:contextOfItems_IfcRepresentation
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
@@ -25983,12 +26000,12 @@ ifc:predefinedType_IfcConstructionProductResourceType
 ifc:ROOFTOPUNIT  rdf:type  ifc:IfcUnitaryEquipmentTypeEnum , owl:NamedIndividual ;
         rdfs:label  "ROOFTOPUNIT" .
 
-[ rdf:type  owl:Restriction ] .
-
 inst:IfcProductDefinitionShape_12712
         rdf:type  ifc:IfcProductDefinitionShape ;
         ifc:representations_IfcProductRepresentation
                 inst:IfcRepresentation_List_21829 .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:userDefinedEventTriggerType_IfcEvent
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
@@ -26096,8 +26113,8 @@ ifc:IfcProductDefinitionShape
 ifc:IfcSpatialElement
         rdf:type         owl:Class ;
         rdfs:subClassOf  ifc:IfcProduct ;
-        rdfs:subClassOf  [ rdf:type  owl:Class ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Class ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
@@ -26148,8 +26165,6 @@ ifc:identifier_IfcTableColumn
         rdfs:label   "Identifier" ;
         rdfs:range   ifc:IfcIdentifier .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:IfcPostalAddress  rdf:type  owl:Class ;
         rdfs:subClassOf  ifc:IfcAddress ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
@@ -26187,15 +26202,17 @@ ifc:predefinedType_IfcMechanicalFastenerType
         rdfs:label   "PredefinedType" ;
         rdfs:range   ifc:IfcMechanicalFastenerTypeEnum .
 
+inst:IfcGloballyUniqueId_15079
+        rdf:type           ifc:IfcGloballyUniqueId ;
+        express:hasString  "20VOMdP2co7W0000000jb2" .
+
 ifc:deltaTConstant_IfcStructuralLoadTemperature
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
         rdfs:domain  ifc:IfcStructuralLoadTemperature ;
         rdfs:label   "DeltaTConstant" ;
         rdfs:range   ifc:IfcThermodynamicTemperatureMeasure .
 
-inst:IfcGloballyUniqueId_15079
-        rdf:type           ifc:IfcGloballyUniqueId ;
-        express:hasString  "20VOMdP2co7W0000000jb2" .
+[ rdf:type  owl:Restriction ] .
 
 ifc:IfcBSplineSurfaceForm
         rdf:type         owl:Class ;
@@ -26235,10 +26252,6 @@ ifc:IfcWall  rdf:type    owl:Class ;
         rdfs:subClassOf  ifc:IfcBuildingElement ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
-
-[ rdf:type  owl:Restriction ] .
-
-[ rdf:type  owl:Restriction ] .
 
 inst:IfcDistributionPort_13186
         rdf:type                  ifc:IfcDistributionPort ;
@@ -26346,6 +26359,8 @@ ifc:IfcCoordinateReferenceSystem
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:DOUBLE_DOOR_SINGLE_SWING_OPPOSITE_RIGHT
         rdf:type    ifc:IfcDoorTypeOperationEnum , ifc:IfcDoorStyleOperationEnum , owl:NamedIndividual ;
         rdfs:label  "DOUBLE_DOOR_SINGLE_SWING_OPPOSITE_RIGHT" .
@@ -26369,8 +26384,6 @@ ifc:IfcExtrudedAreaSolidTapered
 inst:IfcText_21982  rdf:type  ifc:IfcText ;
         express:hasString  "Description_Ventil_prim_KM" .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:EVENTMESSAGE  rdf:type  ifc:IfcEventTriggerTypeEnum , owl:NamedIndividual ;
         rdfs:label  "EVENTMESSAGE" .
 
@@ -26383,6 +26396,8 @@ inst:IfcPropertySingleValue_13041
         ifc:name_IfcProperty  inst:IfcIdentifier_21874 ;
         ifc:nominalValue_IfcPropertySingleValue
                 inst:IfcLabel_21895 .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:description_IfcLibraryReference
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
@@ -26407,8 +26422,6 @@ ifc:shapeAspectStyle_IfcWindowLiningProperties
 
 ifc:AIRHANDLER  rdf:type  ifc:IfcUnitaryEquipmentTypeEnum , owl:NamedIndividual ;
         rdfs:label  "AIRHANDLER" .
-
-[ rdf:type  owl:Restriction ] .
 
 inst:IfcRelFlowControlElements_13427
         rdf:type              ifc:IfcRelFlowControlElements ;
@@ -26537,8 +26550,6 @@ ifc:IfcPcurve_List  rdf:type  owl:Class ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
-
-[ rdf:type  owl:Restriction ] .
 
 inst:IfcProductDefinitionShape_9208
         rdf:type  ifc:IfcProductDefinitionShape ;
@@ -26708,8 +26719,6 @@ ifc:associatedGeometry_IfcSurfaceCurve
 ifc:BLASTDAMPER  rdf:type  ifc:IfcDamperTypeEnum , owl:NamedIndividual ;
         rdfs:label  "BLASTDAMPER" .
 
-[ rdf:type  owl:Restriction ] .
-
 inst:IfcLabel_22249  rdf:type  ifc:IfcLabel ;
         express:hasString  "TmixAus_MixValveEin" .
 
@@ -26792,6 +26801,8 @@ ifc:FIXEDCASEMENT  rdf:type  ifc:IfcWindowPanelOperationEnum , owl:NamedIndividu
 ifc:EARTHINGSWITCH  rdf:type  ifc:IfcProtectiveDeviceTypeEnum , owl:NamedIndividual ;
         rdfs:label  "EARTHINGSWITCH" .
 
+[ rdf:type  owl:Restriction ] .
+
 ifc:STEEL  rdf:type  ifc:IfcWindowStyleConstructionEnum , ifc:IfcDoorStyleConstructionEnum , owl:NamedIndividual ;
         rdfs:label  "STEEL" .
 
@@ -26815,8 +26826,6 @@ ifc:IfcDynamicViscosityMeasure
         rdf:type         owl:Class ;
         rdfs:subClassOf  express:REAL , ifc:IfcDerivedMeasureValue .
 
-[ rdf:type  owl:Restriction ] .
-
 ifc:SLIDING_TO_RIGHT  rdf:type  ifc:IfcDoorTypeOperationEnum , ifc:IfcDoorStyleOperationEnum , owl:NamedIndividual ;
         rdfs:label  "SLIDING_TO_RIGHT" .
 
@@ -26833,17 +26842,19 @@ ifc:ROOF  rdf:type  ifc:IfcSlabTypeEnum , owl:NamedIndividual ;
 
 ifc:IfcContext  rdf:type  owl:Class ;
         rdfs:subClassOf  ifc:IfcObjectDefinition ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
-        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Class ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
+        rdfs:subClassOf  [ rdf:type  owl:Restriction ] ;
         rdfs:subClassOf  [ rdf:type  owl:Restriction ] .
+
+[ rdf:type  owl:Restriction ] .
 
 ifc:translationalStiffnessByAreaY_IfcBoundaryFaceCondition
         rdf:type     owl:FunctionalProperty , owl:ObjectProperty ;
@@ -26869,248 +26880,248 @@ ifc:IfcIonConcentrationMeasure
         rdf:type         owl:Class ;
         rdfs:subClassOf  express:REAL , ifc:IfcDerivedMeasureValue .
 
-[ rdf:first ifc:IfcReinforcingBar ; rdf:rest ( ifc:IfcReinforcingMesh ifc:IfcTendon ifc:IfcTendonAnchor ) ] .
-
-[ rdf:first ifc:IfcBSplineSurfaceWithKnots ; rdf:rest () ] .
-
-[ rdf:first ifc:IfcExtendedProperties ; rdf:rest ( ifc:IfcPreDefinedProperties ifc:IfcProperty ifc:IfcPropertyEnumeration ) ] .
-
-[ rdf:first ifc:IfcActuatorType ; rdf:rest ( ifc:IfcAlarmType ifc:IfcControllerType ifc:IfcFlowInstrumentType ifc:IfcProtectiveDeviceTrippingUnitType ifc:IfcSensorType ifc:IfcUnitaryControlElementType ) ] .
-
-[ rdf:first ifc:IfcStructuralConnection ; rdf:rest ( ifc:IfcStructuralMember ) ] .
-
-[ rdf:first ifc:IfcConnectedFaceSet ; rdf:rest ( ifc:IfcEdge ifc:IfcFace ifc:IfcFaceBound ifc:IfcLoop ifc:IfcPath ifc:IfcVertex ) ] .
-
-[ rdf:first ifc:IfcCompressorType ; rdf:rest ( ifc:IfcFanType ifc:IfcPumpType ) ] .
-
-[ rdf:first ifc:IfcCurveStyle ; rdf:rest ( ifc:IfcFillAreaStyle ifc:IfcSurfaceStyle ifc:IfcTextStyle ) ] .
-
-[ rdf:first ifc:IfcStructuralCurveReaction ; rdf:rest ( ifc:IfcStructuralPointReaction ifc:IfcStructuralSurfaceReaction ) ] .
-
-[ rdf:first ifc:IfcEventTime ; rdf:rest ( ifc:IfcLagTime ifc:IfcResourceTime ifc:IfcTaskTime ifc:IfcWorkTime ) ] .
-
-[ rdf:first ifc:IfcQuantityArea ; rdf:rest ( ifc:IfcQuantityCount ifc:IfcQuantityLength ifc:IfcQuantityTime ifc:IfcQuantityVolume ifc:IfcQuantityWeight ) ] .
-
-[ rdf:first ifc:IfcComplexProperty ; rdf:rest ( ifc:IfcSimpleProperty ) ] .
-
-[ rdf:first ifc:IfcLightSourceAmbient ; rdf:rest ( ifc:IfcLightSourceDirectional ifc:IfcLightSourceGoniometric ifc:IfcLightSourcePositional ) ] .
-
-[ rdf:first ifc:IfcContextDependentUnit ; rdf:rest ( ifc:IfcConversionBasedUnit ifc:IfcSIUnit ) ] .
-
-[ rdf:first ifc:IfcBeam ; rdf:rest ( ifc:IfcBuildingElementProxy ifc:IfcChimney ifc:IfcColumn ifc:IfcCovering ifc:IfcCurtainWall ifc:IfcDoor ifc:IfcFooting ifc:IfcMember ifc:IfcPile ifc:IfcPlate ifc:IfcRailing ifc:IfcRamp ifc:IfcRampFlight ifc:IfcRoof ifc:IfcShadingDevice ifc:IfcSlab ifc:IfcStair ifc:IfcStairFlight ifc:IfcWall ifc:IfcWindow ) ] .
-
-[ rdf:first ifc:IfcBlock ; rdf:rest ( ifc:IfcRectangularPyramid ifc:IfcRightCircularCone ifc:IfcRightCircularCylinder ifc:IfcSphere ) ] .
-
-[ rdf:first ifc:IfcRelAssigns ; rdf:rest ( ifc:IfcRelAssociates ifc:IfcRelConnects ifc:IfcRelDeclares ifc:IfcRelDecomposes ifc:IfcRelDefines ) ] .
-
-[ rdf:first ifc:IfcStyledRepresentation ; rdf:rest () ] .
-
-[ rdf:first ifc:IfcIndexedTextureMap ; rdf:rest ( ifc:IfcTextureCoordinateGenerator ifc:IfcTextureMap ) ] .
-
-[ rdf:first ifc:IfcGridPlacement ; rdf:rest ( ifc:IfcLocalPlacement ) ] .
-
-[ rdf:first ifc:IfcDistributionChamberElementType ; rdf:rest ( ifc:IfcEnergyConversionDeviceType ifc:IfcFlowControllerType ifc:IfcFlowFittingType ifc:IfcFlowMovingDeviceType ifc:IfcFlowSegmentType ifc:IfcFlowStorageDeviceType ifc:IfcFlowTerminalType ifc:IfcFlowTreatmentDeviceType ) ] .
-
-[ rdf:first ifc:IfcBlobTexture ; rdf:rest ( ifc:IfcImageTexture ifc:IfcPixelTexture ) ] .
-
-[ rdf:first ifc:IfcBoundedSurface ; rdf:rest ( ifc:IfcElementarySurface ifc:IfcSweptSurface ) ] .
-
-[ rdf:first ifc:IfcPropertyBoundedValue ; rdf:rest ( ifc:IfcPropertyEnumeratedValue ifc:IfcPropertyListValue ifc:IfcPropertyReferenceValue ifc:IfcPropertySingleValue ifc:IfcPropertyTableValue ) ] .
-
-[ rdf:first ifc:IfcStructuralLoadLinearForce ; rdf:rest ( ifc:IfcStructuralLoadPlanarForce ifc:IfcStructuralLoadSingleDisplacement ifc:IfcStructuralLoadSingleForce ifc:IfcStructuralLoadTemperature ) ] .
-
-[ rdf:first ifc:IfcPhysicalComplexQuantity ; rdf:rest ( ifc:IfcPhysicalSimpleQuantity ) ] .
-
-[ rdf:first ifc:IfcConnectionCurveGeometry ; rdf:rest ( ifc:IfcConnectionPointGeometry ifc:IfcConnectionSurfaceGeometry ifc:IfcConnectionVolumeGeometry ) ] .
-
-[ rdf:first ifc:IfcComplexPropertyTemplate ; rdf:rest ( ifc:IfcSimplePropertyTemplate ) ] .
-
-[ rdf:first ifc:IfcCircle ; rdf:rest ( ifc:IfcEllipse ) ] .
-
-[ rdf:first ifc:IfcBuilding ; rdf:rest ( ifc:IfcBuildingStorey ifc:IfcSite ifc:IfcSpace ) ] .
-
-[ rdf:first ifc:IfcCableCarrierFittingType ; rdf:rest ( ifc:IfcCableFittingType ifc:IfcDuctFittingType ifc:IfcJunctionBoxType ifc:IfcPipeFittingType ) ] .
-
-[ rdf:first ifc:IfcRelConnectsElements ; rdf:rest ( ifc:IfcRelConnectsPortToElement ifc:IfcRelConnectsPorts ifc:IfcRelConnectsStructuralActivity ifc:IfcRelConnectsStructuralMember ifc:IfcRelContainedInSpatialStructure ifc:IfcRelCoversBldgElements ifc:IfcRelCoversSpaces ifc:IfcRelFillsElement ifc:IfcRelFlowControlElements ifc:IfcRelInterferesElements ifc:IfcRelReferencedInSpatialStructure ifc:IfcRelSequence ifc:IfcRelServicesBuildings ifc:IfcRelSpaceBoundary ) ] .
-
-[ rdf:first ifc:IfcElectricFlowStorageDeviceType ; rdf:rest ( ifc:IfcTankType ) ] .
-
-[ rdf:first ifc:IfcMaterialLayerSetUsage ; rdf:rest ( ifc:IfcMaterialProfileSetUsage ) ] .
-
-[ rdf:first ifc:IfcAdvancedBrep ; rdf:rest ( ifc:IfcFacetedBrep ) ] .
-
-[ rdf:first ifc:IfcMaterialProperties ; rdf:rest ( ifc:IfcProfileProperties ) ] .
-
-[ rdf:first ifc:IfcShapeModel ; rdf:rest ( ifc:IfcStyleModel ) ] .
-
-[ rdf:first ifc:IfcPreDefinedColour ; rdf:rest ( ifc:IfcPreDefinedCurveFont ifc:IfcPreDefinedTextFont ) ] .
-
-[ rdf:first ifc:IfcConstructionResourceType ; rdf:rest () ] .
-
-[ rdf:first ifc:IfcBuildingElement ; rdf:rest ( ifc:IfcCivilElement ifc:IfcDistributionElement ifc:IfcElementAssembly ifc:IfcElementComponent ifc:IfcFeatureElement ifc:IfcFurnishingElement ifc:IfcGeographicElement ifc:IfcTransportElement ifc:IfcVirtualElement ) ] .
-
-[ rdf:first ifc:IfcStructuralLoadStatic ; rdf:rest ( ifc:IfcSurfaceReinforcementArea ) ] .
-
-[ rdf:first ifc:IfcBuildingElementType ; rdf:rest ( ifc:IfcCivilElementType ifc:IfcDistributionElementType ifc:IfcElementAssemblyType ifc:IfcElementComponentType ifc:IfcFurnishingElementType ifc:IfcGeographicElementType ifc:IfcTransportElementType ) ] .
-
-[ rdf:first ifc:IfcGeometricRepresentationContext ; rdf:rest () ] .
-
-[ rdf:first ifc:IfcIndexedPolygonalFace ; rdf:rest ( ifc:IfcTessellatedFaceSet ) ] .
-
-[ rdf:first ifc:IfcConstructionEquipmentResource ; rdf:rest ( ifc:IfcConstructionMaterialResource ifc:IfcConstructionProductResource ifc:IfcCrewResource ifc:IfcLaborResource ifc:IfcSubContractResource ) ] .
-
-[ rdf:first ifc:IfcPropertySetDefinition ; rdf:rest ( ifc:IfcPropertyTemplateDefinition ) ] .
-
-[ rdf:first ifc:IfcActionRequest ; rdf:rest ( ifc:IfcCostItem ifc:IfcCostSchedule ifc:IfcPerformanceHistory ifc:IfcPermit ifc:IfcProjectOrder ifc:IfcWorkCalendar ifc:IfcWorkControl ) ] .
-
-[ rdf:first ifc:IfcProject ; rdf:rest ( ifc:IfcProjectLibrary ) ] .
-
-[ rdf:first ifc:IfcStructuralCurveConnection ; rdf:rest ( ifc:IfcStructuralPointConnection ifc:IfcStructuralSurfaceConnection ) ] .
-
-[ rdf:first ifc:IfcCartesianPoint ; rdf:rest ( ifc:IfcPointOnCurve ifc:IfcPointOnSurface ) ] .
-
-[ rdf:first ifc:IfcMetric ; rdf:rest ( ifc:IfcObjective ) ] .
-
-[ rdf:first ifc:IfcBoundedCurve ; rdf:rest ( ifc:IfcConic ifc:IfcLine ifc:IfcOffsetCurve2D ifc:IfcOffsetCurve3D ifc:IfcPcurve ifc:IfcSurfaceCurve ) ] .
-
-[ rdf:first ifc:IfcAnnotation ; rdf:rest ( ifc:IfcElement ifc:IfcGrid ifc:IfcPort ifc:IfcProxy ifc:IfcSpatialElement ifc:IfcStructuralActivity ifc:IfcStructuralItem ) ] .
-
-[ rdf:first ifc:IfcClassification ; rdf:rest ( ifc:IfcDocumentInformation ifc:IfcLibraryInformation ) ] .
-
-[ rdf:first ifc:IfcBSplineSurface ; rdf:rest ( ifc:IfcCurveBoundedPlane ifc:IfcCurveBoundedSurface ifc:IfcRectangularTrimmedSurface ) ] .
-
-[ rdf:first ifc:IfcSurfaceOfLinearExtrusion ; rdf:rest ( ifc:IfcSurfaceOfRevolution ) ] .
-
-[ rdf:first ifc:IfcCableCarrierSegmentType ; rdf:rest ( ifc:IfcCableSegmentType ifc:IfcDuctSegmentType ifc:IfcPipeSegmentType ) ] .
-
-[ rdf:first ifc:IfcExternalSpatialElement ; rdf:rest () ] .
-
-[ rdf:first ifc:IfcContext ; rdf:rest ( ifc:IfcObject ifc:IfcTypeObject ) ] .
-
-[ rdf:first ifc:IfcStructuralCurveMember ; rdf:rest ( ifc:IfcStructuralSurfaceMember ) ] .
-
-[ rdf:first ifc:IfcRelDefinesByObject ; rdf:rest ( ifc:IfcRelDefinesByProperties ifc:IfcRelDefinesByTemplate ifc:IfcRelDefinesByType ) ] .
-
-[ rdf:first ifc:IfcConstructionEquipmentResourceType ; rdf:rest ( ifc:IfcConstructionMaterialResourceType ifc:IfcConstructionProductResourceType ifc:IfcCrewResourceType ifc:IfcLaborResourceType ifc:IfcSubContractResourceType ) ] .
-
-[ rdf:first ifc:IfcRelAggregates ; rdf:rest ( ifc:IfcRelNests ifc:IfcRelProjectsElement ifc:IfcRelVoidsElement ) ] .
-
-[ rdf:first ifc:IfcStructuralCurveAction ; rdf:rest ( ifc:IfcStructuralPointAction ifc:IfcStructuralSurfaceAction ) ] .
-
-[ rdf:first ifc:IfcTextStyleFontModel ; rdf:rest () ] .
-
-[ rdf:first ifc:IfcDraughtingPreDefinedCurveFont ; rdf:rest () ] .
-
-[ rdf:first ifc:IfcAnnotationFillArea ; rdf:rest ( ifc:IfcBooleanResult ifc:IfcBoundingBox ifc:IfcCartesianPointList ifc:IfcCartesianTransformationOperator ifc:IfcCompositeCurveSegment ifc:IfcCsgPrimitive3D ifc:IfcCurve ifc:IfcDirection ifc:IfcFaceBasedSurfaceModel ifc:IfcFillAreaStyleHatching ifc:IfcFillAreaStyleTiles ifc:IfcGeometricSet ifc:IfcHalfSpaceSolid ifc:IfcLightSource ifc:IfcPlacement ifc:IfcPlanarExtent ifc:IfcPoint ifc:IfcSectionedSpine ifc:IfcShellBasedSurfaceModel ifc:IfcSolidModel ifc:IfcSurface ifc:IfcTessellatedItem ifc:IfcTextLiteral ifc:IfcVector ) ] .
-
-[ rdf:first ifc:IfcMaterialDefinitionRepresentation ; rdf:rest ( ifc:IfcProductDefinitionShape ) ] .
-
-[ rdf:first ifc:IfcClassificationReference ; rdf:rest ( ifc:IfcDocumentReference ifc:IfcExternallyDefinedHatchStyle ifc:IfcExternallyDefinedSurfaceStyle ifc:IfcExternallyDefinedTextFont ifc:IfcLibraryReference ) ] .
-
-[ rdf:first ifc:IfcPolygonalFaceSet ; rdf:rest ( ifc:IfcTriangulatedFaceSet ) ] .
-
-[ rdf:first ifc:IfcObjectDefinition ; rdf:rest ( ifc:IfcPropertyDefinition ifc:IfcRelationship ) ] .
-
-[ rdf:first ifc:IfcDoorLiningProperties ; rdf:rest ( ifc:IfcDoorPanelProperties ifc:IfcPermeableCoveringProperties ifc:IfcReinforcementDefinitionProperties ifc:IfcWindowLiningProperties ifc:IfcWindowPanelProperties ) ] .
-
-[ rdf:first ifc:IfcStructuralAction ; rdf:rest ( ifc:IfcStructuralReaction ) ] .
-
-[ rdf:first ifc:IfcBoundaryEdgeCondition ; rdf:rest ( ifc:IfcBoundaryFaceCondition ifc:IfcBoundaryNodeCondition ) ] .
-
-[ rdf:first ifc:IfcDuctSilencerType ; rdf:rest ( ifc:IfcFilterType ifc:IfcInterceptorType ) ] .
-
-[ rdf:first ifc:IfcMapConversion ; rdf:rest () ] .
-
-[ rdf:first ifc:IfcBuildingElementPart ; rdf:rest ( ifc:IfcDiscreteAccessory ifc:IfcFastener ifc:IfcMechanicalFastener ifc:IfcReinforcingElement ifc:IfcVibrationIsolator ) ] .
-
-[ rdf:first ifc:IfcCartesianTransformationOperator2D ; rdf:rest ( ifc:IfcCartesianTransformationOperator3D ) ] .
-
-[ rdf:first ifc:IfcAirTerminalType ; rdf:rest ( ifc:IfcAudioVisualApplianceType ifc:IfcCommunicationsApplianceType ifc:IfcElectricApplianceType ifc:IfcFireSuppressionTerminalType ifc:IfcLampType ifc:IfcLightFixtureType ifc:IfcMedicalDeviceType ifc:IfcOutletType ifc:IfcSanitaryTerminalType ifc:IfcSpaceHeaterType ifc:IfcStackTerminalType ifc:IfcWasteTerminalType ) ] .
-
-[ rdf:first ifc:IfcPreDefinedPropertySet ; rdf:rest ( ifc:IfcPropertySet ifc:IfcQuantitySet ) ] .
-
-[ rdf:first ifc:IfcReinforcementBarProperties ; rdf:rest ( ifc:IfcSectionProperties ifc:IfcSectionReinforcementProperties ) ] .
-
-[ rdf:first ifc:IfcSpatialStructureElementType ; rdf:rest ( ifc:IfcSpatialZoneType ) ] .
-
-[ rdf:first ifc:IfcAirTerminalBoxType ; rdf:rest ( ifc:IfcDamperType ifc:IfcElectricDistributionBoardType ifc:IfcElectricTimeControlType ifc:IfcFlowMeterType ifc:IfcProtectiveDeviceType ifc:IfcSwitchingDeviceType ifc:IfcValveType ) ] .
-
-[ rdf:first ifc:IfcColourRgb ; rdf:rest () ] .
-
-[ rdf:first ifc:IfcStructuralLoadConfiguration ; rdf:rest ( ifc:IfcStructuralLoadOrResult ) ] .
-
-[ rdf:first ifc:IfcExtrudedAreaSolid ; rdf:rest ( ifc:IfcFixedReferenceSweptAreaSolid ifc:IfcRevolvedAreaSolid ifc:IfcSurfaceCurveSweptAreaSolid ) ] .
-
-[ rdf:first ifc:IfcCsgSolid ; rdf:rest ( ifc:IfcManifoldSolidBrep ifc:IfcSweptAreaSolid ifc:IfcSweptDiskSolid ) ] .
-
-[ rdf:first ifc:IfcActor ; rdf:rest ( ifc:IfcControl ifc:IfcGroup ifc:IfcProcess ifc:IfcProduct ifc:IfcResource ) ] .
-
-[ rdf:first ifc:IfcCylindricalSurface ; rdf:rest ( ifc:IfcPlane ifc:IfcSphericalSurface ifc:IfcToroidalSurface ) ] .
-
-[ rdf:first ifc:IfcEvent ; rdf:rest ( ifc:IfcProcedure ifc:IfcTask ) ] .
-
-[ rdf:first ifc:IfcColourRgbList ; rdf:rest ( ifc:IfcColourSpecification ifc:IfcCurveStyleFont ifc:IfcCurveStyleFontAndScaling ifc:IfcCurveStyleFontPattern ifc:IfcIndexedColourMap ifc:IfcPreDefinedItem ifc:IfcSurfaceStyleLighting ifc:IfcSurfaceStyleRefraction ifc:IfcSurfaceStyleShading ifc:IfcSurfaceStyleWithTextures ifc:IfcSurfaceTexture ifc:IfcTextStyleForDefinedFont ifc:IfcTextStyleTextModel ifc:IfcTextureCoordinate ifc:IfcTextureVertex ifc:IfcTextureVertexList ) ] .
-
-[ rdf:first ifc:IfcFeatureElementAddition ; rdf:rest ( ifc:IfcFeatureElementSubtraction ifc:IfcSurfaceFeature ) ] .
-
-[ rdf:first ifc:IfcRelAssociatesApproval ; rdf:rest ( ifc:IfcRelAssociatesClassification ifc:IfcRelAssociatesConstraint ifc:IfcRelAssociatesDocument ifc:IfcRelAssociatesLibrary ifc:IfcRelAssociatesMaterial ) ] .
-
-[ rdf:first ifc:IfcGeometricRepresentationItem ; rdf:rest ( ifc:IfcMappedItem ifc:IfcStyledItem ifc:IfcTopologicalRepresentationItem ) ] .
-
-[ rdf:first ifc:IfcExternalSpatialStructureElement ; rdf:rest ( ifc:IfcSpatialStructureElement ifc:IfcSpatialZone ) ] .
+[ rdf:first ifc:IfcOpeningElement ; rdf:rest ( ifc:IfcVoidingFeature ) ] .
 
 [ rdf:first ifc:IfcCartesianPointList2D ; rdf:rest ( ifc:IfcCartesianPointList3D ) ] .
 
-[ rdf:first ifc:IfcPropertySetTemplate ; rdf:rest ( ifc:IfcPropertyTemplate ) ] .
+[ rdf:first ifc:IfcClassification ; rdf:rest ( ifc:IfcDocumentInformation ifc:IfcLibraryInformation ) ] .
 
-[ rdf:first ifc:IfcDraughtingPreDefinedColour ; rdf:rest () ] .
+[ rdf:first ifc:IfcExtendedProperties ; rdf:rest ( ifc:IfcPreDefinedProperties ifc:IfcProperty ifc:IfcPropertyEnumeration ) ] .
 
-[ rdf:first ifc:IfcBSplineCurveWithKnots ; rdf:rest () ] .
+[ rdf:first ifc:IfcDuctSilencerType ; rdf:rest ( ifc:IfcFilterType ifc:IfcInterceptorType ) ] .
 
-[ rdf:first ifc:IfcMaterial ; rdf:rest ( ifc:IfcMaterialConstituent ifc:IfcMaterialConstituentSet ifc:IfcMaterialLayer ifc:IfcMaterialLayerSet ifc:IfcMaterialProfile ifc:IfcMaterialProfileSet ) ] .
+[ rdf:first ifc:IfcBuildingElementPart ; rdf:rest ( ifc:IfcDiscreteAccessory ifc:IfcFastener ifc:IfcMechanicalFastener ifc:IfcReinforcingElement ifc:IfcVibrationIsolator ) ] .
 
-[ rdf:first ifc:IfcFailureConnectionCondition ; rdf:rest ( ifc:IfcSlippageConnectionCondition ) ] .
-
-[ rdf:first ifc:IfcWorkPlan ; rdf:rest ( ifc:IfcWorkSchedule ) ] .
+[ rdf:first ifc:IfcColourRgb ; rdf:rest () ] .
 
 [ rdf:first ifc:IfcSpaceType ; rdf:rest () ] .
 
-[ rdf:first ifc:IfcAsymmetricIShapeProfileDef ; rdf:rest ( ifc:IfcCShapeProfileDef ifc:IfcCircleProfileDef ifc:IfcEllipseProfileDef ifc:IfcIShapeProfileDef ifc:IfcLShapeProfileDef ifc:IfcRectangleProfileDef ifc:IfcTShapeProfileDef ifc:IfcTrapeziumProfileDef ifc:IfcUShapeProfileDef ifc:IfcZShapeProfileDef ) ] .
+[ rdf:first ifc:IfcAirToAirHeatRecoveryType ; rdf:rest ( ifc:IfcBoilerType ifc:IfcBurnerType ifc:IfcChillerType ifc:IfcCoilType ifc:IfcCondenserType ifc:IfcCooledBeamType ifc:IfcCoolingTowerType ifc:IfcElectricGeneratorType ifc:IfcElectricMotorType ifc:IfcEngineType ifc:IfcEvaporativeCoolerType ifc:IfcEvaporatorType ifc:IfcHeatExchangerType ifc:IfcHumidifierType ifc:IfcMotorConnectionType ifc:IfcSolarDeviceType ifc:IfcTransformerType ifc:IfcTubeBundleType ifc:IfcUnitaryEquipmentType ) ] .
 
-[ rdf:first ifc:IfcApprovalRelationship ; rdf:rest ( ifc:IfcCurrencyRelationship ifc:IfcDocumentInformationRelationship ifc:IfcExternalReferenceRelationship ifc:IfcMaterialRelationship ifc:IfcOrganizationRelationship ifc:IfcPropertyDependencyRelationship ifc:IfcResourceApprovalRelationship ifc:IfcResourceConstraintRelationship ) ] .
+[ rdf:first ifc:IfcMaterialDefinitionRepresentation ; rdf:rest ( ifc:IfcProductDefinitionShape ) ] .
 
-[ rdf:first ifc:IfcElementQuantity ; rdf:rest () ] .
+[ rdf:first ifc:IfcComplexPropertyTemplate ; rdf:rest ( ifc:IfcSimplePropertyTemplate ) ] .
 
-[ rdf:first ifc:IfcPostalAddress ; rdf:rest ( ifc:IfcTelecomAddress ) ] .
+[ rdf:first ifc:IfcElectricFlowStorageDeviceType ; rdf:rest ( ifc:IfcTankType ) ] .
 
-[ rdf:first ifc:IfcDistributionPort ; rdf:rest () ] .
+[ rdf:first ifc:IfcCylindricalSurface ; rdf:rest ( ifc:IfcPlane ifc:IfcSphericalSurface ifc:IfcToroidalSurface ) ] .
 
-[ rdf:first ifc:IfcProjectionElement ; rdf:rest () ] .
+[ rdf:first ifc:IfcBoundaryEdgeCondition ; rdf:rest ( ifc:IfcBoundaryFaceCondition ifc:IfcBoundaryNodeCondition ) ] .
+
+[ rdf:first ifc:IfcPhysicalComplexQuantity ; rdf:rest ( ifc:IfcPhysicalSimpleQuantity ) ] .
+
+[ rdf:first ifc:IfcBSplineCurveWithKnots ; rdf:rest () ] .
+
+[ rdf:first ifc:IfcAnnotation ; rdf:rest ( ifc:IfcElement ifc:IfcGrid ifc:IfcPort ifc:IfcProxy ifc:IfcSpatialElement ifc:IfcStructuralActivity ifc:IfcStructuralItem ) ] .
+
+[ rdf:first ifc:IfcBSplineSurface ; rdf:rest ( ifc:IfcCurveBoundedPlane ifc:IfcCurveBoundedSurface ifc:IfcRectangularTrimmedSurface ) ] .
+
+[ rdf:first ifc:IfcRelConnectsElements ; rdf:rest ( ifc:IfcRelConnectsPortToElement ifc:IfcRelConnectsPorts ifc:IfcRelConnectsStructuralActivity ifc:IfcRelConnectsStructuralMember ifc:IfcRelContainedInSpatialStructure ifc:IfcRelCoversBldgElements ifc:IfcRelCoversSpaces ifc:IfcRelFillsElement ifc:IfcRelFlowControlElements ifc:IfcRelInterferesElements ifc:IfcRelReferencedInSpatialStructure ifc:IfcRelSequence ifc:IfcRelServicesBuildings ifc:IfcRelSpaceBoundary ) ] .
+
+[ rdf:first ifc:IfcStructuralAction ; rdf:rest ( ifc:IfcStructuralReaction ) ] .
+
+[ rdf:first ifc:IfcStructuralLoadStatic ; rdf:rest ( ifc:IfcSurfaceReinforcementArea ) ] .
+
+[ rdf:first ifc:IfcDistributionChamberElementType ; rdf:rest ( ifc:IfcEnergyConversionDeviceType ifc:IfcFlowControllerType ifc:IfcFlowFittingType ifc:IfcFlowMovingDeviceType ifc:IfcFlowSegmentType ifc:IfcFlowStorageDeviceType ifc:IfcFlowTerminalType ifc:IfcFlowTreatmentDeviceType ) ] .
+
+[ rdf:first ifc:IfcClassificationReference ; rdf:rest ( ifc:IfcDocumentReference ifc:IfcExternallyDefinedHatchStyle ifc:IfcExternallyDefinedSurfaceStyle ifc:IfcExternallyDefinedTextFont ifc:IfcLibraryReference ) ] .
+
+[ rdf:first ifc:IfcBlobTexture ; rdf:rest ( ifc:IfcImageTexture ifc:IfcPixelTexture ) ] .
+
+[ rdf:first ifc:IfcIndexedTextureMap ; rdf:rest ( ifc:IfcTextureCoordinateGenerator ifc:IfcTextureMap ) ] .
+
+[ rdf:first ifc:IfcConnectedFaceSet ; rdf:rest ( ifc:IfcEdge ifc:IfcFace ifc:IfcFaceBound ifc:IfcLoop ifc:IfcPath ifc:IfcVertex ) ] .
+
+[ rdf:first ifc:IfcExternalSpatialStructureElement ; rdf:rest ( ifc:IfcSpatialStructureElement ifc:IfcSpatialZone ) ] .
+
+[ rdf:first ifc:IfcCableCarrierFittingType ; rdf:rest ( ifc:IfcCableFittingType ifc:IfcDuctFittingType ifc:IfcJunctionBoxType ifc:IfcPipeFittingType ) ] .
+
+[ rdf:first ifc:IfcStructuralCurveReaction ; rdf:rest ( ifc:IfcStructuralPointReaction ifc:IfcStructuralSurfaceReaction ) ] .
 
 [ rdf:first ifc:IfcEventType ; rdf:rest ( ifc:IfcProcedureType ifc:IfcTaskType ) ] .
 
-[ rdf:first ifc:IfcShapeRepresentation ; rdf:rest ( ifc:IfcTopologyRepresentation ) ] .
+[ rdf:first ifc:IfcReinforcingBarType ; rdf:rest ( ifc:IfcReinforcingMeshType ifc:IfcTendonAnchorType ifc:IfcTendonType ) ] .
 
-[ rdf:first ifc:IfcRelAssignsToActor ; rdf:rest ( ifc:IfcRelAssignsToControl ifc:IfcRelAssignsToGroup ifc:IfcRelAssignsToProcess ifc:IfcRelAssignsToProduct ifc:IfcRelAssignsToResource ) ] .
+[ rdf:first ifc:IfcPreDefinedPropertySet ; rdf:rest ( ifc:IfcPropertySet ifc:IfcQuantitySet ) ] .
+
+[ rdf:first ifc:IfcFailureConnectionCondition ; rdf:rest ( ifc:IfcSlippageConnectionCondition ) ] .
+
+[ rdf:first ifc:IfcCsgSolid ; rdf:rest ( ifc:IfcManifoldSolidBrep ifc:IfcSweptAreaSolid ifc:IfcSweptDiskSolid ) ] .
+
+[ rdf:first ifc:IfcSpatialStructureElementType ; rdf:rest ( ifc:IfcSpatialZoneType ) ] .
+
+[ rdf:first ifc:IfcExtrudedAreaSolid ; rdf:rest ( ifc:IfcFixedReferenceSweptAreaSolid ifc:IfcRevolvedAreaSolid ifc:IfcSurfaceCurveSweptAreaSolid ) ] .
+
+[ rdf:first ifc:IfcPreDefinedColour ; rdf:rest ( ifc:IfcPreDefinedCurveFont ifc:IfcPreDefinedTextFont ) ] .
+
+[ rdf:first ifc:IfcStructuralCurveAction ; rdf:rest ( ifc:IfcStructuralPointAction ifc:IfcStructuralSurfaceAction ) ] .
+
+[ rdf:first ifc:IfcRelAssigns ; rdf:rest ( ifc:IfcRelAssociates ifc:IfcRelConnects ifc:IfcRelDeclares ifc:IfcRelDecomposes ifc:IfcRelDefines ) ] .
+
+[ rdf:first ifc:IfcActor ; rdf:rest ( ifc:IfcControl ifc:IfcGroup ifc:IfcProcess ifc:IfcProduct ifc:IfcResource ) ] .
+
+[ rdf:first ifc:IfcDistributionPort ; rdf:rest () ] .
+
+[ rdf:first ifc:IfcDoorLiningProperties ; rdf:rest ( ifc:IfcDoorPanelProperties ifc:IfcPermeableCoveringProperties ifc:IfcReinforcementDefinitionProperties ifc:IfcWindowLiningProperties ifc:IfcWindowPanelProperties ) ] .
+
+[ rdf:first ifc:IfcCartesianTransformationOperator2D ; rdf:rest ( ifc:IfcCartesianTransformationOperator3D ) ] .
+
+[ rdf:first ifc:IfcProject ; rdf:rest ( ifc:IfcProjectLibrary ) ] .
 
 [ rdf:first ifc:IfcBuildingElementPartType ; rdf:rest ( ifc:IfcDiscreteAccessoryType ifc:IfcFastenerType ifc:IfcMechanicalFastenerType ifc:IfcReinforcingElementType ifc:IfcVibrationIsolatorType ) ] .
 
-[ rdf:first ifc:IfcBeamType ; rdf:rest ( ifc:IfcBuildingElementProxyType ifc:IfcChimneyType ifc:IfcColumnType ifc:IfcCoveringType ifc:IfcCurtainWallType ifc:IfcDoorType ifc:IfcFootingType ifc:IfcMemberType ifc:IfcPileType ifc:IfcPlateType ifc:IfcRailingType ifc:IfcRampFlightType ifc:IfcRampType ifc:IfcRoofType ifc:IfcShadingDeviceType ifc:IfcSlabType ifc:IfcStairFlightType ifc:IfcStairType ifc:IfcWallType ifc:IfcWindowType ) ] .
+[ rdf:first ifc:IfcBSplineCurve ; rdf:rest ( ifc:IfcCompositeCurve ifc:IfcIndexedPolyCurve ifc:IfcPolyline ifc:IfcTrimmedCurve ) ] .
+
+[ rdf:first ifc:IfcReinforcementBarProperties ; rdf:rest ( ifc:IfcSectionProperties ifc:IfcSectionReinforcementProperties ) ] .
+
+[ rdf:first ifc:IfcMapConversion ; rdf:rest () ] .
+
+[ rdf:first ifc:IfcBuildingElement ; rdf:rest ( ifc:IfcCivilElement ifc:IfcDistributionElement ifc:IfcElementAssembly ifc:IfcElementComponent ifc:IfcFeatureElement ifc:IfcFurnishingElement ifc:IfcGeographicElement ifc:IfcTransportElement ifc:IfcVirtualElement ) ] .
+
+[ rdf:first ifc:IfcMetric ; rdf:rest ( ifc:IfcObjective ) ] .
+
+[ rdf:first ifc:IfcStructuralCurveMember ; rdf:rest ( ifc:IfcStructuralSurfaceMember ) ] .
+
+[ rdf:first ifc:IfcMaterialLayerSetUsage ; rdf:rest ( ifc:IfcMaterialProfileSetUsage ) ] .
+
+[ rdf:first ifc:IfcGeometricRepresentationItem ; rdf:rest ( ifc:IfcMappedItem ifc:IfcStyledItem ifc:IfcTopologicalRepresentationItem ) ] .
+
+[ rdf:first ifc:IfcDraughtingPreDefinedCurveFont ; rdf:rest () ] .
 
 [ rdf:first ifc:IfcIrregularTimeSeries ; rdf:rest ( ifc:IfcRegularTimeSeries ) ] .
 
-[ rdf:first ifc:IfcBSplineCurve ; rdf:rest ( ifc:IfcCompositeCurve ifc:IfcIndexedPolyCurve ifc:IfcPolyline ifc:IfcTrimmedCurve ) ] .
+[ rdf:first ifc:IfcRelAggregates ; rdf:rest ( ifc:IfcRelNests ifc:IfcRelProjectsElement ifc:IfcRelVoidsElement ) ] .
 
 [ rdf:first ifc:IfcConstructionResource ; rdf:rest () ] .
 
+[ rdf:first ifc:IfcBlock ; rdf:rest ( ifc:IfcRectangularPyramid ifc:IfcRightCircularCone ifc:IfcRightCircularCylinder ifc:IfcSphere ) ] .
+
+[ rdf:first ifc:IfcPropertySetDefinition ; rdf:rest ( ifc:IfcPropertyTemplateDefinition ) ] .
+
+[ rdf:first ifc:IfcProjectedCRS ; rdf:rest () ] .
+
+[ rdf:first ifc:IfcApprovalRelationship ; rdf:rest ( ifc:IfcCurrencyRelationship ifc:IfcDocumentInformationRelationship ifc:IfcExternalReferenceRelationship ifc:IfcMaterialRelationship ifc:IfcOrganizationRelationship ifc:IfcPropertyDependencyRelationship ifc:IfcResourceApprovalRelationship ifc:IfcResourceConstraintRelationship ) ] .
+
+[ rdf:first ifc:IfcAsymmetricIShapeProfileDef ; rdf:rest ( ifc:IfcCShapeProfileDef ifc:IfcCircleProfileDef ifc:IfcEllipseProfileDef ifc:IfcIShapeProfileDef ifc:IfcLShapeProfileDef ifc:IfcRectangleProfileDef ifc:IfcTShapeProfileDef ifc:IfcTrapeziumProfileDef ifc:IfcUShapeProfileDef ifc:IfcZShapeProfileDef ) ] .
+
+[ rdf:first ifc:IfcConstructionResourceType ; rdf:rest () ] .
+
+[ rdf:first ifc:IfcPolygonalFaceSet ; rdf:rest ( ifc:IfcTriangulatedFaceSet ) ] .
+
+[ rdf:first ifc:IfcBeamType ; rdf:rest ( ifc:IfcBuildingElementProxyType ifc:IfcChimneyType ifc:IfcColumnType ifc:IfcCoveringType ifc:IfcCurtainWallType ifc:IfcDoorType ifc:IfcFootingType ifc:IfcMemberType ifc:IfcPileType ifc:IfcPlateType ifc:IfcRailingType ifc:IfcRampFlightType ifc:IfcRampType ifc:IfcRoofType ifc:IfcShadingDeviceType ifc:IfcSlabType ifc:IfcStairFlightType ifc:IfcStairType ifc:IfcWallType ifc:IfcWindowType ) ] .
+
 [ rdf:first ifc:IfcAxis1Placement ; rdf:rest ( ifc:IfcAxis2Placement2D ifc:IfcAxis2Placement3D ) ] .
 
-[ rdf:first ifc:IfcReinforcingBarType ; rdf:rest ( ifc:IfcReinforcingMeshType ifc:IfcTendonAnchorType ifc:IfcTendonType ) ] .
+[ rdf:first ifc:IfcProjectionElement ; rdf:rest () ] .
 
-[ rdf:first ifc:IfcAirToAirHeatRecoveryType ; rdf:rest ( ifc:IfcBoilerType ifc:IfcBurnerType ifc:IfcChillerType ifc:IfcCoilType ifc:IfcCondenserType ifc:IfcCooledBeamType ifc:IfcCoolingTowerType ifc:IfcElectricGeneratorType ifc:IfcElectricMotorType ifc:IfcEngineType ifc:IfcEvaporativeCoolerType ifc:IfcEvaporatorType ifc:IfcHeatExchangerType ifc:IfcHumidifierType ifc:IfcMotorConnectionType ifc:IfcSolarDeviceType ifc:IfcTransformerType ifc:IfcTubeBundleType ifc:IfcUnitaryEquipmentType ) ] .
+[ rdf:first ifc:IfcActuatorType ; rdf:rest ( ifc:IfcAlarmType ifc:IfcControllerType ifc:IfcFlowInstrumentType ifc:IfcProtectiveDeviceTrippingUnitType ifc:IfcSensorType ifc:IfcUnitaryControlElementType ) ] .
+
+[ rdf:first ifc:IfcEvent ; rdf:rest ( ifc:IfcProcedure ifc:IfcTask ) ] .
+
+[ rdf:first ifc:IfcRelAssociatesApproval ; rdf:rest ( ifc:IfcRelAssociatesClassification ifc:IfcRelAssociatesConstraint ifc:IfcRelAssociatesDocument ifc:IfcRelAssociatesLibrary ifc:IfcRelAssociatesMaterial ) ] .
+
+[ rdf:first ifc:IfcShapeRepresentation ; rdf:rest ( ifc:IfcTopologyRepresentation ) ] .
+
+[ rdf:first ifc:IfcWorkPlan ; rdf:rest ( ifc:IfcWorkSchedule ) ] .
+
+[ rdf:first ifc:IfcLightSourceAmbient ; rdf:rest ( ifc:IfcLightSourceDirectional ifc:IfcLightSourceGoniometric ifc:IfcLightSourcePositional ) ] .
+
+[ rdf:first ifc:IfcCartesianPoint ; rdf:rest ( ifc:IfcPointOnCurve ifc:IfcPointOnSurface ) ] .
+
+[ rdf:first ifc:IfcContextDependentUnit ; rdf:rest ( ifc:IfcConversionBasedUnit ifc:IfcSIUnit ) ] .
+
+[ rdf:first ifc:IfcFeatureElementAddition ; rdf:rest ( ifc:IfcFeatureElementSubtraction ifc:IfcSurfaceFeature ) ] .
+
+[ rdf:first ifc:IfcAdvancedBrep ; rdf:rest ( ifc:IfcFacetedBrep ) ] .
+
+[ rdf:first ifc:IfcCurveStyle ; rdf:rest ( ifc:IfcFillAreaStyle ifc:IfcSurfaceStyle ifc:IfcTextStyle ) ] .
+
+[ rdf:first ifc:IfcStructuralLoadConfiguration ; rdf:rest ( ifc:IfcStructuralLoadOrResult ) ] .
+
+[ rdf:first ifc:IfcPostalAddress ; rdf:rest ( ifc:IfcTelecomAddress ) ] .
+
+[ rdf:first ifc:IfcConstructionEquipmentResource ; rdf:rest ( ifc:IfcConstructionMaterialResource ifc:IfcConstructionProductResource ifc:IfcCrewResource ifc:IfcLaborResource ifc:IfcSubContractResource ) ] .
+
+[ rdf:first ifc:IfcPropertyBoundedValue ; rdf:rest ( ifc:IfcPropertyEnumeratedValue ifc:IfcPropertyListValue ifc:IfcPropertyReferenceValue ifc:IfcPropertySingleValue ifc:IfcPropertyTableValue ) ] .
+
+[ rdf:first ifc:IfcBoundedSurface ; rdf:rest ( ifc:IfcElementarySurface ifc:IfcSweptSurface ) ] .
+
+[ rdf:first ifc:IfcStructuralLoadLinearForce ; rdf:rest ( ifc:IfcStructuralLoadPlanarForce ifc:IfcStructuralLoadSingleDisplacement ifc:IfcStructuralLoadSingleForce ifc:IfcStructuralLoadTemperature ) ] .
+
+[ rdf:first ifc:IfcContext ; rdf:rest ( ifc:IfcObject ifc:IfcTypeObject ) ] .
+
+[ rdf:first ifc:IfcConstructionEquipmentResourceType ; rdf:rest ( ifc:IfcConstructionMaterialResourceType ifc:IfcConstructionProductResourceType ifc:IfcCrewResourceType ifc:IfcLaborResourceType ifc:IfcSubContractResourceType ) ] .
+
+[ rdf:first ifc:IfcBuildingElementType ; rdf:rest ( ifc:IfcCivilElementType ifc:IfcDistributionElementType ifc:IfcElementAssemblyType ifc:IfcElementComponentType ifc:IfcFurnishingElementType ifc:IfcGeographicElementType ifc:IfcTransportElementType ) ] .
+
+[ rdf:first ifc:IfcBSplineSurfaceWithKnots ; rdf:rest () ] .
+
+[ rdf:first ifc:IfcGridPlacement ; rdf:rest ( ifc:IfcLocalPlacement ) ] .
+
+[ rdf:first ifc:IfcElementQuantity ; rdf:rest () ] .
+
+[ rdf:first ifc:IfcShapeModel ; rdf:rest ( ifc:IfcStyleModel ) ] .
+
+[ rdf:first ifc:IfcCableCarrierSegmentType ; rdf:rest ( ifc:IfcCableSegmentType ifc:IfcDuctSegmentType ifc:IfcPipeSegmentType ) ] .
+
+[ rdf:first ifc:IfcBoundedCurve ; rdf:rest ( ifc:IfcConic ifc:IfcLine ifc:IfcOffsetCurve2D ifc:IfcOffsetCurve3D ifc:IfcPcurve ifc:IfcSurfaceCurve ) ] .
+
+[ rdf:first ifc:IfcExternalSpatialElement ; rdf:rest () ] .
+
+[ rdf:first ifc:IfcStyledRepresentation ; rdf:rest () ] .
+
+[ rdf:first ifc:IfcAirTerminalBoxType ; rdf:rest ( ifc:IfcDamperType ifc:IfcElectricDistributionBoardType ifc:IfcElectricTimeControlType ifc:IfcFlowMeterType ifc:IfcProtectiveDeviceType ifc:IfcSwitchingDeviceType ifc:IfcValveType ) ] .
+
+[ rdf:first ifc:IfcActionRequest ; rdf:rest ( ifc:IfcCostItem ifc:IfcCostSchedule ifc:IfcPerformanceHistory ifc:IfcPermit ifc:IfcProjectOrder ifc:IfcWorkCalendar ifc:IfcWorkControl ) ] .
+
+[ rdf:first ifc:IfcTextStyleFontModel ; rdf:rest () ] .
+
+[ rdf:first ifc:IfcCircle ; rdf:rest ( ifc:IfcEllipse ) ] .
+
+[ rdf:first ifc:IfcGeometricRepresentationContext ; rdf:rest () ] .
+
+[ rdf:first ifc:IfcColourRgbList ; rdf:rest ( ifc:IfcColourSpecification ifc:IfcCurveStyleFont ifc:IfcCurveStyleFontAndScaling ifc:IfcCurveStyleFontPattern ifc:IfcIndexedColourMap ifc:IfcPreDefinedItem ifc:IfcSurfaceStyleLighting ifc:IfcSurfaceStyleRefraction ifc:IfcSurfaceStyleShading ifc:IfcSurfaceStyleWithTextures ifc:IfcSurfaceTexture ifc:IfcTextStyleForDefinedFont ifc:IfcTextStyleTextModel ifc:IfcTextureCoordinate ifc:IfcTextureVertex ifc:IfcTextureVertexList ) ] .
+
+[ rdf:first ifc:IfcConnectionCurveGeometry ; rdf:rest ( ifc:IfcConnectionPointGeometry ifc:IfcConnectionSurfaceGeometry ifc:IfcConnectionVolumeGeometry ) ] .
+
+[ rdf:first ifc:IfcObjectDefinition ; rdf:rest ( ifc:IfcPropertyDefinition ifc:IfcRelationship ) ] .
+
+[ rdf:first ifc:IfcAnnotationFillArea ; rdf:rest ( ifc:IfcBooleanResult ifc:IfcBoundingBox ifc:IfcCartesianPointList ifc:IfcCartesianTransformationOperator ifc:IfcCompositeCurveSegment ifc:IfcCsgPrimitive3D ifc:IfcCurve ifc:IfcDirection ifc:IfcFaceBasedSurfaceModel ifc:IfcFillAreaStyleHatching ifc:IfcFillAreaStyleTiles ifc:IfcGeometricSet ifc:IfcHalfSpaceSolid ifc:IfcLightSource ifc:IfcPlacement ifc:IfcPlanarExtent ifc:IfcPoint ifc:IfcSectionedSpine ifc:IfcShellBasedSurfaceModel ifc:IfcSolidModel ifc:IfcSurface ifc:IfcTessellatedItem ifc:IfcTextLiteral ifc:IfcVector ) ] .
+
+[ rdf:first ifc:IfcDraughtingPreDefinedColour ; rdf:rest () ] .
+
+[ rdf:first ifc:IfcRelAssignsToActor ; rdf:rest ( ifc:IfcRelAssignsToControl ifc:IfcRelAssignsToGroup ifc:IfcRelAssignsToProcess ifc:IfcRelAssignsToProduct ifc:IfcRelAssignsToResource ) ] .
+
+[ rdf:first ifc:IfcQuantityArea ; rdf:rest ( ifc:IfcQuantityCount ifc:IfcQuantityLength ifc:IfcQuantityTime ifc:IfcQuantityVolume ifc:IfcQuantityWeight ) ] .
+
+[ rdf:first ifc:IfcBuilding ; rdf:rest ( ifc:IfcBuildingStorey ifc:IfcSite ifc:IfcSpace ) ] .
+
+[ rdf:first ifc:IfcEventTime ; rdf:rest ( ifc:IfcLagTime ifc:IfcResourceTime ifc:IfcTaskTime ifc:IfcWorkTime ) ] .
+
+[ rdf:first ifc:IfcBeam ; rdf:rest ( ifc:IfcBuildingElementProxy ifc:IfcChimney ifc:IfcColumn ifc:IfcCovering ifc:IfcCurtainWall ifc:IfcDoor ifc:IfcFooting ifc:IfcMember ifc:IfcPile ifc:IfcPlate ifc:IfcRailing ifc:IfcRamp ifc:IfcRampFlight ifc:IfcRoof ifc:IfcShadingDevice ifc:IfcSlab ifc:IfcStair ifc:IfcStairFlight ifc:IfcWall ifc:IfcWindow ) ] .
+
+[ rdf:first ifc:IfcStructuralCurveConnection ; rdf:rest ( ifc:IfcStructuralPointConnection ifc:IfcStructuralSurfaceConnection ) ] .
+
+[ rdf:first ifc:IfcSurfaceOfLinearExtrusion ; rdf:rest ( ifc:IfcSurfaceOfRevolution ) ] .
+
+[ rdf:first ifc:IfcComplexProperty ; rdf:rest ( ifc:IfcSimpleProperty ) ] .
+
+[ rdf:first ifc:IfcPropertySetTemplate ; rdf:rest ( ifc:IfcPropertyTemplate ) ] .
+
+[ rdf:first ifc:IfcMaterial ; rdf:rest ( ifc:IfcMaterialConstituent ifc:IfcMaterialConstituentSet ifc:IfcMaterialLayer ifc:IfcMaterialLayerSet ifc:IfcMaterialProfile ifc:IfcMaterialProfileSet ) ] .
+
+[ rdf:first ifc:IfcCompressorType ; rdf:rest ( ifc:IfcFanType ifc:IfcPumpType ) ] .
+
+[ rdf:first ifc:IfcStructuralConnection ; rdf:rest ( ifc:IfcStructuralMember ) ] .
+
+[ rdf:first ifc:IfcReinforcingBar ; rdf:rest ( ifc:IfcReinforcingMesh ifc:IfcTendon ifc:IfcTendonAnchor ) ] .
+
+[ rdf:first ifc:IfcAirTerminalType ; rdf:rest ( ifc:IfcAudioVisualApplianceType ifc:IfcCommunicationsApplianceType ifc:IfcElectricApplianceType ifc:IfcFireSuppressionTerminalType ifc:IfcLampType ifc:IfcLightFixtureType ifc:IfcMedicalDeviceType ifc:IfcOutletType ifc:IfcSanitaryTerminalType ifc:IfcSpaceHeaterType ifc:IfcStackTerminalType ifc:IfcWasteTerminalType ) ] .
+
+[ rdf:first ifc:IfcMaterialProperties ; rdf:rest ( ifc:IfcProfileProperties ) ] .
+
+[ rdf:first ifc:IfcRelDefinesByObject ; rdf:rest ( ifc:IfcRelDefinesByProperties ifc:IfcRelDefinesByTemplate ifc:IfcRelDefinesByType ) ] .
 
 [ rdf:first ifc:IfcIndexedTriangleTextureMap ; rdf:rest () ] .
 
-[ rdf:first ifc:IfcOpeningElement ; rdf:rest ( ifc:IfcVoidingFeature ) ] .
-
-[ rdf:first ifc:IfcProjectedCRS ; rdf:rest () ] .
+[ rdf:first ifc:IfcIndexedPolygonalFace ; rdf:rest ( ifc:IfcTessellatedFaceSet ) ] .
