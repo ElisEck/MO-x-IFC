@@ -173,7 +173,7 @@ public class ModelHelper {
                 ergebnis = ergebnis.concat(System.lineSeparator());
             }
         } finally {
-            qexec.close();
+               qexec.close();
         }
         return ergebnis;
     }

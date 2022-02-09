@@ -174,26 +174,7 @@ public class KomplextestKaelte {
         System.out.println(printSelects(inf, queryString));
     }
 
-    @Test
-    /**
-     *
-     */
-    public void queryModelica(){
-        Model model = RDFDataMgr.loadModel("C:\\_DATEN\\WORKSPACES\\IntelliJ\\mo-x-ifc\\src\\test\\java\\output\\null_20220128_0810.ttl");
-        //model = model.add(RDFDataMgr.loadModel("C:\\_DATEN\\WORKSPACES\\IntelliJ\\mo-x-ifc\\src\\main\\resources\\ontologies\\7_MoOnt\\MoOnt.ttl"));
-        System.out.println("Triples model: " +      countTriples(model));
-//        OntModel inf = ModelFactory.createOntologyModel( PelletReasonerFactory.THE_SPEC, model );
-        OntModel inf = ModelFactory.createOntologyModel( OntModelSpec.OWL_MEM_MICRO_RULE_INF, model );
-        String queryString =
-                PREFIXSTRING +
-                        "SELECT "+
-                        "?object ?object2"+
-                        " WHERE {"+
-//                        "?object moont:extends* aix:AixLib.Fluid.Interfaces.PartialTwoPort . " +
-                        "?object moont:extends ?object2 . " +
-                        "}";
-        System.out.println(printSelects(inf, queryString));
-    }
+
 
     @Test
     /**
