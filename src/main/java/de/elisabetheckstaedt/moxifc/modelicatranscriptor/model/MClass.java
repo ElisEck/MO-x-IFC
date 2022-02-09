@@ -1,6 +1,8 @@
 package de.elisabetheckstaedt.moxifc.modelicatranscriptor.model;
 
 import de.elisabetheckstaedt.moxifc.modelicatranscriptor.parser.TreeNode;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -8,6 +10,8 @@ import java.nio.file.Path;
 import java.util.*;
 
 public class MClass {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(MClass.class);
 
     public static final String NEWLINE = System.lineSeparator();
     String container;
@@ -323,18 +327,48 @@ public class MClass {
         return zf;
     }*/
 
+    /**
+     * vollständig
+     * @return
+     */
     String serializeAsTTL() {
-
-
-
         String zf = "";
-/*        //ausführbare Modelle und Packages werden als Instanzen modelliert
-        if (parentsIcons.contains("Modelica.Icons.Example") | getTypeAsMoont().equals("MPackage") ) {*/
-            if (container.isBlank()) {
-                zf = zf.concat(owlPrefix +":" + name + " rdfs:subClassOf moont:" + getTypeAsMoont() );
-            } else {
-                zf = zf.concat(owlPrefix +":" + container + "." + name + " rdfs:subClassOf moont:" + getTypeAsMoont() + ";" + NEWLINE );
-            }
+        zf = zf.concat(writeHeaderToTTL());
+        zf = zf.concat(writeParentToTTL());
+        zf = zf.concat(writeParentIconsToTTL());
+        zf = zf.concat(writeParametersToTTL());
+        zf = zf.concat(writeComponentsToTTL());
+        zf = zf.concat(writeConnectionsToTTL());
+        return zf;
+    }
+
+    /**
+     * nur Header und Parents
+     * @return
+     */
+    String serializeAsTTLHeaderAndParents() {
+        String zf = "";
+        zf = zf.concat(writeHeaderToTTL());
+        zf = zf.concat(writeParentToTTL());
+        zf = zf.concat(writeParentIconsToTTL());
+        return zf;
+    }
+
+    /**
+     * Modelicaklasse: Model, Class, Package, ...
+     * Container (Packagestruktur)
+     * ggf. is Partial
+     * @return
+     */
+    private String writeHeaderToTTL() {
+        String zf = "";
+    /*        //ausführbare Modelle und Packages werden als Instanzen modelliert
+            if (parentsIcons.contains("Modelica.Icons.Example") | getTypeAsMoont().equals("MPackage") ) {*/
+        if (container.isBlank()) {
+            zf = zf.concat(owlPrefix +":" + name + " rdfs:subClassOf moont:" + getTypeAsMoont() );
+        } else {
+            zf = zf.concat(owlPrefix +":" + container + "." + name + " rdfs:subClassOf moont:" + getTypeAsMoont() + ";" + NEWLINE );
+        }
 /*        // alles andere wird als Subclass modelliert
         } else {
             if (container.isBlank()) {
@@ -358,16 +392,37 @@ public class MClass {
 
             }
         }
-        zf = zf.concat(writeParentToTTL());
-        zf = zf.concat(writeParametersToTTL());
-        zf = zf.concat(writeComponentsToTTL());
-        zf = zf.concat(writeConnectionsToTTL());
         return zf;
     }
 
+
+    /**
+     * extends
+     * @return
+     */
     String writeParentToTTL() {
         String zf = "";
         for (String el : parents) {
+            if (container.isBlank()) { //18.4.21: es passiert beides mal das Gleiche?!
+                zf = zf.concat(owlPrefix +":" + container + "." + name + " moont:extends " + owlPrefix +":" + el + "." + NEWLINE);
+            } else {
+                zf = zf.concat(owlPrefix +":" + container + "." + name + " moont:extends " + owlPrefix +":" + el + "." + NEWLINE);
+            }
+            if (!(parents.contains(el))) { //18.4.21: Wann soll das denn eintreffen?
+                parents.add(el);
+            }
+        }
+
+        return zf;
+    }
+
+    /**
+     * extends (nur die Klassen die Icons vererben)
+     * @return
+     */
+    String writeParentIconsToTTL() {
+        String zf = "";
+        for (String el : parentsIcons) {
             if (container.isBlank()) { //18.4.21: es passiert beides mal das Gleiche?!
                 zf = zf.concat(owlPrefix +":" + container + "." + name + " moont:extends " + owlPrefix +":" + el + "." + NEWLINE);
             } else {
@@ -526,25 +581,30 @@ public class MClass {
     }
 
     String findParentNodeOfSearchString(TreeNode<String> root, String startPath, String searchString) {
-        return findParentNodeOfSearchString(root.findTreeNode(startPath), searchString);
+        try {
+            return findParentNodeOfSearchString(root.findTreeNode(startPath), searchString);
+        } catch (Exception e) {
+            LOGGER.info("Reached root node while searching for " + searchString + " starting from " + startPath);
+            return "";
+        }
 
     }
 
     private String findParentNodeOfSearchString(TreeNode<String> startNode, String searchString) {
 //        Optional<TreeNode<String>> optionalHit = startNode.getSiblings()
-        Optional<TreeNode<String>> optionalHit = startNode.getParent().getChildren()
+            Optional<TreeNode<String>> optionalHit = startNode.getParent().getChildren()
                 .stream()
                 .filter(c -> c.getData().equals(searchString))
                 .findAny();
-        if(optionalHit.isPresent()) {
-            return startNode.getParent().getFullPath();
-        } else {
-            if(startNode.isRoot()) {
-//                throw new RuntimeException("Reached root node while searching for " + searchString);
-                System.out.println("Reached root node while searching for " + searchString);
+            if(optionalHit.isPresent()) {
+                return startNode.getParent().getFullPath();
+            } else {
+                if(startNode.isRoot()) {
+    //                throw new RuntimeException("Reached root node while searching for " + searchString);
+                    System.out.println("Reached root node while searching for " + searchString);
+                }
+                return findParentNodeOfSearchString(startNode.getParent(), searchString);
             }
-            return findParentNodeOfSearchString(startNode.getParent(), searchString);
-        }
     }
 
     private boolean hasChildWithName(TreeNode<String> node, String name) {
@@ -558,6 +618,12 @@ public class MClass {
         for (ModelicaObject mp :  components) {
             mp.setTypeSpecifier(replace(sollstart, packageTree, mp.getTypeSpecifier()));
         }
+        Set<String> newParents = new HashSet<>();
+        for (String mp :  parents) {
+            String newParentName = replace(sollstart, packageTree, mp);
+            newParents.add(newParentName);
+        }
+        parents = newParents;
         Set<ModelicaObject> components = new HashSet<>();
     }
 
@@ -582,7 +648,11 @@ public class MClass {
                    newTypeSpecifier = container + "." + typeSpecifier;
                } else {
                    vorpfad = findParentNodeOfSearchString(packageTree, container, nameparts[0]);
-                   newTypeSpecifier = vorpfad + "." + typeSpecifier;
+                   if (vorpfad.equals("")) {
+                       newTypeSpecifier = typeSpecifier;
+                   } else {
+                       newTypeSpecifier = vorpfad + "." + typeSpecifier;
+                   }
                }
            } else {
                newTypeSpecifier = container + "." + typeSpecifier;

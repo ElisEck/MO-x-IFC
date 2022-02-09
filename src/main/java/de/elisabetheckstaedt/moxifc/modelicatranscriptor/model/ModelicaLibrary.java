@@ -27,6 +27,7 @@ public class ModelicaLibrary {
     String rootpath;
     String name;
     String prefix;
+    TreeNode<String> packageHierarchyRoot;
 
     public ModelicaLibrary(String rootpath, String name, String prefix) {
         this.rootpath = rootpath;
@@ -115,48 +116,70 @@ public class ModelicaLibrary {
 
 
 
-    public void serializeAsTTL(String filename) {
+    public void serializeAsTTL(String filename, String sollstart, String serializingOption) {
 
         try {
             FileWriter myWriter = new FileWriter(filename);
 
-            myWriter.write("@prefix "+prefix+":    <http://www.eas.iis.fraunhofer.de/"+ prefix+"#> ." + NEWLINE);
-            myWriter.write("@prefix moont:    <http://www.eas.iis.fraunhofer.de/moont#> ." + NEWLINE);
-            myWriter.write("@prefix msl:    <http://www.eas.iis.fraunhofer.de/msl#> ." + NEWLINE);
-            myWriter.write("@prefix aix:    <http://www.eas.iis.fraunhofer.de/aix#> ." + NEWLINE);
-            myWriter.write("@prefix mbl:    <http://www.eas.iis.fraunhofer.de/mbl#> ." + NEWLINE);
-            myWriter.write("@prefix ibpsa:    <http://www.eas.iis.fraunhofer.de/ibpsa#> ." + NEWLINE);
-            myWriter.write("@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> ." + NEWLINE);
-            myWriter.write("@prefix owl:  <http://www.w3.org/2002/07/owl#> ." + NEWLINE);
-            myWriter.write("@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> ." + NEWLINE);
-            myWriter.write(prefix + ": rdf:type owl:Ontology ;" + NEWLINE);
-            myWriter.write("\t owl:imports moont: ." + NEWLINE);
+            writePrefixes(myWriter);
 
-            String rootName = "AixLib";
-            TreeNode<String> root = new TreeNode<>(rootName, new HashMap<>());
+            replaceRelativPaths(sollstart);
+
             for (ModelicaFile mf : mfs) {
                 for (MClass mk : mf.mks) {
-                    String[] pathParts = mk.container.split("\\.");
-                    TreeNode<String> currentNode = root;
-                    for (String pathPart : pathParts) {
-                        if (!rootName.equals(pathPart)) {
-                        currentNode= currentNode.addChild(pathPart);}
+                    if (serializingOption.equals("full")) {
+                        myWriter.write(mk.serializeAsTTL());
+                    } else {
+                        myWriter.write(mk.serializeAsTTLHeaderAndParents());
                     }
-                }
-            }
-            for (ModelicaFile mf : mfs) {
-                for (MClass mk : mf.mks) {
-                    mk.replaceRelativePaths("AixLib.", root);
-                }
-            }
-            for (ModelicaFile mf : mfs) {
-                for (MClass mk : mf.mks) {
-                    myWriter.write(mk.serializeAsTTL());
                 }
             }
             myWriter.close();
         } catch (IOException ioException) {
             ioException.printStackTrace();
         }
+    }
+
+    private void replaceRelativPaths(String sollstart) {
+        generateContainerHierarchyTree(sollstart);
+        for (ModelicaFile mf : mfs) {
+            for (MClass mk : mf.mks) {
+//                mk.replaceRelativePaths("AixLib.", packageHierarchyRoot);
+                mk.replaceRelativePaths(sollstart+".", packageHierarchyRoot);
+            }
+        }
+    }
+
+    private void generateContainerHierarchyTree(String rootName) {
+        packageHierarchyRoot = new TreeNode<>(rootName, new HashMap<>());
+        for (ModelicaFile mf : mfs) {
+            for (MClass mk : mf.mks) {
+                String[] pathParts = mk.container.split("\\.");
+                TreeNode<String> currentNode = packageHierarchyRoot;
+                for (String pathPart : pathParts) {
+                    if (!rootName.equals(pathPart)) {
+                    currentNode= currentNode.addChild(pathPart);}
+                }
+            }
+        }
+    }
+
+    private void writePrefixes(FileWriter myWriter) throws IOException {
+        myWriter.write("@prefix "+prefix+":    <http://www.eas.iis.fraunhofer.de/"+ prefix+"#> ." + NEWLINE);
+        myWriter.write("@prefix moont:    <http://www.eas.iis.fraunhofer.de/moont#> ." + NEWLINE);
+        myWriter.write("@prefix msl:    <http://www.eas.iis.fraunhofer.de/msl#> ." + NEWLINE);
+        myWriter.write("@prefix aix:    <http://www.eas.iis.fraunhofer.de/aix#> ." + NEWLINE);
+        myWriter.write("@prefix mbl:    <http://www.eas.iis.fraunhofer.de/mbl#> ." + NEWLINE);
+        myWriter.write("@prefix ibpsa:    <http://www.eas.iis.fraunhofer.de/ibpsa#> ." + NEWLINE);
+        myWriter.write("@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> ." + NEWLINE);
+        myWriter.write("@prefix rdf:  <http://www.w3.org/2000/01/rdf#> ." + NEWLINE);
+        myWriter.write("@prefix owl:  <http://www.w3.org/2002/07/owl#> ." + NEWLINE);
+        myWriter.write("@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> ." + NEWLINE);
+        myWriter.write(prefix + ": rdf:type owl:Ontology ;" + NEWLINE);
+        myWriter.write("\t owl:imports moont: ." + NEWLINE);
+    }
+
+    public String getName() {
+        return name;
     }
 }
