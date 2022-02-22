@@ -2,6 +2,8 @@ package de.elisabetheckstaedt.moxifc.modelicatranscriptor.model;
 
 import de.elisabetheckstaedt.moxifc.modelicatranscriptor.parser.ModelicaFileAntlrParser;
 import de.elisabetheckstaedt.moxifc.modelicatranscriptor.parser.TreeNode;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -15,6 +17,9 @@ import java.util.stream.Collectors;
 import static java.nio.file.Files.readString;
 
 public class ModelicaLibrary {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(MClass.class);
+
     public static final String NEWLINE = System.lineSeparator();
     /**
      * Liste von ModelicaFiles, die zur Library gehören
@@ -49,8 +54,8 @@ public class ModelicaLibrary {
                     .filter(file -> file.toFile().isFile())
                     .filter(file -> file.toFile().getAbsolutePath().toLowerCase().endsWith(".mo"))
                     .forEach(file -> {
-                                System.out.print(file + "\t");
                                 ModelicaFile mf1 = new ModelicaFile(file);
+                                LOGGER.info("Parsing " + mf1.path + "...");
                                 ModelicaFileAntlrParser parser = new ModelicaFileAntlrParser(prefix);
                                 String content = null;
                                 try {
@@ -116,19 +121,21 @@ public class ModelicaLibrary {
 
 
 
-    public void serializeAsTTL(String filename, String sollstart, String serializingOption) {
-
+    public void serializeAsTTL(String filename, String prefix, String sollstart, String serializingOption) {
+        this.prefix = prefix;
         try {
             FileWriter myWriter = new FileWriter(filename);
 
             writePrefixes(myWriter);
 
-            replaceRelativPaths(sollstart);
+            replaceRelativePaths(sollstart);
 
             for (ModelicaFile mf : mfs) {
                 for (MClass mk : mf.mks) {
                     if (serializingOption.equals("full")) {
                         myWriter.write(mk.serializeAsTTL());
+                    } else if (serializingOption.equals("fullclean")) {
+                            myWriter.write(cleanttl(mk.serializeAsTTL()));
                     } else {
                         myWriter.write(mk.serializeAsTTLHeaderAndParents());
                     }
@@ -140,12 +147,30 @@ public class ModelicaLibrary {
         }
     }
 
-    private void replaceRelativPaths(String sollstart) {
+    String cleanttl(String input) {
+        input = input.replace("=", "_gleich_");
+        input = input.replace("[", "_");
+        input = input.replace("]", "_");
+        input = input.replace("'", "_");
+        input = input.replace("_^_", "_hoch_");
+        input = input.replace("_*_", "_mal_");
+        input = input.replace("_+_", "_plus_");
+        input = input.replace("_-_", "_minus_");
+        input = input.replace("_/_", "_durch_");
+        input = input.replace("___", "XXX");
+        input = input.replace("msl:.", "msl:");
+        input = input.replace("aix:.", "aix:");
+        input = input.replace("mbl:.", "mbl:");
+        input = input.replace("\\\\", "\\"); //doppelte Backslash durch einfachen ersetzen
+        return input;
+    }
+
+    private void replaceRelativePaths(String sollstart) {
         generateContainerHierarchyTree(sollstart);
         for (ModelicaFile mf : mfs) {
             for (MClass mk : mf.mks) {
 //                mk.replaceRelativePaths("AixLib.", packageHierarchyRoot);
-                mk.replaceRelativePaths(sollstart+".", packageHierarchyRoot);
+                mk.replaceRelativePaths(sollstart, packageHierarchyRoot);
             }
         }
     }
@@ -167,6 +192,7 @@ public class ModelicaLibrary {
     private void writePrefixes(FileWriter myWriter) throws IOException {
         myWriter.write("@prefix "+prefix+":    <http://www.eas.iis.fraunhofer.de/"+ prefix+"#> ." + NEWLINE);
         myWriter.write("@prefix moont:    <http://www.eas.iis.fraunhofer.de/moont#> ." + NEWLINE);
+        //TODO Header entschlacken
         myWriter.write("@prefix msl:    <http://www.eas.iis.fraunhofer.de/msl#> ." + NEWLINE);
         myWriter.write("@prefix aix:    <http://www.eas.iis.fraunhofer.de/aix#> ." + NEWLINE);
         myWriter.write("@prefix mbl:    <http://www.eas.iis.fraunhofer.de/mbl#> ." + NEWLINE);
@@ -176,7 +202,8 @@ public class ModelicaLibrary {
         myWriter.write("@prefix owl:  <http://www.w3.org/2002/07/owl#> ." + NEWLINE);
         myWriter.write("@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> ." + NEWLINE);
         myWriter.write(prefix + ": rdf:type owl:Ontology ;" + NEWLINE);
-        myWriter.write("\t owl:imports moont: ." + NEWLINE);
+        myWriter.write("\t owl:imports msl: ;" + NEWLINE); //TODO Import weglassen, wenn es sich um MSL handelt
+        myWriter.write("\t owl:imports moont: ." + NEWLINE); //TODO nur importieren bei MSL, nicht bei den davon ableitenden
     }
 
     public String getName() {

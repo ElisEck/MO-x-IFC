@@ -6,6 +6,8 @@ import de.elisabetheckstaedt.moxifc.modelicatranscriptor.model.MClass;
 import de.elisabetheckstaedt.moxifc.modelicatranscriptor.model.MConnection;
 import de.elisabetheckstaedt.moxifc.modelicatranscriptor.model.ModelicaObject;
 import de.elisabetheckstaedt.moxifc.modelicatranscriptor.model.MParameterComponent;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.EmptyStackException;
 import java.util.HashSet;
@@ -13,6 +15,8 @@ import java.util.Set;
 import java.util.Stack;
 
 public class ModelicaComponentListener extends modelicaBaseListener {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(MClass.class);
 
     Set<MClass> mks = new HashSet<>();
     Stack<MClass> mkstack = new Stack<>();
@@ -198,14 +202,26 @@ public class ModelicaComponentListener extends modelicaBaseListener {
     public void exitClass_definition(modelicaParser.Class_definitionContext ctx) {
         MClass mkAkt = mkstack.pop();
         mkAkt.sortParent();
-
         try {
+            if (!mkstack.empty()) {//wenn noch etwas drunter liegt
+                StringBuilder sb = new StringBuilder();
+                mkstack.stream().forEach(cont -> sb.append(cont.getName() + "."));
+//                mkAkt.setContainer(mkstack.peek().getContainer() + "." + mkstack.peek().getName());
+
+                mkAkt.setContainer(mkstack.peek().getContainer() + "." + removeTrailingPoint(sb.toString()));
+            }
+            mks.add(mkAkt); //neu 15.2.22 um auch Klassen zu behandeln, die kein eigenes File haben
             mkstack.peek().appendChildClass(mkAkt);
         } catch (EmptyStackException ee) {
-            mks.add(mkAkt);
+            mks.add(mkAkt); //notwendig für die Root-Klasse eines Files
         }
     }
-
+    String removeTrailingPoint(String input) {
+        if (input.endsWith(".")) {
+            return input.substring(0, input.length()-1);
+        } else
+            return input;
+    }
     @Override
     public void enterConnect_clause(modelicaParser.Connect_clauseContext ctx) {
         curConnection = new MConnection();
@@ -225,7 +241,21 @@ public class ModelicaComponentListener extends modelicaBaseListener {
         if (ctx.string_comment() != null) {
             mkstack.peek().setDescription(ctx.string_comment().getText());
         }
+        LOGGER.info("Using long_class_specifier for " + ctx.IDENT().get(0).getText());
+    }
+
+    @Override
+    public void enterShort_class_specifier(modelicaParser.Short_class_specifierContext ctx) {
+        mkstack.peek().setName(ctx.IDENT().getText());
+        LOGGER.warn("Using short_class_specifier for " + ctx.IDENT().getText());
+
+    }
+
+    @Override
+    public void enterDer_class_specifier(modelicaParser.Der_class_specifierContext ctx) {
+        mkstack.peek().setName(ctx.IDENT().get(0).getText());
         System.out.println(ctx.IDENT().get(0).getText());
+        LOGGER.warn("Using der_class_specifier for " + ctx.IDENT().get(0).getText());
     }
 
     @Override

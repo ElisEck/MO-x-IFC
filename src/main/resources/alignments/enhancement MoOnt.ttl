@@ -1,0 +1,16 @@
+@prefix ifc:  <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#> .
+@prefix list:  <https://w3id.org/list#> .
+@prefix express:  <https://w3id.org/express#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+
+aix:AixLib.Airflow.AirCurtain.AirCurtainSimplified.port_b a moont:MComponent ;
+	 a msl:Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_b.
+
+	msl:Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_b rdfs:subClassOf moont:MConnector;
+ moont:containedIn msl:Modelica.Thermal.HeatTransfer.Interfaces.
+
+
+ elli:stringNominalValue rdf:type owl:ObjectProperty ;
+ 	owl:propertyChainAxiom ( ifc:relatingPropertyDefinition_IfcRelDefinesByProperties ifc:hasProperties_IfcPropertySet ) .

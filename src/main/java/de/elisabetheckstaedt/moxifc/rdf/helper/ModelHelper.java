@@ -158,24 +158,30 @@ public class ModelHelper {
     public static String printSelects(Model model, String queryString){
         Query query = QueryFactory.create(queryString);
         QueryExecution qexec = QueryExecutionFactory.create(query, model);
-        String ergebnis = "";
+        final StringBuilder ergebnis = new StringBuilder();
+        final StringBuilder zeilen = new StringBuilder();
         try {
             org.apache.jena.query.ResultSet resultSet = qexec.execSelect();
+            resultSet.getResultVars().forEach(var -> zeilen.append(var).append("\t"));
+            zeilen.append(System.lineSeparator());
             while (resultSet.hasNext()) {
                 QuerySolution soln = resultSet.next();
                 for(String colName: resultSet.getResultVars()) {
                     try {
-                        ergebnis = ergebnis.concat(soln.get(colName).asLiteral().getString() + "\t");
+                        zeilen.append(soln.get(colName).asLiteral().getString() + "\t");
                     } catch (LiteralRequiredException e) {
-                        ergebnis = ergebnis.concat(soln.get(colName).toString() + "\t");
+                        zeilen.append(soln.get(colName).toString() + "\t");
                     }
                 }
-                ergebnis = ergebnis.concat(System.lineSeparator());
+                zeilen.append(System.lineSeparator());
             }
+            ergebnis.append("Ergebniszeilen: " + resultSet.getRowNumber() + System.lineSeparator());
+            ergebnis.append(zeilen);
+            ergebnis.append("Ergebniszeilen: " + resultSet.getRowNumber() + System.lineSeparator());
         } finally {
                qexec.close();
         }
-        return ergebnis;
+        return ergebnis.toString();
     }
 
     public static String countTriplesBySubjectAndPredicate(Model model, String subject, String predicate) {

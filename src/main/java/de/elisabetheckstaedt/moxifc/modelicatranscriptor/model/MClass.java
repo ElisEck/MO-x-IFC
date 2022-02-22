@@ -14,13 +14,13 @@ public class MClass {
     private static final Logger LOGGER = LoggerFactory.getLogger(MClass.class);
 
     public static final String NEWLINE = System.lineSeparator();
+    String type_prefix;
+    String type;
+    String name;
+    String description = "";
     String container;
     String owlPrefix;
-    String type;
-    String type_prefix;
-    String name;
     String classPrefix;
-    String description = "";
     Set<String> parents = new HashSet<>();
     Set<String> parentsIcons = new HashSet<>();
     Set<MParameterComponent> parameters = new HashSet<>();
@@ -590,7 +590,7 @@ public class MClass {
 
     }
 
-    private String findParentNodeOfSearchString(TreeNode<String> startNode, String searchString) {
+    private String findParentNodeOfSearchString(TreeNode<String> startNode, String searchString) throws NullPointerException {
 //        Optional<TreeNode<String>> optionalHit = startNode.getSiblings()
             Optional<TreeNode<String>> optionalHit = startNode.getParent().getChildren()
                 .stream()
@@ -601,13 +601,13 @@ public class MClass {
             } else {
                 if(startNode.isRoot()) {
     //                throw new RuntimeException("Reached root node while searching for " + searchString);
-                    System.out.println("Reached root node while searching for " + searchString);
+                    System.out.println("Reached root node while searching for " + searchString); //kommt nie zum Tragen
                 }
                 return findParentNodeOfSearchString(startNode.getParent(), searchString);
             }
     }
 
-    private boolean hasChildWithName(TreeNode<String> node, String name) {
+    private boolean hasChildWithName(TreeNode<String> node, String name) throws NullPointerException{
         return node.getChildren().stream().anyMatch((TreeNode<String> t) -> t.getData().equals(name));
     }
 
@@ -628,9 +628,10 @@ public class MClass {
     }
 
     private String replace(String sollstart, TreeNode<String> packageTree, String typeSpecifier) {
-        if (typeSpecifier.startsWith(sollstart) ||
+        if (typeSpecifier.startsWith(sollstart) || //TODO: eigentlich müssten hier die Imports behandelt werden, statt dieser pauschalen Lösung
                 typeSpecifier.startsWith("Medium") ||
                 typeSpecifier.startsWith("SI") ||
+                typeSpecifier.startsWith("NonSI") ||
                 typeSpecifier.startsWith("SDF") ||
                 typeSpecifier.startsWith("Modelica")) {
             return typeSpecifier;
@@ -644,14 +645,22 @@ public class MClass {
             String vorpfad = "";
             String[] nameparts = typeSpecifier.split("\\.",0);
            if (typeSpecifier.contains(".")) {
-               if (hasChildWithName(packageTree.getIndex().get(container), nameparts[0])) { //erstmal "nach unten" suchen
+               if (container.equals(sollstart)) { //vorher abfangen, da ansonsten die folgende if-Bedingung einen null-pointer bringt
+                   newTypeSpecifier = container + "." + typeSpecifier;
+               }
+               else if (hasChildWithName(packageTree.getIndex().get(container), nameparts[0])) { //erstmal "nach unten" suchen
                    newTypeSpecifier = container + "." + typeSpecifier;
                } else {
-                   vorpfad = findParentNodeOfSearchString(packageTree, container, nameparts[0]);
-                   if (vorpfad.equals("")) {
+                   try {
+                       vorpfad = findParentNodeOfSearchString(packageTree, container, nameparts[0]);
+                       if (vorpfad.equals("")) { //wenn während der Suche nach oben die Wurzel erreicht wird, kommt dieser leere String zurück und es findet kein Ersetzen statt
+                           newTypeSpecifier = typeSpecifier;
+                       } else {
+                           newTypeSpecifier = vorpfad + "." + typeSpecifier;
+                       }
+                   }
+                   catch (Exception e) { //wenn Pfad nicht gefunden wird (dann ist es wahrscheinlich eine Komponente, die das Modell erbt)
                        newTypeSpecifier = typeSpecifier;
-                   } else {
-                       newTypeSpecifier = vorpfad + "." + typeSpecifier;
                    }
                }
            } else {
@@ -663,4 +672,12 @@ public class MClass {
     }
 
 
+
+    public String getContainer() {
+        return container;
+    }
+
+    public String getName() {
+        return name;
+    }
 }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="User Entered Import Resolution" name="http://www.eas.iis.fraunhofer.de/msl#" uri="msl_20220217_1602_fullclean.ttl"/>
     <uri id="User Entered Import Resolution" name="http://www.eas.iis.fraunhofer.de/moont#" uri="file:/C:/_DATEN/WORKSPACES/IntelliJ/mo-x-ifc/src/main/resources/ontologies/7_MoOnt/MoOnt.ttl"/>
     <uri id="User Entered Import Resolution" name="http://www.eas.iis.fraunhofer.de/MoOnt#" uri="file:/C:/_DATEN/WORKSPACES/IntelliJ/mo-x-ifc/src/main/resources/ontologies/7_MoOnt/MoOnt.ttl"/>
     <uri id="User Entered Import Resolution" name="http://www.eas.iis.fraunhofer.de/MoOnt" uri="file:/C:/_DATEN/WORKSPACES/IntelliJ/mo-x-ifc/src/main/resources/ontologies/7_MoOnt/MoOnt.ttl"/>
