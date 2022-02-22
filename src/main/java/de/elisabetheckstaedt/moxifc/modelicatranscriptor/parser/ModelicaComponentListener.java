@@ -53,6 +53,7 @@ public class ModelicaComponentListener extends modelicaBaseListener {
 
     @Override
     public void exitComponent_clause(modelicaParser.Component_clauseContext ctx) {
+
         curObject = null;
     }
 
@@ -66,6 +67,7 @@ public class ModelicaComponentListener extends modelicaBaseListener {
         if (curObject.getTypePrefix().equals("parameter")) {
             mkstack.peek().appendParameter(new MParameterComponent(curObject.getTypeSpecifier(), curObject.getName(), curObject.getModification(), curObject.getStringComment(), curObject.getAnnotation()));
         } else {
+            curObject.setName(ctx.declaration().IDENT().getText());
             mkstack.peek().appendComponent(curObject);
         }
         insideComponentDeclaration = false;
@@ -246,8 +248,12 @@ public class ModelicaComponentListener extends modelicaBaseListener {
 
     @Override
     public void enterShort_class_specifier(modelicaParser.Short_class_specifierContext ctx) {
-        mkstack.peek().setName(ctx.IDENT().getText());
-        LOGGER.warn("Using short_class_specifier for " + ctx.IDENT().getText());
+        if (insideElementRedeclaration) {
+           // curObject.setName(ctx.IDENT().getText());
+        } else {
+            mkstack.peek().setName(ctx.IDENT().getText());
+            LOGGER.warn("Using short_class_specifier for " + ctx.IDENT().getText());
+        }
 
     }
 
