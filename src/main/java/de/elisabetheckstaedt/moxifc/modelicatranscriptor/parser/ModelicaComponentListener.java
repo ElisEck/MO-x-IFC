@@ -97,7 +97,15 @@ public class ModelicaComponentListener extends modelicaBaseListener {
 
     }
 
+    @Override
+    public void enterElement(modelicaParser.ElementContext ctx) {
+        ctx.getText();
+    }
 
+    @Override
+    public void enterEquation_section(modelicaParser.Equation_sectionContext ctx) {
+        ctx.getText();
+    }
 
     @Override
     public void enterDeclaration(modelicaParser.DeclarationContext ctx) {
@@ -245,6 +253,8 @@ public class ModelicaComponentListener extends modelicaBaseListener {
         }
         LOGGER.info("Using long_class_specifier for " + ctx.IDENT().get(0).getText());
     }
+
+
 
     @Override
     public void enterShort_class_specifier(modelicaParser.Short_class_specifierContext ctx) {

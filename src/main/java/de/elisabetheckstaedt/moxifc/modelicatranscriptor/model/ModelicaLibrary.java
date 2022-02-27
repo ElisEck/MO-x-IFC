@@ -161,7 +161,11 @@ public class ModelicaLibrary {
         input = input.replace("msl:.", "msl:");
         input = input.replace("aix:.", "aix:");
         input = input.replace("mbl:.", "mbl:");
+        input = input.replace("aix:Modelica.", "msl:Modelica.");
+        input = input.replace("mbl:Modelica.", "msl:Modelica.");
         input = input.replace("\\\\", "\\"); //doppelte Backslash durch einfachen ersetzen
+        input = input.replace("\"\\\"", "\"");
+        input = input.replace("\\\"\"", "\"");
         return input;
     }
 

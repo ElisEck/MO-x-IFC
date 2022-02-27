@@ -179,11 +179,15 @@ public class MClass {
             } else {//für Komponenten aus der MSL wird die Klasse nicht angegeben
                 zf = zf.concat("\t" + " moont:type " + owlPrefix +":" + mp.getTypeSpecifier()) ;
             }
+            zf += ";" + NEWLINE ;
+            if (!mp.getStringComment().equals("")) {
+                zf += "\t" + " moont:stringComment \"" + maskSpecialCharacter(mp.getStringComment()) + "\"^^xsd:string;" + NEWLINE;
+            }
 
             if (mp.getModification().equals("")) {
                 zf = zf.concat("." + NEWLINE);
             } else {
-                zf += ";" + NEWLINE + "\t" + " moont:modification \"" + maskSpecialCharacter(mp.getModification()) + "\"^^xsd:string." + NEWLINE;
+                zf += "\t" + " moont:modification \"" + maskSpecialCharacter(mp.getModification()) + "\"^^xsd:string." + NEWLINE;
             }
 //Achtung: wenn Zeile wieder rein, Semikolon in Vorzeile oder Subjekt ergänzen
             //            parameterString = parameterString.concat("\t rdfs:range " +"aix:" + mp.klasse + "." + NEWLINE);
@@ -210,6 +214,11 @@ public class MClass {
                 String a = "";
             } else {
                 zf += "\t" + " moont:modification \"" + maskSpecialCharacter(mo.getModification()) + "\"^^xsd:string;" + NEWLINE;
+            }
+            if (mo.getStringComment().equals("")) {
+                String a = "";
+            } else {
+                zf += "\t" + " moont:stringComment \"" + maskSpecialCharacter(mo.getStringComment()) + "\"^^xsd:string;" + NEWLINE;
             }
             if (mo.mClass.name.equals("")) { //wenn es keine
                 continue; //TODO kommt bei redeclare replaceable
@@ -369,6 +378,9 @@ public class MClass {
         } else {
             zf = zf.concat(owlPrefix +":" + container + "." + name + " rdfs:subClassOf moont:" + getTypeAsMoont() + ";" + NEWLINE );
         }
+        if (!description.equals("")) {
+            zf = zf.concat("\t moont:stringComment " + description + "^^xsd:string;" + NEWLINE);
+        }
 /*        // alles andere wird als Subclass modelliert
         } else {
             if (container.isBlank()) {
@@ -392,6 +404,7 @@ public class MClass {
 
             }
         }
+
         return zf;
     }
 
