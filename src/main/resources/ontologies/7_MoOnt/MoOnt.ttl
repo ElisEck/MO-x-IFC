@@ -11,12 +11,13 @@
 <http://www.eas.iis.fraunhofer.de/moont#> rdf:type owl:Ontology ;
                                            dcterms:creator "Elisabeth Eckstädt" ;
                                            dcterms:description "This ontology defines the terms and relations in the Modelica Language."@en ;
-                                           dcterms:issued "2021-05-10" ;
+                                           dcterms:issued "2022-03-02" ;
                                            dcterms:title "Modelica Language Ontology"@en ;
                                            rdfs:label "Modelica Language Ontology" ;
                                            rdfs:seeAlso <http://doi.org/10.13140/asdas9> ;
-                                           owl:priorVersion "http://www.wolfram.com/wsm-rdf/" ;
-                                           owl:versionInfo "v0.9" .
+                                           owl:priorVersion "http://www.wolfram.com/wsm-rdf/" ,
+                                                            "v0.9" ;
+                                           owl:versionInfo "v0.9.1" .
 
 #################################################################
 #    Annotation properties
