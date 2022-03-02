@@ -64,6 +64,22 @@ moont:baseClass rdf:type owl:ObjectProperty ;
                 rdfs:range moont:MAbstractClass .
 
 
+###  http://www.eas.iis.fraunhofer.de/moont#componentModification
+moont:componentModification rdf:type owl:ObjectProperty ;
+                            rdfs:subPropertyOf moont:ModelicaObjectProperty ;
+                            rdfs:domain moont:MComponent .
+
+
+###  http://www.eas.iis.fraunhofer.de/moont#componentRedeclaration
+moont:componentRedeclaration rdf:type owl:ObjectProperty ;
+                             rdfs:subPropertyOf moont:componentModification .
+
+
+###  http://www.eas.iis.fraunhofer.de/moont#componentValueChange
+moont:componentValueChange rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf moont:componentModification .
+
+
 ###  http://www.eas.iis.fraunhofer.de/moont#connectedTo
 moont:connectedTo rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf moont:ModelicaObjectProperty ;
@@ -109,7 +125,6 @@ moont:equation rdf:type owl:ObjectProperty ;
 ###  http://www.eas.iis.fraunhofer.de/moont#extends
 moont:extends rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf moont:ModelicaObjectProperty ;
-#			  owl:equivalentProperty rdfs:subClassOf ;
               rdfs:domain moont:MAbstractClass ;
               rdfs:range moont:MExtends ;
               rdfs:label "extends"@en .
@@ -174,7 +189,6 @@ moont:toPort rdf:type owl:ObjectProperty ;
 ###  http://www.eas.iis.fraunhofer.de/moont#type
 moont:type rdf:type owl:ObjectProperty ;
            rdfs:subPropertyOf moont:ModelicaObjectProperty ;
-   #        owl:equivalentProperty rdf:type ;
            rdfs:domain moont:MComponent ;
            rdfs:range moont:MAbstractClass ;
            rdfs:label "type"@en .
@@ -192,13 +206,8 @@ moont:ModelicaDataProperty rdf:type owl:DatatypeProperty .
 moont:annotation rdf:type owl:DatatypeProperty ;
                  rdfs:subPropertyOf moont:ModelicaDataProperty ;
                  rdfs:domain [ rdf:type owl:Class ;
-                               owl:unionOf ( moont:MAlgorithm
+                               owl:unionOf ( moont:MAbstractClass
                                              moont:MComponent
-                                             moont:MConnection
-                                             moont:MDerives
-                                             moont:MEquation
-                                             moont:MExtends
-                                             moont:MExternal
                                            )
                              ] ;
                  rdfs:range xsd:string ;
@@ -363,6 +372,17 @@ moont:modification rdf:type owl:DatatypeProperty ;
                    rdfs:label "modification"@en .
 
 
+###  http://www.eas.iis.fraunhofer.de/moont#stringComment
+moont:stringComment rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf moont:ModelicaDataProperty ;
+                    rdfs:domain [ rdf:type owl:Class ;
+                                  owl:unionOf ( moont:MAbstractClass
+                                                moont:MComponent
+                                              )
+                                ] ;
+                    rdfs:range xsd:string .
+
+
 ###  http://www.eas.iis.fraunhofer.de/moont#toPortArraySubscripts
 moont:toPortArraySubscripts rdf:type owl:DatatypeProperty ;
                             rdfs:subPropertyOf moont:ModelicaDataProperty ;
@@ -408,7 +428,7 @@ moont:MBooleanType rdf:type owl:Class ;
 
 ###  http://www.eas.iis.fraunhofer.de/moont#MClass
 moont:MClass rdf:type owl:Class ;
-             rdfs:subClassOf moont:ModelicaClass ;
+             rdfs:subClassOf moont:MAbstractClass ;
              rdfs:label "MClass"@en .
 
 
@@ -416,21 +436,6 @@ moont:MClass rdf:type owl:Class ;
 moont:MComponent rdf:type owl:Class ;
                  rdfs:subClassOf moont:ModelicaClass ;
                  rdfs:label "MComponent"@en .
-
-
-###  http://www.eas.iis.fraunhofer.de/moont#MComponentModification
-moont:MComponentModification rdf:type owl:Class ;
-                             rdfs:subClassOf moont:ModelicaClass .
-
-
-###  http://www.eas.iis.fraunhofer.de/moont#MComponentRedeclaration
-moont:MComponentRedeclaration rdf:type owl:Class ;
-                              rdfs:subClassOf moont:MComponentModification .
-
-
-###  http://www.eas.iis.fraunhofer.de/moont#MComponentValueChange
-moont:MComponentValueChange rdf:type owl:Class ;
-                            rdfs:subClassOf moont:MComponentModification .
 
 
 ###  http://www.eas.iis.fraunhofer.de/moont#MConnection
