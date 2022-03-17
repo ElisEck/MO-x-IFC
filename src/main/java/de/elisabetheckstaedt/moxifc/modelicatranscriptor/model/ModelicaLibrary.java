@@ -83,19 +83,7 @@ public class ModelicaLibrary {
         }
     }
 
-    void generatePackageHierarchyFromPackageList() {
-        List<String> mps_distinct = mps.stream()
-                .distinct()
-                .collect(Collectors.toList());
-        Iterator<String> it = mps_distinct.iterator();
-        while(it.hasNext()) {
-            String cur = it.next();
-            String[] teile = cur.split(".");
-            for (String teil : teile           ) {
-            //TODO
-            }
-            }
-        }
+
 
     void writeExtendsToTTL() {
         try {
@@ -121,14 +109,14 @@ public class ModelicaLibrary {
 
 
 
-    public void serializeAsTTL(String filename, String prefix, String sollstart, String serializingOption) {
+    public void serializeAsTTL(String filename, String prefix, String libraryRootName, String serializingOption) {
         this.prefix = prefix;
         try {
             FileWriter myWriter = new FileWriter(filename);
 
             writePrefixes(myWriter);
 
-            replaceRelativePaths(sollstart);
+            replaceRelativePaths(libraryRootName);
 
             for (ModelicaFile mf : mfs) {
                 for (MClass mk : mf.mks) {
@@ -169,12 +157,12 @@ public class ModelicaLibrary {
         return input;
     }
 
-    private void replaceRelativePaths(String sollstart) {
-        generateContainerHierarchyTree(sollstart);
+    private void replaceRelativePaths(String libraryRootName) {
+        generateContainerHierarchyTree(libraryRootName);
         for (ModelicaFile mf : mfs) {
             for (MClass mk : mf.mks) {
 //                mk.replaceRelativePaths("AixLib.", packageHierarchyRoot);
-                mk.replaceRelativePaths(sollstart, packageHierarchyRoot);
+                mk.replaceRelativePaths(libraryRootName, packageHierarchyRoot);
             }
         }
     }
@@ -189,6 +177,21 @@ public class ModelicaLibrary {
                     if (!rootName.equals(pathPart)) {
                     currentNode= currentNode.addChild(pathPart);}
                 }
+                currentNode = currentNode.addChild(mk.name); //also add models, not only package hierarchy
+            }
+        }
+    }
+
+    void generatePackageHierarchyFromPackageList() {
+        List<String> mps_distinct = mps.stream()
+                .distinct()
+                .collect(Collectors.toList());
+        Iterator<String> it = mps_distinct.iterator();
+        while(it.hasNext()) {
+            String cur = it.next();
+            String[] teile = cur.split(".");
+            for (String teil : teile           ) {
+                //TODO
             }
         }
     }

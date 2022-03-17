@@ -181,13 +181,13 @@ public class MClass {
             }
             zf += ";" + NEWLINE ;
             if (!mp.getStringComment().equals("")) {
-                zf += "\t" + " moont:stringComment \"" + maskSpecialCharacter(mp.getStringComment()) + "\"^^xsd:string;" + NEWLINE;
+                zf += "\t" + " moont:stringComment \"" + maskSpecialCharacter(cleanStringFromLineBreaks(mp.getStringComment())) + "\"^^xsd:string;" + NEWLINE;
             }
 
             if (mp.getModification().equals("")) {
                 zf = zf.concat("." + NEWLINE);
             } else {
-                zf += "\t" + " moont:modification \"" + maskSpecialCharacter(mp.getModification()) + "\"^^xsd:string." + NEWLINE;
+                zf += "\t" + " moont:modification \"" + maskSpecialCharacter(cleanStringFromLineBreaks(mp.getModification())) + "\"^^xsd:string." + NEWLINE;
             }
 //Achtung: wenn Zeile wieder rein, Semikolon in Vorzeile oder Subjekt ergänzen
             //            parameterString = parameterString.concat("\t rdfs:range " +"aix:" + mp.klasse + "." + NEWLINE);
@@ -213,12 +213,12 @@ public class MClass {
             if (mo.getModification().equals("")) {
                 String a = "";
             } else {
-                zf += "\t" + " moont:modification \"" + maskSpecialCharacter(mo.getModification()) + "\"^^xsd:string;" + NEWLINE;
+                zf += "\t" + " moont:modification \"" + maskSpecialCharacter(cleanStringFromLineBreaks(mo.getModification())) + "\"^^xsd:string;" + NEWLINE;
             }
             if (mo.getStringComment().equals("")) {
                 String a = "";
             } else {
-                zf += "\t" + " moont:stringComment \"" + maskSpecialCharacter(mo.getStringComment()) + "\"^^xsd:string;" + NEWLINE;
+                zf += "\t" + " moont:stringComment \"" + maskSpecialCharacter(cleanStringFromLineBreaks(mo.getStringComment())) + "\"^^xsd:string;" + NEWLINE;
             }
             if (mo.mClass.name.equals("")) { //wenn es keine
                 continue; //TODO kommt bei redeclare replaceable
@@ -374,12 +374,13 @@ public class MClass {
     /*        //ausführbare Modelle und Packages werden als Instanzen modelliert
             if (parentsIcons.contains("Modelica.Icons.Example") | getTypeAsMoont().equals("MPackage") ) {*/
         if (container.isBlank()) {
-            zf = zf.concat(owlPrefix +":" + name + " rdfs:subClassOf moont:" + getTypeAsMoont() );
+            zf = zf.concat(owlPrefix +":" + name + " rdfs:subClassOf moont:" + getTypeAsMoont());
         } else {
-            zf = zf.concat(owlPrefix +":" + container + "." + name + " rdfs:subClassOf moont:" + getTypeAsMoont() + ";" + NEWLINE );
+            zf = zf.concat(owlPrefix +":" + container + "." + name + " rdfs:subClassOf moont:" + getTypeAsMoont());
         }
         if (!description.equals("")) {
-            zf = zf.concat("\t moont:stringComment " + description + "^^xsd:string;" + NEWLINE);
+            zf = zf.concat(";" + NEWLINE);
+            zf = zf.concat("\t moont:stringComment " + cleanStringFromLineBreaks(description) + "^^xsd:string");
         }
 /*        // alles andere wird als Subclass modelliert
         } else {
@@ -391,6 +392,7 @@ public class MClass {
             zf = zf.concat("\t" + " rdf:type owl:Class;"+ NEWLINE);
         }*/
         if (!container.isBlank()) {
+            zf = zf.concat(";" + NEWLINE);
             zf = zf.concat("\t" + " moont:containedIn " + owlPrefix + ":" + container);
         }
         if (type_prefix.isEmpty()) {
@@ -408,6 +410,13 @@ public class MClass {
         return zf;
     }
 
+    String cleanStringFromLineBreaks(String input) {
+        input = input.replace("\r\n", "_");
+        input = input.replace("\n", "_");
+        input = input.replace("\r", "_");
+        return input;
+
+    }
 
     /**
      * extends
@@ -620,30 +629,37 @@ public class MClass {
             }
     }
 
+    /**
+     *
+     * @param node Vater
+     * @param name Name des Kindes
+     * @return true, wenn der Knoten ein Kind dieses Namens hat
+     * @throws NullPointerException
+     */
     private boolean hasChildWithName(TreeNode<String> node, String name) throws NullPointerException{
         return node.getChildren().stream().anyMatch((TreeNode<String> t) -> t.getData().equals(name));
     }
 
-    public void replaceRelativePaths(String sollstart, TreeNode<String> packageTree) {
+    public void replaceRelativePaths(String libraryRootName, TreeNode<String> packageTree) {
         for (MParameterComponent mp :  parameters) {
-            mp.setTypeSpecifier(replace(sollstart, packageTree, mp.getTypeSpecifier()));
+            mp.setTypeSpecifier(replace(libraryRootName, packageTree, mp.getTypeSpecifier()));
         }
         for (ModelicaObject mp :  components) {
-            mp.setTypeSpecifier(replace(sollstart, packageTree, mp.getTypeSpecifier()));
+            mp.setTypeSpecifier(replace(libraryRootName, packageTree, mp.getTypeSpecifier()));
         }
         Set<String> newParents = new HashSet<>();
         for (String mp :  parents) {
-            String newParentName = replace(sollstart, packageTree, mp);
+            String newParentName = replace(libraryRootName, packageTree, mp);
             newParents.add(newParentName);
         }
         parents = newParents;
         Set<ModelicaObject> components = new HashSet<>();
     }
 
-    private String replace(String sollstart, TreeNode<String> packageTree, String typeSpecifier) {
-        if (typeSpecifier.startsWith(sollstart) || //TODO: eigentlich müssten hier die Imports behandelt werden, statt dieser pauschalen Lösung
+    private String replace(String libraryRootName, TreeNode<String> packageTree, String typeSpecifier) {
+        if (typeSpecifier.startsWith(libraryRootName) || //TODO: eigentlich müssten hier die Imports behandelt werden, statt dieser pauschalen Lösung
                 typeSpecifier.startsWith("Medium") ||
-                typeSpecifier.startsWith("SI") ||
+                typeSpecifier.startsWith("SI") || //weiterhin gesehen SIunits
                 typeSpecifier.startsWith("NonSI") ||
                 typeSpecifier.startsWith("SDF") ||
                 typeSpecifier.startsWith("Modelica")) {
@@ -656,32 +672,37 @@ public class MClass {
         } else {
             String newTypeSpecifier = "";
             String vorpfad = "";
-            String[] nameparts = typeSpecifier.split("\\.",0);
-           if (typeSpecifier.contains(".")) {
-               if (container.equals(sollstart)) { //vorher abfangen, da ansonsten die folgende if-Bedingung einen null-pointer bringt
-                   newTypeSpecifier = container + "." + typeSpecifier;
-               }
-               else if (hasChildWithName(packageTree.getIndex().get(container), nameparts[0])) { //erstmal "nach unten" suchen
-                   newTypeSpecifier = container + "." + typeSpecifier;
-               } else {
-                   try {
-                       vorpfad = findParentNodeOfSearchString(packageTree, container, nameparts[0]);
-                       if (vorpfad.equals("")) { //wenn während der Suche nach oben die Wurzel erreicht wird, kommt dieser leere String zurück und es findet kein Ersetzen statt
-                           newTypeSpecifier = typeSpecifier;
-                       } else {
-                           newTypeSpecifier = vorpfad + "." + typeSpecifier;
-                       }
-                   }
-                   catch (Exception e) { //wenn Pfad nicht gefunden wird (dann ist es wahrscheinlich eine Komponente, die das Modell erbt)
-                       newTypeSpecifier = typeSpecifier;
-                   }
-               }
-           } else {
-               newTypeSpecifier = container + "." + typeSpecifier;
-           }
-           return newTypeSpecifier;
-
+            String[] nameparts = typeSpecifier.split("\\.", 0);
+            // wenn es bereits ein absoluter Pfad ist - vorher abfangen, da ansonsten die folgende if-Bedingung einen null-pointer bringt
+            if (container.equals(libraryRootName)) {
+                newTypeSpecifier = container + "." + typeSpecifier;
+            // wenn es ein Geschwister der aktuellen Klasse ist
+            } else if (hasChildWithName(packageTree.getIndex().get(container), nameparts[0])) {
+                newTypeSpecifier = container + "." + typeSpecifier;
+            //wenn es ein Kinder aktuellen Klasse ist (lokal definierte Klasse)
+            } else if (hasChildWithName(packageTree.getIndex().get(container+"."+name), nameparts[0])) {
+                newTypeSpecifier = container + "." + name + "." + typeSpecifier;
+            // Vorfahren suchen
+            } else {
+                try {
+                    vorpfad = findParentNodeOfSearchString(packageTree, container, nameparts[0]);
+                    //wenn während der Suche nach oben die Wurzel erreicht wird, kommt dieser leere String zurück
+                    //FIXME das ist dann ein nicht behandelter Import --> erstmal kennzeichnen, später fixen
+                    if (vorpfad.equals("")) {
+                        newTypeSpecifier = "IMPORT." + typeSpecifier;
+                    //Normalfall: wenn es beim Suchen nach oben gefunden wird
+                    } else {
+                        newTypeSpecifier = vorpfad + "." + typeSpecifier;
+                    }
+                }
+                //wenn Pfad nicht gefunden wird (dann ist es wahrscheinlich eine Komponente, die das Modell erbt)
+                catch (Exception e) {
+                    newTypeSpecifier = typeSpecifier;
+                }
+            }
+            return newTypeSpecifier;
         }
+
     }
 
 

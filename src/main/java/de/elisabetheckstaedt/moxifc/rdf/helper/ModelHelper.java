@@ -171,6 +171,8 @@ public class ModelHelper {
                         zeilen.append(soln.get(colName).asLiteral().getString() + "\t");
                     } catch (LiteralRequiredException e) {
                         zeilen.append(soln.get(colName).toString() + "\t");
+                    } catch (NullPointerException f) { //wenn optionales Variable, die in dem Fall nicht da ist
+                        zeilen.append("\t");
                     }
                 }
                 zeilen.append(System.lineSeparator());
