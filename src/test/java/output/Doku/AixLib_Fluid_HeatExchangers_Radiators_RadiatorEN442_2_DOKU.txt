@@ -1,0 +1,68 @@
+aix:AixLib.Fluid.HeatExchangers.Radiators.RadiatorEN442_2
+
+Ergebniszeilen: 1
+comment	
+Dynamic radiator for space heating	
+Ergebniszeilen: 1
+
+Ergebniszeilen: 4
+ancestor	
+AixLib.Fluid.HeatExchangers.Radiators.RadiatorEN442_2	
+AixLib.Fluid.Interfaces.LumpedVolumeDeclarations	
+AixLib.Fluid.Interfaces.PartialTwoPort	
+AixLib.Fluid.Interfaces.PartialTwoPortInterface	
+Ergebniszeilen: 4
+
+Ergebniszeilen: 37
+ancestor	parameter	type	comment	modification	
+AixLib.Fluid.HeatExchangers.Radiators.RadiatorEN442_2	AixLib.Fluid.HeatExchangers.Radiators.RadiatorEN442_2.TAir_nominal	Modelica.SIunits.Temperature	Air temperature at nominal condition	_gleich_293.15	
+AixLib.Fluid.HeatExchangers.Radiators.RadiatorEN442_2	AixLib.Fluid.HeatExchangers.Radiators.RadiatorEN442_2.mDry	Modelica.SIunits.Mass	Dry mass of radiator that will be lumped to water heat capacity	_gleich_0.0263*abs(Q_flow_nominal)	
+AixLib.Fluid.HeatExchangers.Radiators.RadiatorEN442_2	AixLib.Fluid.HeatExchangers.Radiators.RadiatorEN442_2.n	Real	Exponent for heat transfer	_gleich_1.24	
+AixLib.Fluid.HeatExchangers.Radiators.RadiatorEN442_2	AixLib.Fluid.HeatExchangers.Radiators.RadiatorEN442_2.deltaM	Real	Fraction of nominal mass flow rate where transition to turbulent occurs	(min_gleich_0.01)_gleich_0.3	
+AixLib.Fluid.HeatExchangers.Radiators.RadiatorEN442_2	AixLib.Fluid.HeatExchangers.Radiators.RadiatorEN442_2.fraRad	Real	Fraction radiant heat transfer	(min_gleich_0,max_gleich_1)_gleich_0.35	
+AixLib.Fluid.HeatExchangers.Radiators.RadiatorEN442_2	AixLib.Fluid.HeatExchangers.Radiators.RadiatorEN442_2.Q_flow_nominal	Modelica.SIunits.Power	Nominal heating power (positive for heating)		
+AixLib.Fluid.HeatExchangers.Radiators.RadiatorEN442_2	AixLib.Fluid.HeatExchangers.Radiators.RadiatorEN442_2.QEle_flow_nominal	Modelica.SIunits.HeatFlowRate	Nominal heating power of each element	(eachfixed_gleich_false,eachstart_gleich_Q_flow_nominal/nEle)	
+AixLib.Fluid.HeatExchangers.Radiators.RadiatorEN442_2	AixLib.Fluid.HeatExchangers.Radiators.RadiatorEN442_2.nEle	Integer	Number of elements used in the discretization	(min_gleich_1)_gleich_5	
+AixLib.Fluid.HeatExchangers.Radiators.RadiatorEN442_2	AixLib.Fluid.HeatExchangers.Radiators.RadiatorEN442_2.k	Real	Parameter that is used to compute QEle_flow_nominal for heating or cooling mode	_gleich_ifT_b_nominal>TAir_nominalthen1else-1	
+AixLib.Fluid.HeatExchangers.Radiators.RadiatorEN442_2	AixLib.Fluid.HeatExchangers.Radiators.RadiatorEN442_2.dp_nominal	Modelica.SIunits.PressureDifference	Pressure drop at nominal mass flow rate	(displayUnit_gleich_"Pa")_gleich_0	
+AixLib.Fluid.HeatExchangers.Radiators.RadiatorEN442_2	AixLib.Fluid.HeatExchangers.Radiators.RadiatorEN442_2.TRad_nominal	Modelica.SIunits.Temperature	Radiative temperature at nominal condition	_gleich_TAir_nominal	
+AixLib.Fluid.HeatExchangers.Radiators.RadiatorEN442_2	AixLib.Fluid.HeatExchangers.Radiators.RadiatorEN442_2.cp_nominal	Modelica.SIunits.SpecificHeatCapacity	Specific heat capacity at nominal conditions	_gleich_Medium.specificHeatCapacityCp(Medium.setState_pTX(Medium.p_default,T_a_nominal,Medium.X_default))	
+AixLib.Fluid.HeatExchangers.Radiators.RadiatorEN442_2	AixLib.Fluid.HeatExchangers.Radiators.RadiatorEN442_2.dTCon_nominal	Modelica.SIunits.TemperatureDifference	Temperature difference for convective heat transfer at nominal conditions	(eachfixed_gleich_false,start_gleich_{T_a_nominal-i/nEle*(T_a_nominal-T_b_nominal)-TAir_nominalforiin1:nEle})	
+AixLib.Fluid.HeatExchangers.Radiators.RadiatorEN442_2	AixLib.Fluid.HeatExchangers.Radiators.RadiatorEN442_2.dTRad_nominal	Modelica.SIunits.TemperatureDifference	Temperature difference for radiative heat transfer at nominal conditions	(eachfixed_gleich_false,start_gleich_{T_a_nominal-i/nEle*(T_a_nominal-T_b_nominal)-TRad_nominalforiin1:nEle})	
+AixLib.Fluid.HeatExchangers.Radiators.RadiatorEN442_2	AixLib.Fluid.HeatExchangers.Radiators.RadiatorEN442_2.UAEle	Modelica.SIunits.ThermalConductance	UA value at nominal condition for each element	(fixed_gleich_false,min_gleich_0,start_gleich_Q_flow_nominal/((T_a_nominal+T_b_nominal)/2-((1-fraRad)*TAir_nominal+fraRad*TRad_nominal))/nEle)	
+AixLib.Fluid.HeatExchangers.Radiators.RadiatorEN442_2	AixLib.Fluid.HeatExchangers.Radiators.RadiatorEN442_2.T_a_nominal	Modelica.SIunits.Temperature	Water inlet temperature at nominal condition		
+AixLib.Fluid.HeatExchangers.Radiators.RadiatorEN442_2	AixLib.Fluid.HeatExchangers.Radiators.RadiatorEN442_2.T_b_nominal	Modelica.SIunits.Temperature	Water outlet temperature at nominal condition		
+AixLib.Fluid.HeatExchangers.Radiators.RadiatorEN442_2	AixLib.Fluid.HeatExchangers.Radiators.RadiatorEN442_2.TWat_nominal	Modelica.SIunits.Temperature	Water temperature in each element at nominal conditions	(eachfixed_gleich_false,start_gleich_{T_a_nominal-i/nEle*(T_a_nominal-T_b_nominal)foriin1:nEle})	
+AixLib.Fluid.HeatExchangers.Radiators.RadiatorEN442_2	AixLib.Fluid.HeatExchangers.Radiators.RadiatorEN442_2.VWat	Modelica.SIunits.Volume	Water volume of radiator	_gleich_5.8E-6*abs(Q_flow_nominal)	
+AixLib.Fluid.HeatExchangers.Radiators.RadiatorEN442_2	AixLib.Fluid.HeatExchangers.Radiators.RadiatorEN442_2.linearized	Boolean	_gleich_ true, use linear relation between m_flow and dp for any flow rate	_gleich_false	
+AixLib.Fluid.HeatExchangers.Radiators.RadiatorEN442_2	AixLib.Fluid.HeatExchangers.Radiators.RadiatorEN442_2.from_dp	Boolean	_gleich_ true, use m_flow _gleich_ f(dp) else dp _gleich_ f(m_flow)	_gleich_false	
+AixLib.Fluid.Interfaces.LumpedVolumeDeclarations	AixLib.Fluid.Interfaces.LumpedVolumeDeclarations.mSenFac	Real	Factor for scaling the sensible thermal mass of the volume		
+AixLib.Fluid.Interfaces.LumpedVolumeDeclarations	AixLib.Fluid.Interfaces.LumpedVolumeDeclarations.C_nominal	Medium.ExtraProperty	Nominal value of trace substances. (Set to typical order of magnitude.)		
+AixLib.Fluid.Interfaces.LumpedVolumeDeclarations	AixLib.Fluid.Interfaces.LumpedVolumeDeclarations.X_start	Medium.MassFraction	Start value of mass fractions m_i/m		
+AixLib.Fluid.Interfaces.LumpedVolumeDeclarations	AixLib.Fluid.Interfaces.LumpedVolumeDeclarations.p_start	Medium.AbsolutePressure	Start value of pressure		
+AixLib.Fluid.Interfaces.LumpedVolumeDeclarations	AixLib.Fluid.Interfaces.LumpedVolumeDeclarations.T_start	Medium.Temperature	Start value of temperature		
+AixLib.Fluid.Interfaces.LumpedVolumeDeclarations	AixLib.Fluid.Interfaces.LumpedVolumeDeclarations.C_start	Medium.ExtraProperty	Start value of trace substances		
+AixLib.Fluid.Interfaces.LumpedVolumeDeclarations	AixLib.Fluid.Interfaces.LumpedVolumeDeclarations.energyDynamics	Modelica.Fluid.Types.Dynamics	Type of energy balance: dynamic (3 initialization options) or steady state		
+AixLib.Fluid.Interfaces.LumpedVolumeDeclarations	AixLib.Fluid.Interfaces.LumpedVolumeDeclarations.substanceDynamics	Modelica.Fluid.Types.Dynamics	Type of independent mass fraction balance: dynamic (3 initialization options) or steady state		
+AixLib.Fluid.Interfaces.LumpedVolumeDeclarations	AixLib.Fluid.Interfaces.LumpedVolumeDeclarations.massDynamics	Modelica.Fluid.Types.Dynamics	Type of mass balance: dynamic (3 initialization options) or steady state		
+AixLib.Fluid.Interfaces.LumpedVolumeDeclarations	AixLib.Fluid.Interfaces.LumpedVolumeDeclarations.traceDynamics	Modelica.Fluid.Types.Dynamics	Type of trace substance balance: dynamic (3 initialization options) or steady state		
+AixLib.Fluid.Interfaces.PartialTwoPort	AixLib.Fluid.Interfaces.PartialTwoPort.allowFlowReversal	Boolean	_gleich_ false to simplify equations, assuming, but not enforcing, no flow reversal		
+AixLib.Fluid.Interfaces.PartialTwoPortInterface	AixLib.Fluid.Interfaces.PartialTwoPortInterface.m_flow_nominal	Modelica.SIunits.MassFlowRate	Nominal mass flow rate		
+AixLib.Fluid.Interfaces.PartialTwoPortInterface	AixLib.Fluid.Interfaces.PartialTwoPortInterface.m_flow_small	Modelica.SIunits.MassFlowRate	Small mass flow rate for regularization of zero flow	(min_gleich_0)_gleich_1E-4*abs(m_flow_nominal)	
+AixLib.Fluid.Interfaces.PartialTwoPortInterface	AixLib.Fluid.Interfaces.PartialTwoPortInterface._dp_start	Modelica.SIunits.PressureDifference	Start value for dp, used to avoid a warning if not set in dp, and to avoid dp.start in parameter window	(displayUnit_gleich_"Pa")_gleich_0	
+AixLib.Fluid.Interfaces.PartialTwoPortInterface	AixLib.Fluid.Interfaces.PartialTwoPortInterface._m_flow_start	Modelica.SIunits.MassFlowRate	Start value for m_flow, used to avoid a warning if not set in m_flow, and to avoid m_flow.start in parameter window	_gleich_0	
+AixLib.Fluid.Interfaces.PartialTwoPortInterface	AixLib.Fluid.Interfaces.PartialTwoPortInterface.show_T	Boolean	_gleich_ true, if actual temperature at port is computed	_gleich_false	
+Ergebniszeilen: 37
+
+Ergebniszeilen: 8
+ancestor	port	klasse	
+AixLib.Fluid.HeatExchangers.Radiators.RadiatorEN442_2	AixLib.Fluid.HeatExchangers.Radiators.RadiatorEN442_2.heatPortCon	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.HeatExchangers.Radiators.RadiatorEN442_2	AixLib.Fluid.HeatExchangers.Radiators.RadiatorEN442_2.heatPortRad	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.HeatExchangers.Radiators.RadiatorEN442_2	AixLib.Fluid.HeatExchangers.Radiators.RadiatorEN442_2.heatPortCon	Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_a	
+AixLib.Fluid.HeatExchangers.Radiators.RadiatorEN442_2	AixLib.Fluid.HeatExchangers.Radiators.RadiatorEN442_2.heatPortRad	Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_a	
+AixLib.Fluid.Interfaces.PartialTwoPort	AixLib.Fluid.Interfaces.PartialTwoPort.port_a	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.Interfaces.PartialTwoPort	AixLib.Fluid.Interfaces.PartialTwoPort.port_b	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.Interfaces.PartialTwoPort	AixLib.Fluid.Interfaces.PartialTwoPort.port_a	Modelica.Fluid.Interfaces.FluidPort_a	
+AixLib.Fluid.Interfaces.PartialTwoPort	AixLib.Fluid.Interfaces.PartialTwoPort.port_b	Modelica.Fluid.Interfaces.FluidPort_b	
+Ergebniszeilen: 8
+

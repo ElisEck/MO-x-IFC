@@ -1,0 +1,37 @@
+mbl:Buildings.Fluid.Storage.ExpansionVessel
+
+Ergebniszeilen: 1
+comment	
+Expansion vessel with fixed pressure	
+Ergebniszeilen: 1
+
+Ergebniszeilen: 2
+ancestor	
+Buildings.Fluid.Interfaces.LumpedVolumeDeclarations	
+Buildings.Fluid.Storage.ExpansionVessel	
+Ergebniszeilen: 2
+
+Ergebniszeilen: 14
+ancestor	parameter	type	comment	modification	
+Buildings.Fluid.Interfaces.LumpedVolumeDeclarations	Buildings.Fluid.Interfaces.LumpedVolumeDeclarations.mSenFac	Real	Factor for scaling the sensible thermal mass of the volume		
+Buildings.Fluid.Interfaces.LumpedVolumeDeclarations	Buildings.Fluid.Interfaces.LumpedVolumeDeclarations.C_nominal	Medium.ExtraProperty	Nominal value of trace substances. (Set to typical order of magnitude.)		
+Buildings.Fluid.Interfaces.LumpedVolumeDeclarations	Buildings.Fluid.Interfaces.LumpedVolumeDeclarations.X_start	Medium.MassFraction	Start value of mass fractions m_i/m		
+Buildings.Fluid.Interfaces.LumpedVolumeDeclarations	Buildings.Fluid.Interfaces.LumpedVolumeDeclarations.p_start	Medium.AbsolutePressure	Start value of pressure		
+Buildings.Fluid.Interfaces.LumpedVolumeDeclarations	Buildings.Fluid.Interfaces.LumpedVolumeDeclarations.T_start	Medium.Temperature	Start value of temperature		
+Buildings.Fluid.Interfaces.LumpedVolumeDeclarations	Buildings.Fluid.Interfaces.LumpedVolumeDeclarations.C_start	Medium.ExtraProperty	Start value of trace substances		
+Buildings.Fluid.Interfaces.LumpedVolumeDeclarations	Buildings.Fluid.Interfaces.LumpedVolumeDeclarations.energyDynamics	Modelica.Fluid.Types.Dynamics	Type of energy balance: dynamic (3 initialization options) or steady state		
+Buildings.Fluid.Interfaces.LumpedVolumeDeclarations	Buildings.Fluid.Interfaces.LumpedVolumeDeclarations.substanceDynamics	Modelica.Fluid.Types.Dynamics	Type of independent mass fraction balance: dynamic (3 initialization options) or steady state		
+Buildings.Fluid.Interfaces.LumpedVolumeDeclarations	Buildings.Fluid.Interfaces.LumpedVolumeDeclarations.massDynamics	Modelica.Fluid.Types.Dynamics	Type of mass balance: dynamic (3 initialization options) or steady state		
+Buildings.Fluid.Interfaces.LumpedVolumeDeclarations	Buildings.Fluid.Interfaces.LumpedVolumeDeclarations.traceDynamics	Modelica.Fluid.Types.Dynamics	Type of trace substance balance: dynamic (3 initialization options) or steady state		
+Buildings.Fluid.Storage.ExpansionVessel	Buildings.Fluid.Storage.ExpansionVessel.p	Modelica.SIunits.Pressure	Constant pressure of the expansion vessel	_gleich_Medium.p_default	
+Buildings.Fluid.Storage.ExpansionVessel	Buildings.Fluid.Storage.ExpansionVessel.rho_start	Modelica.SIunits.Density	Density, used to compute start and guess values	_gleich_Medium.density(state_gleich_state_start)	
+Buildings.Fluid.Storage.ExpansionVessel	Buildings.Fluid.Storage.ExpansionVessel.state_start	Medium.ThermodynamicState	Medium state at start values	_gleich_Medium.setState_pTX(T_gleich_T_start,p_gleich_p_start,X_gleich_X_start_1:Medium.nXi_)	
+Buildings.Fluid.Storage.ExpansionVessel	Buildings.Fluid.Storage.ExpansionVessel.V_start	Modelica.SIunits.Volume	Volume of liquid stored in the vessel at the start of the simulation	(start_gleich_1)	
+Ergebniszeilen: 14
+
+Ergebniszeilen: 2
+ancestor	port	klasse	
+Buildings.Fluid.Storage.ExpansionVessel	Buildings.Fluid.Storage.ExpansionVessel.port_a	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+Buildings.Fluid.Storage.ExpansionVessel	Buildings.Fluid.Storage.ExpansionVessel.port_a	Modelica.Fluid.Interfaces.FluidPort_a	
+Ergebniszeilen: 2
+

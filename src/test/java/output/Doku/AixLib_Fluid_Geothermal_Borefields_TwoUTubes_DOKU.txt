@@ -1,0 +1,56 @@
+aix:AixLib.Fluid.Geothermal.Borefields.TwoUTubes
+
+Ergebniszeilen: 1
+comment	
+Borefield model containing double U-tube boreholes	
+Ergebniszeilen: 1
+
+Ergebniszeilen: 5
+ancestor	
+AixLib.Fluid.Geothermal.Borefields.BaseClasses.PartialBorefield	
+AixLib.Fluid.Geothermal.Borefields.TwoUTubes	
+AixLib.Fluid.Interfaces.PartialTwoPort	
+AixLib.Fluid.Interfaces.PartialTwoPortInterface	
+AixLib.Fluid.Interfaces.TwoPortFlowResistanceParameters	
+Ergebniszeilen: 5
+
+Ergebniszeilen: 26
+ancestor	parameter	type	comment	modification	
+AixLib.Fluid.Geothermal.Borefields.BaseClasses.PartialBorefield	AixLib.Fluid.Geothermal.Borefields.BaseClasses.PartialBorefield.borFieDat	AixLib.Fluid.Geothermal.Borefields.Data.Borefield.Template	Borefield data		
+AixLib.Fluid.Geothermal.Borefields.BaseClasses.PartialBorefield	AixLib.Fluid.Geothermal.Borefields.BaseClasses.PartialBorefield.z0	Modelica.SIunits.Height	Depth below which the temperature gradient starts		
+AixLib.Fluid.Geothermal.Borefields.BaseClasses.PartialBorefield	AixLib.Fluid.Geothermal.Borefields.BaseClasses.PartialBorefield.z	Modelica.SIunits.Height	Distance from the surface to the considered segment		
+AixLib.Fluid.Geothermal.Borefields.BaseClasses.PartialBorefield	AixLib.Fluid.Geothermal.Borefields.BaseClasses.PartialBorefield.TExt0_start	Modelica.SIunits.Temperature	Initial far field temperature		
+AixLib.Fluid.Geothermal.Borefields.BaseClasses.PartialBorefield	AixLib.Fluid.Geothermal.Borefields.BaseClasses.PartialBorefield.nCel	Integer	Number of cells per aggregation level		
+AixLib.Fluid.Geothermal.Borefields.BaseClasses.PartialBorefield	AixLib.Fluid.Geothermal.Borefields.BaseClasses.PartialBorefield.nSeg	Integer	Number of segments to use in vertical discretization of the boreholes		
+AixLib.Fluid.Geothermal.Borefields.BaseClasses.PartialBorefield	AixLib.Fluid.Geothermal.Borefields.BaseClasses.PartialBorefield.dynFil	Boolean	Set to false to remove the dynamics of the filling material.		
+AixLib.Fluid.Geothermal.Borefields.BaseClasses.PartialBorefield	AixLib.Fluid.Geothermal.Borefields.BaseClasses.PartialBorefield.forceGFunCalc	Boolean	Set to true to force the thermal response to be calculated at the start instead of checking whether this has been pre-computed		
+AixLib.Fluid.Geothermal.Borefields.BaseClasses.PartialBorefield	AixLib.Fluid.Geothermal.Borefields.BaseClasses.PartialBorefield.TFlu_start	Modelica.SIunits.Temperature	Start value of fluid temperature		
+AixLib.Fluid.Geothermal.Borefields.BaseClasses.PartialBorefield	AixLib.Fluid.Geothermal.Borefields.BaseClasses.PartialBorefield.TGro_start	Modelica.SIunits.Temperature	Start value of grout temperature		
+AixLib.Fluid.Geothermal.Borefields.BaseClasses.PartialBorefield	AixLib.Fluid.Geothermal.Borefields.BaseClasses.PartialBorefield.p_start	Medium.AbsolutePressure	Start value of pressure		
+AixLib.Fluid.Geothermal.Borefields.BaseClasses.PartialBorefield	AixLib.Fluid.Geothermal.Borefields.BaseClasses.PartialBorefield.TExt_start	Modelica.SIunits.Temperature	Temperature of the undisturbed ground		
+AixLib.Fluid.Geothermal.Borefields.BaseClasses.PartialBorefield	AixLib.Fluid.Geothermal.Borefields.BaseClasses.PartialBorefield.tLoaAgg	Modelica.SIunits.Time	Time resolution of load aggregation		
+AixLib.Fluid.Geothermal.Borefields.BaseClasses.PartialBorefield	AixLib.Fluid.Geothermal.Borefields.BaseClasses.PartialBorefield.energyDynamics	Modelica.Fluid.Types.Dynamics	Type of energy balance: dynamic (3 initialization options) or steady state		
+AixLib.Fluid.Geothermal.Borefields.BaseClasses.PartialBorefield	AixLib.Fluid.Geothermal.Borefields.BaseClasses.PartialBorefield.dT_dz	Real	Vertical temperature gradient of the undisturbed soil for h below z0		
+AixLib.Fluid.Interfaces.PartialTwoPort	AixLib.Fluid.Interfaces.PartialTwoPort.allowFlowReversal	Boolean	_gleich_ false to simplify equations, assuming, but not enforcing, no flow reversal		
+AixLib.Fluid.Interfaces.PartialTwoPortInterface	AixLib.Fluid.Interfaces.PartialTwoPortInterface.m_flow_nominal	Modelica.SIunits.MassFlowRate	Nominal mass flow rate		
+AixLib.Fluid.Interfaces.PartialTwoPortInterface	AixLib.Fluid.Interfaces.PartialTwoPortInterface.m_flow_small	Modelica.SIunits.MassFlowRate	Small mass flow rate for regularization of zero flow	(min_gleich_0)_gleich_1E-4*abs(m_flow_nominal)	
+AixLib.Fluid.Interfaces.PartialTwoPortInterface	AixLib.Fluid.Interfaces.PartialTwoPortInterface._dp_start	Modelica.SIunits.PressureDifference	Start value for dp, used to avoid a warning if not set in dp, and to avoid dp.start in parameter window	(displayUnit_gleich_"Pa")_gleich_0	
+AixLib.Fluid.Interfaces.PartialTwoPortInterface	AixLib.Fluid.Interfaces.PartialTwoPortInterface._m_flow_start	Modelica.SIunits.MassFlowRate	Start value for m_flow, used to avoid a warning if not set in m_flow, and to avoid m_flow.start in parameter window	_gleich_0	
+AixLib.Fluid.Interfaces.PartialTwoPortInterface	AixLib.Fluid.Interfaces.PartialTwoPortInterface.show_T	Boolean	_gleich_ true, if actual temperature at port is computed	_gleich_false	
+AixLib.Fluid.Interfaces.TwoPortFlowResistanceParameters	AixLib.Fluid.Interfaces.TwoPortFlowResistanceParameters.deltaM	Real	Fraction of nominal flow rate where flow transitions to laminar	_gleich_0.1	
+AixLib.Fluid.Interfaces.TwoPortFlowResistanceParameters	AixLib.Fluid.Interfaces.TwoPortFlowResistanceParameters.dp_nominal	Modelica.SIunits.PressureDifference	Pressure difference	(min_gleich_0,displayUnit_gleich_"Pa")	
+AixLib.Fluid.Interfaces.TwoPortFlowResistanceParameters	AixLib.Fluid.Interfaces.TwoPortFlowResistanceParameters.linearizeFlowResistance	Boolean	_gleich_ true, use linear relation between m_flow and dp for any flow rate	_gleich_false	
+AixLib.Fluid.Interfaces.TwoPortFlowResistanceParameters	AixLib.Fluid.Interfaces.TwoPortFlowResistanceParameters.from_dp	Boolean	_gleich_ true, use m_flow _gleich_ f(dp) else dp _gleich_ f(m_flow)	_gleich_false	
+AixLib.Fluid.Interfaces.TwoPortFlowResistanceParameters	AixLib.Fluid.Interfaces.TwoPortFlowResistanceParameters.computeFlowResistance	Boolean	_gleich_true, compute flow resistance. Set to false to assume no friction	_gleich_true	
+Ergebniszeilen: 26
+
+Ergebniszeilen: 6
+ancestor	port	klasse	
+AixLib.Fluid.Geothermal.Borefields.BaseClasses.PartialBorefield	AixLib.Fluid.Geothermal.Borefields.BaseClasses.PartialBorefield.TBorAve	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.Geothermal.Borefields.BaseClasses.PartialBorefield	AixLib.Fluid.Geothermal.Borefields.BaseClasses.PartialBorefield.TBorAve	Modelica.Blocks.Interfaces.RealOutput	
+AixLib.Fluid.Interfaces.PartialTwoPort	AixLib.Fluid.Interfaces.PartialTwoPort.port_a	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.Interfaces.PartialTwoPort	AixLib.Fluid.Interfaces.PartialTwoPort.port_b	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.Interfaces.PartialTwoPort	AixLib.Fluid.Interfaces.PartialTwoPort.port_a	Modelica.Fluid.Interfaces.FluidPort_a	
+AixLib.Fluid.Interfaces.PartialTwoPort	AixLib.Fluid.Interfaces.PartialTwoPort.port_b	Modelica.Fluid.Interfaces.FluidPort_b	
+Ergebniszeilen: 6
+

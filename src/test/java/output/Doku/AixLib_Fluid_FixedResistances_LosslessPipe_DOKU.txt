@@ -1,0 +1,33 @@
+aix:AixLib.Fluid.FixedResistances.LosslessPipe
+
+Ergebniszeilen: 1
+comment	
+Pipe with no flow friction and no heat transfer	
+Ergebniszeilen: 1
+
+Ergebniszeilen: 3
+ancestor	
+AixLib.Fluid.FixedResistances.LosslessPipe	
+AixLib.Fluid.Interfaces.PartialTwoPort	
+AixLib.Fluid.Interfaces.PartialTwoPortInterface	
+Ergebniszeilen: 3
+
+Ergebniszeilen: 7
+ancestor	parameter	type	comment	modification	
+AixLib.Fluid.FixedResistances.LosslessPipe	AixLib.Fluid.FixedResistances.LosslessPipe.from_dp	Boolean	Used to satisfy replaceable models	_gleich_true	
+AixLib.Fluid.Interfaces.PartialTwoPort	AixLib.Fluid.Interfaces.PartialTwoPort.allowFlowReversal	Boolean	_gleich_ false to simplify equations, assuming, but not enforcing, no flow reversal		
+AixLib.Fluid.Interfaces.PartialTwoPortInterface	AixLib.Fluid.Interfaces.PartialTwoPortInterface.m_flow_nominal	Modelica.SIunits.MassFlowRate	Nominal mass flow rate		
+AixLib.Fluid.Interfaces.PartialTwoPortInterface	AixLib.Fluid.Interfaces.PartialTwoPortInterface.m_flow_small	Modelica.SIunits.MassFlowRate	Small mass flow rate for regularization of zero flow	(min_gleich_0)_gleich_1E-4*abs(m_flow_nominal)	
+AixLib.Fluid.Interfaces.PartialTwoPortInterface	AixLib.Fluid.Interfaces.PartialTwoPortInterface._dp_start	Modelica.SIunits.PressureDifference	Start value for dp, used to avoid a warning if not set in dp, and to avoid dp.start in parameter window	(displayUnit_gleich_"Pa")_gleich_0	
+AixLib.Fluid.Interfaces.PartialTwoPortInterface	AixLib.Fluid.Interfaces.PartialTwoPortInterface._m_flow_start	Modelica.SIunits.MassFlowRate	Start value for m_flow, used to avoid a warning if not set in m_flow, and to avoid m_flow.start in parameter window	_gleich_0	
+AixLib.Fluid.Interfaces.PartialTwoPortInterface	AixLib.Fluid.Interfaces.PartialTwoPortInterface.show_T	Boolean	_gleich_ true, if actual temperature at port is computed	_gleich_false	
+Ergebniszeilen: 7
+
+Ergebniszeilen: 4
+ancestor	port	klasse	
+AixLib.Fluid.Interfaces.PartialTwoPort	AixLib.Fluid.Interfaces.PartialTwoPort.port_a	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.Interfaces.PartialTwoPort	AixLib.Fluid.Interfaces.PartialTwoPort.port_b	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.Interfaces.PartialTwoPort	AixLib.Fluid.Interfaces.PartialTwoPort.port_a	Modelica.Fluid.Interfaces.FluidPort_a	
+AixLib.Fluid.Interfaces.PartialTwoPort	AixLib.Fluid.Interfaces.PartialTwoPort.port_b	Modelica.Fluid.Interfaces.FluidPort_b	
+Ergebniszeilen: 4
+

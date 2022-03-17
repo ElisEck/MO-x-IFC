@@ -1,0 +1,79 @@
+aix:AixLib.Fluid.HeatPumps.ScrollWaterToWater
+
+Ergebniszeilen: 1
+comment	
+Model for a scroll water to water heat pump	
+Ergebniszeilen: 1
+
+Ergebniszeilen: 5
+ancestor	
+AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater	
+AixLib.Fluid.HeatPumps.ScrollWaterToWater	
+AixLib.Fluid.Interfaces.FourPortFlowResistanceParameters	
+AixLib.Fluid.Interfaces.PartialFourPort	
+AixLib.Fluid.Interfaces.PartialFourPortInterface	
+Ergebniszeilen: 5
+
+Ergebniszeilen: 31
+ancestor	parameter	type	comment	modification	
+AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater	AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater.enable_temperature_protection	Boolean	Enable temperature protection	_gleich_true	
+AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater	AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater.dTHys	Real	Hysteresis interval width	(unit_gleich_"K",min_gleich_0)_gleich_5	
+AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater	AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater.T1_start	Modelica.SIunits.Temperature	Initial or guess value of set point	_gleich_Medium1.T_default	
+AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater	AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater.T2_start	Modelica.SIunits.Temperature	Initial or guess value of set point	_gleich_Medium2.T_default	
+AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater	AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater.TEvaMin	Modelica.SIunits.Temperature	Lower bound for evaporator temperature	_gleich_275.15	
+AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater	AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater.scaling_factor	Real	Scaling factor for heat pump capacity	_gleich_1.0	
+AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater	AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater.enable_variable_speed	Boolean	Set to true to allow modulating of compressor speed	_gleich_true	
+AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater	AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater.UACon	Modelica.SIunits.ThermalConductance	Thermal conductance of condenser		
+AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater	AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater.UAEva	Modelica.SIunits.ThermalConductance	Thermal conductance of evaporator		
+AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater	AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater.tau1	Modelica.SIunits.Time	Time constant at nominal flow rate (used if energyDynamics1 <> Modelica.Fluid.Types.Dynamics.SteadyState)	_gleich_60	
+AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater	AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater.tau2	Modelica.SIunits.Time	Time constant at nominal flow rate (used if energyDynamics2 <> Modelica.Fluid.Types.Dynamics.SteadyState)	_gleich_60	
+AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater	AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater.energyDynamics	Modelica.Fluid.Types.Dynamics	Type of energy balance: dynamic (3 initialization options) or steady state	_gleich_Modelica.Fluid.Types.Dynamics.DynamicFreeInitial	
+AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater	AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater.TConMax	Modelica.SIunits.Temperature	Upper bound for condenser temperature	_gleich_ref.TCri-5	
+AixLib.Fluid.HeatPumps.ScrollWaterToWater	AixLib.Fluid.HeatPumps.ScrollWaterToWater.datHeaPum	AixLib.Fluid.HeatPumps.Data.ScrollWaterToWater.Generic	Heat pump data		
+AixLib.Fluid.Interfaces.FourPortFlowResistanceParameters	AixLib.Fluid.Interfaces.FourPortFlowResistanceParameters.deltaM1	Real	Fraction of nominal flow rate where flow transitions to laminar	_gleich_0.1	
+AixLib.Fluid.Interfaces.FourPortFlowResistanceParameters	AixLib.Fluid.Interfaces.FourPortFlowResistanceParameters.deltaM2	Real	Fraction of nominal flow rate where flow transitions to laminar	_gleich_0.1	
+AixLib.Fluid.Interfaces.FourPortFlowResistanceParameters	AixLib.Fluid.Interfaces.FourPortFlowResistanceParameters.dp1_nominal	Modelica.SIunits.PressureDifference	Pressure difference	(min_gleich_0,displayUnit_gleich_"Pa")	
+AixLib.Fluid.Interfaces.FourPortFlowResistanceParameters	AixLib.Fluid.Interfaces.FourPortFlowResistanceParameters.dp2_nominal	Modelica.SIunits.PressureDifference	Pressure difference	(min_gleich_0,displayUnit_gleich_"Pa")	
+AixLib.Fluid.Interfaces.FourPortFlowResistanceParameters	AixLib.Fluid.Interfaces.FourPortFlowResistanceParameters.linearizeFlowResistance1	Boolean	_gleich_ true, use linear relation between m_flow and dp for any flow rate	_gleich_false	
+AixLib.Fluid.Interfaces.FourPortFlowResistanceParameters	AixLib.Fluid.Interfaces.FourPortFlowResistanceParameters.linearizeFlowResistance2	Boolean	_gleich_ true, use linear relation between m_flow and dp for any flow rate	_gleich_false	
+AixLib.Fluid.Interfaces.FourPortFlowResistanceParameters	AixLib.Fluid.Interfaces.FourPortFlowResistanceParameters.from_dp1	Boolean	_gleich_ true, use m_flow _gleich_ f(dp) else dp _gleich_ f(m_flow)	_gleich_false	
+AixLib.Fluid.Interfaces.FourPortFlowResistanceParameters	AixLib.Fluid.Interfaces.FourPortFlowResistanceParameters.from_dp2	Boolean	_gleich_ true, use m_flow _gleich_ f(dp) else dp _gleich_ f(m_flow)	_gleich_false	
+AixLib.Fluid.Interfaces.FourPortFlowResistanceParameters	AixLib.Fluid.Interfaces.FourPortFlowResistanceParameters.computeFlowResistance1	Boolean	_gleich_true, compute flow resistance. Set to false to assume no friction	_gleich_true	
+AixLib.Fluid.Interfaces.FourPortFlowResistanceParameters	AixLib.Fluid.Interfaces.FourPortFlowResistanceParameters.computeFlowResistance2	Boolean	_gleich_true, compute flow resistance. Set to false to assume no friction	_gleich_true	
+AixLib.Fluid.Interfaces.PartialFourPort	AixLib.Fluid.Interfaces.PartialFourPort.allowFlowReversal1	Boolean	_gleich_ false to simplify equations, assuming, but not enforcing, no flow reversal for medium 1		
+AixLib.Fluid.Interfaces.PartialFourPort	AixLib.Fluid.Interfaces.PartialFourPort.allowFlowReversal2	Boolean	_gleich_ false to simplify equations, assuming, but not enforcing, no flow reversal for medium 2		
+AixLib.Fluid.Interfaces.PartialFourPortInterface	AixLib.Fluid.Interfaces.PartialFourPortInterface.m1_flow_nominal	Modelica.SIunits.MassFlowRate	Nominal mass flow rate	(min_gleich_0)	
+AixLib.Fluid.Interfaces.PartialFourPortInterface	AixLib.Fluid.Interfaces.PartialFourPortInterface.m2_flow_nominal	Modelica.SIunits.MassFlowRate	Nominal mass flow rate	(min_gleich_0)	
+AixLib.Fluid.Interfaces.PartialFourPortInterface	AixLib.Fluid.Interfaces.PartialFourPortInterface.m1_flow_small	Medium1.MassFlowRate	Small mass flow rate for regularization of zero flow	(min_gleich_0)_gleich_1E-4*abs(m1_flow_nominal)	
+AixLib.Fluid.Interfaces.PartialFourPortInterface	AixLib.Fluid.Interfaces.PartialFourPortInterface.m2_flow_small	Medium2.MassFlowRate	Small mass flow rate for regularization of zero flow	(min_gleich_0)_gleich_1E-4*abs(m2_flow_nominal)	
+AixLib.Fluid.Interfaces.PartialFourPortInterface	AixLib.Fluid.Interfaces.PartialFourPortInterface.show_T	Boolean	_gleich_ true, if actual temperature at port is computed	_gleich_false	
+Ergebniszeilen: 31
+
+Ergebniszeilen: 24
+ancestor	port	klasse	
+AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater	AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater.P	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater	AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater.QCon_flow	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater	AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater.QEva_flow	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater	AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater.errHigPre	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater	AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater.errLowPre	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater	AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater.errNegTemDif	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater	AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater.stage	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater	AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater.y	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater	AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater.errHigPre	Modelica.Blocks.Interfaces.BooleanOutput	
+AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater	AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater.errLowPre	Modelica.Blocks.Interfaces.BooleanOutput	
+AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater	AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater.errNegTemDif	Modelica.Blocks.Interfaces.BooleanOutput	
+AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater	AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater.stage	Modelica.Blocks.Interfaces.IntegerInput	
+AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater	AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater.y	Modelica.Blocks.Interfaces.RealInput	
+AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater	AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater.P	Modelica.Blocks.Interfaces.RealOutput	
+AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater	AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater.QCon_flow	Modelica.Blocks.Interfaces.RealOutput	
+AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater	AixLib.Fluid.HeatPumps.BaseClasses.PartialWaterToWater.QEva_flow	Modelica.Blocks.Interfaces.RealOutput	
+AixLib.Fluid.Interfaces.PartialFourPort	AixLib.Fluid.Interfaces.PartialFourPort.port_a1	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.Interfaces.PartialFourPort	AixLib.Fluid.Interfaces.PartialFourPort.port_a2	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.Interfaces.PartialFourPort	AixLib.Fluid.Interfaces.PartialFourPort.port_b1	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.Interfaces.PartialFourPort	AixLib.Fluid.Interfaces.PartialFourPort.port_b2	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.Interfaces.PartialFourPort	AixLib.Fluid.Interfaces.PartialFourPort.port_a1	Modelica.Fluid.Interfaces.FluidPort_a	
+AixLib.Fluid.Interfaces.PartialFourPort	AixLib.Fluid.Interfaces.PartialFourPort.port_a2	Modelica.Fluid.Interfaces.FluidPort_a	
+AixLib.Fluid.Interfaces.PartialFourPort	AixLib.Fluid.Interfaces.PartialFourPort.port_b1	Modelica.Fluid.Interfaces.FluidPort_b	
+AixLib.Fluid.Interfaces.PartialFourPort	AixLib.Fluid.Interfaces.PartialFourPort.port_b2	Modelica.Fluid.Interfaces.FluidPort_b	
+Ergebniszeilen: 24
+

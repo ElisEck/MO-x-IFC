@@ -1,0 +1,71 @@
+mbl:Buildings.Fluid.HeatExchangers.WetCoilEffectivenessNTU
+
+Ergebniszeilen: 1
+comment	
+Heat exchanger with effectiveness - NTU relation and with moisture condensation	
+Ergebniszeilen: 1
+
+Ergebniszeilen: 4
+ancestor	
+Buildings.Fluid.HeatExchangers.WetCoilEffectivenessNTU	
+Buildings.Fluid.Interfaces.FourPortFlowResistanceParameters	
+Buildings.Fluid.Interfaces.PartialFourPort	
+Buildings.Fluid.Interfaces.PartialFourPortInterface	
+Ergebniszeilen: 4
+
+Ergebniszeilen: 40
+ancestor	parameter	type	comment	modification	
+Buildings.Fluid.HeatExchangers.WetCoilEffectivenessNTU	Buildings.Fluid.HeatExchangers.WetCoilEffectivenessNTU.T_a2_nominal	Modelica.SIunits.Temperature	Air inlet temperature at a rated condition	(fixed_gleich_use_Q_flow_nominal)	
+Buildings.Fluid.HeatExchangers.WetCoilEffectivenessNTU	Buildings.Fluid.HeatExchangers.WetCoilEffectivenessNTU.sta1_default	Medium1.ThermodynamicState	Default state for medium 1	_gleich_Medium1.setState_phX(h_gleich_Medium1.h_default,p_gleich_Medium1.p_default,X_gleich_Medium1.X_default_1:Medium1.nXi_)	
+Buildings.Fluid.HeatExchangers.WetCoilEffectivenessNTU	Buildings.Fluid.HeatExchangers.WetCoilEffectivenessNTU.sta2_default	Medium2.ThermodynamicState	Default state for medium 2	_gleich_Medium2.setState_phX(h_gleich_Medium2.h_default,p_gleich_Medium2.p_default,X_gleich_Medium2.X_default_1:Medium2.nXi_)	
+Buildings.Fluid.HeatExchangers.WetCoilEffectivenessNTU	Buildings.Fluid.HeatExchangers.WetCoilEffectivenessNTU.configuration	Buildings.Fluid.Types.HeatExchangerConfiguration	Heat exchanger configuration	_gleich_con.CounterFlow	
+Buildings.Fluid.HeatExchangers.WetCoilEffectivenessNTU	Buildings.Fluid.HeatExchangers.WetCoilEffectivenessNTU.flowRegime_nominal	Buildings.Fluid.HeatExchangers.flo	Heat exchanger flow regime at nominal flow rates	(fixed_gleich_false)	
+Buildings.Fluid.HeatExchangers.WetCoilEffectivenessNTU	Buildings.Fluid.HeatExchangers.WetCoilEffectivenessNTU.w_a2_nominal	Modelica.SIunits.MassFraction	Humidity ratio of inlet air at a rated condition (in kg/kg dry air)	(start_gleich_0.01,fixed_gleich_use_Q_flow_nominal)	
+Buildings.Fluid.HeatExchangers.WetCoilEffectivenessNTU	Buildings.Fluid.HeatExchangers.WetCoilEffectivenessNTU.nWat	Integer	Index of water	_gleich_Buildings.Fluid.HeatExchangers.BaseClasses.determineWaterIndex(Medium2.substanceNames)	
+Buildings.Fluid.HeatExchangers.WetCoilEffectivenessNTU	Buildings.Fluid.HeatExchangers.WetCoilEffectivenessNTU.C1_flow_nominal	Modelica.SIunits.ThermalConductance	Nominal capacity flow rate of Medium 1	(fixed_gleich_false)	
+Buildings.Fluid.HeatExchangers.WetCoilEffectivenessNTU	Buildings.Fluid.HeatExchangers.WetCoilEffectivenessNTU.C2_flow_nominal	Modelica.SIunits.ThermalConductance	Nominal capacity flow rate of Medium 2	(fixed_gleich_false)	
+Buildings.Fluid.HeatExchangers.WetCoilEffectivenessNTU	Buildings.Fluid.HeatExchangers.WetCoilEffectivenessNTU.Q_flow_nominal	Modelica.SIunits.HeatFlowRate	Nominal heat flow rate (positive for heat transfer from 1 to 2)	(fixed_gleich_use_Q_flow_nominal)	
+Buildings.Fluid.HeatExchangers.WetCoilEffectivenessNTU	Buildings.Fluid.HeatExchangers.WetCoilEffectivenessNTU.r_nominal	Real	Ratio between air-side and water-side convective heat transfer coefficient	_gleich_2/3	
+Buildings.Fluid.HeatExchangers.WetCoilEffectivenessNTU	Buildings.Fluid.HeatExchangers.WetCoilEffectivenessNTU.airSideFlowDependent	Boolean	Set to false to make air-side hA independent of mass flow rate	_gleich_true	
+Buildings.Fluid.HeatExchangers.WetCoilEffectivenessNTU	Buildings.Fluid.HeatExchangers.WetCoilEffectivenessNTU.airSideTemperatureDependent	Boolean	Set to false to make air-side hA independent of temperature	_gleich_false	
+Buildings.Fluid.HeatExchangers.WetCoilEffectivenessNTU	Buildings.Fluid.HeatExchangers.WetCoilEffectivenessNTU.waterSideFlowDependent	Boolean	Set to false to make water-side hA independent of mass flow rate	_gleich_true	
+Buildings.Fluid.HeatExchangers.WetCoilEffectivenessNTU	Buildings.Fluid.HeatExchangers.WetCoilEffectivenessNTU.waterSideTemperatureDependent	Boolean	Set to false to make water-side hA independent of temperature	_gleich_false	
+Buildings.Fluid.HeatExchangers.WetCoilEffectivenessNTU	Buildings.Fluid.HeatExchangers.WetCoilEffectivenessNTU.use_Q_flow_nominal	Boolean	Set to true to specify Q_flow_nominal and inlet conditions, or to false to specify UA_nominal	_gleich_false	
+Buildings.Fluid.HeatExchangers.WetCoilEffectivenessNTU	Buildings.Fluid.HeatExchangers.WetCoilEffectivenessNTU.cp1_nominal	Modelica.SIunits.SpecificHeatCapacity	Specific heat capacity of medium 1 at nominal condition	(fixed_gleich_false)	
+Buildings.Fluid.HeatExchangers.WetCoilEffectivenessNTU	Buildings.Fluid.HeatExchangers.WetCoilEffectivenessNTU.cp2_nominal	Modelica.SIunits.SpecificHeatCapacity	Specific heat capacity of medium 2 at nominal condition	(fixed_gleich_false)	
+Buildings.Fluid.HeatExchangers.WetCoilEffectivenessNTU	Buildings.Fluid.HeatExchangers.WetCoilEffectivenessNTU.UA_nominal	Modelica.SIunits.ThermalConductance	Thermal conductance at nominal flow, used to compute heat capacity	(fixed_gleich_notuse_Q_flow_nominal,min_gleich_0,start_gleich_1/(1/10+1/20))	
+Buildings.Fluid.HeatExchangers.WetCoilEffectivenessNTU	Buildings.Fluid.HeatExchangers.WetCoilEffectivenessNTU.energyDynamics	Modelica.Fluid.Types.Dynamics	Type of energy balance: dynamic (3 initialization options) or steady state	_gleich_Modelica.Fluid.Types.Dynamics.SteadyState	
+Buildings.Fluid.HeatExchangers.WetCoilEffectivenessNTU	Buildings.Fluid.HeatExchangers.WetCoilEffectivenessNTU.massDynamics	Modelica.Fluid.Types.Dynamics	Type of mass balance: dynamic (3 initialization options) or steady state	_gleich_energyDynamics	
+Buildings.Fluid.HeatExchangers.WetCoilEffectivenessNTU	Buildings.Fluid.HeatExchangers.WetCoilEffectivenessNTU.T_a1_nominal	Modelica.SIunits.Temperature	Water inlet temperature at a rated condition	(fixed_gleich_use_Q_flow_nominal)	
+Buildings.Fluid.HeatExchangers.WetCoilEffectivenessNTU	Buildings.Fluid.HeatExchangers.WetCoilEffectivenessNTU.X_w_a2_nominal	Modelica.SIunits.MassFraction	Water mass fraction of inlet air at a rated condition (in kg/kg total air)	_gleich_w_a2_nominal/(1+w_a2_nominal)	
+Buildings.Fluid.Interfaces.FourPortFlowResistanceParameters	Buildings.Fluid.Interfaces.FourPortFlowResistanceParameters.deltaM1	Real	Fraction of nominal flow rate where flow transitions to laminar	_gleich_0.1	
+Buildings.Fluid.Interfaces.FourPortFlowResistanceParameters	Buildings.Fluid.Interfaces.FourPortFlowResistanceParameters.deltaM2	Real	Fraction of nominal flow rate where flow transitions to laminar	_gleich_0.1	
+Buildings.Fluid.Interfaces.FourPortFlowResistanceParameters	Buildings.Fluid.Interfaces.FourPortFlowResistanceParameters.dp1_nominal	Modelica.SIunits.PressureDifference	Pressure difference	(min_gleich_0,displayUnit_gleich_"Pa")	
+Buildings.Fluid.Interfaces.FourPortFlowResistanceParameters	Buildings.Fluid.Interfaces.FourPortFlowResistanceParameters.dp2_nominal	Modelica.SIunits.PressureDifference	Pressure difference	(min_gleich_0,displayUnit_gleich_"Pa")	
+Buildings.Fluid.Interfaces.FourPortFlowResistanceParameters	Buildings.Fluid.Interfaces.FourPortFlowResistanceParameters.linearizeFlowResistance1	Boolean	_gleich_ true, use linear relation between m_flow and dp for any flow rate	_gleich_false	
+Buildings.Fluid.Interfaces.FourPortFlowResistanceParameters	Buildings.Fluid.Interfaces.FourPortFlowResistanceParameters.linearizeFlowResistance2	Boolean	_gleich_ true, use linear relation between m_flow and dp for any flow rate	_gleich_false	
+Buildings.Fluid.Interfaces.FourPortFlowResistanceParameters	Buildings.Fluid.Interfaces.FourPortFlowResistanceParameters.from_dp1	Boolean	_gleich_ true, use m_flow _gleich_ f(dp) else dp _gleich_ f(m_flow)	_gleich_false	
+Buildings.Fluid.Interfaces.FourPortFlowResistanceParameters	Buildings.Fluid.Interfaces.FourPortFlowResistanceParameters.from_dp2	Boolean	_gleich_ true, use m_flow _gleich_ f(dp) else dp _gleich_ f(m_flow)	_gleich_false	
+Buildings.Fluid.Interfaces.FourPortFlowResistanceParameters	Buildings.Fluid.Interfaces.FourPortFlowResistanceParameters.computeFlowResistance1	Boolean	_gleich_true, compute flow resistance. Set to false to assume no friction	_gleich_true	
+Buildings.Fluid.Interfaces.FourPortFlowResistanceParameters	Buildings.Fluid.Interfaces.FourPortFlowResistanceParameters.computeFlowResistance2	Boolean	_gleich_true, compute flow resistance. Set to false to assume no friction	_gleich_true	
+Buildings.Fluid.Interfaces.PartialFourPort	Buildings.Fluid.Interfaces.PartialFourPort.allowFlowReversal1	Boolean	_gleich_ false to simplify equations, assuming, but not enforcing, no flow reversal for medium 1		
+Buildings.Fluid.Interfaces.PartialFourPort	Buildings.Fluid.Interfaces.PartialFourPort.allowFlowReversal2	Boolean	_gleich_ false to simplify equations, assuming, but not enforcing, no flow reversal for medium 2		
+Buildings.Fluid.Interfaces.PartialFourPortInterface	Buildings.Fluid.Interfaces.PartialFourPortInterface.m1_flow_nominal	Modelica.SIunits.MassFlowRate	Nominal mass flow rate	(min_gleich_0)	
+Buildings.Fluid.Interfaces.PartialFourPortInterface	Buildings.Fluid.Interfaces.PartialFourPortInterface.m2_flow_nominal	Modelica.SIunits.MassFlowRate	Nominal mass flow rate	(min_gleich_0)	
+Buildings.Fluid.Interfaces.PartialFourPortInterface	Buildings.Fluid.Interfaces.PartialFourPortInterface.m1_flow_small	Medium1.MassFlowRate	Small mass flow rate for regularization of zero flow	(min_gleich_0)_gleich_1E-4*abs(m1_flow_nominal)	
+Buildings.Fluid.Interfaces.PartialFourPortInterface	Buildings.Fluid.Interfaces.PartialFourPortInterface.m2_flow_small	Medium2.MassFlowRate	Small mass flow rate for regularization of zero flow	(min_gleich_0)_gleich_1E-4*abs(m2_flow_nominal)	
+Buildings.Fluid.Interfaces.PartialFourPortInterface	Buildings.Fluid.Interfaces.PartialFourPortInterface.show_T	Boolean	_gleich_ true, if actual temperature at port is computed	_gleich_false	
+Ergebniszeilen: 40
+
+Ergebniszeilen: 8
+ancestor	port	klasse	
+Buildings.Fluid.Interfaces.PartialFourPort	Buildings.Fluid.Interfaces.PartialFourPort.port_a1	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+Buildings.Fluid.Interfaces.PartialFourPort	Buildings.Fluid.Interfaces.PartialFourPort.port_a2	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+Buildings.Fluid.Interfaces.PartialFourPort	Buildings.Fluid.Interfaces.PartialFourPort.port_b1	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+Buildings.Fluid.Interfaces.PartialFourPort	Buildings.Fluid.Interfaces.PartialFourPort.port_b2	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+Buildings.Fluid.Interfaces.PartialFourPort	Buildings.Fluid.Interfaces.PartialFourPort.port_a1	Modelica.Fluid.Interfaces.FluidPort_a	
+Buildings.Fluid.Interfaces.PartialFourPort	Buildings.Fluid.Interfaces.PartialFourPort.port_a2	Modelica.Fluid.Interfaces.FluidPort_a	
+Buildings.Fluid.Interfaces.PartialFourPort	Buildings.Fluid.Interfaces.PartialFourPort.port_b1	Modelica.Fluid.Interfaces.FluidPort_b	
+Buildings.Fluid.Interfaces.PartialFourPort	Buildings.Fluid.Interfaces.PartialFourPort.port_b2	Modelica.Fluid.Interfaces.FluidPort_b	
+Ergebniszeilen: 8
+

@@ -1,0 +1,58 @@
+aix:AixLib.Fluid.Sources.Boundary_pT
+
+Ergebniszeilen: 1
+comment	
+Boundary with prescribed pressure, temperature, composition and trace substances	
+Ergebniszeilen: 1
+
+Ergebniszeilen: 3
+ancestor	
+AixLib.Fluid.Sources.BaseClasses.PartialSource	
+AixLib.Fluid.Sources.BaseClasses.PartialSource_Xi_C	
+AixLib.Fluid.Sources.Boundary_pT	
+Ergebniszeilen: 3
+
+Ergebniszeilen: 12
+ancestor	parameter	type	comment	modification	
+AixLib.Fluid.Sources.BaseClasses.PartialSource	AixLib.Fluid.Sources.BaseClasses.PartialSource.flowDirection	Modelica.Fluid.Types.PortFlowDirection	Allowed flow direction		
+AixLib.Fluid.Sources.BaseClasses.PartialSource	AixLib.Fluid.Sources.BaseClasses.PartialSource.nPorts	Integer	Number of ports		
+AixLib.Fluid.Sources.BaseClasses.PartialSource	AixLib.Fluid.Sources.BaseClasses.PartialSource.verifyInputs	Boolean	Set to true to stop the simulation with an error if the medium temperature is outside its allowable range		
+AixLib.Fluid.Sources.BaseClasses.PartialSource_Xi_C	AixLib.Fluid.Sources.BaseClasses.PartialSource_Xi_C.X	Medium.MassFraction	Fixed value of composition	(finalquantity_gleich_Medium.substanceNames)_gleich_Medium.X_default	
+AixLib.Fluid.Sources.BaseClasses.PartialSource_Xi_C	AixLib.Fluid.Sources.BaseClasses.PartialSource_Xi_C.C	Medium.ExtraProperty	Fixed values of trace substances	(finalquantity_gleich_Medium.extraPropertiesNames)_gleich_fill(0,Medium.nC)	
+AixLib.Fluid.Sources.BaseClasses.PartialSource_Xi_C	AixLib.Fluid.Sources.BaseClasses.PartialSource_Xi_C.use_X_in	Boolean	Get the composition (all fractions) from the input connector	_gleich_false	
+AixLib.Fluid.Sources.BaseClasses.PartialSource_Xi_C	AixLib.Fluid.Sources.BaseClasses.PartialSource_Xi_C.use_Xi_in	Boolean	Get the composition (independent fractions) from the input connector	_gleich_false	
+AixLib.Fluid.Sources.BaseClasses.PartialSource_Xi_C	AixLib.Fluid.Sources.BaseClasses.PartialSource_Xi_C.use_C_in	Boolean	Get the trace substances from the input connector	_gleich_false	
+AixLib.Fluid.Sources.Boundary_pT	AixLib.Fluid.Sources.Boundary_pT.p	Medium.AbsolutePressure	Fixed value of pressure	_gleich_Medium.p_default	
+AixLib.Fluid.Sources.Boundary_pT	AixLib.Fluid.Sources.Boundary_pT.T	Medium.Temperature	Fixed value of temperature	_gleich_Medium.T_default	
+AixLib.Fluid.Sources.Boundary_pT	AixLib.Fluid.Sources.Boundary_pT.use_p_in	Boolean	Get the pressure from the input connector	_gleich_false	
+AixLib.Fluid.Sources.Boundary_pT	AixLib.Fluid.Sources.Boundary_pT.use_T_in	Boolean	Get the temperature from the input connector	_gleich_false	
+Ergebniszeilen: 12
+
+Ergebniszeilen: 24
+ancestor	port	klasse	
+AixLib.Fluid.Sources.BaseClasses.PartialSource	AixLib.Fluid.Sources.BaseClasses.PartialSource.C_in_internal	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.Sources.BaseClasses.PartialSource	AixLib.Fluid.Sources.BaseClasses.PartialSource.X_in_internal	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.Sources.BaseClasses.PartialSource	AixLib.Fluid.Sources.BaseClasses.PartialSource.Xi_in_internal	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.Sources.BaseClasses.PartialSource	AixLib.Fluid.Sources.BaseClasses.PartialSource.p_in_internal	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.Sources.BaseClasses.PartialSource	AixLib.Fluid.Sources.BaseClasses.PartialSource.ports	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.Sources.BaseClasses.PartialSource	AixLib.Fluid.Sources.BaseClasses.PartialSource.C_in_internal	Modelica.Blocks.Interfaces.RealInput	
+AixLib.Fluid.Sources.BaseClasses.PartialSource	AixLib.Fluid.Sources.BaseClasses.PartialSource.X_in_internal	Modelica.Blocks.Interfaces.RealInput	
+AixLib.Fluid.Sources.BaseClasses.PartialSource	AixLib.Fluid.Sources.BaseClasses.PartialSource.Xi_in_internal	Modelica.Blocks.Interfaces.RealInput	
+AixLib.Fluid.Sources.BaseClasses.PartialSource	AixLib.Fluid.Sources.BaseClasses.PartialSource.p_in_internal	Modelica.Blocks.Interfaces.RealInput	
+AixLib.Fluid.Sources.BaseClasses.PartialSource	AixLib.Fluid.Sources.BaseClasses.PartialSource.ports	Modelica.Fluid.Interfaces.FluidPorts_b	
+AixLib.Fluid.Sources.BaseClasses.PartialSource_Xi_C	AixLib.Fluid.Sources.BaseClasses.PartialSource_Xi_C.C_in	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.Sources.BaseClasses.PartialSource_Xi_C	AixLib.Fluid.Sources.BaseClasses.PartialSource_Xi_C.X_in	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.Sources.BaseClasses.PartialSource_Xi_C	AixLib.Fluid.Sources.BaseClasses.PartialSource_Xi_C.Xi_in	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.Sources.BaseClasses.PartialSource_Xi_C	AixLib.Fluid.Sources.BaseClasses.PartialSource_Xi_C.C_in	Modelica.Blocks.Interfaces.RealInput	
+AixLib.Fluid.Sources.BaseClasses.PartialSource_Xi_C	AixLib.Fluid.Sources.BaseClasses.PartialSource_Xi_C.X_in	Modelica.Blocks.Interfaces.RealInput	
+AixLib.Fluid.Sources.BaseClasses.PartialSource_Xi_C	AixLib.Fluid.Sources.BaseClasses.PartialSource_Xi_C.Xi_in	Modelica.Blocks.Interfaces.RealInput	
+AixLib.Fluid.Sources.Boundary_pT	AixLib.Fluid.Sources.Boundary_pT.T_in	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.Sources.Boundary_pT	AixLib.Fluid.Sources.Boundary_pT.T_in_internal	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.Sources.Boundary_pT	AixLib.Fluid.Sources.Boundary_pT.h_internal	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.Sources.Boundary_pT	AixLib.Fluid.Sources.Boundary_pT.p_in	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.Sources.Boundary_pT	AixLib.Fluid.Sources.Boundary_pT.T_in	Modelica.Blocks.Interfaces.RealInput	
+AixLib.Fluid.Sources.Boundary_pT	AixLib.Fluid.Sources.Boundary_pT.T_in_internal	Modelica.Blocks.Interfaces.RealInput	
+AixLib.Fluid.Sources.Boundary_pT	AixLib.Fluid.Sources.Boundary_pT.h_internal	Modelica.Blocks.Interfaces.RealInput	
+AixLib.Fluid.Sources.Boundary_pT	AixLib.Fluid.Sources.Boundary_pT.p_in	Modelica.Blocks.Interfaces.RealInput	
+Ergebniszeilen: 24
+

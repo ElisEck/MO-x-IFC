@@ -1,0 +1,71 @@
+mbl:Buildings.Fluid.HeatExchangers.DryCoilDiscretized
+
+Ergebniszeilen: 1
+comment	
+Coil with discretization along the flow paths and no humidity condensation	
+Ergebniszeilen: 1
+
+Ergebniszeilen: 4
+ancestor	
+Buildings.Fluid.HeatExchangers.DryCoilDiscretized	
+Buildings.Fluid.Interfaces.FourPortFlowResistanceParameters	
+Buildings.Fluid.Interfaces.PartialFourPort	
+Buildings.Fluid.Interfaces.PartialFourPortInterface	
+Ergebniszeilen: 4
+
+Ergebniszeilen: 40
+ancestor	parameter	type	comment	modification	
+Buildings.Fluid.HeatExchangers.DryCoilDiscretized	Buildings.Fluid.HeatExchangers.DryCoilDiscretized.nReg	Integer	10 Registers	(min_gleich_2)_gleich_2	
+Buildings.Fluid.HeatExchangers.DryCoilDiscretized	Buildings.Fluid.HeatExchangers.DryCoilDiscretized.use_temSen_1	Boolean	Flag, set to true if the temperature sensor 1 is used	_gleich_waterSideTemperatureDependentandallowFlowReversal1and(energyDynamics_gleich__gleich_Modelica.Fluid.Types.Dynamics.SteadyState)	
+Buildings.Fluid.HeatExchangers.DryCoilDiscretized	Buildings.Fluid.HeatExchangers.DryCoilDiscretized.use_temSen_2	Boolean	Flag, set to true if the temperature sensor 2 is used	_gleich_airSideTemperatureDependentandallowFlowReversal2and(energyDynamics_gleich__gleich_Modelica.Fluid.Types.Dynamics.SteadyState)	
+Buildings.Fluid.HeatExchangers.DryCoilDiscretized	Buildings.Fluid.HeatExchangers.DryCoilDiscretized.energyDynamics	Modelica.Fluid.Types.Dynamics	Formulation of energy balance	_gleich_Modelica.Fluid.Types.Dynamics.DynamicFreeInitial	
+Buildings.Fluid.HeatExchangers.DryCoilDiscretized	Buildings.Fluid.HeatExchangers.DryCoilDiscretized.mStart_flow_a1	Modelica.SIunits.MassFlowRate	Guess value for mass flow rate at port_a1	_gleich_m1_flow_nominal	
+Buildings.Fluid.HeatExchangers.DryCoilDiscretized	Buildings.Fluid.HeatExchangers.DryCoilDiscretized.mStart_flow_a2	Modelica.SIunits.MassFlowRate	Guess value for mass flow rate at port_a2	_gleich_m2_flow_nominal	
+Buildings.Fluid.HeatExchangers.DryCoilDiscretized	Buildings.Fluid.HeatExchangers.DryCoilDiscretized.dh1	Modelica.SIunits.Length	Hydraulic diameter for a single pipe	_gleich_0.025	
+Buildings.Fluid.HeatExchangers.DryCoilDiscretized	Buildings.Fluid.HeatExchangers.DryCoilDiscretized.dh2	Modelica.SIunits.Length	Hydraulic diameter for duct	_gleich_1	
+Buildings.Fluid.HeatExchangers.DryCoilDiscretized	Buildings.Fluid.HeatExchangers.DryCoilDiscretized.nPipPar	Integer	Number of parallel pipes in each register	(min_gleich_1)_gleich_3	
+Buildings.Fluid.HeatExchangers.DryCoilDiscretized	Buildings.Fluid.HeatExchangers.DryCoilDiscretized.nPipSeg	Integer	Number of pipe segments per register used for discretization	(min_gleich_1)_gleich_4	
+Buildings.Fluid.HeatExchangers.DryCoilDiscretized	Buildings.Fluid.HeatExchangers.DryCoilDiscretized.ReC_2	Real	Reynolds number where transition to turbulent starts inside ducts	_gleich_4000	
+Buildings.Fluid.HeatExchangers.DryCoilDiscretized	Buildings.Fluid.HeatExchangers.DryCoilDiscretized.ReC_1	Real	Reynolds number where transition to turbulent starts inside pipes	_gleich_4000	
+Buildings.Fluid.HeatExchangers.DryCoilDiscretized	Buildings.Fluid.HeatExchangers.DryCoilDiscretized.airSideFlowDependent	Boolean	Set to false to make air-side hA independent of mass flow rate	_gleich_false	
+Buildings.Fluid.HeatExchangers.DryCoilDiscretized	Buildings.Fluid.HeatExchangers.DryCoilDiscretized.waterSideFlowDependent	Boolean	Set to false to make water-side hA independent of mass flow rate	_gleich_false	
+Buildings.Fluid.HeatExchangers.DryCoilDiscretized	Buildings.Fluid.HeatExchangers.DryCoilDiscretized.waterSideTemperatureDependent	Boolean	Set to false to make water-side hA independent of temperature	_gleich_false	
+Buildings.Fluid.HeatExchangers.DryCoilDiscretized	Buildings.Fluid.HeatExchangers.DryCoilDiscretized.use_dh2	Boolean	Set to true to specify hydraulic diameter for duct pressure drop)	_gleich_false	
+Buildings.Fluid.HeatExchangers.DryCoilDiscretized	Buildings.Fluid.HeatExchangers.DryCoilDiscretized.use_dh1	Boolean	Set to true to specify hydraulic diameter for pipe pressure drop	_gleich_false	
+Buildings.Fluid.HeatExchangers.DryCoilDiscretized	Buildings.Fluid.HeatExchangers.DryCoilDiscretized.UA_nominal	Modelica.SIunits.ThermalConductance	Thermal conductance at nominal flow, used to compute heat capacity	(min_gleich_0)	
+Buildings.Fluid.HeatExchangers.DryCoilDiscretized	Buildings.Fluid.HeatExchangers.DryCoilDiscretized.GDif1	Modelica.SIunits.ThermalConductance	Thermal conductance to approximate diffusion (which improves model at near-zero flow rates)	_gleich_1E-2*UA_nominal/(nPipPar*max(1,nPipSeg-1)*nReg)	
+Buildings.Fluid.HeatExchangers.DryCoilDiscretized	Buildings.Fluid.HeatExchangers.DryCoilDiscretized.GDif2	Modelica.SIunits.ThermalConductance	Thermal conductance to approximate diffusion (which improves model at near-zero flow rates)	_gleich_1E-2*UA_nominal/(nPipPar*nPipSeg*max(1,nReg-1))	
+Buildings.Fluid.HeatExchangers.DryCoilDiscretized	Buildings.Fluid.HeatExchangers.DryCoilDiscretized.tau1	Modelica.SIunits.Time	Time constant at nominal flow for medium 1	_gleich_20	
+Buildings.Fluid.HeatExchangers.DryCoilDiscretized	Buildings.Fluid.HeatExchangers.DryCoilDiscretized.tau2	Modelica.SIunits.Time	Time constant at nominal flow for medium 2	_gleich_10	
+Buildings.Fluid.HeatExchangers.DryCoilDiscretized	Buildings.Fluid.HeatExchangers.DryCoilDiscretized.tau_m	Modelica.SIunits.Time	Time constant of metal at nominal UA value	_gleich_20	
+Buildings.Fluid.Interfaces.FourPortFlowResistanceParameters	Buildings.Fluid.Interfaces.FourPortFlowResistanceParameters.deltaM1	Real	Fraction of nominal flow rate where flow transitions to laminar	_gleich_0.1	
+Buildings.Fluid.Interfaces.FourPortFlowResistanceParameters	Buildings.Fluid.Interfaces.FourPortFlowResistanceParameters.deltaM2	Real	Fraction of nominal flow rate where flow transitions to laminar	_gleich_0.1	
+Buildings.Fluid.Interfaces.FourPortFlowResistanceParameters	Buildings.Fluid.Interfaces.FourPortFlowResistanceParameters.dp1_nominal	Modelica.SIunits.PressureDifference	Pressure difference	(min_gleich_0,displayUnit_gleich_"Pa")	
+Buildings.Fluid.Interfaces.FourPortFlowResistanceParameters	Buildings.Fluid.Interfaces.FourPortFlowResistanceParameters.dp2_nominal	Modelica.SIunits.PressureDifference	Pressure difference	(min_gleich_0,displayUnit_gleich_"Pa")	
+Buildings.Fluid.Interfaces.FourPortFlowResistanceParameters	Buildings.Fluid.Interfaces.FourPortFlowResistanceParameters.linearizeFlowResistance1	Boolean	_gleich_ true, use linear relation between m_flow and dp for any flow rate	_gleich_false	
+Buildings.Fluid.Interfaces.FourPortFlowResistanceParameters	Buildings.Fluid.Interfaces.FourPortFlowResistanceParameters.linearizeFlowResistance2	Boolean	_gleich_ true, use linear relation between m_flow and dp for any flow rate	_gleich_false	
+Buildings.Fluid.Interfaces.FourPortFlowResistanceParameters	Buildings.Fluid.Interfaces.FourPortFlowResistanceParameters.from_dp1	Boolean	_gleich_ true, use m_flow _gleich_ f(dp) else dp _gleich_ f(m_flow)	_gleich_false	
+Buildings.Fluid.Interfaces.FourPortFlowResistanceParameters	Buildings.Fluid.Interfaces.FourPortFlowResistanceParameters.from_dp2	Boolean	_gleich_ true, use m_flow _gleich_ f(dp) else dp _gleich_ f(m_flow)	_gleich_false	
+Buildings.Fluid.Interfaces.FourPortFlowResistanceParameters	Buildings.Fluid.Interfaces.FourPortFlowResistanceParameters.computeFlowResistance1	Boolean	_gleich_true, compute flow resistance. Set to false to assume no friction	_gleich_true	
+Buildings.Fluid.Interfaces.FourPortFlowResistanceParameters	Buildings.Fluid.Interfaces.FourPortFlowResistanceParameters.computeFlowResistance2	Boolean	_gleich_true, compute flow resistance. Set to false to assume no friction	_gleich_true	
+Buildings.Fluid.Interfaces.PartialFourPort	Buildings.Fluid.Interfaces.PartialFourPort.allowFlowReversal1	Boolean	_gleich_ false to simplify equations, assuming, but not enforcing, no flow reversal for medium 1		
+Buildings.Fluid.Interfaces.PartialFourPort	Buildings.Fluid.Interfaces.PartialFourPort.allowFlowReversal2	Boolean	_gleich_ false to simplify equations, assuming, but not enforcing, no flow reversal for medium 2		
+Buildings.Fluid.Interfaces.PartialFourPortInterface	Buildings.Fluid.Interfaces.PartialFourPortInterface.m1_flow_nominal	Modelica.SIunits.MassFlowRate	Nominal mass flow rate	(min_gleich_0)	
+Buildings.Fluid.Interfaces.PartialFourPortInterface	Buildings.Fluid.Interfaces.PartialFourPortInterface.m2_flow_nominal	Modelica.SIunits.MassFlowRate	Nominal mass flow rate	(min_gleich_0)	
+Buildings.Fluid.Interfaces.PartialFourPortInterface	Buildings.Fluid.Interfaces.PartialFourPortInterface.m1_flow_small	Medium1.MassFlowRate	Small mass flow rate for regularization of zero flow	(min_gleich_0)_gleich_1E-4*abs(m1_flow_nominal)	
+Buildings.Fluid.Interfaces.PartialFourPortInterface	Buildings.Fluid.Interfaces.PartialFourPortInterface.m2_flow_small	Medium2.MassFlowRate	Small mass flow rate for regularization of zero flow	(min_gleich_0)_gleich_1E-4*abs(m2_flow_nominal)	
+Buildings.Fluid.Interfaces.PartialFourPortInterface	Buildings.Fluid.Interfaces.PartialFourPortInterface.show_T	Boolean	_gleich_ true, if actual temperature at port is computed	_gleich_false	
+Ergebniszeilen: 40
+
+Ergebniszeilen: 8
+ancestor	port	klasse	
+Buildings.Fluid.Interfaces.PartialFourPort	Buildings.Fluid.Interfaces.PartialFourPort.port_a1	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+Buildings.Fluid.Interfaces.PartialFourPort	Buildings.Fluid.Interfaces.PartialFourPort.port_a2	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+Buildings.Fluid.Interfaces.PartialFourPort	Buildings.Fluid.Interfaces.PartialFourPort.port_b1	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+Buildings.Fluid.Interfaces.PartialFourPort	Buildings.Fluid.Interfaces.PartialFourPort.port_b2	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+Buildings.Fluid.Interfaces.PartialFourPort	Buildings.Fluid.Interfaces.PartialFourPort.port_a1	Modelica.Fluid.Interfaces.FluidPort_a	
+Buildings.Fluid.Interfaces.PartialFourPort	Buildings.Fluid.Interfaces.PartialFourPort.port_a2	Modelica.Fluid.Interfaces.FluidPort_a	
+Buildings.Fluid.Interfaces.PartialFourPort	Buildings.Fluid.Interfaces.PartialFourPort.port_b1	Modelica.Fluid.Interfaces.FluidPort_b	
+Buildings.Fluid.Interfaces.PartialFourPort	Buildings.Fluid.Interfaces.PartialFourPort.port_b2	Modelica.Fluid.Interfaces.FluidPort_b	
+Ergebniszeilen: 8
+

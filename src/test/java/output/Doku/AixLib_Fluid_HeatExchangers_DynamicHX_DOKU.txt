@@ -1,0 +1,78 @@
+aix:AixLib.Fluid.HeatExchangers.DynamicHX
+
+Ergebniszeilen: 1
+comment	
+Simple dynamic heat exchanger model	
+Ergebniszeilen: 1
+
+Ergebniszeilen: 5
+ancestor	
+AixLib.Fluid.HeatExchangers.DynamicHX	
+AixLib.Fluid.Interfaces.FourPortFlowResistanceParameters	
+AixLib.Fluid.Interfaces.FourPortHeatExchanger	
+AixLib.Fluid.Interfaces.PartialFourPort	
+AixLib.Fluid.Interfaces.PartialFourPortInterface	
+Ergebniszeilen: 5
+
+Ergebniszeilen: 46
+ancestor	parameter	type	comment	modification	
+AixLib.Fluid.HeatExchangers.DynamicHX	AixLib.Fluid.HeatExchangers.DynamicHX.Gc1	Modelica.Blocks.Interfaces.RealInput	Signal representing the convective thermal conductance in _W/K_	(unit_gleich_"W/K")_gleich_Q_nom/dT_nom*2/nNodes	
+AixLib.Fluid.HeatExchangers.DynamicHX	AixLib.Fluid.HeatExchangers.DynamicHX.Gc2	Modelica.Blocks.Interfaces.RealInput	Signal representing the convective thermal conductance in _W/K_	(unit_gleich_"W/K")_gleich_Q_nom/dT_nom*2/nNodes	
+AixLib.Fluid.HeatExchangers.DynamicHX	AixLib.Fluid.HeatExchangers.DynamicHX.TCapacity_start	Modelica.SIunits.Temperature	Start value of temperature	_gleich_(T1_start+T2_start)/2	
+AixLib.Fluid.HeatExchangers.DynamicHX	AixLib.Fluid.HeatExchangers.DynamicHX.Q_nom	Modelica.SIunits.HeatFlowRate	Temperature difference at nominal conditions (used to calculate Gc)		
+AixLib.Fluid.HeatExchangers.DynamicHX	AixLib.Fluid.HeatExchangers.DynamicHX.dT_nom	Modelica.SIunits.TemperatureDifference	Temperature difference at nominal conditions (used to calculate Gc)		
+AixLib.Fluid.HeatExchangers.DynamicHX	AixLib.Fluid.HeatExchangers.DynamicHX.tau_C	Modelica.SIunits.Time	Time constant of heat capacity at nominal heat flow and temperature difference.	_gleich_10	
+AixLib.Fluid.Interfaces.FourPortFlowResistanceParameters	AixLib.Fluid.Interfaces.FourPortFlowResistanceParameters.deltaM1	Real	Fraction of nominal flow rate where flow transitions to laminar	_gleich_0.1	
+AixLib.Fluid.Interfaces.FourPortFlowResistanceParameters	AixLib.Fluid.Interfaces.FourPortFlowResistanceParameters.deltaM2	Real	Fraction of nominal flow rate where flow transitions to laminar	_gleich_0.1	
+AixLib.Fluid.Interfaces.FourPortFlowResistanceParameters	AixLib.Fluid.Interfaces.FourPortFlowResistanceParameters.dp1_nominal	Modelica.SIunits.PressureDifference	Pressure difference	(min_gleich_0,displayUnit_gleich_"Pa")	
+AixLib.Fluid.Interfaces.FourPortFlowResistanceParameters	AixLib.Fluid.Interfaces.FourPortFlowResistanceParameters.dp2_nominal	Modelica.SIunits.PressureDifference	Pressure difference	(min_gleich_0,displayUnit_gleich_"Pa")	
+AixLib.Fluid.Interfaces.FourPortFlowResistanceParameters	AixLib.Fluid.Interfaces.FourPortFlowResistanceParameters.linearizeFlowResistance1	Boolean	_gleich_ true, use linear relation between m_flow and dp for any flow rate	_gleich_false	
+AixLib.Fluid.Interfaces.FourPortFlowResistanceParameters	AixLib.Fluid.Interfaces.FourPortFlowResistanceParameters.linearizeFlowResistance2	Boolean	_gleich_ true, use linear relation between m_flow and dp for any flow rate	_gleich_false	
+AixLib.Fluid.Interfaces.FourPortFlowResistanceParameters	AixLib.Fluid.Interfaces.FourPortFlowResistanceParameters.from_dp1	Boolean	_gleich_ true, use m_flow _gleich_ f(dp) else dp _gleich_ f(m_flow)	_gleich_false	
+AixLib.Fluid.Interfaces.FourPortFlowResistanceParameters	AixLib.Fluid.Interfaces.FourPortFlowResistanceParameters.from_dp2	Boolean	_gleich_ true, use m_flow _gleich_ f(dp) else dp _gleich_ f(m_flow)	_gleich_false	
+AixLib.Fluid.Interfaces.FourPortFlowResistanceParameters	AixLib.Fluid.Interfaces.FourPortFlowResistanceParameters.computeFlowResistance1	Boolean	_gleich_true, compute flow resistance. Set to false to assume no friction	_gleich_true	
+AixLib.Fluid.Interfaces.FourPortFlowResistanceParameters	AixLib.Fluid.Interfaces.FourPortFlowResistanceParameters.computeFlowResistance2	Boolean	_gleich_true, compute flow resistance. Set to false to assume no friction	_gleich_true	
+AixLib.Fluid.Interfaces.FourPortHeatExchanger	AixLib.Fluid.Interfaces.FourPortHeatExchanger.sta1_nominal	Medium1.ThermodynamicState		_gleich_Medium1.setState_pTX(T_gleich_Medium1.T_default,p_gleich_Medium1.p_default,X_gleich_Medium1.X_default)	
+AixLib.Fluid.Interfaces.FourPortHeatExchanger	AixLib.Fluid.Interfaces.FourPortHeatExchanger.sta1_start	Medium1.ThermodynamicState		_gleich_Medium1.setState_pTX(T_gleich_T1_start,p_gleich_p1_start,X_gleich_X1_start)	
+AixLib.Fluid.Interfaces.FourPortHeatExchanger	AixLib.Fluid.Interfaces.FourPortHeatExchanger.sta2_nominal	Medium2.ThermodynamicState		_gleich_Medium2.setState_pTX(T_gleich_Medium2.T_default,p_gleich_Medium2.p_default,X_gleich_Medium2.X_default)	
+AixLib.Fluid.Interfaces.FourPortHeatExchanger	AixLib.Fluid.Interfaces.FourPortHeatExchanger.sta2_start	Medium2.ThermodynamicState		_gleich_Medium2.setState_pTX(T_gleich_T2_start,p_gleich_p2_start,X_gleich_X2_start)	
+AixLib.Fluid.Interfaces.FourPortHeatExchanger	AixLib.Fluid.Interfaces.FourPortHeatExchanger.rho1_nominal	Modelica.SIunits.Density	Density, used to compute fluid volume	_gleich_Medium1.density(sta1_nominal)	
+AixLib.Fluid.Interfaces.FourPortHeatExchanger	AixLib.Fluid.Interfaces.FourPortHeatExchanger.rho2_nominal	Modelica.SIunits.Density	Density, used to compute fluid volume	_gleich_Medium2.density(sta2_nominal)	
+AixLib.Fluid.Interfaces.FourPortHeatExchanger	AixLib.Fluid.Interfaces.FourPortHeatExchanger.C1_nominal	Medium1.ExtraProperty	Nominal value of trace substances. (Set to typical order of magnitude.)	(finalquantity_gleich_Medium1.extraPropertiesNames)_gleich_fill(1E-2,Medium1.nC)	
+AixLib.Fluid.Interfaces.FourPortHeatExchanger	AixLib.Fluid.Interfaces.FourPortHeatExchanger.C2_nominal	Medium2.ExtraProperty	Nominal value of trace substances. (Set to typical order of magnitude.)	(finalquantity_gleich_Medium2.extraPropertiesNames)_gleich_fill(1E-2,Medium2.nC)	
+AixLib.Fluid.Interfaces.FourPortHeatExchanger	AixLib.Fluid.Interfaces.FourPortHeatExchanger.nNodes	Integer	Spatial segmentation	(min_gleich_1)_gleich_2	
+AixLib.Fluid.Interfaces.FourPortHeatExchanger	AixLib.Fluid.Interfaces.FourPortHeatExchanger.h1_outflow_start	Modelica.SIunits.SpecificEnthalpy	Start value for outflowing enthalpy	_gleich_Medium1.specificEnthalpy(sta1_start)	
+AixLib.Fluid.Interfaces.FourPortHeatExchanger	AixLib.Fluid.Interfaces.FourPortHeatExchanger.h2_outflow_start	Modelica.SIunits.SpecificEnthalpy	Start value for outflowing enthalpy	_gleich_Medium2.specificEnthalpy(sta2_start)	
+AixLib.Fluid.Interfaces.FourPortHeatExchanger	AixLib.Fluid.Interfaces.FourPortHeatExchanger.X1_start	Medium1.MassFraction	Start value of mass fractions m_i/m	_gleich_Medium1.X_default	
+AixLib.Fluid.Interfaces.FourPortHeatExchanger	AixLib.Fluid.Interfaces.FourPortHeatExchanger.X2_start	Medium2.MassFraction	Start value of mass fractions m_i/m	_gleich_Medium2.X_default	
+AixLib.Fluid.Interfaces.FourPortHeatExchanger	AixLib.Fluid.Interfaces.FourPortHeatExchanger.p1_start	Medium1.AbsolutePressure	Start value of pressure	_gleich_Medium1.p_default	
+AixLib.Fluid.Interfaces.FourPortHeatExchanger	AixLib.Fluid.Interfaces.FourPortHeatExchanger.p2_start	Medium2.AbsolutePressure	Start value of pressure	_gleich_Medium2.p_default	
+AixLib.Fluid.Interfaces.FourPortHeatExchanger	AixLib.Fluid.Interfaces.FourPortHeatExchanger.T1_start	Medium1.Temperature	Start value of temperature	_gleich_Medium1.T_default	
+AixLib.Fluid.Interfaces.FourPortHeatExchanger	AixLib.Fluid.Interfaces.FourPortHeatExchanger.T2_start	Medium2.Temperature	Start value of temperature	_gleich_Medium2.T_default	
+AixLib.Fluid.Interfaces.FourPortHeatExchanger	AixLib.Fluid.Interfaces.FourPortHeatExchanger.C1_start	Medium1.ExtraProperty	Start value of trace substances	(finalquantity_gleich_Medium1.extraPropertiesNames)_gleich_fill(0,Medium1.nC)	
+AixLib.Fluid.Interfaces.FourPortHeatExchanger	AixLib.Fluid.Interfaces.FourPortHeatExchanger.C2_start	Medium2.ExtraProperty	Start value of trace substances	(finalquantity_gleich_Medium2.extraPropertiesNames)_gleich_fill(0,Medium2.nC)	
+AixLib.Fluid.Interfaces.FourPortHeatExchanger	AixLib.Fluid.Interfaces.FourPortHeatExchanger.tau1	Modelica.SIunits.Time	Time constant at nominal flow	_gleich_30	
+AixLib.Fluid.Interfaces.FourPortHeatExchanger	AixLib.Fluid.Interfaces.FourPortHeatExchanger.tau2	Modelica.SIunits.Time	Time constant at nominal flow	_gleich_30	
+AixLib.Fluid.Interfaces.FourPortHeatExchanger	AixLib.Fluid.Interfaces.FourPortHeatExchanger.energyDynamics	Modelica.Fluid.Types.Dynamics	Type of energy balance: dynamic (3 initialization options) or steady state	_gleich_Modelica.Fluid.Types.Dynamics.DynamicFreeInitial	
+AixLib.Fluid.Interfaces.FourPortHeatExchanger	AixLib.Fluid.Interfaces.FourPortHeatExchanger.massDynamics	Modelica.Fluid.Types.Dynamics	Type of mass balance: dynamic (3 initialization options) or steady state	_gleich_energyDynamics	
+AixLib.Fluid.Interfaces.PartialFourPort	AixLib.Fluid.Interfaces.PartialFourPort.allowFlowReversal1	Boolean	_gleich_ false to simplify equations, assuming, but not enforcing, no flow reversal for medium 1		
+AixLib.Fluid.Interfaces.PartialFourPort	AixLib.Fluid.Interfaces.PartialFourPort.allowFlowReversal2	Boolean	_gleich_ false to simplify equations, assuming, but not enforcing, no flow reversal for medium 2		
+AixLib.Fluid.Interfaces.PartialFourPortInterface	AixLib.Fluid.Interfaces.PartialFourPortInterface.m1_flow_nominal	Modelica.SIunits.MassFlowRate	Nominal mass flow rate	(min_gleich_0)	
+AixLib.Fluid.Interfaces.PartialFourPortInterface	AixLib.Fluid.Interfaces.PartialFourPortInterface.m2_flow_nominal	Modelica.SIunits.MassFlowRate	Nominal mass flow rate	(min_gleich_0)	
+AixLib.Fluid.Interfaces.PartialFourPortInterface	AixLib.Fluid.Interfaces.PartialFourPortInterface.m1_flow_small	Medium1.MassFlowRate	Small mass flow rate for regularization of zero flow	(min_gleich_0)_gleich_1E-4*abs(m1_flow_nominal)	
+AixLib.Fluid.Interfaces.PartialFourPortInterface	AixLib.Fluid.Interfaces.PartialFourPortInterface.m2_flow_small	Medium2.MassFlowRate	Small mass flow rate for regularization of zero flow	(min_gleich_0)_gleich_1E-4*abs(m2_flow_nominal)	
+AixLib.Fluid.Interfaces.PartialFourPortInterface	AixLib.Fluid.Interfaces.PartialFourPortInterface.show_T	Boolean	_gleich_ true, if actual temperature at port is computed	_gleich_false	
+Ergebniszeilen: 46
+
+Ergebniszeilen: 8
+ancestor	port	klasse	
+AixLib.Fluid.Interfaces.PartialFourPort	AixLib.Fluid.Interfaces.PartialFourPort.port_a1	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.Interfaces.PartialFourPort	AixLib.Fluid.Interfaces.PartialFourPort.port_a2	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.Interfaces.PartialFourPort	AixLib.Fluid.Interfaces.PartialFourPort.port_b1	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.Interfaces.PartialFourPort	AixLib.Fluid.Interfaces.PartialFourPort.port_b2	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.Interfaces.PartialFourPort	AixLib.Fluid.Interfaces.PartialFourPort.port_a1	Modelica.Fluid.Interfaces.FluidPort_a	
+AixLib.Fluid.Interfaces.PartialFourPort	AixLib.Fluid.Interfaces.PartialFourPort.port_a2	Modelica.Fluid.Interfaces.FluidPort_a	
+AixLib.Fluid.Interfaces.PartialFourPort	AixLib.Fluid.Interfaces.PartialFourPort.port_b1	Modelica.Fluid.Interfaces.FluidPort_b	
+AixLib.Fluid.Interfaces.PartialFourPort	AixLib.Fluid.Interfaces.PartialFourPort.port_b2	Modelica.Fluid.Interfaces.FluidPort_b	
+Ergebniszeilen: 8
+

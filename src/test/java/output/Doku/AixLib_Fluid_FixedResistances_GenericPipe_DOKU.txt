@@ -1,0 +1,43 @@
+aix:AixLib.Fluid.FixedResistances.GenericPipe
+
+Ergebniszeilen: 1
+comment	
+Pipe model that includes several selectable pipe models	
+Ergebniszeilen: 1
+
+Ergebniszeilen: 2
+ancestor	
+AixLib.Fluid.FixedResistances.GenericPipe	
+AixLib.Fluid.Interfaces.PartialTwoPort	
+Ergebniszeilen: 2
+
+Ergebniszeilen: 16
+ancestor	parameter	type	comment	modification	
+AixLib.Fluid.FixedResistances.GenericPipe	AixLib.Fluid.FixedResistances.GenericPipe.pipeModel	String		_gleich_"SimplePipe	
+AixLib.Fluid.FixedResistances.GenericPipe	AixLib.Fluid.FixedResistances.GenericPipe.roughness	Modelica.SIunits.Height	Average height of surface asperities (default: smooth steel pipe)	_gleich_2.5e-5	
+AixLib.Fluid.FixedResistances.GenericPipe	AixLib.Fluid.FixedResistances.GenericPipe.hCon	Modelica.SIunits.CoefficientOfHeatTransfer	Convection heat transfer coeffient	_gleich_4	
+AixLib.Fluid.FixedResistances.GenericPipe	AixLib.Fluid.FixedResistances.GenericPipe.fac	Real	Factor to take into account flow resistance of bends etc., fac_gleich_dp_nominal/dpStraightPipe_nominal	_gleich_1	
+AixLib.Fluid.FixedResistances.GenericPipe	AixLib.Fluid.FixedResistances.GenericPipe.T_start	Modelica.SIunits.Temperature	Initialization temperature at pipe inlet	_gleich_Medium.T_default	
+AixLib.Fluid.FixedResistances.GenericPipe	AixLib.Fluid.FixedResistances.GenericPipe.parameterIso	AixLib.DataBase.Pipes.InsulationBaseDataDefinition	Insulation Type	_gleich_AixLib.DataBase.Pipes.Insulation.Iso50pc()	
+AixLib.Fluid.FixedResistances.GenericPipe	AixLib.Fluid.FixedResistances.GenericPipe.m_flow_nominal	Modelica.SIunits.MassFlowRate	Nominal mass flow rate	(min_gleich_0)	
+AixLib.Fluid.FixedResistances.GenericPipe	AixLib.Fluid.FixedResistances.GenericPipe.length	Modelica.SIunits.Length	Pipe length	(min_gleich_0)	
+AixLib.Fluid.FixedResistances.GenericPipe	AixLib.Fluid.FixedResistances.GenericPipe.parameterPipe	AixLib.DataBase.Pipes.PipeBaseDataDefinition	Pipe type	_gleich_AixLib.DataBase.Pipes.Copper.Copper_6x1()	
+AixLib.Fluid.FixedResistances.GenericPipe	AixLib.Fluid.FixedResistances.GenericPipe.withInsulation	Boolean	Pipe with or without insulation	_gleich_true	
+AixLib.Fluid.FixedResistances.GenericPipe	AixLib.Fluid.FixedResistances.GenericPipe.ReC	Real	Reynolds number where transition to turbulent starts	_gleich_2300	
+AixLib.Fluid.FixedResistances.GenericPipe	AixLib.Fluid.FixedResistances.GenericPipe.nNodes	Integer	Spatial segmentation for SimplePipe	_gleich_3	
+AixLib.Fluid.FixedResistances.GenericPipe	AixLib.Fluid.FixedResistances.GenericPipe.energyDynamics	Modelica.Fluid.Types.Dynamics	Type of energy balance: dynamic (3 initialization options) or steady state	_gleich_Modelica.Fluid.Types.Dynamics.DynamicFreeInitial	
+AixLib.Fluid.FixedResistances.GenericPipe	AixLib.Fluid.FixedResistances.GenericPipe.massDynamics	Modelica.Fluid.Types.Dynamics	Type of mass balance: dynamic (3 initialization options) or steady state	_gleich_energyDynamics	
+AixLib.Fluid.FixedResistances.GenericPipe	AixLib.Fluid.FixedResistances.GenericPipe.withConvection	Boolean	convectional heat transfer	_gleich_true	
+AixLib.Fluid.Interfaces.PartialTwoPort	AixLib.Fluid.Interfaces.PartialTwoPort.allowFlowReversal	Boolean	_gleich_ false to simplify equations, assuming, but not enforcing, no flow reversal		
+Ergebniszeilen: 16
+
+Ergebniszeilen: 6
+ancestor	port	klasse	
+AixLib.Fluid.FixedResistances.GenericPipe	AixLib.Fluid.FixedResistances.GenericPipe.heatPort	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.FixedResistances.GenericPipe	AixLib.Fluid.FixedResistances.GenericPipe.heatPort	Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_a	
+AixLib.Fluid.Interfaces.PartialTwoPort	AixLib.Fluid.Interfaces.PartialTwoPort.port_a	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.Interfaces.PartialTwoPort	AixLib.Fluid.Interfaces.PartialTwoPort.port_b	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.Interfaces.PartialTwoPort	AixLib.Fluid.Interfaces.PartialTwoPort.port_a	Modelica.Fluid.Interfaces.FluidPort_a	
+AixLib.Fluid.Interfaces.PartialTwoPort	AixLib.Fluid.Interfaces.PartialTwoPort.port_b	Modelica.Fluid.Interfaces.FluidPort_b	
+Ergebniszeilen: 6
+

@@ -1,0 +1,45 @@
+aix:AixLib.Fluid.HeatExchangers.ActiveBeams.Cooling
+
+Ergebniszeilen: 1
+comment	
+Active beam unit for cooling	
+Ergebniszeilen: 1
+
+Ergebniszeilen: 1
+ancestor	
+AixLib.Fluid.HeatExchangers.ActiveBeams.Cooling	
+Ergebniszeilen: 1
+
+Ergebniszeilen: 15
+ancestor	parameter	type	comment	modification	
+AixLib.Fluid.HeatExchangers.ActiveBeams.Cooling	AixLib.Fluid.HeatExchangers.ActiveBeams.Cooling.deltaMWat	Real	Fraction of nominal flow rate where flow transitions to laminar		
+AixLib.Fluid.HeatExchangers.ActiveBeams.Cooling	AixLib.Fluid.HeatExchangers.ActiveBeams.Cooling.nBeams	Integer	Number of beams in parallel		
+AixLib.Fluid.HeatExchangers.ActiveBeams.Cooling	AixLib.Fluid.HeatExchangers.ActiveBeams.Cooling.perCoo	AixLib.Fluid.HeatExchangers.ActiveBeams.Data.Generic	Performance data for cooling		
+AixLib.Fluid.HeatExchangers.ActiveBeams.Cooling	AixLib.Fluid.HeatExchangers.ActiveBeams.Cooling.mAir_flow_small	MediumAir.MassFlowRate	Small mass flow rate for regularization of zero flow		
+AixLib.Fluid.HeatExchangers.ActiveBeams.Cooling	AixLib.Fluid.HeatExchangers.ActiveBeams.Cooling.mWat_flow_small	MediumWat.MassFlowRate	Small mass flow rate for regularization of zero flow		
+AixLib.Fluid.HeatExchangers.ActiveBeams.Cooling	AixLib.Fluid.HeatExchangers.ActiveBeams.Cooling.pWatCoo_start	MediumWat.AbsolutePressure	Start value of pressure		
+AixLib.Fluid.HeatExchangers.ActiveBeams.Cooling	AixLib.Fluid.HeatExchangers.ActiveBeams.Cooling.TWatCoo_start	MediumWat.Temperature	Start value of temperature		
+AixLib.Fluid.HeatExchangers.ActiveBeams.Cooling	AixLib.Fluid.HeatExchangers.ActiveBeams.Cooling.tau	Modelica.SIunits.Time	Time constant at nominal flow (if energyDynamics <> SteadyState)		
+AixLib.Fluid.HeatExchangers.ActiveBeams.Cooling	AixLib.Fluid.HeatExchangers.ActiveBeams.Cooling.energyDynamics	Modelica.Fluid.Types.Dynamics	Type of energy balance: dynamic (3 initialization options) or steady state		
+AixLib.Fluid.HeatExchangers.ActiveBeams.Cooling	AixLib.Fluid.HeatExchangers.ActiveBeams.Cooling.massDynamics	Modelica.Fluid.Types.Dynamics	Type of mass balance: dynamic (3 initialization options) or steady state		
+AixLib.Fluid.HeatExchangers.ActiveBeams.Cooling	AixLib.Fluid.HeatExchangers.ActiveBeams.Cooling.allowFlowReversalAir	Boolean	_gleich_ true to allow flow reversal in air circuit, false restricts to design direction (port_a -> port_b)		
+AixLib.Fluid.HeatExchangers.ActiveBeams.Cooling	AixLib.Fluid.HeatExchangers.ActiveBeams.Cooling.allowFlowReversalWat	Boolean	_gleich_ true to allow flow reversal in water circuit, false restricts to design direction (port_a -> port_b)		
+AixLib.Fluid.HeatExchangers.ActiveBeams.Cooling	AixLib.Fluid.HeatExchangers.ActiveBeams.Cooling.show_T	Boolean	_gleich_ true, if actual temperature at port is computed		
+AixLib.Fluid.HeatExchangers.ActiveBeams.Cooling	AixLib.Fluid.HeatExchangers.ActiveBeams.Cooling.linearizeFlowResistanceWat	Boolean	_gleich_ true, use linear relation between m_flow and dp for any flow rate		
+AixLib.Fluid.HeatExchangers.ActiveBeams.Cooling	AixLib.Fluid.HeatExchangers.ActiveBeams.Cooling.from_dpWat	Boolean	_gleich_ true, use m_flow _gleich_ f(dp) else dp _gleich_ f(m_flow)		
+Ergebniszeilen: 15
+
+Ergebniszeilen: 10
+ancestor	port	klasse	
+AixLib.Fluid.HeatExchangers.ActiveBeams.Cooling	AixLib.Fluid.HeatExchangers.ActiveBeams.Cooling.air_a	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.HeatExchangers.ActiveBeams.Cooling	AixLib.Fluid.HeatExchangers.ActiveBeams.Cooling.air_b	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.HeatExchangers.ActiveBeams.Cooling	AixLib.Fluid.HeatExchangers.ActiveBeams.Cooling.heaPor	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.HeatExchangers.ActiveBeams.Cooling	AixLib.Fluid.HeatExchangers.ActiveBeams.Cooling.watCoo_a	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.HeatExchangers.ActiveBeams.Cooling	AixLib.Fluid.HeatExchangers.ActiveBeams.Cooling.watCoo_b	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.HeatExchangers.ActiveBeams.Cooling	AixLib.Fluid.HeatExchangers.ActiveBeams.Cooling.air_a	Modelica.Fluid.Interfaces.FluidPort_a	
+AixLib.Fluid.HeatExchangers.ActiveBeams.Cooling	AixLib.Fluid.HeatExchangers.ActiveBeams.Cooling.watCoo_a	Modelica.Fluid.Interfaces.FluidPort_a	
+AixLib.Fluid.HeatExchangers.ActiveBeams.Cooling	AixLib.Fluid.HeatExchangers.ActiveBeams.Cooling.air_b	Modelica.Fluid.Interfaces.FluidPort_b	
+AixLib.Fluid.HeatExchangers.ActiveBeams.Cooling	AixLib.Fluid.HeatExchangers.ActiveBeams.Cooling.watCoo_b	Modelica.Fluid.Interfaces.FluidPort_b	
+AixLib.Fluid.HeatExchangers.ActiveBeams.Cooling	AixLib.Fluid.HeatExchangers.ActiveBeams.Cooling.heaPor	Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_a	
+Ergebniszeilen: 10
+

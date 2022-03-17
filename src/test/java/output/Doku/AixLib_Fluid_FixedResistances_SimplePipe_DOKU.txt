@@ -1,0 +1,47 @@
+aix:AixLib.Fluid.FixedResistances.SimplePipe
+
+Ergebniszeilen: 1
+comment	
+Simple pipe model with n discrete elements	
+Ergebniszeilen: 1
+
+Ergebniszeilen: 2
+ancestor	
+AixLib.Fluid.FixedResistances.SimplePipe	
+AixLib.Fluid.Interfaces.PartialTwoPort	
+Ergebniszeilen: 2
+
+Ergebniszeilen: 20
+ancestor	parameter	type	comment	modification	
+AixLib.Fluid.FixedResistances.SimplePipe	AixLib.Fluid.FixedResistances.SimplePipe.roughness	Modelica.SIunits.Height	Average height of surface asperities (default: smooth steel pipe)	_gleich_2.5e-5	
+AixLib.Fluid.FixedResistances.SimplePipe	AixLib.Fluid.FixedResistances.SimplePipe.rho	Modelica.SIunits.Density	Density of pipe material	_gleich_1000	
+AixLib.Fluid.FixedResistances.SimplePipe	AixLib.Fluid.FixedResistances.SimplePipe.fac	Real	Factor to take into account flow resistance of bends etc., fac_gleich_dp_nominal/dpStraightPipe_nominal	_gleich_1	
+AixLib.Fluid.FixedResistances.SimplePipe	AixLib.Fluid.FixedResistances.SimplePipe.lambda	Modelica.SIunits.ThermalConductivity	Heat conductivity of pipe material	_gleich_370	
+AixLib.Fluid.FixedResistances.SimplePipe	AixLib.Fluid.FixedResistances.SimplePipe.T_start	Modelica.SIunits.Temperature	Initialization temperature at pipe inlet	_gleich_Medium.T_default	
+AixLib.Fluid.FixedResistances.SimplePipe	AixLib.Fluid.FixedResistances.SimplePipe.dh	Modelica.SIunits.Length	Inner/hydraulic diameter (assuming a round cross section area)		
+AixLib.Fluid.FixedResistances.SimplePipe	AixLib.Fluid.FixedResistances.SimplePipe.m_flow_nominal	Modelica.SIunits.MassFlowRate	Nominal mass flow rate	(min_gleich_0)	
+AixLib.Fluid.FixedResistances.SimplePipe	AixLib.Fluid.FixedResistances.SimplePipe.length	Modelica.SIunits.Length	Pipe length	(min_gleich_0)	
+AixLib.Fluid.FixedResistances.SimplePipe	AixLib.Fluid.FixedResistances.SimplePipe.thickness	Modelica.SIunits.Length	Pipe wall thickness	(min_gleich_0)_gleich_0.001	
+AixLib.Fluid.FixedResistances.SimplePipe	AixLib.Fluid.FixedResistances.SimplePipe.ReC	Real	Reynolds number where transition to turbulent starts	_gleich_2300	
+AixLib.Fluid.FixedResistances.SimplePipe	AixLib.Fluid.FixedResistances.SimplePipe.m_flow_small	Modelica.SIunits.MassFlowRate	Small mass flow rate for regularization of zero flow	(min_gleich_0)_gleich_1E-4*abs(m_flow_nominal)	
+AixLib.Fluid.FixedResistances.SimplePipe	AixLib.Fluid.FixedResistances.SimplePipe.nNodes	Integer	Spatial segmentation	(min_gleich_1)_gleich_2	
+AixLib.Fluid.FixedResistances.SimplePipe	AixLib.Fluid.FixedResistances.SimplePipe.c	Modelica.SIunits.SpecificHeatCapacity	Specific heat capacity of pipe material	_gleich_1600	
+AixLib.Fluid.FixedResistances.SimplePipe	AixLib.Fluid.FixedResistances.SimplePipe.p_start	Medium.AbsolutePressure	Start value of pressure	_gleich_Medium.p_default	
+AixLib.Fluid.FixedResistances.SimplePipe	AixLib.Fluid.FixedResistances.SimplePipe.withHeattransfer	Boolean	True, if heat transfer to ambient	_gleich_true	
+AixLib.Fluid.FixedResistances.SimplePipe	AixLib.Fluid.FixedResistances.SimplePipe.energyDynamics	Modelica.Fluid.Types.Dynamics	Type of energy balance: dynamic (3 initialization options) or steady state	_gleich_Modelica.Fluid.Types.Dynamics.DynamicFreeInitial	
+AixLib.Fluid.FixedResistances.SimplePipe	AixLib.Fluid.FixedResistances.SimplePipe.massDynamics	Modelica.Fluid.Types.Dynamics	Type of mass balance: dynamic (3 initialization options) or steady state	_gleich_energyDynamics	
+AixLib.Fluid.FixedResistances.SimplePipe	AixLib.Fluid.FixedResistances.SimplePipe.linearized	Boolean	_gleich_ true, use linear relation between m_flow and dp for any flow rate	_gleich_false	
+AixLib.Fluid.FixedResistances.SimplePipe	AixLib.Fluid.FixedResistances.SimplePipe.from_dp	Boolean	_gleich_ true, use m_flow _gleich_ f(dp) else dp _gleich_ f(m_flow)	_gleich_false	
+AixLib.Fluid.Interfaces.PartialTwoPort	AixLib.Fluid.Interfaces.PartialTwoPort.allowFlowReversal	Boolean	_gleich_ false to simplify equations, assuming, but not enforcing, no flow reversal		
+Ergebniszeilen: 20
+
+Ergebniszeilen: 6
+ancestor	port	klasse	
+AixLib.Fluid.FixedResistances.SimplePipe	AixLib.Fluid.FixedResistances.SimplePipe.heatPorts	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.FixedResistances.SimplePipe	AixLib.Fluid.FixedResistances.SimplePipe.heatPorts	Modelica.Fluid.Interfaces.HeatPorts_a	
+AixLib.Fluid.Interfaces.PartialTwoPort	AixLib.Fluid.Interfaces.PartialTwoPort.port_a	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.Interfaces.PartialTwoPort	AixLib.Fluid.Interfaces.PartialTwoPort.port_b	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.Interfaces.PartialTwoPort	AixLib.Fluid.Interfaces.PartialTwoPort.port_a	Modelica.Fluid.Interfaces.FluidPort_a	
+AixLib.Fluid.Interfaces.PartialTwoPort	AixLib.Fluid.Interfaces.PartialTwoPort.port_b	Modelica.Fluid.Interfaces.FluidPort_b	
+Ergebniszeilen: 6
+

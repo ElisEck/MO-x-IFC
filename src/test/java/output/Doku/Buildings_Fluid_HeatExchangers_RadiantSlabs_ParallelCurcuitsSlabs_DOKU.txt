@@ -1,0 +1,19 @@
+mbl:Buildings.Fluid.HeatExchangers.RadiantSlabs.ParallelCurcuitsSlabs
+
+Ergebniszeilen: 0
+comment	
+Ergebniszeilen: 0
+
+Ergebniszeilen: 1
+ancestor	
+Buildings.Fluid.HeatExchangers.RadiantSlabs.ParallelCurcuitsSlabs	
+Ergebniszeilen: 1
+
+Ergebniszeilen: 0
+ancestor	parameter	type	comment	modification	
+Ergebniszeilen: 0
+
+Ergebniszeilen: 0
+ancestor	port	klasse	
+Ergebniszeilen: 0
+

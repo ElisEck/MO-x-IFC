@@ -1,0 +1,67 @@
+aix:AixLib.Fluid.BoilerCHP.BoilerNoControl
+
+Ergebniszeilen: 1
+comment	
+Boiler model with physics only	
+Ergebniszeilen: 1
+
+Ergebniszeilen: 4
+ancestor	
+AixLib.Fluid.BoilerCHP.BaseClasses.PartialHeatGenerator	
+AixLib.Fluid.BoilerCHP.BoilerNoControl	
+AixLib.Fluid.Interfaces.PartialTwoPort	
+AixLib.Fluid.Interfaces.PartialTwoPortInterface	
+Ergebniszeilen: 4
+
+Ergebniszeilen: 28
+ancestor	parameter	type	comment	modification	
+AixLib.Fluid.BoilerCHP.BaseClasses.PartialHeatGenerator	AixLib.Fluid.BoilerCHP.BaseClasses.PartialHeatGenerator.a	Real	Coefficient of old approach from model Modelica.Fluid.Fittings.GenericResistances.VolumeFlowRate. Recalculated to dp_nominal based on IBPSA approach.		
+AixLib.Fluid.BoilerCHP.BaseClasses.PartialHeatGenerator	AixLib.Fluid.BoilerCHP.BaseClasses.PartialHeatGenerator.rho_default	Modelica.SIunits.Density	Default density of medium. Value assumes water	_gleich_1000	
+AixLib.Fluid.BoilerCHP.BaseClasses.PartialHeatGenerator	AixLib.Fluid.BoilerCHP.BaseClasses.PartialHeatGenerator.TAmb	Modelica.SIunits.Temperature	Fixed ambient temperature for heat transfer	_gleich_Medium.T_default	
+AixLib.Fluid.BoilerCHP.BaseClasses.PartialHeatGenerator	AixLib.Fluid.BoilerCHP.BaseClasses.PartialHeatGenerator.deltaM	Real	Fraction of nominal mass flow rate where transition to turbulent occurs	_gleich_0.3	
+AixLib.Fluid.BoilerCHP.BaseClasses.PartialHeatGenerator	AixLib.Fluid.BoilerCHP.BaseClasses.PartialHeatGenerator.dp_start	Modelica.Media.Interfaces.Types.AbsolutePressure	Guess value of dp _gleich_ port_a.p - port_b.p	_gleich_0	
+AixLib.Fluid.BoilerCHP.BaseClasses.PartialHeatGenerator	AixLib.Fluid.BoilerCHP.BaseClasses.PartialHeatGenerator.m_flow_start	Modelica.Media.Interfaces.PartialMedium.MassFlowRate	Guess value of m_flow _gleich_ port_a.m_flow	_gleich_0	
+AixLib.Fluid.BoilerCHP.BaseClasses.PartialHeatGenerator	AixLib.Fluid.BoilerCHP.BaseClasses.PartialHeatGenerator.transferHeat	Boolean	If true, temperature T converges towards TAmb when no flow	_gleich_false	
+AixLib.Fluid.BoilerCHP.BaseClasses.PartialHeatGenerator	AixLib.Fluid.BoilerCHP.BaseClasses.PartialHeatGenerator.T_start	Modelica.SIunits.Temperature	Initial or guess value of output (_gleich_ state)	_gleich_Medium.T_default	
+AixLib.Fluid.BoilerCHP.BaseClasses.PartialHeatGenerator	AixLib.Fluid.BoilerCHP.BaseClasses.PartialHeatGenerator.dp_nominal	Modelica.SIunits.PressureDifference	Pressure drop at nominal mass flow rate	_gleich_m_flow_nominal^2*a/(rho_default^2)	
+AixLib.Fluid.BoilerCHP.BaseClasses.PartialHeatGenerator	AixLib.Fluid.BoilerCHP.BaseClasses.PartialHeatGenerator.p_start	Modelica.Media.Interfaces.Types.AbsolutePressure	Start value of pressure	_gleich_Medium.p_default	
+AixLib.Fluid.BoilerCHP.BaseClasses.PartialHeatGenerator	AixLib.Fluid.BoilerCHP.BaseClasses.PartialHeatGenerator.tauHeaTra	Modelica.SIunits.Time	Time constant for heat transfer, default 20 minutes	_gleich_1200	
+AixLib.Fluid.BoilerCHP.BaseClasses.PartialHeatGenerator	AixLib.Fluid.BoilerCHP.BaseClasses.PartialHeatGenerator.tau	Modelica.SIunits.Time	Time constant of the temperature sensors at nominal flow rate	_gleich_1	
+AixLib.Fluid.BoilerCHP.BaseClasses.PartialHeatGenerator	AixLib.Fluid.BoilerCHP.BaseClasses.PartialHeatGenerator.initType	Modelica.Blocks.Types.Init	Type of initialization (InitialState and InitialOutput are identical)	_gleich_Modelica.Blocks.Types.Init.InitialState	
+AixLib.Fluid.BoilerCHP.BaseClasses.PartialHeatGenerator	AixLib.Fluid.BoilerCHP.BaseClasses.PartialHeatGenerator.linearized	Boolean	_gleich_ true, use linear relation between m_flow and dp for any flow rate	_gleich_false	
+AixLib.Fluid.BoilerCHP.BaseClasses.PartialHeatGenerator	AixLib.Fluid.BoilerCHP.BaseClasses.PartialHeatGenerator.from_dp	Boolean	_gleich_ true, use m_flow _gleich_ f(dp) else dp _gleich_ f(m_flow)	_gleich_false	
+AixLib.Fluid.BoilerCHP.BoilerNoControl	AixLib.Fluid.BoilerCHP.BoilerNoControl.G	Modelica.SIunits.ThermalConductance	Constant thermal conductance to environment(G_gleich_Q_loss/dT)	_gleich_0.003*Q_nom/50	
+AixLib.Fluid.BoilerCHP.BoilerNoControl	AixLib.Fluid.BoilerCHP.BoilerNoControl.C	Modelica.SIunits.HeatCapacity	Heat capacity of metal (J/K)	_gleich_1.5*Q_nom	
+AixLib.Fluid.BoilerCHP.BoilerNoControl	AixLib.Fluid.BoilerCHP.BoilerNoControl.Q_nom	Modelica.SIunits.Power	Nominal heating power	_gleich_paramBoiler.Q_nom	
+AixLib.Fluid.BoilerCHP.BoilerNoControl	AixLib.Fluid.BoilerCHP.BoilerNoControl.paramBoiler	AixLib.DataBase.Boiler.General.BoilerTwoPointBaseDataDefinition	Parameters for Boiler		
+AixLib.Fluid.BoilerCHP.BoilerNoControl	AixLib.Fluid.BoilerCHP.BoilerNoControl.etaLoadBased	Real	Table matrix for part load based efficiency (e.g. _0,0.99; 0.5, 0.98; 1, 0,97_)	_gleich_paramBoiler.eta	
+AixLib.Fluid.BoilerCHP.BoilerNoControl	AixLib.Fluid.BoilerCHP.BoilerNoControl.etaTempBased	Real	Table matrix for temperature based efficiency	_gleich__293.15,1.09;303.15,1.08;313.15,1.05;323.15,1.;373.15,0.99_	
+AixLib.Fluid.BoilerCHP.BoilerNoControl	AixLib.Fluid.BoilerCHP.BoilerNoControl.V	Modelica.SIunits.Volume	Volume	_gleich_paramBoiler.volume	
+AixLib.Fluid.Interfaces.PartialTwoPort	AixLib.Fluid.Interfaces.PartialTwoPort.allowFlowReversal	Boolean	_gleich_ false to simplify equations, assuming, but not enforcing, no flow reversal		
+AixLib.Fluid.Interfaces.PartialTwoPortInterface	AixLib.Fluid.Interfaces.PartialTwoPortInterface.m_flow_nominal	Modelica.SIunits.MassFlowRate	Nominal mass flow rate		
+AixLib.Fluid.Interfaces.PartialTwoPortInterface	AixLib.Fluid.Interfaces.PartialTwoPortInterface.m_flow_small	Modelica.SIunits.MassFlowRate	Small mass flow rate for regularization of zero flow	(min_gleich_0)_gleich_1E-4*abs(m_flow_nominal)	
+AixLib.Fluid.Interfaces.PartialTwoPortInterface	AixLib.Fluid.Interfaces.PartialTwoPortInterface._dp_start	Modelica.SIunits.PressureDifference	Start value for dp, used to avoid a warning if not set in dp, and to avoid dp.start in parameter window	(displayUnit_gleich_"Pa")_gleich_0	
+AixLib.Fluid.Interfaces.PartialTwoPortInterface	AixLib.Fluid.Interfaces.PartialTwoPortInterface._m_flow_start	Modelica.SIunits.MassFlowRate	Start value for m_flow, used to avoid a warning if not set in m_flow, and to avoid m_flow.start in parameter window	_gleich_0	
+AixLib.Fluid.Interfaces.PartialTwoPortInterface	AixLib.Fluid.Interfaces.PartialTwoPortInterface.show_T	Boolean	_gleich_ true, if actual temperature at port is computed	_gleich_false	
+Ergebniszeilen: 28
+
+Ergebniszeilen: 16
+ancestor	port	klasse	
+AixLib.Fluid.BoilerCHP.BoilerNoControl	AixLib.Fluid.BoilerCHP.BoilerNoControl.T_amb	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.BoilerCHP.BoilerNoControl	AixLib.Fluid.BoilerCHP.BoilerNoControl.T_in	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.BoilerCHP.BoilerNoControl	AixLib.Fluid.BoilerCHP.BoilerNoControl.T_out	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.BoilerCHP.BoilerNoControl	AixLib.Fluid.BoilerCHP.BoilerNoControl.fuelPower	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.BoilerCHP.BoilerNoControl	AixLib.Fluid.BoilerCHP.BoilerNoControl.thermalPower	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.BoilerCHP.BoilerNoControl	AixLib.Fluid.BoilerCHP.BoilerNoControl.u_rel	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.BoilerCHP.BoilerNoControl	AixLib.Fluid.BoilerCHP.BoilerNoControl.u_rel	Modelica.Blocks.Interfaces.RealInput	
+AixLib.Fluid.BoilerCHP.BoilerNoControl	AixLib.Fluid.BoilerCHP.BoilerNoControl.T_in	Modelica.Blocks.Interfaces.RealOutput	
+AixLib.Fluid.BoilerCHP.BoilerNoControl	AixLib.Fluid.BoilerCHP.BoilerNoControl.T_out	Modelica.Blocks.Interfaces.RealOutput	
+AixLib.Fluid.BoilerCHP.BoilerNoControl	AixLib.Fluid.BoilerCHP.BoilerNoControl.fuelPower	Modelica.Blocks.Interfaces.RealOutput	
+AixLib.Fluid.BoilerCHP.BoilerNoControl	AixLib.Fluid.BoilerCHP.BoilerNoControl.thermalPower	Modelica.Blocks.Interfaces.RealOutput	
+AixLib.Fluid.BoilerCHP.BoilerNoControl	AixLib.Fluid.BoilerCHP.BoilerNoControl.T_amb	Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_b	
+AixLib.Fluid.Interfaces.PartialTwoPort	AixLib.Fluid.Interfaces.PartialTwoPort.port_a	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.Interfaces.PartialTwoPort	AixLib.Fluid.Interfaces.PartialTwoPort.port_b	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.Interfaces.PartialTwoPort	AixLib.Fluid.Interfaces.PartialTwoPort.port_a	Modelica.Fluid.Interfaces.FluidPort_a	
+AixLib.Fluid.Interfaces.PartialTwoPort	AixLib.Fluid.Interfaces.PartialTwoPort.port_b	Modelica.Fluid.Interfaces.FluidPort_b	
+Ergebniszeilen: 16
+

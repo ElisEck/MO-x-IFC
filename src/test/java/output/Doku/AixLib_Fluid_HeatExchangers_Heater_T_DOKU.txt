@@ -1,0 +1,48 @@
+aix:AixLib.Fluid.HeatExchangers.Heater_T
+
+Ergebniszeilen: 1
+comment	
+Heater with prescribed outlet temperature	
+Ergebniszeilen: 1
+
+Ergebniszeilen: 5
+ancestor	
+AixLib.Fluid.HeatExchangers.BaseClasses.PartialPrescribedOutlet	
+AixLib.Fluid.HeatExchangers.Heater_T	
+AixLib.Fluid.Interfaces.PartialTwoPort	
+AixLib.Fluid.Interfaces.PartialTwoPortInterface	
+AixLib.Fluid.Interfaces.TwoPortFlowResistanceParameters	
+Ergebniszeilen: 5
+
+Ergebniszeilen: 16
+ancestor	parameter	type	comment	modification	
+AixLib.Fluid.HeatExchangers.BaseClasses.PartialPrescribedOutlet	AixLib.Fluid.HeatExchangers.BaseClasses.PartialPrescribedOutlet.m_flow_nominal	Modelica.SIunits.MassFlowRate	Nominal mass flow rate, used for regularization near zero flow		
+AixLib.Fluid.HeatExchangers.BaseClasses.PartialPrescribedOutlet	AixLib.Fluid.HeatExchangers.BaseClasses.PartialPrescribedOutlet.tau	Modelica.SIunits.Time	Time constant at nominal flow rate (used if energyDynamics or massDynamics not equal Modelica.Fluid.Types.Dynamics.SteadyState)	(min_gleich_0)_gleich_10	
+AixLib.Fluid.HeatExchangers.Heater_T	AixLib.Fluid.HeatExchangers.Heater_T.QMax_flow	Modelica.SIunits.HeatFlowRate	Maximum heat flow rate for heating (positive)	(min_gleich_0)_gleich_Modelica.Constants.inf	
+AixLib.Fluid.HeatExchangers.Heater_T	AixLib.Fluid.HeatExchangers.Heater_T.T_start	Modelica.SIunits.Temperature	Start value of temperature	_gleich_Medium.T_default	
+AixLib.Fluid.HeatExchangers.Heater_T	AixLib.Fluid.HeatExchangers.Heater_T.energyDynamics	Modelica.Fluid.Types.Dynamics	Type of energy balance: dynamic (3 initialization options) or steady state	_gleich_Modelica.Fluid.Types.Dynamics.SteadyState	
+AixLib.Fluid.Interfaces.PartialTwoPort	AixLib.Fluid.Interfaces.PartialTwoPort.allowFlowReversal	Boolean	_gleich_ false to simplify equations, assuming, but not enforcing, no flow reversal		
+AixLib.Fluid.Interfaces.PartialTwoPortInterface	AixLib.Fluid.Interfaces.PartialTwoPortInterface.m_flow_nominal	Modelica.SIunits.MassFlowRate	Nominal mass flow rate		
+AixLib.Fluid.Interfaces.PartialTwoPortInterface	AixLib.Fluid.Interfaces.PartialTwoPortInterface.m_flow_small	Modelica.SIunits.MassFlowRate	Small mass flow rate for regularization of zero flow	(min_gleich_0)_gleich_1E-4*abs(m_flow_nominal)	
+AixLib.Fluid.Interfaces.PartialTwoPortInterface	AixLib.Fluid.Interfaces.PartialTwoPortInterface._dp_start	Modelica.SIunits.PressureDifference	Start value for dp, used to avoid a warning if not set in dp, and to avoid dp.start in parameter window	(displayUnit_gleich_"Pa")_gleich_0	
+AixLib.Fluid.Interfaces.PartialTwoPortInterface	AixLib.Fluid.Interfaces.PartialTwoPortInterface._m_flow_start	Modelica.SIunits.MassFlowRate	Start value for m_flow, used to avoid a warning if not set in m_flow, and to avoid m_flow.start in parameter window	_gleich_0	
+AixLib.Fluid.Interfaces.PartialTwoPortInterface	AixLib.Fluid.Interfaces.PartialTwoPortInterface.show_T	Boolean	_gleich_ true, if actual temperature at port is computed	_gleich_false	
+AixLib.Fluid.Interfaces.TwoPortFlowResistanceParameters	AixLib.Fluid.Interfaces.TwoPortFlowResistanceParameters.deltaM	Real	Fraction of nominal flow rate where flow transitions to laminar	_gleich_0.1	
+AixLib.Fluid.Interfaces.TwoPortFlowResistanceParameters	AixLib.Fluid.Interfaces.TwoPortFlowResistanceParameters.dp_nominal	Modelica.SIunits.PressureDifference	Pressure difference	(min_gleich_0,displayUnit_gleich_"Pa")	
+AixLib.Fluid.Interfaces.TwoPortFlowResistanceParameters	AixLib.Fluid.Interfaces.TwoPortFlowResistanceParameters.linearizeFlowResistance	Boolean	_gleich_ true, use linear relation between m_flow and dp for any flow rate	_gleich_false	
+AixLib.Fluid.Interfaces.TwoPortFlowResistanceParameters	AixLib.Fluid.Interfaces.TwoPortFlowResistanceParameters.from_dp	Boolean	_gleich_ true, use m_flow _gleich_ f(dp) else dp _gleich_ f(m_flow)	_gleich_false	
+AixLib.Fluid.Interfaces.TwoPortFlowResistanceParameters	AixLib.Fluid.Interfaces.TwoPortFlowResistanceParameters.computeFlowResistance	Boolean	_gleich_true, compute flow resistance. Set to false to assume no friction	_gleich_true	
+Ergebniszeilen: 16
+
+Ergebniszeilen: 8
+ancestor	port	klasse	
+AixLib.Fluid.HeatExchangers.Heater_T	AixLib.Fluid.HeatExchangers.Heater_T.Q_flow	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.HeatExchangers.Heater_T	AixLib.Fluid.HeatExchangers.Heater_T.TSet	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.HeatExchangers.Heater_T	AixLib.Fluid.HeatExchangers.Heater_T.TSet	Modelica.Blocks.Interfaces.RealInput	
+AixLib.Fluid.HeatExchangers.Heater_T	AixLib.Fluid.HeatExchangers.Heater_T.Q_flow	Modelica.Blocks.Interfaces.RealOutput	
+AixLib.Fluid.Interfaces.PartialTwoPort	AixLib.Fluid.Interfaces.PartialTwoPort.port_a	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.Interfaces.PartialTwoPort	AixLib.Fluid.Interfaces.PartialTwoPort.port_b	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.Interfaces.PartialTwoPort	AixLib.Fluid.Interfaces.PartialTwoPort.port_a	Modelica.Fluid.Interfaces.FluidPort_a	
+AixLib.Fluid.Interfaces.PartialTwoPort	AixLib.Fluid.Interfaces.PartialTwoPort.port_b	Modelica.Fluid.Interfaces.FluidPort_b	
+Ergebniszeilen: 8
+

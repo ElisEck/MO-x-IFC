@@ -1,0 +1,109 @@
+aix:AixLib.Fluid.Chillers.Chiller
+
+Ergebniszeilen: 1
+comment	
+Grey-box model for reversible chillers using a black-box to simulate the refrigeration cycle	
+Ergebniszeilen: 1
+
+Ergebniszeilen: 4
+ancestor	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	
+AixLib.Fluid.Chillers.Chiller	
+AixLib.Fluid.Interfaces.PartialFourPort	
+AixLib.Fluid.Interfaces.PartialFourPortInterface	
+Ergebniszeilen: 4
+
+Ergebniszeilen: 66
+ancestor	parameter	type	comment	modification	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.autoCalc_VEva	Modelica.SIunits.Volume		_gleich_ifmachineTypethenmax(0.0000001*Q_useNominal-0.0075,autoCalc_Vmin)elsemax(0.0000001*Q_useNominal-0.0066,autoCalc_Vmin)	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.autoCalc_VCon	Modelica.SIunits.Volume		_gleich_ifmachineTypethenmax(0.0000001*Q_useNominal-0.0094,autoCalc_Vmin)elsemax(0.0000002*Q_useNominal-0.0084,autoCalc_Vmin)	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.autoCalc_mFlow_eva	Modelica.SIunits.MassFlowRate		_gleich_ifmachineTypethenmax(0.00004*Q_useNominal-0.3177,autoCalc_mFlow_min)elsemax(0.00005*Q_useNominal-0.5662,autoCalc_mFlow_min)	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.autoCalc_mFlow_con	Modelica.SIunits.MassFlowRate		_gleich_ifmachineTypethenmax(0.00004*Q_useNominal-0.6162,autoCalc_mFlow_min)elsemax(0.00005*Q_useNominal+0.3161,autoCalc_mFlow_min)	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.VCon_final	Modelica.SIunits.Volume		_gleich_ifuse_autoCalcthenautoCalc_VConelseVCon	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.VEva_final	Modelica.SIunits.Volume		_gleich_ifuse_autoCalcthenautoCalc_VEvaelseVEva	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.mFlow_conNominal_final	Modelica.SIunits.MassFlowRate		_gleich_ifuse_autoCalcthenautoCalc_mFlow_conelsemFlow_conNominal	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.mFlow_evaNominal_final	Modelica.SIunits.MassFlowRate		_gleich_ifuse_autoCalcthenautoCalc_mFlow_evaelsemFlow_evaNominal	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.use_refIne	Boolean	Consider the inertia of the refrigerant cycle	_gleich_true	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.GConIns	Modelica.SIunits.ThermalConductance	Constant parameter for heat transfer to heat exchangers capacity. Represents a sum of thermal resistances such as forced convection and conduction inside of the capacity		
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.GEvaIns	Modelica.SIunits.ThermalConductance	Constant parameter for heat transfer to heat exchangers capacity. Represents a sum of thermal resistances such as forced convection and conduction inside of the capacity		
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.GConOut	Modelica.SIunits.ThermalConductance	Constant parameter for heat transfer to the ambient. Represents a sum of thermal resistances such as conductance, insulation and natural convection. If you want to simulate a condenser with additional dry mass but without external heat losses, set the value to zero		
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.GEvaOut	Modelica.SIunits.ThermalConductance	Constant parameter for heat transfer to the ambient. Represents a sum of thermal resistances such as conductance, insulation and natural convection. If you want to simulate a evaporator with additional dry mass but without external heat losses, set the value to zero		
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.refIneFre_constant	Modelica.SIunits.Frequency	Cut off frequency for inertia of refrigerant cycle		
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.use_autoCalc	Boolean	Enable automatic estimation of volumes and mass flows?	_gleich_false	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.TAmbCon_nominal	Modelica.SIunits.Temperature	Fixed ambient temperature for heat transfer of sensors at the condenser side	_gleich_291.15	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.TAmbEva_nominal	Modelica.SIunits.Temperature	Fixed ambient temperature for heat transfer of sensors at the evaporator side	_gleich_273.15	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.deltaM_con	Real	Fraction of nominal mass flow rate where transition to turbulent occurs	_gleich_0.1	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.deltaM_eva	Real	Fraction of nominal mass flow rate where transition to turbulent occurs	_gleich_0.1	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.CCon	Modelica.SIunits.HeatCapacity	Heat capacity of Condenser (_gleich_ cp*m). If you want to neglace the dry mass of the condenser, you can set this value to zero		
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.CEva	Modelica.SIunits.HeatCapacity	Heat capacity of Evaporator (_gleich_ cp*m). If you want to neglace the dry mass of the evaporator, you can set this value to zero		
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.use_conCap	Boolean	If heat losses at capacitor side are considered or not	_gleich_true	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.use_evaCap	Boolean	If heat losses at capacitor side are considered or not	_gleich_true	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.transferHeat	Boolean	If true, temperature T converges towards TAmb when no flow	_gleich_true	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.yRefIne_start	Real	Initial or guess value of output (_gleich_ state)	_gleich_0	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.x_start	Real	Initial or guess values of states	_gleich_zeros(nthOrder)	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.TEvaCap_start	Modelica.SIunits.Temperature	Initial temperature of heat capacity at evaporator	_gleich_Medium_eva.T_default	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.TConCap_start	Modelica.SIunits.Temperature	Initial temperature of heat capacity of condenser	_gleich_Medium_con.T_default	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.use_rev	Boolean	Is the vapour compression machine reversible?	_gleich_true	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.VCon	Modelica.SIunits.Volume	Manual input of the condenser volume (if not automatically calculated)		
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.VEva	Modelica.SIunits.Volume	Manual input of the evaporator volume (if not automatically calculated)		
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.mFlow_conNominal	Modelica.SIunits.MassFlowRate	Manual input of the nominal mass flow rate (if not automatically calculated)		
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.mFlow_evaNominal	Modelica.SIunits.MassFlowRate	Manual input of the nominal mass flow rate (if not automatically calculated)		
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.Q_useNominal	Modelica.SIunits.Power	Nominal usable heat flow of the vapour compression machine (HP: Heating; Chiller: Cooling)	(start_gleich_0)	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.nthOrder	Integer	Order of refrigerant cycle interia	_gleich_3	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.dpCon_nominal	Modelica.SIunits.PressureDifference	Pressure drop at nominal mass flow rate		
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.dpEva_nominal	Modelica.SIunits.PressureDifference	Pressure drop at nominal mass flow rate		
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.autoCalc_mFlow_min	Modelica.SIunits.MassFlowRate	Realistic mass flow minimum for simulation plausibility	_gleich_0.3	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.autoCalc_Vmin	Modelica.SIunits.Volume	Realistic volume minimum for simulation plausibility	_gleich_0.003	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.scalingFactor	Real	Scaling-factor of vapour compression machine	_gleich_1	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.useBusConnectorOnly	Boolean	Set true to use bus connector for modeSet, nSet and iceFac input	_gleich_false	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.XCon_start	Modelica.Media.Interfaces.Types.MassFraction	Start value of mass fractions m_i/m	_gleich_Medium_con.X_default	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.XEva_start	Modelica.Media.Interfaces.Types.MassFraction	Start value of mass fractions m_i/m	_gleich_Medium_eva.X_default	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.pCon_start	Modelica.Media.Interfaces.Types.AbsolutePressure	Start value of pressure	_gleich_Medium_con.p_default	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.pEva_start	Modelica.Media.Interfaces.Types.AbsolutePressure	Start value of pressure	_gleich_Medium_eva.p_default	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.TCon_start	Modelica.Media.Interfaces.Types.Temperature	Start value of temperature	_gleich_Medium_con.T_default	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.TEva_start	Modelica.Media.Interfaces.Types.Temperature	Start value of temperature	_gleich_Medium_eva.T_default	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.tauSenT	Modelica.SIunits.Time	Time constant at nominal flow rate (use tau_gleich_0 for steady-state sensor, but see user guide for potential problems)	_gleich_1	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.tauHeaTraCon	Modelica.SIunits.Time	Time constant for heat transfer in temperature sensors in condenser, default 20 minutes	_gleich_1200	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.tauHeaTraEva	Modelica.SIunits.Time	Time constant for heat transfer in temperature sensors in evaporator, default 20 minutes	_gleich_1200	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.energyDynamics	Modelica.Fluid.Types.Dynamics	Type of energy balance: dynamic (3 initialization options) or steady state (only affects fluid-models)	_gleich_Modelica.Fluid.Types.Dynamics.DynamicFreeInitial	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.initType	Modelica.Blocks.Types.Init	Type of initialization (InitialState and InitialOutput are identical)	_gleich_Modelica.Blocks.Types.Init.InitialState	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.massDynamics	Modelica.Fluid.Types.Dynamics	Type of mass balance: dynamic (3 initialization options) or steady state (only affects fluid-models)	_gleich_Modelica.Fluid.Types.Dynamics.DynamicFreeInitial	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.allowFlowReversalCon	Boolean	_gleich_ false to simplify equations, assuming, but not enforcing, no flow reversal	_gleich_true	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.allowFlowReversalEva	Boolean	_gleich_ false to simplify equations, assuming, but not enforcing, no flow reversal	_gleich_true	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.show_TPort	Boolean	_gleich_ true, if actual temperature at port is computed	_gleich_false	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.linearized	Boolean	_gleich_ true, use linear relation between m_flow and dp for any flow rate	_gleich_false	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.from_dp	Boolean	_gleich_ true, use m_flow _gleich_ f(dp) else dp _gleich_ f(m_flow)	_gleich_false	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.machineType	Boolean	_gleich_true if heat pump; _gleich_false if chiller		
+AixLib.Fluid.Interfaces.PartialFourPort	AixLib.Fluid.Interfaces.PartialFourPort.allowFlowReversal1	Boolean	_gleich_ false to simplify equations, assuming, but not enforcing, no flow reversal for medium 1		
+AixLib.Fluid.Interfaces.PartialFourPort	AixLib.Fluid.Interfaces.PartialFourPort.allowFlowReversal2	Boolean	_gleich_ false to simplify equations, assuming, but not enforcing, no flow reversal for medium 2		
+AixLib.Fluid.Interfaces.PartialFourPortInterface	AixLib.Fluid.Interfaces.PartialFourPortInterface.m1_flow_nominal	Modelica.SIunits.MassFlowRate	Nominal mass flow rate	(min_gleich_0)	
+AixLib.Fluid.Interfaces.PartialFourPortInterface	AixLib.Fluid.Interfaces.PartialFourPortInterface.m2_flow_nominal	Modelica.SIunits.MassFlowRate	Nominal mass flow rate	(min_gleich_0)	
+AixLib.Fluid.Interfaces.PartialFourPortInterface	AixLib.Fluid.Interfaces.PartialFourPortInterface.m1_flow_small	Medium1.MassFlowRate	Small mass flow rate for regularization of zero flow	(min_gleich_0)_gleich_1E-4*abs(m1_flow_nominal)	
+AixLib.Fluid.Interfaces.PartialFourPortInterface	AixLib.Fluid.Interfaces.PartialFourPortInterface.m2_flow_small	Medium2.MassFlowRate	Small mass flow rate for regularization of zero flow	(min_gleich_0)_gleich_1E-4*abs(m2_flow_nominal)	
+AixLib.Fluid.Interfaces.PartialFourPortInterface	AixLib.Fluid.Interfaces.PartialFourPortInterface.show_T	Boolean	_gleich_ true, if actual temperature at port is computed	_gleich_false	
+Ergebniszeilen: 66
+
+Ergebniszeilen: 20
+ancestor	port	klasse	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.sigBus	AixLib.Controls.Interfaces.VapourCompressionMachineControlBus	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.T_amb_con	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.T_amb_eva	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.iceFac_in	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.modeSet	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.nSet	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.sigBus	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.modeSet	Modelica.Blocks.Interfaces.BooleanInput	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.T_amb_con	Modelica.Blocks.Interfaces.RealInput	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.T_amb_eva	Modelica.Blocks.Interfaces.RealInput	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.iceFac_in	Modelica.Blocks.Interfaces.RealInput	
+AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine	AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.nSet	Modelica.Blocks.Interfaces.RealInput	
+AixLib.Fluid.Interfaces.PartialFourPort	AixLib.Fluid.Interfaces.PartialFourPort.port_a1	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.Interfaces.PartialFourPort	AixLib.Fluid.Interfaces.PartialFourPort.port_a2	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.Interfaces.PartialFourPort	AixLib.Fluid.Interfaces.PartialFourPort.port_b1	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.Interfaces.PartialFourPort	AixLib.Fluid.Interfaces.PartialFourPort.port_b2	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.Interfaces.PartialFourPort	AixLib.Fluid.Interfaces.PartialFourPort.port_a1	Modelica.Fluid.Interfaces.FluidPort_a	
+AixLib.Fluid.Interfaces.PartialFourPort	AixLib.Fluid.Interfaces.PartialFourPort.port_a2	Modelica.Fluid.Interfaces.FluidPort_a	
+AixLib.Fluid.Interfaces.PartialFourPort	AixLib.Fluid.Interfaces.PartialFourPort.port_b1	Modelica.Fluid.Interfaces.FluidPort_b	
+AixLib.Fluid.Interfaces.PartialFourPort	AixLib.Fluid.Interfaces.PartialFourPort.port_b2	Modelica.Fluid.Interfaces.FluidPort_b	
+Ergebniszeilen: 20
+

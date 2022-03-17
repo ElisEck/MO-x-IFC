@@ -1,0 +1,51 @@
+aix:AixLib.Fluid.HeatExchangers.ActiveWalls.PanelHeating
+
+Ergebniszeilen: 1
+comment	
+A panel heating for e.g. floor heating with discretization	
+Ergebniszeilen: 1
+
+Ergebniszeilen: 2
+ancestor	
+AixLib.Fluid.HeatExchangers.ActiveWalls.PanelHeating	
+Modelica.Fluid.Interfaces.PartialTwoPort	
+Ergebniszeilen: 2
+
+Ergebniszeilen: 20
+ancestor	parameter	type	comment	modification	
+AixLib.Fluid.HeatExchangers.ActiveWalls.PanelHeating	AixLib.Fluid.HeatExchangers.ActiveWalls.PanelHeating.cTopRatio	Real		(min_gleich_0,max_gleich_1)_gleich_floorHeatingType.c_top_ratio	
+AixLib.Fluid.HeatExchangers.ActiveWalls.PanelHeating	AixLib.Fluid.HeatExchangers.ActiveWalls.PanelHeating.tubeLength	Modelica.SIunits.Length		_gleich_A/floorHeatingType.Spacing	
+AixLib.Fluid.HeatExchangers.ActiveWalls.PanelHeating	AixLib.Fluid.HeatExchangers.ActiveWalls.PanelHeating.floorHeatingType	AixLib.DataBase.ActiveWalls.ActiveWallBaseDataDefinition		_gleich_DataBase.ActiveWalls.JocoKlimaBodenTOP2000_Parkett()	
+AixLib.Fluid.HeatExchangers.ActiveWalls.PanelHeating	AixLib.Fluid.HeatExchangers.ActiveWalls.PanelHeating.cDown	AixLib.Fluid.HeatExchangers.ActiveWalls.BaseClasses.HeatCapacityPerArea		_gleich_cFloorHeating*(1-cTopRatio)	
+AixLib.Fluid.HeatExchangers.ActiveWalls.PanelHeating	AixLib.Fluid.HeatExchangers.ActiveWalls.PanelHeating.cTop	AixLib.Fluid.HeatExchangers.ActiveWalls.BaseClasses.HeatCapacityPerArea		_gleich_cFloorHeating*cTopRatio	
+AixLib.Fluid.HeatExchangers.ActiveWalls.PanelHeating	AixLib.Fluid.HeatExchangers.ActiveWalls.PanelHeating.cFloorHeating	AixLib.Fluid.HeatExchangers.ActiveWalls.BaseClasses.HeatCapacityPerArea		_gleich_floorHeatingType.C_ActivatedElement	
+AixLib.Fluid.HeatExchangers.ActiveWalls.PanelHeating	AixLib.Fluid.HeatExchangers.ActiveWalls.PanelHeating.kDown_nominal	Modelica.SIunits.CoefficientOfHeatTransfer		_gleich_floorHeatingType.k_down	
+AixLib.Fluid.HeatExchangers.ActiveWalls.PanelHeating	AixLib.Fluid.HeatExchangers.ActiveWalls.PanelHeating.kTop_nominal	Modelica.SIunits.CoefficientOfHeatTransfer		_gleich_floorHeatingType.k_top	
+AixLib.Fluid.HeatExchangers.ActiveWalls.PanelHeating	AixLib.Fluid.HeatExchangers.ActiveWalls.PanelHeating.A	Modelica.SIunits.Area	Area of floor / heating panel part		
+AixLib.Fluid.HeatExchangers.ActiveWalls.PanelHeating	AixLib.Fluid.HeatExchangers.ActiveWalls.PanelHeating.isFloor	Boolean	Ceilingheating	_gleich_true	
+AixLib.Fluid.HeatExchangers.ActiveWalls.PanelHeating	AixLib.Fluid.HeatExchangers.ActiveWalls.PanelHeating.hCon_const	Modelica.SIunits.CoefficientOfHeatTransfer	Custom convective heat transfer coefficient	_gleich_2.5	
+AixLib.Fluid.HeatExchangers.ActiveWalls.PanelHeating	AixLib.Fluid.HeatExchangers.ActiveWalls.PanelHeating.calcMethod	Integer	Custom hCon (constant)	_gleich_2	
+AixLib.Fluid.HeatExchangers.ActiveWalls.PanelHeating	AixLib.Fluid.HeatExchangers.ActiveWalls.PanelHeating.eps	Modelica.SIunits.Emissivity	Emissivity	_gleich_floorHeatingType.eps	
+AixLib.Fluid.HeatExchangers.ActiveWalls.PanelHeating	AixLib.Fluid.HeatExchangers.ActiveWalls.PanelHeating.T0	Modelica.SIunits.Temperature	Initial temperature, in degrees Celsius	_gleich_Modelica.SIunits.Conversions.from_degC(20)	
+AixLib.Fluid.HeatExchangers.ActiveWalls.PanelHeating	AixLib.Fluid.HeatExchangers.ActiveWalls.PanelHeating.dis	Integer	Number of Discreatisation Layers	(min_gleich_1)_gleich_5	
+AixLib.Fluid.HeatExchangers.ActiveWalls.PanelHeating	AixLib.Fluid.HeatExchangers.ActiveWalls.PanelHeating.VWater	Modelica.SIunits.Volume	Volume of Water	_gleich_Modelica.SIunits.Conversions.from_litre(floorHeatingType.VolumeWaterPerMeter*tubeLength)	
+Modelica.Fluid.Interfaces.PartialTwoPort	Modelica.Fluid.Interfaces.PartialTwoPort.showDesignFlowDirection	Boolean	_gleich_ false to hide the arrow in the model icon	_gleich_true	
+Modelica.Fluid.Interfaces.PartialTwoPort	Modelica.Fluid.Interfaces.PartialTwoPort.port_a_exposesState	Boolean	_gleich_ true if port_a exposes the state of a fluid volume	_gleich_false	
+Modelica.Fluid.Interfaces.PartialTwoPort	Modelica.Fluid.Interfaces.PartialTwoPort.port_b_exposesState	Boolean	_gleich_ true if port_b.p exposes the state of a fluid volume	_gleich_false	
+Modelica.Fluid.Interfaces.PartialTwoPort	Modelica.Fluid.Interfaces.PartialTwoPort.allowFlowReversal	Boolean	_gleich_ true to allow flow reversal, false restricts to design direction (port_a -> port_b)	_gleich_system.allowFlowReversal	
+Ergebniszeilen: 20
+
+Ergebniszeilen: 10
+ancestor	port	klasse	
+AixLib.Fluid.HeatExchangers.ActiveWalls.PanelHeating	AixLib.Fluid.HeatExchangers.ActiveWalls.PanelHeating.starRad	AixLib.Utilities.Interfaces.RadPort	
+AixLib.Fluid.HeatExchangers.ActiveWalls.PanelHeating	AixLib.Fluid.HeatExchangers.ActiveWalls.PanelHeating.ThermDown	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.HeatExchangers.ActiveWalls.PanelHeating	AixLib.Fluid.HeatExchangers.ActiveWalls.PanelHeating.starRad	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.HeatExchangers.ActiveWalls.PanelHeating	AixLib.Fluid.HeatExchangers.ActiveWalls.PanelHeating.thermConv	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.HeatExchangers.ActiveWalls.PanelHeating	AixLib.Fluid.HeatExchangers.ActiveWalls.PanelHeating.ThermDown	Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_a	
+AixLib.Fluid.HeatExchangers.ActiveWalls.PanelHeating	AixLib.Fluid.HeatExchangers.ActiveWalls.PanelHeating.thermConv	Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_a	
+Modelica.Fluid.Interfaces.PartialTwoPort	Modelica.Fluid.Interfaces.PartialTwoPort.port_a	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+Modelica.Fluid.Interfaces.PartialTwoPort	Modelica.Fluid.Interfaces.PartialTwoPort.port_b	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+Modelica.Fluid.Interfaces.PartialTwoPort	Modelica.Fluid.Interfaces.PartialTwoPort.port_a	Modelica.Fluid.Interfaces.FluidPort_a	
+Modelica.Fluid.Interfaces.PartialTwoPort	Modelica.Fluid.Interfaces.PartialTwoPort.port_b	Modelica.Fluid.Interfaces.FluidPort_b	
+Ergebniszeilen: 10
+

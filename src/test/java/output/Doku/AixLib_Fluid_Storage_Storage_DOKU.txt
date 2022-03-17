@@ -1,0 +1,53 @@
+aix:AixLib.Fluid.Storage.Storage
+
+Ergebniszeilen: 0
+comment	
+Ergebniszeilen: 0
+
+Ergebniszeilen: 1
+ancestor	
+AixLib.Fluid.Storage.Storage	
+Ergebniszeilen: 1
+
+Ergebniszeilen: 24
+ancestor	parameter	type	comment	modification	
+AixLib.Fluid.Storage.Storage	AixLib.Fluid.Storage.Storage.kappa	Real		_gleich_0.4	
+AixLib.Fluid.Storage.Storage	AixLib.Fluid.Storage.Storage.G_middle	Modelica.SIunits.ThermalConductance		_gleich_2*Modelica.Constants.pi*h/n/(1/(hConIn*d/2)+1/lambda_ins*log((d/2+s_ins)/(d/2))+1/(hConOut*(d/2+s_ins)))	
+AixLib.Fluid.Storage.Storage	AixLib.Fluid.Storage.Storage.beta	Modelica.SIunits.RelativePressureCoefficient		_gleich_350e-6	
+AixLib.Fluid.Storage.Storage	AixLib.Fluid.Storage.Storage.V	Modelica.SIunits.Volume		_gleich_A*h	
+AixLib.Fluid.Storage.Storage	AixLib.Fluid.Storage.Storage.G_top_bottom	Modelica.SIunits.ThermalConductance		_gleich_G_middle+lambda_ins/s_ins*A	
+AixLib.Fluid.Storage.Storage	AixLib.Fluid.Storage.Storage.A	Modelica.SIunits.Area		_gleich_Modelica.Constants.pi*d^2/4	
+AixLib.Fluid.Storage.Storage	AixLib.Fluid.Storage.Storage.dx	Modelica.SIunits.Length		_gleich_V/A/n	
+AixLib.Fluid.Storage.Storage	AixLib.Fluid.Storage.Storage.hConOut	Modelica.SIunits.CoefficientOfHeatTransfer	External heat transfer coefficient		
+AixLib.Fluid.Storage.Storage	AixLib.Fluid.Storage.Storage.hConIn	Modelica.SIunits.CoefficientOfHeatTransfer	Iinternal heat transfer coefficient		
+AixLib.Fluid.Storage.Storage	AixLib.Fluid.Storage.Storage.m_flow_nominal_layer	Modelica.SIunits.MassFlowRate	Nominal mass flow rate in layers		
+AixLib.Fluid.Storage.Storage	AixLib.Fluid.Storage.Storage.m_flow_nominal_HE	Modelica.SIunits.MassFlowRate	Nominal mass flow rate of heat exchanger layers		
+AixLib.Fluid.Storage.Storage	AixLib.Fluid.Storage.Storage.m_flow_small_layer_HE	Modelica.SIunits.MassFlowRate	Small mass flow rate for regularization of zero flow	_gleich_1E-4*abs(m_flow_nominal_HE)	
+AixLib.Fluid.Storage.Storage	AixLib.Fluid.Storage.Storage.m_flow_small_layer	Modelica.SIunits.MassFlowRate	Small mass flow rate for regularization of zero flow	_gleich_1E-4*abs(m_flow_nominal_layer)	
+AixLib.Fluid.Storage.Storage	AixLib.Fluid.Storage.Storage.p_start	Modelica.Media.Interfaces.Types.AbsolutePressure	Start value of pressure	_gleich_Medium.p_default	
+AixLib.Fluid.Storage.Storage	AixLib.Fluid.Storage.Storage.T_start	Modelica.Media.Interfaces.Types.Temperature	Start value of temperature	_gleich_Medium.T_default	
+AixLib.Fluid.Storage.Storage	AixLib.Fluid.Storage.Storage.energyDynamics	Modelica.Fluid.Types.Dynamics	Type of energy balance: dynamic (3 initialization options) or steady state in layers and layers_HE	_gleich_Modelica.Fluid.Types.Dynamics.DynamicFreeInitial	
+AixLib.Fluid.Storage.Storage	AixLib.Fluid.Storage.Storage.A_HE	Modelica.SIunits.Area	heat exchanger area		
+AixLib.Fluid.Storage.Storage	AixLib.Fluid.Storage.Storage.k_HE	Modelica.SIunits.CoefficientOfHeatTransfer	heat exchanger heat transfer coefficient		
+AixLib.Fluid.Storage.Storage	AixLib.Fluid.Storage.Storage.V_HE	Modelica.SIunits.Volume	heat exchanger volume		
+AixLib.Fluid.Storage.Storage	AixLib.Fluid.Storage.Storage.n	Integer	number of layers	(min_gleich_3)	
+AixLib.Fluid.Storage.Storage	AixLib.Fluid.Storage.Storage.d	Modelica.SIunits.Length	storage diameter		
+AixLib.Fluid.Storage.Storage	AixLib.Fluid.Storage.Storage.h	Modelica.SIunits.Length	storage height		
+AixLib.Fluid.Storage.Storage	AixLib.Fluid.Storage.Storage.lambda_ins	Modelica.SIunits.ThermalConductivity	thermal conductivity of insulation		
+AixLib.Fluid.Storage.Storage	AixLib.Fluid.Storage.Storage.s_ins	Modelica.SIunits.Length	thickness of insulation		
+Ergebniszeilen: 24
+
+Ergebniszeilen: 10
+ancestor	port	klasse	
+AixLib.Fluid.Storage.Storage	AixLib.Fluid.Storage.Storage.heatPort	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.Storage.Storage	AixLib.Fluid.Storage.Storage.port_a_consumer	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.Storage.Storage	AixLib.Fluid.Storage.Storage.port_a_heatGenerator	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.Storage.Storage	AixLib.Fluid.Storage.Storage.port_b_consumer	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.Storage.Storage	AixLib.Fluid.Storage.Storage.port_b_heatGenerator	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.Storage.Storage	AixLib.Fluid.Storage.Storage.port_a_consumer	Modelica.Fluid.Interfaces.FluidPort_a	
+AixLib.Fluid.Storage.Storage	AixLib.Fluid.Storage.Storage.port_a_heatGenerator	Modelica.Fluid.Interfaces.FluidPort_a	
+AixLib.Fluid.Storage.Storage	AixLib.Fluid.Storage.Storage.port_b_consumer	Modelica.Fluid.Interfaces.FluidPort_b	
+AixLib.Fluid.Storage.Storage	AixLib.Fluid.Storage.Storage.port_b_heatGenerator	Modelica.Fluid.Interfaces.FluidPort_b	
+AixLib.Fluid.Storage.Storage	AixLib.Fluid.Storage.Storage.heatPort	Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_a	
+Ergebniszeilen: 10
+

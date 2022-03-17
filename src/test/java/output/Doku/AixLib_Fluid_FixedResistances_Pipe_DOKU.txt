@@ -1,0 +1,66 @@
+aix:AixLib.Fluid.FixedResistances.Pipe
+
+Ergebniszeilen: 1
+comment	
+Discretized DynamicPipe with heat loss to ambient	
+Ergebniszeilen: 1
+
+Ergebniszeilen: 2
+ancestor	
+AixLib.Fluid.FixedResistances.Pipe	
+AixLib.Fluid.Interfaces.PartialTwoPort	
+Ergebniszeilen: 2
+
+Ergebniszeilen: 33
+ancestor	parameter	type	comment	modification	
+AixLib.Fluid.FixedResistances.Pipe	AixLib.Fluid.FixedResistances.Pipe.roughness	Modelica.SIunits.Height	Average height of surface asperities (default: smooth steel pipe)	_gleich_2.5e-5	
+AixLib.Fluid.FixedResistances.Pipe	AixLib.Fluid.FixedResistances.Pipe.modelStructure	Modelica.Fluid.Types.ModelStructure	Determines whether flow or volume models are present at the ports	_gleich_Modelica.Fluid.Types.ModelStructure.av_vb	
+AixLib.Fluid.FixedResistances.Pipe	AixLib.Fluid.FixedResistances.Pipe.diameter	Modelica.SIunits.Diameter	Diameter of circular pipe	_gleich_parameterPipe.d_i	
+AixLib.Fluid.FixedResistances.Pipe	AixLib.Fluid.FixedResistances.Pipe.eps	Modelica.SIunits.Emissivity	Emissivity	_gleich_0.8	
+AixLib.Fluid.FixedResistances.Pipe	AixLib.Fluid.FixedResistances.Pipe.energyDynamics	Modelica.Fluid.Types.Dynamics	Formulation of energy balances	_gleich_system.energyDynamics	
+AixLib.Fluid.FixedResistances.Pipe	AixLib.Fluid.FixedResistances.Pipe.massDynamics	Modelica.Fluid.Types.Dynamics	Formulation of mass balances	_gleich_system.massDynamics	
+AixLib.Fluid.FixedResistances.Pipe	AixLib.Fluid.FixedResistances.Pipe.momentumDynamics	Modelica.Fluid.Types.Dynamics	Formulation of momentum balances	_gleich_system.momentumDynamics	
+AixLib.Fluid.FixedResistances.Pipe	AixLib.Fluid.FixedResistances.Pipe.hCon_i	Modelica.SIunits.CoefficientOfHeatTransfer	Heat tranfer coefficient from fluid to pipe wall	_gleich_1000	
+AixLib.Fluid.FixedResistances.Pipe	AixLib.Fluid.FixedResistances.Pipe.hCon	Modelica.SIunits.CoefficientOfHeatTransfer	Heat transfer coefficient to ambient	_gleich_8	
+AixLib.Fluid.FixedResistances.Pipe	AixLib.Fluid.FixedResistances.Pipe.height_ab	Modelica.SIunits.Length	Height(port_b)-Height(port_a)	_gleich_0	
+AixLib.Fluid.FixedResistances.Pipe	AixLib.Fluid.FixedResistances.Pipe.crossArea	Modelica.SIunits.Area	Inner cross section area	_gleich_Modelica.Constants.pi*diameter*diameter/4	
+AixLib.Fluid.FixedResistances.Pipe	AixLib.Fluid.FixedResistances.Pipe.perimeter	Modelica.SIunits.Length	Inner perimeter	_gleich_Modelica.Constants.pi*diameter	
+AixLib.Fluid.FixedResistances.Pipe	AixLib.Fluid.FixedResistances.Pipe.parameterIso	AixLib.DataBase.Pipes.InsulationBaseDataDefinition	Insulation Type	_gleich_AixLib.DataBase.Pipes.Insulation.Iso50pc()	
+AixLib.Fluid.FixedResistances.Pipe	AixLib.Fluid.FixedResistances.Pipe.length	Modelica.SIunits.Length	Length	_gleich_1	
+AixLib.Fluid.FixedResistances.Pipe	AixLib.Fluid.FixedResistances.Pipe.nNodes	Integer	Number of discrete flow volumes	(min_gleich_2)_gleich_2	
+AixLib.Fluid.FixedResistances.Pipe	AixLib.Fluid.FixedResistances.Pipe.nParallel	Integer	Number of identical parallel pipes	_gleich_1	
+AixLib.Fluid.FixedResistances.Pipe	AixLib.Fluid.FixedResistances.Pipe.parameterPipe	AixLib.DataBase.Pipes.PipeBaseDataDefinition	Pipe type	_gleich_AixLib.DataBase.Pipes.Copper.Copper_6x1()	
+AixLib.Fluid.FixedResistances.Pipe	AixLib.Fluid.FixedResistances.Pipe.m_flow_start	Medium.MassFlowRate	Start value for mass flow rate	_gleich_system.m_flow_start	
+AixLib.Fluid.FixedResistances.Pipe	AixLib.Fluid.FixedResistances.Pipe.X_start	Medium.MassFraction	Start value of mass fractions m_i/m	_gleich_Medium.X_default	
+AixLib.Fluid.FixedResistances.Pipe	AixLib.Fluid.FixedResistances.Pipe.p_a_start	Medium.AbsolutePressure	Start value of pressure at port a	_gleich_system.p_start	
+AixLib.Fluid.FixedResistances.Pipe	AixLib.Fluid.FixedResistances.Pipe.p_b_start	Medium.AbsolutePressure	Start value of pressure at port b	_gleich_p_a_start	
+AixLib.Fluid.FixedResistances.Pipe	AixLib.Fluid.FixedResistances.Pipe.h_start	Medium.SpecificEnthalpy	Start value of specific enthalpy	_gleich_ifuse_T_startthenMedium.specificEnthalpy_pTX((p_a_start+p_b_start)/2,T_start,X_start)elseMedium.h_default	
+AixLib.Fluid.FixedResistances.Pipe	AixLib.Fluid.FixedResistances.Pipe.T_start	Medium.Temperature	Start value of temperature	_gleich_ifuse_T_startthensystem.T_startelseMedium.temperature_phX((p_a_start+p_b_start)/2,h_start,X_start)	
+AixLib.Fluid.FixedResistances.Pipe	AixLib.Fluid.FixedResistances.Pipe.C_start	Medium.ExtraProperty	Start value of trace substances	(quantity_gleich_Medium.extraPropertiesNames)_gleich_fill(0,Medium.nC)	
+AixLib.Fluid.FixedResistances.Pipe	AixLib.Fluid.FixedResistances.Pipe.use_T_start	Boolean	Use T_start if true, otherwise h_start	_gleich_true	
+AixLib.Fluid.FixedResistances.Pipe	AixLib.Fluid.FixedResistances.Pipe.isEmbedded	Boolean	_gleich_ true if pipe is embedded in a solid material, for example walls 	_gleich_false	
+AixLib.Fluid.FixedResistances.Pipe	AixLib.Fluid.FixedResistances.Pipe.Heat_Loss_To_Ambient	Boolean	_gleich_ true to internally simulate heat loss to ambient by convection and radiation	_gleich_false	
+AixLib.Fluid.FixedResistances.Pipe	AixLib.Fluid.FixedResistances.Pipe.withInsulation	Boolean	_gleich_ true to use a pipe with insulation	_gleich_false	
+AixLib.Fluid.FixedResistances.Pipe	AixLib.Fluid.FixedResistances.Pipe.use_HeatTransferConvective	Boolean	_gleich_ true to use the convective HeatTransfer model	_gleich_true	
+AixLib.Fluid.FixedResistances.Pipe	AixLib.Fluid.FixedResistances.Pipe.isCircular	Boolean	_gleich_true if cross sectional area is circular	_gleich_true	
+AixLib.Fluid.FixedResistances.Pipe	AixLib.Fluid.FixedResistances.Pipe.useLumpedPressure	Boolean	_gleich_true to lump pressure states together	_gleich_false	
+AixLib.Fluid.FixedResistances.Pipe	AixLib.Fluid.FixedResistances.Pipe.useInnerPortProperties	Boolean	_gleich_true to take port properties for flow models from internal control volumes	_gleich_false	
+AixLib.Fluid.Interfaces.PartialTwoPort	AixLib.Fluid.Interfaces.PartialTwoPort.allowFlowReversal	Boolean	_gleich_ false to simplify equations, assuming, but not enforcing, no flow reversal		
+Ergebniszeilen: 33
+
+Ergebniszeilen: 12
+ancestor	port	klasse	
+AixLib.Fluid.FixedResistances.Pipe	AixLib.Fluid.FixedResistances.Pipe.Star	AixLib.Utilities.Interfaces.RadPort	
+AixLib.Fluid.FixedResistances.Pipe	AixLib.Fluid.FixedResistances.Pipe.Star	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.FixedResistances.Pipe	AixLib.Fluid.FixedResistances.Pipe.heatPort_outside	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.FixedResistances.Pipe	AixLib.Fluid.FixedResistances.Pipe.heatPorts	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.FixedResistances.Pipe	AixLib.Fluid.FixedResistances.Pipe.heatPorts_Star	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.FixedResistances.Pipe	AixLib.Fluid.FixedResistances.Pipe.heatPorts	Modelica.Fluid.Interfaces.HeatPorts_a	
+AixLib.Fluid.FixedResistances.Pipe	AixLib.Fluid.FixedResistances.Pipe.heatPorts_Star	Modelica.Fluid.Interfaces.HeatPorts_a	
+AixLib.Fluid.FixedResistances.Pipe	AixLib.Fluid.FixedResistances.Pipe.heatPort_outside	Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_a	
+AixLib.Fluid.Interfaces.PartialTwoPort	AixLib.Fluid.Interfaces.PartialTwoPort.port_a	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.Interfaces.PartialTwoPort	AixLib.Fluid.Interfaces.PartialTwoPort.port_b	http://www.eas.iis.fraunhofer.de/moont#MConnector	
+AixLib.Fluid.Interfaces.PartialTwoPort	AixLib.Fluid.Interfaces.PartialTwoPort.port_a	Modelica.Fluid.Interfaces.FluidPort_a	
+AixLib.Fluid.Interfaces.PartialTwoPort	AixLib.Fluid.Interfaces.PartialTwoPort.port_b	Modelica.Fluid.Interfaces.FluidPort_b	
+Ergebniszeilen: 12
+
