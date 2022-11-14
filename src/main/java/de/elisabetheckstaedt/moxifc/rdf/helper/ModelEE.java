@@ -147,7 +147,7 @@ public class ModelEE {
         QueryExecution qexec = QueryExecutionFactory.create(query, model);
         String ergebnis = "";
         try {
-            ResultSet resultSet = qexec.execSelect();
+            org.apache.jena.query.ResultSet resultSet = qexec.execSelect();
             while (resultSet.hasNext()) {
                 QuerySolution soln = resultSet.next();
                 for(String colName: resultSet.getResultVars()) {
@@ -417,7 +417,7 @@ public class ModelEE {
         QueryExecution qexec = QueryExecutionFactory.create(query, model);
         String ergebnis = "";
         try {
-            ResultSet results = qexec.execSelect();
+            org.apache.jena.query.ResultSet results = qexec.execSelect();
             while ( results.hasNext() ) {
                 QuerySolution soln = results.nextSolution();
                 ergebnis = ergebnis.concat(soln.get("count").asLiteral().getString() + header);
@@ -433,7 +433,7 @@ public class ModelEE {
         QueryExecution qexec = QueryExecutionFactory.create(query, model);
         Integer ergebnis = 0;
         try {
-            ResultSet results = qexec.execSelect();
+            org.apache.jena.query.ResultSet results = qexec.execSelect();
             while ( results.hasNext() ) {
                 QuerySolution soln = results.nextSolution();
                 ergebnis = soln.get("count").asLiteral().getInt();
@@ -450,7 +450,7 @@ public class ModelEE {
         String ergebnis = "";
         ergebnis = ergebnis.concat(System.lineSeparator() + header + System.lineSeparator());
         try {
-            ResultSet results = qexec.execSelect();
+            org.apache.jena.query.ResultSet results = qexec.execSelect();
             while ( results.hasNext() ) {
                 QuerySolution soln = results.nextSolution();
                 ergebnis = ergebnis.concat(soln.get("count").asLiteral().getString() + "\t" + soln.get("klasse").toString() + System.lineSeparator());
