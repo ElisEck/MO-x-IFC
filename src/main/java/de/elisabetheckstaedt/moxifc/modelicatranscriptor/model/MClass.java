@@ -640,6 +640,12 @@ public class MClass {
         return node.getChildren().stream().anyMatch((TreeNode<String> t) -> t.getData().equals(name));
     }
 
+    /**
+     * replace(libraryRootName, packageTree) wenn es sich nicht um einen wohlbekannten Start handelt
+     * für alle Parameter, Komponenten, Parents
+     * @param libraryRootName
+     * @param packageTree
+     */
     public void replaceRelativePaths(String libraryRootName, TreeNode<String> packageTree) {
         for (MParameterComponent mp :  parameters) {
             mp.setTypeSpecifier(replace(libraryRootName, packageTree, mp.getTypeSpecifier()));
@@ -656,12 +662,22 @@ public class MClass {
         Set<ModelicaObject> components = new HashSet<>();
     }
 
+    /**
+     * wenn "typeSpecifier" nicht mit wohlbekannten Kürzeln startet, wird der Vorpfad davor gesetzt
+     * @param libraryRootName
+     * @param packageTree
+     * @param typeSpecifier
+     * @return
+     */
     private String replace(String libraryRootName, TreeNode<String> packageTree, String typeSpecifier) {
         if (typeSpecifier.startsWith(libraryRootName) || //TODO: eigentlich müssten hier die Imports behandelt werden, statt dieser pauschalen Lösung
                 typeSpecifier.startsWith("Medium") ||
                 typeSpecifier.startsWith("SI") || //weiterhin gesehen SIunits
                 typeSpecifier.startsWith("NonSI") ||
                 typeSpecifier.startsWith("SDF") ||
+                typeSpecifier.startsWith("LibEAS") ||
+                typeSpecifier.startsWith("AixLib") ||
+                typeSpecifier.startsWith("Buildings") ||
                 typeSpecifier.startsWith("Modelica")) {
             return typeSpecifier;
         } else if (typeSpecifier.equalsIgnoreCase("Real") ||

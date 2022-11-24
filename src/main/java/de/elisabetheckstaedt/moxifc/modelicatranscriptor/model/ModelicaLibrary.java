@@ -157,6 +157,10 @@ public class ModelicaLibrary {
         return input;
     }
 
+    /**
+     * für alle Files und Klassen
+     * @param libraryRootName
+     */
     private void replaceRelativePaths(String libraryRootName) {
         generateContainerHierarchyTree(libraryRootName);
         for (ModelicaFile mf : mfs) {
@@ -196,8 +200,13 @@ public class ModelicaLibrary {
         }
     }
 
-    private void writePrefixes(FileWriter myWriter) throws IOException {
-        myWriter.write("@prefix "+prefix+":    <http://www.eas.iis.fraunhofer.de/"+ prefix+"#> ." + NEWLINE);
+    /**
+     * erzeugt den Header des Turtle-Files
+     * definiert Prefixes und importiert msl, moont
+     * @param myWriter
+     * @throws IOException
+     */
+    private void writePrefixes(FileWriter myWriter) throws IOException {myWriter.write("@prefix "+prefix+":    <http://www.eas.iis.fraunhofer.de/"+ prefix+"#> ." + NEWLINE);
         myWriter.write("@prefix moont:    <http://www.eas.iis.fraunhofer.de/moont#> ." + NEWLINE);
         //TODO Header entschlacken
         myWriter.write("@prefix msl:    <http://www.eas.iis.fraunhofer.de/msl#> ." + NEWLINE);
