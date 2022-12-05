@@ -4,6 +4,9 @@ import de.elisabetheckstaedt.moxifc.modelicatranscriptor.parser.TreeNode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
+import javax.script.ScriptException;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -169,6 +172,7 @@ public class MClass {
         {
             zf = zf.concat(owlPrefix +":"+ container + "." + name + " moont:hasPart " + owlPrefix +":"+ container + "." + name + "." + mp.getName() + "." + NEWLINE);
             zf = zf.concat(owlPrefix +":"+ container + "." + name + "." + mp.getName()   + " a moont:MParameterComponent;" + NEWLINE);
+            zf = zf.concat("\t moont:identifier \"" + mp.getName() + "\";" + NEWLINE);
 
             if ((mp.getTypeSpecifier().equals("Real"))) {//für Komponenten aus der MSL wird die Klasse nicht angegeben
                 zf = zf.concat("\t" + " moont:type " + "xsd:Real" );
@@ -187,7 +191,13 @@ public class MClass {
             if (mp.getModification().equals("")) {
                 zf = zf.concat("." + NEWLINE);
             } else {
-                zf += "\t" + " moont:modification \"" + maskSpecialCharacter(cleanStringFromLineBreaks(mp.getModification())) + "\"^^xsd:string." + NEWLINE;
+                try {
+                    String mod = mp.getModification().split("=")[1];
+                    Double modDoub = Double.parseDouble(mod);
+                    zf += "\t" + " moont:modification \"" + modDoub + "\"^^xsd:Real." + NEWLINE;
+                } catch (NumberFormatException e) {
+                    zf += "\t" + " moont:modification \"" + maskSpecialCharacter(cleanStringFromLineBreaks(mp.getModification())) + "\"^^xsd:string." + NEWLINE;
+                }
             }
 //Achtung: wenn Zeile wieder rein, Semikolon in Vorzeile oder Subjekt ergänzen
             //            parameterString = parameterString.concat("\t rdfs:range " +"aix:" + mp.klasse + "." + NEWLINE);
@@ -209,19 +219,18 @@ public class MClass {
         {
             zf += owlPrefix + ":"+ container + "." + name +" moont:hasPart " + owlPrefix +":" + container + "." + name + "." + mo.name+ "." + NEWLINE;
             zf += owlPrefix +":"+ container + "." + name + "." + mo.name   + " a moont:MComponent ;"+ NEWLINE;
+            zf = zf.concat("\t moont:identifier \"" + mo.getName() + "\";" + NEWLINE);
+//            zf = zf.concat("\t moont:identifier \"" + mo.getName() + "\";" + NEWLINE);
 //            zf += "\t"                                             + " a owl:NamedIndividual;" + NEWLINE;
-            if (mo.getModification().equals("")) {
-                String a = "";
-            } else {
-                zf += "\t" + " moont:modification \"" + maskSpecialCharacter(cleanStringFromLineBreaks(mo.getModification())) + "\"^^xsd:string;" + NEWLINE;
-            }
+            //transcribe String Comment
             if (mo.getStringComment().equals("")) {
                 String a = "";
             } else {
-                zf += "\t" + " moont:stringComment \"" + maskSpecialCharacter(cleanStringFromLineBreaks(mo.getStringComment())) + "\"^^xsd:string;" + NEWLINE;
+                zf += "\t moont:stringComment \"" + maskSpecialCharacter(cleanStringFromLineBreaks(mo.getStringComment())) + "\"^^xsd:string;" + NEWLINE;
             }
-            if (mo.mClass.name.equals("")) { //wenn es keine
-                continue; //TODO kommt bei redeclare replaceable
+            //transcribe parent class
+            if (mo.mClass.name.equals("")) {
+                continue; //temporarily: skip redeclare replaceable //TODO
             }
             else  if ((mo.mClass.name.startsWith("Modelica"))) {
 //                zf += "\t" + " moont:type " + "msl:" + mo.mClass.name + "." + NEWLINE;
@@ -237,11 +246,69 @@ public class MClass {
 //                zf = zf.concat("aix:"+ container + "." + name + "." + mo.name + " rdfs:range " + "aix:" + mo.klasse.name + "." + NEWLINE);
                 zf += "\t" + " a " + owlPrefix +":" + mo.mClass.name + "." + NEWLINE;
             }
+            //handle modifications
+            if (mo.getModification().equals("")) {
+                //no modification present
+            } else if (mo.getModification().stripLeading().stripTrailing().startsWith("=")) {
+                //the component is a variable, its definition is not transcribed to KG
+//            } else if (
+//                //complex modification with inner bracket or square bracket - temporary: leave as is
+//                    (mo.getModification().substring(1, mo.getModification().length()-1).contains("(")) ||
+//                    (mo.getModification().substring(1, mo.getModification().length()-1).contains("{")) ||
+//                    (mo.getModification().substring(1, mo.getModification().length()-1).contains("["))) {
+//                zf += owlPrefix +":"+ container + "." + name + "." + mo.name   + " moont:modification \"" + maskSpecialCharacter(cleanStringFromLineBreaks(mo.getModification())) + "\"^^xsd:string." + NEWLINE;
+            } else {
+                //simple modification - just some values changed
+//                String[] mods = mo.getModification().substring(1, mo.getModification().length()-1).split(",");
+                String[] mods = mo.splitModifications();
+                ScriptEngine engine = new ScriptEngineManager().getEngineByName("graal.js");
+                for (String mod:mods) {
+                    if (mod.split("=").length!=2) {//complex expression is copied to KG //TODO check whether this should be omitted in the KG
+                        zf += owlPrefix +":"+ container + "." + name + "." + mo.name   + " moont:modification \"" + maskSpecialCharacter(cleanStringFromLineBreaks(mod)) + "\"^^xsd:string." + NEWLINE;
+                    } else {
+                        String comp = mod.split("=")[0];
+                        String value = mod.split("=")[1];
+                        if (comp.contains("(") || value.contains("}")|| value.contains("\"")) {
+                            LOGGER.warn("modification not transcribed to KG"); //TODO handle complex modifications - should be solved if modifications are separated when parsing the *.mo-file
+                            continue;
+                        }
+                        try { //simple case: modification with a number assigned to a variable
+                            double doubleValue = Double.parseDouble(value);
+                            zf += owlPrefix + ":" + container + "." + name + "." + mo.name + "." + comp + " moont:modification \"" + doubleValue + "\"^^xsd:Real;" + NEWLINE;
+                            zf +=  "\t moont:identifier \"" + comp + "\"." + NEWLINE;
+                            zf += owlPrefix + ":" + container + "." + name + "." + mo.name + " moont:hasPart " + owlPrefix + ":" + container + "." + name + "." + mo.name + "." + comp + "." + NEWLINE;
+                        } catch(NumberFormatException e) {
+                            if (value.equalsIgnoreCase("false") || value.equalsIgnoreCase("true")) {
+                                zf += owlPrefix + ":" + container + "." + name + "." + mo.name + "." + comp + " moont:modification \"" + value + "\"^^xsd:boolean;" + NEWLINE;
+                                zf +=  "\t moont:identifier \"" + comp + "\"." + NEWLINE;
+                                zf += owlPrefix + ":" + container + "." + name + "." + mo.name + " moont:hasPart " + owlPrefix + ":" + container + "." + name + "." + mo.name + "." + comp +  "." + NEWLINE;
+                            } else if (comp.startsWith("redeclare")) {
+                                zf += owlPrefix +":"+ container + "." + name + "." + mo.name   + " moont:modification \"" + maskSpecialCharacter(cleanStringFromLineBreaks(mod)) + "\"^^xsd:string;" + NEWLINE;
+                                zf +=  "\t moont:identifier \"" + comp + "\"." + NEWLINE;
+//                                zf += owlPrefix + ":" + container + "." + name + "." + mo.name + " moont:hasPart " + owlPrefix + ":" + container + "." + name + "." + mo.name + "." + comp +  "." + NEWLINE;
+                            } else {//equation assigned to a variable
+                                try {//if possible: evaluate
+                                    Object result = engine.eval(value);
+                                    zf += owlPrefix + ":" + container + "." + name + "." + mo.name + "." + comp + " moont:modification \"" + result.toString() + "\"^^xsd:Real;" + NEWLINE;
+                                    zf +=  "\t moont:identifier \"" + comp + "\"." + NEWLINE;
+                                    zf += owlPrefix + ":" + container + "." + name + "." + mo.name + " moont:hasPart " + owlPrefix + ":" + container + "." + name + "." + mo.name + "." + comp +  "." + NEWLINE;
+                                } catch (ScriptException ex) {
+                                    // simple expression (equation assigned to parameter) is handled in knowledge graph //TODO check whether this should be omitted in the KG
+                                        zf += owlPrefix + ":" + container + "." + name + "." + mo.name + "." + comp + " moont:modification \"" + value + "\"^^xsd:String;" + NEWLINE;
+                                        zf +=  "\t moont:identifier \"" + comp + "\"." + NEWLINE;
+                                        zf += owlPrefix + ":" + container + "." + name + "." + mo.name + " moont:hasPart " + owlPrefix + ":" + container + "." + name + "." + mo.name + "." + comp +  "." + NEWLINE;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
         return zf;
     }
 
-    String cleanName(String nameOld) { //TODO cleanName ersetzen
+
+    String cleanName(String nameOld) { //TODO replace cleanName
         String nameNew = nameOld;
         if (nameOld.contains("[")) {
             nameNew = nameNew.replace("[", "_");
@@ -285,6 +352,7 @@ public class MClass {
                 }
                 zf +=  writeClassNamespace() + leftComponentName + " moont:hasPart " + writeClassNamespace() + leftComponentName + "." + leftPortName + "." + NEWLINE;
                 zf +=  writeClassNamespace() + leftComponentName +  "." + leftPortName + " a moont:MConnectorComponent." + NEWLINE;
+                zf +=  writeClassNamespace() + leftComponentName +  "." + leftPortName + " moont:identifier \"" + leftPortName + "\"." + NEWLINE;
                 zf +=  writeClassNamespace() + leftComponentName + "." + leftPortName;
             }
 
@@ -302,6 +370,7 @@ public class MClass {
                 zf +=  writeClassNamespace() + rightComponentName + "." + rightPortName + "." + NEWLINE;
                 zf +=  writeClassNamespace() + rightComponentName + " moont:hasPart " + writeClassNamespace() + rightComponentName + "." + rightPortName + "." + NEWLINE;
                 zf +=  writeClassNamespace() + rightComponentName + "." + rightPortName + " a moont:MConnectorComponent." + NEWLINE;
+                zf +=  writeClassNamespace() + rightComponentName +  "." + rightPortName + " moont:identifier \"" + rightPortName + "\"." + NEWLINE;
                 if (mc.getRightComponent().contains("[")) {
                     zf += writeClassNamespace() + rightComponentName + " a moont:Vector." + NEWLINE;
                 }

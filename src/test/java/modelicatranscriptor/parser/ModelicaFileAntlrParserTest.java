@@ -34,13 +34,11 @@ public class ModelicaFileAntlrParserTest {
      * liest die Inhalte eines Ordners in eine interne ModelicaLibrary und schreibt diese anschließend als ttl wieder raus
      */
     public void convertModelicaLibraryToGraph(){
-//        convertModelicaLibraryToGraph("aix", "AixLib", "c:\\_DATEN\\Modelica\\_Libraries_extern\\AixLib 1.0.0\\");
 //        convertModelicaLibraryToGraph("lvb", "LVB", "c:\\_DATEN\\Modelica\\_Modelle\\LVB\\");
 //        convertModelicaLibraryToGraph("fmi4bim", "FMI4BIM", "c:\\_DATEN\\Modelica\\_Modelle\\FMI4BIM\\");
 //        convertModelicaLibraryToGraph("libeas", "LibEAS", "c:\\_DATEN\\Modelica\\_Libraries_intern\\LibEAS\\");
-//        convertModelicaLibraryToGraph("aix", "AixLib", "c:\\_DATEN\\Modelica\\_Libraries_extern\\AixLib 1.0.0\\");
-        convertModelicaLibraryToGraph("ex", "LBDCG_example", "c:\\_DATEN\\Modelica\\_Modelle\\LBDCG_example\\");
-//        convertModelicaLibraryToGraph("ex", "LBDCG", "c:\\_DATEN\\Modelica\\_Modelle\\FMI4BIM\\FMI4BIM_Komponententests\\");
+        convertModelicaLibraryToGraph("aix", "AixLib", "c:\\_DATEN\\Modelica\\_Libraries_extern\\AixLib 1.0.0\\");
+//        convertModelicaLibraryToGraph("ex", "LBDCG_example", "c:\\_DATEN\\Modelica\\_Modelle\\LBDCG_example\\");
 //        convertModelicaLibraryToGraph("mbl", "Buildings", "c:\\_DATEN\\Modelica\\_Libraries_extern\\Buildings 8.0.0\\");
 //        convertModelicaLibraryToGraph("msl", "Modelica", "C:\\Program Files\\Dymola 2021\\Modelica\\Library\\Modelica 3.2.3\\");
     }
@@ -54,7 +52,7 @@ public class ModelicaFileAntlrParserTest {
     public void convertModelicaLibraryToGraph(String prefix, String longName, String sourcePath) {
         ModelicaLibrary ml = new ModelicaLibrary(prefix, prefix, Path.of(sourcePath));
         SimpleDateFormat sdf3 = new SimpleDateFormat("yyyyMMdd_HHmm");
-        ml.serializeAsTTL("C:\\_DATEN\\WORKSPACES\\IntelliJ\\mo-x-ifc\\src\\test\\java\\output\\" + prefix+"_"+sdf3.format(new Timestamp(System.currentTimeMillis()))+ "short.ttl", prefix, longName,"short");
+//        ml.serializeAsTTL("C:\\_DATEN\\WORKSPACES\\IntelliJ\\mo-x-ifc\\src\\test\\java\\output\\" + prefix+"_"+sdf3.format(new Timestamp(System.currentTimeMillis()))+ "short.ttl", prefix, longName,"short");
         ml.serializeAsTTL("C:\\_DATEN\\WORKSPACES\\IntelliJ\\mo-x-ifc\\src\\test\\java\\output\\" + prefix+"_"+sdf3.format(new Timestamp(System.currentTimeMillis()))+ "_fullclean.ttl", prefix, longName,"fullclean");
 //        ml.serializeAsTTL("C:\\_DATEN\\WORKSPACES\\IntelliJ\\mo-x-ifc\\src\\test\\java\\output\\" + prefix+"_"+sdf3.format(new Timestamp(System.currentTimeMillis()))+ "_full.ttl", longName,"full");//lässt sich in Protege nicht öffnen wegen Syntaxproblemen
     }

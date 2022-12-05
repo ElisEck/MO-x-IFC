@@ -136,7 +136,7 @@ public class ModelicaComponentListener extends modelicaBaseListener {
             mod = ctx.getText();
         }
         if (!insideComment && curObject != null && modificationLevel==1) {
-            curObject.setModification(mod);
+            curObject.setModification(mod); //FIXME if keyword "final" is present, sometimes the whitespace seems to be missing
             // modification besteht aus optionaler class_modification, welche in Klammern geschrieben wird und einer Expression, welche nach dem = steht
             // die modification an sich ist auch optional d.h. es kann auch keins von beiden da sein
         }
