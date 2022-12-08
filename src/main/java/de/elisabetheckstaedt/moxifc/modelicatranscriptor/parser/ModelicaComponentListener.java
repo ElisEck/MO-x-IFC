@@ -251,7 +251,7 @@ public class ModelicaComponentListener extends modelicaBaseListener {
         if (ctx.string_comment() != null) {
             mkstack.peek().setDescription(ctx.string_comment().getText());
         }
-        LOGGER.info("Using long_class_specifier for " + ctx.IDENT().get(0).getText());
+        LOGGER.trace("Using long_class_specifier for " + ctx.IDENT().get(0).getText());
     }
 
 

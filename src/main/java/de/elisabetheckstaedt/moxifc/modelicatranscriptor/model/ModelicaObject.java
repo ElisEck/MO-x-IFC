@@ -4,10 +4,17 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
+import javax.script.ScriptException;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
+import static de.elisabetheckstaedt.moxifc.modelicatranscriptor.parser.Helper.cleanStringFromLineBreaks;
+import static de.elisabetheckstaedt.moxifc.modelicatranscriptor.parser.Helper.maskSpecialCharacter;
+
 public class ModelicaObject {
+    public static final String NEWLINE = System.lineSeparator();
     String owlPrefix;
     String typePrefix;
     String typeSpecifier;
@@ -87,7 +94,7 @@ public class ModelicaObject {
      *
      * @return String[]
      */
-    String[] splitModifications() {
+    String[] splitModifications(String classContainingTheObject) {
         String modifications = this.getModification().substring(1, this.getModification().length() - 1);
         String modificationsSimplified = modifications;
         String replacement = "_beforeBEFORE_";
@@ -101,7 +108,7 @@ public class ModelicaObject {
                 replacement = modifications.substring(modifications.indexOf("["), modifications.lastIndexOf("]") + 1);
             }
         } catch (Exception e) {
-            LOGGER.warn("splitModififications went wrong "); //TODO perform splitModifications earlier (when parsing the file), should be easier than handling all brackets/special cases here
+            LOGGER.warn("splitModififications went wrong at " + classContainingTheObject + "." + this.name + ": " + modifications); //TODO perform splitModifications earlier (when parsing the file), should be easier than handling all brackets/special cases here
         }
         //if no brackets are present the String _beforeBEFORE_ will be replaced, and this will - most likely - never be present
         modificationsSimplified = modifications.replace(replacement, "_REP_");
@@ -111,6 +118,64 @@ public class ModelicaObject {
                 .collect(Collectors.toList())
                 .toArray(new String[]{});
         return mods;
+    }
+
+    String writeObjectModificationsToTTL(String zf, String objectName, String classContainingTheObject) {
+        if (this.getModification().equals("")) {
+            //no modification present
+        } else if (this.getModification().stripLeading().stripTrailing().startsWith("=")) {
+            //the component is a variable, its definition is not transcribed to KG  //complex modification with inner bracket or square bracket - temporary: leave as is
+            //                    (mo.getModification().substring(1, mo.getModification().length()-1).contains("(")) ||
+            //                    (mo.getModification().substring(1, mo.getModification().length()-1).contains("{")) ||
+            //                    (mo.getModification().substring(1, mo.getModification().length()-1).contains("["))) {
+            //                zf += owlPrefix +":"+ container + "." + name + "." + mo.name   + " moont:modification \"" + maskSpecialCharacter(cleanStringFromLineBreaks(mo.getModification())) + "\"^^xsd:string." + NEWLINE;
+        } else {
+            //simple modification - just some values changed
+            //                String[] mods = mo.getModification().substring(1, mo.getModification().length()-1).split(",");
+            String[] mods = this.splitModifications(classContainingTheObject);
+            ScriptEngine engine = new ScriptEngineManager().getEngineByName("graal.js");
+            for (String mod:mods) {
+                if (mod.split("=").length!=2) {//complex expression is copied to KG //TODO check whether this should be omitted in the KG
+                    zf += objectName   + " moont:modification \"" + maskSpecialCharacter(cleanStringFromLineBreaks(mod)) + "\"^^xsd:string." + NEWLINE;
+                } else {
+                    String comp = mod.split("=")[0];
+                    String value = mod.split("=")[1];
+                    if (comp.contains("(") || value.contains("}")|| value.contains("\"")) {
+                        LOGGER.warn("modification not transcribed to KG at " + classContainingTheObject + "." + name + ": " + mod); //TODO handle complex modifications - should be solved if modifications are separated when parsing the *.mo-file
+                        continue;
+                    }
+                    try { //simple case: modification with a number assigned to a variable
+                        double doubleValue = Double.parseDouble(value);
+                        zf += objectName + "." + comp + " moont:modification \"" + doubleValue + "\"^^xsd:Real;" + NEWLINE;
+                        zf +=  "\t moont:identifier \"" + comp + "\"." + NEWLINE;
+                        zf += objectName + " moont:hasPart " + objectName + "." + comp + "." + NEWLINE;
+                    } catch(NumberFormatException e) {
+                        if (value.equalsIgnoreCase("false") || value.equalsIgnoreCase("true")) {
+                            zf += objectName + "." + comp + " moont:modification \"" + value + "\"^^xsd:boolean;" + NEWLINE;
+                            zf +=  "\t moont:identifier \"" + comp + "\"." + NEWLINE;
+                            zf += objectName + " moont:hasPart " + objectName + "." + comp +  "." + NEWLINE;
+                        } else if (comp.startsWith("redeclare")) {
+                            zf += objectName   + " moont:modification \"" + maskSpecialCharacter(cleanStringFromLineBreaks(mod)) + "\"^^xsd:string;" + NEWLINE;
+                            zf +=  "\t moont:identifier \"" + comp + "\"." + NEWLINE;
+                            //                                zf += objectName + " moont:hasPart " + objectName + "." + comp +  "." + NEWLINE;
+                        } else {//equation assigned to a variable
+                            try {//if possible: evaluate
+                                Object result = engine.eval(value);
+                                zf += objectName + "." + comp + " moont:modification \"" + result.toString() + "\"^^xsd:Real;" + NEWLINE;
+                                zf +=  "\t moont:identifier \"" + comp + "\"." + NEWLINE;
+                                zf += objectName + " moont:hasPart " + objectName + "." + comp +  "." + NEWLINE;
+                            } catch (ScriptException ex) {
+                                // simple expression (equation assigned to parameter) is handled in knowledge graph //TODO check whether this should be omitted in the KG
+                                zf += objectName + "." + comp + " moont:modification \"" + value + "\"^^xsd:String;" + NEWLINE;
+                                zf +=  "\t moont:identifier \"" + comp + "\"." + NEWLINE;
+                                zf += objectName + " moont:hasPart " + objectName + "." + comp +  "." + NEWLINE;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return zf;
     }
 
     public String getStringComment() {

@@ -1,5 +1,9 @@
 package de.elisabetheckstaedt.moxifc.modelicatranscriptor.parser;
 
+import de.elisabetheckstaedt.moxifc.modelicatranscriptor.model.MClass;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -8,6 +12,7 @@ import java.util.stream.Collectors;
  * @param <T>
  */
 public class TreeNode<T> implements Iterable<TreeNode<T>>{
+    private static final Logger LOGGER = LoggerFactory.getLogger(MClass.class);
 
     T data;
     TreeNode<T> parent;
@@ -101,5 +106,43 @@ public class TreeNode<T> implements Iterable<TreeNode<T>>{
         return parent.getChildren().stream()
                 .filter(c -> !c.equals(this))
                 .collect(Collectors.toList());
+    }
+
+    public static String findParentNodeOfSearchString(TreeNode<String> root, String startPath, String searchString) {
+        try {
+            return findParentNodeOfSearchString(root.findTreeNode(startPath), searchString);
+        } catch (Exception e) {
+            LOGGER.warn("Reached root node while searching for " + searchString + " starting from " + startPath);
+            return "";
+        }
+
+    }
+
+    public static  String findParentNodeOfSearchString(TreeNode<String> startNode, String searchString) throws NullPointerException {
+        //        Optional<TreeNode<String>> optionalHit = startNode.getSiblings()
+        Optional<TreeNode<String>> optionalHit = startNode.getParent().getChildren()
+                .stream()
+                .filter(c -> c.getData().equals(searchString))
+                .findAny();
+        if(optionalHit.isPresent()) {
+            return startNode.getParent().getFullPath();
+        } else {
+            if(startNode.isRoot()) {
+                //                throw new RuntimeException("Reached root node while searching for " + searchString);
+                System.out.println("Reached root node while searching for " + searchString); //kommt nie zum Tragen
+            }
+            return findParentNodeOfSearchString(startNode.getParent(), searchString);
+        }
+    }
+
+    /**
+     *
+     * @param node Vater
+     * @param name Name des Kindes
+     * @return true, wenn der Knoten ein Kind dieses Namens hat
+     * @throws NullPointerException
+     */
+    public static boolean hasChildWithName(TreeNode<String> node, String name) throws NullPointerException{
+        return node.getChildren().stream().anyMatch((TreeNode<String> t) -> t.getData().equals(name));
     }
 }

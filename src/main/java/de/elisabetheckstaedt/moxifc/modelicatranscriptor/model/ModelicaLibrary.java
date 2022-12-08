@@ -8,6 +8,8 @@ import org.slf4j.LoggerFactory;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -34,11 +36,25 @@ public class ModelicaLibrary {
     String prefix;
     TreeNode<String> packageHierarchyRoot;
 
-    public ModelicaLibrary(String rootpath, String name, String prefix) {
-        this.rootpath = rootpath;
-        this.name = name;
-        this.prefix = prefix;
+    public String getOntologyTitle() {
+        return ontologyTitle;
     }
+
+    public void setOntologyTitle(String ontologyTitle) {
+        this.ontologyTitle = ontologyTitle;
+    }
+
+    String ontologyTitle;
+
+    public String getOntologyVersion() {
+        return ontologyVersion;
+    }
+
+    public void setOntologyVersion(String ontologyVersion) {
+        this.ontologyVersion = ontologyVersion;
+    }
+
+    String ontologyVersion;
 
     /**
      * constrc
@@ -46,16 +62,21 @@ public class ModelicaLibrary {
      * @param prefix
      * @param dir
      */
-    public ModelicaLibrary(String name, String prefix, Path dir) {
+    public ModelicaLibrary(String name, String prefix, Path dir, String ontologyTitle, String ontologyVersion) {
 //        if (dir == null) return null;
-        new ModelicaLibrary(dir.toString(), name, prefix);
+//        new ModelicaLibrary(, name, prefix, title);
+        this.rootpath = dir.toString();
+        this.name = name;
+        this.prefix = prefix;
+        this.ontologyTitle = ontologyTitle;
+        this.ontologyVersion = ontologyVersion;
         try {
             Files.walk(dir)
                     .filter(file -> file.toFile().isFile())
                     .filter(file -> file.toFile().getAbsolutePath().toLowerCase().endsWith(".mo"))
                     .forEach(file -> {
                                 ModelicaFile mf1 = new ModelicaFile(file);
-                                LOGGER.info("Parsing " + mf1.path + "...");
+                                LOGGER.trace("Parsing " + mf1.path + "...");
                                 ModelicaFileAntlrParser parser = new ModelicaFileAntlrParser(prefix);
                                 String content = null;
                                 try {
@@ -85,14 +106,14 @@ public class ModelicaLibrary {
 
 
 
-    void writeExtendsToTTL() {
+    void writeExtendsToTTL(String backupPrefix) {
         try {
             FileWriter myWriter = new FileWriter(name+".ttl");
             myWriter.write("@prefix aix:    <http://www.buildingsmart-tech.org/ifcOWL/IFC4_ADD1#> .\r\n");
             myWriter.write("@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .\r\n");
             for (ModelicaFile mf : mfs) {
                 for (MClass mk : mf.mks) {
-                        myWriter.write(mk.writeParentToTTL());
+                        myWriter.write(mk.writeParentToTTL(backupPrefix));
                     }
                 }
                 myWriter.close();
@@ -114,18 +135,18 @@ public class ModelicaLibrary {
         try {
             FileWriter myWriter = new FileWriter(filename);
 
-            writePrefixes(myWriter);
+            writeHeader(myWriter, getOntologyTitle());
 
             replaceRelativePaths(libraryRootName);
 
             for (ModelicaFile mf : mfs) {
                 for (MClass mk : mf.mks) {
                     if (serializingOption.equals("full")) {
-                        myWriter.write(mk.serializeAsTTL());
+                        myWriter.write(mk.serializeAsTTL(prefix));
                     } else if (serializingOption.equals("fullclean")) {
-                            myWriter.write(cleanttl(mk.serializeAsTTL()));
+                            myWriter.write(cleanttl(mk.serializeAsTTL(prefix)));
                     } else {
-                        myWriter.write(mk.serializeAsTTLHeaderAndParents());
+                        myWriter.write(mk.serializeAsTTLHeaderAndParents(prefix));
                     }
                 }
             }
@@ -166,7 +187,7 @@ public class ModelicaLibrary {
         for (ModelicaFile mf : mfs) {
             for (MClass mk : mf.mks) {
 //                mk.replaceRelativePaths("AixLib.", packageHierarchyRoot);
-                mk.replaceRelativePaths(libraryRootName, packageHierarchyRoot);
+                mk.replaceRelativeModelicaPathsWithAbsoluteModelicaPathsForAllParametersComponetsParents(libraryRootName, packageHierarchyRoot);
             }
         }
     }
@@ -206,19 +227,29 @@ public class ModelicaLibrary {
      * @param myWriter
      * @throws IOException
      */
-    private void writePrefixes(FileWriter myWriter) throws IOException {myWriter.write("@prefix "+prefix+":    <http://www.eas.iis.fraunhofer.de/"+ prefix+"#> ." + NEWLINE);
+    private void writeHeader(FileWriter myWriter, String title) throws IOException {myWriter.write("@prefix "+prefix+":    <http://www.eas.iis.fraunhofer.de/"+ prefix+"#> ." + NEWLINE);
         myWriter.write("@prefix moont:    <http://www.eas.iis.fraunhofer.de/moont#> ." + NEWLINE);
         //TODO Header entschlacken
         myWriter.write("@prefix msl:    <http://www.eas.iis.fraunhofer.de/msl#> ." + NEWLINE);
         myWriter.write("@prefix aix:    <http://www.eas.iis.fraunhofer.de/aix#> ." + NEWLINE);
         myWriter.write("@prefix mbl:    <http://www.eas.iis.fraunhofer.de/mbl#> ." + NEWLINE);
-        myWriter.write("@prefix ibpsa:    <http://www.eas.iis.fraunhofer.de/ibpsa#> ." + NEWLINE);
+        myWriter.write("@prefix libeas:    <http://www.eas.iis.fraunhofer.de/libeas#> ." + NEWLINE);
+//        myWriter.write("@prefix ibpsa:    <http://www.eas.iis.fraunhofer.de/ibpsa#> ." + NEWLINE);
         myWriter.write("@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> ." + NEWLINE);
         myWriter.write("@prefix rdf:  <http://www.w3.org/2000/01/rdf#> ." + NEWLINE);
         myWriter.write("@prefix owl:  <http://www.w3.org/2002/07/owl#> ." + NEWLINE);
         myWriter.write("@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> ." + NEWLINE);
+        myWriter.write("@prefix dcterms:  <http://purl.org/dc/terms#> ." + NEWLINE);
         myWriter.write(prefix + ": rdf:type owl:Ontology ;" + NEWLINE);
+        myWriter.write("\t dcterms:title \"" + title + "\"@en ;" + NEWLINE);
+        myWriter.write("\t dcterms:creator \"Elisabeth Eckstädt using MoTTL transcriptor\" ;" + NEWLINE);
+        SimpleDateFormat sdf3 = new SimpleDateFormat("yyyy-MM-dd");
+        myWriter.write("\t dcterms:issued \"" + sdf3.format(new Timestamp(System.currentTimeMillis())) + "\";" + NEWLINE);
+        myWriter.write("\t owl:versionInfo \"v1.0.0\";" + NEWLINE);
         myWriter.write("\t owl:imports msl: ;" + NEWLINE); //TODO Import weglassen, wenn es sich um MSL handelt
+        myWriter.write("\t owl:imports mbl: ;" + NEWLINE);
+        myWriter.write("\t owl:imports aix: ;" + NEWLINE);
+        myWriter.write("\t owl:imports libeas: ;" + NEWLINE);
         myWriter.write("\t owl:imports moont: ." + NEWLINE); //TODO nur importieren bei MSL, nicht bei den davon ableitenden
     }
 

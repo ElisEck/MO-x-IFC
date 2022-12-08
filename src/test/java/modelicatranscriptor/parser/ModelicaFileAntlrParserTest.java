@@ -36,11 +36,11 @@ public class ModelicaFileAntlrParserTest {
     public void convertModelicaLibraryToGraph(){
 //        convertModelicaLibraryToGraph("lvb", "LVB", "c:\\_DATEN\\Modelica\\_Modelle\\LVB\\");
 //        convertModelicaLibraryToGraph("fmi4bim", "FMI4BIM", "c:\\_DATEN\\Modelica\\_Modelle\\FMI4BIM\\");
-//        convertModelicaLibraryToGraph("libeas", "LibEAS", "c:\\_DATEN\\Modelica\\_Libraries_intern\\LibEAS\\");
-        convertModelicaLibraryToGraph("aix", "AixLib", "c:\\_DATEN\\Modelica\\_Libraries_extern\\AixLib 1.0.0\\");
-//        convertModelicaLibraryToGraph("ex", "LBDCG_example", "c:\\_DATEN\\Modelica\\_Modelle\\LBDCG_example\\");
-//        convertModelicaLibraryToGraph("mbl", "Buildings", "c:\\_DATEN\\Modelica\\_Libraries_extern\\Buildings 8.0.0\\");
-//        convertModelicaLibraryToGraph("msl", "Modelica", "C:\\Program Files\\Dymola 2021\\Modelica\\Library\\Modelica 3.2.3\\");
+        convertModelicaLibraryToGraph("libeas", "LibEAS", "c:\\_DATEN\\Modelica\\_Libraries_intern\\LibEAS\\", "Modelica LibEAS ontology", "v3.2.0.1");
+        convertModelicaLibraryToGraph("aix", "AixLib", "c:\\_DATEN\\Modelica\\_Libraries_extern\\AixLib 1.0.0\\", "Modelica AixLib (v1.0.0) ontology", "v1.0.0.1");
+        convertModelicaLibraryToGraph("ex", "LBDCG_example", "c:\\_DATEN\\Modelica\\_Modelle\\LBDCG_example\\", "knowledge graph representing the Modelica LBDCG_example package","v1.0.0.1");
+        convertModelicaLibraryToGraph("mbl", "Buildings", "c:\\_DATEN\\Modelica\\_Libraries_extern\\Buildings 8.0.0\\", "Modelica Buildings Library (v8.0.0) ontology","v8.0.0.1");
+        convertModelicaLibraryToGraph("msl", "Modelica", "C:\\Program Files\\Dymola 2021\\Modelica\\Library\\Modelica 3.2.3\\", "Modelica Standard Library (v3.2.3) ontology", "v3.2.3.1");
     }
 
     /**
@@ -49,8 +49,8 @@ public class ModelicaFileAntlrParserTest {
      * @param longName z.B. AixLib
      * @param sourcePath Ordner der das Wurzel package.mo enthält z.B. C:\Program Files\Dymola 2021\Modelica\Library\Modelica 3.2.3\
      */
-    public void convertModelicaLibraryToGraph(String prefix, String longName, String sourcePath) {
-        ModelicaLibrary ml = new ModelicaLibrary(prefix, prefix, Path.of(sourcePath));
+    public void convertModelicaLibraryToGraph(String prefix, String longName, String sourcePath, String ontologyTitle, String ontologyVersion) {
+        ModelicaLibrary ml = new ModelicaLibrary(prefix, prefix, Path.of(sourcePath), ontologyTitle, ontologyVersion);
         SimpleDateFormat sdf3 = new SimpleDateFormat("yyyyMMdd_HHmm");
 //        ml.serializeAsTTL("C:\\_DATEN\\WORKSPACES\\IntelliJ\\mo-x-ifc\\src\\test\\java\\output\\" + prefix+"_"+sdf3.format(new Timestamp(System.currentTimeMillis()))+ "short.ttl", prefix, longName,"short");
         ml.serializeAsTTL("C:\\_DATEN\\WORKSPACES\\IntelliJ\\mo-x-ifc\\src\\test\\java\\output\\" + prefix+"_"+sdf3.format(new Timestamp(System.currentTimeMillis()))+ "_fullclean.ttl", prefix, longName,"fullclean");
