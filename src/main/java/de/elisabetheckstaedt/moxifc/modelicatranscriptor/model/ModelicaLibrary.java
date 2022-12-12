@@ -36,40 +36,19 @@ public class ModelicaLibrary {
     String prefix;
     TreeNode<String> packageHierarchyRoot;
 
-    public String getOntologyTitle() {
-        return ontologyTitle;
-    }
-
-    public void setOntologyTitle(String ontologyTitle) {
-        this.ontologyTitle = ontologyTitle;
-    }
-
-    String ontologyTitle;
-
-    public String getOntologyVersion() {
-        return ontologyVersion;
-    }
-
-    public void setOntologyVersion(String ontologyVersion) {
-        this.ontologyVersion = ontologyVersion;
-    }
-
-    String ontologyVersion;
-
     /**
      * constrc
      * @param name
      * @param prefix
      * @param dir
      */
-    public ModelicaLibrary(String name, String prefix, Path dir, String ontologyTitle, String ontologyVersion) {
+    public ModelicaLibrary(String name, String prefix, Path dir) {
 //        if (dir == null) return null;
 //        new ModelicaLibrary(, name, prefix, title);
         this.rootpath = dir.toString();
         this.name = name;
         this.prefix = prefix;
-        this.ontologyTitle = ontologyTitle;
-        this.ontologyVersion = ontologyVersion;
+
         try {
             Files.walk(dir)
                     .filter(file -> file.toFile().isFile())
@@ -118,7 +97,6 @@ public class ModelicaLibrary {
                 }
                 myWriter.close();
         } catch (IOException e) {
-            System.out.println("An error occurred.");
             e.printStackTrace();
         }
     }
@@ -130,12 +108,12 @@ public class ModelicaLibrary {
 
 
 
-    public void serializeAsTTL(String filename, String prefix, String libraryRootName, String serializingOption) {
+    public void serializeAsTTL(String filename, String prefix, String libraryRootName, String serializingOption, String ontologyTitle, String ontologyVersion) {
         this.prefix = prefix;
         try {
             FileWriter myWriter = new FileWriter(filename);
 
-            writeHeader(myWriter, getOntologyTitle());
+            writeHeader(myWriter, ontologyTitle, ontologyVersion);
 
             replaceRelativePaths(libraryRootName);
 
@@ -227,10 +205,11 @@ public class ModelicaLibrary {
      * @param myWriter
      * @throws IOException
      */
-    private void writeHeader(FileWriter myWriter, String title) throws IOException {myWriter.write("@prefix "+prefix+":    <http://www.eas.iis.fraunhofer.de/"+ prefix+"#> ." + NEWLINE);
+    private void writeHeader(FileWriter myWriter, String ontologyTitle, String ontologyVersion) throws IOException {myWriter.write("@prefix "+prefix+":    <http://www.eas.iis.fraunhofer.de/"+ prefix+"#> ." + NEWLINE);
         myWriter.write("@prefix moont:    <http://www.eas.iis.fraunhofer.de/moont#> ." + NEWLINE);
         //TODO Header entschlacken
         myWriter.write("@prefix msl:    <http://www.eas.iis.fraunhofer.de/msl#> ." + NEWLINE);
+        myWriter.write("@prefix bs:    <http://www.eas.iis.fraunhofer.de/bs#> ." + NEWLINE);
         myWriter.write("@prefix aix:    <http://www.eas.iis.fraunhofer.de/aix#> ." + NEWLINE);
         myWriter.write("@prefix mbl:    <http://www.eas.iis.fraunhofer.de/mbl#> ." + NEWLINE);
         myWriter.write("@prefix libeas:    <http://www.eas.iis.fraunhofer.de/libeas#> ." + NEWLINE);
@@ -241,16 +220,17 @@ public class ModelicaLibrary {
         myWriter.write("@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> ." + NEWLINE);
         myWriter.write("@prefix dcterms:  <http://purl.org/dc/terms#> ." + NEWLINE);
         myWriter.write(prefix + ": rdf:type owl:Ontology ;" + NEWLINE);
-        myWriter.write("\t dcterms:title \"" + title + "\"@en ;" + NEWLINE);
+        myWriter.write("\t dcterms:title \"" + ontologyTitle + "\"@en ;" + NEWLINE);
         myWriter.write("\t dcterms:creator \"Elisabeth Eckstädt using MoTTL transcriptor\" ;" + NEWLINE);
         SimpleDateFormat sdf3 = new SimpleDateFormat("yyyy-MM-dd");
         myWriter.write("\t dcterms:issued \"" + sdf3.format(new Timestamp(System.currentTimeMillis())) + "\";" + NEWLINE);
-        myWriter.write("\t owl:versionInfo \"v1.0.0\";" + NEWLINE);
-        myWriter.write("\t owl:imports msl: ;" + NEWLINE); //TODO Import weglassen, wenn es sich um MSL handelt
+        myWriter.write("\t owl:versionInfo \"" + ontologyVersion +"\";" + NEWLINE);
+        myWriter.write("\t owl:imports msl: ;" + NEWLINE);
         myWriter.write("\t owl:imports mbl: ;" + NEWLINE);
         myWriter.write("\t owl:imports aix: ;" + NEWLINE);
+        myWriter.write("\t owl:imports bs: ;" + NEWLINE);
         myWriter.write("\t owl:imports libeas: ;" + NEWLINE);
-        myWriter.write("\t owl:imports moont: ." + NEWLINE); //TODO nur importieren bei MSL, nicht bei den davon ableitenden
+        myWriter.write("\t owl:imports moont: ." + NEWLINE);
     }
 
     public String getName() {

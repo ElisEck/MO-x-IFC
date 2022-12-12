@@ -15,7 +15,7 @@ import static de.elisabetheckstaedt.moxifc.modelicatranscriptor.parser.TreeNode.
 
 public class MClass {
 
-
+    private static final Logger LOGGER = LoggerFactory.getLogger(MClass.class);
     public static final String NEWLINE = System.lineSeparator();
 
     String type_prefix;
@@ -325,7 +325,7 @@ public class MClass {
     }
 
     void serializeAsMo(String rootpath) {
-        System.out.println(name);
+        LOGGER.trace("Serializing as mo: " + name);
         String path = container.replace(".","/");
         if (type.equals("package")) {
             serializePackageAsMo();
@@ -463,7 +463,7 @@ public class MClass {
             case "package": return "MPackage";
             case "function": return "MFunction";
             default:
-                System.out.println(container + "." + name + " Type not supported");
+                LOGGER.warn(container + "." + name + " Modelica-Type not supported");
         }
         return type;
     }

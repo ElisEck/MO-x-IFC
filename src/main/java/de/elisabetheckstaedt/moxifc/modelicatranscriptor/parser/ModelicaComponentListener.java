@@ -270,7 +270,6 @@ public class ModelicaComponentListener extends modelicaBaseListener {
     @Override
     public void enterDer_class_specifier(modelicaParser.Der_class_specifierContext ctx) {
         mkstack.peek().setName(ctx.IDENT().get(0).getText());
-        System.out.println(ctx.IDENT().get(0).getText());
         LOGGER.warn("Using der_class_specifier for " + ctx.IDENT().get(0).getText());
     }
 

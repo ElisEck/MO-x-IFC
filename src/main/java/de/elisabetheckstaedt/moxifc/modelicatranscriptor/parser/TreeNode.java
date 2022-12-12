@@ -128,8 +128,7 @@ public class TreeNode<T> implements Iterable<TreeNode<T>>{
             return startNode.getParent().getFullPath();
         } else {
             if(startNode.isRoot()) {
-                //                throw new RuntimeException("Reached root node while searching for " + searchString);
-                System.out.println("Reached root node while searching for " + searchString); //kommt nie zum Tragen
+                LOGGER.warn("Reached root node while searching for " + searchString);
             }
             return findParentNodeOfSearchString(startNode.getParent(), searchString);
         }
