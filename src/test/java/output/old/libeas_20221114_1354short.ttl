@@ -1,0 +1,1083 @@
+@prefix libeas:    <http://www.eas.iis.fraunhofer.de/libeas#> .
+@prefix moont:    <http://www.eas.iis.fraunhofer.de/moont#> .
+@prefix msl:    <http://www.eas.iis.fraunhofer.de/msl#> .
+@prefix aix:    <http://www.eas.iis.fraunhofer.de/aix#> .
+@prefix mbl:    <http://www.eas.iis.fraunhofer.de/mbl#> .
+@prefix ibpsa:    <http://www.eas.iis.fraunhofer.de/ibpsa#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:  <http://www.w3.org/2000/01/rdf#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+libeas: rdf:type owl:Ontology ;
+	 owl:imports msl: ;
+	 owl:imports moont: .
+libeas:LibEAS.AHU.Components.CoolingUnit rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Cooling unit"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.AHU.Components.
+libeas:LibEAS.AHU.Components.CoolingUnit.Medium2 rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.AHU.Components.CoolingUnit.
+libeas:LibEAS.AHU.Components.CoolingUnit.Medium1 rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.AHU.Components.CoolingUnit.
+libeas:LibEAS.AHU.Components.enthalpyRecovery rdfs:subClassOf moont:MModel;
+	 moont:stringComment "A very simplified model for an enthalpy recovery wheel"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.AHU.Components.
+libeas:LibEAS.AHU.Components.enthalpyRecovery moont:extends libeas:Buildings.Fluid.Interfaces.PartialFourPortInterface.
+libeas:LibEAS.AHU.Components.enthalpyRecovery.Medium rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.AHU.Components.enthalpyRecovery.
+libeas:LibEAS.AHU.Components.Examples.heatRecovery_test.Medium3 rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.AHU.Components.Examples.heatRecovery_test.
+libeas:LibEAS.AHU.Components.Examples.heatRecovery_test.Medium1 rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.AHU.Components.Examples.heatRecovery_test.
+libeas:LibEAS.AHU.Components.Examples.heatRecovery_test.Medium2 rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.AHU.Components.Examples.heatRecovery_test.
+libeas:LibEAS.AHU.Components.Examples.heatRecovery_test rdfs:subClassOf moont:MModel;
+	 moont:containedIn libeas:LibEAS.AHU.Components.Examples.
+libeas:LibEAS.AHU.Components.Examples.heatRecovery_test moont:extends libeas:Modelica.Icons.Example.
+libeas:LibEAS.AHU.Components.Examples rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.AHU.Components.
+libeas:LibEAS.AHU.Components.Examples moont:extends libeas:Modelica.Icons.ExamplesPackage.
+libeas:LibEAS.AHU.Components.Examples.TestFan rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Test of ventilation unit"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.AHU.Components.Examples.
+libeas:LibEAS.AHU.Components.Examples.TestFan moont:extends libeas:Modelica.Icons.Example.
+libeas:LibEAS.AHU.Components.Examples.TestHeater rdfs:subClassOf moont:MModel;
+	 moont:stringComment "test of heating unit"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.AHU.Components.Examples.
+libeas:LibEAS.AHU.Components.Examples.TestHeater moont:extends libeas:Modelica.Icons.Example.
+libeas:LibEAS.AHU.Components.Examples.TestHeater__ValveEqualPercentageOpening_Beimischhaltung rdfs:subClassOf moont:MModel;
+	 moont:stringComment "test des erhitzers mit beimischschaltung"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.AHU.Components.Examples.
+libeas:LibEAS.AHU.Components.Examples.TestHeater__ValveEqualPercentageOpening_Beimischhaltung moont:extends libeas:Modelica.Icons.Example.
+libeas:LibEAS.AHU.Components.Examples.TestHeater__ValveEqualPercentageOpening_Beimischhaltung_mitMesswerten rdfs:subClassOf moont:MModel;
+	 moont:stringComment "test des erhitzers mit beimischschaltung"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.AHU.Components.Examples.
+libeas:LibEAS.AHU.Components.Examples.TestHeater__ValveEqualPercentageOpening_Beimischhaltung_mitMesswerten moont:extends libeas:Modelica.Icons.Example.
+libeas:LibEAS.AHU.Components.Examples.TestVVS_CO2Controlled_01 rdfs:subClassOf moont:MModel;
+	 moont:containedIn libeas:LibEAS.AHU.Components.Examples.
+libeas:LibEAS.AHU.Components.Examples.TestVVS_CO2Controlled_01 moont:extends libeas:Modelica.Icons.Example.
+libeas:LibEAS.AHU.Components.Examples.TestVVS_Val_CO2Controlled_01 rdfs:subClassOf moont:MModel;
+	 moont:containedIn libeas:LibEAS.AHU.Components.Examples.
+libeas:LibEAS.AHU.Components.Examples.TestVVS_Val_CO2Controlled_01 moont:extends libeas:Modelica.Icons.Example.
+libeas:LibEAS.AHU.Components.Examples.TestWRG rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Test of heat recovery unit"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.AHU.Components.Examples.
+libeas:LibEAS.AHU.Components.Examples.TestWRG moont:extends libeas:Modelica.Icons.Example.
+libeas:LibEAS.AHU.Components.Heater_ValveEqualPercentageOpening.Medium1 rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.AHU.Components.Heater_ValveEqualPercentageOpening.
+libeas:LibEAS.AHU.Components.Heater_ValveEqualPercentageOpening rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Heating unit modelled by Tobias Zaiczek"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.AHU.Components.
+libeas:LibEAS.AHU.Components.Heater_ValveEqualPercentageOpening.Medium2 rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.AHU.Components.Heater_ValveEqualPercentageOpening.
+libeas:LibEAS.AHU.Components.Heater_ValveEqualPercentageOpening_Beimischschaltung rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Heating unit modelled by Tobias Zaiczek"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.AHU.Components.
+libeas:LibEAS.AHU.Components.Heater_ValveEqualPercentageOpening_Beimischschaltung.Medium2 rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.AHU.Components.Heater_ValveEqualPercentageOpening_Beimischschaltung.
+libeas:LibEAS.AHU.Components.Heater_ValveEqualPercentageOpening_Beimischschaltung.Medium1 rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.AHU.Components.Heater_ValveEqualPercentageOpening_Beimischschaltung.
+libeas:LibEAS.AHU.Components.Heater_ValveLinearOpening.Medium1 rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.AHU.Components.Heater_ValveLinearOpening.
+libeas:LibEAS.AHU.Components.Heater_ValveLinearOpening.Medium2 rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.AHU.Components.Heater_ValveLinearOpening.
+libeas:LibEAS.AHU.Components.Heater_ValveLinearOpening rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Heating unit modelled by Tobias Zaiczek"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.AHU.Components.
+libeas:LibEAS.AHU.Components.HeatRecovery rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Kreislaufverbundsystem"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.AHU.Components.
+libeas:LibEAS.AHU.Components.HeatRecovery moont:extends libeas:Buildings.Fluid.Interfaces.PartialFourPortInterface.
+libeas:LibEAS.AHU.Components.HeatRecovery.Medium3 rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.AHU.Components.HeatRecovery.
+libeas:LibEAS.AHU.Components.HeatRecovery.Medium1 rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.AHU.Components.HeatRecovery.
+libeas:LibEAS.AHU.Components.HeatRecovery_TZ.Medium2 rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.AHU.Components.HeatRecovery_TZ.
+libeas:LibEAS.AHU.Components.HeatRecovery_TZ rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Heat recovery system"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.AHU.Components.
+libeas:LibEAS.AHU.Components.HeatRecovery_TZ.Medium1 rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.AHU.Components.HeatRecovery_TZ.
+libeas:LibEAS.AHU.Components rdfs:subClassOf moont:MPackage;
+	 moont:stringComment "Komponenten, die zur Modellierung von RLT-Geräten benoetigt werden"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.AHU.
+libeas:LibEAS.AHU.Components.VVS_CO2Controlled.Medium1 rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.AHU.Components.VVS_CO2Controlled.
+libeas:LibEAS.AHU.Components.VVS_CO2Controlled rdfs:subClassOf moont:MModel;
+	 moont:containedIn libeas:LibEAS.AHU.Components.
+libeas:LibEAS.AHU.Controls.AHU_Controller rdfs:subClassOf moont:MModel;
+	 moont:containedIn libeas:LibEAS.AHU.Controls.
+libeas:LibEAS.AHU.Controls.AHU_Controlle_EEr rdfs:subClassOf moont:MModel;
+	 moont:containedIn libeas:LibEAS.AHU.Controls.
+libeas:LibEAS.AHU.Controls.Begrenzung_PI_Regler rdfs:subClassOf moont:MModel;
+	 moont:containedIn libeas:LibEAS.AHU.Controls.
+libeas:LibEAS.AHU.Controls.Controller rdfs:subClassOf moont:MBlock;
+	 moont:stringComment "Controller with deltaT as input"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.AHU.Controls.
+libeas:LibEAS.AHU.Controls.Controller.Cooling_HR1 rdfs:subClassOf moont:MBlock;
+	 moont:containedIn libeas:LibEAS.AHU.Controls.Controller.
+libeas:LibEAS.AHU.Controls.Controller.Heating1 rdfs:subClassOf moont:MBlock;
+	 moont:containedIn libeas:LibEAS.AHU.Controls.Controller.
+libeas:LibEAS.AHU.Controls.Controller.Free_Cooling1 rdfs:subClassOf moont:MBlock;
+	 moont:containedIn libeas:LibEAS.AHU.Controls.Controller.
+libeas:LibEAS.AHU.Controls rdfs:subClassOf moont:MPackage;
+	 moont:stringComment "Regler für RLT-Komponenten und Anlagen"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.AHU.
+libeas:LibEAS.AHU.Controls.sensorsPack rdfs:subClassOf moont:MModel;
+	 moont:containedIn libeas:LibEAS.AHU.Controls.
+libeas:LibEAS.AHU.Controls.sensorsPack.Medium1 rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.AHU.Controls.sensorsPack.
+libeas:LibEAS.AHU rdfs:subClassOf moont:MPackage;
+	 moont:stringComment "Raumlufttechnische Zentralgeräte (Komponenten, Regler, Geräte) - basierend auf Hydraulik Luft"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.
+libeas:LibEAS.AHU moont:extends libeas:Modelica.Icons.VariantsPackage.
+libeas:LibEAS.AHU.Units.AHU_T0_Controlled.Medium2 rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.AHU.Units.AHU_T0_Controlled.
+libeas:LibEAS.AHU.Units.AHU_T0_Controlled.Medium3 rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.AHU.Units.AHU_T0_Controlled.
+libeas:LibEAS.AHU.Units.AHU_T0_Controlled rdfs:subClassOf moont:MModel;
+	 moont:containedIn libeas:LibEAS.AHU.Units.
+libeas:LibEAS.AHU.Units.AHU_T0_Controlled.Medium1 rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.AHU.Units.AHU_T0_Controlled.
+libeas:LibEAS.AHU.Units.AHU_T2_Controlled rdfs:subClassOf moont:MModel;
+	 moont:stringComment "nur ZU, WetCoil, DryCoil"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.AHU.Units.
+libeas:LibEAS.AHU.Units.AHU_T2_Controlled.Medium1 rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.AHU.Units.AHU_T2_Controlled.
+libeas:LibEAS.AHU.Units.AHU_T2_Controlled.Medium2 rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.AHU.Units.AHU_T2_Controlled.
+libeas:LibEAS.AHU.Units.AHU_T4_Controlled.Medium3 rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.AHU.Units.AHU_T4_Controlled.
+libeas:LibEAS.AHU.Units.AHU_T4_Controlled.Medium1 rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.AHU.Units.AHU_T4_Controlled.
+libeas:LibEAS.AHU.Units.AHU_T4_Controlled rdfs:subClassOf moont:MModel;
+	 moont:stringComment "ZU/AB, mit WRG, WetCoil, WRG2, DryCoil"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.AHU.Units.
+libeas:LibEAS.AHU.Units.AHU_T4_Controlled.Medium2 rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.AHU.Units.AHU_T4_Controlled.
+libeas:LibEAS.AHU.Units.AHU_T5_Controlled rdfs:subClassOf moont:MModel;
+	 moont:stringComment "ZU/AB mit WRG, UM, WetCoil, DryCoil, Hum"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.AHU.Units.
+libeas:LibEAS.AHU.Units.AHU_T5_Controlled.Medium2 rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.AHU.Units.AHU_T5_Controlled.
+libeas:LibEAS.AHU.Units.AHU_T5_Controlled.Medium1 rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.AHU.Units.AHU_T5_Controlled.
+libeas:LibEAS.AHU.Units.Examples.AHU_T5_testing rdfs:subClassOf moont:MModel;
+	 moont:containedIn libeas:LibEAS.AHU.Units.Examples.
+libeas:LibEAS.AHU.Units.Examples.AHU_T5_testing.Medium2 rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.AHU.Units.Examples.AHU_T5_testing.
+libeas:LibEAS.AHU.Units.Examples.AHU_T5_testing.Medium1 rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.AHU.Units.Examples.AHU_T5_testing.
+libeas:LibEAS.AHU.Units.Examples rdfs:subClassOf moont:MPackage;
+	 moont:stringComment "lauffähige Minimalmodelle"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.AHU.Units.
+libeas:LibEAS.AHU.Units.Examples moont:extends libeas:Modelica.Icons.ExamplesPackage.
+libeas:LibEAS.AHU.Units.Examples.T2_Aztarain_UTA_SA.Medium2 rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.AHU.Units.Examples.T2_Aztarain_UTA_SA.
+libeas:LibEAS.AHU.Units.Examples.T2_Aztarain_UTA_SA.Medium1 rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.AHU.Units.Examples.T2_Aztarain_UTA_SA.
+libeas:LibEAS.AHU.Units.Examples.T2_Aztarain_UTA_SA rdfs:subClassOf moont:MModel;
+	 moont:containedIn libeas:LibEAS.AHU.Units.Examples.
+libeas:LibEAS.AHU.Units.Examples.Typ1_Test_Raum.Medium2 rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.AHU.Units.Examples.Typ1_Test_Raum.
+libeas:LibEAS.AHU.Units.Examples.Typ1_Test_Raum.Medium1 rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.AHU.Units.Examples.Typ1_Test_Raum.
+libeas:LibEAS.AHU.Units.Examples.Typ1_Test_Raum rdfs:subClassOf moont:MModel;
+	 moont:stringComment "keine Regelung, Abluft hat Offset auf Zuluft, für Außenluft Wetterdaten eingelesen"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.AHU.Units.Examples.
+libeas:LibEAS.AHU.Units.Examples.Typ2_Test_AUVorgabe rdfs:subClassOf moont:MModel;
+	 moont:stringComment "keine Regelung, Abluft hat Offset auf Zuluft, für Außenluft Wetterdaten eingelesen"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.AHU.Units.Examples.
+libeas:LibEAS.AHU.Units.Examples.Typ2_Test_AUVorgabe.Medium1 rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.AHU.Units.Examples.Typ2_Test_AUVorgabe.
+libeas:LibEAS.AHU.Units.Examples.Typ2_Test_Raum rdfs:subClassOf moont:MModel;
+	 moont:stringComment "keine Regelung, Abluft hat Offset auf Zuluft, für Außenluft Wetterdaten eingelesen"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.AHU.Units.Examples.
+libeas:LibEAS.AHU.Units.Examples.Typ2_Test_Raum.Medium1 rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.AHU.Units.Examples.Typ2_Test_Raum.
+libeas:LibEAS.AHU.Units rdfs:subClassOf moont:MPackage;
+	 moont:stringComment "RLT Zentralgeräte"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.AHU.
+libeas:LibEAS.AHU.Units.Typ1.Medium1 rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.AHU.Units.Typ1.
+libeas:LibEAS.AHU.Units.Typ1.Medium2 rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.AHU.Units.Typ1.
+libeas:LibEAS.AHU.Units.Typ1.Medium3 rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.AHU.Units.Typ1.
+libeas:LibEAS.AHU.Units.Typ1 rdfs:subClassOf moont:MModel;
+	 moont:stringComment "ZU/AB mit WRG, WetCoil, DryCoil, Befeuchtung"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.AHU.Units.
+libeas:LibEAS.AHU.Units.Typ2.Sole rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.AHU.Units.Typ2.
+libeas:LibEAS.AHU.Units.Typ2.Medium3 rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.AHU.Units.Typ2.
+libeas:LibEAS.AHU.Units.Typ2.MediumAir rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.AHU.Units.Typ2.
+libeas:LibEAS.AHU.Units.Typ2 rdfs:subClassOf moont:MModel;
+	 moont:stringComment "ZU/AB mit WRG, ideales Heizregister"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.AHU.Units.
+libeas:LibEAS.BoilerCHP.BHKW_mit_Speicher_Simple rdfs:subClassOf moont:MModel;
+	 moont:stringComment "BHKW 80kW Heizleistung mit 3000l Speicher ohne OnOffControl"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.BoilerCHP.
+libeas:LibEAS.BoilerCHP.BHKW_mit_Speicher_Simple moont:extends libeas:AixLib.Fluid.Interfaces.PartialTwoPortInterface.
+libeas:LibEAS.BoilerCHP.BoilerlWithInternalControl_simple rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Boiler model with internal control, with efficiency depending on load and temperature, without regard to minimum power"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.BoilerCHP.
+libeas:LibEAS.BoilerCHP.BoilerlWithInternalControl_simple moont:extends libeas:AixLib.Fluid.BoilerCHP.BaseClasses.PartialHeatGenerator.
+libeas:LibEAS.BoilerCHP.BoilerlWithInternalControl_simple_old rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Boiler model with internal control, with efficiency depending on load and temperature, without regard to minimum power"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.BoilerCHP.
+libeas:LibEAS.BoilerCHP.BoilerlWithInternalControl_simple_old moont:extends libeas:AixLib.Fluid.BoilerCHP.BaseClasses.PartialHeatGenerator.
+libeas:LibEAS.BoilerCHP.CHP_Simple rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Table based CHP model"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.BoilerCHP.
+libeas:LibEAS.BoilerCHP.CHP_Simple moont:extends libeas:AixLib.Fluid.BoilerCHP.BaseClasses.PartialHeatGenerator.
+libeas:LibEAS.BoilerCHP.Controls.BHKWRegler rdfs:subClassOf moont:MModel;
+	 moont:stringComment "aus WP8"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.BoilerCHP.Controls.
+libeas:LibEAS.BoilerCHP.Controls.BHKWRegler2 rdfs:subClassOf moont:MModel;
+	 moont:stringComment "inhaltlich wie Regler 7, aber aufgeräumt"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.BoilerCHP.Controls.
+libeas:LibEAS.BoilerCHP.Controls.CHPPumpControl rdfs:subClassOf moont:MBlock;
+	 moont:stringComment "pump control for CHP with time delay"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.BoilerCHP.Controls.
+libeas:LibEAS.BoilerCHP.Controls.InternalBoilerControlSimple rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Internal PI controller for boiler"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.BoilerCHP.Controls.
+libeas:LibEAS.BoilerCHP.Controls.InternalBoilerControlSimple_old rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Internal PI controller for boiler"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.BoilerCHP.Controls.
+libeas:LibEAS.BoilerCHP.Controls rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.BoilerCHP.
+libeas:LibEAS.BoilerCHP.IdealHeater rdfs:subClassOf moont:MModel;
+	 moont:containedIn libeas:LibEAS.BoilerCHP.
+libeas:LibEAS.BoilerCHP.IdealHeater.Medium rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.BoilerCHP.IdealHeater.
+libeas:LibEAS.BoilerCHP rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.
+libeas:LibEAS.BoilerCHP moont:extends libeas:Modelica.Icons.VariantsPackage.
+libeas:LibEAS.BoilerCHP.Tests.Jahresgang_RLT.boilerNoControl rdfs:subClassOf moont:MModel;
+	 moont:stringComment "AixLib.Fluid.BoilerCHP.BoilerNoControl"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.BoilerCHP.Tests.Jahresgang_RLT.
+libeas:LibEAS.BoilerCHP.Tests.Jahresgang_RLT.boilerNoControl moont:extends libeas:Modelica.Icons.Example.
+libeas:LibEAS.BoilerCHP.Tests.Jahresgang_RLT.boilerNoControl.Medium rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.BoilerCHP.Tests.Jahresgang_RLT.boilerNoControl.
+libeas:LibEAS.BoilerCHP.Tests.Jahresgang_RLT.BoilerPolynomial rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Buildings.Fluid.Boilers.BoilerPolynomial"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.BoilerCHP.Tests.Jahresgang_RLT.
+libeas:LibEAS.BoilerCHP.Tests.Jahresgang_RLT.BoilerPolynomial moont:extends libeas:Modelica.Icons.Example.
+libeas:LibEAS.BoilerCHP.Tests.Jahresgang_RLT.BoilerPolynomial.Medium rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.BoilerCHP.Tests.Jahresgang_RLT.BoilerPolynomial.
+libeas:LibEAS.BoilerCHP.Tests.Jahresgang_RLT.HeatGeneratorNoControl.Medium rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.BoilerCHP.Tests.Jahresgang_RLT.HeatGeneratorNoControl.
+libeas:LibEAS.BoilerCHP.Tests.Jahresgang_RLT.HeatGeneratorNoControl rdfs:subClassOf moont:MModel;
+	 moont:stringComment "AixLib.Fluid.BoilerCHP.HeatGeneratorNoControl"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.BoilerCHP.Tests.Jahresgang_RLT.
+libeas:LibEAS.BoilerCHP.Tests.Jahresgang_RLT.HeatGeneratorNoControl moont:extends libeas:Modelica.Icons.Example.
+libeas:LibEAS.BoilerCHP.Tests.Jahresgang_RLT rdfs:subClassOf moont:MPackage;
+	 moont:stringComment "Testfall mit schwankender Rücklauftemperatur (Offset auf Außentemperatur)"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.BoilerCHP.Tests.
+libeas:LibEAS.BoilerCHP.Tests.Jahresgang_RLT moont:extends libeas:Modelica.Icons.ExamplesPackage.
+libeas:LibEAS.BoilerCHP.Tests rdfs:subClassOf moont:MPackage;
+	 moont:stringComment "Testfälle für Wärmeerzeuger"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.BoilerCHP.
+libeas:LibEAS.BoilerCHP.Tests moont:extends libeas:Modelica.Icons.ExamplesPackage.
+libeas:LibEAS.BoilerCHP.Vitocrossal300_575kW rdfs:subClassOf moont:MRecord;
+	 moont:stringComment "Condensing boiler vitocrossal300 635/575kW, Tv/Tr 80/60"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.BoilerCHP.
+libeas:LibEAS.BoilerCHP.Vitocrossal300_575kW moont:extends libeas:AixLib.DataBase.Boiler.General.BoilerTwoPointBaseDataDefinition.
+libeas:LibEAS.BoundaryConditions.Infiltration.Infiltration_Nutz_Wind rdfs:subClassOf moont:MModel;
+	 moont:containedIn libeas:LibEAS.BoundaryConditions.Infiltration.
+libeas:LibEAS.BoundaryConditions.Infiltration.n_inf rdfs:subClassOf moont:MBlock;
+	 moont:stringComment "Infiltrationsluftwechsel aus Windgeschwindigkeit und n_50"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.BoundaryConditions.Infiltration.
+libeas:LibEAS.BoundaryConditions.Infiltration rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.BoundaryConditions.
+libeas:LibEAS.BoundaryConditions.Jahresgang rdfs:subClassOf moont:MBlock;
+	 moont:stringComment "zwei überlagerte Sinussignale (Tages- und Jahresschwankung)"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.BoundaryConditions.
+libeas:LibEAS.BoundaryConditions.Jahresgang moont:extends libeas:Modelica.Blocks.Interfaces.SO.
+libeas:LibEAS.BoundaryConditions rdfs:subClassOf moont:MPackage;
+	 moont:stringComment "Wetter, Infiltration, Zeitpläne"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.
+libeas:LibEAS.BoundaryConditions.Timetables rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.BoundaryConditions.
+libeas:LibEAS.BoundaryConditions.Timetables.Temperaturzeitplan rdfs:subClassOf moont:MModel;
+	 moont:containedIn libeas:LibEAS.BoundaryConditions.Timetables.
+libeas:LibEAS.BoundaryConditions.Timetables.Wochenzeitplan rdfs:subClassOf moont:MModel;
+	 moont:containedIn libeas:LibEAS.BoundaryConditions.Timetables.
+libeas:LibEAS.BoundaryConditions.Timetables.Wochenzeitplan_SaSo rdfs:subClassOf moont:MModel;
+	 moont:containedIn libeas:LibEAS.BoundaryConditions.Timetables.
+libeas:LibEAS.BoundaryConditions.Weather.Data.Germany_Berlin_Meteonorm_ASCII_EAS rdfs:subClassOf moont:MBlock;
+	 moont:containedIn libeas:LibEAS.BoundaryConditions.Weather.Data.
+libeas:LibEAS.BoundaryConditions.Weather.Data.Germany_Berlin_Meteonorm_ASCII_EAS moont:extends libeas:IMPORT.BuildingSystems.Climate.WeatherData.BaseClasses.WeatherDataFileASCII.
+libeas:LibEAS.BoundaryConditions.Weather.Data.Germany_TRJ_2015_Jahr_Chemnitz rdfs:subClassOf moont:MBlock;
+	 moont:stringComment "ortsgenaues TRJ Chemnitz Geißerstraße"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.BoundaryConditions.Weather.Data.
+libeas:LibEAS.BoundaryConditions.Weather.Data.Germany_TRJ_2015_Jahr_Chemnitz moont:extends libeas:IMPORT.BuildingSystems.Climate.WeatherData.BaseClasses.WeatherDataFileASCII.
+libeas:LibEAS.BoundaryConditions.Weather.Data.Germany_TRY_04_2010_Jahr rdfs:subClassOf moont:MBlock;
+	 moont:containedIn libeas:LibEAS.BoundaryConditions.Weather.Data.
+libeas:LibEAS.BoundaryConditions.Weather.Data.Germany_TRY_04_2010_Jahr moont:extends libeas:IMPORT.BuildingSystems.Climate.WeatherData.BaseClasses.WeatherDataFileASCII.
+libeas:LibEAS.BoundaryConditions.Weather.Data rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.BoundaryConditions.Weather.
+libeas:LibEAS.BoundaryConditions.Weather.Obsolet rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.BoundaryConditions.Weather.
+libeas:LibEAS.BoundaryConditions.Weather.Obsolet.WeatherDataReader_alt.WeatherData rdfs:subClassOf moont:MBlock;
+	 moont:containedIn libeas:LibEAS.BoundaryConditions.Weather.Obsolet.WeatherDataReader_alt.
+libeas:LibEAS.BoundaryConditions.Weather.Obsolet.WeatherDataReader_alt rdfs:subClassOf moont:MBlock;
+	 moont:stringComment "Weather data reader"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.BoundaryConditions.Weather.Obsolet.
+libeas:LibEAS.BoundaryConditions.Weather rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.BoundaryConditions.
+libeas:LibEAS.BoundaryConditions.Weather.Strahlungsumrechner rdfs:subClassOf moont:MModel;
+	 moont:stringComment "PV system for a private household with an electrical house battery"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.BoundaryConditions.Weather.
+libeas:LibEAS.BoundaryConditions.Weather.Strahlungsumrechner moont:extends libeas:Modelica.Icons.Example.
+libeas:LibEAS.BoundaryConditions.Weather.WeatherDataReader rdfs:subClassOf moont:MBlock;
+	 moont:stringComment "ohne konstante Werte Lat und Long"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.BoundaryConditions.Weather.
+libeas:LibEAS.BoundaryConditions.Weather.WeatherDataReader.WeatherData rdfs:subClassOf moont:MBlock;
+	 moont:containedIn libeas:LibEAS.BoundaryConditions.Weather.WeatherDataReader.
+libeas:LibEAS.Controls.Heizkurve rdfs:subClassOf moont:MModel;
+	 moont:containedIn libeas:LibEAS.Controls.
+libeas:LibEAS.Controls.Heizkurve_gleitend rdfs:subClassOf moont:MModel;
+	 moont:containedIn libeas:LibEAS.Controls.
+libeas:LibEAS.Controls rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.
+libeas:LibEAS.Controls.PIDHysteresis_Reset rdfs:subClassOf moont:MModel;
+	 moont:stringComment "PID controller with anti-windup, output limiter and output hysteresis"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.Controls.
+libeas:LibEAS.Controls.PIDHysteresis_Reset moont:extends libeas:Modelica.Blocks.Interfaces.SVcontrol.
+libeas:LibEAS.Controls.Regler_Erzeuger_u_Pumpe rdfs:subClassOf moont:MModel;
+	 moont:stringComment "regelt Erzeugerleistung auf eine Solltemperatur, Pumpensignal 0 oder 1, Abschaltung Pumpe bei Abschaltung Erzeuger"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.Controls.
+libeas:LibEAS.Electrical.CharacteristicCurve rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Elektrischer Verbraucher Lastgang"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.Electrical.
+libeas:LibEAS.Electrical.CharacteristicCurve.Medium rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.Electrical.CharacteristicCurve.
+libeas:LibEAS.Electrical.CHP_ele rdfs:subClassOf moont:MModel;
+	 moont:stringComment "with electrical connector"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.Electrical.
+libeas:LibEAS.Electrical.CHP_ele moont:extends libeas:AixLib.Fluid.BoilerCHP.BaseClasses.PartialHeatGenerator.
+libeas:LibEAS.Electrical.ElectricCar rdfs:subClassOf moont:MModel;
+	 moont:containedIn libeas:LibEAS.Electrical.
+libeas:LibEAS.Electrical.Heizstab rdfs:subClassOf moont:MModel;
+	 moont:containedIn libeas:LibEAS.Electrical.
+libeas:LibEAS.Electrical rdfs:subClassOf moont:MPackage;
+	 moont:stringComment "(Komponenten tun noch nichts, sind nur Platzhalter zum Zeichnen von Konzepten"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.
+libeas:LibEAS.Geothermal.Borefields.BaseClasses rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.Geothermal.Borefields.
+libeas:LibEAS.Geothermal.Borefields.BaseClasses moont:extends libeas:Modelica.Icons.BasesPackage.
+libeas:LibEAS.Geothermal.Borefields.BaseClasses.PartialBorefield.Medium rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.Geothermal.Borefields.BaseClasses.PartialBorefield.
+libeas:LibEAS.Geothermal.Borefields.BaseClasses.PartialBorefield rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Borefield model using single U-tube borehole heat exchanger configuration.Calculates the average fluid temperature T_fts of the borefield for a given (time dependent) load Q_flow"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.Geothermal.Borefields.BaseClasses;
+	 moont:isPartial "true"^^xsd:boolean.
+libeas:LibEAS.Geothermal.Borefields.BaseClasses.PartialBorefield moont:extends libeas:AixLib.Fluid.Interfaces.TwoPortFlowResistanceParameters.
+libeas:LibEAS.Geothermal.Borefields.BaseClasses.PartialBorefield moont:extends libeas:AixLib.Fluid.Interfaces.PartialTwoPortInterface.
+libeas:LibEAS.Geothermal.Borefields.BaseClasses.PartialBorefield_schwankend.Medium rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.Geothermal.Borefields.BaseClasses.PartialBorefield_schwankend.
+libeas:LibEAS.Geothermal.Borefields.BaseClasses.PartialBorefield_schwankend rdfs:subClassOf moont:MModel;
+	 moont:stringComment "ungestörte Temperatur jahreszeitlich schwankend"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.Geothermal.Borefields.BaseClasses;
+	 moont:isPartial "true"^^xsd:boolean.
+libeas:LibEAS.Geothermal.Borefields.BaseClasses.PartialBorefield_schwankend moont:extends libeas:AixLib.Fluid.Interfaces.TwoPortFlowResistanceParameters.
+libeas:LibEAS.Geothermal.Borefields.BaseClasses.PartialBorefield_schwankend moont:extends libeas:AixLib.Fluid.Interfaces.PartialTwoPortInterface.
+libeas:LibEAS.Geothermal.Borefields.Examples.E_Sondenfeld_10a.Medium rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.Geothermal.Borefields.Examples.E_Sondenfeld_10a.
+libeas:LibEAS.Geothermal.Borefields.Examples.E_Sondenfeld_10a rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Vergleich des Verhaltens eines Sondenfelds bei unterschiedlichen Volumenströmen (Betrachtung: 10 Jahre)"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.Geothermal.Borefields.Examples.
+libeas:LibEAS.Geothermal.Borefields.Examples.E_Sondenfeld_10a moont:extends libeas:Modelica.Icons.Example.
+libeas:LibEAS.Geothermal.Borefields.Examples.E_Sondenfeld_10a.Sole rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.Geothermal.Borefields.Examples.E_Sondenfeld_10a.
+libeas:LibEAS.Geothermal.Borefields.Examples.E_Sondenfeld_10a.MediumSole rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.Geothermal.Borefields.Examples.E_Sondenfeld_10a.
+libeas:LibEAS.Geothermal.Borefields.Examples.F_Sondenfeld_Dortmund.Medium rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.Geothermal.Borefields.Examples.F_Sondenfeld_Dortmund.
+libeas:LibEAS.Geothermal.Borefields.Examples.F_Sondenfeld_Dortmund.Sole rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.Geothermal.Borefields.Examples.F_Sondenfeld_Dortmund.
+libeas:LibEAS.Geothermal.Borefields.Examples.F_Sondenfeld_Dortmund rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Parametrierung analog Orlikowski.2012 um Plausibilität zu prüfen und Handling zu üben"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.Geothermal.Borefields.Examples.
+libeas:LibEAS.Geothermal.Borefields.Examples.F_Sondenfeld_Dortmund moont:extends libeas:Modelica.Icons.Example.
+libeas:LibEAS.Geothermal.Borefields.Examples.F_Sondenfeld_Dortmund.MediumSole rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.Geothermal.Borefields.Examples.F_Sondenfeld_Dortmund.
+libeas:LibEAS.Geothermal.Borefields.Examples.G_Sondenfeld_Dortmund.MediumSole rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.Geothermal.Borefields.Examples.G_Sondenfeld_Dortmund.
+libeas:LibEAS.Geothermal.Borefields.Examples.G_Sondenfeld_Dortmund.Medium rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.Geothermal.Borefields.Examples.G_Sondenfeld_Dortmund.
+libeas:LibEAS.Geothermal.Borefields.Examples.G_Sondenfeld_Dortmund rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Einbau WMZ"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.Geothermal.Borefields.Examples.
+libeas:LibEAS.Geothermal.Borefields.Examples.G_Sondenfeld_Dortmund moont:extends libeas:Modelica.Icons.Example.
+libeas:LibEAS.Geothermal.Borefields.Examples.G_Sondenfeld_Dortmund.Sole rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.Geothermal.Borefields.Examples.G_Sondenfeld_Dortmund.
+libeas:LibEAS.Geothermal.Borefields.Examples.H_Sondenfeld_Dortmund.Medium rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.Geothermal.Borefields.Examples.H_Sondenfeld_Dortmund.
+libeas:LibEAS.Geothermal.Borefields.Examples.H_Sondenfeld_Dortmund rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Vergleich 4 verschiedene Parametrierungen von Erdreich und Solestrom"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.Geothermal.Borefields.Examples.
+libeas:LibEAS.Geothermal.Borefields.Examples.H_Sondenfeld_Dortmund moont:extends libeas:Modelica.Icons.Example.
+libeas:LibEAS.Geothermal.Borefields.Examples.H_Sondenfeld_Dortmund.Sole rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.Geothermal.Borefields.Examples.H_Sondenfeld_Dortmund.
+libeas:LibEAS.Geothermal.Borefields.Examples.H_Sondenfeld_Dortmund.MediumSole rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.Geothermal.Borefields.Examples.H_Sondenfeld_Dortmund.
+libeas:LibEAS.Geothermal.Borefields.Examples.H_Sondenfeld_Dortmund_2.Sole rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.Geothermal.Borefields.Examples.H_Sondenfeld_Dortmund_2.
+libeas:LibEAS.Geothermal.Borefields.Examples.H_Sondenfeld_Dortmund_2.MediumSole rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.Geothermal.Borefields.Examples.H_Sondenfeld_Dortmund_2.
+libeas:LibEAS.Geothermal.Borefields.Examples.H_Sondenfeld_Dortmund_2.Medium rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.Geothermal.Borefields.Examples.H_Sondenfeld_Dortmund_2.
+libeas:LibEAS.Geothermal.Borefields.Examples.H_Sondenfeld_Dortmund_2 rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Reparatur Medium Sole 15.2.21"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.Geothermal.Borefields.Examples.
+libeas:LibEAS.Geothermal.Borefields.Examples.H_Sondenfeld_Dortmund_2 moont:extends libeas:Modelica.Icons.Example.
+libeas:LibEAS.Geothermal.Borefields.Examples.I_Sondenfeld_Dortmund_Rb.Medium rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.Geothermal.Borefields.Examples.I_Sondenfeld_Dortmund_Rb.
+libeas:LibEAS.Geothermal.Borefields.Examples.I_Sondenfeld_Dortmund_Rb rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Vergleich unterschiedlicher Rb-Werte (bei konstanter Ungestörttemperatur aber jahreszeitlich Schwankender Eintrittstemperatur ins Bohrloch)"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.Geothermal.Borefields.Examples.
+libeas:LibEAS.Geothermal.Borefields.Examples.I_Sondenfeld_Dortmund_Rb moont:extends libeas:Modelica.Icons.Example.
+libeas:LibEAS.Geothermal.Borefields.Examples.I_Sondenfeld_Dortmund_Rb.MediumSole rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.Geothermal.Borefields.Examples.I_Sondenfeld_Dortmund_Rb.
+libeas:LibEAS.Geothermal.Borefields.Examples.I_Sondenfeld_Dortmund_Rb.Sole rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.Geothermal.Borefields.Examples.I_Sondenfeld_Dortmund_Rb.
+libeas:LibEAS.Geothermal.Borefields.Examples rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.Geothermal.Borefields.
+libeas:LibEAS.Geothermal.Borefields.Examples moont:extends libeas:Modelica.Icons.ExamplesPackage.
+libeas:LibEAS.Geothermal.Borefields rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.Geothermal.
+libeas:LibEAS.Geothermal.Borefields moont:extends libeas:Modelica.Icons.VariantsPackage.
+libeas:LibEAS.Geothermal.Borefields.TwoUTubes rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Borefield model containing double U-tube boreholes"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.Geothermal.Borefields.
+libeas:LibEAS.Geothermal.Borefields.TwoUTubes moont:extends libeas:LibEAS.Geothermal.Borefields.BaseClasses.PartialBorefield.
+libeas:LibEAS.Geothermal.Borefields.TwoUTubes_schwankend rdfs:subClassOf moont:MModel;
+	 moont:stringComment "undisturbed soil temperature with yearly oscillation"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.Geothermal.Borefields.
+libeas:LibEAS.Geothermal.Borefields.TwoUTubes_schwankend moont:extends libeas:LibEAS.Geothermal.Borefields.BaseClasses.PartialBorefield_schwankend.
+libeas:LibEAS.Geothermal rdfs:subClassOf moont:MPackage;
+	 moont:stringComment "Sondenfelder incl Testmodelle"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.
+libeas:LibEAS.Geothermal moont:extends libeas:Modelica.Icons.VariantsPackage.
+libeas:LibEAS.HeatingCircuits.boilerControlled_mitZapfprofil.Medium rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.boilerControlled_mitZapfprofil.
+libeas:LibEAS.HeatingCircuits.boilerControlled_mitZapfprofil rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Kopie von Chenzi 20.3.21 15:00"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.
+libeas:LibEAS.HeatingCircuits.CharacteristicCurve.Medium rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.CharacteristicCurve.
+libeas:LibEAS.HeatingCircuits.CharacteristicCurve rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Heizkurve (ohne Bypass), Massestrom etwas variabel: 0,5...1 vom Nennwert"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.
+libeas:LibEAS.HeatingCircuits.Examples.E_Lueftungskreis_mit_Wetter_undRegelung.Medium rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Examples.E_Lueftungskreis_mit_Wetter_undRegelung.
+libeas:LibEAS.HeatingCircuits.Examples.E_Lueftungskreis_mit_Wetter_undRegelung.Sole rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Examples.E_Lueftungskreis_mit_Wetter_undRegelung.
+libeas:LibEAS.HeatingCircuits.Examples.E_Lueftungskreis_mit_Wetter_undRegelung.MediumSole rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Examples.E_Lueftungskreis_mit_Wetter_undRegelung.
+libeas:LibEAS.HeatingCircuits.Examples.E_Lueftungskreis_mit_Wetter_undRegelung rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Speicher mit RLT-Kreis (geregelt auf Zulufttemperatur)"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Examples.
+libeas:LibEAS.HeatingCircuits.Examples.E_Lueftungskreis_mit_Wetter_undRegelung moont:extends libeas:Modelica.Icons.Example.
+libeas:LibEAS.HeatingCircuits.Examples rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.
+libeas:LibEAS.HeatingCircuits.Examples moont:extends libeas:Modelica.Icons.ExamplesPackage.
+libeas:LibEAS.HeatingCircuits.Examples.ParametrierungHK rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Hydraulik"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Examples.
+libeas:LibEAS.HeatingCircuits.Examples.ParametrierungHK moont:extends libeas:Modelica.Icons.Example.
+libeas:LibEAS.HeatingCircuits.Examples.ParametrierungHK.Medium rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Examples.ParametrierungHK.
+libeas:LibEAS.HeatingCircuits.Examples.ParametrierungHK.MediumWater rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Examples.ParametrierungHK.
+libeas:LibEAS.HeatingCircuits.Examples.Vergleich_FBH rdfs:subClassOf moont:MModel;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Examples.
+libeas:LibEAS.HeatingCircuits.Examples.Vergleich_FBH moont:extends libeas:Modelica.Icons.Example.
+libeas:LibEAS.HeatingCircuits.Examples.Vergleich_FBH.Medium rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Examples.Vergleich_FBH.
+libeas:LibEAS.HeatingCircuits.Examples.Vergleich_Heizkoerper rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Vergleich verschiedener Heizkörpermodelle"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Examples.
+libeas:LibEAS.HeatingCircuits.Examples.Vergleich_Heizkoerper moont:extends libeas:Modelica.Icons.Example.
+libeas:LibEAS.HeatingCircuits.Examples.Vergleich_Heizkoerper.Medium rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Examples.Vergleich_Heizkoerper.
+libeas:LibEAS.HeatingCircuits.Examples.Vergleich_Raume.MediumWater rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Examples.Vergleich_Raume.
+libeas:LibEAS.HeatingCircuits.Examples.Vergleich_Raume rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Vergleich von Raum mit FBH vs. HK"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Examples.
+libeas:LibEAS.HeatingCircuits.Examples.Vergleich_Raume moont:extends libeas:Modelica.Icons.Example.
+libeas:LibEAS.HeatingCircuits.Examples.Vergleich_Raume.Medium rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Examples.Vergleich_Raume.
+libeas:LibEAS.HeatingCircuits.HeatedRooms.MBL rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.HeatedRooms.
+libeas:LibEAS.HeatingCircuits.HeatedRooms.MBL.Room_Nor_Cooled rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Space cooled by a slab"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.HeatedRooms.MBL.
+libeas:LibEAS.HeatingCircuits.HeatedRooms.MBL.Room_Rad_Heated rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Space heated by a raditor"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.HeatedRooms.MBL.
+libeas:LibEAS.HeatingCircuits.HeatedRooms.MBL.Room_Tilv_Cooled rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Space cooled by a slab"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.HeatedRooms.MBL.
+libeas:LibEAS.HeatingCircuits.HeatedRooms rdfs:subClassOf moont:MPackage;
+	 moont:stringComment "Räume mit Übergabeelement"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.
+libeas:LibEAS.HeatingCircuits.HeatedRooms.VolumeEnhanced rdfs:subClassOf moont:MPackage;
+	 moont:stringComment "room models based on a volume element with one wall and 5 windows and inner loads"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.HeatedRooms.
+libeas:LibEAS.HeatingCircuits.HeatedRooms.VolumeEnhanced.Raum_FBH.MediumWater rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.HeatedRooms.VolumeEnhanced.Raum_FBH.
+libeas:LibEAS.HeatingCircuits.HeatedRooms.VolumeEnhanced.Raum_FBH.MediumAir rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.HeatedRooms.VolumeEnhanced.Raum_FBH.
+libeas:LibEAS.HeatingCircuits.HeatedRooms.VolumeEnhanced.Raum_FBH rdfs:subClassOf moont:MModel;
+	 moont:stringComment "ohne Regler für freie Kühlung"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.HeatedRooms.VolumeEnhanced.
+libeas:LibEAS.HeatingCircuits.HeatedRooms.VolumeEnhanced.Raum_FBH_FK.MediumWater rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.HeatedRooms.VolumeEnhanced.Raum_FBH_FK.
+libeas:LibEAS.HeatingCircuits.HeatedRooms.VolumeEnhanced.Raum_FBH_FK rdfs:subClassOf moont:MModel;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.HeatedRooms.VolumeEnhanced.
+libeas:LibEAS.HeatingCircuits.HeatedRooms.VolumeEnhanced.Raum_FBH_FK.MediumAir rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.HeatedRooms.VolumeEnhanced.Raum_FBH_FK.
+libeas:LibEAS.HeatingCircuits.HeatedRooms.VolumeEnhanced.Raum_HK rdfs:subClassOf moont:MModel;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.HeatedRooms.VolumeEnhanced.
+libeas:LibEAS.HeatingCircuits.HeatedRooms.VolumeEnhanced.Raum_HK.MediumWater rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.HeatedRooms.VolumeEnhanced.Raum_HK.
+libeas:LibEAS.HeatingCircuits.HeatedRooms.VolumeEnhanced.Raum_HK.MediumAir rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.HeatedRooms.VolumeEnhanced.Raum_HK.
+libeas:LibEAS.HeatingCircuits.HeatedRooms.VolumeSimple rdfs:subClassOf moont:MPackage;
+	 moont:stringComment "room models based on a volume element without walls and everything"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.HeatedRooms.
+libeas:LibEAS.HeatingCircuits.HeatedRooms.VolumeSimple.Room_Nor_Cooled_Sim rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Simplified cooled space"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.HeatedRooms.VolumeSimple.
+libeas:LibEAS.HeatingCircuits.HeatedRooms.VolumeSimple.Room_Rad_Heated_Sim rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Space heated by a raditor"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.HeatedRooms.VolumeSimple.
+libeas:LibEAS.HeatingCircuits.HeatedRooms.VolumeSimple.Room_Tilv_Cooled_Sim rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Space cooled by a slab"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.HeatedRooms.VolumeSimple.
+libeas:LibEAS.HeatingCircuits.Heizregister.Medium_Luft2 rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Heizregister.
+libeas:LibEAS.HeatingCircuits.Heizregister.Medium_Luft rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Heizregister.
+libeas:LibEAS.HeatingCircuits.Heizregister.Medium rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Heizregister.
+libeas:LibEAS.HeatingCircuits.Heizregister rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Heizregister einer Lüftungsanlage (Vorgaben: Vp, T_AU, T_AB), zieht sich Heizungsvolumenstrom zur Haltung einer konstanten Zulufttemperatur"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.
+libeas:LibEAS.HeatingCircuits.Heizregister_LVB.Medium rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Heizregister_LVB.
+libeas:LibEAS.HeatingCircuits.Heizregister_LVB.Medium_Luft rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Heizregister_LVB.
+libeas:LibEAS.HeatingCircuits.Heizregister_LVB rdfs:subClassOf moont:MModel;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.
+libeas:LibEAS.HeatingCircuits.Heizregister_LVB.Medium_Luft2 rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Heizregister_LVB.
+libeas:LibEAS.HeatingCircuits.Obsolet.CharacteristicCurve.Medium rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.CharacteristicCurve.
+libeas:LibEAS.HeatingCircuits.Obsolet.CharacteristicCurve rdfs:subClassOf moont:MModel;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.
+libeas:LibEAS.HeatingCircuits.Obsolet.Examples rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.
+libeas:LibEAS.HeatingCircuits.Obsolet.Examples.Test_Raummodell_FBH.Water rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.Examples.Test_Raummodell_FBH.
+libeas:LibEAS.HeatingCircuits.Obsolet.Examples.Test_Raummodell_FBH.Air rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.Examples.Test_Raummodell_FBH.
+libeas:LibEAS.HeatingCircuits.Obsolet.Examples.Test_Raummodell_FBH rdfs:subClassOf moont:MModel;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.Examples.
+libeas:LibEAS.HeatingCircuits.Obsolet.Examples.Test_Raummodell_FBH moont:extends libeas:Modelica.Icons.Example.
+libeas:LibEAS.HeatingCircuits.Obsolet.Examples.Test_Raummodell_FBH_alternativerWetterReader.Air rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.Examples.Test_Raummodell_FBH_alternativerWetterReader.
+libeas:LibEAS.HeatingCircuits.Obsolet.Examples.Test_Raummodell_FBH_alternativerWetterReader.Water rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.Examples.Test_Raummodell_FBH_alternativerWetterReader.
+libeas:LibEAS.HeatingCircuits.Obsolet.Examples.Test_Raummodell_FBH_alternativerWetterReader rdfs:subClassOf moont:MModel;
+	 moont:stringComment "aus BuildingSystems"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.Examples.
+libeas:LibEAS.HeatingCircuits.Obsolet.Examples.Test_Raummodell_FBH_alternativerWetterReader moont:extends libeas:Modelica.Icons.Example.
+libeas:LibEAS.HeatingCircuits.Obsolet.Examples.Test_Raummodell_FBH_alternativerWetterReader_2.Air rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.Examples.Test_Raummodell_FBH_alternativerWetterReader_2.
+libeas:LibEAS.HeatingCircuits.Obsolet.Examples.Test_Raummodell_FBH_alternativerWetterReader_2 rdfs:subClassOf moont:MModel;
+	 moont:stringComment "aus BuildingSystems"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.Examples.
+libeas:LibEAS.HeatingCircuits.Obsolet.Examples.Test_Raummodell_FBH_alternativerWetterReader_2 moont:extends libeas:Modelica.Icons.Example.
+libeas:LibEAS.HeatingCircuits.Obsolet.Examples.Test_Raummodell_FBH_alternativerWetterReader_2.Water rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.Examples.Test_Raummodell_FBH_alternativerWetterReader_2.
+libeas:LibEAS.HeatingCircuits.Obsolet.Examples.Test_Raummodell_FBH_MIL.Water rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.Examples.Test_Raummodell_FBH_MIL.
+libeas:LibEAS.HeatingCircuits.Obsolet.Examples.Test_Raummodell_FBH_MIL rdfs:subClassOf moont:MModel;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.Examples.
+libeas:LibEAS.HeatingCircuits.Obsolet.Examples.Test_Raummodell_FBH_MIL moont:extends libeas:Modelica.Icons.Example.
+libeas:LibEAS.HeatingCircuits.Obsolet.Examples.Test_Raummodell_FBH_MIL.Air rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.Examples.Test_Raummodell_FBH_MIL.
+libeas:LibEAS.HeatingCircuits.Obsolet.Examples.Test_Raummodell_PI_geregelteVorlauftemp.Water rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.Examples.Test_Raummodell_PI_geregelteVorlauftemp.
+libeas:LibEAS.HeatingCircuits.Obsolet.Examples.Test_Raummodell_PI_geregelteVorlauftemp rdfs:subClassOf moont:MModel;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.Examples.
+libeas:LibEAS.HeatingCircuits.Obsolet.Examples.Test_Raummodell_PI_geregelteVorlauftemp moont:extends libeas:Modelica.Icons.Example.
+libeas:LibEAS.HeatingCircuits.Obsolet.Examples.Test_Raummodell_PI_geregelteVorlauftemp.Air rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.Examples.Test_Raummodell_PI_geregelteVorlauftemp.
+libeas:LibEAS.HeatingCircuits.Obsolet.Examples.Test_Raummodell_PI_geregelteVorlauftemp_gleitend.Air rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.Examples.Test_Raummodell_PI_geregelteVorlauftemp_gleitend.
+libeas:LibEAS.HeatingCircuits.Obsolet.Examples.Test_Raummodell_PI_geregelteVorlauftemp_gleitend.Water rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.Examples.Test_Raummodell_PI_geregelteVorlauftemp_gleitend.
+libeas:LibEAS.HeatingCircuits.Obsolet.Examples.Test_Raummodell_PI_geregelteVorlauftemp_gleitend rdfs:subClassOf moont:MModel;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.Examples.
+libeas:LibEAS.HeatingCircuits.Obsolet.Examples.Test_Raummodell_PI_geregelteVorlauftemp_gleitend moont:extends libeas:Modelica.Icons.Example.
+libeas:LibEAS.HeatingCircuits.Obsolet rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.
+libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis.MediumWater rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis.
+libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis.MediumAir rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis.
+libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Raum mit Außenwand, Fenster und Luftwechsel nach Außen mit Fußbodenheizung mit Regelventil für Volumenstrom des Heizwassers"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.
+libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis_MIL.MediumWater rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis_MIL.
+libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis_MIL rdfs:subClassOf moont:MModel;
+	 moont:stringComment "mit inneren Lasten und Fenstern in 4 Richtungen"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.
+libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis_MIL.MediumAir rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis_MIL.
+libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis_MIL_oS.MediumAir rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis_MIL_oS.
+libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis_MIL_oS rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Strahlungsbrechnung außerhalb"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.
+libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis_MIL_oS.MediumWater rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis_MIL_oS.
+libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis_MIL_oS_FK.MediumWater rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis_MIL_oS_FK.
+libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis_MIL_oS_FK.MediumAir rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis_MIL_oS_FK.
+libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis_MIL_oS_FK rdfs:subClassOf moont:MModel;
+	 moont:stringComment "mit Regelung für freie Kühlung"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.
+libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis_MIL_oS_FK_testFK rdfs:subClassOf moont:MModel;
+	 moont:stringComment "mit Regelung für freie Kühlung"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.
+libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis_MIL_oS_FK_testFK.MediumAir rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis_MIL_oS_FK_testFK.
+libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis_MIL_oS_FK_testFK.MediumWater rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis_MIL_oS_FK_testFK.
+libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis_mitNachh rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Nachheizung mit IHA"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.
+libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis_mitNachh.MediumWater rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis_mitNachh.
+libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis_mitNachh.MediumAir rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis_mitNachh.
+libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis_mitNachh_bessereRegelung.MediumAir rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis_mitNachh_bessereRegelung.
+libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis_mitNachh_bessereRegelung.MediumWater rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis_mitNachh_bessereRegelung.
+libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis_mitNachh_bessereRegelung rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Regelung NAchheizung mit Reset des PID-Gliedes"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.
+libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis_mitNachh_bessereRegelung_WetterEinfach.MediumAir rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis_mitNachh_bessereRegelung_WetterEinfach.
+libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis_mitNachh_bessereRegelung_WetterEinfach rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Regelung NAchheizung mit Reset des PID-Gliedes"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.
+libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis_mitNachh_bessereRegelung_WetterEinfach.MediumWater rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis_mitNachh_bessereRegelung_WetterEinfach.
+libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis_mitNachh_bessereRegelung_WetterEinfach_2.MediumAir rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis_mitNachh_bessereRegelung_WetterEinfach_2.
+libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis_mitNachh_bessereRegelung_WetterEinfach_2 rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Regelung NAchheizung schneller"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.
+libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis_mitNachh_bessereRegelung_WetterEinfach_2.MediumWater rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis_mitNachh_bessereRegelung_WetterEinfach_2.
+libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis_mitNachh_bessereRegelung_WetterEinfach_3Kaskade.MediumAir rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis_mitNachh_bessereRegelung_WetterEinfach_3Kaskade.
+libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis_mitNachh_bessereRegelung_WetterEinfach_3Kaskade.MediumWater rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis_mitNachh_bessereRegelung_WetterEinfach_3Kaskade.
+libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis_mitNachh_bessereRegelung_WetterEinfach_3Kaskade rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Regelung NAchheizung kaskadiert nach FBH-Regler"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.
+libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis_WetterEinfach.MediumWater rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis_WetterEinfach.
+libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis_WetterEinfach rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Globalstrahlung und Außentemperatur als einzelne Inputparameter (statt weaBus)"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.
+libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis_WetterEinfach.MediumAir rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Fussbodenheizkreis_WetterEinfach.
+libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung rdfs:subClassOf moont:MPackage;
+	 moont:stringComment "aus Buildings.Fluid.Examples.SimpleHouse"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.
+libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Raum_inclFBH.MediumAir rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Raum_inclFBH.
+libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Raum_inclFBH.MediumWater rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Raum_inclFBH.
+libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Raum_inclFBH rdfs:subClassOf moont:MModel;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.
+libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Zone_FBH_Fenster.MediumWater rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Zone_FBH_Fenster.
+libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Zone_FBH_Fenster rdfs:subClassOf moont:MModel;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.
+libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Zone_FBH_Fenster_clean rdfs:subClassOf moont:MModel;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.
+libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Zone_FBH_Fenster_clean.MediumWater rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitFussbodenheizung.Zone_FBH_Fenster_clean.
+libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitHeizkoerper rdfs:subClassOf moont:MPackage;
+	 moont:stringComment "aus Buildings.Fluid.Examples.SimpleHouse"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.
+libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitHeizkoerper.statischerHeizkreis.MediumAir rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitHeizkoerper.statischerHeizkreis.
+libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitHeizkoerper.statischerHeizkreis rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Raum mit Außenwand, Fenster und Luftwechsel nach Außen mit Heizkörper, zieht sich Volumenstrom zur Haltung der Raumtemperatur"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitHeizkoerper.
+libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitHeizkoerper.statischerHeizkreis.MediumWater rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.Obsolet.RaummodellMitHeizkoerper.statischerHeizkreis.
+libeas:LibEAS.HeatingCircuits rdfs:subClassOf moont:MPackage;
+	 moont:stringComment "Heizkreise mit hydraulischem Anschluss"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.
+libeas:LibEAS.HeatingCircuits moont:extends libeas:Modelica.Icons.VariantsPackage.
+libeas:LibEAS.HeatingCircuits.VorgabeRuecklauftemperatur.Medium rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.VorgabeRuecklauftemperatur.
+libeas:LibEAS.HeatingCircuits.VorgabeRuecklauftemperatur rdfs:subClassOf moont:MModel;
+	 moont:containedIn libeas:LibEAS.HeatingCircuits.
+libeas:LibEAS.HeatingCircuitsCombinations.Building_0RLT_2Boiler_n.Medium rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuitsCombinations.Building_0RLT_2Boiler_n.
+libeas:LibEAS.HeatingCircuitsCombinations.Building_0RLT_2Boiler_n rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Entfernung von RLT"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatingCircuitsCombinations.
+libeas:LibEAS.HeatingCircuitsCombinations.Building_1RLT_1Boiler_n.Medium rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuitsCombinations.Building_1RLT_1Boiler_n.
+libeas:LibEAS.HeatingCircuitsCombinations.Building_1RLT_1Boiler_n rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Allgemeines Gebäude aus Chenzis Casino 20.3.21 15:15"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatingCircuitsCombinations.
+libeas:LibEAS.HeatingCircuitsCombinations.Building_2RLT_1Boiler_n rdfs:subClassOf moont:MModel;
+	 moont:containedIn libeas:LibEAS.HeatingCircuitsCombinations.
+libeas:LibEAS.HeatingCircuitsCombinations.Building_2RLT_1Boiler_n.Medium rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuitsCombinations.Building_2RLT_1Boiler_n.
+libeas:LibEAS.HeatingCircuitsCombinations.CharacteristicCurve.Medium rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuitsCombinations.CharacteristicCurve.
+libeas:LibEAS.HeatingCircuitsCombinations.CharacteristicCurve rdfs:subClassOf moont:MModel;
+	 moont:stringComment "mit Bypass und konstantem Massestrom der Pumpe"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatingCircuitsCombinations.
+libeas:LibEAS.HeatingCircuitsCombinations.LoadFromTable rdfs:subClassOf moont:MModel;
+	 moont:stringComment "zwei Heizkreis (Leistung wird aus Textfile eingelesen) und ein Bypass"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatingCircuitsCombinations.
+libeas:LibEAS.HeatingCircuitsCombinations.LoadFromTable.Medium rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuitsCombinations.LoadFromTable.
+libeas:LibEAS.HeatingCircuitsCombinations rdfs:subClassOf moont:MPackage;
+	 moont:stringComment "mehrere Heizkreise und Überströmung"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.
+libeas:LibEAS.HeatingCircuitsCombinations moont:extends libeas:Modelica.Icons.VariantsPackage.
+libeas:LibEAS.HeatingCircuitsCombinations.vorparametriert.Casino_nkonst rdfs:subClassOf moont:MModel;
+	 moont:containedIn libeas:LibEAS.HeatingCircuitsCombinations.vorparametriert.
+libeas:LibEAS.HeatingCircuitsCombinations.vorparametriert.Casino_nkonst moont:extends libeas:LibEAS.HeatingCircuitsCombinations.Building_2RLT_1Boiler_n.
+libeas:LibEAS.HeatingCircuitsCombinations.vorparametriert.IW_b_nKonst rdfs:subClassOf moont:MModel;
+	 moont:containedIn libeas:LibEAS.HeatingCircuitsCombinations.vorparametriert.
+libeas:LibEAS.HeatingCircuitsCombinations.vorparametriert.IW_b_nKonst moont:extends libeas:LibEAS.HeatingCircuitsCombinations.Building_0RLT_2Boiler_n.
+libeas:LibEAS.HeatingCircuitsCombinations.vorparametriert rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatingCircuitsCombinations.
+libeas:LibEAS.HeatingCircuitsCombinations.vorparametriert.Sozial_b_nKOnst rdfs:subClassOf moont:MModel;
+	 moont:containedIn libeas:LibEAS.HeatingCircuitsCombinations.vorparametriert.
+libeas:LibEAS.HeatingCircuitsCombinations.vorparametriert.Sozial_b_nKOnst moont:extends libeas:LibEAS.HeatingCircuitsCombinations.Building_1RLT_1Boiler_n.
+libeas:LibEAS.HeatPumps.Controls rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatPumps.
+libeas:LibEAS.HeatPumps.Controls.WPRegler rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Abschaltung, wenn Speicher oben oder unten so warm wie soll (Hysterese+PID), separates Ausgangssignal für Pumpen und Kompressor (ist aber gleich belegt)"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatPumps.Controls.
+libeas:LibEAS.HeatPumps.Controls.WPRegler3 rdfs:subClassOf moont:MModel;
+	 moont:containedIn libeas:LibEAS.HeatPumps.Controls.
+libeas:LibEAS.HeatPumps.Controls.WPRegler5 rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Abschaltung, wenn Speicher oben oder unten so warm wie soll (Hysterese+PID), separates Ausgangssignal für Pumpen und Kompressor (ist aber gleich belegt)"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatPumps.Controls.
+libeas:LibEAS.HeatPumps.Controls.WPRegler6 rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Abschaltung, wenn Speicher oben oder unten so warm wie soll (Hysterese+PID), separates Ausgangssignal für Pumpen und Kompressor (ist aber gleich belegt)"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatPumps.Controls.
+libeas:LibEAS.HeatPumps.Controls.WPRegler7 rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Abschaltung, wenn Speicher oben oder unten so warm wie soll (Hysterese+PID), separates Ausgangssignal für Pumpen und Kompressor (ist aber gleich belegt)"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatPumps.Controls.
+libeas:LibEAS.HeatPumps.Controls.WPRegler8 rdfs:subClassOf moont:MModel;
+	 moont:stringComment "inhaltlich wie Regler 7, aber aufgeräumt"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatPumps.Controls.
+libeas:LibEAS.HeatPumps.Controls.WPRegler_konstantVp rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Abschaltung, wenn Speicher oben oder unten so warm wie soll (Hysterese+PID), separates Ausgangssignal für Pumpen und Kompressor (ist aber gleich belegt)"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatPumps.Controls.
+libeas:LibEAS.HeatPumps.Controls.WPRegler_konstantVp_ohneUntereBegr rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Abschaltung, wenn Speicher oben so warm wie Soll (Hysterese+PID), separates Ausgangssignal für Pumpen und Kompressor (ist aber gleich belegt)"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatPumps.Controls.
+libeas:LibEAS.HeatPumps.EquationFitReversible_Mod rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Model for a reversable heat pump based on the equation fit method"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatPumps.
+libeas:LibEAS.HeatPumps.EquationFitReversible_Mod moont:extends libeas:Buildings.Fluid.Interfaces.FourPortHeatMassExchanger.
+libeas:LibEAS.HeatPumps.Examples.A_HeatPumpSimple.Medium rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatPumps.Examples.A_HeatPumpSimple.
+libeas:LibEAS.HeatPumps.Examples.A_HeatPumpSimple rdfs:subClassOf moont:MModel;
+	 moont:stringComment "AixLib.HeatPumpSimple, kein Erdkollektor"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatPumps.Examples.
+libeas:LibEAS.HeatPumps.Examples.A_HeatPumpSimple moont:extends libeas:Modelica.Icons.Example.
+libeas:LibEAS.HeatPumps.Examples.B_HeatPumpSimple_u_Kollektor_onoff.MediumSole rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatPumps.Examples.B_HeatPumpSimple_u_Kollektor_onoff.
+libeas:LibEAS.HeatPumps.Examples.B_HeatPumpSimple_u_Kollektor_onoff.Sole rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatPumps.Examples.B_HeatPumpSimple_u_Kollektor_onoff.
+libeas:LibEAS.HeatPumps.Examples.B_HeatPumpSimple_u_Kollektor_onoff rdfs:subClassOf moont:MModel;
+	 moont:stringComment "AixLib.HeatPumpSimple, mit Kollektor"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatPumps.Examples.
+libeas:LibEAS.HeatPumps.Examples.B_HeatPumpSimple_u_Kollektor_onoff moont:extends libeas:Modelica.Icons.Example.
+libeas:LibEAS.HeatPumps.Examples.B_HeatPumpSimple_u_Kollektor_onoff.Medium rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatPumps.Examples.B_HeatPumpSimple_u_Kollektor_onoff.
+libeas:LibEAS.HeatPumps.Examples.E_Carnot_TCon_u_Kollektor_TCon.MediumSole rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatPumps.Examples.E_Carnot_TCon_u_Kollektor_TCon.
+libeas:LibEAS.HeatPumps.Examples.E_Carnot_TCon_u_Kollektor_TCon rdfs:subClassOf moont:MModel;
+	 moont:stringComment "AixLib.Carnot_TCon, mit Kollektor"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatPumps.Examples.
+libeas:LibEAS.HeatPumps.Examples.E_Carnot_TCon_u_Kollektor_TCon moont:extends libeas:Modelica.Icons.Example.
+libeas:LibEAS.HeatPumps.Examples.E_Carnot_TCon_u_Kollektor_TCon.Sole rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatPumps.Examples.E_Carnot_TCon_u_Kollektor_TCon.
+libeas:LibEAS.HeatPumps.Examples.E_Carnot_TCon_u_Kollektor_TCon.Medium rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatPumps.Examples.E_Carnot_TCon_u_Kollektor_TCon.
+libeas:LibEAS.HeatPumps.Examples.F_HeatPump_u_Kollektor_QSoll.MediumSole rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatPumps.Examples.F_HeatPump_u_Kollektor_QSoll.
+libeas:LibEAS.HeatPumps.Examples.F_HeatPump_u_Kollektor_QSoll.Medium_sin rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatPumps.Examples.F_HeatPump_u_Kollektor_QSoll.
+libeas:LibEAS.HeatPumps.Examples.F_HeatPump_u_Kollektor_QSoll rdfs:subClassOf moont:MModel;
+	 moont:stringComment "LibEAS.HeatPump, mit Kollektor"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatPumps.Examples.
+libeas:LibEAS.HeatPumps.Examples.F_HeatPump_u_Kollektor_QSoll moont:extends libeas:Modelica.Icons.Example.
+libeas:LibEAS.HeatPumps.Examples.F_HeatPump_u_Kollektor_QSoll.Medium rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatPumps.Examples.F_HeatPump_u_Kollektor_QSoll.
+libeas:LibEAS.HeatPumps.Examples.F_HeatPump_u_Kollektor_QSoll.Medium_sou rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatPumps.Examples.F_HeatPump_u_Kollektor_QSoll.
+libeas:LibEAS.HeatPumps.Examples.F_HeatPump_u_Kollektor_QSoll.Sole rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatPumps.Examples.F_HeatPump_u_Kollektor_QSoll.
+libeas:LibEAS.HeatPumps.Examples.KopienVonLibraryKomponenten rdfs:subClassOf moont:MPackage;
+	 moont:stringComment "um Änderungen an den Klassen vornehmen zu können"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatPumps.Examples.
+libeas:LibEAS.HeatPumps.Examples.KopienVonLibraryKomponenten.PropyleneGlycolWater.density_TX_a rdfs:subClassOf moont:MFunction;
+	 moont:stringComment "Evaluate density of antifreeze-water mixture"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatPumps.Examples.KopienVonLibraryKomponenten.PropyleneGlycolWater.
+libeas:LibEAS.HeatPumps.Examples.KopienVonLibraryKomponenten.PropyleneGlycolWater.density_TX_a moont:extends libeas:Modelica.Icons.Function.
+libeas:LibEAS.HeatPumps.Examples.KopienVonLibraryKomponenten.PropyleneGlycolWater.fusionTemperature_TX_a rdfs:subClassOf moont:MFunction;
+	 moont:stringComment "Evaluate temperature of fusion of antifreeze-water mixture"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatPumps.Examples.KopienVonLibraryKomponenten.PropyleneGlycolWater.
+libeas:LibEAS.HeatPumps.Examples.KopienVonLibraryKomponenten.PropyleneGlycolWater.fusionTemperature_TX_a moont:extends libeas:Modelica.Icons.Function.
+libeas:LibEAS.HeatPumps.Examples.KopienVonLibraryKomponenten.PropyleneGlycolWater.polynomialProperty rdfs:subClassOf moont:MFunction;
+	 moont:stringComment "Evaluates thermophysical property from 2-variable polynomial"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatPumps.Examples.KopienVonLibraryKomponenten.PropyleneGlycolWater.
+libeas:LibEAS.HeatPumps.Examples.KopienVonLibraryKomponenten.PropyleneGlycolWater.polynomialProperty moont:extends libeas:Modelica.Icons.Function.
+libeas:LibEAS.HeatPumps.Examples.KopienVonLibraryKomponenten.PropyleneGlycolWater.BaseProperties.InputSpecificEnthalpy rdfs:subClassOf moont:MConnector;
+	 moont:containedIn libeas:LibEAS.HeatPumps.Examples.KopienVonLibraryKomponenten.PropyleneGlycolWater.BaseProperties.
+libeas:LibEAS.HeatPumps.Examples.KopienVonLibraryKomponenten.PropyleneGlycolWater.BaseProperties rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Base properties"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatPumps.Examples.KopienVonLibraryKomponenten.PropyleneGlycolWater.
+libeas:LibEAS.HeatPumps.Examples.KopienVonLibraryKomponenten.PropyleneGlycolWater.dynamicViscosity_TX_a rdfs:subClassOf moont:MFunction;
+	 moont:stringComment "Evaluate dynamic viscosity of antifreeze-water mixture"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatPumps.Examples.KopienVonLibraryKomponenten.PropyleneGlycolWater.
+libeas:LibEAS.HeatPumps.Examples.KopienVonLibraryKomponenten.PropyleneGlycolWater.dynamicViscosity_TX_a moont:extends libeas:Modelica.Icons.Function.
+libeas:LibEAS.HeatPumps.Examples.KopienVonLibraryKomponenten.PropyleneGlycolWater rdfs:subClassOf moont:MPackage;
+	 moont:stringComment "Package with model for propylene glycol - Wert für Nenntemperatur und Glycolanteil gesetzt auf 25°C bzw. 30%"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatPumps.Examples.KopienVonLibraryKomponenten.
+libeas:LibEAS.HeatPumps.Examples.KopienVonLibraryKomponenten.PropyleneGlycolWater moont:extends libeas:Modelica.Media.Interfaces.PartialSimpleMedium.
+libeas:LibEAS.HeatPumps.Examples.KopienVonLibraryKomponenten.PropyleneGlycolWater.specificHeatCapacityCp_TX_a rdfs:subClassOf moont:MFunction;
+	 moont:stringComment "Evaluate specific heat capacity of antifreeze-water mixture"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatPumps.Examples.KopienVonLibraryKomponenten.PropyleneGlycolWater.
+libeas:LibEAS.HeatPumps.Examples.KopienVonLibraryKomponenten.PropyleneGlycolWater.specificHeatCapacityCp_TX_a moont:extends libeas:Modelica.Icons.Function.
+libeas:LibEAS.HeatPumps.Examples.KopienVonLibraryKomponenten.PropyleneGlycolWater.BaseProperties.InputMassFraction rdfs:subClassOf moont:MConnector;
+	 moont:containedIn libeas:LibEAS.HeatPumps.Examples.KopienVonLibraryKomponenten.PropyleneGlycolWater.BaseProperties.
+libeas:LibEAS.HeatPumps.Examples.KopienVonLibraryKomponenten.PropyleneGlycolWater.BaseProperties.InputAbsolutePressure rdfs:subClassOf moont:MConnector;
+	 moont:containedIn libeas:LibEAS.HeatPumps.Examples.KopienVonLibraryKomponenten.PropyleneGlycolWater.BaseProperties.
+libeas:LibEAS.HeatPumps.Examples.KopienVonLibraryKomponenten.PropyleneGlycolWater.thermalConductivity_TX_a rdfs:subClassOf moont:MFunction;
+	 moont:stringComment "Evaluate thermal conductivity of antifreeze-water mixture"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatPumps.Examples.KopienVonLibraryKomponenten.PropyleneGlycolWater.
+libeas:LibEAS.HeatPumps.Examples.KopienVonLibraryKomponenten.PropyleneGlycolWater.thermalConductivity_TX_a moont:extends libeas:Modelica.Icons.Function.
+libeas:LibEAS.HeatPumps.Examples rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatPumps.
+libeas:LibEAS.HeatPumps.Examples moont:extends libeas:Modelica.Icons.ExamplesPackage.
+libeas:LibEAS.HeatPumps.HeatPump.PerDataRevHP rdfs:subClassOf moont:MModel;
+	 moont:containedIn libeas:LibEAS.HeatPumps.HeatPump.
+libeas:LibEAS.HeatPumps.HeatPump rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Grey-box model for reversible heat pumps using a black-box to simulate the refrigeration cycle"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatPumps.
+libeas:LibEAS.HeatPumps.HeatPump moont:extends libeas:AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine.
+libeas:LibEAS.HeatPumps.HeatPump.PerDataMainHP rdfs:subClassOf moont:MModel;
+	 moont:containedIn libeas:LibEAS.HeatPumps.HeatPump.
+libeas:LibEAS.HeatPumps.HeatPumpSimple.Medium rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatPumps.HeatPumpSimple.
+libeas:LibEAS.HeatPumps.HeatPumpSimple rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Kopie aus alter AixLib"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatPumps.
+libeas:LibEAS.HeatPumps.HeatPumpSimpleZweiMedien.MediumSource rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatPumps.HeatPumpSimpleZweiMedien.
+libeas:LibEAS.HeatPumps.HeatPumpSimpleZweiMedien.Medium rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatPumps.HeatPumpSimpleZweiMedien.
+libeas:LibEAS.HeatPumps.HeatPumpSimpleZweiMedien.MediumSink rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatPumps.HeatPumpSimpleZweiMedien.
+libeas:LibEAS.HeatPumps.HeatPumpSimpleZweiMedien rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Medium in beiden Kreisen nun unterschiedlich"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatPumps.
+libeas:LibEAS.HeatPumps rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.
+libeas:LibEAS.HeatPumps moont:extends libeas:Modelica.Icons.VariantsPackage.
+libeas:LibEAS.HeatSinks rdfs:subClassOf moont:MPackage;
+	 moont:stringComment "Heizkreise mit idealer Heizung (nur Zahlenwert für Heizung, keine hydraulische Berechnung)"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.
+libeas:LibEAS.HeatSinks moont:extends libeas:Modelica.Icons.VariantsPackage.
+libeas:LibEAS.HeatSinks.Torluftschleier rdfs:subClassOf moont:MModel;
+	 moont:stringComment "wie Zuluftanlage, geht aber nur unterhalb einer Grenzaußentemperatur an"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatSinks.
+libeas:LibEAS.HeatSinks.Torluftschleier.MediumAir rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatSinks.Torluftschleier.
+libeas:LibEAS.HeatSinks.Typ2.MediumAir rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatSinks.Typ2.
+libeas:LibEAS.HeatSinks.Typ2 rdfs:subClassOf moont:MModel;
+	 moont:containedIn libeas:LibEAS.HeatSinks.
+libeas:LibEAS.HeatSinks.Typ3.MediumAir rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatSinks.Typ3.
+libeas:LibEAS.HeatSinks.Typ3 rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Vorgabe von Luftmenge und Ansaugtemperatur, Erhitzung auf vorgegebene Solltemperatur"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatSinks.
+libeas:LibEAS.HeatSinks.Typ4.MediumAir rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatSinks.Typ4.
+libeas:LibEAS.HeatSinks.Typ4 rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Vorgabe von Luftmenge und Ansaugtemperatur, Erhitzung auf vorgegebene Solltemperatur"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatSinks.
+libeas:LibEAS.HeatSinks.Zuluftanlage.MediumAir rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.HeatSinks.Zuluftanlage.
+libeas:LibEAS.HeatSinks.Zuluftanlage rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Vorgabe von Luftmenge und Ansaugtemperatur, Erhitzung auf vorgegebene Solltemperatur"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.HeatSinks.
+libeas:LibEAS.Hydraulics rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.
+libeas:LibEAS.Hydraulics moont:extends libeas:Modelica.Icons.VariantsPackage.
+libeas:LibEAS.Hydraulics.SupRetJun.Medium rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.Hydraulics.SupRetJun.
+libeas:LibEAS.Hydraulics.SupRetJun rdfs:subClassOf moont:MModel;
+	 moont:containedIn libeas:LibEAS.Hydraulics.
+libeas:LibEAS.Movers.Data rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.Movers.
+libeas:LibEAS.Movers.Data.Pumps rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.Movers.Data.
+libeas:LibEAS.Movers.Data.Pumps.Stratos65slash1to12 rdfs:subClassOf moont:MRecord;
+	 moont:stringComment "Pump data for a Wilo Stratos 65/1-12 pump"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.Movers.Data.Pumps.
+libeas:LibEAS.Movers.Data.Pumps.Stratos65slash1to12 moont:extends libeas:AixLib.Fluid.Movers.Data.Generic.
+libeas:LibEAS.Movers rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.
+libeas:LibEAS rdfs:subClassOf moont:MPackage;
+	 moont:stringComment "am Fraunhofer IIS EAS entwicklete Komponenten incl. Testmodellen"^^xsd:string.
+libeas:LibEAS.Sensors.Junction_Display rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Flow splitter with fixed resistance at each port"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.Sensors.
+libeas:LibEAS.Sensors.Junction_Display moont:extends libeas:AixLib.Fluid.BaseClasses.PartialThreeWayResistance.
+libeas:LibEAS.Sensors.Multisensor.Medium rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.Sensors.Multisensor.
+libeas:LibEAS.Sensors.Multisensor rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Sensor für Temperatur, absolute und relative Feuchte, Enthalpiestrom"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.Sensors.
+libeas:LibEAS.Sensors rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.
+libeas:LibEAS.Sensors moont:extends libeas:Modelica.Icons.SensorsPackage.
+libeas:LibEAS.Sensors.PressureDrop_Display rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Fixed flow resistance with dp and m_flow as parameter"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.Sensors.
+libeas:LibEAS.Sensors.PressureDrop_Display moont:extends libeas:AixLib.Fluid.BaseClasses.PartialResistance.
+libeas:LibEAS.Sensors.TemperatureSensorVector rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Measures temperature of vector heatports in degrees celsius"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.Sensors.
+libeas:LibEAS.Sensors.TemperatureTwoPort_Display rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Ideal two port temperature sensor"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.Sensors.
+libeas:LibEAS.Sensors.TemperatureTwoPort_Display moont:extends libeas:AixLib.Fluid.Sensors.BaseClasses.PartialDynamicFlowSensor.
+libeas:LibEAS.Sensors.WMZ.Medium rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.Sensors.WMZ.
+libeas:LibEAS.Sensors.WMZ rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Leistungsmesser, ermittelt aktuelle Leistung aus Differenz des Enthalpestroms an der Messstelle und eines eingehenden Enthalpiestroms"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.Sensors.
+libeas:LibEAS.Storage.BaseClasses rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.Storage.
+libeas:LibEAS.Storage.BaseClasses moont:extends libeas:Modelica.Icons.BasesPackage.
+libeas:LibEAS.Storage.BaseClasses.PartialStratified rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Partial model of a stratified tank for thermal energy storage"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.Storage.BaseClasses.
+libeas:LibEAS.Storage.BaseClasses.PartialStratified moont:extends libeas:AixLib.Fluid.Interfaces.PartialTwoPortInterface.
+libeas:LibEAS.Storage.Data.Anschlusshoehen rdfs:subClassOf moont:MRecord;
+	 moont:stringComment "Sammlung der Indizes der verschiedenen Anschlusshöhen am Speicher"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.Storage.Data.
+libeas:LibEAS.Storage.Data.Anschlusshoehen moont:extends libeas:Modelica.Icons.Record.
+libeas:LibEAS.Storage.Data rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.Storage.
+libeas:LibEAS.Storage.Data moont:extends libeas:Modelica.Icons.MaterialPropertiesPackage.
+libeas:LibEAS.Storage.Obsolete rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.Storage.
+libeas:LibEAS.Storage.Obsolete.Stratified rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Model of a stratified tank for thermal energy storage"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.Storage.Obsolete.
+libeas:LibEAS.Storage.Obsolete.Stratified moont:extends libeas:LibEAS.Storage.BaseClasses.PartialStratified.
+libeas:LibEAS.Storage rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.
+libeas:LibEAS.Storage moont:extends libeas:Modelica.Icons.VariantsPackage.
+libeas:LibEAS.Storage.StratifiedEnhanced rdfs:subClassOf moont:MModel;
+	 moont:stringComment "has two Fluid ports for each layer - supports two connections on the same height"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.Storage.
+libeas:LibEAS.Storage.StratifiedEnhanced moont:extends libeas:Buildings.Fluid.Storage.BaseClasses.PartialStratified.
+libeas:LibEAS.ThermalZones.Components.Fenster_clean rdfs:subClassOf moont:MModel;
+	 moont:stringComment "feste Parameter Lat und Long nicht mehr als Inputs"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.ThermalZones.Components.
+libeas:LibEAS.ThermalZones.Components rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.ThermalZones.
+libeas:LibEAS.ThermalZones.Obsolet.Fenster rdfs:subClassOf moont:MModel;
+	 moont:containedIn libeas:LibEAS.ThermalZones.Obsolet.
+libeas:LibEAS.ThermalZones.Obsolet rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.ThermalZones.
+libeas:LibEAS.ThermalZones.Obsolet.Zone_IHA rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Gebäudezone mit idealem Heizelement"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.ThermalZones.Obsolet.
+libeas:LibEAS.ThermalZones.Obsolet.Zone_IHA.MediumWater rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.ThermalZones.Obsolet.Zone_IHA.
+libeas:LibEAS.ThermalZones.Obsolet.Zone_IHA.MediumAir rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.ThermalZones.Obsolet.Zone_IHA.
+libeas:LibEAS.ThermalZones.Obsolet.Zone_IHA_inclFenster rdfs:subClassOf moont:MModel;
+	 moont:containedIn libeas:LibEAS.ThermalZones.Obsolet.
+libeas:LibEAS.ThermalZones.Obsolet.Zone_IHA_inclFenster_clean rdfs:subClassOf moont:MModel;
+	 moont:containedIn libeas:LibEAS.ThermalZones.Obsolet.
+libeas:LibEAS.ThermalZones rdfs:subClassOf moont:MPackage;
+	 moont:stringComment "Modelle (und Komponenten dafür) für die Thermische Gebäudesimulation (Schnittstelle Wärme, nicht hydraulisch)"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.
+libeas:LibEAS.ThermalZones.Raum.MediumWater rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.ThermalZones.Raum.
+libeas:LibEAS.ThermalZones.Raum rdfs:subClassOf moont:MModel;
+	 moont:containedIn libeas:LibEAS.ThermalZones.
+libeas:LibEAS.ThermalZones.Raum.MediumAir rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.ThermalZones.Raum.
+libeas:LibEAS.ThermalZones.Raum_ohneNachheizung.MediumAir rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.ThermalZones.Raum_ohneNachheizung.
+libeas:LibEAS.ThermalZones.Raum_ohneNachheizung.MediumWater rdfs:subClassOf moont:MPackage;
+	 moont:containedIn libeas:LibEAS.ThermalZones.Raum_ohneNachheizung.
+libeas:LibEAS.ThermalZones.Raum_ohneNachheizung rdfs:subClassOf moont:MModel;
+	 moont:containedIn libeas:LibEAS.ThermalZones.
+libeas:LibEAS.Utilities.Division rdfs:subClassOf moont:MModel;
+	 moont:stringComment "Auswertekomponente für Stromkennzahl (Div/0 abgefangen)"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.Utilities.
+libeas:LibEAS.Utilities.Energiezaehler rdfs:subClassOf moont:MModel;
+	 moont:stringComment "zählt Eingang in W (gibt kWh raus)"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.Utilities.
+libeas:LibEAS.Utilities.MovingAverage rdfs:subClassOf moont:MBlock;
+	 moont:stringComment "Output is the continuous moving average of the input"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.Utilities.
+libeas:LibEAS.Utilities.MovingAverage moont:extends libeas:LibEAS.Utilities.PartialTriggeredMovingWindow.
+libeas:LibEAS.Utilities rdfs:subClassOf moont:MPackage;
+	 moont:stringComment "Blöcke für Auswertungen und Berechnungen"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.
+libeas:LibEAS.Utilities.PartialTriggeredMovingWindow rdfs:subClassOf moont:MBlock;
+	 moont:stringComment "Icon and equationns for a block with a trigger signal and a moving time window"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.Utilities;
+	 moont:isPartial "true"^^xsd:boolean.
+libeas:LibEAS.Utilities.Sum rdfs:subClassOf moont:MBlock;
+	 moont:stringComment "Summierungsblock (definiert im Quelltext)"^^xsd:string;
+	 moont:containedIn libeas:LibEAS.Utilities.
+libeas:LibEAS.Utilities.Sum moont:extends libeas:Modelica.Blocks.Icons.Block.
+libeas:LibEAS.Utilities.Uebertemperaturstunden rdfs:subClassOf moont:MModel;
+	 moont:containedIn libeas:LibEAS.Utilities.
+libeas:LibEAS.Utilities.Untertemperaturstunden rdfs:subClassOf moont:MModel;
+	 moont:containedIn libeas:LibEAS.Utilities.

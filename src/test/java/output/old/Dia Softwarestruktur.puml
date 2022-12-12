@@ -1,0 +1,20 @@
+@startuml
+
+
+package "ModelicaTranscriptor" {
+    package "ParserImplementation" {
+    [owncode]
+    [ANTLR]
+    }
+    package "internal model" {
+        [MPackage]
+        [MClass]
+        [MParameterComponent]
+        [MConnection]
+        [ModelicaFile]
+        [ModelicaLibrary]
+        [ModelicaObject]
+    }
+}
+
+@enduml
