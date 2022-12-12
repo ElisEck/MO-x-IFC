@@ -1,17 +1,20 @@
 package rdf.parser;
 
+import de.elisabetheckstaedt.moxifc.modelicatranscriptor.model.MClass;
 import de.elisabetheckstaedt.moxifc.rdf.helper.ModelHelper;
 import de.elisabetheckstaedt.moxifc.rdf.parser.RdfParser;
 import org.apache.jena.rdf.model.*;
 import org.apache.jena.reasoner.Reasoner;
 import org.apache.jena.reasoner.ReasonerRegistry;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.FileWriter;
 import java.io.IOException;
 
 public class RdfParserTest {
-
+    private static final Logger LOGGER = LoggerFactory.getLogger(MClass.class);
     private RdfParser rdfParser = new RdfParser();
 
     @Test
@@ -36,11 +39,11 @@ public class RdfParserTest {
 
         Model modelm = modelKLT.union(alignment);
 
-        System.out.println("KLT:");
+        LOGGER.trace("KLT:");
         ModelHelper.printAllStatements(modelKLT);
-        System.out.println("alignemnt:");
+        LOGGER.trace("alignment:");
         ModelHelper.printAllStatements(alignment);
-        System.out.println("merge:");
+        LOGGER.trace("merge:");
         ModelHelper.printAllStatements(modelm);
         Model min=modelm;
         try {

@@ -11,7 +11,7 @@ model HeatPumpPlant
         extent={{-10,-10},{10,10}},
         rotation=-90,
         origin={130,-30})));
-  LibEAS.BoundaryConditions.Jahresgang jahresgang annotation (Placement(
+  LibEAS.BoundaryConditions.AnnualFluctuation jahresgang annotation (Placement(
         transformation(
         extent={{-10,-10},{10,10}},
         rotation=-90,
@@ -51,11 +51,6 @@ model HeatPumpPlant
     annotation (Placement(transformation(extent={{-10,-10},{10,10}},
         rotation=90,
         origin={-90,-70})));
-  Modelica.Blocks.Math.UnitConversions.From_degC from_degC annotation (
-      Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=-90,
-        origin={150,10})));
   LibEAS.Sensors.TemperatureTwoPort_Display senT_pri_VL(redeclare package
       Medium = Medium, m_flow_nominal=mp_nom)
     annotation (Placement(transformation(extent={{-80,-20},{-60,0}})));
@@ -83,9 +78,8 @@ model HeatPumpPlant
   LibEAS.Sensors.TemperatureTwoPort_Display senT_sec_RL(redeclare package
       Medium = Medium, m_flow_nominal=mp_nom)
     annotation (Placement(transformation(extent={{80,-60},{60,-40}})));
-  LibEAS.Controls.Regler_Erzeuger_u_Pumpe
-    wPRegler_konstantVp_ohneUntereBegr_3_1(yMin=yMin,
-                                           Ti=300)
+  LibEAS.Controls.ControlGeneratorWithPump
+    wPRegler_konstantVp_ohneUntereBegr_3_1(yMin=yMin, Ti=300)
     annotation (Placement(transformation(extent={{-140,40},{-120,60}})));
   Modelica.Blocks.Sources.RealExpression realExpression2(y=SP.heaPorVol[1].T)
     annotation (Placement(transformation(extent={{-200,34},{-160,52}})));
@@ -171,28 +165,23 @@ model HeatPumpPlant
         rotation=90,
         origin={-110,10})));
 equation
-  connect(jahresgang.y, from_degC.u)
-    annotation (Line(points={{150,39},{150,22}},       color={0,0,127}));
-  connect(from_degC.y, characteristicCurve_2_1.T_AU)
-    annotation (Line(points={{150,-1},{150,-20.2},{138,-20.2}},
-                                                             color={0,0,127}));
   connect(bou.ports[1], senT_pri_RL.port_b) annotation (Line(points={{-90,-60},
           {-90,-50},{-80,-50}}, color={0,127,255}));
   connect(senT_pri_VL.port_b, pum_pri.port_a)
     annotation (Line(points={{-60,-10},{-40,-10}}, color={0,127,255}));
   connect(senT_sec_VL.port_b, characteristicCurve_2_1.port_a) annotation (Line(
         points={{80,-10},{130,-10},{130,-20}}, color={0,127,255}));
-  connect(realExpression2.y, wPRegler_konstantVp_ohneUntereBegr_3_1.T_Ist)
+  connect(realExpression2.y,wPRegler_konstantVp_ohneUntereBegr_3_1.T_mea)
     annotation (Line(points={{-158,43},{-148,43},{-148,44},{-140,44}}, color={0,
           0,127}));
   connect(gain1.y, pum_pri.m_flow_in)
     annotation (Line(points={{-59,50},{-30,50},{-30,2}}, color={0,0,127}));
   connect(realExpression1.y, from_degC2.u)
     annotation (Line(points={{-199,70},{-182,70}}, color={0,0,127}));
-  connect(from_degC2.y, wPRegler_konstantVp_ohneUntereBegr_3_1.T_Soll)
+  connect(from_degC2.y, wPRegler_konstantVp_ohneUntereBegr_3_1.T_set)
     annotation (Line(points={{-159,70},{-150,70},{-150,55.8},{-140,55.8}},
         color={0,0,127}));
-  connect(wPRegler_konstantVp_ohneUntereBegr_3_1.Erzeuger, heaPum.y)
+  connect(wPRegler_konstantVp_ohneUntereBegr_3_1.generatorSignal, heaPum.y)
     annotation (Line(points={{-119.95,46.05},{-120,46.05},{-120,46},{-94,46},{-94,
           -44},{-101,-44},{-101,-42}}, color={0,0,127}));
   connect(pum_pri.port_b, SP.fluPorVol[1]) annotation (Line(points={{-20,-10},{
@@ -215,11 +204,9 @@ equation
           {-104,-10},{-80,-10}}, color={0,127,255}));
   connect(sou_sou.ports[1], pum_sou.port_a)
     annotation (Line(points={{-240,-50},{-220,-50}}, color={0,127,255}));
-  connect(from_degC.y, sou_sou.T_in) annotation (Line(points={{150,-1},{150,-100},
-          {-280,-100},{-280,-46},{-262,-46}}, color={0,0,127}));
-  connect(wPRegler_konstantVp_ohneUntereBegr_3_1.Pumpe, gain1.u) annotation (
-      Line(points={{-120.05,53.95},{-100.025,53.95},{-100.025,50},{-82,50}},
-        color={0,0,127}));
+  connect(wPRegler_konstantVp_ohneUntereBegr_3_1.pumpSignal, gain1.u)
+    annotation (Line(points={{-120.05,53.95},{-100.025,53.95},{-100.025,50},{-82,
+          50}}, color={0,0,127}));
   connect(pum_sou.port_b, senT_sou_VL.port_a)
     annotation (Line(points={{-200,-50},{-180,-50}}, color={0,127,255}));
   connect(senT_sou_VL.port_b, heaPum.port_b2) annotation (Line(points={{-160,
@@ -234,6 +221,10 @@ equation
           -209.5,-80},{-209.5,-62},{-210,-62}}, color={0,0,127}));
   connect(heaPum.P, W_el.u)
     annotation (Line(points={{-110,-19},{-110,-2}}, color={0,0,127}));
+  connect(jahresgang.T_oda, characteristicCurve_2_1.T_oda) annotation (Line(
+        points={{150,39},{150,-10},{138,-10},{138,-20.2}}, color={0,0,127}));
+  connect(jahresgang.T_oda, sou_sou.T_in) annotation (Line(points={{150,39},{
+          150,-90},{-272,-90},{-272,-46},{-262,-46}}, color={0,0,127}));
   annotation (Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(
         coordinateSystem(preserveAspectRatio=false, extent={{-280,-100},{180,
             100}}), graphics={
