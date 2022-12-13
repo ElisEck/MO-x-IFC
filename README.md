@@ -1,6 +1,8 @@
 # MO-x-IFC
 
-This repository contains tools for a bidirectional Modelica-IFC-Translation
+This repository contains tools for a bidirectional Modelica-IFC-Translation.
+
+See conference paper: ["Bidirectional coupling of Building Information Modeling and Building Simulation using ontologies"](https://publica.fraunhofer.de/handle/publica/412499) EG-ICE 2021 
 
 ## MoTTL-Transcriptor v.0.9
 
@@ -31,14 +33,11 @@ Through maven this code depends primarily on:
 * ANTLR 4.8
 
 ### Contact
-Elisabeth Eckstädt
-
-Fraunhofer Institute for Integrated Curcuits IIS
-
-Division Engineering of Adaptive Systems EAS
-
-elisabeth [dot] eckstaedt ( at ) eas [dot] iis [dot] f r a u n h o f e r [dot] de
+* Elisabeth Eckstädt
+* Fraunhofer Institute for Integrated Curcuits IIS
+* Division Engineering of Adaptive Systems EAS
+* elisabeth [dot] eckstaedt ( at ) eas [dot] iis [dot] f r a u n h o f e r [dot] de
 
 ### License and Copyright
-* Software Copyright License for Academic Use of the Fraunhofer Software, Version 1.0, see details at [LICENSE]
+* Software Copyright License for Academic Use of the Fraunhofer Software, Version 1.0, see details at [LICENSE](LICENSE)
 * © 2021 Gesellschaft zur Förderung der angewandten Forschung e.V. acting on behalf of its Fraunhofer Institut für Integrierte Schaltungen, Institutsteil Entwicklung Adaptiver Systeme. All rights reserved.
