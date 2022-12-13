@@ -2,10 +2,13 @@ package de.elisabetheckstaedt.moxifc.modelicatranscriptor.model;
 
 import de.elisabetheckstaedt.moxifc.modelicatranscriptor.parser.ModelicaFileAntlrParser;
 import de.elisabetheckstaedt.moxifc.modelicatranscriptor.parser.TreeNode;
+import org.apache.commons.io.input.BOMInputStream;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.*;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.sql.Timestamp;
@@ -15,8 +18,6 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
-
-import static java.nio.file.Files.readString;
 
 public class ModelicaLibrary {
 
@@ -59,7 +60,9 @@ public class ModelicaLibrary {
                                 ModelicaFileAntlrParser parser = new ModelicaFileAntlrParser(prefix);
                                 String content = null;
                                 try {
-                                    content = readString(file);
+                                    content = new BufferedReader(new InputStreamReader(new BOMInputStream(new FileInputStream(file.toFile()))))
+                                            .lines()
+                                            .collect(Collectors.joining());
                                 } catch (IOException e) {
                                     e.printStackTrace();
                                 }
@@ -111,7 +114,7 @@ public class ModelicaLibrary {
     public void serializeAsTTL(String filename, String prefix, String libraryRootName, String serializingOption, String ontologyTitle, String ontologyVersion) {
         this.prefix = prefix;
         try {
-            FileWriter myWriter = new FileWriter(filename);
+            FileWriter myWriter = new FileWriter(filename, StandardCharsets.UTF_8);
 
             writeHeader(myWriter, ontologyTitle, ontologyVersion);
 
