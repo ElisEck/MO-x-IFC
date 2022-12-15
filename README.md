@@ -14,7 +14,7 @@ This component transcribes Modelica packages to knowledge graphs. It was develop
 * it can be executed on a JVM version 11 (or higher)
 * run the following command to generate a turtle file representing some Modelica package (adapt the paths to your files)
 ```
-java -Dpolyglot.engine.WarnInterpreterOnly=false -jar c:\MO-x-IFC-1.0-SNAPSHOT-jar-with-dependencies.jar -p "ex" -n "LBDCG_example" -t "knowledge graph representing the Modelica LBDCG_example package" -v "v1.0.1-1.0.0" -o "C:\output\path" --inputPath "c:\LBDCG_example"
+java -Dpolyglot.engine.WarnInterpreterOnly=false -jar c:\MoTTL-Transcriptor-0.9-SNAPSHOT-jar-with-dependencies.jar -p "ex" -n "LBDCG_example" -t "knowledge graph representing the Modelica LBDCG_example package" -v "v1.0.1-1.0.0" -o "C:\output\path" --inputPath "c:\LBDCG_example"
 ```
 you need to provided six parameters:
 * inputPath i: path to directory containing the input package (package.mo, package.order) e.g. c:\\LibEAS (without trailing slash), use quotes if whitespaces contained 

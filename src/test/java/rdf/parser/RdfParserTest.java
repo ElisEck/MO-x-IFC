@@ -14,7 +14,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class RdfParserTest {
-    private static final Logger LOGGER = LoggerFactory.getLogger(MClass.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(RdfParserTest.class);
     private RdfParser rdfParser = new RdfParser();
 
     @Test

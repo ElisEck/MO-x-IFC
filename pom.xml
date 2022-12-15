@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>MO-x-IFC</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>MoTTL-Transcriptor</artifactId>
+    <version>0.9-SNAPSHOT</version>
 
     <properties>
 <!--        JDK level needed for openllet-->

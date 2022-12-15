@@ -16,7 +16,7 @@ import java.util.Stack;
 
 public class ModelicaComponentListener extends modelicaBaseListener {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(MClass.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(ModelicaComponentListener.class);
 
     Set<MClass> mks = new HashSet<>();
     Stack<MClass> mkstack = new Stack<>();

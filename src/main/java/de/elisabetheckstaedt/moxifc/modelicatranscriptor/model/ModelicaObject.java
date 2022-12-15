@@ -24,7 +24,7 @@ public class ModelicaObject {
     String stringComment;
     String annotation;
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(MClass.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(ModelicaObject.class);
 
     public ModelicaObject(String owlPrefix) {
         this.owlPrefix = owlPrefix;

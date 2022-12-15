@@ -6,7 +6,7 @@ import static de.elisabetheckstaedt.moxifc.rdf.helper.ModelHelper.printSelects;
 
 public class ModelicaOntologiesHelper {
     public static final String NEWLINE = System.lineSeparator();
-    private static final Logger LOGGER = LoggerFactory.getLogger(JenaTest.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(ModelicaOntologiesHelper.class);
 
     static String PREFIXSTRING =
             "PREFIX ifc: <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#>" + System.lineSeparator() +

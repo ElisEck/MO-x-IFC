@@ -25,7 +25,7 @@ import static de.elisabetheckstaedt.moxifc.rdf.helper.ModelHelper.*;
  */
 public class KomplextestKaelte {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(JenaTest.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(KomplextestKaelte.class);
 
     static String PREFIXSTRING =
             "PREFIX ifc: <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#>" + System.lineSeparator() +
