@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
  * @param <T>
  */
 public class TreeNode<T> implements Iterable<TreeNode<T>>{
-    private static final Logger LOGGER = LoggerFactory.getLogger(MClass.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(TreeNode.class);
 
     T data;
     TreeNode<T> parent;
@@ -33,16 +33,16 @@ public class TreeNode<T> implements Iterable<TreeNode<T>>{
         return children;
     }
 
-    public TreeNode<T> addChild(T child) {
+    public TreeNode<T> getOrCreateChildWithData(T dataToAdd) {
         return children.stream()
-                .filter(c -> c.data.equals(child))
+                .filter(currentChild -> currentChild.data.equals(dataToAdd))
                 .findAny()
                 .orElseGet( () -> {
-                            TreeNode<T> childNode = new TreeNode<T>(child, index);
-                            childNode.parent = this;
-                            this.children.add(childNode);
-                            index.put(getFullPath(childNode), childNode);
-                            return childNode;
+                            TreeNode<T> newChild = new TreeNode<T>(dataToAdd, index);
+                            newChild.parent = this;
+                            this.children.add(newChild);
+                            index.put(getFullPath(newChild), newChild);
+                            return newChild;
                         }
                 );
     }

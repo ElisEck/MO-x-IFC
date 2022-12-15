@@ -7,7 +7,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.*;
-import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -19,9 +18,11 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static java.nio.charset.StandardCharsets.*;
+
 public class ModelicaLibrary {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(MClass.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(ModelicaLibrary.class);
 
     public static final String NEWLINE = System.lineSeparator();
     /**
@@ -39,13 +40,14 @@ public class ModelicaLibrary {
 
     /**
      * constrc
+     *
      * @param name
      * @param prefix
      * @param dir
      */
     public ModelicaLibrary(String name, String prefix, Path dir) {
-//        if (dir == null) return null;
-//        new ModelicaLibrary(, name, prefix, title);
+        //        if (dir == null) return null;
+        //        new ModelicaLibrary(, name, prefix, title);
         this.rootpath = dir.toString();
         this.name = name;
         this.prefix = prefix;
@@ -62,7 +64,7 @@ public class ModelicaLibrary {
                                 try {
                                     content = new BufferedReader(new InputStreamReader(new BOMInputStream(new FileInputStream(file.toFile()))))
                                             .lines()
-                                            .collect(Collectors.joining());
+                                            .collect(Collectors.joining("\r\n")); //TODO handle line breaks (only working for windows yet)
                                 } catch (IOException e) {
                                     e.printStackTrace();
                                 }
@@ -87,22 +89,22 @@ public class ModelicaLibrary {
     }
 
 
-
     void writeExtendsToTTL(String backupPrefix) {
         try {
-            FileWriter myWriter = new FileWriter(name+".ttl");
+            FileWriter myWriter = new FileWriter(name + ".ttl");
             myWriter.write("@prefix aix:    <http://www.buildingsmart-tech.org/ifcOWL/IFC4_ADD1#> .\r\n");
             myWriter.write("@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .\r\n");
             for (ModelicaFile mf : mfs) {
                 for (MClass mk : mf.mks) {
-                        myWriter.write(mk.writeParentToTTL(backupPrefix));
-                    }
+                    myWriter.write(mk.writeParentToTTL(backupPrefix));
                 }
-                myWriter.close();
+            }
+            myWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
     public void serializeAsMo(String rootpath) {
         for (ModelicaFile mf : mfs) {
             mf.serializeAsMo(rootpath);
@@ -110,11 +112,10 @@ public class ModelicaLibrary {
     }
 
 
-
     public void serializeAsTTL(String filename, String prefix, String libraryRootName, String serializingOption, String ontologyTitle, String ontologyVersion) {
         this.prefix = prefix;
         try {
-            FileWriter myWriter = new FileWriter(filename, StandardCharsets.UTF_8);
+            FileWriter myWriter = new FileWriter(filename, UTF_8);
 
             writeHeader(myWriter, ontologyTitle, ontologyVersion);
 
@@ -125,7 +126,7 @@ public class ModelicaLibrary {
                     if (serializingOption.equals("full")) {
                         myWriter.write(mk.serializeAsTTL(prefix));
                     } else if (serializingOption.equals("fullclean")) {
-                            myWriter.write(cleanttl(mk.serializeAsTTL(prefix)));
+                        myWriter.write(cleanttl(mk.serializeAsTTL(prefix)));
                     } else {
                         myWriter.write(mk.serializeAsTTLHeaderAndParents(prefix));
                     }
@@ -161,13 +162,14 @@ public class ModelicaLibrary {
 
     /**
      * für alle Files und Klassen
+     *
      * @param libraryRootName
      */
     private void replaceRelativePaths(String libraryRootName) {
         generateContainerHierarchyTree(libraryRootName);
         for (ModelicaFile mf : mfs) {
             for (MClass mk : mf.mks) {
-//                mk.replaceRelativePaths("AixLib.", packageHierarchyRoot);
+                //                mk.replaceRelativePaths("AixLib.", packageHierarchyRoot);
                 mk.replaceRelativeModelicaPathsWithAbsoluteModelicaPathsForAllParametersComponetsParents(libraryRootName, packageHierarchyRoot);
             }
         }
@@ -181,9 +183,10 @@ public class ModelicaLibrary {
                 TreeNode<String> currentNode = packageHierarchyRoot;
                 for (String pathPart : pathParts) {
                     if (!rootName.equals(pathPart)) {
-                    currentNode= currentNode.addChild(pathPart);}
+                        currentNode = currentNode.getOrCreateChildWithData(pathPart);
+                    }
                 }
-                currentNode = currentNode.addChild(mk.name); //also add models, not only package hierarchy
+                currentNode = currentNode.getOrCreateChildWithData(mk.name); //also add models, not only package hierarchy
             }
         }
     }
@@ -193,10 +196,10 @@ public class ModelicaLibrary {
                 .distinct()
                 .collect(Collectors.toList());
         Iterator<String> it = mps_distinct.iterator();
-        while(it.hasNext()) {
+        while (it.hasNext()) {
             String cur = it.next();
             String[] teile = cur.split(".");
-            for (String teil : teile           ) {
+            for (String teil : teile) {
                 //TODO
             }
         }
@@ -205,10 +208,12 @@ public class ModelicaLibrary {
     /**
      * erzeugt den Header des Turtle-Files
      * definiert Prefixes und importiert msl, moont
+     *
      * @param myWriter
      * @throws IOException
      */
-    private void writeHeader(FileWriter myWriter, String ontologyTitle, String ontologyVersion) throws IOException {myWriter.write("@prefix "+prefix+":    <http://www.eas.iis.fraunhofer.de/"+ prefix+"#> ." + NEWLINE);
+    private void writeHeader(FileWriter myWriter, String ontologyTitle, String ontologyVersion) throws IOException {
+        myWriter.write("@prefix " + prefix + ":    <http://www.eas.iis.fraunhofer.de/" + prefix + "#> ." + NEWLINE);
         myWriter.write("@prefix moont:    <http://www.eas.iis.fraunhofer.de/moont#> ." + NEWLINE);
         //TODO Header entschlacken
         myWriter.write("@prefix msl:    <http://www.eas.iis.fraunhofer.de/msl#> ." + NEWLINE);
@@ -216,7 +221,7 @@ public class ModelicaLibrary {
         myWriter.write("@prefix aix:    <http://www.eas.iis.fraunhofer.de/aix#> ." + NEWLINE);
         myWriter.write("@prefix mbl:    <http://www.eas.iis.fraunhofer.de/mbl#> ." + NEWLINE);
         myWriter.write("@prefix libeas:    <http://www.eas.iis.fraunhofer.de/libeas#> ." + NEWLINE);
-//        myWriter.write("@prefix ibpsa:    <http://www.eas.iis.fraunhofer.de/ibpsa#> ." + NEWLINE);
+        //        myWriter.write("@prefix ibpsa:    <http://www.eas.iis.fraunhofer.de/ibpsa#> ." + NEWLINE);
         myWriter.write("@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> ." + NEWLINE);
         myWriter.write("@prefix rdf:  <http://www.w3.org/2000/01/rdf#> ." + NEWLINE);
         myWriter.write("@prefix owl:  <http://www.w3.org/2002/07/owl#> ." + NEWLINE);
@@ -227,7 +232,7 @@ public class ModelicaLibrary {
         myWriter.write("\t dcterms:creator \"Elisabeth Eckstädt using MoTTL transcriptor\" ;" + NEWLINE);
         SimpleDateFormat sdf3 = new SimpleDateFormat("yyyy-MM-dd");
         myWriter.write("\t dcterms:issued \"" + sdf3.format(new Timestamp(System.currentTimeMillis())) + "\";" + NEWLINE);
-        myWriter.write("\t owl:versionInfo \"" + ontologyVersion +"\";" + NEWLINE);
+        myWriter.write("\t owl:versionInfo \"" + ontologyVersion + "\";" + NEWLINE);
         myWriter.write("\t owl:imports msl: ;" + NEWLINE);
         myWriter.write("\t owl:imports mbl: ;" + NEWLINE);
         myWriter.write("\t owl:imports aix: ;" + NEWLINE);
