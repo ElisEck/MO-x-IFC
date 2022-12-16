@@ -25,12 +25,23 @@ you need to provided six parameters:
 * ontologyVersion v: combined version number of Modelica package and the ontology v8.0.0-1.0.0
 
 ### Examples
-* example outputs for common libraries (AixLib, BuildingSystems, Modelica Buildings, Modelica Standard Library) are contained in the folder: ./src/main/resources/ontologies/8_ModelicaLibraries
+* example outputs (knowledge graphs in ttl serialization) for common libraries (AixLib, BuildingSystems, Modelica Buildings, Modelica Standard Library) are contained in the folder: ./src/main/resources/ontologies/8_ModelicaLibraries
+* their native Modelica files are available on their respective github repositories
 * an example input Modelica package is contained in the folder: ./src/test/resources/C_HeatPumpPlant
+* the corresponding output is contained in the file: ./src/test/java/output/ex_20221215_1154_fullclean.ttl
 
 ### Dependencies
 Through maven this code depends primarily on:
 * ANTLR 4.8
+
+### sources belonging to the EC3 paper
+* MoOnt definition is given in this file: ./src/main/resources/ontologies/7_MoOnt/MoOnt.ttl
+* the heat pump plant example (native Modelica Code) is given here: ./src/test/resources/C_HeatPumpPlant
+* the corresponding output (knowledge graph in ttl serialization) is contained in the file: ./src/test/java/output/ex_20221215_1154_fullclean.ttl
+* knowledge graphs in ttl serialization for common Modelica libraries (AixLib, BuildingSystems, Modelica Buildings, Modelica Standard Library) are contained in the folder: ./src/main/resources/ontologies/8_ModelicaLibraries
+* python code to execute the queries described in section "Discussion and Result Analysis – Answering Competency Questions" are given here: ./test/EC3example_SPARQLqueries.py
+* as discussed in the paper there are some implementation issues with CQ2, these are shown here: ./test/CQ2
+* the outputs of these scripts are shown here (only excerpts are shown in the paper wrt page limitations): ./test/EC3example_SPARQLqueries_outputs.txt
 
 ### Contact
 * Elisabeth Eckstädt

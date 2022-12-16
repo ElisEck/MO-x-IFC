@@ -1,0 +1,181 @@
+#query_CQ1a, immediate answer
+
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatPumps.Examples.Carnot_y
+http://www.eas.iis.fraunhofer.de/ex#LBDCG_example.HeatPumpPlant
+http://www.eas.iis.fraunhofer.de/ex#LBDCG_example.HeatPumpPlant_V2
+
+#query_CQ1b, answering query takes ~10s
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Airflow.Multizone.DoorDiscretizedOpen	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Airflow.Multizone.Examples.OneOpenDoor
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Airflow.Multizone.DoorDiscretizedOpen	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Airflow.Multizone.Validation.OpenDoorBuoyancyDynamic
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Airflow.Multizone.DoorDiscretizedOpen	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Airflow.Multizone.Validation.OpenDoorBuoyancyPressureDynamic
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Airflow.Multizone.DoorDiscretizedOpen	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Airflow.Multizone.Validation.OpenDoorPressure
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Airflow.Multizone.DoorDiscretizedOpen	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Airflow.Multizone.Validation.OpenDoorTemperature
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Airflow.Multizone.DoorDiscretizedOperable	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Airflow.Multizone.Examples.ClosedDoors
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Airflow.Multizone.DoorDiscretizedOperable	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Airflow.Multizone.Examples.OneOpenDoor
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Airflow.Multizone.DoorDiscretizedOperable	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Airflow.Multizone.Examples.ReverseBuoyancy
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Airflow.Multizone.DoorDiscretizedOperable	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Airflow.Multizone.Examples.ReverseBuoyancy3Zones
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Airflow.Multizone.DoorOpen	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Airflow.Multizone.Validation.DoorOpenClosed
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Airflow.Multizone.DoorOpen	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Airflow.Multizone.Validation.OpenDoorBuoyancyDynamic
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Airflow.Multizone.DoorOpen	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Airflow.Multizone.Validation.OpenDoorBuoyancyPressureDynamic
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Airflow.Multizone.DoorOpen	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Airflow.Multizone.Validation.OpenDoorPressure
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Airflow.Multizone.DoorOpen	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Airflow.Multizone.Validation.OpenDoorTemperature
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Airflow.Multizone.DoorOpen	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Airflow.Multizone.Validation.ThreeRoomsContam
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Airflow.Multizone.DoorOperable	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Airflow.Multizone.Validation.DoorOpenClosed
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Airflow.Multizone.ZonalFlow_ACS	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Airflow.Multizone.Examples.ZonalFlow
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Airflow.Multizone.ZonalFlow_m_flow	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Airflow.Multizone.Examples.ZonalFlow
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Applications.DataCenters.ChillerCooled.Equipment.CoolingCoilHumidifyingHeating	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Applications.DataCenters.ChillerCooled.Equipment.Validation.CoolingCoilHumidifyingHeating_ClosedLoop
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Applications.DataCenters.ChillerCooled.Equipment.CoolingCoilHumidifyingHeating	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Applications.DataCenters.ChillerCooled.Equipment.Validation.CoolingCoilHumidifyingHeating_OpenLoop
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Applications.DataCenters.ChillerCooled.Equipment.ElectricChillerParallel	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Applications.DataCenters.ChillerCooled.Equipment.Validation.ElectricChillerParallel
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Applications.DataCenters.ChillerCooled.Equipment.HeatExchanger_TSet	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Applications.DataCenters.ChillerCooled.Equipment.Validation.HeatExchanger
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Applications.DataCenters.ChillerCooled.Equipment.HeatExchanger_TSet	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Applications.DataCenters.ChillerCooled.Equipment.Validation.HeatExchanger_ResetController
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Applications.DataCenters.ChillerCooled.Equipment.WatersideEconomizer	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Applications.DataCenters.ChillerCooled.Equipment.Validation.WatersideEconomizer
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Experimental.DHC.EnergyTransferStations.Combined.Generation5.Subsystems.HeatExchanger	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Experimental.DHC.EnergyTransferStations.Combined.Generation5.Subsystems.Validation.HeatExchanger
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Experimental.DHC.Networks.BaseClasses.DifferenceEnthalpyFlowRate	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Experimental.DHC.Loads.BaseClasses.Validation.BuildingWithETS
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.Chillers.AbsorptionIndirectSteam	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.Chillers.Examples.AbsorptionIndirectSteam
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.Chillers.Carnot_TEva	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.Chillers.Examples.Carnot_TEva
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.Chillers.Carnot_TEva	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.Chillers.Validation.CarnotVerifyCOP
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.Chillers.Carnot_TEva	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.Chillers.Validation.CarnotVerifyEtaCarnot
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.Chillers.Carnot_TEva	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.Chillers.Validation.Carnot_TEva_reverseFlow
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.Chillers.Carnot_y	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.Chillers.Examples.Carnot_y
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.Chillers.Carnot_y	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.Chillers.Validation.CarnotVerifyCOP
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.Chillers.Carnot_y	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.Chillers.Validation.CarnotVerifyEtaCarnot
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.Chillers.ElectricEIR	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Examples.ChillerPlant.BaseClasses.Controls.Examples.ChillerSetPointControl
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.Chillers.ElectricEIR	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.Chillers.Examples.ElectricEIR
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.Chillers.ElectricReformulatedEIR	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.Chillers.Examples.ElectricReformulatedEIR
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.Geothermal.Borefields.BaseClasses.Boreholes.BaseClasses.InternalHEXOneUTube	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.Geothermal.Borefields.BaseClasses.Boreholes.BaseClasses.Examples.InternalHEXOneUTube
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.Geothermal.Boreholes.BaseClasses.BoreholeSegment	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.Geothermal.Boreholes.BaseClasses.Examples.BoreholeSegment
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.Geothermal.Boreholes.BaseClasses.HexInternalElement	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.Geothermal.Boreholes.BaseClasses.Examples.HexInternalElement
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.BaseClasses.HexElementLatent	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.BaseClasses.Examples.HexElementLatent
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.BaseClasses.HexElementLatent	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.BaseClasses.Examples.HexElementLatentLoop
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.BaseClasses.HexElementSensible	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.BaseClasses.Examples.HexElementSensible
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.ConstantEffectiveness	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Examples.ChillerPlant.BaseClasses.Controls.Examples.ChillerSetPointControl
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.ConstantEffectiveness	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Examples.HydronicHeating.TwoRoomsWithStorage
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.ConstantEffectiveness	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Examples.Tutorial.SpaceCooling.System2
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.ConstantEffectiveness	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Examples.Tutorial.SpaceCooling.System3
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.ConstantEffectiveness	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.Examples.Performance.Example4
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.ConstantEffectiveness	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.Examples.SimpleHouse
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.ConstantEffectiveness	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.FMI.Adaptors.Examples.ThermalZoneHVACNoExhaust
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.ConstantEffectiveness	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.DXCoils.AirCooled.Examples.SpaceCooling
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.ConstantEffectiveness	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.Validation.ConstantEffectiveness
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.DryCoilCounterFlow	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.Examples.DryCoilCounterFlowMassFlow
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.DryCoilCounterFlow	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.Examples.DryCoilCounterFlowPControl
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.DryCoilCounterFlow	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.Validation.WetCoilEffectivenessNTUHeating
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.DryCoilDiscretized	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.Examples.DryCoilDiscretized
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.DryCoilDiscretized	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.Examples.DryCoilDiscretizedPControl
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.DryCoilEffectivenessNTU	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Examples.DualFanDualDuct.ClosedLoop
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.DryCoilEffectivenessNTU	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Examples.ScalableBenchmarks.BuildingVAV.Examples.OneFloor_OneZone
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.DryCoilEffectivenessNTU	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.Examples.DryCoilEffectivenessNTUMassFlow
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.DryCoilEffectivenessNTU	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.Examples.DryCoilEffectivenessNTUPControl
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.DryCoilEffectivenessNTU	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.Validation.DryCoilEffectivenessNTU
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.DryCoilEffectivenessNTU	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.Validation.WetCoilEffectivenessNTUHeating
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.PlateHeatExchangerEffectivenessNTU	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.Examples.PlateHeatExchangerEffectivenessNTUPControl
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.WetCoilCounterFlow	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Examples.DualFanDualDuct.ClosedLoop
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.WetCoilCounterFlow	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Examples.ScalableBenchmarks.BuildingVAV.Examples.OneFloor_OneZone
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.WetCoilCounterFlow	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.Examples.WetCoilCounterFlowMassFlow
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.WetCoilCounterFlow	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.Examples.WetCoilCounterFlowPControl
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.WetCoilCounterFlow	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.Validation.WetCoilEffectivenessNTU
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.WetCoilDiscretized	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.Examples.WetCoilDiscretizedMassFlow
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.WetCoilDiscretized	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.Examples.WetCoilDiscretizedPControl
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.WetCoilEffectivenessNTU	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Examples.Tutorial.SpaceCooling.System2
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.WetCoilEffectivenessNTU	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Examples.Tutorial.SpaceCooling.System3
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.WetCoilEffectivenessNTU	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.Examples.WetCoilEffectivenessNTUMassFlow
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.WetCoilEffectivenessNTU	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.Validation.WetCoilEffectivenessNTU
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.WetCoilEffectivenessNTU	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.Validation.WetCoilEffectivenessNTUHeating
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatPumps.Carnot_TCon	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatPumps.Examples.Carnot_TCon
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatPumps.Carnot_TCon	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatPumps.Validation.Carnot_TCon_reverseFlow
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatPumps.Carnot_y	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatPumps.Examples.Carnot_y
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatPumps.Carnot_y	http://www.eas.iis.fraunhofer.de/ex#LBDCG_example.HeatPumpPlant
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatPumps.Carnot_y	http://www.eas.iis.fraunhofer.de/ex#LBDCG_example.HeatPumpPlant_V2
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatPumps.EquationFitReversible	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatPumps.Validation.EquationFitReversible_ScalingFactor
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatPumps.ReciprocatingWaterToWater	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatPumps.Validation.ReciprocatingWaterToWater_Dynamic
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatPumps.ReciprocatingWaterToWater	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatPumps.Validation.ReciprocatingWaterToWater_ScalingFactor
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatPumps.ReciprocatingWaterToWater	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatPumps.Validation.ReciprocatingWaterToWater_Static
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatPumps.ReciprocatingWaterToWater	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatPumps.Validation.ReciprocatingWaterToWater_VariableSpeed
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatPumps.ScrollWaterToWater	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatPumps.Examples.ScrollWaterToWater_OneRoomRadiator
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatPumps.ScrollWaterToWater	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatPumps.Validation.ScrollWaterToWater_Dynamic
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatPumps.ScrollWaterToWater	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatPumps.Validation.ScrollWaterToWater_ScalingFactor
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatPumps.ScrollWaterToWater	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatPumps.Validation.ScrollWaterToWater_Static
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatPumps.ScrollWaterToWater	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatPumps.Validation.ScrollWaterToWater_TemperatureProtection
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatPumps.ScrollWaterToWater	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatPumps.Validation.ScrollWaterToWater_VariableSpeed
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.Interfaces.FourPortHeatMassExchanger	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.Interfaces.Examples.FourPortHeatMassExchanger
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.MassExchangers.ConstantEffectiveness	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.Interfaces.Examples.ReverseFlowMassExchanger
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.MassExchangers.ConstantEffectiveness	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.MassExchangers.Examples.ConstantEffectiveness
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Obsolete.DistrictHeatingCooling.Plants.LakeWaterHeatExchanger_T	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Obsolete.DistrictHeatingCooling.Examples.HeatingCoolingHotWater3Clusters
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Obsolete.DistrictHeatingCooling.Plants.LakeWaterHeatExchanger_T	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Obsolete.DistrictHeatingCooling.Plants.Validation.LakeWaterHeatExchanger_T_Heating
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Obsolete.DistrictHeatingCooling.Plants.LakeWaterHeatExchanger_T	http://www.eas.iis.fraunhofer.de/mbl#Buildings.Obsolete.DistrictHeatingCooling.Validation.HeatingCoolingHotWaterSmall
+
+#query_CQ1c, answering takes ~20s
+http://www.eas.iis.fraunhofer.de/ex#LBDCG_example
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Airflow.Multizone.Examples
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Airflow.Multizone.Validation
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Applications.DataCenters.ChillerCooled.Equipment.Validation
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Examples.ChillerPlant.BaseClasses.Controls.Examples
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Examples.DualFanDualDuct
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Examples.HydronicHeating
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Examples.ScalableBenchmarks.BuildingVAV.Examples
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Examples.Tutorial.SpaceCooling
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Experimental.DHC.EnergyTransferStations.Combined.Generation5.Subsystems.Validation
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Experimental.DHC.Loads.BaseClasses.Validation
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.Chillers.Examples
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.Chillers.Validation
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.Examples
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.Examples.Performance
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.FMI.Adaptors.Examples
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.Geothermal.Borefields.BaseClasses.Boreholes.BaseClasses.Examples
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.Geothermal.Boreholes.BaseClasses.Examples
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.BaseClasses.Examples
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.DXCoils.AirCooled.Examples
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.Examples
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatExchangers.Validation
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatPumps.Examples
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatPumps.Validation
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.Interfaces.Examples
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.MassExchangers.Examples
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Obsolete.DistrictHeatingCooling.Examples
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Obsolete.DistrictHeatingCooling.Plants.Validation
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Obsolete.DistrictHeatingCooling.Validation
+
+#query_CQ3, answering query takes ~2mins
+http://www.eas.iis.fraunhofer.de/ex#LBDCG_example.HeatPumpPlant_V2.heaPum.P_nominal	5000	Nominal compressor power (at y_gleich_1)
+http://www.eas.iis.fraunhofer.de/ex#LBDCG_example.HeatPumpPlant_V2.Qp_2	1000.0	heating load at 5°C
+http://www.eas.iis.fraunhofer.de/ex#LBDCG_example.HeatPumpPlant_V2.Qp_1	10000.0	heating load at -15°C
+http://www.eas.iis.fraunhofer.de/ex#LBDCG_example.HeatPumpPlant_V2.Qp_heater_nom	10000.0	Nennleistung Erzeuger
+
+#query_CQ4, answering query takes ~2mins
+http://www.eas.iis.fraunhofer.de/ex#LBDCG_example.HeatPumpPlant_V2.W_el	u	http://www.eas.iis.fraunhofer.de/msl#Modelica.Blocks.Interfaces.RealInput
+http://www.eas.iis.fraunhofer.de/ex#LBDCG_example.HeatPumpPlant_V2.annualTemperatureCurve	T_oda	http://www.eas.iis.fraunhofer.de/msl#Modelica.Blocks.Interfaces.RealOutput
+http://www.eas.iis.fraunhofer.de/ex#LBDCG_example.HeatPumpPlant_V2.consumer	T_oda	http://www.eas.iis.fraunhofer.de/msl#Modelica.Blocks.Interfaces.RealInput
+http://www.eas.iis.fraunhofer.de/ex#LBDCG_example.HeatPumpPlant_V2.controlGeneratorWithPumpMassFlow	T_mea	http://www.eas.iis.fraunhofer.de/msl#Modelica.Blocks.Interfaces.RealInput
+http://www.eas.iis.fraunhofer.de/ex#LBDCG_example.HeatPumpPlant_V2.controlGeneratorWithPumpMassFlow	pumpSignal	http://www.eas.iis.fraunhofer.de/msl#Modelica.Blocks.Interfaces.RealOutput
+http://www.eas.iis.fraunhofer.de/ex#LBDCG_example.HeatPumpPlant_V2.controlGeneratorWithPumpMassFlow	T_set	http://www.eas.iis.fraunhofer.de/msl#Modelica.Blocks.Interfaces.RealInput
+http://www.eas.iis.fraunhofer.de/ex#LBDCG_example.HeatPumpPlant_V2.controlGeneratorWithPumpMassFlow	generatorSignal	http://www.eas.iis.fraunhofer.de/msl#Modelica.Blocks.Interfaces.RealOutput
+http://www.eas.iis.fraunhofer.de/ex#LBDCG_example.HeatPumpPlant_V2.heaPum	P	http://www.eas.iis.fraunhofer.de/msl#Modelica.Blocks.Interfaces.RealOutput
+http://www.eas.iis.fraunhofer.de/ex#LBDCG_example.HeatPumpPlant_V2.heaPum	y	http://www.eas.iis.fraunhofer.de/msl#Modelica.Blocks.Interfaces.RealInput
+http://www.eas.iis.fraunhofer.de/ex#LBDCG_example.HeatPumpPlant_V2.measuredStorageTemperature	y	http://www.eas.iis.fraunhofer.de/msl#Modelica.Blocks.Interfaces.RealOutput
+http://www.eas.iis.fraunhofer.de/ex#LBDCG_example.HeatPumpPlant_V2.pum_pri	m_flow_in	http://www.eas.iis.fraunhofer.de/msl#Modelica.Blocks.Interfaces.RealInput
+http://www.eas.iis.fraunhofer.de/ex#LBDCG_example.HeatPumpPlant_V2.pum_sou	y	http://www.eas.iis.fraunhofer.de/msl#Modelica.Blocks.Interfaces.RealInput
+http://www.eas.iis.fraunhofer.de/ex#LBDCG_example.HeatPumpPlant_V2.setPointStorageTemperature	y	http://www.eas.iis.fraunhofer.de/msl#Modelica.Blocks.Interfaces.RealOutput
+http://www.eas.iis.fraunhofer.de/ex#LBDCG_example.HeatPumpPlant_V2.setPoint_ControlValue_pum_sou	y	http://www.eas.iis.fraunhofer.de/msl#Modelica.Blocks.Interfaces.RealOutput
+http://www.eas.iis.fraunhofer.de/ex#LBDCG_example.HeatPumpPlant_V2.sou_sou	T_in	http://www.eas.iis.fraunhofer.de/msl#Modelica.Blocks.Interfaces.RealInput
+
+#query_CQ2_gen (to be executed on newGraph3, not on "GA")
+http://www.eas.iis.fraunhofer.de/libeas#LibEAS.HeatPumps.EquationFitReversible_Mod
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Applications.DataCenters.ChillerCooled.Equipment.BaseClasses.PartialCoolingCoilHumidifyingHeating
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Applications.DataCenters.ChillerCooled.Equipment.BaseClasses.PartialParallelElectricEIR
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Applications.DataCenters.ChillerCooled.Equipment.CoolingCoilHumidifyingHeating
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Applications.DataCenters.ChillerCooled.Equipment.ElectricChillerParallel
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Applications.DataCenters.ChillerCooled.Equipment.WatersideEconomizer
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.Chillers.AbsorptionIndirectSteam
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.Chillers.BaseClasses.PartialCarnot_y
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.Chillers.BaseClasses.PartialElectric
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.Chillers.Carnot_TEva
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.Chillers.Carnot_y
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.Chillers.ElectricEIR
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.Chillers.ElectricReformulatedEIR
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatPumps.BaseClasses.PartialWaterToWater
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatPumps.Carnot_TCon
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatPumps.Carnot_y
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatPumps.EquationFitReversible
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatPumps.ReciprocatingWaterToWater
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Fluid.HeatPumps.ScrollWaterToWater
+http://www.eas.iis.fraunhofer.de/mbl#Buildings.Obsolete.DistrictHeatingCooling.Plants.LakeWaterHeatExchanger_T
