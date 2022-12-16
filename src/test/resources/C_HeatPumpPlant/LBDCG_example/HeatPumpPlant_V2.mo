@@ -65,7 +65,7 @@ model HeatPumpPlant_V2 "enhanced for optimized results on CQ4"
     m_flow_nominal=mp_nom,
     VTan=V_SP,
     T_start=293.15) "Speicher 3100l, h=2.0m (d~1.4m) - 40Schichten"
-    annotation (Placement(transformation(extent={{0,-60},{40,20}})));
+    annotation (Placement(transformation(extent={{-2,-60},{38,20}})));
   Buildings.Fluid.Movers.FlowControlled_m_flow
                                             pum_pri(
     redeclare package Medium = Medium,
@@ -166,22 +166,25 @@ equation
   connect(senT_sec_VL.port_b, consumer.port_a) annotation (Line(points={{80,-10},
           {130,-10},{130,-20}}, color={0,127,255}));
   connect(measuredStorageTemperature.y, controlGeneratorWithPumpMassFlow.T_mea)
-    annotation (Line(points={{-158,43},{-148,43},{-148,44},{-121,44}}, color={0,
-          0,127}));
+    annotation (Line(points={{-158,43},{-148,43},{-148,44},{-121,44}}, color={0,0,127},
+
+      thickness=1));
   connect(controlGeneratorWithPumpMassFlow.pumpSignal, pum_pri.m_flow_in)
-    annotation (Line(points={{-99,56},{-30,56},{-30,2}}, color={0,0,127}));
+    annotation (Line(points={{-99,56},{-30,56},{-30,2}}, color={0,0,127},
+      thickness=1));
   connect(setPointStorageTemperature.y, controlGeneratorWithPumpMassFlow.T_set)
-    annotation (Line(points={{-179,70},{-150,70},{-150,56},{-121,56}}, color={0,
-          0,127}));
+    annotation (Line(points={{-179,70},{-150,70},{-150,56},{-121,56}}, color={0,0,127},
+
+      thickness=1));
   connect(pum_pri.port_b, SP.fluPorVol[1]) annotation (Line(points={{-20,-10},{
-          12,-10},{12,-42.2},{14.4,-42.2}}, color={0,127,255}));
-  connect(SP.fluPorVolSec[1], senT_sec_VL.port_a) annotation (Line(points={{
-          25.6,-42.2},{26.8,-42.2},{26.8,-10},{60,-10}}, color={0,127,255}));
-  connect(SP.fluPorVolSec[nSeg], senT_sec_RL.port_b) annotation (Line(points={{
-          25.6,-38.4},{25.8,-38.4},{25.8,-50},{60,-50}}, color={0,127,255}));
+          12,-10},{12,-42.2},{12.4,-42.2}}, color={0,127,255}));
+  connect(SP.fluPorVolSec[1], senT_sec_VL.port_a) annotation (Line(points={{23.6,
+          -42.2},{26.8,-42.2},{26.8,-10},{60,-10}},      color={0,127,255}));
+  connect(SP.fluPorVolSec[nSeg], senT_sec_RL.port_b) annotation (Line(points={{23.6,
+          -38.4},{25.8,-38.4},{25.8,-50},{60,-50}},      color={0,127,255}));
   connect(res_pri.port_b, senT_pri_RL.port_a)
     annotation (Line(points={{-40,-50},{-60,-50}}, color={0,127,255}));
-  connect(SP.fluPorVol[nSeg], res_pri.port_a) annotation (Line(points={{14.4,
+  connect(SP.fluPorVol[nSeg], res_pri.port_a) annotation (Line(points={{12.4,
           -38.4},{12.2,-38.4},{12.2,-50},{-20,-50}}, color={0,127,255}));
   connect(consumer.port_b, res_sec.port_a) annotation (Line(points={{130,-40},{
           130,-50},{120,-50}}, color={0,127,255}));
@@ -204,16 +207,21 @@ equation
   connect(res_sou.port_b, sin_sou.ports[1])
     annotation (Line(points={{-220,-10},{-240,-10}}, color={0,127,255}));
   connect(setPoint_ControlValue_pum_sou.y, pum_sou.y) annotation (Line(points={
-          {-239,-80},{-209.5,-80},{-209.5,-62},{-210,-62}}, color={0,0,127}));
+          {-239,-80},{-209.5,-80},{-209.5,-62},{-210,-62}}, color={0,0,127},
+      thickness=1));
   connect(heaPum.P, W_el.u)
     annotation (Line(points={{-110,-19},{-110,-2}}, color={0,0,127}));
   connect(controlGeneratorWithPumpMassFlow.generatorSignal, heaPum.y)
-    annotation (Line(points={{-99,44},{-94,44},{-94,-42},{-101,-42}}, color={0,
-          0,127}));
-  connect(annualTemperatureCurve.T_oda, consumer.T_oda) annotation (Line(points
-        ={{150,39},{150,-6},{138,-6},{138,-20.2}}, color={0,0,127}));
+    annotation (Line(points={{-99,44},{-94,44},{-94,-42},{-101,-42}}, color={0,0,127},
+
+      thickness=1));
+  connect(annualTemperatureCurve.T_oda, consumer.T_oda) annotation (Line(points=
+         {{150,39},{150,-6},{138,-6},{138,-20.2}}, color={0,0,127},
+      thickness=1));
   connect(annualTemperatureCurve.T_oda, sou_sou.T_in) annotation (Line(points={
-          {150,39},{150,-90},{-270,-90},{-270,-46},{-262,-46}}, color={0,0,127}));
+          {150,39},{150,-90},{-270,-90},{-270,-46},{-262,-46}}, color={0,0,127},
+
+      thickness=1));
   annotation (Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(
         coordinateSystem(preserveAspectRatio=false, extent={{-280,-100},{180,
             100}}), graphics={
@@ -229,23 +237,70 @@ equation
           pattern=LinePattern.None,
           lineColor={0,0,0}),
         Text(
-          extent={{-76,-70},{10,-80}},
+          extent={{-18,-72},{10,-80}},
           pattern=LinePattern.None,
           fillColor={255,255,170},
           fillPattern=FillPattern.Solid,
           lineColor={255,128,0},
-          textString="Primär-/Ladekreis (Index: pri)"),
-        Text(
-          extent={{68,-72},{138,-80}},
+          fontSize=8,
+          textString="primary curcuit 
+index: pri
+"),     Text(
+          extent={{102,-70},{138,-80}},
           pattern=LinePattern.None,
           fillColor={255,255,170},
           fillPattern=FillPattern.Solid,
           lineColor={0,140,72},
-          textString="Sekundärkreis (Index: sec)"),
+          fontSize=8,
+          textString="secondary curcuit
+index: sec"),
         Rectangle(
           extent={{-132,-14},{-92,-48}},
           lineColor={217,67,180},
-          lineThickness=1)}),
+          lineThickness=1),
+        Rectangle(
+          extent={{-144,20},{-266,-86}},
+          fillColor={255,170,213},
+          fillPattern=FillPattern.Solid,
+          pattern=LinePattern.None,
+          lineColor={0,0,0}),
+        Text(
+          extent={{-174,-74},{-146,-84}},
+          pattern=LinePattern.None,
+          fillColor={255,255,170},
+          fillPattern=FillPattern.Solid,
+          lineColor={217,67,180},
+          fontSize=8,
+          textString="heat source (air)
+index sou"),
+        Rectangle(
+          extent={{-88,90},{-216,30}},
+          fillColor={205,213,255},
+          fillPattern=FillPattern.Solid,
+          pattern=LinePattern.None,
+          lineColor={0,0,0}),
+        Text(
+          extent={{-172,88},{-88,76}},
+          pattern=LinePattern.None,
+          fillColor={255,255,170},
+          fillPattern=FillPattern.Solid,
+          lineColor={28,108,200},
+          fontSize=8,
+          textString="heat generator control"),
+        Rectangle(
+          extent={{172,94},{128,28}},
+          fillColor={170,170,255},
+          fillPattern=FillPattern.Solid,
+          pattern=LinePattern.None,
+          lineColor={0,0,0}),
+        Text(
+          extent={{128,94},{172,82}},
+          pattern=LinePattern.None,
+          fillColor={255,255,170},
+          fillPattern=FillPattern.Solid,
+          lineColor={102,44,145},
+          fontSize=8,
+          textString="ambient")}),
     experiment(
       StopTime=31536000,
       Interval=600.0012,
