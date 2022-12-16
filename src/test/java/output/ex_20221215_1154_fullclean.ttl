@@ -1,0 +1,1110 @@
+@prefix ex:    <http://www.eas.iis.fraunhofer.de/ex#> .
+@prefix moont:    <http://www.eas.iis.fraunhofer.de/moont#> .
+@prefix msl:    <http://www.eas.iis.fraunhofer.de/msl#> .
+@prefix bs:    <http://www.eas.iis.fraunhofer.de/bs#> .
+@prefix aix:    <http://www.eas.iis.fraunhofer.de/aix#> .
+@prefix mbl:    <http://www.eas.iis.fraunhofer.de/mbl#> .
+@prefix libeas:    <http://www.eas.iis.fraunhofer.de/libeas#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:  <http://www.w3.org/2000/01/rdf#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms:  <http://purl.org/dc/terms#> .
+ex: rdf:type owl:Ontology ;
+	 dcterms:title "knowledge graph representing the Modelica LBDCG_example package"@en ;
+	 dcterms:creator "Elisabeth Eckstädt using MoTTL transcriptor" ;
+	 dcterms:issued "2022-12-15";
+	 owl:versionInfo "v1.0.1-1.0.0";
+	 owl:imports msl: ;
+	 owl:imports mbl: ;
+	 owl:imports aix: ;
+	 owl:imports bs: ;
+	 owl:imports libeas: ;
+	 owl:imports moont: .
+ex:LBDCG_example.HeatPumpPlant.Medium rdfs:subClassOf moont:MPackage;
+	 moont:containedIn ex:LBDCG_example.HeatPumpPlant.
+ex:LBDCG_example.HeatPumpPlant.Medium_sou rdfs:subClassOf moont:MPackage;
+	 moont:containedIn ex:LBDCG_example.HeatPumpPlant.
+ex:LBDCG_example.HeatPumpPlant rdfs:subClassOf moont:MModel;
+	 moont:stringComment "heat pump plant with 3 circuits (source: air, primary circuit charging a storage tank, secondary circuit serving a building heating system)"^^xsd:string;
+	 moont:containedIn ex:LBDCG_example.
+ex:LBDCG_example.HeatPumpPlant moont:extends msl:Modelica.Icons.Example.
+ex:LBDCG_example.HeatPumpPlant moont:hasPart ex:LBDCG_example.HeatPumpPlant.yMin.
+ex:LBDCG_example.HeatPumpPlant.yMin a moont:MParameterComponent;
+	 moont:identifier "yMin";
+	 moont:type xsd:Real;
+	 moont:stringComment "minimale Teillast des Erzeugers"^^xsd:string;
+	 moont:modification "0.4"^^xsd:Real.
+ex:LBDCG_example.HeatPumpPlant moont:hasPart ex:LBDCG_example.HeatPumpPlant.mp_nom.
+ex:LBDCG_example.HeatPumpPlant.mp_nom a moont:MParameterComponent;
+	 moont:identifier "mp_nom";
+	 moont:type msl:Modelica.SIunits.MassFlowRate;
+	 moont:stringComment "nominal mass flow rate for all components"^^xsd:string;
+	 moont:modification "0.34"^^xsd:Real.
+ex:LBDCG_example.HeatPumpPlant moont:hasPart ex:LBDCG_example.HeatPumpPlant.dp_nom.
+ex:LBDCG_example.HeatPumpPlant.dp_nom a moont:MParameterComponent;
+	 moont:identifier "dp_nom";
+	 moont:type msl:Modelica.SIunits.PressureDifference;
+	 moont:stringComment "nominal pressure difference for all components"^^xsd:string;
+	 moont:modification "1000.0"^^xsd:Real.
+ex:LBDCG_example.HeatPumpPlant moont:hasPart ex:LBDCG_example.HeatPumpPlant.Qp_2.
+ex:LBDCG_example.HeatPumpPlant.Qp_2 a moont:MParameterComponent;
+	 moont:identifier "Qp_2";
+	 moont:type msl:Modelica.SIunits.HeatFlowRate;
+	 moont:stringComment "heating load at 5°C"^^xsd:string;
+	 moont:modification "1000.0"^^xsd:Real.
+ex:LBDCG_example.HeatPumpPlant moont:hasPart ex:LBDCG_example.HeatPumpPlant.dp_nom_sou.
+ex:LBDCG_example.HeatPumpPlant.dp_nom_sou a moont:MParameterComponent;
+	 moont:identifier "dp_nom_sou";
+	 moont:type msl:Modelica.SIunits.Pressure;
+	 moont:stringComment "Pressure difference Quellkreis"^^xsd:string;
+	 moont:modification "10.0"^^xsd:Real.
+ex:LBDCG_example.HeatPumpPlant moont:hasPart ex:LBDCG_example.HeatPumpPlant.mp_nom_sou.
+ex:LBDCG_example.HeatPumpPlant.mp_nom_sou a moont:MParameterComponent;
+	 moont:identifier "mp_nom_sou";
+	 moont:type msl:Modelica.SIunits.MassFlowRate;
+	 moont:stringComment "Nennmassestrom Quellkreis Wärmepumpe"^^xsd:string;
+	 moont:modification "1.0"^^xsd:Real.
+ex:LBDCG_example.HeatPumpPlant moont:hasPart ex:LBDCG_example.HeatPumpPlant.h_SP.
+ex:LBDCG_example.HeatPumpPlant.h_SP a moont:MParameterComponent;
+	 moont:identifier "h_SP";
+	 moont:type msl:Modelica.SIunits.Length;
+	 moont:stringComment "Höhe Speicher (ohne Dämmung)"^^xsd:string;
+	 moont:modification "2.0"^^xsd:Real.
+ex:LBDCG_example.HeatPumpPlant moont:hasPart ex:LBDCG_example.HeatPumpPlant.Qp_heater_nom.
+ex:LBDCG_example.HeatPumpPlant.Qp_heater_nom a moont:MParameterComponent;
+	 moont:identifier "Qp_heater_nom";
+	 moont:type msl:Modelica.SIunits.Power;
+	 moont:stringComment "Nennleistung Erzeuger"^^xsd:string;
+	 moont:modification "10000.0"^^xsd:Real.
+ex:LBDCG_example.HeatPumpPlant moont:hasPart ex:LBDCG_example.HeatPumpPlant.V_SP.
+ex:LBDCG_example.HeatPumpPlant.V_SP a moont:MParameterComponent;
+	 moont:identifier "V_SP";
+	 moont:type msl:Modelica.SIunits.Volume;
+	 moont:stringComment "Speichervolumen"^^xsd:string;
+	 moont:modification "0.8"^^xsd:Real.
+ex:LBDCG_example.HeatPumpPlant moont:hasPart ex:LBDCG_example.HeatPumpPlant.nSeg.
+ex:LBDCG_example.HeatPumpPlant.nSeg a moont:MParameterComponent;
+	 moont:identifier "nSeg";
+	 moont:type xsd:Integer;
+	 moont:stringComment "Number of volume segments of the storage tank"^^xsd:string;
+	 moont:modification "20.0"^^xsd:Real.
+ex:LBDCG_example.HeatPumpPlant moont:hasPart ex:LBDCG_example.HeatPumpPlant.Qp_1.
+ex:LBDCG_example.HeatPumpPlant.Qp_1 a moont:MParameterComponent;
+	 moont:identifier "Qp_1";
+	 moont:type msl:Modelica.SIunits.HeatFlowRate;
+	 moont:stringComment "heating load at -15°C"^^xsd:string;
+	 moont:modification "10000.0"^^xsd:Real.
+ex:LBDCG_example.HeatPumpPlant moont:hasPart ex:LBDCG_example.HeatPumpPlant.realExpression1.
+ex:LBDCG_example.HeatPumpPlant.realExpression1 a moont:MComponent ;
+	 moont:identifier "realExpression1";
+	 a msl:Modelica.Blocks.Sources.RealExpression.
+ex:LBDCG_example.HeatPumpPlant.realExpression1.y moont:modification "40.0"^^xsd:Real;
+	 moont:identifier "y".
+ex:LBDCG_example.HeatPumpPlant.realExpression1 moont:hasPart ex:LBDCG_example.HeatPumpPlant.realExpression1.y.
+ex:LBDCG_example.HeatPumpPlant moont:hasPart ex:LBDCG_example.HeatPumpPlant.senT_sec_VL.
+ex:LBDCG_example.HeatPumpPlant.senT_sec_VL a moont:MComponent ;
+	 moont:identifier "senT_sec_VL";
+	 a libeas:LibEAS.Sensors.TemperatureTwoPort_Display.
+ex:LBDCG_example.HeatPumpPlant.senT_sec_VL moont:modification "redeclare package Medium_gleich_Medium"^^xsd:string;
+	 moont:identifier "redeclare package Medium".
+ex:LBDCG_example.HeatPumpPlant.senT_sec_VL.m_flow_nominal moont:modification "mp_nom"^^xsd:String;
+	 moont:identifier "m_flow_nominal".
+ex:LBDCG_example.HeatPumpPlant.senT_sec_VL moont:hasPart ex:LBDCG_example.HeatPumpPlant.senT_sec_VL.m_flow_nominal.
+ex:LBDCG_example.HeatPumpPlant moont:hasPart ex:LBDCG_example.HeatPumpPlant.from_degC2.
+ex:LBDCG_example.HeatPumpPlant.from_degC2 a moont:MComponent ;
+	 moont:identifier "from_degC2";
+	 a msl:Modelica.Blocks.Math.UnitConversions.From_degC.
+ex:LBDCG_example.HeatPumpPlant moont:hasPart ex:LBDCG_example.HeatPumpPlant.res_sec.
+ex:LBDCG_example.HeatPumpPlant.res_sec a moont:MComponent ;
+	 moont:identifier "res_sec";
+	 a libeas:LibEAS.Sensors.PressureDrop_Display.
+ex:LBDCG_example.HeatPumpPlant.res_sec moont:modification "redeclare package Medium_gleich_Medium"^^xsd:string;
+	 moont:identifier "redeclare package Medium".
+ex:LBDCG_example.HeatPumpPlant.res_sec.m_flow_nominal moont:modification "mp_nom"^^xsd:String;
+	 moont:identifier "m_flow_nominal".
+ex:LBDCG_example.HeatPumpPlant.res_sec moont:hasPart ex:LBDCG_example.HeatPumpPlant.res_sec.m_flow_nominal.
+ex:LBDCG_example.HeatPumpPlant.res_sec.dp_nominal moont:modification "dp_nom"^^xsd:String;
+	 moont:identifier "dp_nominal".
+ex:LBDCG_example.HeatPumpPlant.res_sec moont:hasPart ex:LBDCG_example.HeatPumpPlant.res_sec.dp_nominal.
+ex:LBDCG_example.HeatPumpPlant moont:hasPart ex:LBDCG_example.HeatPumpPlant.realExpression.
+ex:LBDCG_example.HeatPumpPlant.realExpression a moont:MComponent ;
+	 moont:identifier "realExpression";
+	 a msl:Modelica.Blocks.Sources.RealExpression.
+ex:LBDCG_example.HeatPumpPlant.realExpression.y moont:modification "1.0"^^xsd:Real;
+	 moont:identifier "y".
+ex:LBDCG_example.HeatPumpPlant.realExpression moont:hasPart ex:LBDCG_example.HeatPumpPlant.realExpression.y.
+ex:LBDCG_example.HeatPumpPlant moont:hasPart ex:LBDCG_example.HeatPumpPlant.senT_sou_VL.
+ex:LBDCG_example.HeatPumpPlant.senT_sou_VL a moont:MComponent ;
+	 moont:identifier "senT_sou_VL";
+	 a libeas:LibEAS.Sensors.TemperatureTwoPort_Display.
+ex:LBDCG_example.HeatPumpPlant.senT_sou_VL moont:modification "redeclare package Medium_gleich_Medium_sou"^^xsd:string;
+	 moont:identifier "redeclare package Medium".
+ex:LBDCG_example.HeatPumpPlant.senT_sou_VL.m_flow_nominal moont:modification "mp_nom_sou"^^xsd:String;
+	 moont:identifier "m_flow_nominal".
+ex:LBDCG_example.HeatPumpPlant.senT_sou_VL moont:hasPart ex:LBDCG_example.HeatPumpPlant.senT_sou_VL.m_flow_nominal.
+ex:LBDCG_example.HeatPumpPlant moont:hasPart ex:LBDCG_example.HeatPumpPlant.gain1.
+ex:LBDCG_example.HeatPumpPlant.gain1 a moont:MComponent ;
+	 moont:identifier "gain1";
+	 a msl:Modelica.Blocks.Math.Gain.
+ex:LBDCG_example.HeatPumpPlant.gain1.k moont:modification "mp_nom/2"^^xsd:String;
+	 moont:identifier "k".
+ex:LBDCG_example.HeatPumpPlant.gain1 moont:hasPart ex:LBDCG_example.HeatPumpPlant.gain1.k.
+ex:LBDCG_example.HeatPumpPlant moont:hasPart ex:LBDCG_example.HeatPumpPlant.jahresgang.
+ex:LBDCG_example.HeatPumpPlant.jahresgang a moont:MComponent ;
+	 moont:identifier "jahresgang";
+	 a libeas:LibEAS.BoundaryConditions.AnnualFluctuation.
+ex:LBDCG_example.HeatPumpPlant moont:hasPart ex:LBDCG_example.HeatPumpPlant.senT_pri_VL.
+ex:LBDCG_example.HeatPumpPlant.senT_pri_VL a moont:MComponent ;
+	 moont:identifier "senT_pri_VL";
+	 a libeas:LibEAS.Sensors.TemperatureTwoPort_Display.
+ex:LBDCG_example.HeatPumpPlant.senT_pri_VL moont:modification "redeclare package Medium_gleich_Medium"^^xsd:string;
+	 moont:identifier "redeclare package Medium".
+ex:LBDCG_example.HeatPumpPlant.senT_pri_VL.m_flow_nominal moont:modification "mp_nom"^^xsd:String;
+	 moont:identifier "m_flow_nominal".
+ex:LBDCG_example.HeatPumpPlant.senT_pri_VL moont:hasPart ex:LBDCG_example.HeatPumpPlant.senT_pri_VL.m_flow_nominal.
+ex:LBDCG_example.HeatPumpPlant moont:hasPart ex:LBDCG_example.HeatPumpPlant.realExpression2.
+ex:LBDCG_example.HeatPumpPlant.realExpression2 a moont:MComponent ;
+	 moont:identifier "realExpression2";
+	 a msl:Modelica.Blocks.Sources.RealExpression.
+ex:LBDCG_example.HeatPumpPlant.realExpression2.y moont:modification "SP.heaPorVol_1_.T"^^xsd:String;
+	 moont:identifier "y".
+ex:LBDCG_example.HeatPumpPlant.realExpression2 moont:hasPart ex:LBDCG_example.HeatPumpPlant.realExpression2.y.
+ex:LBDCG_example.HeatPumpPlant moont:hasPart ex:LBDCG_example.HeatPumpPlant.res_pri.
+ex:LBDCG_example.HeatPumpPlant.res_pri a moont:MComponent ;
+	 moont:identifier "res_pri";
+	 a libeas:LibEAS.Sensors.PressureDrop_Display.
+ex:LBDCG_example.HeatPumpPlant.res_pri moont:modification "redeclare package Medium_gleich_Medium"^^xsd:string;
+	 moont:identifier "redeclare package Medium".
+ex:LBDCG_example.HeatPumpPlant.res_pri.m_flow_nominal moont:modification "mp_nom"^^xsd:String;
+	 moont:identifier "m_flow_nominal".
+ex:LBDCG_example.HeatPumpPlant.res_pri moont:hasPart ex:LBDCG_example.HeatPumpPlant.res_pri.m_flow_nominal.
+ex:LBDCG_example.HeatPumpPlant.res_pri.dp_nominal moont:modification "dp_nom"^^xsd:String;
+	 moont:identifier "dp_nominal".
+ex:LBDCG_example.HeatPumpPlant.res_pri moont:hasPart ex:LBDCG_example.HeatPumpPlant.res_pri.dp_nominal.
+ex:LBDCG_example.HeatPumpPlant moont:hasPart ex:LBDCG_example.HeatPumpPlant.sou_sou.
+ex:LBDCG_example.HeatPumpPlant.sou_sou a moont:MComponent ;
+	 moont:identifier "sou_sou";
+	 moont:stringComment "Fluid source on source side"^^xsd:string;
+	 a mbl:Buildings.Fluid.Sources.Boundary_pT.
+ex:LBDCG_example.HeatPumpPlant.sou_sou.use_T_in moont:modification "true"^^xsd:boolean;
+	 moont:identifier "use_T_in".
+ex:LBDCG_example.HeatPumpPlant.sou_sou moont:hasPart ex:LBDCG_example.HeatPumpPlant.sou_sou.use_T_in.
+ex:LBDCG_example.HeatPumpPlant.sou_sou.nPorts moont:modification "1.0"^^xsd:Real;
+	 moont:identifier "nPorts".
+ex:LBDCG_example.HeatPumpPlant.sou_sou moont:hasPart ex:LBDCG_example.HeatPumpPlant.sou_sou.nPorts.
+ex:LBDCG_example.HeatPumpPlant.sou_sou moont:modification "redeclare package Medium_gleich_Medium_sou"^^xsd:string;
+	 moont:identifier "redeclare package Medium".
+ex:LBDCG_example.HeatPumpPlant.sou_sou.p moont:modification "100000.0"^^xsd:Real;
+	 moont:identifier "p".
+ex:LBDCG_example.HeatPumpPlant.sou_sou moont:hasPart ex:LBDCG_example.HeatPumpPlant.sou_sou.p.
+ex:LBDCG_example.HeatPumpPlant.sou_sou.T moont:modification "283.15"^^xsd:Real;
+	 moont:identifier "T".
+ex:LBDCG_example.HeatPumpPlant.sou_sou moont:hasPart ex:LBDCG_example.HeatPumpPlant.sou_sou.T.
+ex:LBDCG_example.HeatPumpPlant moont:hasPart ex:LBDCG_example.HeatPumpPlant.W_el.
+ex:LBDCG_example.HeatPumpPlant.W_el a moont:MComponent ;
+	 moont:identifier "W_el";
+	 a msl:Modelica.Blocks.Continuous.Integrator.
+ex:LBDCG_example.HeatPumpPlant moont:hasPart ex:LBDCG_example.HeatPumpPlant.pum_pri.
+ex:LBDCG_example.HeatPumpPlant.pum_pri a moont:MComponent ;
+	 moont:identifier "pum_pri";
+	 a mbl:Buildings.Fluid.Movers.FlowControlled_m_flow.
+ex:LBDCG_example.HeatPumpPlant.pum_pri moont:modification "redeclare package Medium_gleich_Medium"^^xsd:string;
+	 moont:identifier "redeclare package Medium".
+ex:LBDCG_example.HeatPumpPlant.pum_pri.m_flow_nominal moont:modification "mp_nom"^^xsd:String;
+	 moont:identifier "m_flow_nominal".
+ex:LBDCG_example.HeatPumpPlant.pum_pri moont:hasPart ex:LBDCG_example.HeatPumpPlant.pum_pri.m_flow_nominal.
+ex:LBDCG_example.HeatPumpPlant.pum_pri.dp_nominal moont:modification "dp_nom"^^xsd:String;
+	 moont:identifier "dp_nominal".
+ex:LBDCG_example.HeatPumpPlant.pum_pri moont:hasPart ex:LBDCG_example.HeatPumpPlant.pum_pri.dp_nominal.
+ex:LBDCG_example.HeatPumpPlant moont:hasPart ex:LBDCG_example.HeatPumpPlant.characteristicCurve_2_1.
+ex:LBDCG_example.HeatPumpPlant.characteristicCurve_2_1 a moont:MComponent ;
+	 moont:identifier "characteristicCurve_2_1";
+	 a libeas:LibEAS.HeatingCircuits.CharacteristicCurve.
+ex:LBDCG_example.HeatPumpPlant.characteristicCurve_2_1 moont:modification "redeclare package Medium_gleich_Medium"^^xsd:string;
+	 moont:identifier "redeclare package Medium".
+ex:LBDCG_example.HeatPumpPlant.characteristicCurve_2_1.Qp_1 moont:modification "Qp_1"^^xsd:String;
+	 moont:identifier "Qp_1".
+ex:LBDCG_example.HeatPumpPlant.characteristicCurve_2_1 moont:hasPart ex:LBDCG_example.HeatPumpPlant.characteristicCurve_2_1.Qp_1.
+ex:LBDCG_example.HeatPumpPlant.characteristicCurve_2_1.Qp_2 moont:modification "Qp_2"^^xsd:String;
+	 moont:identifier "Qp_2".
+ex:LBDCG_example.HeatPumpPlant.characteristicCurve_2_1 moont:hasPart ex:LBDCG_example.HeatPumpPlant.characteristicCurve_2_1.Qp_2.
+ex:LBDCG_example.HeatPumpPlant.characteristicCurve_2_1.mp_nom moont:modification "mp_nom"^^xsd:String;
+	 moont:identifier "mp_nom".
+ex:LBDCG_example.HeatPumpPlant.characteristicCurve_2_1 moont:hasPart ex:LBDCG_example.HeatPumpPlant.characteristicCurve_2_1.mp_nom.
+ex:LBDCG_example.HeatPumpPlant.characteristicCurve_2_1.dp_nom moont:modification "dp_nom"^^xsd:String;
+	 moont:identifier "dp_nom".
+ex:LBDCG_example.HeatPumpPlant.characteristicCurve_2_1 moont:hasPart ex:LBDCG_example.HeatPumpPlant.characteristicCurve_2_1.dp_nom.
+ex:LBDCG_example.HeatPumpPlant moont:hasPart ex:LBDCG_example.HeatPumpPlant.wPRegler_konstantVp_ohneUntereBegr_3_1.
+ex:LBDCG_example.HeatPumpPlant.wPRegler_konstantVp_ohneUntereBegr_3_1 a moont:MComponent ;
+	 moont:identifier "wPRegler_konstantVp_ohneUntereBegr_3_1";
+	 a libeas:LibEAS.Controls.ControlGeneratorWithPump.
+ex:LBDCG_example.HeatPumpPlant.wPRegler_konstantVp_ohneUntereBegr_3_1.yMin moont:modification "yMin"^^xsd:String;
+	 moont:identifier "yMin".
+ex:LBDCG_example.HeatPumpPlant.wPRegler_konstantVp_ohneUntereBegr_3_1 moont:hasPart ex:LBDCG_example.HeatPumpPlant.wPRegler_konstantVp_ohneUntereBegr_3_1.yMin.
+ex:LBDCG_example.HeatPumpPlant.wPRegler_konstantVp_ohneUntereBegr_3_1.Ti moont:modification "300.0"^^xsd:Real;
+	 moont:identifier "Ti".
+ex:LBDCG_example.HeatPumpPlant.wPRegler_konstantVp_ohneUntereBegr_3_1 moont:hasPart ex:LBDCG_example.HeatPumpPlant.wPRegler_konstantVp_ohneUntereBegr_3_1.Ti.
+ex:LBDCG_example.HeatPumpPlant moont:hasPart ex:LBDCG_example.HeatPumpPlant.senT_sou_RL.
+ex:LBDCG_example.HeatPumpPlant.senT_sou_RL a moont:MComponent ;
+	 moont:identifier "senT_sou_RL";
+	 a libeas:LibEAS.Sensors.TemperatureTwoPort_Display.
+ex:LBDCG_example.HeatPumpPlant.senT_sou_RL moont:modification "redeclare package Medium_gleich_Medium_sou"^^xsd:string;
+	 moont:identifier "redeclare package Medium".
+ex:LBDCG_example.HeatPumpPlant.senT_sou_RL.m_flow_nominal moont:modification "mp_nom_sou"^^xsd:String;
+	 moont:identifier "m_flow_nominal".
+ex:LBDCG_example.HeatPumpPlant.senT_sou_RL moont:hasPart ex:LBDCG_example.HeatPumpPlant.senT_sou_RL.m_flow_nominal.
+ex:LBDCG_example.HeatPumpPlant moont:hasPart ex:LBDCG_example.HeatPumpPlant.res_sou.
+ex:LBDCG_example.HeatPumpPlant.res_sou a moont:MComponent ;
+	 moont:identifier "res_sou";
+	 a libeas:LibEAS.Sensors.PressureDrop_Display.
+ex:LBDCG_example.HeatPumpPlant.res_sou moont:modification "redeclare package Medium_gleich_Medium_sou"^^xsd:string;
+	 moont:identifier "redeclare package Medium".
+ex:LBDCG_example.HeatPumpPlant.res_sou.m_flow_nominal moont:modification "mp_nom_sou"^^xsd:String;
+	 moont:identifier "m_flow_nominal".
+ex:LBDCG_example.HeatPumpPlant.res_sou moont:hasPart ex:LBDCG_example.HeatPumpPlant.res_sou.m_flow_nominal.
+ex:LBDCG_example.HeatPumpPlant.res_sou.dp_nominal moont:modification "dp_nom_sou"^^xsd:String;
+	 moont:identifier "dp_nominal".
+ex:LBDCG_example.HeatPumpPlant.res_sou moont:hasPart ex:LBDCG_example.HeatPumpPlant.res_sou.dp_nominal.
+ex:LBDCG_example.HeatPumpPlant moont:hasPart ex:LBDCG_example.HeatPumpPlant.senT_sec_RL.
+ex:LBDCG_example.HeatPumpPlant.senT_sec_RL a moont:MComponent ;
+	 moont:identifier "senT_sec_RL";
+	 a libeas:LibEAS.Sensors.TemperatureTwoPort_Display.
+ex:LBDCG_example.HeatPumpPlant.senT_sec_RL moont:modification "redeclare package Medium_gleich_Medium"^^xsd:string;
+	 moont:identifier "redeclare package Medium".
+ex:LBDCG_example.HeatPumpPlant.senT_sec_RL.m_flow_nominal moont:modification "mp_nom"^^xsd:String;
+	 moont:identifier "m_flow_nominal".
+ex:LBDCG_example.HeatPumpPlant.senT_sec_RL moont:hasPart ex:LBDCG_example.HeatPumpPlant.senT_sec_RL.m_flow_nominal.
+ex:LBDCG_example.HeatPumpPlant moont:hasPart ex:LBDCG_example.HeatPumpPlant.pum_sou.
+ex:LBDCG_example.HeatPumpPlant.pum_sou a moont:MComponent ;
+	 moont:identifier "pum_sou";
+	 moont:stringComment "Fan or pump at source side of HP"^^xsd:string;
+	 a mbl:Buildings.Fluid.Movers.SpeedControlled_y.
+ex:LBDCG_example.HeatPumpPlant.pum_sou moont:modification "redeclare package Medium_gleich_Medium_sou"^^xsd:string;
+	 moont:identifier "redeclare package Medium".
+ex:LBDCG_example.HeatPumpPlant.pum_sou moont:modification "per(pressure(V_flow_gleich_{8.79043600562e-06*100,0.00277777777778*100,0.00556874120956*100,0.00776635021097*100,0.00978815049226*100,0.0113484528833*100,0.0127329465541*100,0.013985583685*100,0.0154360056259*100},dp_gleich_{60,50,49,48,47,46,45,44,43}),use_powerCharacteristic_gleich_true,power(V_flow_gleich_{8.79043600562e-06*100,0.00277777777778*100,0.00556874120956*100,0.00776635021097*100,0.00978815049226*100,0.0113484528833*100,0.0127329465541*100,0.013985583685*100,0.0154360056259*100},P_gleich_{50,60,59,58,57,56,55,54,53}))"^^xsd:string.
+ex:LBDCG_example.HeatPumpPlant.pum_sou.finalinputType moont:modification "AixLib.Fluid.Types.InputType.Continuous"^^xsd:String;
+	 moont:identifier "finalinputType".
+ex:LBDCG_example.HeatPumpPlant.pum_sou moont:hasPart ex:LBDCG_example.HeatPumpPlant.pum_sou.finalinputType.
+ex:LBDCG_example.HeatPumpPlant moont:hasPart ex:LBDCG_example.HeatPumpPlant.SP.
+ex:LBDCG_example.HeatPumpPlant.SP a moont:MComponent ;
+	 moont:identifier "SP";
+	 moont:stringComment "Speicher 3100l, h_gleich_2.0m (d~1.4m) - 40Schichten"^^xsd:string;
+	 a libeas:LibEAS.Storage.StratifiedEnhanced.
+ex:LBDCG_example.HeatPumpPlant.SP moont:modification "redeclare package Medium_gleich_Medium"^^xsd:string;
+	 moont:identifier "redeclare package Medium".
+ex:LBDCG_example.HeatPumpPlant.SP.hTan moont:modification "h_SP"^^xsd:String;
+	 moont:identifier "hTan".
+ex:LBDCG_example.HeatPumpPlant.SP moont:hasPart ex:LBDCG_example.HeatPumpPlant.SP.hTan.
+ex:LBDCG_example.HeatPumpPlant.SP.dIns moont:modification "0.1"^^xsd:Real;
+	 moont:identifier "dIns".
+ex:LBDCG_example.HeatPumpPlant.SP moont:hasPart ex:LBDCG_example.HeatPumpPlant.SP.dIns.
+ex:LBDCG_example.HeatPumpPlant.SP.nSeg moont:modification "nSeg"^^xsd:String;
+	 moont:identifier "nSeg".
+ex:LBDCG_example.HeatPumpPlant.SP moont:hasPart ex:LBDCG_example.HeatPumpPlant.SP.nSeg.
+ex:LBDCG_example.HeatPumpPlant.SP.m_flow_nominal moont:modification "mp_nom"^^xsd:String;
+	 moont:identifier "m_flow_nominal".
+ex:LBDCG_example.HeatPumpPlant.SP moont:hasPart ex:LBDCG_example.HeatPumpPlant.SP.m_flow_nominal.
+ex:LBDCG_example.HeatPumpPlant.SP.VTan moont:modification "V_SP"^^xsd:String;
+	 moont:identifier "VTan".
+ex:LBDCG_example.HeatPumpPlant.SP moont:hasPart ex:LBDCG_example.HeatPumpPlant.SP.VTan.
+ex:LBDCG_example.HeatPumpPlant.SP.T_start moont:modification "293.15"^^xsd:Real;
+	 moont:identifier "T_start".
+ex:LBDCG_example.HeatPumpPlant.SP moont:hasPart ex:LBDCG_example.HeatPumpPlant.SP.T_start.
+ex:LBDCG_example.HeatPumpPlant moont:hasPart ex:LBDCG_example.HeatPumpPlant.bou.
+ex:LBDCG_example.HeatPumpPlant.bou a moont:MComponent ;
+	 moont:identifier "bou";
+	 a mbl:Buildings.Fluid.Sources.Boundary_pT.
+ex:LBDCG_example.HeatPumpPlant.bou moont:modification "redeclare package Medium_gleich_Medium"^^xsd:string;
+	 moont:identifier "redeclare package Medium".
+ex:LBDCG_example.HeatPumpPlant.bou.p moont:modification "160000.0"^^xsd:Real;
+	 moont:identifier "p".
+ex:LBDCG_example.HeatPumpPlant.bou moont:hasPart ex:LBDCG_example.HeatPumpPlant.bou.p.
+ex:LBDCG_example.HeatPumpPlant.bou.nPorts moont:modification "1.0"^^xsd:Real;
+	 moont:identifier "nPorts".
+ex:LBDCG_example.HeatPumpPlant.bou moont:hasPart ex:LBDCG_example.HeatPumpPlant.bou.nPorts.
+ex:LBDCG_example.HeatPumpPlant moont:hasPart ex:LBDCG_example.HeatPumpPlant.sin_sou.
+ex:LBDCG_example.HeatPumpPlant.sin_sou a moont:MComponent ;
+	 moont:identifier "sin_sou";
+	 moont:stringComment "Fluid sink on source side"^^xsd:string;
+	 a mbl:Buildings.Fluid.Sources.Boundary_pT.
+ex:LBDCG_example.HeatPumpPlant.sin_sou.nPorts moont:modification "1.0"^^xsd:Real;
+	 moont:identifier "nPorts".
+ex:LBDCG_example.HeatPumpPlant.sin_sou moont:hasPart ex:LBDCG_example.HeatPumpPlant.sin_sou.nPorts.
+ex:LBDCG_example.HeatPumpPlant.sin_sou moont:modification "redeclare package Medium_gleich_Medium_sou"^^xsd:string;
+	 moont:identifier "redeclare package Medium".
+ex:LBDCG_example.HeatPumpPlant.sin_sou.p moont:modification "100000.0"^^xsd:Real;
+	 moont:identifier "p".
+ex:LBDCG_example.HeatPumpPlant.sin_sou moont:hasPart ex:LBDCG_example.HeatPumpPlant.sin_sou.p.
+ex:LBDCG_example.HeatPumpPlant.sin_sou.T moont:modification "281.15"^^xsd:Real;
+	 moont:identifier "T".
+ex:LBDCG_example.HeatPumpPlant.sin_sou moont:hasPart ex:LBDCG_example.HeatPumpPlant.sin_sou.T.
+ex:LBDCG_example.HeatPumpPlant moont:hasPart ex:LBDCG_example.HeatPumpPlant.heaPum.
+ex:LBDCG_example.HeatPumpPlant.heaPum a moont:MComponent ;
+	 moont:identifier "heaPum";
+	 a mbl:Buildings.Fluid.HeatPumps.Carnot_y.
+ex:LBDCG_example.HeatPumpPlant.heaPum moont:modification "redeclare package Medium1_gleich_Medium"^^xsd:string;
+	 moont:identifier "redeclare package Medium1".
+ex:LBDCG_example.HeatPumpPlant.heaPum moont:modification "redeclare package Medium2_gleich_Medium_sou"^^xsd:string;
+	 moont:identifier "redeclare package Medium2".
+ex:LBDCG_example.HeatPumpPlant.heaPum.use_eta_Carnot_nominal moont:modification "false"^^xsd:boolean;
+	 moont:identifier "use_eta_Carnot_nominal".
+ex:LBDCG_example.HeatPumpPlant.heaPum moont:hasPart ex:LBDCG_example.HeatPumpPlant.heaPum.use_eta_Carnot_nominal.
+ex:LBDCG_example.HeatPumpPlant.heaPum.COP_nominal moont:modification "4.0"^^xsd:Real;
+	 moont:identifier "COP_nominal".
+ex:LBDCG_example.HeatPumpPlant.heaPum moont:hasPart ex:LBDCG_example.HeatPumpPlant.heaPum.COP_nominal.
+ex:LBDCG_example.HeatPumpPlant.heaPum.dp1_nominal moont:modification "dp_nom"^^xsd:String;
+	 moont:identifier "dp1_nominal".
+ex:LBDCG_example.HeatPumpPlant.heaPum moont:hasPart ex:LBDCG_example.HeatPumpPlant.heaPum.dp1_nominal.
+ex:LBDCG_example.HeatPumpPlant.heaPum.dp2_nominal moont:modification "dp_nom_sou"^^xsd:String;
+	 moont:identifier "dp2_nominal".
+ex:LBDCG_example.HeatPumpPlant.heaPum moont:hasPart ex:LBDCG_example.HeatPumpPlant.heaPum.dp2_nominal.
+ex:LBDCG_example.HeatPumpPlant.heaPum.energyDynamics moont:modification "Modelica.Fluid.Types.Dynamics.FixedInitial"^^xsd:String;
+	 moont:identifier "energyDynamics".
+ex:LBDCG_example.HeatPumpPlant.heaPum moont:hasPart ex:LBDCG_example.HeatPumpPlant.heaPum.energyDynamics.
+ex:LBDCG_example.HeatPumpPlant.heaPum.P_nominal moont:modification "5000"^^xsd:Real;
+	 moont:identifier "P_nominal".
+ex:LBDCG_example.HeatPumpPlant.heaPum moont:hasPart ex:LBDCG_example.HeatPumpPlant.heaPum.P_nominal.
+ex:LBDCG_example.HeatPumpPlant moont:hasPart ex:LBDCG_example.HeatPumpPlant.senT_pri_RL.
+ex:LBDCG_example.HeatPumpPlant.senT_pri_RL a moont:MComponent ;
+	 moont:identifier "senT_pri_RL";
+	 a libeas:LibEAS.Sensors.TemperatureTwoPort_Display.
+ex:LBDCG_example.HeatPumpPlant.senT_pri_RL moont:modification "redeclare package Medium_gleich_Medium"^^xsd:string;
+	 moont:identifier "redeclare package Medium".
+ex:LBDCG_example.HeatPumpPlant.senT_pri_RL.m_flow_nominal moont:modification "mp_nom"^^xsd:String;
+	 moont:identifier "m_flow_nominal".
+ex:LBDCG_example.HeatPumpPlant.senT_pri_RL moont:hasPart ex:LBDCG_example.HeatPumpPlant.senT_pri_RL.m_flow_nominal.
+ex:LBDCG_example.HeatPumpPlant.ports_1 a moont:Vector.
+ex:LBDCG_example.HeatPumpPlant.bou moont:hasPart ex:LBDCG_example.HeatPumpPlant.bou.ports_1.
+ex:LBDCG_example.HeatPumpPlant.bou.ports_1 a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.bou.ports_1 moont:identifier "ports_1".
+ex:LBDCG_example.HeatPumpPlant.bou.ports_1 moont:connectedTo ex:LBDCG_example.HeatPumpPlant.senT_pri_RL.port_b.
+ex:LBDCG_example.HeatPumpPlant.senT_pri_RL moont:hasPart ex:LBDCG_example.HeatPumpPlant.senT_pri_RL.port_b.
+ex:LBDCG_example.HeatPumpPlant.senT_pri_RL.port_b a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.senT_pri_RL.port_b moont:identifier "port_b".
+ex:LBDCG_example.HeatPumpPlant.senT_pri_VL moont:hasPart ex:LBDCG_example.HeatPumpPlant.senT_pri_VL.port_b.
+ex:LBDCG_example.HeatPumpPlant.senT_pri_VL.port_b a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.senT_pri_VL.port_b moont:identifier "port_b".
+ex:LBDCG_example.HeatPumpPlant.senT_pri_VL.port_b moont:connectedTo ex:LBDCG_example.HeatPumpPlant.pum_pri.port_a.
+ex:LBDCG_example.HeatPumpPlant.pum_pri moont:hasPart ex:LBDCG_example.HeatPumpPlant.pum_pri.port_a.
+ex:LBDCG_example.HeatPumpPlant.pum_pri.port_a a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.pum_pri.port_a moont:identifier "port_a".
+ex:LBDCG_example.HeatPumpPlant.senT_sec_VL moont:hasPart ex:LBDCG_example.HeatPumpPlant.senT_sec_VL.port_b.
+ex:LBDCG_example.HeatPumpPlant.senT_sec_VL.port_b a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.senT_sec_VL.port_b moont:identifier "port_b".
+ex:LBDCG_example.HeatPumpPlant.senT_sec_VL.port_b moont:connectedTo ex:LBDCG_example.HeatPumpPlant.characteristicCurve_2_1.port_a.
+ex:LBDCG_example.HeatPumpPlant.characteristicCurve_2_1 moont:hasPart ex:LBDCG_example.HeatPumpPlant.characteristicCurve_2_1.port_a.
+ex:LBDCG_example.HeatPumpPlant.characteristicCurve_2_1.port_a a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.characteristicCurve_2_1.port_a moont:identifier "port_a".
+ex:LBDCG_example.HeatPumpPlant.realExpression2 moont:hasPart ex:LBDCG_example.HeatPumpPlant.realExpression2.y.
+ex:LBDCG_example.HeatPumpPlant.realExpression2.y a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.realExpression2.y moont:identifier "y".
+ex:LBDCG_example.HeatPumpPlant.realExpression2.y moont:connectedTo ex:LBDCG_example.HeatPumpPlant.wPRegler_konstantVp_ohneUntereBegr_3_1.T_mea.
+ex:LBDCG_example.HeatPumpPlant.wPRegler_konstantVp_ohneUntereBegr_3_1 moont:hasPart ex:LBDCG_example.HeatPumpPlant.wPRegler_konstantVp_ohneUntereBegr_3_1.T_mea.
+ex:LBDCG_example.HeatPumpPlant.wPRegler_konstantVp_ohneUntereBegr_3_1.T_mea a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.wPRegler_konstantVp_ohneUntereBegr_3_1.T_mea moont:identifier "T_mea".
+ex:LBDCG_example.HeatPumpPlant.gain1 moont:hasPart ex:LBDCG_example.HeatPumpPlant.gain1.y.
+ex:LBDCG_example.HeatPumpPlant.gain1.y a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.gain1.y moont:identifier "y".
+ex:LBDCG_example.HeatPumpPlant.gain1.y moont:connectedTo ex:LBDCG_example.HeatPumpPlant.pum_pri.m_flow_in.
+ex:LBDCG_example.HeatPumpPlant.pum_pri moont:hasPart ex:LBDCG_example.HeatPumpPlant.pum_pri.m_flow_in.
+ex:LBDCG_example.HeatPumpPlant.pum_pri.m_flow_in a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.pum_pri.m_flow_in moont:identifier "m_flow_in".
+ex:LBDCG_example.HeatPumpPlant.realExpression1 moont:hasPart ex:LBDCG_example.HeatPumpPlant.realExpression1.y.
+ex:LBDCG_example.HeatPumpPlant.realExpression1.y a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.realExpression1.y moont:identifier "y".
+ex:LBDCG_example.HeatPumpPlant.realExpression1.y moont:connectedTo ex:LBDCG_example.HeatPumpPlant.from_degC2.u.
+ex:LBDCG_example.HeatPumpPlant.from_degC2 moont:hasPart ex:LBDCG_example.HeatPumpPlant.from_degC2.u.
+ex:LBDCG_example.HeatPumpPlant.from_degC2.u a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.from_degC2.u moont:identifier "u".
+ex:LBDCG_example.HeatPumpPlant.from_degC2 moont:hasPart ex:LBDCG_example.HeatPumpPlant.from_degC2.y.
+ex:LBDCG_example.HeatPumpPlant.from_degC2.y a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.from_degC2.y moont:identifier "y".
+ex:LBDCG_example.HeatPumpPlant.from_degC2.y moont:connectedTo ex:LBDCG_example.HeatPumpPlant.wPRegler_konstantVp_ohneUntereBegr_3_1.T_set.
+ex:LBDCG_example.HeatPumpPlant.wPRegler_konstantVp_ohneUntereBegr_3_1 moont:hasPart ex:LBDCG_example.HeatPumpPlant.wPRegler_konstantVp_ohneUntereBegr_3_1.T_set.
+ex:LBDCG_example.HeatPumpPlant.wPRegler_konstantVp_ohneUntereBegr_3_1.T_set a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.wPRegler_konstantVp_ohneUntereBegr_3_1.T_set moont:identifier "T_set".
+ex:LBDCG_example.HeatPumpPlant.wPRegler_konstantVp_ohneUntereBegr_3_1 moont:hasPart ex:LBDCG_example.HeatPumpPlant.wPRegler_konstantVp_ohneUntereBegr_3_1.generatorSignal.
+ex:LBDCG_example.HeatPumpPlant.wPRegler_konstantVp_ohneUntereBegr_3_1.generatorSignal a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.wPRegler_konstantVp_ohneUntereBegr_3_1.generatorSignal moont:identifier "generatorSignal".
+ex:LBDCG_example.HeatPumpPlant.wPRegler_konstantVp_ohneUntereBegr_3_1.generatorSignal moont:connectedTo ex:LBDCG_example.HeatPumpPlant.heaPum.y.
+ex:LBDCG_example.HeatPumpPlant.heaPum moont:hasPart ex:LBDCG_example.HeatPumpPlant.heaPum.y.
+ex:LBDCG_example.HeatPumpPlant.heaPum.y a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.heaPum.y moont:identifier "y".
+ex:LBDCG_example.HeatPumpPlant.pum_pri moont:hasPart ex:LBDCG_example.HeatPumpPlant.pum_pri.port_b.
+ex:LBDCG_example.HeatPumpPlant.pum_pri.port_b a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.pum_pri.port_b moont:identifier "port_b".
+ex:LBDCG_example.HeatPumpPlant.pum_pri.port_b moont:connectedTo ex:LBDCG_example.HeatPumpPlant.SP.fluPorVol_1.
+ex:LBDCG_example.HeatPumpPlant.SP moont:hasPart ex:LBDCG_example.HeatPumpPlant.SP.fluPorVol_1.
+ex:LBDCG_example.HeatPumpPlant.SP.fluPorVol_1 a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.SP.fluPorVol_1 moont:identifier "fluPorVol_1".
+ex:LBDCG_example.HeatPumpPlant.fluPorVolSec_1 a moont:Vector.
+ex:LBDCG_example.HeatPumpPlant.SP moont:hasPart ex:LBDCG_example.HeatPumpPlant.SP.fluPorVolSec_1.
+ex:LBDCG_example.HeatPumpPlant.SP.fluPorVolSec_1 a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.SP.fluPorVolSec_1 moont:identifier "fluPorVolSec_1".
+ex:LBDCG_example.HeatPumpPlant.SP.fluPorVolSec_1 moont:connectedTo ex:LBDCG_example.HeatPumpPlant.senT_sec_VL.port_a.
+ex:LBDCG_example.HeatPumpPlant.senT_sec_VL moont:hasPart ex:LBDCG_example.HeatPumpPlant.senT_sec_VL.port_a.
+ex:LBDCG_example.HeatPumpPlant.senT_sec_VL.port_a a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.senT_sec_VL.port_a moont:identifier "port_a".
+ex:LBDCG_example.HeatPumpPlant.fluPorVolSec_nSeg a moont:Vector.
+ex:LBDCG_example.HeatPumpPlant.SP moont:hasPart ex:LBDCG_example.HeatPumpPlant.SP.fluPorVolSec_nSeg.
+ex:LBDCG_example.HeatPumpPlant.SP.fluPorVolSec_nSeg a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.SP.fluPorVolSec_nSeg moont:identifier "fluPorVolSec_nSeg".
+ex:LBDCG_example.HeatPumpPlant.SP.fluPorVolSec_nSeg moont:connectedTo ex:LBDCG_example.HeatPumpPlant.senT_sec_RL.port_b.
+ex:LBDCG_example.HeatPumpPlant.senT_sec_RL moont:hasPart ex:LBDCG_example.HeatPumpPlant.senT_sec_RL.port_b.
+ex:LBDCG_example.HeatPumpPlant.senT_sec_RL.port_b a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.senT_sec_RL.port_b moont:identifier "port_b".
+ex:LBDCG_example.HeatPumpPlant.res_pri moont:hasPart ex:LBDCG_example.HeatPumpPlant.res_pri.port_b.
+ex:LBDCG_example.HeatPumpPlant.res_pri.port_b a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.res_pri.port_b moont:identifier "port_b".
+ex:LBDCG_example.HeatPumpPlant.res_pri.port_b moont:connectedTo ex:LBDCG_example.HeatPumpPlant.senT_pri_RL.port_a.
+ex:LBDCG_example.HeatPumpPlant.senT_pri_RL moont:hasPart ex:LBDCG_example.HeatPumpPlant.senT_pri_RL.port_a.
+ex:LBDCG_example.HeatPumpPlant.senT_pri_RL.port_a a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.senT_pri_RL.port_a moont:identifier "port_a".
+ex:LBDCG_example.HeatPumpPlant.fluPorVol_nSeg a moont:Vector.
+ex:LBDCG_example.HeatPumpPlant.SP moont:hasPart ex:LBDCG_example.HeatPumpPlant.SP.fluPorVol_nSeg.
+ex:LBDCG_example.HeatPumpPlant.SP.fluPorVol_nSeg a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.SP.fluPorVol_nSeg moont:identifier "fluPorVol_nSeg".
+ex:LBDCG_example.HeatPumpPlant.SP.fluPorVol_nSeg moont:connectedTo ex:LBDCG_example.HeatPumpPlant.res_pri.port_a.
+ex:LBDCG_example.HeatPumpPlant.res_pri moont:hasPart ex:LBDCG_example.HeatPumpPlant.res_pri.port_a.
+ex:LBDCG_example.HeatPumpPlant.res_pri.port_a a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.res_pri.port_a moont:identifier "port_a".
+ex:LBDCG_example.HeatPumpPlant.characteristicCurve_2_1 moont:hasPart ex:LBDCG_example.HeatPumpPlant.characteristicCurve_2_1.port_b.
+ex:LBDCG_example.HeatPumpPlant.characteristicCurve_2_1.port_b a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.characteristicCurve_2_1.port_b moont:identifier "port_b".
+ex:LBDCG_example.HeatPumpPlant.characteristicCurve_2_1.port_b moont:connectedTo ex:LBDCG_example.HeatPumpPlant.res_sec.port_a.
+ex:LBDCG_example.HeatPumpPlant.res_sec moont:hasPart ex:LBDCG_example.HeatPumpPlant.res_sec.port_a.
+ex:LBDCG_example.HeatPumpPlant.res_sec.port_a a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.res_sec.port_a moont:identifier "port_a".
+ex:LBDCG_example.HeatPumpPlant.res_sec moont:hasPart ex:LBDCG_example.HeatPumpPlant.res_sec.port_b.
+ex:LBDCG_example.HeatPumpPlant.res_sec.port_b a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.res_sec.port_b moont:identifier "port_b".
+ex:LBDCG_example.HeatPumpPlant.res_sec.port_b moont:connectedTo ex:LBDCG_example.HeatPumpPlant.senT_sec_RL.port_a.
+ex:LBDCG_example.HeatPumpPlant.senT_sec_RL moont:hasPart ex:LBDCG_example.HeatPumpPlant.senT_sec_RL.port_a.
+ex:LBDCG_example.HeatPumpPlant.senT_sec_RL.port_a a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.senT_sec_RL.port_a moont:identifier "port_a".
+ex:LBDCG_example.HeatPumpPlant.senT_pri_RL moont:hasPart ex:LBDCG_example.HeatPumpPlant.senT_pri_RL.port_b.
+ex:LBDCG_example.HeatPumpPlant.senT_pri_RL.port_b a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.senT_pri_RL.port_b moont:identifier "port_b".
+ex:LBDCG_example.HeatPumpPlant.senT_pri_RL.port_b moont:connectedTo ex:LBDCG_example.HeatPumpPlant.heaPum.port_a1.
+ex:LBDCG_example.HeatPumpPlant.heaPum moont:hasPart ex:LBDCG_example.HeatPumpPlant.heaPum.port_a1.
+ex:LBDCG_example.HeatPumpPlant.heaPum.port_a1 a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.heaPum.port_a1 moont:identifier "port_a1".
+ex:LBDCG_example.HeatPumpPlant.heaPum moont:hasPart ex:LBDCG_example.HeatPumpPlant.heaPum.port_b1.
+ex:LBDCG_example.HeatPumpPlant.heaPum.port_b1 a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.heaPum.port_b1 moont:identifier "port_b1".
+ex:LBDCG_example.HeatPumpPlant.heaPum.port_b1 moont:connectedTo ex:LBDCG_example.HeatPumpPlant.senT_pri_VL.port_a.
+ex:LBDCG_example.HeatPumpPlant.senT_pri_VL moont:hasPart ex:LBDCG_example.HeatPumpPlant.senT_pri_VL.port_a.
+ex:LBDCG_example.HeatPumpPlant.senT_pri_VL.port_a a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.senT_pri_VL.port_a moont:identifier "port_a".
+ex:LBDCG_example.HeatPumpPlant.ports_1 a moont:Vector.
+ex:LBDCG_example.HeatPumpPlant.sou_sou moont:hasPart ex:LBDCG_example.HeatPumpPlant.sou_sou.ports_1.
+ex:LBDCG_example.HeatPumpPlant.sou_sou.ports_1 a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.sou_sou.ports_1 moont:identifier "ports_1".
+ex:LBDCG_example.HeatPumpPlant.sou_sou.ports_1 moont:connectedTo ex:LBDCG_example.HeatPumpPlant.pum_sou.port_a.
+ex:LBDCG_example.HeatPumpPlant.pum_sou moont:hasPart ex:LBDCG_example.HeatPumpPlant.pum_sou.port_a.
+ex:LBDCG_example.HeatPumpPlant.pum_sou.port_a a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.pum_sou.port_a moont:identifier "port_a".
+ex:LBDCG_example.HeatPumpPlant.wPRegler_konstantVp_ohneUntereBegr_3_1 moont:hasPart ex:LBDCG_example.HeatPumpPlant.wPRegler_konstantVp_ohneUntereBegr_3_1.pumpSignal.
+ex:LBDCG_example.HeatPumpPlant.wPRegler_konstantVp_ohneUntereBegr_3_1.pumpSignal a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.wPRegler_konstantVp_ohneUntereBegr_3_1.pumpSignal moont:identifier "pumpSignal".
+ex:LBDCG_example.HeatPumpPlant.wPRegler_konstantVp_ohneUntereBegr_3_1.pumpSignal moont:connectedTo ex:LBDCG_example.HeatPumpPlant.gain1.u.
+ex:LBDCG_example.HeatPumpPlant.gain1 moont:hasPart ex:LBDCG_example.HeatPumpPlant.gain1.u.
+ex:LBDCG_example.HeatPumpPlant.gain1.u a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.gain1.u moont:identifier "u".
+ex:LBDCG_example.HeatPumpPlant.pum_sou moont:hasPart ex:LBDCG_example.HeatPumpPlant.pum_sou.port_b.
+ex:LBDCG_example.HeatPumpPlant.pum_sou.port_b a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.pum_sou.port_b moont:identifier "port_b".
+ex:LBDCG_example.HeatPumpPlant.pum_sou.port_b moont:connectedTo ex:LBDCG_example.HeatPumpPlant.senT_sou_VL.port_a.
+ex:LBDCG_example.HeatPumpPlant.senT_sou_VL moont:hasPart ex:LBDCG_example.HeatPumpPlant.senT_sou_VL.port_a.
+ex:LBDCG_example.HeatPumpPlant.senT_sou_VL.port_a a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.senT_sou_VL.port_a moont:identifier "port_a".
+ex:LBDCG_example.HeatPumpPlant.senT_sou_VL moont:hasPart ex:LBDCG_example.HeatPumpPlant.senT_sou_VL.port_b.
+ex:LBDCG_example.HeatPumpPlant.senT_sou_VL.port_b a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.senT_sou_VL.port_b moont:identifier "port_b".
+ex:LBDCG_example.HeatPumpPlant.senT_sou_VL.port_b moont:connectedTo ex:LBDCG_example.HeatPumpPlant.heaPum.port_b2.
+ex:LBDCG_example.HeatPumpPlant.heaPum moont:hasPart ex:LBDCG_example.HeatPumpPlant.heaPum.port_b2.
+ex:LBDCG_example.HeatPumpPlant.heaPum.port_b2 a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.heaPum.port_b2 moont:identifier "port_b2".
+ex:LBDCG_example.HeatPumpPlant.heaPum moont:hasPart ex:LBDCG_example.HeatPumpPlant.heaPum.port_a2.
+ex:LBDCG_example.HeatPumpPlant.heaPum.port_a2 a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.heaPum.port_a2 moont:identifier "port_a2".
+ex:LBDCG_example.HeatPumpPlant.heaPum.port_a2 moont:connectedTo ex:LBDCG_example.HeatPumpPlant.senT_sou_RL.port_a.
+ex:LBDCG_example.HeatPumpPlant.senT_sou_RL moont:hasPart ex:LBDCG_example.HeatPumpPlant.senT_sou_RL.port_a.
+ex:LBDCG_example.HeatPumpPlant.senT_sou_RL.port_a a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.senT_sou_RL.port_a moont:identifier "port_a".
+ex:LBDCG_example.HeatPumpPlant.senT_sou_RL moont:hasPart ex:LBDCG_example.HeatPumpPlant.senT_sou_RL.port_b.
+ex:LBDCG_example.HeatPumpPlant.senT_sou_RL.port_b a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.senT_sou_RL.port_b moont:identifier "port_b".
+ex:LBDCG_example.HeatPumpPlant.senT_sou_RL.port_b moont:connectedTo ex:LBDCG_example.HeatPumpPlant.res_sou.port_a.
+ex:LBDCG_example.HeatPumpPlant.res_sou moont:hasPart ex:LBDCG_example.HeatPumpPlant.res_sou.port_a.
+ex:LBDCG_example.HeatPumpPlant.res_sou.port_a a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.res_sou.port_a moont:identifier "port_a".
+ex:LBDCG_example.HeatPumpPlant.res_sou moont:hasPart ex:LBDCG_example.HeatPumpPlant.res_sou.port_b.
+ex:LBDCG_example.HeatPumpPlant.res_sou.port_b a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.res_sou.port_b moont:identifier "port_b".
+ex:LBDCG_example.HeatPumpPlant.res_sou.port_b moont:connectedTo ex:LBDCG_example.HeatPumpPlant.sin_sou.ports_1.
+ex:LBDCG_example.HeatPumpPlant.sin_sou moont:hasPart ex:LBDCG_example.HeatPumpPlant.sin_sou.ports_1.
+ex:LBDCG_example.HeatPumpPlant.sin_sou.ports_1 a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.sin_sou.ports_1 moont:identifier "ports_1".
+ex:LBDCG_example.HeatPumpPlant.realExpression moont:hasPart ex:LBDCG_example.HeatPumpPlant.realExpression.y.
+ex:LBDCG_example.HeatPumpPlant.realExpression.y a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.realExpression.y moont:identifier "y".
+ex:LBDCG_example.HeatPumpPlant.realExpression.y moont:connectedTo ex:LBDCG_example.HeatPumpPlant.pum_sou.y.
+ex:LBDCG_example.HeatPumpPlant.pum_sou moont:hasPart ex:LBDCG_example.HeatPumpPlant.pum_sou.y.
+ex:LBDCG_example.HeatPumpPlant.pum_sou.y a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.pum_sou.y moont:identifier "y".
+ex:LBDCG_example.HeatPumpPlant.heaPum moont:hasPart ex:LBDCG_example.HeatPumpPlant.heaPum.P.
+ex:LBDCG_example.HeatPumpPlant.heaPum.P a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.heaPum.P moont:identifier "P".
+ex:LBDCG_example.HeatPumpPlant.heaPum.P moont:connectedTo ex:LBDCG_example.HeatPumpPlant.W_el.u.
+ex:LBDCG_example.HeatPumpPlant.W_el moont:hasPart ex:LBDCG_example.HeatPumpPlant.W_el.u.
+ex:LBDCG_example.HeatPumpPlant.W_el.u a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.W_el.u moont:identifier "u".
+ex:LBDCG_example.HeatPumpPlant.jahresgang moont:hasPart ex:LBDCG_example.HeatPumpPlant.jahresgang.T_oda.
+ex:LBDCG_example.HeatPumpPlant.jahresgang.T_oda a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.jahresgang.T_oda moont:identifier "T_oda".
+ex:LBDCG_example.HeatPumpPlant.jahresgang.T_oda moont:connectedTo ex:LBDCG_example.HeatPumpPlant.characteristicCurve_2_1.T_oda.
+ex:LBDCG_example.HeatPumpPlant.characteristicCurve_2_1 moont:hasPart ex:LBDCG_example.HeatPumpPlant.characteristicCurve_2_1.T_oda.
+ex:LBDCG_example.HeatPumpPlant.characteristicCurve_2_1.T_oda a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.characteristicCurve_2_1.T_oda moont:identifier "T_oda".
+ex:LBDCG_example.HeatPumpPlant.jahresgang moont:hasPart ex:LBDCG_example.HeatPumpPlant.jahresgang.T_oda.
+ex:LBDCG_example.HeatPumpPlant.jahresgang.T_oda a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.jahresgang.T_oda moont:identifier "T_oda".
+ex:LBDCG_example.HeatPumpPlant.jahresgang.T_oda moont:connectedTo ex:LBDCG_example.HeatPumpPlant.sou_sou.T_in.
+ex:LBDCG_example.HeatPumpPlant.sou_sou moont:hasPart ex:LBDCG_example.HeatPumpPlant.sou_sou.T_in.
+ex:LBDCG_example.HeatPumpPlant.sou_sou.T_in a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant.sou_sou.T_in moont:identifier "T_in".
+ex:LBDCG_example.HeatPumpPlant_V2.Medium_sou rdfs:subClassOf moont:MPackage;
+	 moont:containedIn ex:LBDCG_example.HeatPumpPlant_V2.
+ex:LBDCG_example.HeatPumpPlant_V2.Medium rdfs:subClassOf moont:MPackage;
+	 moont:containedIn ex:LBDCG_example.HeatPumpPlant_V2.
+ex:LBDCG_example.HeatPumpPlant_V2 rdfs:subClassOf moont:MModel;
+	 moont:stringComment "enhanced for optimized results on CQ4"^^xsd:string;
+	 moont:containedIn ex:LBDCG_example.
+ex:LBDCG_example.HeatPumpPlant_V2 moont:extends msl:Modelica.Icons.Example.
+ex:LBDCG_example.HeatPumpPlant_V2 moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.yMin.
+ex:LBDCG_example.HeatPumpPlant_V2.yMin a moont:MParameterComponent;
+	 moont:identifier "yMin";
+	 moont:type xsd:Real;
+	 moont:stringComment "minimale Teillast des Erzeugers"^^xsd:string;
+	 moont:modification "0.4"^^xsd:Real.
+ex:LBDCG_example.HeatPumpPlant_V2 moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.h_SP.
+ex:LBDCG_example.HeatPumpPlant_V2.h_SP a moont:MParameterComponent;
+	 moont:identifier "h_SP";
+	 moont:type msl:Modelica.SIunits.Length;
+	 moont:stringComment "Höhe Speicher (ohne Dämmung)"^^xsd:string;
+	 moont:modification "2.0"^^xsd:Real.
+ex:LBDCG_example.HeatPumpPlant_V2 moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.mp_nom.
+ex:LBDCG_example.HeatPumpPlant_V2.mp_nom a moont:MParameterComponent;
+	 moont:identifier "mp_nom";
+	 moont:type msl:Modelica.SIunits.MassFlowRate;
+	 moont:stringComment "nominal mass flow rate for all components"^^xsd:string;
+	 moont:modification "0.34"^^xsd:Real.
+ex:LBDCG_example.HeatPumpPlant_V2 moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.Qp_2.
+ex:LBDCG_example.HeatPumpPlant_V2.Qp_2 a moont:MParameterComponent;
+	 moont:identifier "Qp_2";
+	 moont:type msl:Modelica.SIunits.HeatFlowRate;
+	 moont:stringComment "heating load at 5°C"^^xsd:string;
+	 moont:modification "1000.0"^^xsd:Real.
+ex:LBDCG_example.HeatPumpPlant_V2 moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.Qp_heater_nom.
+ex:LBDCG_example.HeatPumpPlant_V2.Qp_heater_nom a moont:MParameterComponent;
+	 moont:identifier "Qp_heater_nom";
+	 moont:type msl:Modelica.SIunits.Power;
+	 moont:stringComment "Nennleistung Erzeuger"^^xsd:string;
+	 moont:modification "10000.0"^^xsd:Real.
+ex:LBDCG_example.HeatPumpPlant_V2 moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.V_SP.
+ex:LBDCG_example.HeatPumpPlant_V2.V_SP a moont:MParameterComponent;
+	 moont:identifier "V_SP";
+	 moont:type msl:Modelica.SIunits.Volume;
+	 moont:stringComment "Speichervolumen"^^xsd:string;
+	 moont:modification "0.8"^^xsd:Real.
+ex:LBDCG_example.HeatPumpPlant_V2 moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.dp_nom_sou.
+ex:LBDCG_example.HeatPumpPlant_V2.dp_nom_sou a moont:MParameterComponent;
+	 moont:identifier "dp_nom_sou";
+	 moont:type msl:Modelica.SIunits.Pressure;
+	 moont:stringComment "Pressure difference Quellkreis"^^xsd:string;
+	 moont:modification "10.0"^^xsd:Real.
+ex:LBDCG_example.HeatPumpPlant_V2 moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.nSeg.
+ex:LBDCG_example.HeatPumpPlant_V2.nSeg a moont:MParameterComponent;
+	 moont:identifier "nSeg";
+	 moont:type xsd:Integer;
+	 moont:stringComment "Number of volume segments of the storage tank"^^xsd:string;
+	 moont:modification "20.0"^^xsd:Real.
+ex:LBDCG_example.HeatPumpPlant_V2 moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.Qp_1.
+ex:LBDCG_example.HeatPumpPlant_V2.Qp_1 a moont:MParameterComponent;
+	 moont:identifier "Qp_1";
+	 moont:type msl:Modelica.SIunits.HeatFlowRate;
+	 moont:stringComment "heating load at -15°C"^^xsd:string;
+	 moont:modification "10000.0"^^xsd:Real.
+ex:LBDCG_example.HeatPumpPlant_V2 moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.mp_nom_sou.
+ex:LBDCG_example.HeatPumpPlant_V2.mp_nom_sou a moont:MParameterComponent;
+	 moont:identifier "mp_nom_sou";
+	 moont:type msl:Modelica.SIunits.MassFlowRate;
+	 moont:stringComment "Nennmassestrom Quellkreis Wärmepumpe"^^xsd:string;
+	 moont:modification "1.0"^^xsd:Real.
+ex:LBDCG_example.HeatPumpPlant_V2 moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.dp_nom.
+ex:LBDCG_example.HeatPumpPlant_V2.dp_nom a moont:MParameterComponent;
+	 moont:identifier "dp_nom";
+	 moont:type msl:Modelica.SIunits.PressureDifference;
+	 moont:stringComment "nominal pressure difference for all components"^^xsd:string;
+	 moont:modification "1000.0"^^xsd:Real.
+ex:LBDCG_example.HeatPumpPlant_V2 moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.bou.
+ex:LBDCG_example.HeatPumpPlant_V2.bou a moont:MComponent ;
+	 moont:identifier "bou";
+	 a mbl:Buildings.Fluid.Sources.Boundary_pT.
+ex:LBDCG_example.HeatPumpPlant_V2.bou moont:modification "redeclare package Medium_gleich_Medium"^^xsd:string;
+	 moont:identifier "redeclare package Medium".
+ex:LBDCG_example.HeatPumpPlant_V2.bou.p moont:modification "160000.0"^^xsd:Real;
+	 moont:identifier "p".
+ex:LBDCG_example.HeatPumpPlant_V2.bou moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.bou.p.
+ex:LBDCG_example.HeatPumpPlant_V2.bou.nPorts moont:modification "1.0"^^xsd:Real;
+	 moont:identifier "nPorts".
+ex:LBDCG_example.HeatPumpPlant_V2.bou moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.bou.nPorts.
+ex:LBDCG_example.HeatPumpPlant_V2 moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.setPoint_ControlValue_pum_sou.
+ex:LBDCG_example.HeatPumpPlant_V2.setPoint_ControlValue_pum_sou a moont:MComponent ;
+	 moont:identifier "setPoint_ControlValue_pum_sou";
+	 a msl:Modelica.Blocks.Sources.RealExpression.
+ex:LBDCG_example.HeatPumpPlant_V2.setPoint_ControlValue_pum_sou.y moont:modification "1.0"^^xsd:Real;
+	 moont:identifier "y".
+ex:LBDCG_example.HeatPumpPlant_V2.setPoint_ControlValue_pum_sou moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.setPoint_ControlValue_pum_sou.y.
+ex:LBDCG_example.HeatPumpPlant_V2 moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.heaPum.
+ex:LBDCG_example.HeatPumpPlant_V2.heaPum a moont:MComponent ;
+	 moont:identifier "heaPum";
+	 a mbl:Buildings.Fluid.HeatPumps.Carnot_y.
+ex:LBDCG_example.HeatPumpPlant_V2.heaPum moont:modification "redeclare package Medium1_gleich_Medium"^^xsd:string;
+	 moont:identifier "redeclare package Medium1".
+ex:LBDCG_example.HeatPumpPlant_V2.heaPum moont:modification "redeclare package Medium2_gleich_Medium_sou"^^xsd:string;
+	 moont:identifier "redeclare package Medium2".
+ex:LBDCG_example.HeatPumpPlant_V2.heaPum.use_eta_Carnot_nominal moont:modification "false"^^xsd:boolean;
+	 moont:identifier "use_eta_Carnot_nominal".
+ex:LBDCG_example.HeatPumpPlant_V2.heaPum moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.heaPum.use_eta_Carnot_nominal.
+ex:LBDCG_example.HeatPumpPlant_V2.heaPum.COP_nominal moont:modification "4.0"^^xsd:Real;
+	 moont:identifier "COP_nominal".
+ex:LBDCG_example.HeatPumpPlant_V2.heaPum moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.heaPum.COP_nominal.
+ex:LBDCG_example.HeatPumpPlant_V2.heaPum.dp1_nominal moont:modification "dp_nom"^^xsd:String;
+	 moont:identifier "dp1_nominal".
+ex:LBDCG_example.HeatPumpPlant_V2.heaPum moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.heaPum.dp1_nominal.
+ex:LBDCG_example.HeatPumpPlant_V2.heaPum.dp2_nominal moont:modification "dp_nom_sou"^^xsd:String;
+	 moont:identifier "dp2_nominal".
+ex:LBDCG_example.HeatPumpPlant_V2.heaPum moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.heaPum.dp2_nominal.
+ex:LBDCG_example.HeatPumpPlant_V2.heaPum.energyDynamics moont:modification "Modelica.Fluid.Types.Dynamics.FixedInitial"^^xsd:String;
+	 moont:identifier "energyDynamics".
+ex:LBDCG_example.HeatPumpPlant_V2.heaPum moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.heaPum.energyDynamics.
+ex:LBDCG_example.HeatPumpPlant_V2.heaPum.P_nominal moont:modification "5000"^^xsd:Real;
+	 moont:identifier "P_nominal".
+ex:LBDCG_example.HeatPumpPlant_V2.heaPum moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.heaPum.P_nominal.
+ex:LBDCG_example.HeatPumpPlant_V2 moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.senT_sec_VL.
+ex:LBDCG_example.HeatPumpPlant_V2.senT_sec_VL a moont:MComponent ;
+	 moont:identifier "senT_sec_VL";
+	 a libeas:LibEAS.Sensors.TemperatureTwoPort_Display.
+ex:LBDCG_example.HeatPumpPlant_V2.senT_sec_VL moont:modification "redeclare package Medium_gleich_Medium"^^xsd:string;
+	 moont:identifier "redeclare package Medium".
+ex:LBDCG_example.HeatPumpPlant_V2.senT_sec_VL.m_flow_nominal moont:modification "mp_nom"^^xsd:String;
+	 moont:identifier "m_flow_nominal".
+ex:LBDCG_example.HeatPumpPlant_V2.senT_sec_VL moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.senT_sec_VL.m_flow_nominal.
+ex:LBDCG_example.HeatPumpPlant_V2 moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.sin_sou.
+ex:LBDCG_example.HeatPumpPlant_V2.sin_sou a moont:MComponent ;
+	 moont:identifier "sin_sou";
+	 moont:stringComment "Fluid sink on source side"^^xsd:string;
+	 a mbl:Buildings.Fluid.Sources.Boundary_pT.
+ex:LBDCG_example.HeatPumpPlant_V2.sin_sou.nPorts moont:modification "1.0"^^xsd:Real;
+	 moont:identifier "nPorts".
+ex:LBDCG_example.HeatPumpPlant_V2.sin_sou moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.sin_sou.nPorts.
+ex:LBDCG_example.HeatPumpPlant_V2.sin_sou moont:modification "redeclare package Medium_gleich_Medium_sou"^^xsd:string;
+	 moont:identifier "redeclare package Medium".
+ex:LBDCG_example.HeatPumpPlant_V2.sin_sou.p moont:modification "100000.0"^^xsd:Real;
+	 moont:identifier "p".
+ex:LBDCG_example.HeatPumpPlant_V2.sin_sou moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.sin_sou.p.
+ex:LBDCG_example.HeatPumpPlant_V2.sin_sou.T moont:modification "281.15"^^xsd:Real;
+	 moont:identifier "T".
+ex:LBDCG_example.HeatPumpPlant_V2.sin_sou moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.sin_sou.T.
+ex:LBDCG_example.HeatPumpPlant_V2 moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.consumer.
+ex:LBDCG_example.HeatPumpPlant_V2.consumer a moont:MComponent ;
+	 moont:identifier "consumer";
+	 moont:stringComment "ideal consumer (modeled as a heating curve)"^^xsd:string;
+	 a libeas:LibEAS.HeatingCircuits.CharacteristicCurve.
+ex:LBDCG_example.HeatPumpPlant_V2.consumer moont:modification "redeclare package Medium_gleich_Medium"^^xsd:string;
+	 moont:identifier "redeclare package Medium".
+ex:LBDCG_example.HeatPumpPlant_V2.consumer.Qp_1 moont:modification "Qp_1"^^xsd:String;
+	 moont:identifier "Qp_1".
+ex:LBDCG_example.HeatPumpPlant_V2.consumer moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.consumer.Qp_1.
+ex:LBDCG_example.HeatPumpPlant_V2.consumer.Qp_2 moont:modification "Qp_2"^^xsd:String;
+	 moont:identifier "Qp_2".
+ex:LBDCG_example.HeatPumpPlant_V2.consumer moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.consumer.Qp_2.
+ex:LBDCG_example.HeatPumpPlant_V2.consumer.mp_nom moont:modification "mp_nom"^^xsd:String;
+	 moont:identifier "mp_nom".
+ex:LBDCG_example.HeatPumpPlant_V2.consumer moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.consumer.mp_nom.
+ex:LBDCG_example.HeatPumpPlant_V2.consumer.dp_nom moont:modification "dp_nom"^^xsd:String;
+	 moont:identifier "dp_nom".
+ex:LBDCG_example.HeatPumpPlant_V2.consumer moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.consumer.dp_nom.
+ex:LBDCG_example.HeatPumpPlant_V2 moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.pum_pri.
+ex:LBDCG_example.HeatPumpPlant_V2.pum_pri a moont:MComponent ;
+	 moont:identifier "pum_pri";
+	 a mbl:Buildings.Fluid.Movers.FlowControlled_m_flow.
+ex:LBDCG_example.HeatPumpPlant_V2.pum_pri moont:modification "redeclare package Medium_gleich_Medium"^^xsd:string;
+	 moont:identifier "redeclare package Medium".
+ex:LBDCG_example.HeatPumpPlant_V2.pum_pri.m_flow_nominal moont:modification "mp_nom"^^xsd:String;
+	 moont:identifier "m_flow_nominal".
+ex:LBDCG_example.HeatPumpPlant_V2.pum_pri moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.pum_pri.m_flow_nominal.
+ex:LBDCG_example.HeatPumpPlant_V2.pum_pri.dp_nominal moont:modification "dp_nom"^^xsd:String;
+	 moont:identifier "dp_nominal".
+ex:LBDCG_example.HeatPumpPlant_V2.pum_pri moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.pum_pri.dp_nominal.
+ex:LBDCG_example.HeatPumpPlant_V2 moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.annualTemperatureCurve.
+ex:LBDCG_example.HeatPumpPlant_V2.annualTemperatureCurve a moont:MComponent ;
+	 moont:identifier "annualTemperatureCurve";
+	 a libeas:LibEAS.BoundaryConditions.AnnualFluctuation.
+ex:LBDCG_example.HeatPumpPlant_V2 moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.senT_pri_RL.
+ex:LBDCG_example.HeatPumpPlant_V2.senT_pri_RL a moont:MComponent ;
+	 moont:identifier "senT_pri_RL";
+	 a libeas:LibEAS.Sensors.TemperatureTwoPort_Display.
+ex:LBDCG_example.HeatPumpPlant_V2.senT_pri_RL moont:modification "redeclare package Medium_gleich_Medium"^^xsd:string;
+	 moont:identifier "redeclare package Medium".
+ex:LBDCG_example.HeatPumpPlant_V2.senT_pri_RL.m_flow_nominal moont:modification "mp_nom"^^xsd:String;
+	 moont:identifier "m_flow_nominal".
+ex:LBDCG_example.HeatPumpPlant_V2.senT_pri_RL moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.senT_pri_RL.m_flow_nominal.
+ex:LBDCG_example.HeatPumpPlant_V2 moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.SP.
+ex:LBDCG_example.HeatPumpPlant_V2.SP a moont:MComponent ;
+	 moont:identifier "SP";
+	 moont:stringComment "Speicher 3100l, h_gleich_2.0m (d~1.4m) - 40Schichten"^^xsd:string;
+	 a libeas:LibEAS.Storage.StratifiedEnhanced.
+ex:LBDCG_example.HeatPumpPlant_V2.SP moont:modification "redeclare package Medium_gleich_Medium"^^xsd:string;
+	 moont:identifier "redeclare package Medium".
+ex:LBDCG_example.HeatPumpPlant_V2.SP.hTan moont:modification "h_SP"^^xsd:String;
+	 moont:identifier "hTan".
+ex:LBDCG_example.HeatPumpPlant_V2.SP moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.SP.hTan.
+ex:LBDCG_example.HeatPumpPlant_V2.SP.dIns moont:modification "0.1"^^xsd:Real;
+	 moont:identifier "dIns".
+ex:LBDCG_example.HeatPumpPlant_V2.SP moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.SP.dIns.
+ex:LBDCG_example.HeatPumpPlant_V2.SP.nSeg moont:modification "nSeg"^^xsd:String;
+	 moont:identifier "nSeg".
+ex:LBDCG_example.HeatPumpPlant_V2.SP moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.SP.nSeg.
+ex:LBDCG_example.HeatPumpPlant_V2.SP.m_flow_nominal moont:modification "mp_nom"^^xsd:String;
+	 moont:identifier "m_flow_nominal".
+ex:LBDCG_example.HeatPumpPlant_V2.SP moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.SP.m_flow_nominal.
+ex:LBDCG_example.HeatPumpPlant_V2.SP.VTan moont:modification "V_SP"^^xsd:String;
+	 moont:identifier "VTan".
+ex:LBDCG_example.HeatPumpPlant_V2.SP moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.SP.VTan.
+ex:LBDCG_example.HeatPumpPlant_V2.SP.T_start moont:modification "293.15"^^xsd:Real;
+	 moont:identifier "T_start".
+ex:LBDCG_example.HeatPumpPlant_V2.SP moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.SP.T_start.
+ex:LBDCG_example.HeatPumpPlant_V2 moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.measuredStorageTemperature.
+ex:LBDCG_example.HeatPumpPlant_V2.measuredStorageTemperature a moont:MComponent ;
+	 moont:identifier "measuredStorageTemperature";
+	 a msl:Modelica.Blocks.Sources.RealExpression.
+ex:LBDCG_example.HeatPumpPlant_V2.measuredStorageTemperature.y moont:modification "SP.heaPorVol_1_.T"^^xsd:String;
+	 moont:identifier "y".
+ex:LBDCG_example.HeatPumpPlant_V2.measuredStorageTemperature moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.measuredStorageTemperature.y.
+ex:LBDCG_example.HeatPumpPlant_V2 moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.W_el.
+ex:LBDCG_example.HeatPumpPlant_V2.W_el a moont:MComponent ;
+	 moont:identifier "W_el";
+	 a msl:Modelica.Blocks.Continuous.Integrator.
+ex:LBDCG_example.HeatPumpPlant_V2 moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.sou_sou.
+ex:LBDCG_example.HeatPumpPlant_V2.sou_sou a moont:MComponent ;
+	 moont:identifier "sou_sou";
+	 moont:stringComment "Fluid source on source side"^^xsd:string;
+	 a mbl:Buildings.Fluid.Sources.Boundary_pT.
+ex:LBDCG_example.HeatPumpPlant_V2.sou_sou.use_T_in moont:modification "true"^^xsd:boolean;
+	 moont:identifier "use_T_in".
+ex:LBDCG_example.HeatPumpPlant_V2.sou_sou moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.sou_sou.use_T_in.
+ex:LBDCG_example.HeatPumpPlant_V2.sou_sou.nPorts moont:modification "1.0"^^xsd:Real;
+	 moont:identifier "nPorts".
+ex:LBDCG_example.HeatPumpPlant_V2.sou_sou moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.sou_sou.nPorts.
+ex:LBDCG_example.HeatPumpPlant_V2.sou_sou moont:modification "redeclare package Medium_gleich_Medium_sou"^^xsd:string;
+	 moont:identifier "redeclare package Medium".
+ex:LBDCG_example.HeatPumpPlant_V2.sou_sou.p moont:modification "100000.0"^^xsd:Real;
+	 moont:identifier "p".
+ex:LBDCG_example.HeatPumpPlant_V2.sou_sou moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.sou_sou.p.
+ex:LBDCG_example.HeatPumpPlant_V2.sou_sou.T moont:modification "283.15"^^xsd:Real;
+	 moont:identifier "T".
+ex:LBDCG_example.HeatPumpPlant_V2.sou_sou moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.sou_sou.T.
+ex:LBDCG_example.HeatPumpPlant_V2 moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.senT_pri_VL.
+ex:LBDCG_example.HeatPumpPlant_V2.senT_pri_VL a moont:MComponent ;
+	 moont:identifier "senT_pri_VL";
+	 a libeas:LibEAS.Sensors.TemperatureTwoPort_Display.
+ex:LBDCG_example.HeatPumpPlant_V2.senT_pri_VL moont:modification "redeclare package Medium_gleich_Medium"^^xsd:string;
+	 moont:identifier "redeclare package Medium".
+ex:LBDCG_example.HeatPumpPlant_V2.senT_pri_VL.m_flow_nominal moont:modification "mp_nom"^^xsd:String;
+	 moont:identifier "m_flow_nominal".
+ex:LBDCG_example.HeatPumpPlant_V2.senT_pri_VL moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.senT_pri_VL.m_flow_nominal.
+ex:LBDCG_example.HeatPumpPlant_V2 moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.controlGeneratorWithPumpMassFlow.
+ex:LBDCG_example.HeatPumpPlant_V2.controlGeneratorWithPumpMassFlow a moont:MComponent ;
+	 moont:identifier "controlGeneratorWithPumpMassFlow";
+	 a libeas:LibEAS.Controls.ControlGeneratorWithPumpMassFlow.
+ex:LBDCG_example.HeatPumpPlant_V2.controlGeneratorWithPumpMassFlow.mp_nom_pum moont:modification "mp_nom/2"^^xsd:String;
+	 moont:identifier "mp_nom_pum".
+ex:LBDCG_example.HeatPumpPlant_V2.controlGeneratorWithPumpMassFlow moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.controlGeneratorWithPumpMassFlow.mp_nom_pum.
+ex:LBDCG_example.HeatPumpPlant_V2.controlGeneratorWithPumpMassFlow.yMin moont:modification "yMin"^^xsd:String;
+	 moont:identifier "yMin".
+ex:LBDCG_example.HeatPumpPlant_V2.controlGeneratorWithPumpMassFlow moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.controlGeneratorWithPumpMassFlow.yMin.
+ex:LBDCG_example.HeatPumpPlant_V2 moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.res_sou.
+ex:LBDCG_example.HeatPumpPlant_V2.res_sou a moont:MComponent ;
+	 moont:identifier "res_sou";
+	 a libeas:LibEAS.Sensors.PressureDrop_Display.
+ex:LBDCG_example.HeatPumpPlant_V2.res_sou moont:modification "redeclare package Medium_gleich_Medium_sou"^^xsd:string;
+	 moont:identifier "redeclare package Medium".
+ex:LBDCG_example.HeatPumpPlant_V2.res_sou.m_flow_nominal moont:modification "mp_nom_sou"^^xsd:String;
+	 moont:identifier "m_flow_nominal".
+ex:LBDCG_example.HeatPumpPlant_V2.res_sou moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.res_sou.m_flow_nominal.
+ex:LBDCG_example.HeatPumpPlant_V2.res_sou.dp_nominal moont:modification "dp_nom_sou"^^xsd:String;
+	 moont:identifier "dp_nominal".
+ex:LBDCG_example.HeatPumpPlant_V2.res_sou moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.res_sou.dp_nominal.
+ex:LBDCG_example.HeatPumpPlant_V2 moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.res_sec.
+ex:LBDCG_example.HeatPumpPlant_V2.res_sec a moont:MComponent ;
+	 moont:identifier "res_sec";
+	 a libeas:LibEAS.Sensors.PressureDrop_Display.
+ex:LBDCG_example.HeatPumpPlant_V2.res_sec moont:modification "redeclare package Medium_gleich_Medium"^^xsd:string;
+	 moont:identifier "redeclare package Medium".
+ex:LBDCG_example.HeatPumpPlant_V2.res_sec.m_flow_nominal moont:modification "mp_nom"^^xsd:String;
+	 moont:identifier "m_flow_nominal".
+ex:LBDCG_example.HeatPumpPlant_V2.res_sec moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.res_sec.m_flow_nominal.
+ex:LBDCG_example.HeatPumpPlant_V2.res_sec.dp_nominal moont:modification "dp_nom"^^xsd:String;
+	 moont:identifier "dp_nominal".
+ex:LBDCG_example.HeatPumpPlant_V2.res_sec moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.res_sec.dp_nominal.
+ex:LBDCG_example.HeatPumpPlant_V2 moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.senT_sou_RL.
+ex:LBDCG_example.HeatPumpPlant_V2.senT_sou_RL a moont:MComponent ;
+	 moont:identifier "senT_sou_RL";
+	 a libeas:LibEAS.Sensors.TemperatureTwoPort_Display.
+ex:LBDCG_example.HeatPumpPlant_V2.senT_sou_RL moont:modification "redeclare package Medium_gleich_Medium_sou"^^xsd:string;
+	 moont:identifier "redeclare package Medium".
+ex:LBDCG_example.HeatPumpPlant_V2.senT_sou_RL.m_flow_nominal moont:modification "mp_nom_sou"^^xsd:String;
+	 moont:identifier "m_flow_nominal".
+ex:LBDCG_example.HeatPumpPlant_V2.senT_sou_RL moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.senT_sou_RL.m_flow_nominal.
+ex:LBDCG_example.HeatPumpPlant_V2 moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.setPointStorageTemperature.
+ex:LBDCG_example.HeatPumpPlant_V2.setPointStorageTemperature a moont:MComponent ;
+	 moont:identifier "setPointStorageTemperature";
+	 a libeas:LibEAS.Controls.SetPoint_Temperature.
+ex:LBDCG_example.HeatPumpPlant_V2.setPointStorageTemperature.targetTemperature moont:modification "40.0"^^xsd:Real;
+	 moont:identifier "targetTemperature".
+ex:LBDCG_example.HeatPumpPlant_V2.setPointStorageTemperature moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.setPointStorageTemperature.targetTemperature.
+ex:LBDCG_example.HeatPumpPlant_V2 moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.senT_sou_VL.
+ex:LBDCG_example.HeatPumpPlant_V2.senT_sou_VL a moont:MComponent ;
+	 moont:identifier "senT_sou_VL";
+	 a libeas:LibEAS.Sensors.TemperatureTwoPort_Display.
+ex:LBDCG_example.HeatPumpPlant_V2.senT_sou_VL moont:modification "redeclare package Medium_gleich_Medium_sou"^^xsd:string;
+	 moont:identifier "redeclare package Medium".
+ex:LBDCG_example.HeatPumpPlant_V2.senT_sou_VL.m_flow_nominal moont:modification "mp_nom_sou"^^xsd:String;
+	 moont:identifier "m_flow_nominal".
+ex:LBDCG_example.HeatPumpPlant_V2.senT_sou_VL moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.senT_sou_VL.m_flow_nominal.
+ex:LBDCG_example.HeatPumpPlant_V2 moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.res_pri.
+ex:LBDCG_example.HeatPumpPlant_V2.res_pri a moont:MComponent ;
+	 moont:identifier "res_pri";
+	 a libeas:LibEAS.Sensors.PressureDrop_Display.
+ex:LBDCG_example.HeatPumpPlant_V2.res_pri moont:modification "redeclare package Medium_gleich_Medium"^^xsd:string;
+	 moont:identifier "redeclare package Medium".
+ex:LBDCG_example.HeatPumpPlant_V2.res_pri.m_flow_nominal moont:modification "mp_nom"^^xsd:String;
+	 moont:identifier "m_flow_nominal".
+ex:LBDCG_example.HeatPumpPlant_V2.res_pri moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.res_pri.m_flow_nominal.
+ex:LBDCG_example.HeatPumpPlant_V2.res_pri.dp_nominal moont:modification "dp_nom"^^xsd:String;
+	 moont:identifier "dp_nominal".
+ex:LBDCG_example.HeatPumpPlant_V2.res_pri moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.res_pri.dp_nominal.
+ex:LBDCG_example.HeatPumpPlant_V2 moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.pum_sou.
+ex:LBDCG_example.HeatPumpPlant_V2.pum_sou a moont:MComponent ;
+	 moont:identifier "pum_sou";
+	 moont:stringComment "Fan or pump at source side of HP"^^xsd:string;
+	 a mbl:Buildings.Fluid.Movers.SpeedControlled_y.
+ex:LBDCG_example.HeatPumpPlant_V2.pum_sou moont:modification "redeclare package Medium_gleich_Medium_sou"^^xsd:string;
+	 moont:identifier "redeclare package Medium".
+ex:LBDCG_example.HeatPumpPlant_V2.pum_sou moont:modification "per(pressure(V_flow_gleich_{8.79043600562e-06*100,0.00277777777778*100,0.00556874120956*100,0.00776635021097*100,0.00978815049226*100,0.0113484528833*100,0.0127329465541*100,0.013985583685*100,0.0154360056259*100},dp_gleich_{60,50,49,48,47,46,45,44,43}),use_powerCharacteristic_gleich_true,power(V_flow_gleich_{8.79043600562e-06*100,0.00277777777778*100,0.00556874120956*100,0.00776635021097*100,0.00978815049226*100,0.0113484528833*100,0.0127329465541*100,0.013985583685*100,0.0154360056259*100},P_gleich_{50,60,59,58,57,56,55,54,53}))"^^xsd:string.
+ex:LBDCG_example.HeatPumpPlant_V2.pum_sou.finalinputType moont:modification "AixLib.Fluid.Types.InputType.Continuous"^^xsd:String;
+	 moont:identifier "finalinputType".
+ex:LBDCG_example.HeatPumpPlant_V2.pum_sou moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.pum_sou.finalinputType.
+ex:LBDCG_example.HeatPumpPlant_V2 moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.senT_sec_RL.
+ex:LBDCG_example.HeatPumpPlant_V2.senT_sec_RL a moont:MComponent ;
+	 moont:identifier "senT_sec_RL";
+	 a libeas:LibEAS.Sensors.TemperatureTwoPort_Display.
+ex:LBDCG_example.HeatPumpPlant_V2.senT_sec_RL moont:modification "redeclare package Medium_gleich_Medium"^^xsd:string;
+	 moont:identifier "redeclare package Medium".
+ex:LBDCG_example.HeatPumpPlant_V2.senT_sec_RL.m_flow_nominal moont:modification "mp_nom"^^xsd:String;
+	 moont:identifier "m_flow_nominal".
+ex:LBDCG_example.HeatPumpPlant_V2.senT_sec_RL moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.senT_sec_RL.m_flow_nominal.
+ex:LBDCG_example.HeatPumpPlant_V2.ports_1 a moont:Vector.
+ex:LBDCG_example.HeatPumpPlant_V2.bou moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.bou.ports_1.
+ex:LBDCG_example.HeatPumpPlant_V2.bou.ports_1 a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant_V2.bou.ports_1 moont:identifier "ports_1".
+ex:LBDCG_example.HeatPumpPlant_V2.bou.ports_1 moont:connectedTo ex:LBDCG_example.HeatPumpPlant_V2.senT_pri_RL.port_b.
+ex:LBDCG_example.HeatPumpPlant_V2.senT_pri_RL moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.senT_pri_RL.port_b.
+ex:LBDCG_example.HeatPumpPlant_V2.senT_pri_RL.port_b a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant_V2.senT_pri_RL.port_b moont:identifier "port_b".
+ex:LBDCG_example.HeatPumpPlant_V2.senT_pri_VL moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.senT_pri_VL.port_b.
+ex:LBDCG_example.HeatPumpPlant_V2.senT_pri_VL.port_b a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant_V2.senT_pri_VL.port_b moont:identifier "port_b".
+ex:LBDCG_example.HeatPumpPlant_V2.senT_pri_VL.port_b moont:connectedTo ex:LBDCG_example.HeatPumpPlant_V2.pum_pri.port_a.
+ex:LBDCG_example.HeatPumpPlant_V2.pum_pri moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.pum_pri.port_a.
+ex:LBDCG_example.HeatPumpPlant_V2.pum_pri.port_a a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant_V2.pum_pri.port_a moont:identifier "port_a".
+ex:LBDCG_example.HeatPumpPlant_V2.senT_sec_VL moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.senT_sec_VL.port_b.
+ex:LBDCG_example.HeatPumpPlant_V2.senT_sec_VL.port_b a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant_V2.senT_sec_VL.port_b moont:identifier "port_b".
+ex:LBDCG_example.HeatPumpPlant_V2.senT_sec_VL.port_b moont:connectedTo ex:LBDCG_example.HeatPumpPlant_V2.consumer.port_a.
+ex:LBDCG_example.HeatPumpPlant_V2.consumer moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.consumer.port_a.
+ex:LBDCG_example.HeatPumpPlant_V2.consumer.port_a a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant_V2.consumer.port_a moont:identifier "port_a".
+ex:LBDCG_example.HeatPumpPlant_V2.measuredStorageTemperature moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.measuredStorageTemperature.y.
+ex:LBDCG_example.HeatPumpPlant_V2.measuredStorageTemperature.y a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant_V2.measuredStorageTemperature.y moont:identifier "y".
+ex:LBDCG_example.HeatPumpPlant_V2.measuredStorageTemperature.y moont:connectedTo ex:LBDCG_example.HeatPumpPlant_V2.controlGeneratorWithPumpMassFlow.T_mea.
+ex:LBDCG_example.HeatPumpPlant_V2.controlGeneratorWithPumpMassFlow moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.controlGeneratorWithPumpMassFlow.T_mea.
+ex:LBDCG_example.HeatPumpPlant_V2.controlGeneratorWithPumpMassFlow.T_mea a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant_V2.controlGeneratorWithPumpMassFlow.T_mea moont:identifier "T_mea".
+ex:LBDCG_example.HeatPumpPlant_V2.controlGeneratorWithPumpMassFlow moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.controlGeneratorWithPumpMassFlow.pumpSignal.
+ex:LBDCG_example.HeatPumpPlant_V2.controlGeneratorWithPumpMassFlow.pumpSignal a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant_V2.controlGeneratorWithPumpMassFlow.pumpSignal moont:identifier "pumpSignal".
+ex:LBDCG_example.HeatPumpPlant_V2.controlGeneratorWithPumpMassFlow.pumpSignal moont:connectedTo ex:LBDCG_example.HeatPumpPlant_V2.pum_pri.m_flow_in.
+ex:LBDCG_example.HeatPumpPlant_V2.pum_pri moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.pum_pri.m_flow_in.
+ex:LBDCG_example.HeatPumpPlant_V2.pum_pri.m_flow_in a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant_V2.pum_pri.m_flow_in moont:identifier "m_flow_in".
+ex:LBDCG_example.HeatPumpPlant_V2.setPointStorageTemperature moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.setPointStorageTemperature.y.
+ex:LBDCG_example.HeatPumpPlant_V2.setPointStorageTemperature.y a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant_V2.setPointStorageTemperature.y moont:identifier "y".
+ex:LBDCG_example.HeatPumpPlant_V2.setPointStorageTemperature.y moont:connectedTo ex:LBDCG_example.HeatPumpPlant_V2.controlGeneratorWithPumpMassFlow.T_set.
+ex:LBDCG_example.HeatPumpPlant_V2.controlGeneratorWithPumpMassFlow moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.controlGeneratorWithPumpMassFlow.T_set.
+ex:LBDCG_example.HeatPumpPlant_V2.controlGeneratorWithPumpMassFlow.T_set a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant_V2.controlGeneratorWithPumpMassFlow.T_set moont:identifier "T_set".
+ex:LBDCG_example.HeatPumpPlant_V2.pum_pri moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.pum_pri.port_b.
+ex:LBDCG_example.HeatPumpPlant_V2.pum_pri.port_b a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant_V2.pum_pri.port_b moont:identifier "port_b".
+ex:LBDCG_example.HeatPumpPlant_V2.pum_pri.port_b moont:connectedTo ex:LBDCG_example.HeatPumpPlant_V2.SP.fluPorVol_1.
+ex:LBDCG_example.HeatPumpPlant_V2.SP moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.SP.fluPorVol_1.
+ex:LBDCG_example.HeatPumpPlant_V2.SP.fluPorVol_1 a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant_V2.SP.fluPorVol_1 moont:identifier "fluPorVol_1".
+ex:LBDCG_example.HeatPumpPlant_V2.fluPorVolSec_1 a moont:Vector.
+ex:LBDCG_example.HeatPumpPlant_V2.SP moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.SP.fluPorVolSec_1.
+ex:LBDCG_example.HeatPumpPlant_V2.SP.fluPorVolSec_1 a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant_V2.SP.fluPorVolSec_1 moont:identifier "fluPorVolSec_1".
+ex:LBDCG_example.HeatPumpPlant_V2.SP.fluPorVolSec_1 moont:connectedTo ex:LBDCG_example.HeatPumpPlant_V2.senT_sec_VL.port_a.
+ex:LBDCG_example.HeatPumpPlant_V2.senT_sec_VL moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.senT_sec_VL.port_a.
+ex:LBDCG_example.HeatPumpPlant_V2.senT_sec_VL.port_a a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant_V2.senT_sec_VL.port_a moont:identifier "port_a".
+ex:LBDCG_example.HeatPumpPlant_V2.fluPorVolSec_nSeg a moont:Vector.
+ex:LBDCG_example.HeatPumpPlant_V2.SP moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.SP.fluPorVolSec_nSeg.
+ex:LBDCG_example.HeatPumpPlant_V2.SP.fluPorVolSec_nSeg a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant_V2.SP.fluPorVolSec_nSeg moont:identifier "fluPorVolSec_nSeg".
+ex:LBDCG_example.HeatPumpPlant_V2.SP.fluPorVolSec_nSeg moont:connectedTo ex:LBDCG_example.HeatPumpPlant_V2.senT_sec_RL.port_b.
+ex:LBDCG_example.HeatPumpPlant_V2.senT_sec_RL moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.senT_sec_RL.port_b.
+ex:LBDCG_example.HeatPumpPlant_V2.senT_sec_RL.port_b a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant_V2.senT_sec_RL.port_b moont:identifier "port_b".
+ex:LBDCG_example.HeatPumpPlant_V2.res_pri moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.res_pri.port_b.
+ex:LBDCG_example.HeatPumpPlant_V2.res_pri.port_b a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant_V2.res_pri.port_b moont:identifier "port_b".
+ex:LBDCG_example.HeatPumpPlant_V2.res_pri.port_b moont:connectedTo ex:LBDCG_example.HeatPumpPlant_V2.senT_pri_RL.port_a.
+ex:LBDCG_example.HeatPumpPlant_V2.senT_pri_RL moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.senT_pri_RL.port_a.
+ex:LBDCG_example.HeatPumpPlant_V2.senT_pri_RL.port_a a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant_V2.senT_pri_RL.port_a moont:identifier "port_a".
+ex:LBDCG_example.HeatPumpPlant_V2.fluPorVol_nSeg a moont:Vector.
+ex:LBDCG_example.HeatPumpPlant_V2.SP moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.SP.fluPorVol_nSeg.
+ex:LBDCG_example.HeatPumpPlant_V2.SP.fluPorVol_nSeg a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant_V2.SP.fluPorVol_nSeg moont:identifier "fluPorVol_nSeg".
+ex:LBDCG_example.HeatPumpPlant_V2.SP.fluPorVol_nSeg moont:connectedTo ex:LBDCG_example.HeatPumpPlant_V2.res_pri.port_a.
+ex:LBDCG_example.HeatPumpPlant_V2.res_pri moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.res_pri.port_a.
+ex:LBDCG_example.HeatPumpPlant_V2.res_pri.port_a a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant_V2.res_pri.port_a moont:identifier "port_a".
+ex:LBDCG_example.HeatPumpPlant_V2.consumer moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.consumer.port_b.
+ex:LBDCG_example.HeatPumpPlant_V2.consumer.port_b a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant_V2.consumer.port_b moont:identifier "port_b".
+ex:LBDCG_example.HeatPumpPlant_V2.consumer.port_b moont:connectedTo ex:LBDCG_example.HeatPumpPlant_V2.res_sec.port_a.
+ex:LBDCG_example.HeatPumpPlant_V2.res_sec moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.res_sec.port_a.
+ex:LBDCG_example.HeatPumpPlant_V2.res_sec.port_a a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant_V2.res_sec.port_a moont:identifier "port_a".
+ex:LBDCG_example.HeatPumpPlant_V2.res_sec moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.res_sec.port_b.
+ex:LBDCG_example.HeatPumpPlant_V2.res_sec.port_b a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant_V2.res_sec.port_b moont:identifier "port_b".
+ex:LBDCG_example.HeatPumpPlant_V2.res_sec.port_b moont:connectedTo ex:LBDCG_example.HeatPumpPlant_V2.senT_sec_RL.port_a.
+ex:LBDCG_example.HeatPumpPlant_V2.senT_sec_RL moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.senT_sec_RL.port_a.
+ex:LBDCG_example.HeatPumpPlant_V2.senT_sec_RL.port_a a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant_V2.senT_sec_RL.port_a moont:identifier "port_a".
+ex:LBDCG_example.HeatPumpPlant_V2.senT_pri_RL moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.senT_pri_RL.port_b.
+ex:LBDCG_example.HeatPumpPlant_V2.senT_pri_RL.port_b a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant_V2.senT_pri_RL.port_b moont:identifier "port_b".
+ex:LBDCG_example.HeatPumpPlant_V2.senT_pri_RL.port_b moont:connectedTo ex:LBDCG_example.HeatPumpPlant_V2.heaPum.port_a1.
+ex:LBDCG_example.HeatPumpPlant_V2.heaPum moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.heaPum.port_a1.
+ex:LBDCG_example.HeatPumpPlant_V2.heaPum.port_a1 a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant_V2.heaPum.port_a1 moont:identifier "port_a1".
+ex:LBDCG_example.HeatPumpPlant_V2.heaPum moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.heaPum.port_b1.
+ex:LBDCG_example.HeatPumpPlant_V2.heaPum.port_b1 a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant_V2.heaPum.port_b1 moont:identifier "port_b1".
+ex:LBDCG_example.HeatPumpPlant_V2.heaPum.port_b1 moont:connectedTo ex:LBDCG_example.HeatPumpPlant_V2.senT_pri_VL.port_a.
+ex:LBDCG_example.HeatPumpPlant_V2.senT_pri_VL moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.senT_pri_VL.port_a.
+ex:LBDCG_example.HeatPumpPlant_V2.senT_pri_VL.port_a a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant_V2.senT_pri_VL.port_a moont:identifier "port_a".
+ex:LBDCG_example.HeatPumpPlant_V2.ports_1 a moont:Vector.
+ex:LBDCG_example.HeatPumpPlant_V2.sou_sou moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.sou_sou.ports_1.
+ex:LBDCG_example.HeatPumpPlant_V2.sou_sou.ports_1 a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant_V2.sou_sou.ports_1 moont:identifier "ports_1".
+ex:LBDCG_example.HeatPumpPlant_V2.sou_sou.ports_1 moont:connectedTo ex:LBDCG_example.HeatPumpPlant_V2.pum_sou.port_a.
+ex:LBDCG_example.HeatPumpPlant_V2.pum_sou moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.pum_sou.port_a.
+ex:LBDCG_example.HeatPumpPlant_V2.pum_sou.port_a a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant_V2.pum_sou.port_a moont:identifier "port_a".
+ex:LBDCG_example.HeatPumpPlant_V2.pum_sou moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.pum_sou.port_b.
+ex:LBDCG_example.HeatPumpPlant_V2.pum_sou.port_b a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant_V2.pum_sou.port_b moont:identifier "port_b".
+ex:LBDCG_example.HeatPumpPlant_V2.pum_sou.port_b moont:connectedTo ex:LBDCG_example.HeatPumpPlant_V2.senT_sou_VL.port_a.
+ex:LBDCG_example.HeatPumpPlant_V2.senT_sou_VL moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.senT_sou_VL.port_a.
+ex:LBDCG_example.HeatPumpPlant_V2.senT_sou_VL.port_a a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant_V2.senT_sou_VL.port_a moont:identifier "port_a".
+ex:LBDCG_example.HeatPumpPlant_V2.senT_sou_VL moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.senT_sou_VL.port_b.
+ex:LBDCG_example.HeatPumpPlant_V2.senT_sou_VL.port_b a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant_V2.senT_sou_VL.port_b moont:identifier "port_b".
+ex:LBDCG_example.HeatPumpPlant_V2.senT_sou_VL.port_b moont:connectedTo ex:LBDCG_example.HeatPumpPlant_V2.heaPum.port_b2.
+ex:LBDCG_example.HeatPumpPlant_V2.heaPum moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.heaPum.port_b2.
+ex:LBDCG_example.HeatPumpPlant_V2.heaPum.port_b2 a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant_V2.heaPum.port_b2 moont:identifier "port_b2".
+ex:LBDCG_example.HeatPumpPlant_V2.heaPum moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.heaPum.port_a2.
+ex:LBDCG_example.HeatPumpPlant_V2.heaPum.port_a2 a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant_V2.heaPum.port_a2 moont:identifier "port_a2".
+ex:LBDCG_example.HeatPumpPlant_V2.heaPum.port_a2 moont:connectedTo ex:LBDCG_example.HeatPumpPlant_V2.senT_sou_RL.port_a.
+ex:LBDCG_example.HeatPumpPlant_V2.senT_sou_RL moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.senT_sou_RL.port_a.
+ex:LBDCG_example.HeatPumpPlant_V2.senT_sou_RL.port_a a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant_V2.senT_sou_RL.port_a moont:identifier "port_a".
+ex:LBDCG_example.HeatPumpPlant_V2.senT_sou_RL moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.senT_sou_RL.port_b.
+ex:LBDCG_example.HeatPumpPlant_V2.senT_sou_RL.port_b a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant_V2.senT_sou_RL.port_b moont:identifier "port_b".
+ex:LBDCG_example.HeatPumpPlant_V2.senT_sou_RL.port_b moont:connectedTo ex:LBDCG_example.HeatPumpPlant_V2.res_sou.port_a.
+ex:LBDCG_example.HeatPumpPlant_V2.res_sou moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.res_sou.port_a.
+ex:LBDCG_example.HeatPumpPlant_V2.res_sou.port_a a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant_V2.res_sou.port_a moont:identifier "port_a".
+ex:LBDCG_example.HeatPumpPlant_V2.res_sou moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.res_sou.port_b.
+ex:LBDCG_example.HeatPumpPlant_V2.res_sou.port_b a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant_V2.res_sou.port_b moont:identifier "port_b".
+ex:LBDCG_example.HeatPumpPlant_V2.res_sou.port_b moont:connectedTo ex:LBDCG_example.HeatPumpPlant_V2.sin_sou.ports_1.
+ex:LBDCG_example.HeatPumpPlant_V2.sin_sou moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.sin_sou.ports_1.
+ex:LBDCG_example.HeatPumpPlant_V2.sin_sou.ports_1 a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant_V2.sin_sou.ports_1 moont:identifier "ports_1".
+ex:LBDCG_example.HeatPumpPlant_V2.setPoint_ControlValue_pum_sou moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.setPoint_ControlValue_pum_sou.y.
+ex:LBDCG_example.HeatPumpPlant_V2.setPoint_ControlValue_pum_sou.y a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant_V2.setPoint_ControlValue_pum_sou.y moont:identifier "y".
+ex:LBDCG_example.HeatPumpPlant_V2.setPoint_ControlValue_pum_sou.y moont:connectedTo ex:LBDCG_example.HeatPumpPlant_V2.pum_sou.y.
+ex:LBDCG_example.HeatPumpPlant_V2.pum_sou moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.pum_sou.y.
+ex:LBDCG_example.HeatPumpPlant_V2.pum_sou.y a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant_V2.pum_sou.y moont:identifier "y".
+ex:LBDCG_example.HeatPumpPlant_V2.heaPum moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.heaPum.P.
+ex:LBDCG_example.HeatPumpPlant_V2.heaPum.P a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant_V2.heaPum.P moont:identifier "P".
+ex:LBDCG_example.HeatPumpPlant_V2.heaPum.P moont:connectedTo ex:LBDCG_example.HeatPumpPlant_V2.W_el.u.
+ex:LBDCG_example.HeatPumpPlant_V2.W_el moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.W_el.u.
+ex:LBDCG_example.HeatPumpPlant_V2.W_el.u a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant_V2.W_el.u moont:identifier "u".
+ex:LBDCG_example.HeatPumpPlant_V2.controlGeneratorWithPumpMassFlow moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.controlGeneratorWithPumpMassFlow.generatorSignal.
+ex:LBDCG_example.HeatPumpPlant_V2.controlGeneratorWithPumpMassFlow.generatorSignal a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant_V2.controlGeneratorWithPumpMassFlow.generatorSignal moont:identifier "generatorSignal".
+ex:LBDCG_example.HeatPumpPlant_V2.controlGeneratorWithPumpMassFlow.generatorSignal moont:connectedTo ex:LBDCG_example.HeatPumpPlant_V2.heaPum.y.
+ex:LBDCG_example.HeatPumpPlant_V2.heaPum moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.heaPum.y.
+ex:LBDCG_example.HeatPumpPlant_V2.heaPum.y a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant_V2.heaPum.y moont:identifier "y".
+ex:LBDCG_example.HeatPumpPlant_V2.annualTemperatureCurve moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.annualTemperatureCurve.T_oda.
+ex:LBDCG_example.HeatPumpPlant_V2.annualTemperatureCurve.T_oda a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant_V2.annualTemperatureCurve.T_oda moont:identifier "T_oda".
+ex:LBDCG_example.HeatPumpPlant_V2.annualTemperatureCurve.T_oda moont:connectedTo ex:LBDCG_example.HeatPumpPlant_V2.consumer.T_oda.
+ex:LBDCG_example.HeatPumpPlant_V2.consumer moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.consumer.T_oda.
+ex:LBDCG_example.HeatPumpPlant_V2.consumer.T_oda a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant_V2.consumer.T_oda moont:identifier "T_oda".
+ex:LBDCG_example.HeatPumpPlant_V2.annualTemperatureCurve moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.annualTemperatureCurve.T_oda.
+ex:LBDCG_example.HeatPumpPlant_V2.annualTemperatureCurve.T_oda a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant_V2.annualTemperatureCurve.T_oda moont:identifier "T_oda".
+ex:LBDCG_example.HeatPumpPlant_V2.annualTemperatureCurve.T_oda moont:connectedTo ex:LBDCG_example.HeatPumpPlant_V2.sou_sou.T_in.
+ex:LBDCG_example.HeatPumpPlant_V2.sou_sou moont:hasPart ex:LBDCG_example.HeatPumpPlant_V2.sou_sou.T_in.
+ex:LBDCG_example.HeatPumpPlant_V2.sou_sou.T_in a moont:MConnectorComponent.
+ex:LBDCG_example.HeatPumpPlant_V2.sou_sou.T_in moont:identifier "T_in".
+ex:LBDCG_example rdfs:subClassOf moont:MPackage;
+	 moont:stringComment "package containing example to demonstrate transcription of Modelica models to knowledge graph"^^xsd:string.
+ex:LBDCG_example moont:extends msl:Modelica.Icons.ExamplesPackage.
