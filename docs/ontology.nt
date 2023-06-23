@@ -1,0 +1,590 @@
+<https://w3id.org/moont/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://w3id.org/moont/> <http://purl.org/dc/terms/abstract> "This ontology is intended to provide information contained in Modelica simulation models for other interested stakeholders besides the simulation engineer. A usecase comprising bidirectional translation between IFC and Modelica is described in this paper: https://doi.org/10.24406/publica-fhg-412499." .
+<https://w3id.org/moont/> <http://purl.org/dc/terms/created> "2023-06-23" .
+<https://w3id.org/moont/> <http://purl.org/dc/terms/created> "CC BY-SA 4.0" .
+<https://w3id.org/moont/> <http://purl.org/dc/terms/creator> <https://orcid.org/0000-0003-4396-5307> .
+<https://w3id.org/moont/> <http://purl.org/dc/terms/creator> <https://www.linkedin.com/in/elisabeth-eckst%C3%A4dt-18689115a/> .
+<https://w3id.org/moont/> <http://purl.org/dc/terms/creator> "Elisabeth Eckstädt" .
+<https://w3id.org/moont/> <http://purl.org/dc/terms/description> "This ontology defines the terms and relations in the Modelica Language."@en .
+<https://w3id.org/moont/> <http://purl.org/dc/terms/issued> "2021-06-09" .
+<https://w3id.org/moont/> <http://purl.org/dc/terms/source> "http://www.wolfram.com/wsm-rdf/" .
+<https://w3id.org/moont/> <http://purl.org/dc/terms/title> "Modelica Language Ontology"@en .
+<https://w3id.org/moont/> <http://www.w3.org/2000/01/rdf-schema#label> "Modelica Language Ontology" .
+<https://w3id.org/moont/> <http://www.w3.org/2002/07/owl#backwardCompatibleWith> "0.9.1" .
+<https://w3id.org/moont/> <http://www.w3.org/2002/07/owl#priorVersion> "v0.9.1" .
+<https://w3id.org/moont/> <http://www.w3.org/2002/07/owl#versionInfo> "v0.9.2" .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/terms/abstract
+<http://purl.org/dc/terms/abstract> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/issued
+<http://purl.org/dc/terms/issued> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/modified
+<http://purl.org/dc/terms/modified> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/source
+<http://purl.org/dc/terms/source> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2002/07/owl#backwardCompatibleWith
+<http://www.w3.org/2002/07/owl#backwardCompatibleWith> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/moont/ModelicaObjectProperty
+<https://w3id.org/moont/ModelicaObjectProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# https://w3id.org/moont/algorithm
+<https://w3id.org/moont/algorithm> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/moont/algorithm> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/moont/ModelicaObjectProperty> .
+<https://w3id.org/moont/algorithm> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/moont/MAbstractClass> .
+<https://w3id.org/moont/algorithm> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/moont/MAlgorithm> .
+# 
+# https://w3id.org/moont/baseClass
+<https://w3id.org/moont/baseClass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/moont/baseClass> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/moont/ModelicaObjectProperty> .
+<https://w3id.org/moont/baseClass> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid1 .
+_:genid1 <http://www.w3.org/2002/07/owl#unionOf> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/moont/MExtends> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/moont/MDerives> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moont/baseClass> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/moont/MAbstractClass> .
+# 
+# https://w3id.org/moont/componentModification
+<https://w3id.org/moont/componentModification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/moont/componentModification> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/moont/ModelicaObjectProperty> .
+<https://w3id.org/moont/componentModification> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/moont/MComponent> .
+# 
+# https://w3id.org/moont/componentRedeclaration
+<https://w3id.org/moont/componentRedeclaration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/moont/componentRedeclaration> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/moont/componentModification> .
+# 
+# https://w3id.org/moont/componentValueChange
+<https://w3id.org/moont/componentValueChange> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/moont/componentValueChange> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/moont/componentModification> .
+# 
+# https://w3id.org/moont/connectedTo
+<https://w3id.org/moont/connectedTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/moont/connectedTo> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/moont/ModelicaObjectProperty> .
+<https://w3id.org/moont/connectedTo> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/moont/MConnectorComponent> .
+<https://w3id.org/moont/connectedTo> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/moont/MConnectorComponent> .
+# 
+# https://w3id.org/moont/connection
+<https://w3id.org/moont/connection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/moont/connection> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/moont/ModelicaObjectProperty> .
+<https://w3id.org/moont/connection> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid4 .
+_:genid4 <http://www.w3.org/2002/07/owl#unionOf> _:genid7 .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid6 .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid5 .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/moont/MModel> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/moont/MClass> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/moont/MBlock> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moont/connection> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/moont/MConnection> .
+<https://w3id.org/moont/connection> <http://www.w3.org/2000/01/rdf-schema#label> "connection"@en .
+# 
+# https://w3id.org/moont/containedIn
+<https://w3id.org/moont/containedIn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/moont/containedIn> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/moont/ModelicaObjectProperty> .
+<https://w3id.org/moont/containedIn> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/moont/MAbstractClass> .
+<https://w3id.org/moont/containedIn> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/moont/MAbstractClass> .
+# 
+# https://w3id.org/moont/derives
+<https://w3id.org/moont/derives> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/moont/derives> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/moont/ModelicaObjectProperty> .
+<https://w3id.org/moont/derives> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/moont/MAbstractClass> .
+<https://w3id.org/moont/derives> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/moont/MDerives> .
+<https://w3id.org/moont/derives> <http://www.w3.org/2000/01/rdf-schema#label> "derives"@en .
+# 
+# https://w3id.org/moont/equation
+<https://w3id.org/moont/equation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/moont/equation> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/moont/ModelicaObjectProperty> .
+<https://w3id.org/moont/equation> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/moont/MAbstractClass> .
+<https://w3id.org/moont/equation> <http://www.w3.org/2000/01/rdf-schema#label> "equation"@en .
+# 
+# https://w3id.org/moont/extends
+<https://w3id.org/moont/extends> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/moont/extends> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/moont/ModelicaObjectProperty> .
+<https://w3id.org/moont/extends> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/moont/MAbstractClass> .
+<https://w3id.org/moont/extends> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/moont/MExtends> .
+<https://w3id.org/moont/extends> <http://www.w3.org/2000/01/rdf-schema#label> "extends"@en .
+# 
+# https://w3id.org/moont/external
+<https://w3id.org/moont/external> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/moont/external> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/moont/ModelicaObjectProperty> .
+<https://w3id.org/moont/external> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/moont/MFunction> .
+<https://w3id.org/moont/external> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/moont/MExternal> .
+<https://w3id.org/moont/external> <http://www.w3.org/2000/01/rdf-schema#label> "external"@en .
+# 
+# https://w3id.org/moont/fromPort
+<https://w3id.org/moont/fromPort> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/moont/fromPort> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/moont/ModelicaObjectProperty> .
+<https://w3id.org/moont/fromPort> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/moont/MConnection> .
+<https://w3id.org/moont/fromPort> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/moont/MConnectorComponent> .
+<https://w3id.org/moont/fromPort> <http://www.w3.org/2000/01/rdf-schema#label> "fromPort"@en .
+# 
+# https://w3id.org/moont/hasPart
+<https://w3id.org/moont/hasPart> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/moont/hasPart> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/moont/ModelicaObjectProperty> .
+<https://w3id.org/moont/hasPart> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/moont/MAbstractClass> .
+<https://w3id.org/moont/hasPart> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/moont/MComponent> .
+<https://w3id.org/moont/hasPart> <http://www.w3.org/2000/01/rdf-schema#label> "hasPart"@en .
+# 
+# https://w3id.org/moont/initialAlgorithm
+<https://w3id.org/moont/initialAlgorithm> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/moont/initialAlgorithm> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/moont/ModelicaObjectProperty> .
+<https://w3id.org/moont/initialAlgorithm> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/moont/MAbstractClass> .
+<https://w3id.org/moont/initialAlgorithm> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/moont/MAlgorithm> .
+<https://w3id.org/moont/initialAlgorithm> <http://www.w3.org/2000/01/rdf-schema#label> "initialAlgorithm"@en .
+# 
+# https://w3id.org/moont/items
+<https://w3id.org/moont/items> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/moont/items> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/moont/ModelicaObjectProperty> .
+<https://w3id.org/moont/items> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/moont/MEnumerationType> .
+<https://w3id.org/moont/items> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/moont/MEnumerationLiteral> .
+<https://w3id.org/moont/items> <http://www.w3.org/2000/01/rdf-schema#label> "items"@en .
+# 
+# https://w3id.org/moont/statement
+<https://w3id.org/moont/statement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/moont/statement> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/moont/ModelicaObjectProperty> .
+<https://w3id.org/moont/statement> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/moont/MAlgorithm> .
+<https://w3id.org/moont/statement> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/moont/MAlgorithm> .
+<https://w3id.org/moont/statement> <http://www.w3.org/2000/01/rdf-schema#label> "statement"@en .
+# 
+# https://w3id.org/moont/toPort
+<https://w3id.org/moont/toPort> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/moont/toPort> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/moont/ModelicaObjectProperty> .
+<https://w3id.org/moont/toPort> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/moont/MConnection> .
+<https://w3id.org/moont/toPort> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/moont/MConnectorComponent> .
+<https://w3id.org/moont/toPort> <http://www.w3.org/2000/01/rdf-schema#label> "toPort"@en .
+# 
+# https://w3id.org/moont/type
+<https://w3id.org/moont/type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/moont/type> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/moont/ModelicaObjectProperty> .
+<https://w3id.org/moont/type> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/moont/MComponent> .
+<https://w3id.org/moont/type> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/moont/MAbstractClass> .
+<https://w3id.org/moont/type> <http://www.w3.org/2000/01/rdf-schema#label> "type"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/moont/ModelicaDataProperty
+<https://w3id.org/moont/ModelicaDataProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# 
+# https://w3id.org/moont/annotation
+<https://w3id.org/moont/annotation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/moont/annotation> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/moont/ModelicaDataProperty> .
+<https://w3id.org/moont/annotation> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid8 .
+_:genid8 <http://www.w3.org/2002/07/owl#unionOf> _:genid10 .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid9 .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/moont/MComponent> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/moont/MAbstractClass> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moont/annotation> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/moont/annotation> <http://www.w3.org/2000/01/rdf-schema#label> "annotation"@en .
+# 
+# https://w3id.org/moont/arraySubscripts
+<https://w3id.org/moont/arraySubscripts> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/moont/arraySubscripts> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/moont/ModelicaDataProperty> .
+<https://w3id.org/moont/arraySubscripts> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid11 .
+_:genid11 <http://www.w3.org/2002/07/owl#unionOf> _:genid13 .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid12 .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/moont/MDerives> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/moont/MComponent> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moont/arraySubscripts> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/moont/arraySubscripts> <http://www.w3.org/2000/01/rdf-schema#label> "arraySubscripts"@en .
+# 
+# https://w3id.org/moont/causality
+<https://w3id.org/moont/causality> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/moont/causality> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/moont/ModelicaDataProperty> .
+<https://w3id.org/moont/causality> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid14 .
+_:genid14 <http://www.w3.org/2002/07/owl#unionOf> _:genid16 .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid15 .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/moont/MDerives> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/moont/MComponent> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moont/causality> <http://www.w3.org/2000/01/rdf-schema#label> "causality"@en .
+# 
+# https://w3id.org/moont/condition
+<https://w3id.org/moont/condition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/moont/condition> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/moont/ModelicaDataProperty> .
+<https://w3id.org/moont/condition> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/moont/MComponent> .
+<https://w3id.org/moont/condition> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/moont/condition> <http://www.w3.org/2000/01/rdf-schema#label> "condition"@en .
+# 
+# https://w3id.org/moont/description
+<https://w3id.org/moont/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/moont/description> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/moont/ModelicaDataProperty> .
+<https://w3id.org/moont/description> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid17 .
+_:genid17 <http://www.w3.org/2002/07/owl#unionOf> _:genid21 .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid20 .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid19 .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid18 .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/moont/MEquation> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/moont/MEnumerationLiteral> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/moont/MConnection> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/moont/MComponent> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moont/description> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/moont/description> <http://www.w3.org/2000/01/rdf-schema#label> "description"@en .
+# 
+# https://w3id.org/moont/dynamicReference
+<https://w3id.org/moont/dynamicReference> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/moont/dynamicReference> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/moont/ModelicaDataProperty> .
+<https://w3id.org/moont/dynamicReference> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/moont/MComponent> .
+<https://w3id.org/moont/dynamicReference> <http://www.w3.org/2000/01/rdf-schema#label> "dynamicReference"@en .
+# 
+# https://w3id.org/moont/fromPortArraySubscripts
+<https://w3id.org/moont/fromPortArraySubscripts> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/moont/fromPortArraySubscripts> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/moont/ModelicaDataProperty> .
+<https://w3id.org/moont/fromPortArraySubscripts> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/moont/MConnection> .
+<https://w3id.org/moont/fromPortArraySubscripts> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/moont/fromPortArraySubscripts> <http://www.w3.org/2000/01/rdf-schema#label> "fromPortArraySubscripts"@en .
+# 
+# https://w3id.org/moont/functionCall
+<https://w3id.org/moont/functionCall> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/moont/functionCall> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/moont/ModelicaDataProperty> .
+<https://w3id.org/moont/functionCall> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/moont/MExternal> .
+<https://w3id.org/moont/functionCall> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/moont/functionCall> <http://www.w3.org/2000/01/rdf-schema#label> "functionCall"@en .
+# 
+# https://w3id.org/moont/identifier
+<https://w3id.org/moont/identifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/moont/identifier> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/moont/ModelicaDataProperty> .
+<https://w3id.org/moont/identifier> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid22 .
+_:genid22 <http://www.w3.org/2002/07/owl#unionOf> _:genid25 .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid24 .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid23 .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/moont/MExternal> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/moont/MEnumerationLiteral> .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/moont/MComponent> .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moont/identifier> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/moont/identifier> <http://www.w3.org/2000/01/rdf-schema#label> "identifier"@en .
+# 
+# https://w3id.org/moont/initial
+<https://w3id.org/moont/initial> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/moont/initial> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/moont/ModelicaDataProperty> .
+<https://w3id.org/moont/initial> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/moont/MEquation> .
+<https://w3id.org/moont/initial> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/moont/initial> <http://www.w3.org/2000/01/rdf-schema#label> "initial"@en .
+# 
+# https://w3id.org/moont/isEncapsulated
+<https://w3id.org/moont/isEncapsulated> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/moont/isEncapsulated> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/moont/ModelicaDataProperty> .
+<https://w3id.org/moont/isEncapsulated> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/moont/MAbstractClass> .
+<https://w3id.org/moont/isEncapsulated> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/moont/isEncapsulated> <http://www.w3.org/2000/01/rdf-schema#label> "isEncapsulated"@en .
+# 
+# https://w3id.org/moont/isExpandable
+<https://w3id.org/moont/isExpandable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/moont/isExpandable> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/moont/ModelicaDataProperty> .
+<https://w3id.org/moont/isExpandable> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/moont/MConnector> .
+<https://w3id.org/moont/isExpandable> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/moont/isExpandable> <http://www.w3.org/2000/01/rdf-schema#label> "isExpandable"@en .
+# 
+# https://w3id.org/moont/isFinal
+<https://w3id.org/moont/isFinal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/moont/isFinal> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/moont/ModelicaDataProperty> .
+<https://w3id.org/moont/isFinal> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/moont/MComponent> .
+<https://w3id.org/moont/isFinal> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/moont/isFinal> <http://www.w3.org/2000/01/rdf-schema#label> "isFinal"@en .
+# 
+# https://w3id.org/moont/isFlow
+<https://w3id.org/moont/isFlow> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/moont/isFlow> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/moont/ModelicaDataProperty> .
+<https://w3id.org/moont/isFlow> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/moont/MTypeComponent> .
+<https://w3id.org/moont/isFlow> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/moont/isFlow> <http://www.w3.org/2000/01/rdf-schema#label> "isFlow"@en .
+# 
+# https://w3id.org/moont/isPartial
+<https://w3id.org/moont/isPartial> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/moont/isPartial> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/moont/ModelicaDataProperty> .
+<https://w3id.org/moont/isPartial> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/moont/MAbstractClass> .
+<https://w3id.org/moont/isPartial> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/moont/isPartial> <http://www.w3.org/2000/01/rdf-schema#label> "isPartial"@en .
+# 
+# https://w3id.org/moont/isProtected
+<https://w3id.org/moont/isProtected> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/moont/isProtected> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/moont/ModelicaDataProperty> .
+<https://w3id.org/moont/isProtected> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/moont/MComponent> .
+<https://w3id.org/moont/isProtected> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/moont/isProtected> <http://www.w3.org/2000/01/rdf-schema#label> "isProtected"@en .
+# 
+# https://w3id.org/moont/language
+<https://w3id.org/moont/language> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/moont/language> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/moont/ModelicaDataProperty> .
+<https://w3id.org/moont/language> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/moont/MExternal> .
+<https://w3id.org/moont/language> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/moont/language> <http://www.w3.org/2000/01/rdf-schema#label> "language"@en .
+# 
+# https://w3id.org/moont/modification
+<https://w3id.org/moont/modification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/moont/modification> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/moont/ModelicaDataProperty> .
+<https://w3id.org/moont/modification> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid26 .
+_:genid26 <http://www.w3.org/2002/07/owl#unionOf> _:genid29 .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid28 .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid27 .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/moont/MExtends> .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/moont/MDerives> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/moont/MComponent> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moont/modification> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/moont/modification> <http://www.w3.org/2000/01/rdf-schema#label> "modification"@en .
+# 
+# https://w3id.org/moont/stringComment
+<https://w3id.org/moont/stringComment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/moont/stringComment> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/moont/ModelicaDataProperty> .
+<https://w3id.org/moont/stringComment> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid30 .
+_:genid30 <http://www.w3.org/2002/07/owl#unionOf> _:genid32 .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid31 .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/moont/MComponent> .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/moont/MAbstractClass> .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moont/stringComment> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# https://w3id.org/moont/toPortArraySubscripts
+<https://w3id.org/moont/toPortArraySubscripts> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/moont/toPortArraySubscripts> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/moont/ModelicaDataProperty> .
+<https://w3id.org/moont/toPortArraySubscripts> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/moont/MConnection> .
+<https://w3id.org/moont/toPortArraySubscripts> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/moont/toPortArraySubscripts> <http://www.w3.org/2000/01/rdf-schema#label> "toPortArraySubscripts"@en .
+# 
+# https://w3id.org/moont/variability
+<https://w3id.org/moont/variability> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/moont/variability> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/moont/ModelicaDataProperty> .
+<https://w3id.org/moont/variability> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/moont/MComponent> .
+<https://w3id.org/moont/variability> <http://www.w3.org/2000/01/rdf-schema#label> "variability"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/moont/MAbstractClass
+<https://w3id.org/moont/MAbstractClass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moont/MAbstractClass> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/moont/ModelicaClass> .
+<https://w3id.org/moont/MAbstractClass> <http://www.w3.org/2000/01/rdf-schema#label> "MAbstractClass"@en .
+# 
+# https://w3id.org/moont/MAlgorithm
+<https://w3id.org/moont/MAlgorithm> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moont/MAlgorithm> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/moont/ModelicaClass> .
+<https://w3id.org/moont/MAlgorithm> <http://www.w3.org/2000/01/rdf-schema#label> "MAlgorithm"@en .
+# 
+# https://w3id.org/moont/MBlock
+<https://w3id.org/moont/MBlock> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moont/MBlock> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/moont/MAbstractClass> .
+<https://w3id.org/moont/MBlock> <http://www.w3.org/2000/01/rdf-schema#label> "MBlock"@en .
+# 
+# https://w3id.org/moont/MBooleanType
+<https://w3id.org/moont/MBooleanType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moont/MBooleanType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/moont/MType> .
+<https://w3id.org/moont/MBooleanType> <http://www.w3.org/2000/01/rdf-schema#label> "MBooleanType"@en .
+# 
+# https://w3id.org/moont/MClass
+<https://w3id.org/moont/MClass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moont/MClass> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/moont/MAbstractClass> .
+<https://w3id.org/moont/MClass> <http://www.w3.org/2000/01/rdf-schema#label> "MClass"@en .
+# 
+# https://w3id.org/moont/MComponent
+<https://w3id.org/moont/MComponent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moont/MComponent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/moont/ModelicaClass> .
+<https://w3id.org/moont/MComponent> <http://www.w3.org/2000/01/rdf-schema#label> "MComponent"@en .
+# 
+# https://w3id.org/moont/MConnection
+<https://w3id.org/moont/MConnection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moont/MConnection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/moont/ModelicaClass> .
+<https://w3id.org/moont/MConnection> <http://www.w3.org/2000/01/rdf-schema#label> "MConnection"@en .
+# 
+# https://w3id.org/moont/MConnector
+<https://w3id.org/moont/MConnector> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moont/MConnector> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/moont/MAbstractClass> .
+<https://w3id.org/moont/MConnector> <http://www.w3.org/2000/01/rdf-schema#label> "MConnector"@en .
+# 
+# https://w3id.org/moont/MConnectorComponent
+<https://w3id.org/moont/MConnectorComponent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moont/MConnectorComponent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/moont/MComponent> .
+# 
+# https://w3id.org/moont/MDerives
+<https://w3id.org/moont/MDerives> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moont/MDerives> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/moont/ModelicaClass> .
+<https://w3id.org/moont/MDerives> <http://www.w3.org/2000/01/rdf-schema#label> "MDerives"@en .
+# 
+# https://w3id.org/moont/MEnumerationBaseType
+<https://w3id.org/moont/MEnumerationBaseType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moont/MEnumerationBaseType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/moont/MType> .
+<https://w3id.org/moont/MEnumerationBaseType> <http://www.w3.org/2000/01/rdf-schema#label> "MEnumerationBaseType"@en .
+# 
+# https://w3id.org/moont/MEnumerationLiteral
+<https://w3id.org/moont/MEnumerationLiteral> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moont/MEnumerationLiteral> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/moont/ModelicaClass> .
+<https://w3id.org/moont/MEnumerationLiteral> <http://www.w3.org/2000/01/rdf-schema#label> "MEnumerationLiteral"@en .
+# 
+# https://w3id.org/moont/MEnumerationType
+<https://w3id.org/moont/MEnumerationType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moont/MEnumerationType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/moont/MType> .
+<https://w3id.org/moont/MEnumerationType> <http://www.w3.org/2000/01/rdf-schema#label> "MEnumerationType"@en .
+# 
+# https://w3id.org/moont/MEquation
+<https://w3id.org/moont/MEquation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moont/MEquation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/moont/ModelicaClass> .
+<https://w3id.org/moont/MEquation> <http://www.w3.org/2000/01/rdf-schema#label> "MEquation"@en .
+# 
+# https://w3id.org/moont/MExtends
+<https://w3id.org/moont/MExtends> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moont/MExtends> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/moont/ModelicaClass> .
+<https://w3id.org/moont/MExtends> <http://www.w3.org/2000/01/rdf-schema#label> "MExtends"@en .
+# 
+# https://w3id.org/moont/MExternal
+<https://w3id.org/moont/MExternal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moont/MExternal> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/moont/ModelicaClass> .
+<https://w3id.org/moont/MExternal> <http://www.w3.org/2000/01/rdf-schema#label> "MExternal"@en .
+# 
+# https://w3id.org/moont/MFunction
+<https://w3id.org/moont/MFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moont/MFunction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/moont/MAbstractClass> .
+<https://w3id.org/moont/MFunction> <http://www.w3.org/2000/01/rdf-schema#label> "MFunction"@en .
+# 
+# https://w3id.org/moont/MIntegerType
+<https://w3id.org/moont/MIntegerType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moont/MIntegerType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/moont/MType> .
+<https://w3id.org/moont/MIntegerType> <http://www.w3.org/2000/01/rdf-schema#label> "MIntegerType"@en .
+# 
+# https://w3id.org/moont/MModel
+<https://w3id.org/moont/MModel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moont/MModel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/moont/MAbstractClass> .
+<https://w3id.org/moont/MModel> <http://www.w3.org/2000/01/rdf-schema#label> "MModel"@en .
+# 
+# https://w3id.org/moont/MPackage
+<https://w3id.org/moont/MPackage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moont/MPackage> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/moont/MAbstractClass> .
+<https://w3id.org/moont/MPackage> <http://www.w3.org/2000/01/rdf-schema#label> "MPackage"@en .
+# 
+# https://w3id.org/moont/MParameterComponent
+<https://w3id.org/moont/MParameterComponent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moont/MParameterComponent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/moont/MComponent> .
+# 
+# https://w3id.org/moont/MRealType
+<https://w3id.org/moont/MRealType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moont/MRealType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/moont/MType> .
+<https://w3id.org/moont/MRealType> <http://www.w3.org/2000/01/rdf-schema#label> "MRealType"@en .
+# 
+# https://w3id.org/moont/MRecord
+<https://w3id.org/moont/MRecord> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moont/MRecord> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/moont/MAbstractClass> .
+<https://w3id.org/moont/MRecord> <http://www.w3.org/2000/01/rdf-schema#label> "MRecord"@en .
+# 
+# https://w3id.org/moont/MStringType
+<https://w3id.org/moont/MStringType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moont/MStringType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/moont/MType> .
+<https://w3id.org/moont/MStringType> <http://www.w3.org/2000/01/rdf-schema#label> "MStringType"@en .
+# 
+# https://w3id.org/moont/MType
+<https://w3id.org/moont/MType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moont/MType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/moont/MAbstractClass> .
+<https://w3id.org/moont/MType> <http://www.w3.org/2000/01/rdf-schema#label> "MType"@en .
+# 
+# https://w3id.org/moont/MTypeComponent
+<https://w3id.org/moont/MTypeComponent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/moont/MTypeComponent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/moont/MComponent> .
+<https://w3id.org/moont/MTypeComponent> <http://www.w3.org/2000/01/rdf-schema#label> "MTypeComponent"@en .
+# 
+# https://w3id.org/moont/ModelicaClass
+<https://w3id.org/moont/ModelicaClass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/moont/BooleanType
+<https://w3id.org/moont/BooleanType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/moont/BooleanType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/moont/MBooleanType> .
+# 
+# https://w3id.org/moont/IntegerType
+<https://w3id.org/moont/IntegerType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/moont/IntegerType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/moont/MIntegerType> .
+# 
+# https://w3id.org/moont/RealType
+<https://w3id.org/moont/RealType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/moont/RealType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/moont/MRealType> .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

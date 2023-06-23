@@ -1,0 +1,2469 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+ <link rel="stylesheet" href="resources/primer.css" media="screen" />    <link rel="stylesheet" href="resources/rec.css" media="screen" />    <link rel="stylesheet" href="resources/extra.css" media="screen" />    <link rel="stylesheet" href="resources/owl.css" media="screen" />    <title>Modelica Language Ontology</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/moont/","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/moont/","name":"Modelica Language Ontology", "headline":"This ontology defines the terms and relations in the Modelica Language.", "datePublished":"2023-06-23", "version":"v0.9.2", "author":[{"@type":"Person","name":"https://orcid.org/0000-0003-4396-5307","url":"https://orcid.org/0000-0003-4396-5307"},{"@type":"Person","name":"https://www.linkedin.com/in/elisabeth-eckst%C3%A4dt-18689115a/","url":"https://www.linkedin.com/in/elisabeth-eckst%C3%A4dt-18689115a/"},{"@type":"Person","name":"Elisabeth Eckstädt"}]}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+$(function(){
+    loadHash();
+}); $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ }; 
+   </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<h1>Modelica Language Ontology</h1>
+<h2>Release 2023-06-23</h2>
+
+
+<dl>
+<dt>Latest version:</dt>
+<dd><a href="https://w3id.org/moont/">https://w3id.org/moont/</a></dd>
+<dt>Previous version:</dt>
+<dd><a href="v0.9.1">v0.9.1</a></dd>
+<dt>Revision:</dt>
+<dd>v0.9.2</dd>
+<dt>Issued on: </dt>
+<dd>2021-06-09</dd>
+<dt>Authors:</dt>
+<dd><a href="https://orcid.org/0000-0003-4396-5307">https://orcid.org/0000-0003-4396-5307</a></dd><dd><a href="https://www.linkedin.com/in/elisabeth-eckst%C3%A4dt-18689115a/">https://www.linkedin.com/in/elisabeth-eckst%C3%A4dt-18689115a/</a></dd><dd>Elisabeth Eckstädt</dd>
+
+<dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="http://insertlicenseURIhere.example.org" target="_blank"><img src="https://img.shields.io/badge/License-license%20name%20goes%20here-blue.svg" alt="http://insertlicenseURIhere.example.org" /></a>
+</dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
+<!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
+<dd>https://orcid.org/0000-0003-4396-5307, https://www.linkedin.com/in/elisabeth-eckst%C3%A4dt-18689115a/, Elisabeth Eckstädt. Modelica Language Ontology. Revision: v0.9.2.</dd>
+<dt>Compatible with:</dt>
+<dd><a href="0.9.1">0.9.1</a></dd>
+</dl>
+
+<hr/>
+</div>
+<div class="status">
+<div>
+<span>Ontology Specification Draft</span>
+</div>
+</div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
+This ontology defines the terms and relations in the Modelica Language.</span>
+</div>
+<div id="toc"></div> 
+
+<!--INTRODUCTION SECTION-->
+    <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This is a place holder text for the introduction. The introduction should briefly describe the ontology, its motivation, state of the art and goals.</span>
+<div id="namespacedeclarations">
+<h3 id="ns" class="list">Namespace declarations</h3>
+<div id="ns" align="center">
+<table>
+<caption> <a href="#ns"> Table 1</a>: Namespaces used in the document </caption>
+<tbody>
+<tr><td><b>[Ontology NS Prefix]</b></td><td>&lt;https://w3id.org/moont/&gt;</td></tr>
+<tr><td></td><td></td></tr>
+<tr><td><b>owl</b></td><td>&lt;http://www.w3.org/2002/07/owl&gt;</td></tr>
+<tr><td><b>rdf</b></td><td>&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns&gt;</td></tr>
+<tr><td><b>xml</b></td><td>&lt;http://www.w3.org/XML/1998/namespace&gt;</td></tr>
+<tr><td><b>xsd</b></td><td>&lt;http://www.w3.org/2001/XMLSchema&gt;</td></tr>
+<tr><td><b>dcterms</b></td><td>&lt;http://purl.org/dc/terms&gt;</td></tr>
+<tr><td><b>rdfs</b></td><td>&lt;http://www.w3.org/2000/01/rdf-schema&gt;</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+  
+
+<!--OVERVIEW SECTION-->
+    <div id="overview"><h2 id="overv" class="list">Modelica Language Ontology: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This ontology has the following classes and properties.</span>
+<h4>Classes</h4>
+<ul xmlns:extra="https://w3id.org/extra#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#MConnectorComponent" title="https://w3id.org/moont/MConnectorComponent">
+         <span>m connector component</span>
+      </a>
+   </li>
+   <li>
+      <a href="#MParameterComponent" title="https://w3id.org/moont/MParameterComponent">
+         <span>m parameter component</span>
+      </a>
+   </li>
+   <li>
+      <a href="#MAbstractClass" title="https://w3id.org/moont/MAbstractClass">MAbstractClass</a>
+   </li>
+   <li>
+      <a href="#MAlgorithm" title="https://w3id.org/moont/MAlgorithm">MAlgorithm</a>
+   </li>
+   <li>
+      <a href="#MBlock" title="https://w3id.org/moont/MBlock">MBlock</a>
+   </li>
+   <li>
+      <a href="#MBooleanType" title="https://w3id.org/moont/MBooleanType">MBooleanType</a>
+   </li>
+   <li>
+      <a href="#MClass" title="https://w3id.org/moont/MClass">MClass</a>
+   </li>
+   <li>
+      <a href="#MComponent" title="https://w3id.org/moont/MComponent">MComponent</a>
+   </li>
+   <li>
+      <a href="#MConnection" title="https://w3id.org/moont/MConnection">MConnection</a>
+   </li>
+   <li>
+      <a href="#MConnector" title="https://w3id.org/moont/MConnector">MConnector</a>
+   </li>
+   <li>
+      <a href="#MDerives" title="https://w3id.org/moont/MDerives">MDerives</a>
+   </li>
+   <li>
+      <a href="#MEnumerationBaseType" title="https://w3id.org/moont/MEnumerationBaseType">MEnumerationBaseType</a>
+   </li>
+   <li>
+      <a href="#MEnumerationLiteral" title="https://w3id.org/moont/MEnumerationLiteral">MEnumerationLiteral</a>
+   </li>
+   <li>
+      <a href="#MEnumerationType" title="https://w3id.org/moont/MEnumerationType">MEnumerationType</a>
+   </li>
+   <li>
+      <a href="#MEquation" title="https://w3id.org/moont/MEquation">MEquation</a>
+   </li>
+   <li>
+      <a href="#MExtends" title="https://w3id.org/moont/MExtends">MExtends</a>
+   </li>
+   <li>
+      <a href="#MExternal" title="https://w3id.org/moont/MExternal">MExternal</a>
+   </li>
+   <li>
+      <a href="#MFunction" title="https://w3id.org/moont/MFunction">MFunction</a>
+   </li>
+   <li>
+      <a href="#MIntegerType" title="https://w3id.org/moont/MIntegerType">MIntegerType</a>
+   </li>
+   <li>
+      <a href="#MModel" title="https://w3id.org/moont/MModel">MModel</a>
+   </li>
+   <li>
+      <a href="#MPackage" title="https://w3id.org/moont/MPackage">MPackage</a>
+   </li>
+   <li>
+      <a href="#MRealType" title="https://w3id.org/moont/MRealType">MRealType</a>
+   </li>
+   <li>
+      <a href="#MRecord" title="https://w3id.org/moont/MRecord">MRecord</a>
+   </li>
+   <li>
+      <a href="#MStringType" title="https://w3id.org/moont/MStringType">MStringType</a>
+   </li>
+   <li>
+      <a href="#MType" title="https://w3id.org/moont/MType">MType</a>
+   </li>
+   <li>
+      <a href="#MTypeComponent" title="https://w3id.org/moont/MTypeComponent">MTypeComponent</a>
+   </li>
+</ul><h4>Object Properties</h4><ul xmlns:extra="https://w3id.org/extra#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#algorithm" title="https://w3id.org/moont/algorithm">
+         <span>algorithm</span>
+      </a>
+   </li>
+   <li>
+      <a href="#baseClass" title="https://w3id.org/moont/baseClass">
+         <span>base class</span>
+      </a>
+   </li>
+   <li>
+      <a href="#componentModification" title="https://w3id.org/moont/componentModification">
+         <span>component modification</span>
+      </a>
+   </li>
+   <li>
+      <a href="#componentRedeclaration" title="https://w3id.org/moont/componentRedeclaration">
+         <span>component redeclaration</span>
+      </a>
+   </li>
+   <li>
+      <a href="#componentValueChange" title="https://w3id.org/moont/componentValueChange">
+         <span>component value change</span>
+      </a>
+   </li>
+   <li>
+      <a href="#connectedTo" title="https://w3id.org/moont/connectedTo">
+         <span>connected to</span>
+      </a>
+   </li>
+   <li>
+      <a href="#connection" title="https://w3id.org/moont/connection">connection</a>
+   </li>
+   <li>
+      <a href="#containedIn" title="https://w3id.org/moont/containedIn">
+         <span>contained in</span>
+      </a>
+   </li>
+   <li>
+      <a href="#derives" title="https://w3id.org/moont/derives">derives</a>
+   </li>
+   <li>
+      <a href="#equation" title="https://w3id.org/moont/equation">equation</a>
+   </li>
+   <li>
+      <a href="#extends" title="https://w3id.org/moont/extends">extends</a>
+   </li>
+   <li>
+      <a href="#external" title="https://w3id.org/moont/external">external</a>
+   </li>
+   <li>
+      <a href="#fromPort" title="https://w3id.org/moont/fromPort">fromPort</a>
+   </li>
+   <li>
+      <a href="#hasPart" title="https://w3id.org/moont/hasPart">hasPart</a>
+   </li>
+   <li>
+      <a href="#initialAlgorithm" title="https://w3id.org/moont/initialAlgorithm">initialAlgorithm</a>
+   </li>
+   <li>
+      <a href="#items" title="https://w3id.org/moont/items">items</a>
+   </li>
+   <li>
+      <a href="#statement" title="https://w3id.org/moont/statement">statement</a>
+   </li>
+   <li>
+      <a href="#toPort" title="https://w3id.org/moont/toPort">toPort</a>
+   </li>
+   <li>
+      <a href="#type" title="https://w3id.org/moont/type">type</a>
+   </li>
+</ul><h4>Data Properties</h4><ul xmlns:extra="https://w3id.org/extra#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#annotation" title="https://w3id.org/moont/annotation">annotation</a>
+   </li>
+   <li>
+      <a href="#arraySubscripts" title="https://w3id.org/moont/arraySubscripts">arraySubscripts</a>
+   </li>
+   <li>
+      <a href="#causality" title="https://w3id.org/moont/causality">causality</a>
+   </li>
+   <li>
+      <a href="#condition" title="https://w3id.org/moont/condition">condition</a>
+   </li>
+   <li>
+      <a href="#description" title="https://w3id.org/moont/description">description</a>
+   </li>
+   <li>
+      <a href="#dynamicReference" title="https://w3id.org/moont/dynamicReference">dynamicReference</a>
+   </li>
+   <li>
+      <a href="#fromPortArraySubscripts" title="https://w3id.org/moont/fromPortArraySubscripts">fromPortArraySubscripts</a>
+   </li>
+   <li>
+      <a href="#functionCall" title="https://w3id.org/moont/functionCall">functionCall</a>
+   </li>
+   <li>
+      <a href="#identifier" title="https://w3id.org/moont/identifier">identifier</a>
+   </li>
+   <li>
+      <a href="#initial" title="https://w3id.org/moont/initial">initial</a>
+   </li>
+   <li>
+      <a href="#isEncapsulated" title="https://w3id.org/moont/isEncapsulated">isEncapsulated</a>
+   </li>
+   <li>
+      <a href="#isExpandable" title="https://w3id.org/moont/isExpandable">isExpandable</a>
+   </li>
+   <li>
+      <a href="#isFinal" title="https://w3id.org/moont/isFinal">isFinal</a>
+   </li>
+   <li>
+      <a href="#isFlow" title="https://w3id.org/moont/isFlow">isFlow</a>
+   </li>
+   <li>
+      <a href="#isPartial" title="https://w3id.org/moont/isPartial">isPartial</a>
+   </li>
+   <li>
+      <a href="#isProtected" title="https://w3id.org/moont/isProtected">isProtected</a>
+   </li>
+   <li>
+      <a href="#language" title="https://w3id.org/moont/language">language</a>
+   </li>
+   <li>
+      <a href="#modification" title="https://w3id.org/moont/modification">modification</a>
+   </li>
+   <li>
+      <a href="#stringComment" title="https://w3id.org/moont/stringComment">
+         <span>string comment</span>
+      </a>
+   </li>
+   <li>
+      <a href="#toPortArraySubscripts" title="https://w3id.org/moont/toPortArraySubscripts">toPortArraySubscripts</a>
+   </li>
+   <li>
+      <a href="#variability" title="https://w3id.org/moont/variability">variability</a>
+   </li>
+</ul><h4>Named Individuals</h4><ul xmlns:extra="https://w3id.org/extra#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#BooleanType" title="https://w3id.org/moont/BooleanType">
+         <span>boolean type</span>
+      </a>
+   </li>
+   <li>
+      <a href="#IntegerType" title="https://w3id.org/moont/IntegerType">
+         <span>integer type</span>
+      </a>
+   </li>
+   <li>
+      <a href="#RealType" title="https://w3id.org/moont/RealType">
+         <span>real type</span>
+      </a>
+   </li>
+</ul><iframe align="center" width="100%" height ="500px" src="webvowl/index.html"></iframe> 
+</div>
+  
+
+<!--DESCRIPTION SECTION-->
+    <div id="description"><h2 id="desc" class="list">Modelica Language Ontology: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This is a placeholder text for the description of your ontology. The description should include an explanation and a diagram explaining how the classes are related, examples of usage, etc.</span>
+
+</div>
+   
+
+<!--CROSSREF SECTION-->
+   <div id="crossref"><h2 id="crossreference" class="list">Cross-reference for Modelica Language Ontology classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by Modelica Language Ontology.
+<div xmlns:extra="https://w3id.org/extra#"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     id="classes">
+   <h3 id="classes-headline" class="list">Classes</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#MConnectorComponent" title="https://w3id.org/moont/MConnectorComponent">
+            <span>m connector component</span>
+         </a>
+      </li>
+      <li>
+         <a href="#MParameterComponent" title="https://w3id.org/moont/MParameterComponent">
+            <span>m parameter component</span>
+         </a>
+      </li>
+      <li>
+         <a href="#MAbstractClass" title="https://w3id.org/moont/MAbstractClass">MAbstractClass</a>
+      </li>
+      <li>
+         <a href="#MAlgorithm" title="https://w3id.org/moont/MAlgorithm">MAlgorithm</a>
+      </li>
+      <li>
+         <a href="#MBlock" title="https://w3id.org/moont/MBlock">MBlock</a>
+      </li>
+      <li>
+         <a href="#MBooleanType" title="https://w3id.org/moont/MBooleanType">MBooleanType</a>
+      </li>
+      <li>
+         <a href="#MClass" title="https://w3id.org/moont/MClass">MClass</a>
+      </li>
+      <li>
+         <a href="#MComponent" title="https://w3id.org/moont/MComponent">MComponent</a>
+      </li>
+      <li>
+         <a href="#MConnection" title="https://w3id.org/moont/MConnection">MConnection</a>
+      </li>
+      <li>
+         <a href="#MConnector" title="https://w3id.org/moont/MConnector">MConnector</a>
+      </li>
+      <li>
+         <a href="#MDerives" title="https://w3id.org/moont/MDerives">MDerives</a>
+      </li>
+      <li>
+         <a href="#MEnumerationBaseType" title="https://w3id.org/moont/MEnumerationBaseType">MEnumerationBaseType</a>
+      </li>
+      <li>
+         <a href="#MEnumerationLiteral" title="https://w3id.org/moont/MEnumerationLiteral">MEnumerationLiteral</a>
+      </li>
+      <li>
+         <a href="#MEnumerationType" title="https://w3id.org/moont/MEnumerationType">MEnumerationType</a>
+      </li>
+      <li>
+         <a href="#MEquation" title="https://w3id.org/moont/MEquation">MEquation</a>
+      </li>
+      <li>
+         <a href="#MExtends" title="https://w3id.org/moont/MExtends">MExtends</a>
+      </li>
+      <li>
+         <a href="#MExternal" title="https://w3id.org/moont/MExternal">MExternal</a>
+      </li>
+      <li>
+         <a href="#MFunction" title="https://w3id.org/moont/MFunction">MFunction</a>
+      </li>
+      <li>
+         <a href="#MIntegerType" title="https://w3id.org/moont/MIntegerType">MIntegerType</a>
+      </li>
+      <li>
+         <a href="#MModel" title="https://w3id.org/moont/MModel">MModel</a>
+      </li>
+      <li>
+         <a href="#MPackage" title="https://w3id.org/moont/MPackage">MPackage</a>
+      </li>
+      <li>
+         <a href="#MRealType" title="https://w3id.org/moont/MRealType">MRealType</a>
+      </li>
+      <li>
+         <a href="#MRecord" title="https://w3id.org/moont/MRecord">MRecord</a>
+      </li>
+      <li>
+         <a href="#MStringType" title="https://w3id.org/moont/MStringType">MStringType</a>
+      </li>
+      <li>
+         <a href="#MType" title="https://w3id.org/moont/MType">MType</a>
+      </li>
+      <li>
+         <a href="#MTypeComponent" title="https://w3id.org/moont/MTypeComponent">MTypeComponent</a>
+      </li>
+   </ul>
+   <div class="entity" id="MConnectorComponent">
+      <h3>m connector component<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/MConnectorComponent</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#MComponent" title="https://w3id.org/moont/MComponent">MComponent</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#connectedTo" title="https://w3id.org/moont/connectedTo">connected to</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#connectedTo" title="https://w3id.org/moont/connectedTo">connected to</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#fromPort" title="https://w3id.org/moont/fromPort">fromPort</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#toPort" title="https://w3id.org/moont/toPort">toPort</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="MParameterComponent">
+      <h3>m parameter component<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/MParameterComponent</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#MComponent" title="https://w3id.org/moont/MComponent">MComponent</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="MAbstractClass">
+      <h3>MAbstractClass<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/MAbstractClass</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="https://w3id.org/moont/ModelicaClass"
+               target="_blank"
+               title="https://w3id.org/moont/ModelicaClass">modelica class</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#MBlock" title="https://w3id.org/moont/MBlock">MBlock</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#MClass" title="https://w3id.org/moont/MClass">MClass</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#MConnector" title="https://w3id.org/moont/MConnector">MConnector</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#MFunction" title="https://w3id.org/moont/MFunction">MFunction</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#MModel" title="https://w3id.org/moont/MModel">MModel</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#MPackage" title="https://w3id.org/moont/MPackage">MPackage</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#MRecord" title="https://w3id.org/moont/MRecord">MRecord</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#MType" title="https://w3id.org/moont/MType">MType</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#algorithm" title="https://w3id.org/moont/algorithm">algorithm</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#containedIn" title="https://w3id.org/moont/containedIn">contained in</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#derives" title="https://w3id.org/moont/derives">derives</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#equation" title="https://w3id.org/moont/equation">equation</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#extends" title="https://w3id.org/moont/extends">extends</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasPart" title="https://w3id.org/moont/hasPart">hasPart</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#initialAlgorithm" title="https://w3id.org/moont/initialAlgorithm">initialAlgorithm</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#isEncapsulated" title="https://w3id.org/moont/isEncapsulated">isEncapsulated</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#isPartial" title="https://w3id.org/moont/isPartial">isPartial</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#baseClass" title="https://w3id.org/moont/baseClass">base class</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#containedIn" title="https://w3id.org/moont/containedIn">contained in</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#type" title="https://w3id.org/moont/type">type</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="MAlgorithm">
+      <h3>MAlgorithm<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/MAlgorithm</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="https://w3id.org/moont/ModelicaClass"
+               target="_blank"
+               title="https://w3id.org/moont/ModelicaClass">modelica class</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#statement" title="https://w3id.org/moont/statement">statement</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#algorithm" title="https://w3id.org/moont/algorithm">algorithm</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#initialAlgorithm" title="https://w3id.org/moont/initialAlgorithm">initialAlgorithm</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#statement" title="https://w3id.org/moont/statement">statement</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="MBlock">
+      <h3>MBlock<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/MBlock</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#MAbstractClass" title="https://w3id.org/moont/MAbstractClass">MAbstractClass</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="MBooleanType">
+      <h3>MBooleanType<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/MBooleanType</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#MType" title="https://w3id.org/moont/MType">MType</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#BooleanType" title="https://w3id.org/moont/BooleanType">boolean type</a>
+            <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="MClass">
+      <h3>MClass<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/MClass</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#MAbstractClass" title="https://w3id.org/moont/MAbstractClass">MAbstractClass</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="MComponent">
+      <h3>MComponent<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/MComponent</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="https://w3id.org/moont/ModelicaClass"
+               target="_blank"
+               title="https://w3id.org/moont/ModelicaClass">modelica class</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#MTypeComponent" title="https://w3id.org/moont/MTypeComponent">MTypeComponent</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#MConnectorComponent" title="https://w3id.org/moont/MConnectorComponent">m connector component</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#MParameterComponent" title="https://w3id.org/moont/MParameterComponent">m parameter component</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#componentModification" title="https://w3id.org/moont/componentModification">component modification</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#condition" title="https://w3id.org/moont/condition">condition</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#dynamicReference" title="https://w3id.org/moont/dynamicReference">dynamicReference</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#isFinal" title="https://w3id.org/moont/isFinal">isFinal</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#isProtected" title="https://w3id.org/moont/isProtected">isProtected</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#type" title="https://w3id.org/moont/type">type</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#variability" title="https://w3id.org/moont/variability">variability</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasPart" title="https://w3id.org/moont/hasPart">hasPart</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="MConnection">
+      <h3>MConnection<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/MConnection</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="https://w3id.org/moont/ModelicaClass"
+               target="_blank"
+               title="https://w3id.org/moont/ModelicaClass">modelica class</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#fromPort" title="https://w3id.org/moont/fromPort">fromPort</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#fromPortArraySubscripts" title="https://w3id.org/moont/fromPortArraySubscripts">fromPortArraySubscripts</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#toPort" title="https://w3id.org/moont/toPort">toPort</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#toPortArraySubscripts" title="https://w3id.org/moont/toPortArraySubscripts">toPortArraySubscripts</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#connection" title="https://w3id.org/moont/connection">connection</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="MConnector">
+      <h3>MConnector<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/MConnector</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#MAbstractClass" title="https://w3id.org/moont/MAbstractClass">MAbstractClass</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#isExpandable" title="https://w3id.org/moont/isExpandable">isExpandable</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="MDerives">
+      <h3>MDerives<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/MDerives</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="https://w3id.org/moont/ModelicaClass"
+               target="_blank"
+               title="https://w3id.org/moont/ModelicaClass">modelica class</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#derives" title="https://w3id.org/moont/derives">derives</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="MEnumerationBaseType">
+      <h3>MEnumerationBaseType<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/MEnumerationBaseType</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#MType" title="https://w3id.org/moont/MType">MType</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="MEnumerationLiteral">
+      <h3>MEnumerationLiteral<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/MEnumerationLiteral</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="https://w3id.org/moont/ModelicaClass"
+               target="_blank"
+               title="https://w3id.org/moont/ModelicaClass">modelica class</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#items" title="https://w3id.org/moont/items">items</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="MEnumerationType">
+      <h3>MEnumerationType<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/MEnumerationType</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#MType" title="https://w3id.org/moont/MType">MType</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#items" title="https://w3id.org/moont/items">items</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="MEquation">
+      <h3>MEquation<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/MEquation</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="https://w3id.org/moont/ModelicaClass"
+               target="_blank"
+               title="https://w3id.org/moont/ModelicaClass">modelica class</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#initial" title="https://w3id.org/moont/initial">initial</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="MExtends">
+      <h3>MExtends<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/MExtends</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="https://w3id.org/moont/ModelicaClass"
+               target="_blank"
+               title="https://w3id.org/moont/ModelicaClass">modelica class</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#extends" title="https://w3id.org/moont/extends">extends</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="MExternal">
+      <h3>MExternal<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/MExternal</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="https://w3id.org/moont/ModelicaClass"
+               target="_blank"
+               title="https://w3id.org/moont/ModelicaClass">modelica class</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#functionCall" title="https://w3id.org/moont/functionCall">functionCall</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#language" title="https://w3id.org/moont/language">language</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#external" title="https://w3id.org/moont/external">external</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="MFunction">
+      <h3>MFunction<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/MFunction</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#MAbstractClass" title="https://w3id.org/moont/MAbstractClass">MAbstractClass</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#external" title="https://w3id.org/moont/external">external</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="MIntegerType">
+      <h3>MIntegerType<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/MIntegerType</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#MType" title="https://w3id.org/moont/MType">MType</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#IntegerType" title="https://w3id.org/moont/IntegerType">integer type</a>
+            <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="MModel">
+      <h3>MModel<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/MModel</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#MAbstractClass" title="https://w3id.org/moont/MAbstractClass">MAbstractClass</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="MPackage">
+      <h3>MPackage<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/MPackage</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#MAbstractClass" title="https://w3id.org/moont/MAbstractClass">MAbstractClass</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="MRealType">
+      <h3>MRealType<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/MRealType</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#MType" title="https://w3id.org/moont/MType">MType</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#RealType" title="https://w3id.org/moont/RealType">real type</a>
+            <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="MRecord">
+      <h3>MRecord<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/MRecord</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#MAbstractClass" title="https://w3id.org/moont/MAbstractClass">MAbstractClass</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="MStringType">
+      <h3>MStringType<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/MStringType</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#MType" title="https://w3id.org/moont/MType">MType</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="MType">
+      <h3>MType<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/MType</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#MAbstractClass" title="https://w3id.org/moont/MAbstractClass">MAbstractClass</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#MBooleanType" title="https://w3id.org/moont/MBooleanType">MBooleanType</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#MEnumerationBaseType" title="https://w3id.org/moont/MEnumerationBaseType">MEnumerationBaseType</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#MEnumerationType" title="https://w3id.org/moont/MEnumerationType">MEnumerationType</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#MIntegerType" title="https://w3id.org/moont/MIntegerType">MIntegerType</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#MRealType" title="https://w3id.org/moont/MRealType">MRealType</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#MStringType" title="https://w3id.org/moont/MStringType">MStringType</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="MTypeComponent">
+      <h3>MTypeComponent<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/MTypeComponent</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#MComponent" title="https://w3id.org/moont/MComponent">MComponent</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#isFlow" title="https://w3id.org/moont/isFlow">isFlow</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+      </dl>
+   </div>
+</div><div xmlns:extra="https://w3id.org/extra#"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     id="objectproperties">
+   <h3 id="properties" class="list">Object Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#algorithm" title="https://w3id.org/moont/algorithm">
+            <span>algorithm</span>
+         </a>
+      </li>
+      <li>
+         <a href="#baseClass" title="https://w3id.org/moont/baseClass">
+            <span>base class</span>
+         </a>
+      </li>
+      <li>
+         <a href="#componentModification" title="https://w3id.org/moont/componentModification">
+            <span>component modification</span>
+         </a>
+      </li>
+      <li>
+         <a href="#componentRedeclaration" title="https://w3id.org/moont/componentRedeclaration">
+            <span>component redeclaration</span>
+         </a>
+      </li>
+      <li>
+         <a href="#componentValueChange" title="https://w3id.org/moont/componentValueChange">
+            <span>component value change</span>
+         </a>
+      </li>
+      <li>
+         <a href="#connectedTo" title="https://w3id.org/moont/connectedTo">
+            <span>connected to</span>
+         </a>
+      </li>
+      <li>
+         <a href="#connection" title="https://w3id.org/moont/connection">connection</a>
+      </li>
+      <li>
+         <a href="#containedIn" title="https://w3id.org/moont/containedIn">
+            <span>contained in</span>
+         </a>
+      </li>
+      <li>
+         <a href="#derives" title="https://w3id.org/moont/derives">derives</a>
+      </li>
+      <li>
+         <a href="#equation" title="https://w3id.org/moont/equation">equation</a>
+      </li>
+      <li>
+         <a href="#extends" title="https://w3id.org/moont/extends">extends</a>
+      </li>
+      <li>
+         <a href="#external" title="https://w3id.org/moont/external">external</a>
+      </li>
+      <li>
+         <a href="#fromPort" title="https://w3id.org/moont/fromPort">fromPort</a>
+      </li>
+      <li>
+         <a href="#hasPart" title="https://w3id.org/moont/hasPart">hasPart</a>
+      </li>
+      <li>
+         <a href="#initialAlgorithm" title="https://w3id.org/moont/initialAlgorithm">initialAlgorithm</a>
+      </li>
+      <li>
+         <a href="#items" title="https://w3id.org/moont/items">items</a>
+      </li>
+      <li>
+         <a href="#statement" title="https://w3id.org/moont/statement">statement</a>
+      </li>
+      <li>
+         <a href="#toPort" title="https://w3id.org/moont/toPort">toPort</a>
+      </li>
+      <li>
+         <a href="#type" title="https://w3id.org/moont/type">type</a>
+      </li>
+   </ul>
+   <div class="entity" id="algorithm">
+      <h3>algorithm<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/algorithm</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://w3id.org/moont/ModelicaObjectProperty"
+                  target="_blank"
+                  title="https://w3id.org/moont/ModelicaObjectProperty">modelica object property</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#MAbstractClass" title="https://w3id.org/moont/MAbstractClass">MAbstractClass</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#MAlgorithm" title="https://w3id.org/moont/MAlgorithm">MAlgorithm</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="baseClass">
+      <h3>base class<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/baseClass</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://w3id.org/moont/ModelicaObjectProperty"
+                  target="_blank"
+                  title="https://w3id.org/moont/ModelicaObjectProperty">modelica object property</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#MDerives" title="https://w3id.org/moont/MDerives">MDerives</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#MExtends" title="https://w3id.org/moont/MExtends">MExtends</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#MAbstractClass" title="https://w3id.org/moont/MAbstractClass">MAbstractClass</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="componentModification">
+      <h3>component modification<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/componentModification</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://w3id.org/moont/ModelicaObjectProperty"
+                  target="_blank"
+                  title="https://w3id.org/moont/ModelicaObjectProperty">modelica object property</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has sub-properties</dt>
+            <dd>
+               <a href="#componentRedeclaration" title="https://w3id.org/moont/componentRedeclaration">component redeclaration</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#componentValueChange" title="https://w3id.org/moont/componentValueChange">component value change</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#MComponent" title="https://w3id.org/moont/MComponent">MComponent</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="componentRedeclaration">
+      <h3>component redeclaration<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/componentRedeclaration</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#componentModification" title="https://w3id.org/moont/componentModification">component modification</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="componentValueChange">
+      <h3>component value change<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/componentValueChange</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#componentModification" title="https://w3id.org/moont/componentModification">component modification</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="connectedTo">
+      <h3>connected to<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/connectedTo</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://w3id.org/moont/ModelicaObjectProperty"
+                  target="_blank"
+                  title="https://w3id.org/moont/ModelicaObjectProperty">modelica object property</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#MConnectorComponent" title="https://w3id.org/moont/MConnectorComponent">m connector component</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#MConnectorComponent" title="https://w3id.org/moont/MConnectorComponent">m connector component</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="connection">
+      <h3>connection<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/connection</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://w3id.org/moont/ModelicaObjectProperty"
+                  target="_blank"
+                  title="https://w3id.org/moont/ModelicaObjectProperty">modelica object property</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#MBlock" title="https://w3id.org/moont/MBlock">MBlock</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#MClass" title="https://w3id.org/moont/MClass">MClass</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#MModel" title="https://w3id.org/moont/MModel">MModel</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#MConnection" title="https://w3id.org/moont/MConnection">MConnection</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="containedIn">
+      <h3>contained in<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/containedIn</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://w3id.org/moont/ModelicaObjectProperty"
+                  target="_blank"
+                  title="https://w3id.org/moont/ModelicaObjectProperty">modelica object property</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#MAbstractClass" title="https://w3id.org/moont/MAbstractClass">MAbstractClass</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#MAbstractClass" title="https://w3id.org/moont/MAbstractClass">MAbstractClass</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="derives">
+      <h3>derives<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/derives</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://w3id.org/moont/ModelicaObjectProperty"
+                  target="_blank"
+                  title="https://w3id.org/moont/ModelicaObjectProperty">modelica object property</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#MAbstractClass" title="https://w3id.org/moont/MAbstractClass">MAbstractClass</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#MDerives" title="https://w3id.org/moont/MDerives">MDerives</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="equation">
+      <h3>equation<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/equation</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://w3id.org/moont/ModelicaObjectProperty"
+                  target="_blank"
+                  title="https://w3id.org/moont/ModelicaObjectProperty">modelica object property</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#MAbstractClass" title="https://w3id.org/moont/MAbstractClass">MAbstractClass</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="extends">
+      <h3>extends<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/extends</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://w3id.org/moont/ModelicaObjectProperty"
+                  target="_blank"
+                  title="https://w3id.org/moont/ModelicaObjectProperty">modelica object property</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#MAbstractClass" title="https://w3id.org/moont/MAbstractClass">MAbstractClass</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#MExtends" title="https://w3id.org/moont/MExtends">MExtends</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="external">
+      <h3>external<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/external</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://w3id.org/moont/ModelicaObjectProperty"
+                  target="_blank"
+                  title="https://w3id.org/moont/ModelicaObjectProperty">modelica object property</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#MFunction" title="https://w3id.org/moont/MFunction">MFunction</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#MExternal" title="https://w3id.org/moont/MExternal">MExternal</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="fromPort">
+      <h3>fromPort<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/fromPort</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://w3id.org/moont/ModelicaObjectProperty"
+                  target="_blank"
+                  title="https://w3id.org/moont/ModelicaObjectProperty">modelica object property</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#MConnection" title="https://w3id.org/moont/MConnection">MConnection</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#MConnectorComponent" title="https://w3id.org/moont/MConnectorComponent">m connector component</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasPart">
+      <h3>hasPart<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/hasPart</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://w3id.org/moont/ModelicaObjectProperty"
+                  target="_blank"
+                  title="https://w3id.org/moont/ModelicaObjectProperty">modelica object property</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#MAbstractClass" title="https://w3id.org/moont/MAbstractClass">MAbstractClass</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#MComponent" title="https://w3id.org/moont/MComponent">MComponent</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="initialAlgorithm">
+      <h3>initialAlgorithm<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/initialAlgorithm</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://w3id.org/moont/ModelicaObjectProperty"
+                  target="_blank"
+                  title="https://w3id.org/moont/ModelicaObjectProperty">modelica object property</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#MAbstractClass" title="https://w3id.org/moont/MAbstractClass">MAbstractClass</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#MAlgorithm" title="https://w3id.org/moont/MAlgorithm">MAlgorithm</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="items">
+      <h3>items<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/items</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://w3id.org/moont/ModelicaObjectProperty"
+                  target="_blank"
+                  title="https://w3id.org/moont/ModelicaObjectProperty">modelica object property</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#MEnumerationType" title="https://w3id.org/moont/MEnumerationType">MEnumerationType</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#MEnumerationLiteral" title="https://w3id.org/moont/MEnumerationLiteral">MEnumerationLiteral</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="statement">
+      <h3>statement<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/statement</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://w3id.org/moont/ModelicaObjectProperty"
+                  target="_blank"
+                  title="https://w3id.org/moont/ModelicaObjectProperty">modelica object property</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#MAlgorithm" title="https://w3id.org/moont/MAlgorithm">MAlgorithm</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#MAlgorithm" title="https://w3id.org/moont/MAlgorithm">MAlgorithm</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="toPort">
+      <h3>toPort<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/toPort</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://w3id.org/moont/ModelicaObjectProperty"
+                  target="_blank"
+                  title="https://w3id.org/moont/ModelicaObjectProperty">modelica object property</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#MConnection" title="https://w3id.org/moont/MConnection">MConnection</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#MConnectorComponent" title="https://w3id.org/moont/MConnectorComponent">m connector component</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="type">
+      <h3>type<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/type</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://w3id.org/moont/ModelicaObjectProperty"
+                  target="_blank"
+                  title="https://w3id.org/moont/ModelicaObjectProperty">modelica object property</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#MComponent" title="https://w3id.org/moont/MComponent">MComponent</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#MAbstractClass" title="https://w3id.org/moont/MAbstractClass">MAbstractClass</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div xmlns:extra="https://w3id.org/extra#"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     id="dataproperties">
+   <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#annotation" title="https://w3id.org/moont/annotation">annotation</a>
+      </li>
+      <li>
+         <a href="#arraySubscripts" title="https://w3id.org/moont/arraySubscripts">arraySubscripts</a>
+      </li>
+      <li>
+         <a href="#causality" title="https://w3id.org/moont/causality">causality</a>
+      </li>
+      <li>
+         <a href="#condition" title="https://w3id.org/moont/condition">condition</a>
+      </li>
+      <li>
+         <a href="#description" title="https://w3id.org/moont/description">description</a>
+      </li>
+      <li>
+         <a href="#dynamicReference" title="https://w3id.org/moont/dynamicReference">dynamicReference</a>
+      </li>
+      <li>
+         <a href="#fromPortArraySubscripts" title="https://w3id.org/moont/fromPortArraySubscripts">fromPortArraySubscripts</a>
+      </li>
+      <li>
+         <a href="#functionCall" title="https://w3id.org/moont/functionCall">functionCall</a>
+      </li>
+      <li>
+         <a href="#identifier" title="https://w3id.org/moont/identifier">identifier</a>
+      </li>
+      <li>
+         <a href="#initial" title="https://w3id.org/moont/initial">initial</a>
+      </li>
+      <li>
+         <a href="#isEncapsulated" title="https://w3id.org/moont/isEncapsulated">isEncapsulated</a>
+      </li>
+      <li>
+         <a href="#isExpandable" title="https://w3id.org/moont/isExpandable">isExpandable</a>
+      </li>
+      <li>
+         <a href="#isFinal" title="https://w3id.org/moont/isFinal">isFinal</a>
+      </li>
+      <li>
+         <a href="#isFlow" title="https://w3id.org/moont/isFlow">isFlow</a>
+      </li>
+      <li>
+         <a href="#isPartial" title="https://w3id.org/moont/isPartial">isPartial</a>
+      </li>
+      <li>
+         <a href="#isProtected" title="https://w3id.org/moont/isProtected">isProtected</a>
+      </li>
+      <li>
+         <a href="#language" title="https://w3id.org/moont/language">language</a>
+      </li>
+      <li>
+         <a href="#modification" title="https://w3id.org/moont/modification">modification</a>
+      </li>
+      <li>
+         <a href="#stringComment" title="https://w3id.org/moont/stringComment">
+            <span>string comment</span>
+         </a>
+      </li>
+      <li>
+         <a href="#toPortArraySubscripts" title="https://w3id.org/moont/toPortArraySubscripts">toPortArraySubscripts</a>
+      </li>
+      <li>
+         <a href="#variability" title="https://w3id.org/moont/variability">variability</a>
+      </li>
+   </ul>
+   <div class="entity" id="annotation">
+      <h3>annotation<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/annotation</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://w3id.org/moont/ModelicaDataProperty"
+                  target="_blank"
+                  title="https://w3id.org/moont/ModelicaDataProperty">modelica data property</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#MAbstractClass" title="https://w3id.org/moont/MAbstractClass">MAbstractClass</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#MComponent" title="https://w3id.org/moont/MComponent">MComponent</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="arraySubscripts">
+      <h3>arraySubscripts<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/arraySubscripts</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://w3id.org/moont/ModelicaDataProperty"
+                  target="_blank"
+                  title="https://w3id.org/moont/ModelicaDataProperty">modelica data property</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#MComponent" title="https://w3id.org/moont/MComponent">MComponent</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#MDerives" title="https://w3id.org/moont/MDerives">MDerives</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="causality">
+      <h3>causality<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/causality</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://w3id.org/moont/ModelicaDataProperty"
+                  target="_blank"
+                  title="https://w3id.org/moont/ModelicaDataProperty">modelica data property</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#MComponent" title="https://w3id.org/moont/MComponent">MComponent</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#MDerives" title="https://w3id.org/moont/MDerives">MDerives</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="condition">
+      <h3>condition<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/condition</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://w3id.org/moont/ModelicaDataProperty"
+                  target="_blank"
+                  title="https://w3id.org/moont/ModelicaDataProperty">modelica data property</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#MComponent" title="https://w3id.org/moont/MComponent">MComponent</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="description">
+      <h3>description<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/description</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://w3id.org/moont/ModelicaDataProperty"
+                  target="_blank"
+                  title="https://w3id.org/moont/ModelicaDataProperty">modelica data property</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#MComponent" title="https://w3id.org/moont/MComponent">MComponent</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#MConnection" title="https://w3id.org/moont/MConnection">MConnection</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#MEnumerationLiteral" title="https://w3id.org/moont/MEnumerationLiteral">MEnumerationLiteral</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#MEquation" title="https://w3id.org/moont/MEquation">MEquation</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="dynamicReference">
+      <h3>dynamicReference<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/dynamicReference</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://w3id.org/moont/ModelicaDataProperty"
+                  target="_blank"
+                  title="https://w3id.org/moont/ModelicaDataProperty">modelica data property</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#MComponent" title="https://w3id.org/moont/MComponent">MComponent</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="fromPortArraySubscripts">
+      <h3>fromPortArraySubscripts<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/fromPortArraySubscripts</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://w3id.org/moont/ModelicaDataProperty"
+                  target="_blank"
+                  title="https://w3id.org/moont/ModelicaDataProperty">modelica data property</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#MConnection" title="https://w3id.org/moont/MConnection">MConnection</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="functionCall">
+      <h3>functionCall<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/functionCall</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://w3id.org/moont/ModelicaDataProperty"
+                  target="_blank"
+                  title="https://w3id.org/moont/ModelicaDataProperty">modelica data property</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#MExternal" title="https://w3id.org/moont/MExternal">MExternal</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="identifier">
+      <h3>identifier<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/identifier</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://w3id.org/moont/ModelicaDataProperty"
+                  target="_blank"
+                  title="https://w3id.org/moont/ModelicaDataProperty">modelica data property</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#MComponent" title="https://w3id.org/moont/MComponent">MComponent</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#MEnumerationLiteral" title="https://w3id.org/moont/MEnumerationLiteral">MEnumerationLiteral</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#MExternal" title="https://w3id.org/moont/MExternal">MExternal</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="initial">
+      <h3>initial<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/initial</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://w3id.org/moont/ModelicaDataProperty"
+                  target="_blank"
+                  title="https://w3id.org/moont/ModelicaDataProperty">modelica data property</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#MEquation" title="https://w3id.org/moont/MEquation">MEquation</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#boolean"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="isEncapsulated">
+      <h3>isEncapsulated<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/isEncapsulated</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://w3id.org/moont/ModelicaDataProperty"
+                  target="_blank"
+                  title="https://w3id.org/moont/ModelicaDataProperty">modelica data property</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#MAbstractClass" title="https://w3id.org/moont/MAbstractClass">MAbstractClass</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#boolean"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="isExpandable">
+      <h3>isExpandable<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/isExpandable</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://w3id.org/moont/ModelicaDataProperty"
+                  target="_blank"
+                  title="https://w3id.org/moont/ModelicaDataProperty">modelica data property</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#MConnector" title="https://w3id.org/moont/MConnector">MConnector</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#boolean"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="isFinal">
+      <h3>isFinal<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/isFinal</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://w3id.org/moont/ModelicaDataProperty"
+                  target="_blank"
+                  title="https://w3id.org/moont/ModelicaDataProperty">modelica data property</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#MComponent" title="https://w3id.org/moont/MComponent">MComponent</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#boolean"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="isFlow">
+      <h3>isFlow<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/isFlow</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://w3id.org/moont/ModelicaDataProperty"
+                  target="_blank"
+                  title="https://w3id.org/moont/ModelicaDataProperty">modelica data property</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#MTypeComponent" title="https://w3id.org/moont/MTypeComponent">MTypeComponent</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#boolean"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="isPartial">
+      <h3>isPartial<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/isPartial</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://w3id.org/moont/ModelicaDataProperty"
+                  target="_blank"
+                  title="https://w3id.org/moont/ModelicaDataProperty">modelica data property</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#MAbstractClass" title="https://w3id.org/moont/MAbstractClass">MAbstractClass</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#boolean"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="isProtected">
+      <h3>isProtected<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/isProtected</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://w3id.org/moont/ModelicaDataProperty"
+                  target="_blank"
+                  title="https://w3id.org/moont/ModelicaDataProperty">modelica data property</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#MComponent" title="https://w3id.org/moont/MComponent">MComponent</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#boolean"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="language">
+      <h3>language<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/language</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://w3id.org/moont/ModelicaDataProperty"
+                  target="_blank"
+                  title="https://w3id.org/moont/ModelicaDataProperty">modelica data property</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#MExternal" title="https://w3id.org/moont/MExternal">MExternal</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="modification">
+      <h3>modification<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/modification</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://w3id.org/moont/ModelicaDataProperty"
+                  target="_blank"
+                  title="https://w3id.org/moont/ModelicaDataProperty">modelica data property</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#MComponent" title="https://w3id.org/moont/MComponent">MComponent</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#MDerives" title="https://w3id.org/moont/MDerives">MDerives</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#MExtends" title="https://w3id.org/moont/MExtends">MExtends</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="stringComment">
+      <h3>string comment<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/stringComment</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://w3id.org/moont/ModelicaDataProperty"
+                  target="_blank"
+                  title="https://w3id.org/moont/ModelicaDataProperty">modelica data property</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#MAbstractClass" title="https://w3id.org/moont/MAbstractClass">MAbstractClass</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#MComponent" title="https://w3id.org/moont/MComponent">MComponent</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="toPortArraySubscripts">
+      <h3>toPortArraySubscripts<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/toPortArraySubscripts</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://w3id.org/moont/ModelicaDataProperty"
+                  target="_blank"
+                  title="https://w3id.org/moont/ModelicaDataProperty">modelica data property</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#MConnection" title="https://w3id.org/moont/MConnection">MConnection</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="variability">
+      <h3>variability<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/variability</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://w3id.org/moont/ModelicaDataProperty"
+                  target="_blank"
+                  title="https://w3id.org/moont/ModelicaDataProperty">modelica data property</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#MComponent" title="https://w3id.org/moont/MComponent">MComponent</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div xmlns:extra="https://w3id.org/extra#"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     id="namedindividuals">
+   <h3 id="namedindividuals" class="list">Named Individuals</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#BooleanType" title="https://w3id.org/moont/BooleanType">
+            <span>boolean type</span>
+         </a>
+      </li>
+      <li>
+         <a href="#IntegerType" title="https://w3id.org/moont/IntegerType">
+            <span>integer type</span>
+         </a>
+      </li>
+      <li>
+         <a href="#RealType" title="https://w3id.org/moont/RealType">
+            <span>real type</span>
+         </a>
+      </li>
+   </ul>
+   <div class="entity" id="BooleanType">
+      <h3>boolean type<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/BooleanType</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#MBooleanType" title="https://w3id.org/moont/MBooleanType">MBooleanType</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="IntegerType">
+      <h3>integer type<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/IntegerType</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#MIntegerType" title="https://w3id.org/moont/MIntegerType">MIntegerType</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="RealType">
+      <h3>real type<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/RealType</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#MRealType" title="https://w3id.org/moont/MRealType">MRealType</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+<sup class="type-ni" title="Named Individuals">ni</sup>: Named Individuals
+</div>
+</div>
+</div>
+    
+
+<!--REFERENCES SECTION-->
+  <div id="references">
+<h2 id="ref" class="list">References <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+Add your references here. It is recommended to have them as a list.</span>
+
+</div>
+   
+
+<!--CHANGELOG SECTION-->
+   <div id="changelog">null</div>
+<div id="acknowledgments">
+<h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+</div>
+
+
+</div>
+</body>
+</html>
