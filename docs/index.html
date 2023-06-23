@@ -68,12 +68,22 @@ $(function(){
 <dt>Issued on: </dt>
 <dd>2021-06-09</dd>
 <dt>Authors:</dt>
-<dd><a href="https://orcid.org/0000-0003-4396-5307">https://orcid.org/0000-0003-4396-5307</a></dd><dd><a href="https://www.linkedin.com/in/elisabeth-eckst%C3%A4dt-18689115a/">https://www.linkedin.com/in/elisabeth-eckst%C3%A4dt-18689115a/</a></dd><dd>Elisabeth Eckstädt</dd>
+   <dd>Elisabeth Eckstädt</dd>
+   <dd><a href="https://orcid.org/0000-0003-4396-5307">https://orcid.org/0000-0003-4396-5307</a></dd>
+   <dd><a href="https://www.linkedin.com/in/elisabeth-eckst%C3%A4dt-18689115a/">https://www.linkedin.com/in/elisabeth-eckst%C3%A4dt-18689115a/</a></dd>
 
-<dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="http://insertlicenseURIhere.example.org" target="_blank"><img src="https://img.shields.io/badge/License-license%20name%20goes%20here-blue.svg" alt="http://insertlicenseURIhere.example.org" /></a>
-</dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
-<!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
-<dd>https://orcid.org/0000-0003-4396-5307, https://www.linkedin.com/in/elisabeth-eckst%C3%A4dt-18689115a/, Elisabeth Eckstädt. Modelica Language Ontology. Revision: v0.9.2.</dd>
+<dt>Download serialization:</dt>
+   <dd>
+      <span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span>
+      <span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span>
+      <span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span>
+      <span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd>
+
+   <dt>License:</dt>
+   <dd><a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://img.shields.io/badge/License-CC%20BY%20SA%204.0-blue.svg" alt="https://creativecommons.org/licenses/by-sa/4.0/" /></a>
+</dd>
+   <dt>Cite as:</dt>
+<dd>Elisabeth Eckstädt. Modelica Language Ontology (MoOnt). Revision: v0.9.2.  </dd>
 <dt>Compatible with:</dt>
 <dd><a href="0.9.1">0.9.1</a></dd>
 </dl>
@@ -85,14 +95,16 @@ $(function(){
 <span>Ontology Specification Draft</span>
 </div>
 </div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
-This ontology defines the terms and relations in the Modelica Language.</span>
+This ontology defines the terms and relations in the Modelica Language. </span>
 </div>
 <div id="toc"></div> 
 
 <!--INTRODUCTION SECTION-->
     <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 <span class="markdown">
-This is a place holder text for the introduction. The introduction should briefly describe the ontology, its motivation, state of the art and goals.</span>
+   This ontology defines the terms and relations in the Modelica Language.<br>
+   It was created in 2021 based on "Wolfram System Modeler" (<a href="http://www.wolfram.com/wsm-rdf/">wsm</a>) and is developed in this github repo: <a href="https://github.com/ElisEck/MO-x-IFC/blob/main/src/main/resources/ontologies/7_MoOnt/MoOnt.ttl">https://github.com/ElisEck/MO-x-IFC/</a><br>
+This ontology is intended to provide information contained in Modelica simulation models for other interested stakeholders besides the simulation engineer. A usecase comprising bidirectional translation between IFC and Modelica is described in this paper: <a href="https://doi.org/10.24406/publica-fhg-412499">doi.org/10.24406/publica-fhg-412499</a></span>
 <div id="namespacedeclarations">
 <h3 id="ns" class="list">Namespace declarations</h3>
 <div id="ns" align="center">
@@ -364,15 +376,18 @@ This ontology has the following classes and properties.</span>
          <span>real type</span>
       </a>
    </li>
-</ul><iframe align="center" width="100%" height ="500px" src="webvowl/index.html"></iframe> 
+</ul>
 </div>
   
 
 <!--DESCRIPTION SECTION-->
     <div id="description"><h2 id="desc" class="list">Modelica Language Ontology: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 <span class="markdown">
-This is a placeholder text for the description of your ontology. The description should include an explanation and a diagram explaining how the classes are related, examples of usage, etc.</span>
-
+The most important parts that have remained unchanged between the predecessor wsm and the MoOnt are shown in the simplified UML diagram below.<br>
+There is an abstract superclass representing all Modelica classes, where “model” and “package” are the most frequently used ones. Another important entity is the so called component, with its special cases “ConnectorComponent” and “ParameterComponent”. This special cases have been added as they were not present in wsm.
+As the affiliation to a certain package or model is also very meaningful for a Modelica classes content, a containedIn-Relation has been added to the ontology with MAbstractClass as domain and range.
+</span>
+       <img src="MoOnt_class_diagram.jpg" alt="MoOnt class diagram" width="500">
 </div>
    
 
@@ -2449,17 +2464,25 @@ This section provides details for each class and property defined by Modelica La
 <!--REFERENCES SECTION-->
   <div id="references">
 <h2 id="ref" class="list">References <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
-<span class="markdown">
-Add your references here. It is recommended to have them as a list.</span>
+
+
+<ul>
+   <li>Eckstädt, E., Menzel, K., Pruvost, H., Mayer, D.: Representing Modelica models as knowledge graphs using the MoOnt ontology. 2023. EC3/CIBW78.</li>
+   <li>Eckstädt, E. : Bidirectional coupling of Building Information Modeling and Building Simulation unsing ontologies. 2021. EGICE.</li>
+   <li>Sprint Consortium: Wolfram System Modeller Ontology. http://www.sprint-iot.eu/Wolfram-Modelica-ontology.zip. 2014</li>
+</ul>
+
+
 
 </div>
    
 
 <!--CHANGELOG SECTION-->
-   <div id="changelog">null</div>
+
 <div id="acknowledgments">
 <h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
-<p>
+<p>This work has been accomplished within the FMI4BIM project funded by the German Federal Ministry for Economic Affairs and Energy (BMWI) under reference number 03ET1603A and iECO project funded by the German Federal Ministry for Economic Affairs and Climate Action under grant agreement 68GX21011D.</p>
+   <p>
 The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
 </div>
 
