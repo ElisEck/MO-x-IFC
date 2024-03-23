@@ -51,5 +51,5 @@ Through maven this code depends primarily on:
 * elisabeth [dot] eckstaedt ( at ) eas [dot] iis [dot] f r a u n h o f e r [dot] de
 
 ### License and Copyright
-* Software Copyright License for Academic Use of the Fraunhofer Software, Version 1.0, see details at [LICENSE](LICENSE)
+* Software Copyright License for Academic Use of the Fraunhofer Software, Version 1.0, see details at [LICENSE](MoTTL-Transcriptor/LICENSE)
 * © 2021 Gesellschaft zur Förderung der angewandten Forschung e.V. acting on behalf of its Fraunhofer Institut für Integrierte Schaltungen, Institutsteil Entwicklung Adaptiver Systeme. All rights reserved.
