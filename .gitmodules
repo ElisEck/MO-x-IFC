@@ -1,0 +1,3 @@
+[submodule "RDF2IFC"]
+	path = RDF2IFC
+	url = https://github.com/ElisEck/RDF2IFC
