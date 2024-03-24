@@ -5,6 +5,12 @@ This repository contains tools for a bidirectional Modelica-IFC-Translation.
 See conference papers:
 * ["Bidirectional coupling of Building Information Modeling and Building Simulation using ontologies"](https://publica.fraunhofer.de/handle/publica/412499) EG-ICE 2021
 * "Representing Modelica Models as Knowledge Graphs Using The MoOnt Ontology" (link will be published after the conference) EC3 2023
+
+to clone this repository (including submodules) use
+```
+git clone --recurse-submodules https://github.com/ElisEck/MO-x-IFC`
+```
+
 ## MoTTL-Transcriptor v.0.9
 
 This component transcribes Modelica packages to knowledge graphs. It was developed as a Java tool and is delivered as a *.jar.
