@@ -20,8 +20,8 @@ id = "Server"
 #TODO Vorbereitung automatisieren: der Header vom IFC-KG muss vorher angepasst werden (sowohl die prefixes, als auch die allerersten Triple)
 filepaths_models_ttl = [
     path + id + "_ifc.ttl",
-    "IFC4_ADD2_TC1_C20.ttl",
-    "A26.ttl", #TODO prüfen Temperatursensor versehentlich auf PRESSUREGAUGE gemappt?
+    "../TBox/ontologies/2_IFC/IFC4_ADD2_TC1.ttl",
+    "../TBox/alignments/A26.ttl", #TODO prüfen Temperatursensor versehentlich auf PRESSUREGAUGE gemappt?
     ]
 logging.info("read from TTL-Files, generate joint OWL-Files...")
 filename_combined_graph = "debug/" + id + "_combined"
