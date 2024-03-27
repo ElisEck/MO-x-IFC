@@ -21,7 +21,7 @@ id = "Server"
 filepaths_models_ttl = [
     path + id + "_ifc.ttl",
     "../TBox/ontologies/2_IFC/IFC4_ADD2_TC1.ttl",
-    "../TBox/alignments/A26.ttl", #TODO prüfen Temperatursensor versehentlich auf PRESSUREGAUGE gemappt?
+    "../TBox/alignments/AIMAix_0.5.0.ttl", #TODO prüfen Temperatursensor versehentlich auf PRESSUREGAUGE gemappt?
     ]
 logging.info("read from TTL-Files, generate joint OWL-Files...")
 filename_combined_graph = "debug/" + id + "_combined"
