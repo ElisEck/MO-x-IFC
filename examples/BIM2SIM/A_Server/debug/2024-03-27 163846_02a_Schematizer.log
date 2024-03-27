@@ -1,0 +1,46 @@
+2024-03-27 16:38:46 executed script 02a_Schematizer
+2024-03-27 16:38:46 executed on machine TROLL918
+2024-03-27 16:38:46 working directory: C:\_DATEN\WORKSPACES\PyCharm\MO-x-IFC\02_Schematizer
+2024-03-27 16:38:46 reading file: C:/_DATEN/WORKSPACES/IntelliJ/MO-x-IFC/examples/BIM2SIM/A_Server/Server_K.ifc
+2024-03-27 16:38:47 extracting graph from IFC
+2024-03-27 16:38:47 Port ohne Vaterelement: #65256=IfcDistributionPort('2djtoLmCjAlRRZ9LQ0zz8P',#10903,$,$,$,#65255,$,.SOURCEANDSINK.,$,$)
+2024-03-27 16:38:47 Port ohne Vaterelement: #66186=IfcDistributionPort('3YOf$6Tsr4MuNHuyE4KsUr',#10903,$,$,$,#66185,$,.SOURCEANDSINK.,$,$)
+2024-03-27 16:38:47 _____graph construction: 241 nodes (10 leafs, 0 loners) 242 edges, 1 subgraphs
+2024-03-27 16:38:47 reducing graph to schematic
+2024-03-27 16:38:47 replaced 215 nodes by 16 replacements
+2024-03-27 16:38:47 adding replacements to IFC (including a group for each replacement)
+2024-03-27 16:38:47 writing new edges to IFC
+2024-03-27 16:38:47 replacement graph Ro: added 42 edges (and two ports for each)
+2024-03-27 16:38:47 replacement graph Ro: added 15 new IfcRelNests (if no port was present at these elements before)
+2024-03-27 16:38:47 _____graph schematic: 41 nodes (10 leafs, 0 loners) 42 edges, 1 subgraphs
+2024-03-27 16:38:47 giving port names
+2024-03-27 16:38:47 FLOWFITTING(179) has 1 ports
+2024-03-27 16:38:47 FLOWCONTROLLER(4) has 1 ports
+2024-03-27 16:38:47 FLOWSEGMENT(163) has 8 ports
+2024-03-27 16:38:47 DISTRIBUTIONCONTROLELEMENT(3) has 1 ports
+2024-03-27 16:38:47 FLOWCONTROLLER(12) has 1 ports
+2024-03-27 16:38:47 FLOWSEGMENT(175) has 10 ports
+2024-03-27 16:38:47 DISTRIBUTIONCONTROLELEMENT(1) has 1 ports
+2024-03-27 16:38:47 DISTRIBUTIONCONTROLELEMENT(4) has 1 ports
+2024-03-27 16:38:47 DISTRIBUTIONCONTROLELEMENT(5) has 1 ports
+2024-03-27 16:38:47 FLOWFITTING(178) has 1 ports
+2024-03-27 16:38:47 DISTRIBUTIONCONTROLELEMENT(2) has 1 ports
+2024-03-27 16:38:47 FLOWFITTING(180) has 1 ports
+2024-03-27 16:38:47 exporting figures comparing construction and schematic graph
+2024-03-27 16:38:50 writing file: C:/_DATEN/WORKSPACES/IntelliJ/MO-x-IFC/examples/BIM2SIM/A_Server/debug/Server_K_F_3D.ifc
+2024-03-27 16:38:58 deleting replacees, expect a runtime of 1s per replacee
+2024-03-27 16:38:58 deleted 0 elements so far
+2024-03-27 16:38:59 deleted 100 elements so far
+2024-03-27 16:38:59 deleted 200 elements so far
+2024-03-27 16:38:59 deleted 215 elements
+2024-03-27 16:38:59 deleting orphans
+2024-03-27 16:38:59 checking 256 IfcRelNests
+2024-03-27 16:38:59 deleted 645 Ports and IfcRelNests Relationen
+2024-03-27 16:38:59 checking 286 IfcRelConnectsPorts
+2024-03-27 16:39:00 deleted 875 Ports and IfcRelNests Relationen, IfcRelConnectsPorts
+2024-03-27 16:39:00 checking 119 IfcRelDefinesByProperties
+2024-03-27 16:39:00 deleted 906 Ports and IfcRelNests Relationen, IfcRelConnectsPorts, IfcRelDefinesByProperties
+2024-03-27 16:39:00 checking 23 IfcRelDefinesByType
+2024-03-27 16:39:00 deleted 917 Ports and IfcRelNests Relationen, IfcRelConnectsPorts, IfcRelDefinesByProperties, IfcRelDefinesByType
+2024-03-27 16:39:00 writing file: C:/_DATEN/WORKSPACES/IntelliJ/MO-x-IFC/examples/BIM2SIM/A_Server/debug/Server_F_3D.ifc
+2024-03-27 16:39:04 finished succesfully

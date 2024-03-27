@@ -1,0 +1,8 @@
+2024-03-27 16:40:01 executed script 02b_Add2DGeometry
+2024-03-27 16:40:01 executed on machine TROLL918
+2024-03-27 16:40:01 working directory: C:\_DATEN\WORKSPACES\PyCharm\MO-x-IFC\02_Schematizer
+2024-03-27 16:40:01 processing system: Server
+2024-03-27 16:40:01 reading file: C:/_DATEN/WORKSPACES/IntelliJ/MO-x-IFC/examples/BIM2SIM/A_Server/debug/Server_F_3D.ifc
+2024-03-27 16:40:02 extracting graph (schematic) from IFC
+2024-03-27 16:40:02 writing file: C:/_DATEN/WORKSPACES/IntelliJ/MO-x-IFC/examples/BIM2SIM/A_Server/debug/debug/Server_F_3D_2D.ifc
+2024-03-27 16:40:03 finished succesfully

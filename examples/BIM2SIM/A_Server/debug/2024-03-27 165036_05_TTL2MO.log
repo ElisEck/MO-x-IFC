@@ -1,0 +1,8 @@
+2024-03-27 16:50:36 executed script 05_TTL2MO
+2024-03-27 16:50:36 executed on machine TROLL918
+2024-03-27 16:50:36 working directory: C:\_DATEN\WORKSPACES\PyCharm\MO-x-IFC\05_TTL2MO
+2024-03-27 16:50:36 read from TTL-File...
+2024-03-27 16:50:36 copying Modelica master package
+2024-03-27 16:50:36 Creating Modelica Model
+2024-03-27 16:50:37 Modelica files generated: C:/_DATEN/WORKSPACES/IntelliJ/MO-x-IFC/examples/BIM2SIM/A_Server/GeneratedModels/generated.mo
+2024-03-27 16:50:37 finished succesfully

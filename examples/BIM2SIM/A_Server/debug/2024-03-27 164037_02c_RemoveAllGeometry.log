@@ -1,0 +1,21 @@
+2024-03-27 16:40:37 executed script 02c_RemoveAllGeometry
+2024-03-27 16:40:37 executed on machine TROLL918
+2024-03-27 16:40:37 working directory: C:\_DATEN\WORKSPACES\PyCharm\MO-x-IFC\02_Schematizer
+2024-03-27 16:40:37 reading file: C:/_DATEN/WORKSPACES/IntelliJ/MO-x-IFC/examples/BIM2SIM/A_Server/debug/Server_F_3D_2D.ifc
+2024-03-27 16:40:37 deleting IfcShapeRepresentation and their Items
+2024-03-27 16:40:37 checking for unreferenced instances by traversing all IfcRoot (669)
+2024-03-27 16:40:37 generating set of all instances of the ifcfile
+2024-03-27 16:40:38 66756 instances contained
+2024-03-27 16:40:38 run: 0	 processing #1354=IfcPropertySet('1V_IP49$n5DfmRKmCMiHuI',#1350,'Pset_Draughting',$,(#1351,#1352,#1353))	 unreferenced: 66746	 referenced: 11
+2024-03-27 16:40:38 run: 100	 processing #65077=IfcPropertySet('26A5cBxCP0gx7rprJfNtOx',#1350,'PipeFittingTransitionStyles',$,(#53673))	 unreferenced: 66429	 referenced: 348
+2024-03-27 16:40:39 run: 200	 processing #66071=IfcDistributionPort('0NCScO2cXCgw9QlZv4YfCt',#10903,$,$,$,#59209,$,.SOURCEANDSINK.,$,$)	 unreferenced: 66226	 referenced: 561
+2024-03-27 16:40:39 run: 300	 processing #66601=IfcRelNests('1QHLYQplr4KwxNJBzzhE40',#66600,$,$,#65010,(#66582,#66454,#67263,#67338))	 unreferenced: 65983	 referenced: 813
+2024-03-27 16:40:40 run: 400	 processing #67031=IfcPipeSegment('0cqFdAI_zB8RHVADSd2vh8',#66824,'replacement_002',$,$,#29686,#29857,$,$)	 unreferenced: 65723	 referenced: 1084
+2024-03-27 16:40:40 run: 500	 processing #67234=IfcDistributionPort('0E$YapA_b8hg30iS5RksSU',#67357,$,'port_2',$,#45684,$,.SOURCEANDSINK.,$,$)	 unreferenced: 65600	 referenced: 1215
+2024-03-27 16:40:40 run: 600	 processing #67553=IfcRelDefinesByProperties('2PZUXXpa93TuGciLwSxNnz',#67429,$,$,(#19138),#67552)	 unreferenced: 65504	 referenced: 1325
+2024-03-27 16:40:41 final run completed -  unreferenced: 65368	 referenced: 1529
+2024-03-27 16:40:41 copying 1529 referenced instances to a new file
+2024-03-27 16:40:41 run 0
+2024-03-27 16:40:41 run 1000
+2024-03-27 16:40:41 writing file: C:/_DATEN/WORKSPACES/IntelliJ/MO-x-IFC/examples/BIM2SIM/A_Server/Server_F.ifc
+2024-03-27 16:40:41 finished succesfully

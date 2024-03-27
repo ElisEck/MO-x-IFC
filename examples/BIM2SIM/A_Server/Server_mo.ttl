@@ -1,0 +1,2271 @@
+@prefix OWL: <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#> .
+@prefix aima: <https://w3id.org/aimaix/> .
+@prefix moon: <https://w3id.org/moont/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://eas.iis.fraunhofer.de/resources20230725_090232_20240327_164737/> a moon:MModel ;
+    moon:extends <https://w3id.org/msl/Modelica.Icons.Examples> ;
+    moon:hasPart <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcCoil_209>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcCoil_212>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcFlowInstrument_26>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcFlowInstrument_390>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcFlowInstrument_394>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcFlowInstrument_399>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcFlowInstrument_47>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeFitting_173>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeFitting_186>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeFitting_255>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeFitting_348>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeFitting_353>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeFitting_358>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeFitting_371>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeSegment_1041>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeSegment_113>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeSegment_154>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeSegment_161>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeSegment_188>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeSegment_202>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeSegment_227>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeSegment_287>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeSegment_339>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeSegment_380>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeSegment_385>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeSegment_444>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeSegment_465>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeSegment_507>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeSegment_527>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeSegment_567>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeSegment_569>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeSegment_69>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeSegment_736>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeSegment_854>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeSegment_91>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeSegment_994>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPump_637>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcValve_168>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcValve_179> ;
+    moon:stringComment "resources20240327_075902"^^xsd:string .
+
+<http://eas.iis.fraunhofer.de/testmodelicapython> a owl:Ontology .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcCoilType_1049> a aima:IfcCoilType_HYDRONIC .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcFlowInstrumentType_1307> a aima:IfcFlowInstrumentType_PRESSUREGAUGE .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcGeometricRepresentationContext_1188> a OWL:IfcRepresentationContext .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcGeometricRepresentationContext_940> a OWL:IfcRepresentationContext .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcGeometricRepresentationContext_943> a OWL:IfcRepresentationContext .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcIdentifier_1393> a OWL:IfcLabel .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcIdentifier_1432> a aima:IfcIdentifier_of_x_coordinate .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcIdentifier_1434> a aima:IfcIdentifier_of_y_coordinate .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcIdentifier_1511> a OWL:IfcLabel .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcIdentifier_1688> a OWL:IfcLabel .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcIdentifier_1907> a OWL:IfcLabel .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcIdentifier_1968> a OWL:IfcLabel .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcIdentifier_2029> a OWL:IfcLabel .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcIdentifier_2030> a OWL:IfcLabel .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcIdentifier_2033> a OWL:IfcLabel .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcIdentifier_2089> a OWL:IfcLabel .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcIdentifier_2165> a OWL:IfcLabel .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcIdentifier_2225> a OWL:IfcLabel .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcIdentifier_2246> a OWL:IfcLabel .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcIdentifier_2490> a OWL:IfcLabel .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcIdentifier_2552> a OWL:IfcLabel .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcIdentifier_2555> a OWL:IfcLabel .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcIdentifier_2633> a OWL:IfcLabel .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcIdentifier_2678> a OWL:IfcLabel .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcLabel_1473> a OWL:IfcIdentifier .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcLabel_1509> a aima:IfcLabel_layout_position .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcLengthMeasure_1401> a OWL:IfcReal .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeFittingType_1100> a aima:IfcPipeFittingType_BEND .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeFittingType_1116> a aima:IfcPipeFittingType_CONNECTOR .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeFittingType_1146> a aima:IfcPipeFittingType_CONNECTOR .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeFittingType_1153> a aima:IfcPipeFittingType_JUNCTION .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeFittingType_419> a aima:IfcPipeFittingType_BEND .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeFittingType_800> a aima:IfcPipeFittingType_CONNECTOR .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeFittingType_816> a aima:IfcPipeFittingType_BEND .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeFittingType_862> a aima:IfcPipeFittingType_BEND .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeSegmentType_1088> a aima:IfcPipeSegmentType_USERDEFINED .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeSegmentType_1352> a aima:IfcPipeSegmentType_RIGIDSEGMENT .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeSegmentType_767> a aima:IfcPipeSegmentType_RIGIDSEGMENT .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySet_1008> a aima:IfcPropertySet_layout_position .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySet_101> a aima:IfcPropertySet_layout_position .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySet_1020> a aima:IfcPropertySet_layout_position .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySet_103> a aima:IfcPropertySet_layout_position .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySet_1172> a aima:IfcPropertySet_layout_position .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySet_1193> a aima:IfcPropertySet_layout_position .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySet_1196> a aima:IfcPropertySet_layout_position .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySet_1207> a aima:IfcPropertySet_layout_position .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySet_1217> a aima:IfcPropertySet_layout_position .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySet_1246> a aima:IfcPropertySet_layout_position .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySet_1273> a aima:IfcPropertySet_layout_position .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySet_1286> a aima:IfcPropertySet_layout_position .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySet_1332> a aima:IfcPropertySet_layout_position .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySet_1350> a aima:IfcPropertySet_layout_position .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySet_190> a aima:IfcPropertySet_layout_position .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySet_401> a aima:IfcPropertySet_layout_position .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySet_408> a aima:IfcPropertySet_layout_position .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySet_422> a aima:IfcPropertySet_layout_position .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySet_437> a aima:IfcPropertySet_layout_position .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySet_448> a aima:IfcPropertySet_layout_position .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySet_512> a aima:IfcPropertySet_layout_position .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySet_559> a aima:IfcPropertySet_layout_position .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySet_603> a aima:IfcPropertySet_layout_position .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySet_638> a aima:IfcPropertySet_layout_position .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySet_661> a aima:IfcPropertySet_layout_position .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySet_686> a aima:IfcPropertySet_layout_position .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySet_694> a aima:IfcPropertySet_layout_position .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySet_705> a aima:IfcPropertySet_layout_position .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySet_741> a aima:IfcPropertySet_layout_position .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySet_753> a aima:IfcPropertySet_layout_position .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySet_782> a aima:IfcPropertySet_layout_position .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySet_790> a aima:IfcPropertySet_layout_position .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySet_815> a aima:IfcPropertySet_layout_position .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySet_83> a aima:IfcPropertySet_layout_position .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySet_847> a aima:IfcPropertySet_layout_position .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySet_866> a aima:IfcPropertySet_layout_position .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySet_887> a aima:IfcPropertySet_layout_position .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySet_894> a aima:IfcPropertySet_layout_position .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySet_897> a aima:IfcPropertySet_layout_position .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySet_918> a aima:IfcPropertySet_layout_position .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySet_924> a aima:IfcPropertySet_layout_position .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySet_930> a aima:IfcPropertySet_layout_position .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySet_932> a aima:IfcPropertySet_layout_position .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySet_934> a aima:IfcPropertySet_layout_position .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySet_936> a aima:IfcPropertySet_layout_position .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySet_938> a aima:IfcPropertySet_layout_position .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySet_991> a aima:IfcPropertySet_layout_position .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySet_998> a aima:IfcPropertySet_layout_position .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPumpType_701> a aima:IfcPumpType_CIRCULATOR .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcRelDefinesByType_1032> a aima:IfcRelDefinesByType_PS_R .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcRelDefinesByType_1225> a aima:IfcRelDefinesByType_C_H .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcRelDefinesByType_1262> a aima:IfcRelDefinesByType_PS_U .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcRelDefinesByType_1285> a aima:IfcRelDefinesByType_PF_C .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcRelDefinesByType_1308> a aima:IfcRelDefinesByType_FI_P .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcRelDefinesByType_1311> a aima:IfcRelDefinesByType_PF_J .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcRelDefinesByType_1315> a aima:IfcRelDefinesByType_PF_C .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcRelDefinesByType_1342> a aima:IfcRelDefinesByType_V_M .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcRelDefinesByType_1357> a aima:IfcRelDefinesByType_PS_R .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcRelDefinesByType_1372> a aima:IfcRelDefinesByType_P_C .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcRelDefinesByType_297> a aima:IfcRelDefinesByType_V_C .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcText_1610> a aima:IfcText_port_1 .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcText_1623> a aima:IfcText_port_b .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcText_1750> a aima:IfcText_port_3 .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcText_1809> a aima:IfcText_port_2 .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcText_1841> a aima:IfcText_port_a .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcValveType_1140> a aima:IfcValveType_ISOLATING .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcValveType_122> a aima:IfcValveType_ISOLATING .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcValveType_1229> a aima:IfcValveType_MIXING .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcValveType_296> a aima:IfcValveType_CHECK .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcValve_270> aima:object_has_property <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_102>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1027>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1062>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1130>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1142>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_213>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_234>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_235>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_236>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_271>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_272>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_400>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_407>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_558>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_602>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_693>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_752>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_789>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_837>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_914>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_935>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_937>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_990> ;
+    moon:hasPart <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_709>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_884>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_885> ;
+    moon:placement_origin "{167.74, 188.44}"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcValve_291> aima:object_has_property <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_102>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1027>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1062>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1130>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1131>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1132>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1142>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_213>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_234>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_235>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_236>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_400>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_407>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_558>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_602>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_693>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_752>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_789>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_837>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_914>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_935>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_937>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_990> ;
+    moon:hasPart <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1082>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_260>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_546> ;
+    moon:placement_origin "{186.07, 633.1}"^^xsd:string .
+
+OWL:IfcConstructionEquipmentResource rdfs:subClassOf OWL:IfcResource .
+
+OWL:IfcConstructionEquipmentResourceType rdfs:subClassOf OWL:IfcTypeResource .
+
+OWL:IfcConstructionMaterialResource rdfs:subClassOf OWL:IfcResource .
+
+OWL:IfcConstructionMaterialResourceType rdfs:subClassOf OWL:IfcTypeResource .
+
+OWL:IfcConstructionProductResource rdfs:subClassOf OWL:IfcResource .
+
+OWL:IfcConstructionProductResourceType rdfs:subClassOf OWL:IfcTypeResource .
+
+OWL:IfcCrewResource rdfs:subClassOf OWL:IfcResource .
+
+OWL:IfcCrewResourceType rdfs:subClassOf OWL:IfcTypeResource .
+
+OWL:IfcExtendedProperties rdfs:subClassOf aima:IfcPropertySingleValue_x_coord,
+        aima:IfcPropertySingleValue_y_coord .
+
+OWL:IfcGeometricRepresentationSubContext rdfs:subClassOf OWL:IfcRepresentationContext .
+
+OWL:IfcLaborResource rdfs:subClassOf OWL:IfcResource .
+
+OWL:IfcLaborResourceType rdfs:subClassOf OWL:IfcTypeResource .
+
+OWL:IfcPreDefinedProperties rdfs:subClassOf aima:IfcPropertySingleValue_x_coord,
+        aima:IfcPropertySingleValue_y_coord .
+
+OWL:IfcPresentationStyle rdfs:subClassOf OWL:IfcPresentationStyleSelect .
+
+OWL:IfcPropertyEnumeration rdfs:subClassOf aima:IfcPropertySingleValue_x_coord,
+        aima:IfcPropertySingleValue_y_coord .
+
+OWL:IfcRationalBSplineCurveWithKnots rdfs:subClassOf OWL:IfcBSplineCurve .
+
+OWL:IfcRationalBSplineSurfaceWithKnots rdfs:subClassOf OWL:IfcBSplineSurface .
+
+OWL:IfcSubContractResource rdfs:subClassOf OWL:IfcResource .
+
+OWL:IfcSubContractResourceType rdfs:subClassOf OWL:IfcTypeResource .
+
+aima:IfcHeatExchangerType_PLATE rdfs:subClassOf OWL:IfcHeatExchangerType .
+
+aima:IfcRelDefinedByType_HE_P rdfs:subClassOf OWL:IfcRelDefinesByType .
+
+aima:IfcRelDefinesByType_PF_B rdfs:subClassOf OWL:IfcRelDefinesByType .
+
+aima:IfcRelDefinesByType_V_I rdfs:subClassOf OWL:IfcRelDefinesByType .
+
+aima:PF_B rdfs:subClassOf <https://w3id.org/aix/AixLib.Fluid.FixedResistances.PressureDrop> .
+
+<https://w3id.org/aix/AixLib.Fluid.Actuators.Valves.TwoWayLinear> rdfs:subClassOf moon:MComponent ;
+    owl:equivalentClass aima:V_I .
+
+<https://w3id.org/aix/AixLib.Fluid.HeatExchangers.ConstantEffectiveness> rdfs:subClassOf moon:MComponent ;
+    owl:equivalentClass aima:HE_P .
+
+<https://w3id.org/msl/Modelica.Icons.Example> a owl:Thing .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcCoil_209> a aima:C_H,
+        <https://w3id.org/aix/AixLib.Fluid.HeatExchangers.HeaterCooler_u>,
+        moon:MComponent ;
+    aima:object_has_property <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1113>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1130>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1155>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_213>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_234>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_235>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_236>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_421>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_433>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_511>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_555>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_61>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_704>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_740>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_814>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_893> ;
+    moon:comment "2NcoxBZbm7n00000001JfI"^^xsd:string ;
+    moon:hasPart <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1263>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1264>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_304>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_830>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_835> ;
+    moon:identifier "IfcBuildingElementProxy_28"^^xsd:string ;
+    moon:placement_origin "{449.08, 664.19}"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcCoil_212> a aima:C_H,
+        <https://w3id.org/aix/AixLib.Fluid.HeatExchangers.HeaterCooler_u>,
+        moon:MComponent ;
+    aima:object_has_property <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1113>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1130>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1155>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_213>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_234>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_235>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_236>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_261>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_262>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_558>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_602>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_693>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_740>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_752>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_814>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_935> ;
+    moon:comment "2NcoxBZbm7n00000000kL0"^^xsd:string ;
+    moon:hasPart <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1079>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1316>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_424>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_781> ;
+    moon:identifier "IfcBuildingElementProxy_25"^^xsd:string ;
+    moon:placement_origin "{484.66, 560.26}"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1036> a OWL:IfcPort ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_885> .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1039> a OWL:IfcPort .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1061> a OWL:IfcPort ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1109> ;
+    moon:identifier "new port for edge with replacement"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1066> a OWL:IfcPort .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1067> a OWL:IfcPort ;
+    moon:identifier "new port for edge with replacement"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1068> a OWL:IfcPort ;
+    moon:identifier "new port for edge with replacement"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1069> a OWL:IfcPort ;
+    moon:identifier "new port for edge with replacement"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1071> a OWL:IfcPort ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1199> ;
+    moon:identifier "new port for edge with replacement"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1079> a OWL:IfcPort .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1164> a OWL:IfcPort .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1176> a OWL:IfcPort .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1192> a OWL:IfcPort .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1228> a OWL:IfcPort .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1263> a OWL:IfcPort .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1264> a OWL:IfcPort .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1280> a OWL:IfcPort .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1316> a OWL:IfcPort .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1317> a OWL:IfcPort .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_245> a OWL:IfcPort ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_244> ;
+    moon:identifier "new port for edge with replacement"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_282> a OWL:IfcPort ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_763> ;
+    moon:identifier "new port for edge with replacement"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_316> a OWL:IfcPort .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_320> a OWL:IfcPort ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_325> ;
+    moon:identifier "new port for edge with replacement"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_41> a OWL:IfcPort ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_310> ;
+    moon:identifier "new port for edge with replacement"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_476> a OWL:IfcPort .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_58> a OWL:IfcPort .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_608> a OWL:IfcPort ;
+    moon:identifier "new port for edge with replacement"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_609> a OWL:IfcPort ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1053> ;
+    moon:identifier "new port for edge with replacement"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_610> a OWL:IfcPort ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_643> ;
+    moon:identifier "new port for edge with replacement"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_611> a OWL:IfcPort ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_539> ;
+    moon:identifier "new port for edge with replacement"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_640> a OWL:IfcPort .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_642> a OWL:IfcPort .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_658> a OWL:IfcPort .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_675> a OWL:IfcPort .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_677> a OWL:IfcPort .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_678> a OWL:IfcPort .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_718> a OWL:IfcPort .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_778> a OWL:IfcPort ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_467> ;
+    moon:identifier "new port for edge with replacement"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_798> a OWL:IfcPort .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_830> a OWL:IfcPort .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_873> a OWL:IfcPort .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_884> a OWL:IfcPort .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_901> a OWL:IfcPort .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_961> a OWL:IfcPort ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_260> .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcFlowInstrument_26> a aima:FI_P,
+        <https://w3id.org/aix/AixLib.Fluid.Sensors.Temperature>,
+        moon:MComponent ;
+    aima:object_has_property <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_102>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1027>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1062>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1130>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_213>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_234>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_235>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_236>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_27>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_28>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_400>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_407>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_789>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_837>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_85>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_896>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_914>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_931>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_937>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_990> ;
+    moon:comment "2lqrrghQz0700000001nNw"^^xsd:string ;
+    moon:hasPart <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_58>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_59> ;
+    moon:identifier "DISTRIBUTIONCONTROLELEMENT(2)"^^xsd:string ;
+    moon:placement_origin "{677.29, 25.805}"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcFlowInstrument_390> a aima:FI_P,
+        <https://w3id.org/aix/AixLib.Fluid.Sensors.Temperature>,
+        moon:MComponent ;
+    aima:object_has_property <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_102>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1027>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1062>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1089>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1130>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_213>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_234>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_235>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_236>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_400>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_407>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_789>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_837>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_838>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_85>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_896>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_914>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_931>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_937>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_990> ;
+    moon:comment "2lqrrghQz0700000001nNq"^^xsd:string ;
+    moon:hasPart <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_873>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_874> ;
+    moon:identifier "DISTRIBUTIONCONTROLELEMENT(1)"^^xsd:string ;
+    moon:placement_origin "{372.17, 18.0}"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcFlowInstrument_394> a aima:FI_P,
+        <https://w3id.org/aix/AixLib.Fluid.Sensors.Temperature>,
+        moon:MComponent ;
+    aima:object_has_property <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_102>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1027>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1062>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1130>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_213>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_234>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_235>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_236>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_400>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_407>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_413>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_481>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_789>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_837>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_85>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_896>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_914>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_931>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_937>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_990> ;
+    moon:comment "2lqrrghQz0700000001nOA"^^xsd:string ;
+    moon:hasPart <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_901>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_902> ;
+    moon:identifier "DISTRIBUTIONCONTROLELEMENT(3)"^^xsd:string ;
+    moon:placement_origin "{726.77, 786.78}"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcFlowInstrument_399> a aima:FI_P,
+        <https://w3id.org/aix/AixLib.Fluid.Sensors.Temperature>,
+        moon:MComponent ;
+    aima:object_has_property <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1000>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_102>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1027>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1062>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1130>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_213>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_234>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_235>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_236>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_400>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_407>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_764>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_789>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_837>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_85>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_896>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_914>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_931>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_937>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_990> ;
+    moon:comment "2lqrrghQz0700000001nOG"^^xsd:string ;
+    moon:hasPart <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1058>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_798> ;
+    moon:identifier "DISTRIBUTIONCONTROLELEMENT(5)"^^xsd:string ;
+    moon:placement_origin "{827.31, 726.35}"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcFlowInstrument_47> a aima:FI_P,
+        <https://w3id.org/aix/AixLib.Fluid.Sensors.Temperature>,
+        moon:MComponent ;
+    aima:object_has_property <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_102>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1027>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1062>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1130>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_213>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_234>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_235>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_236>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_400>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_407>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_48>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_49>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_789>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_837>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_85>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_896>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_914>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_931>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_937>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_990> ;
+    moon:comment "2lqrrghQz0700000001nOD"^^xsd:string ;
+    moon:hasPart <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1164>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1194> ;
+    moon:identifier "DISTRIBUTIONCONTROLELEMENT(4)"^^xsd:string ;
+    moon:placement_origin "{869.19, 612.79}"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeFitting_173> a aima:PF_C,
+        <https://w3id.org/aix/AixLib.Fluid.FixedResistances.PressureDrop>,
+        moon:MComponent ;
+    aima:object_has_property <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1006>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_105>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1062>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1083>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1130>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1237>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_189>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_213>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_404>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_436>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_558>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_580>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_602>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_693>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_707>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_775>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_776>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_837>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_935> ;
+    moon:comment "2lqrrghQz0700000001vw_"^^xsd:string ;
+    moon:hasPart <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1053>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1101>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_841>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_870> ;
+    moon:identifier "FLOWFITTING(172)"^^xsd:string ;
+    moon:placement_origin "{238.54, 560.83}"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeFitting_186> a aima:PF_C,
+        <https://w3id.org/aix/AixLib.Fluid.FixedResistances.PressureDrop>,
+        moon:MComponent ;
+    aima:object_has_property <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1006>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1043>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1062>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1083>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1092>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1130>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_189>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_213>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_372>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_373>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_374>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_436>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_558>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_580>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_602>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_693>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_707>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_837>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_935> ;
+    moon:comment "2lqrrghQz0700000001nNn"^^xsd:string ;
+    moon:hasPart <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1074>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1095>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1233>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_457> ;
+    moon:identifier "FLOWFITTING(151)"^^xsd:string ;
+    moon:placement_origin "{360.77, 234.21}"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeFitting_255> a aima:PF_J,
+        <https://w3id.org/aix/AixLib.Fluid.FixedResistances.Junction>,
+        moon:MComponent ;
+    aima:object_has_property <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1062>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1080>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1130>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1216>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1272>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_213>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_404>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_421>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_511>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_574>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_599>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_600>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_61>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_631>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_704>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_757>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_775>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_776>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_837>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_893> ;
+    moon:comment "2lqrrghQz0700000003ZOU"^^xsd:string ;
+    moon:hasPart <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_614>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_640>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_642>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_643>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_645>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_646> ;
+    moon:identifier "FLOWFITTING(511)"^^xsd:string ;
+    moon:placement_origin "{335.39, 533.38}"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeFitting_348> a aima:PF_C,
+        <https://w3id.org/aix/AixLib.Fluid.FixedResistances.PressureDrop>,
+        moon:MComponent ;
+    aima:object_has_property <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_102>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1027>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1062>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1073>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1130>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_213>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_359>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_400>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_404>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_407>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_660>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_775>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_776>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_789>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_837>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_844>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_896>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_914>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_931>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_937> ;
+    moon:comment "2lqrrghQz0700000001vxM"^^xsd:string ;
+    moon:hasPart <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_807>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_808> ;
+    moon:identifier "FLOWFITTING(178)"^^xsd:string ;
+    moon:placement_origin "{107.89, 457.65}"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeFitting_353> a aima:PF_C,
+        <https://w3id.org/aix/AixLib.Fluid.FixedResistances.PressureDrop>,
+        moon:MComponent ;
+    aima:object_has_property <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_102>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1027>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1062>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1130>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_213>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_359>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_366>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_400>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_404>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_407>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_660>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_775>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_776>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_789>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_802>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_837>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_896>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_914>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_931>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_937> ;
+    moon:comment "2lqrrghQz0700000001vxP"^^xsd:string ;
+    moon:hasPart <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_514>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_515> ;
+    moon:identifier "FLOWFITTING(179)"^^xsd:string ;
+    moon:placement_origin "{118.41, 574.47}"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeFitting_358> a aima:PF_C,
+        <https://w3id.org/aix/AixLib.Fluid.FixedResistances.PressureDrop>,
+        moon:MComponent ;
+    aima:object_has_property <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_102>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1027>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1062>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1130>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1134>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_213>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_359>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_400>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_404>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_407>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_660>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_775>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_776>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_789>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_837>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_889>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_896>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_914>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_931>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_937> ;
+    moon:comment "2lqrrghQz0700000001vxS"^^xsd:string ;
+    moon:hasPart <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_909>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_910> ;
+    moon:identifier "FLOWFITTING(180)"^^xsd:string ;
+    moon:placement_origin "{108.34, 416.28}"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeFitting_371> a aima:PF_J,
+        <https://w3id.org/aix/AixLib.Fluid.FixedResistances.Junction>,
+        moon:MComponent ;
+    aima:object_has_property <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1062>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1080>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1130>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1216>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1272>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_213>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_372>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_373>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_374>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_421>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_511>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_574>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_61>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_631>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_704>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_757>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_837>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_893>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_980>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_981> ;
+    moon:comment "2lqrrghQz0700000001nXG"^^xsd:string ;
+    moon:hasPart <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1144>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1317>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_281>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_658>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_759>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_794> ;
+    moon:identifier "FLOWFITTING(163)"^^xsd:string ;
+    moon:placement_origin "{617.43, 632.43}"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeSegment_1041> a aima:PS_U,
+        <https://w3id.org/aix/AixLib.Fluid.FixedResistances.PressureDrop>,
+        moon:MComponent ;
+    aima:object_has_property <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_412>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_62>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_761> ;
+    moon:comment "2IE4sOA8D4CxGTlLeYtkcn"^^xsd:string ;
+    moon:hasPart <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_221>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_310> ;
+    moon:identifier "replacement_010"^^xsd:string ;
+    moon:placement_origin "{785.89, 604.95}"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeSegment_113> a aima:PS_U,
+        <https://w3id.org/aix/AixLib.Fluid.FixedResistances.PressureDrop>,
+        moon:MComponent ;
+    aima:object_has_property <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_114>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_115>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_62> ;
+    moon:comment "3ekcsQd3DETvlUIZdvZ0Lv"^^xsd:string ;
+    moon:hasPart <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_426>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_724> ;
+    moon:identifier "replacement_001"^^xsd:string ;
+    moon:placement_origin "{410.14, 532.05}"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeSegment_154> a aima:PS_U,
+        <https://w3id.org/aix/AixLib.Fluid.FixedResistances.PressureDrop>,
+        moon:MComponent ;
+    aima:object_has_property <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_155>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_156>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_62> ;
+    moon:comment "2m4FV69YH3bh3OH$0Smbpe"^^xsd:string ;
+    moon:hasPart <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_521>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_667> ;
+    moon:identifier "replacement_007"^^xsd:string ;
+    moon:placement_origin "{396.35, 93.962}"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeSegment_161> a aima:PS_R,
+        <https://w3id.org/aix/AixLib.Fluid.FixedResistances.PressureDrop>,
+        moon:MComponent ;
+    aima:object_has_property <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_102>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1027>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1062>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1130>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1291>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1296>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_213>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_400>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_404>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_407>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_488>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_660>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_775>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_776>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_789>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_837>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_896>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_914>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_931>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_937> ;
+    moon:comment "2lqrrghQz0700000001vxO"^^xsd:string ;
+    moon:hasPart <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_140>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_244>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_745>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_747> ;
+    moon:identifier "FLOWSEGMENT(181)"^^xsd:string ;
+    moon:placement_origin "{195.34, 530.62}"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeSegment_188> a aima:PS_R,
+        <https://w3id.org/aix/AixLib.Fluid.FixedResistances.PressureDrop>,
+        moon:MComponent ;
+    aima:object_has_property <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1006>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1062>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1130>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1211>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_189>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_213>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_224>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_305>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_404>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_436>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_558>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_580>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_602>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_693>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_707>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_775>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_776>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_837>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_935> ;
+    moon:comment "2lqrrghQz0700000001vw$"^^xsd:string ;
+    moon:hasPart <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_135>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_573>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_594>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_606>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_607>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_608> ;
+    moon:identifier "FLOWSEGMENT(175)"^^xsd:string ;
+    moon:placement_origin "{264.7, 480.02}"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeSegment_202> a aima:PS_U,
+        <https://w3id.org/aix/AixLib.Fluid.FixedResistances.PressureDrop>,
+        moon:MComponent ;
+    aima:object_has_property <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_203>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_204>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_62> ;
+    moon:comment "2ItiJ9XBz8$h5OqGJxLqjg"^^xsd:string ;
+    moon:hasPart <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_539>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_562> ;
+    moon:identifier "replacement_006"^^xsd:string ;
+    moon:placement_origin "{288.93, 386.96}"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeSegment_227> a aima:PS_U,
+        <https://w3id.org/aix/AixLib.Fluid.FixedResistances.PressureDrop>,
+        moon:MComponent ;
+    aima:object_has_property <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1305>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_477>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_62> ;
+    moon:comment "1mic7Jb_T4NgDQdufa0ZAS"^^xsd:string ;
+    moon:hasPart <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1199>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_147> ;
+    moon:identifier "replacement_009"^^xsd:string ;
+    moon:placement_origin "{733.86, 528.57}"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeSegment_287> a aima:PS_U,
+        <https://w3id.org/aix/AixLib.Fluid.FixedResistances.PressureDrop>,
+        moon:MComponent ;
+    aima:object_has_property <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_537>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_62>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_628> ;
+    moon:comment "348yK5cLD6Nw9HuouX41uu"^^xsd:string ;
+    moon:hasPart <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_523>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_785> ;
+    moon:identifier "replacement_003"^^xsd:string ;
+    moon:placement_origin "{230.49, 241.13}"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeSegment_339> a aima:PS_U,
+        <https://w3id.org/aix/AixLib.Fluid.FixedResistances.PressureDrop>,
+        moon:MComponent ;
+    aima:object_has_property <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_480>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_532>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_62> ;
+    moon:comment "3HwAZX76b64u0WKGDEZ$yO"^^xsd:string ;
+    moon:hasPart <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_492>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_731> ;
+    moon:identifier "replacement_015"^^xsd:string ;
+    moon:placement_origin "{638.51, 93.755}"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeSegment_380> a aima:PS_R,
+        <https://w3id.org/aix/AixLib.Fluid.FixedResistances.PressureDrop>,
+        moon:MComponent ;
+    aima:object_has_property <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_102>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1027>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1062>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1130>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1221>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1222>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_213>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_400>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_404>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_407>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_488>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_660>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_775>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_776>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_789>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_837>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_896>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_914>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_931>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_937> ;
+    moon:comment "2lqrrghQz0700000001vxL"^^xsd:string ;
+    moon:hasPart <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1013>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_325>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_446>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_827> ;
+    moon:identifier "FLOWSEGMENT(180)"^^xsd:string ;
+    moon:placement_origin "{206.04, 437.53}"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeSegment_385> a aima:PS_R,
+        <https://w3id.org/aix/AixLib.Fluid.FixedResistances.PressureDrop>,
+        moon:MComponent ;
+    aima:object_has_property <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_102>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1027>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1062>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1130>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_213>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_400>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_404>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_407>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_488>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_660>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_775>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_776>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_789>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_818>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_837>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_857>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_896>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_914>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_931>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_937> ;
+    moon:comment "2lqrrghQz0700000001vxR"^^xsd:string ;
+    moon:hasPart <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1064>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1346>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_763>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_880> ;
+    moon:identifier "FLOWSEGMENT(182)"^^xsd:string ;
+    moon:placement_origin "{186.27, 460.87}"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeSegment_444> a aima:PS_U,
+        <https://w3id.org/aix/AixLib.Fluid.FixedResistances.PressureDrop>,
+        moon:MComponent ;
+    aima:object_has_property <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_62>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_687>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_915> ;
+    moon:comment "0swE0fC2jFs8d2_E14Z13r"^^xsd:string ;
+    moon:hasPart <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_498>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_499> ;
+    moon:identifier "replacement_004"^^xsd:string ;
+    moon:placement_origin "{559.55, 586.06}"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeSegment_465> a aima:PS_U,
+        <https://w3id.org/aix/AixLib.Fluid.FixedResistances.PressureDrop>,
+        moon:MComponent ;
+    aima:object_has_property <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1015>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1016>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_62> ;
+    moon:comment "3PrFdpRnPD9w12Kj62Sioh"^^xsd:string ;
+    moon:hasPart <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_467>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_469> ;
+    moon:identifier "replacement_012"^^xsd:string ;
+    moon:placement_origin "{705.52, 704.73}"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeSegment_507> a aima:PS_U,
+        <https://w3id.org/aix/AixLib.Fluid.FixedResistances.PressureDrop>,
+        moon:MComponent ;
+    aima:object_has_property <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_334>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_508>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_62> ;
+    moon:comment "01pJ_DY6j9YPiMuxLPH48N"^^xsd:string ;
+    moon:hasPart <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_577>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_578> ;
+    moon:identifier "replacement_005"^^xsd:string ;
+    moon:placement_origin "{374.49, 615.33}"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeSegment_527> a aima:PS_U,
+        <https://w3id.org/aix/AixLib.Fluid.FixedResistances.PressureDrop>,
+        moon:MComponent ;
+    aima:object_has_property <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_585>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_586>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_62> ;
+    moon:comment "3f2SuUWc92hAMkw79x$rJu"^^xsd:string ;
+    moon:hasPart <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_583>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_955> ;
+    moon:identifier "replacement_008"^^xsd:string ;
+    moon:placement_origin "{766.89, 360.69}"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeSegment_567> a aima:PS_R,
+        <https://w3id.org/aix/AixLib.Fluid.FixedResistances.PressureDrop>,
+        moon:MComponent ;
+    aima:object_has_property <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1062>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1130>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1211>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1216>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1272>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_213>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_372>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_373>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_374>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_421>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_511>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_574>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_588>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_61>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_631>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_704>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_757>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_837>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_851>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_893> ;
+    moon:comment "2lqrrghQz0700000001nNo"^^xsd:string ;
+    moon:hasPart <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1119>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1228>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1244>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1280>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_620>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_942> ;
+    moon:identifier "FLOWSEGMENT(157)"^^xsd:string ;
+    moon:placement_origin "{424.87, 174.17}"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeSegment_569> a aima:PS_R,
+        <https://w3id.org/aix/AixLib.Fluid.FixedResistances.PressureDrop>,
+        moon:MComponent ;
+    aima:object_has_property <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1062>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1130>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1211>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1216>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1272>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_213>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_372>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_373>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_374>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_421>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_434>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_451>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_511>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_574>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_61>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_631>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_704>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_757>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_837>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_893> ;
+    moon:comment "2lqrrghQz0700000001nNu"^^xsd:string ;
+    moon:hasPart <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_551>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_675>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_677>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_678>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_680>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_682> ;
+    moon:identifier "FLOWSEGMENT(159)"^^xsd:string ;
+    moon:placement_origin "{601.7, 169.07}"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeSegment_69> a aima:PS_R,
+        <https://w3id.org/aix/AixLib.Fluid.FixedResistances.PressureDrop>,
+        moon:MComponent ;
+    aima:object_has_property <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1006>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1062>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1130>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1211>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_189>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_213>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_372>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_373>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_374>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_436>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_558>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_580>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_602>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_693>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_70>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_707>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_71>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_837>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_935> ;
+    moon:comment "2lqrrghQz0700000001nO6"^^xsd:string ;
+    moon:hasPart <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1066>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1067>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1068>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1069>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1070>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_365> ;
+    moon:identifier "FLOWSEGMENT(163)"^^xsd:string ;
+    moon:placement_origin "{705.34, 616.76}"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeSegment_736> a aima:PS_U,
+        <https://w3id.org/aix/AixLib.Fluid.FixedResistances.PressureDrop>,
+        moon:MComponent ;
+    aima:object_has_property <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_62>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_712>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_737> ;
+    moon:comment "243EFl3HLE2QFpctxGq6KY"^^xsd:string ;
+    moon:hasPart <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_332>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_454> ;
+    moon:identifier "replacement_002"^^xsd:string ;
+    moon:placement_origin "{537.97, 674.66}"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeSegment_854> a aima:PS_U,
+        <https://w3id.org/aix/AixLib.Fluid.FixedResistances.PressureDrop>,
+        moon:MComponent ;
+    aima:object_has_property <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1166>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1181>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_62> ;
+    moon:comment "1fNHMJvlfFbRfmg4We6meF"^^xsd:string ;
+    moon:hasPart <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1234>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_655> ;
+    moon:identifier "replacement_013"^^xsd:string ;
+    moon:placement_origin "{671.79, 222.37}"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeSegment_91> a aima:PS_U,
+        <https://w3id.org/aix/AixLib.Fluid.FixedResistances.PressureDrop>,
+        moon:MComponent ;
+    aima:object_has_property <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_517>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_518>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_62> ;
+    moon:comment "2pVe14Lov7OxordoDv4F_3"^^xsd:string ;
+    moon:hasPart <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1109>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_921> ;
+    moon:identifier "replacement_014"^^xsd:string ;
+    moon:placement_origin "{764.02, 671.51}"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPipeSegment_994> a aima:PS_U,
+        <https://w3id.org/aix/AixLib.Fluid.FixedResistances.PressureDrop>,
+        moon:MComponent ;
+    aima:object_has_property <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1034>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_62>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_773> ;
+    moon:comment "13BNUFFYH3AvQEWdv1tBpZ"^^xsd:string ;
+    moon:hasPart <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1025>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_432> ;
+    moon:identifier "replacement_011"^^xsd:string ;
+    moon:placement_origin "{513.18, 169.16}"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1000> a aima:IfcPropertySingleValue_x_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1015> a aima:IfcPropertySingleValue_x_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1016> a aima:IfcPropertySingleValue_y_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1034> a aima:IfcPropertySingleValue_x_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1043> a aima:IfcPropertySingleValue_x_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_105> a aima:IfcPropertySingleValue_y_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1073> a aima:IfcPropertySingleValue_y_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1089> a aima:IfcPropertySingleValue_y_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1092> a aima:IfcPropertySingleValue_y_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1096> a aima:IfcPropertySingleValue_y_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1131> a aima:IfcPropertySingleValue_x_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1132> a aima:IfcPropertySingleValue_y_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1134> a aima:IfcPropertySingleValue_x_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_114> a aima:IfcPropertySingleValue_x_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_115> a aima:IfcPropertySingleValue_y_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1166> a aima:IfcPropertySingleValue_x_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1181> a aima:IfcPropertySingleValue_y_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1221> a aima:IfcPropertySingleValue_x_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1222> a aima:IfcPropertySingleValue_y_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1237> a aima:IfcPropertySingleValue_x_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1291> a aima:IfcPropertySingleValue_y_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1296> a aima:IfcPropertySingleValue_x_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1305> a aima:IfcPropertySingleValue_x_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_155> a aima:IfcPropertySingleValue_x_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_156> a aima:IfcPropertySingleValue_y_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_203> a aima:IfcPropertySingleValue_x_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_204> a aima:IfcPropertySingleValue_y_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_224> a aima:IfcPropertySingleValue_x_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_261> a aima:IfcPropertySingleValue_x_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_262> a aima:IfcPropertySingleValue_y_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_27> a aima:IfcPropertySingleValue_x_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_271> a aima:IfcPropertySingleValue_x_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_272> a aima:IfcPropertySingleValue_y_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_28> a aima:IfcPropertySingleValue_y_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_305> a aima:IfcPropertySingleValue_y_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_334> a aima:IfcPropertySingleValue_x_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_366> a aima:IfcPropertySingleValue_y_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_412> a aima:IfcPropertySingleValue_y_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_413> a aima:IfcPropertySingleValue_x_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_433> a aima:IfcPropertySingleValue_x_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_434> a aima:IfcPropertySingleValue_y_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_451> a aima:IfcPropertySingleValue_x_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_477> a aima:IfcPropertySingleValue_y_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_48> a aima:IfcPropertySingleValue_x_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_480> a aima:IfcPropertySingleValue_x_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_481> a aima:IfcPropertySingleValue_y_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_484> a aima:IfcPropertySingleValue_x_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_49> a aima:IfcPropertySingleValue_y_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_508> a aima:IfcPropertySingleValue_y_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_517> a aima:IfcPropertySingleValue_x_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_518> a aima:IfcPropertySingleValue_y_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_532> a aima:IfcPropertySingleValue_y_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_537> a aima:IfcPropertySingleValue_x_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_552> a aima:IfcPropertySingleValue_x_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_555> a aima:IfcPropertySingleValue_y_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_585> a aima:IfcPropertySingleValue_x_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_586> a aima:IfcPropertySingleValue_y_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_588> a aima:IfcPropertySingleValue_y_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_596> a aima:IfcPropertySingleValue_y_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_599> a aima:IfcPropertySingleValue_x_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_600> a aima:IfcPropertySingleValue_y_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_624> a aima:IfcPropertySingleValue_x_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_625> a aima:IfcPropertySingleValue_y_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_628> a aima:IfcPropertySingleValue_y_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_687> a aima:IfcPropertySingleValue_x_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_70> a aima:IfcPropertySingleValue_x_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_71> a aima:IfcPropertySingleValue_y_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_712> a aima:IfcPropertySingleValue_x_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_737> a aima:IfcPropertySingleValue_y_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_761> a aima:IfcPropertySingleValue_x_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_764> a aima:IfcPropertySingleValue_y_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_773> a aima:IfcPropertySingleValue_y_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_802> a aima:IfcPropertySingleValue_x_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_818> a aima:IfcPropertySingleValue_x_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_838> a aima:IfcPropertySingleValue_x_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_844> a aima:IfcPropertySingleValue_x_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_851> a aima:IfcPropertySingleValue_x_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_857> a aima:IfcPropertySingleValue_y_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_889> a aima:IfcPropertySingleValue_y_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_915> a aima:IfcPropertySingleValue_y_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_980> a aima:IfcPropertySingleValue_x_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_981> a aima:IfcPropertySingleValue_y_coord .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPump_637> a aima:P_C,
+        <https://w3id.org/aix/AixLib.Fluid.Movers.FlowControlled_m_flow>,
+        moon:MComponent ;
+    aima:object_has_property <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1062>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1096>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1130>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_213>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_234>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_235>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_236>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_428>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_449>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_496>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_552>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_558>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_602>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_693>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_740>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_752>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_814>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_82>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_837>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_922>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_935> ;
+    moon:comment "2lqrrghQz0700000001nNz"^^xsd:string ;
+    moon:hasPart <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1030>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_476>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_633>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_718> ;
+    moon:identifier "FLOWMOVINGDEVICE(1)"^^xsd:string ;
+    moon:placement_origin "{731.86, 283.19}"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcValve_168> a aima:V_M,
+        <https://w3id.org/aix/AixLib.Fluid.Actuators.Valves.ThreeWayLinear>,
+        moon:MComponent ;
+    aima:object_has_property <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1006>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1062>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1130>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_189>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_213>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_234>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_235>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_236>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_421>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_436>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_484>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_485>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_511>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_580>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_596>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_61>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_693>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_704>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_707>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_752>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_837>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_893>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_935> ;
+    moon:comment "2lqrrghQz0700000001nNk"^^xsd:string ;
+    moon:hasPart <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1176>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1177>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_316>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_368>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_459>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_832> ;
+    moon:identifier "FLOWCONTROLLER(6)"^^xsd:string ;
+    moon:placement_origin "{298.25, 295.92}"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcValve_179> a aima:V_C,
+        <https://w3id.org/aix/AixLib.Fluid.FixedResistances.CheckValve>,
+        moon:MComponent ;
+    aima:object_has_property <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1006>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1062>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_1130>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_189>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_213>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_234>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_235>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_236>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_415>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_436>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_558>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_580>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_602>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_624>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_625>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_693>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_707>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_752>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_837>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcPropertySingleValue_935> ;
+    moon:comment "2lqrrghQz0700000001nO0"^^xsd:string ;
+    moon:hasPart <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1039>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1192>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_581>,
+        <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_951> ;
+    moon:identifier "FLOWCONTROLLER(7)"^^xsd:string ;
+    moon:placement_origin "{764.39, 445.96}"^^xsd:string .
+
+OWL:IfcBSplineCurveWithKnots rdfs:subClassOf OWL:IfcBoundedCurve ;
+    owl:equivalentClass OWL:IfcBSplineCurve .
+
+OWL:IfcBSplineSurfaceWithKnots rdfs:subClassOf OWL:IfcBoundedSurface ;
+    owl:equivalentClass OWL:IfcBSplineSurface .
+
+OWL:IfcColourRgb rdfs:subClassOf OWL:IfcColour,
+        OWL:IfcPresentationItem ;
+    owl:equivalentClass OWL:IfcColourSpecification .
+
+OWL:IfcColourSpecification rdfs:subClassOf OWL:IfcColourOrFactor ;
+    owl:equivalentClass OWL:IfcColourRgb .
+
+OWL:IfcConstructionResource rdfs:subClassOf OWL:IfcObject,
+        OWL:IfcResourceSelect ;
+    owl:equivalentClass OWL:IfcResource .
+
+OWL:IfcConstructionResourceType rdfs:subClassOf OWL:IfcResourceSelect,
+        OWL:IfcTypeObject ;
+    owl:equivalentClass OWL:IfcTypeResource .
+
+OWL:IfcCoordinateOperation owl:equivalentClass OWL:IfcMapConversion .
+
+OWL:IfcCoordinateReferenceSystem owl:equivalentClass OWL:IfcProjectedCRS .
+
+OWL:IfcDistributionPort rdfs:subClassOf OWL:IfcProduct ;
+    owl:equivalentClass OWL:IfcPort .
+
+OWL:IfcDraughtingPreDefinedColour rdfs:subClassOf OWL:IfcColour,
+        OWL:IfcPreDefinedItem ;
+    owl:equivalentClass OWL:IfcPreDefinedColour .
+
+OWL:IfcDraughtingPreDefinedCurveFont rdfs:subClassOf OWL:IfcCurveStyleFontSelect,
+        OWL:IfcPreDefinedItem ;
+    owl:equivalentClass OWL:IfcPreDefinedCurveFont .
+
+OWL:IfcElementQuantity rdfs:subClassOf OWL:IfcPropertySetDefinition ;
+    owl:equivalentClass OWL:IfcQuantitySet .
+
+OWL:IfcExternalSpatialElement rdfs:subClassOf OWL:IfcSpatialElement ;
+    owl:equivalentClass OWL:IfcExternalSpatialStructureElement .
+
+OWL:IfcExternalSpatialStructureElement rdfs:subClassOf OWL:IfcSpaceBoundarySelect ;
+    owl:equivalentClass OWL:IfcExternalSpatialElement .
+
+OWL:IfcFeatureElementAddition owl:equivalentClass OWL:IfcProjectionElement .
+
+OWL:IfcGeometricRepresentationContext owl:equivalentClass OWL:IfcRepresentationContext .
+
+OWL:IfcIndexedTextureMap owl:equivalentClass OWL:IfcIndexedTriangleTextureMap .
+
+OWL:IfcIndexedTriangleTextureMap rdfs:subClassOf OWL:IfcTextureCoordinate ;
+    owl:equivalentClass OWL:IfcIndexedTextureMap .
+
+OWL:IfcMapConversion owl:equivalentClass OWL:IfcCoordinateOperation .
+
+OWL:IfcPreDefinedColour owl:equivalentClass OWL:IfcDraughtingPreDefinedColour .
+
+OWL:IfcPreDefinedCurveFont owl:equivalentClass OWL:IfcDraughtingPreDefinedCurveFont .
+
+OWL:IfcPreDefinedTextFont owl:equivalentClass OWL:IfcTextStyleFontModel .
+
+OWL:IfcProjectedCRS rdfs:subClassOf OWL:IfcCoordinateReferenceSystemSelect ;
+    owl:equivalentClass OWL:IfcCoordinateReferenceSystem .
+
+OWL:IfcProjectionElement rdfs:subClassOf OWL:IfcFeatureElement ;
+    owl:equivalentClass OWL:IfcFeatureElementAddition .
+
+OWL:IfcQuantitySet owl:equivalentClass OWL:IfcElementQuantity .
+
+OWL:IfcSpaceType rdfs:subClassOf OWL:IfcSpatialElementType ;
+    owl:equivalentClass OWL:IfcSpatialStructureElementType .
+
+OWL:IfcSpatialStructureElementType owl:equivalentClass OWL:IfcSpaceType .
+
+OWL:IfcStyleModel owl:equivalentClass OWL:IfcStyledRepresentation .
+
+OWL:IfcStyledRepresentation rdfs:subClassOf OWL:IfcRepresentation ;
+    owl:equivalentClass OWL:IfcStyleModel .
+
+OWL:IfcTextStyleFontModel rdfs:subClassOf OWL:IfcPreDefinedItem,
+        OWL:IfcTextFontSelect ;
+    owl:equivalentClass OWL:IfcPreDefinedTextFont .
+
+aima:HE_P rdfs:subClassOf moon:MComponent .
+
+aima:IfcCoilType_HYDRONIC rdfs:subClassOf OWL:IfcCoilType .
+
+aima:IfcFlowInstrumentType_PRESSUREGAUGE rdfs:subClassOf OWL:IfcFlowInstrumentType .
+
+aima:IfcPipeFittingType_JUNCTION rdfs:subClassOf OWL:IfcPipeFittingType .
+
+aima:IfcPipeSegmentType_USERDEFINED rdfs:subClassOf OWL:IfcPipeSegmentType .
+
+aima:IfcPumpType_CIRCULATOR rdfs:subClassOf OWL:IfcPumpType .
+
+aima:IfcRelDefinesByType_C_H rdfs:subClassOf OWL:IfcRelDefinesByType .
+
+aima:IfcRelDefinesByType_FI_P rdfs:subClassOf OWL:IfcRelDefinesByType .
+
+aima:IfcRelDefinesByType_PF_J rdfs:subClassOf OWL:IfcRelDefinesByType .
+
+aima:IfcRelDefinesByType_PS_U rdfs:subClassOf OWL:IfcRelDefinesByType .
+
+aima:IfcRelDefinesByType_P_C rdfs:subClassOf OWL:IfcRelDefinesByType .
+
+aima:IfcRelDefinesByType_V_C rdfs:subClassOf OWL:IfcRelDefinesByType .
+
+aima:IfcRelDefinesByType_V_M rdfs:subClassOf OWL:IfcRelDefinesByType .
+
+aima:IfcValveType_CHECK rdfs:subClassOf OWL:IfcValveType .
+
+aima:IfcValveType_MIXING rdfs:subClassOf OWL:IfcValveType .
+
+aima:V_I rdfs:subClassOf moon:MComponent .
+
+<https://w3id.org/aix/AixLib.Fluid.Actuators.Valves.ThreeWayLinear> rdfs:subClassOf moon:MComponent ;
+    owl:equivalentClass aima:V_M .
+
+<https://w3id.org/aix/AixLib.Fluid.FixedResistances.CheckValve> rdfs:subClassOf moon:MComponent ;
+    owl:equivalentClass aima:V_C .
+
+<https://w3id.org/aix/AixLib.Fluid.Movers.FlowControlled_m_flow> rdfs:subClassOf moon:MComponent ;
+    owl:equivalentClass aima:P_C .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1013> a OWL:IfcPort,
+        aima:IfcDistributionPort_3,
+        moon:MConnectorComponent ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_808> ;
+    moon:identifier "port_3"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1025> a OWL:IfcPort,
+        aima:IfcDistributionPort_b,
+        moon:MConnectorComponent ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_942> ;
+    moon:identifier "port_b"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1030> a OWL:IfcPort,
+        aima:IfcDistributionPort_b,
+        moon:MConnectorComponent ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1234> ;
+    moon:identifier "port_b"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1053> a OWL:IfcPort,
+        aima:IfcDistributionPort_b ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_609> ;
+    moon:identifier "port_b"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1058> a OWL:IfcPort,
+        moon:MConnectorComponent ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_921> ;
+    moon:identifier "new port for edge with replacement"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1064> a OWL:IfcPort ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_909> .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1070> a OWL:IfcPort,
+        moon:MConnectorComponent ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1144> ;
+    moon:identifier "new port for edge with replacement"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1074> a OWL:IfcPort,
+        aima:IfcDistributionPort_a,
+        moon:MConnectorComponent ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1177> ;
+    moon:identifier "port_a"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1082> a OWL:IfcPort,
+        moon:MConnectorComponent ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_870> ;
+    moon:identifier "new port for edge with replacement"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1095> a OWL:IfcPort,
+        aima:IfcDistributionPort_b,
+        moon:MConnectorComponent ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1119> ;
+    moon:identifier "port_b"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1101> a OWL:IfcPort ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_594> .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1109> a OWL:IfcPort,
+        aima:IfcDistributionPort_a ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1061> ;
+    moon:identifier "port_a"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1119> a OWL:IfcPort,
+        aima:IfcDistributionPort_1,
+        moon:MConnectorComponent ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1095> ;
+    moon:identifier "port_1"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1144> a OWL:IfcPort,
+        aima:IfcDistributionPort_1,
+        moon:MConnectorComponent ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1070> ;
+    moon:identifier "port_1"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1177> a OWL:IfcPort,
+        aima:IfcDistributionPort_1,
+        moon:MConnectorComponent ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1074> ;
+    moon:identifier "port_1"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1194> a OWL:IfcPort,
+        moon:MConnectorComponent ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_221> ;
+    moon:identifier "new port for edge with replacement"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1199> a OWL:IfcPort,
+        aima:IfcDistributionPort_a ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1071> ;
+    moon:identifier "port_a"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1233> a OWL:IfcPort ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1244> .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1234> a OWL:IfcPort,
+        aima:IfcDistributionPort_b,
+        moon:MConnectorComponent ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1030> ;
+    moon:identifier "port_b"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1244> a OWL:IfcPort ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1233> .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1346> a OWL:IfcPort,
+        aima:IfcDistributionPort_3,
+        moon:MConnectorComponent ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_910> ;
+    moon:identifier "port_3"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_135> a OWL:IfcPort,
+        moon:MConnectorComponent ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_140> ;
+    moon:identifier "new port for edge with replacement"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_140> a OWL:IfcPort,
+        aima:IfcDistributionPort_1,
+        moon:MConnectorComponent ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_135> ;
+    moon:identifier "port_1"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_147> a OWL:IfcPort,
+        aima:IfcDistributionPort_b,
+        moon:MConnectorComponent ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_951> ;
+    moon:identifier "port_b"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_221> a OWL:IfcPort,
+        aima:IfcDistributionPort_b,
+        moon:MConnectorComponent ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1194> ;
+    moon:identifier "port_b"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_244> a OWL:IfcPort,
+        aima:IfcDistributionPort_3 ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_245> ;
+    moon:identifier "port_3"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_260> a OWL:IfcPort ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_961> .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_281> a OWL:IfcPort,
+        aima:IfcDistributionPort_2,
+        moon:MConnectorComponent ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_332> ;
+    moon:identifier "port_2"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_304> a OWL:IfcPort,
+        aima:IfcDistributionPort_a,
+        moon:MConnectorComponent ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_454> ;
+    moon:identifier "port_a"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_310> a OWL:IfcPort,
+        aima:IfcDistributionPort_a ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_41> ;
+    moon:identifier "port_a"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_325> a OWL:IfcPort,
+        aima:IfcDistributionPort_2 ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_320> ;
+    moon:identifier "port_2"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_332> a OWL:IfcPort,
+        aima:IfcDistributionPort_a,
+        moon:MConnectorComponent ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_281> ;
+    moon:identifier "port_a"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_365> a OWL:IfcPort ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_759> .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_368> a OWL:IfcPort,
+        aima:IfcDistributionPort_2,
+        moon:MConnectorComponent ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_523> ;
+    moon:identifier "port_2"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_424> a OWL:IfcPort,
+        aima:IfcDistributionPort_a,
+        moon:MConnectorComponent ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_426> ;
+    moon:identifier "port_a"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_426> a OWL:IfcPort,
+        aima:IfcDistributionPort_a,
+        moon:MConnectorComponent ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_424> ;
+    moon:identifier "port_a"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_432> a OWL:IfcPort,
+        aima:IfcDistributionPort_a,
+        moon:MConnectorComponent ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_680> ;
+    moon:identifier "port_a"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_446> a OWL:IfcPort,
+        aima:IfcDistributionPort_1,
+        moon:MConnectorComponent ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_607> ;
+    moon:identifier "port_1"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_454> a OWL:IfcPort,
+        aima:IfcDistributionPort_b,
+        moon:MConnectorComponent ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_304> ;
+    moon:identifier "port_b"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_457> a OWL:IfcPort ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_459> .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_459> a OWL:IfcPort ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_457> .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_467> a OWL:IfcPort,
+        aima:IfcDistributionPort_a ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_778> ;
+    moon:identifier "port_a"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_469> a OWL:IfcPort,
+        aima:IfcDistributionPort_b,
+        moon:MConnectorComponent ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_902> ;
+    moon:identifier "port_b"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_492> a OWL:IfcPort,
+        aima:IfcDistributionPort_b,
+        moon:MConnectorComponent ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_59> ;
+    moon:identifier "port_b"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_498> a OWL:IfcPort,
+        aima:IfcDistributionPort_a,
+        moon:MConnectorComponent ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_794> ;
+    moon:identifier "port_a"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_499> a OWL:IfcPort,
+        aima:IfcDistributionPort_b,
+        moon:MConnectorComponent ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_781> ;
+    moon:identifier "port_b"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_514> a OWL:IfcPort ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_745> .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_515> a OWL:IfcPort,
+        moon:MConnectorComponent ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_747> ;
+    moon:identifier "new port for edge with replacement"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_521> a OWL:IfcPort,
+        aima:IfcDistributionPort_a,
+        moon:MConnectorComponent ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_874> ;
+    moon:identifier "port_a"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_523> a OWL:IfcPort,
+        aima:IfcDistributionPort_b,
+        moon:MConnectorComponent ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_368> ;
+    moon:identifier "port_b"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_539> a OWL:IfcPort,
+        aima:IfcDistributionPort_b ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_611> ;
+    moon:identifier "port_b"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_546> a OWL:IfcPort ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_841> .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_551> a OWL:IfcPort,
+        aima:IfcDistributionPort_2,
+        moon:MConnectorComponent ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_655> ;
+    moon:identifier "port_2"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_562> a OWL:IfcPort,
+        aima:IfcDistributionPort_a,
+        moon:MConnectorComponent ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_832> ;
+    moon:identifier "port_a"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_573> a OWL:IfcPort,
+        moon:MConnectorComponent ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_880> ;
+    moon:identifier "new port for edge with replacement"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_577> a OWL:IfcPort,
+        aima:IfcDistributionPort_a,
+        moon:MConnectorComponent ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_835> ;
+    moon:identifier "port_a"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_578> a OWL:IfcPort,
+        aima:IfcDistributionPort_b,
+        moon:MConnectorComponent ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_646> ;
+    moon:identifier "port_b"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_581> a OWL:IfcPort,
+        aima:IfcDistributionPort_a,
+        moon:MConnectorComponent ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_583> ;
+    moon:identifier "port_a"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_583> a OWL:IfcPort,
+        aima:IfcDistributionPort_a,
+        moon:MConnectorComponent ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_581> ;
+    moon:identifier "port_a"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_59> a OWL:IfcPort,
+        moon:MConnectorComponent ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_492> ;
+    moon:identifier "new port for edge with replacement"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_594> a OWL:IfcPort ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1101> .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_606> a OWL:IfcPort ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_614> .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_607> a OWL:IfcPort,
+        moon:MConnectorComponent ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_446> ;
+    moon:identifier "new port for edge with replacement"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_614> a OWL:IfcPort ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_606> .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_620> a OWL:IfcPort,
+        aima:IfcDistributionPort_2,
+        moon:MConnectorComponent ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_667> ;
+    moon:identifier "port_2"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_633> a OWL:IfcPort,
+        aima:IfcDistributionPort_a,
+        moon:MConnectorComponent ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_955> ;
+    moon:identifier "port_a"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_643> a OWL:IfcPort,
+        aima:IfcDistributionPort_1 ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_610> ;
+    moon:identifier "port_1"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_645> a OWL:IfcPort,
+        aima:IfcDistributionPort_2,
+        moon:MConnectorComponent ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_724> ;
+    moon:identifier "port_2"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_646> a OWL:IfcPort,
+        aima:IfcDistributionPort_3,
+        moon:MConnectorComponent ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_578> ;
+    moon:identifier "port_3"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_655> a OWL:IfcPort,
+        aima:IfcDistributionPort_a,
+        moon:MConnectorComponent ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_551> ;
+    moon:identifier "port_a"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_667> a OWL:IfcPort,
+        aima:IfcDistributionPort_b,
+        moon:MConnectorComponent ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_620> ;
+    moon:identifier "port_b"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_680> a OWL:IfcPort,
+        aima:IfcDistributionPort_1,
+        moon:MConnectorComponent ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_432> ;
+    moon:identifier "port_1"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_682> a OWL:IfcPort,
+        aima:IfcDistributionPort_3,
+        moon:MConnectorComponent ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_731> ;
+    moon:identifier "port_3"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_709> a OWL:IfcPort,
+        moon:MConnectorComponent ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_785> ;
+    moon:identifier "new port for edge with replacement"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_724> a OWL:IfcPort,
+        aima:IfcDistributionPort_b,
+        moon:MConnectorComponent ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_645> ;
+    moon:identifier "port_b"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_731> a OWL:IfcPort,
+        aima:IfcDistributionPort_a,
+        moon:MConnectorComponent ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_682> ;
+    moon:identifier "port_a"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_745> a OWL:IfcPort ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_514> .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_747> a OWL:IfcPort,
+        aima:IfcDistributionPort_2,
+        moon:MConnectorComponent ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_515> ;
+    moon:identifier "port_2"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_759> a OWL:IfcPort ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_365> .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_763> a OWL:IfcPort,
+        aima:IfcDistributionPort_2 ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_282> ;
+    moon:identifier "port_2"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_781> a OWL:IfcPort,
+        aima:IfcDistributionPort_b,
+        moon:MConnectorComponent ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_499> ;
+    moon:identifier "port_b"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_785> a OWL:IfcPort,
+        aima:IfcDistributionPort_a,
+        moon:MConnectorComponent ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_709> ;
+    moon:identifier "port_a"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_794> a OWL:IfcPort,
+        aima:IfcDistributionPort_3,
+        moon:MConnectorComponent ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_498> ;
+    moon:identifier "port_3"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_807> a OWL:IfcPort ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_827> .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_808> a OWL:IfcPort,
+        moon:MConnectorComponent ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1013> ;
+    moon:identifier "new port for edge with replacement"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_827> a OWL:IfcPort ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_807> .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_832> a OWL:IfcPort,
+        aima:IfcDistributionPort_3,
+        moon:MConnectorComponent ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_562> ;
+    moon:identifier "port_3"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_835> a OWL:IfcPort,
+        aima:IfcDistributionPort_b,
+        moon:MConnectorComponent ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_577> ;
+    moon:identifier "port_b"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_841> a OWL:IfcPort ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_546> .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_870> a OWL:IfcPort,
+        aima:IfcDistributionPort_a,
+        moon:MConnectorComponent ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1082> ;
+    moon:identifier "port_a"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_874> a OWL:IfcPort,
+        moon:MConnectorComponent ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_521> ;
+    moon:identifier "new port for edge with replacement"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_880> a OWL:IfcPort,
+        aima:IfcDistributionPort_1,
+        moon:MConnectorComponent ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_573> ;
+    moon:identifier "port_1"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_885> a OWL:IfcPort ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1036> .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_902> a OWL:IfcPort,
+        moon:MConnectorComponent ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_469> ;
+    moon:identifier "new port for edge with replacement"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_909> a OWL:IfcPort ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1064> .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_910> a OWL:IfcPort,
+        moon:MConnectorComponent ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1346> ;
+    moon:identifier "new port for edge with replacement"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_921> a OWL:IfcPort,
+        aima:IfcDistributionPort_b,
+        moon:MConnectorComponent ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1058> ;
+    moon:identifier "port_b"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_942> a OWL:IfcPort,
+        aima:IfcDistributionPort_3,
+        moon:MConnectorComponent ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_1025> ;
+    moon:identifier "port_3"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_951> a OWL:IfcPort,
+        aima:IfcDistributionPort_b,
+        moon:MConnectorComponent ;
+    moon:connectedTo <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_147> ;
+    moon:identifier "port_b"^^xsd:string .
+
+<http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_955> a OWL:IfcPort,
+        aima:IfcDistributionPort_b,
+        moon:MConnectorComponent ;
+    aima:connectedFrom <http://linkedbuildingdata.net/ifc/resources20240327_075902/IfcDistributionPort_633> ;
+    moon:identifier "port_b"^^xsd:string .
+
+OWL:IfcBSplineCurve owl:equivalentClass OWL:IfcBSplineCurveWithKnots .
+
+OWL:IfcBSplineSurface owl:equivalentClass OWL:IfcBSplineSurfaceWithKnots .
+
+aima:IfcPipeSegmentType_RIGIDSEGMENT rdfs:subClassOf OWL:IfcPipeSegmentType .
+
+aima:IfcRelDefinesByType_PF_C rdfs:subClassOf OWL:IfcRelDefinesByType .
+
+aima:IfcRelDefinesByType_PS_R rdfs:subClassOf OWL:IfcRelDefinesByType .
+
+aima:IfcValveType_ISOLATING rdfs:subClassOf OWL:IfcValveType .
+
+aima:P_C rdfs:subClassOf moon:MComponent .
+
+aima:V_C rdfs:subClassOf moon:MComponent .
+
+aima:V_M rdfs:subClassOf moon:MComponent .
+
+<https://w3id.org/aix/AixLib.Fluid.FixedResistances.Junction> rdfs:subClassOf moon:MComponent ;
+    owl:equivalentClass aima:PF_J .
+
+<https://w3id.org/aix/AixLib.Fluid.HeatExchangers.HeaterCooler_u> rdfs:subClassOf moon:MComponent ;
+    owl:equivalentClass aima:C_H .
+
+OWL:IfcPreDefinedItem rdfs:subClassOf <https://w3id.org/express#SELECT> .
+
+aima:C_H rdfs:subClassOf moon:MComponent .
+
+aima:IfcPipeFittingType_CONNECTOR rdfs:subClassOf OWL:IfcPipeFittingType .
+
+aima:PF_J rdfs:subClassOf moon:MComponent .
+
+aima:IfcPipeFittingType_BEND rdfs:subClassOf OWL:IfcPipeFittingType .
+
+OWL:IfcRepresentationContext rdfs:subClassOf OWL:IfcCoordinateReferenceSystemSelect ;
+    owl:equivalentClass OWL:IfcGeometricRepresentationContext .
+
+aima:PF_C rdfs:subClassOf <https://w3id.org/aix/AixLib.Fluid.FixedResistances.PressureDrop> .
+
+<https://w3id.org/aix/AixLib.Fluid.Sensors.Temperature> rdfs:subClassOf moon:MComponent ;
+    owl:equivalentClass aima:FI_P .
+
+aima:FI_P rdfs:subClassOf moon:MComponent .
+
+OWL:IfcResource owl:equivalentClass OWL:IfcConstructionResource .
+
+OWL:IfcTypeResource owl:equivalentClass OWL:IfcConstructionResourceType .
+
+aima:PS_R rdfs:subClassOf <https://w3id.org/aix/AixLib.Fluid.FixedResistances.PressureDrop> .
+
+aima:PS_U rdfs:subClassOf <https://w3id.org/aix/AixLib.Fluid.FixedResistances.PressureDrop> .
+
+<https://w3id.org/aix/AixLib.Fluid.FixedResistances.PressureDrop> rdfs:subClassOf moon:MComponent .
+
+moon:MComponent rdfs:subClassOf OWL:IfcObject .
+
+OWL:IfcPort owl:equivalentClass OWL:IfcDistributionPort .
+

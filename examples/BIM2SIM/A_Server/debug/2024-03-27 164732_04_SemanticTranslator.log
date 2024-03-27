@@ -1,0 +1,28 @@
+2024-03-27 16:47:32 executed script 04_SemanticTranslator
+2024-03-27 16:47:32 executed on machine TROLL918
+2024-03-27 16:47:32 working directory: C:\_DATEN\WORKSPACES\PyCharm\MO-x-IFC\04_SemTran
+2024-03-27 16:47:32 read from TTL-Files, generate joint OWL-Files...
+2024-03-27 16:47:32 parsing file with rdflib: C:/_DATEN/WORKSPACES/IntelliJ/MO-x-IFC/examples/BIM2SIM/A_Server/Server_ifc.ttl
+2024-03-27 16:47:33 parsing file with rdflib: IFC4_ADD2_TC1_C20.ttl
+2024-03-27 16:47:35 parsing file with rdflib: A26.ttl
+2024-03-27 16:47:36 writing graph to owl format: C:/_DATEN/WORKSPACES/IntelliJ/MO-x-IFC/examples/BIM2SIM/A_Server/debug/Server_combined.owl
+2024-03-27 16:47:36 loading joint owl file: C:/_DATEN/WORKSPACES/IntelliJ/MO-x-IFC/examples/BIM2SIM/A_Server/debug/Server_combined.owl
+2024-03-27 16:47:37 synchronizing reasoner
+2024-03-27 16:48:53 finished synchronizing reasoner
+2024-03-27 16:48:53 saving to 2 files file: C:/_DATEN/WORKSPACES/IntelliJ/MO-x-IFC/examples/BIM2SIM/A_Server/Server_classes_mo.owl/ttl
+2024-03-27 16:48:53 saving owl file first: C:/_DATEN/WORKSPACES/IntelliJ/MO-x-IFC/examples/BIM2SIM/A_Server/debug/Server_classes_mo.owl
+2024-03-27 16:48:53 parsing file with rdflib
+2024-03-27 16:48:53 writing graph to ttl format: C:/_DATEN/WORKSPACES/IntelliJ/MO-x-IFC/examples/BIM2SIM/A_Server/debug/Server_classes_mo.ttl
+2024-03-27 16:48:53 reducing graph to interesting triples and enhancing DataTypeProperties
+2024-03-27 16:48:53 generating triples for header
+2024-03-27 16:48:53 generating triples for components of model
+2024-03-27 16:48:53 generating triples for position of components
+2024-03-27 16:48:53 generating triples stating the Modelica class (and some additional classes) of all components
+2024-03-27 16:48:55 insertion count: 40
+2024-03-27 16:48:55 generating triples for all ports: description
+2024-03-27 16:48:55 generating triples for connected ports
+2024-03-27 16:48:55 saving to 2 files: C:/_DATEN/WORKSPACES/IntelliJ/MO-x-IFC/examples/BIM2SIM/A_Server/Server_mo.owl/ttl
+2024-03-27 16:48:55 saving owl file first: C:/_DATEN/WORKSPACES/IntelliJ/MO-x-IFC/examples/BIM2SIM/A_Server/Server_mo.owl
+2024-03-27 16:48:55 parsing file with rdflib
+2024-03-27 16:48:55 writing graph to ttl format: C:/_DATEN/WORKSPACES/IntelliJ/MO-x-IFC/examples/BIM2SIM/A_Server/Server_mo.ttl
+2024-03-27 16:48:55 finished succesfully
