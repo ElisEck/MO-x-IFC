@@ -11,7 +11,7 @@ from PythonLib.IFC.Create import attach_2Dgeometry_to_ifcfile
 from PythonLib.IFC.HelpersPlot import logging_config
 from PythonLib.IFC.IfcNetwork import IfcNetwork
 
-path = "C:/_DATEN/WORKSPACES/IntelliJ/MO-x-IFC/examples/BIM2SIM/A_Server/debug/"
+path = "../examples/BIM2SIM/A_Server/debug/"
 logging_config(path, scriptname = os.path.basename(__file__)[:-3])
 
 dict_systems = {

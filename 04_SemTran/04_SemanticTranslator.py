@@ -13,7 +13,7 @@ from PythonLib.SemanticHelper import generate_combined_graph_file, save_ontology
 from PythonLib.TranslationHelper import insert_triples_port_description, insert_triples_port_connections, insert_triples_components, insert_triples_components_placement, insert_triples_header, insert_triples_components_class_assignment, get_sparql_header
 
 #logging
-path = "C:/_DATEN/WORKSPACES/IntelliJ/MO-x-IFC/examples/BIM2SIM/A_Server/"
+path = "../examples/BIM2SIM/A_Server/"
 logging_config(path + "debug/", scriptname = os.path.basename(__file__)[:-3])
 id = "Server"
 

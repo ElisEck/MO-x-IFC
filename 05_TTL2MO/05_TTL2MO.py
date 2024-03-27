@@ -14,7 +14,7 @@ from modelica_builder.model import Model
 from PythonLib.IFC.HelpersPlot import logging_config
 from PythonLib.ModelicaHelper import add_model_to_package, add_connection_2, insert_component_at_location_2
 
-path = "C:/_DATEN/WORKSPACES/IntelliJ/MO-x-IFC/examples/BIM2SIM/A_Server/"
+path = "../examples/BIM2SIM/A_Server/"
 logging_config(path + "debug/", scriptname = os.path.basename(__file__)[:-3])
 
 filename_original = "Server"

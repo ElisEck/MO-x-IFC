@@ -13,7 +13,7 @@ from PythonLib.IFC.IfcNetwork import IfcNetwork
 from PythonLib.IFC.Change import *
 
 #logging
-path = "c:/_DATEN/WORKSPACES/IntelliJ/MO-x-IFC/examples/SIM2BIM/B_HIL/"
+path = "../examples/SIM2BIM/D_HIL/"
 logging_config(path + "debug/", scriptname = os.path.basename(__file__)[:-3])
 
 shortname = 'hil'

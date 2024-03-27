@@ -10,7 +10,7 @@ from rdflib import Namespace, Graph
 from PythonLib.HelperProceduralTranslation import generate_IfcRelConnectsPorts, generate_IfcRelNests_for_ports, generate_instance_objects, add_placement_properties_to_objects, bind_ifc_prefixes, add_metadata_to_graph, add_modelica_class_and_stringComment_as_property_to_objects
 from PythonLib.IFC.HelpersPlot import logging_config
 
-path = "c:/_DATEN/WORKSPACES/IntelliJ/MO-x-IFC/examples/SIM2BIM/B_HIL/"
+path = "../examples/SIM2BIM/D_HIL/"
 logging_config(path + "debug/", scriptname = os.path.basename(__file__)[:-3])
 
 shortname = 'hil'

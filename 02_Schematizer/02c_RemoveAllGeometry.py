@@ -11,7 +11,7 @@ from PythonLib.IFC.Remove import set_of_unreferenced_instances, delete_all_IfcSh
 import os
 
 #logging
-path = "C:/_DATEN/WORKSPACES/IntelliJ/MO-x-IFC/examples/BIM2SIM/A_Server/"
+path = "../examples/BIM2SIM/A_Server/"
 logging_config(path + "debug/", scriptname = os.path.basename(__file__)[:-3])
 
 id = "Server"
