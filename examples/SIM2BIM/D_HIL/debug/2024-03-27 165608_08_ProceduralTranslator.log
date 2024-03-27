@@ -1,0 +1,103 @@
+2024-03-27 16:56:08 executed script 08_ProceduralTranslator
+2024-03-27 16:56:08 executed on machine TROLL918
+2024-03-27 16:56:08 working directory: C:\_DATEN\WORKSPACES\PyCharm\MO-x-IFC\08_ProTran
+2024-03-27 16:56:08 parsing (enhanced) instance model graph...
+2024-03-27 16:56:08 generating class assignments...
+2024-03-27 16:56:08 searching for IfcPipeSegment_USERDEFINED and libeas:LibEAS.Sensors.PressureDrop_Display
+2024-03-27 16:56:10 searching for IfcPipeSegment_USERDEFINED and aix:AixLib.Fluid.BaseClasses.PartialResistance
+2024-03-27 16:56:10 searching for IfcPipeSegment_USERDEFINED and aix:AixLib.Fluid.FixedResistances.LosslessPipe
+2024-03-27 16:56:10 searching for IfcPipeFitting_JUNCTION and aix:AixLib.Fluid.FixedResistances.Junction
+2024-03-27 16:56:10 searching for IfcPipeFitting_JUNCTION and aix:AixLib.Fluid.BaseClasses.PartialThreeWayResistance
+2024-03-27 16:56:10 searching for IfcPipeFitting_JUNCTION and libeas:LibEAS.Sensors.Junction_Display
+2024-03-27 16:56:10 searching for IfcValve_CHECK and aix:AixLib.Fluid.FixedResistances.CheckValve
+2024-03-27 16:56:10 searching for IfcValve_ISOLATING and aix:AixLib.Fluid.Actuators.Valves.TwoWayLinear
+2024-03-27 16:56:10 searching for IfcValve_MIXING and aix:AixLib.Fluid.Actuators.Valves.ThreeWayLinear
+2024-03-27 16:56:10 searching for IfcHeatExchanger_PLATE and aix:AixLib.Fluid.HeatExchangers.ConstantEffectiveness
+2024-03-27 16:56:10 searching for IfcHeatExchanger_USERDEFINED and aix:AixLib.Fluid.HeatExchangers.SensibleCooler_T
+2024-03-27 16:56:11 searching for IfcHeatExchanger_USERDEFINED and libeas:LibEAS.HeatingCircuits.CharacteristicCurve
+2024-03-27 16:56:11 searching for IfcBoiler_WATER and aix:AixLib.Fluid.BoilerCHP.BaseClasses.PartialHeatGenerator
+2024-03-27 16:56:11 searching for IfcBoiler_WATER and libeas:LibEAS.BoilerCHP.BoilerlWithoutInternalControl
+2024-03-27 16:56:11 searching for IfcSensor_FLOWSENSOR and aix:AixLib.Fluid.Sensors.EnthalpyFlowRate
+2024-03-27 16:56:11 searching for IfcSensor_HEATSENSOR and libeas:LibEAS.Sensors.WMZ
+2024-03-27 16:56:11 searching for IfcUnitaryEquipment_SPLITSYSTEM and aix:AixLib.Fluid.HeatPumps.HeatPump
+2024-03-27 16:56:11 searching for IfcUnitaryEquipment_SPLITSYSTEM and aix:AixLib.Fluid.BaseClasses.PartialReversibleVapourCompressionMachine
+2024-03-27 16:56:11 searching for IfcSensor_TEMPERATURESENSOR and libeas:LibEAS.Sensors.TemperatureTwoPort_Display
+2024-03-27 16:56:12 searching for IfcSensor_TEMPERATURESENSOR and aix:AixLib.Fluid.Sensors.TemperatureTwoPort
+2024-03-27 16:56:12 searching for IfcPump_CIRCULATOR and aix:AixLib.Fluid.Movers.SpeedControlled_y
+2024-03-27 16:56:13 searching for IfcPump_CIRCULATOR and aix:AixLib.Fluid.Movers.FlowControlled_m_flow
+2024-03-27 16:56:13 searching for IfcTank_EXPANSION and aix:AixLib.Fluid.Sources.Boundary_pT
+2024-03-27 16:56:13 searching for IfcFlowInstrument_PRESSUREGAUGE and aix:AixLib.Fluid.Sensors.RelativePressure
+2024-03-27 16:56:13 searching for IfcTank_STORAGE and libeas:LibEAS.Storage.StratifiedEnhanced
+2024-03-27 16:56:13 searching for IfcTank_STORAGE and aix:AixLib.Fluid.Storage.Stratified
+2024-03-27 16:56:13 searching for IfcTank_STORAGE and mbl:Buildings.Fluid.Storage.Stratified
+2024-03-27 16:56:13 Modelica component not translated to IFC: dp_nom	 it is of class: http://www.eas.iis.fraunhofer.de/moont#MParameterComponent
+2024-03-27 16:56:13 Modelica component not translated to IFC: load_KK	 it is of class: http://www.eas.iis.fraunhofer.de/moont#MComponent
+2024-03-27 16:56:13 Modelica component not translated to IFC: load_KK	 it is of class: http://www.eas.iis.fraunhofer.de/aix#AixLib.Fluid.HeatExchangers.HeaterCooler_u
+2024-03-27 16:56:13 Modelica component not translated to IFC: load_VH	 it is of class: http://www.eas.iis.fraunhofer.de/moont#MComponent
+2024-03-27 16:56:13 Modelica component not translated to IFC: load_VH	 it is of class: http://www.eas.iis.fraunhofer.de/aix#AixLib.Fluid.HeatExchangers.HeaterCooler_u
+2024-03-27 16:56:13 Modelica component not translated to IFC: load_VK	 it is of class: http://www.eas.iis.fraunhofer.de/moont#MComponent
+2024-03-27 16:56:13 Modelica component not translated to IFC: load_VK	 it is of class: http://www.eas.iis.fraunhofer.de/aix#AixLib.Fluid.HeatExchangers.HeaterCooler_u
+2024-03-27 16:56:13 Modelica component not translated to IFC: load_VT	 it is of class: http://www.eas.iis.fraunhofer.de/moont#MComponent
+2024-03-27 16:56:13 Modelica component not translated to IFC: load_VT	 it is of class: http://www.eas.iis.fraunhofer.de/aix#AixLib.Fluid.HeatExchangers.HeaterCooler_u
+2024-03-27 16:56:13 Modelica component not translated to IFC: mp_nom	 it is of class: http://www.eas.iis.fraunhofer.de/moont#MParameterComponent
+2024-03-27 16:56:13 Modelica component not translated to IFC: mp_nom_KK	 it is of class: http://www.eas.iis.fraunhofer.de/moont#MParameterComponent
+2024-03-27 16:56:13 Modelica component not translated to IFC: re_cv_VH	 it is of class: http://www.eas.iis.fraunhofer.de/moont#MComponent
+2024-03-27 16:56:13 Modelica component not translated to IFC: re_cv_VH	 it is of class: http://www.eas.iis.fraunhofer.de/msl#Modelica.Blocks.Sources.RealExpression
+2024-03-27 16:56:13 Modelica component not translated to IFC: re_cv_VK	 it is of class: http://www.eas.iis.fraunhofer.de/moont#MComponent
+2024-03-27 16:56:13 Modelica component not translated to IFC: re_cv_VK	 it is of class: http://www.eas.iis.fraunhofer.de/msl#Modelica.Blocks.Sources.RealExpression
+2024-03-27 16:56:13 Modelica component not translated to IFC: re_cv_VT	 it is of class: http://www.eas.iis.fraunhofer.de/moont#MComponent
+2024-03-27 16:56:13 Modelica component not translated to IFC: re_cv_VT	 it is of class: http://www.eas.iis.fraunhofer.de/msl#Modelica.Blocks.Sources.RealExpression
+2024-03-27 16:56:13 Modelica component not translated to IFC: re_cv_VT1	 it is of class: http://www.eas.iis.fraunhofer.de/moont#MComponent
+2024-03-27 16:56:13 Modelica component not translated to IFC: re_cv_VT1	 it is of class: http://www.eas.iis.fraunhofer.de/msl#Modelica.Blocks.Sources.RealExpression
+2024-03-27 16:56:13 Modelica component not translated to IFC: re_pum_EH	 it is of class: http://www.eas.iis.fraunhofer.de/moont#MComponent
+2024-03-27 16:56:13 Modelica component not translated to IFC: re_pum_EH	 it is of class: http://www.eas.iis.fraunhofer.de/msl#Modelica.Blocks.Sources.RealExpression
+2024-03-27 16:56:13 Modelica component not translated to IFC: re_pum_EH1	 it is of class: http://www.eas.iis.fraunhofer.de/moont#MComponent
+2024-03-27 16:56:13 Modelica component not translated to IFC: re_pum_EH1	 it is of class: http://www.eas.iis.fraunhofer.de/msl#Modelica.Blocks.Sources.RealExpression
+2024-03-27 16:56:13 Modelica component not translated to IFC: re_pum_EH2	 it is of class: http://www.eas.iis.fraunhofer.de/moont#MComponent
+2024-03-27 16:56:13 Modelica component not translated to IFC: re_pum_EH2	 it is of class: http://www.eas.iis.fraunhofer.de/msl#Modelica.Blocks.Sources.RealExpression
+2024-03-27 16:56:13 Modelica component not translated to IFC: re_pum_EK	 it is of class: http://www.eas.iis.fraunhofer.de/moont#MComponent
+2024-03-27 16:56:13 Modelica component not translated to IFC: re_pum_EK	 it is of class: http://www.eas.iis.fraunhofer.de/msl#Modelica.Blocks.Sources.RealExpression
+2024-03-27 16:56:13 Modelica component not translated to IFC: re_pum_VH1	 it is of class: http://www.eas.iis.fraunhofer.de/moont#MComponent
+2024-03-27 16:56:13 Modelica component not translated to IFC: re_pum_VH1	 it is of class: http://www.eas.iis.fraunhofer.de/msl#Modelica.Blocks.Sources.RealExpression
+2024-03-27 16:56:13 Modelica component not translated to IFC: re_pum_VK1	 it is of class: http://www.eas.iis.fraunhofer.de/moont#MComponent
+2024-03-27 16:56:13 Modelica component not translated to IFC: re_pum_VK1	 it is of class: http://www.eas.iis.fraunhofer.de/msl#Modelica.Blocks.Sources.RealExpression
+2024-03-27 16:56:13 Modelica component not translated to IFC: re_pum_VT1	 it is of class: http://www.eas.iis.fraunhofer.de/moont#MComponent
+2024-03-27 16:56:13 Modelica component not translated to IFC: re_pum_VT1	 it is of class: http://www.eas.iis.fraunhofer.de/msl#Modelica.Blocks.Sources.RealExpression
+2024-03-27 16:56:13 Modelica component not translated to IFC: re_pum_VT2	 it is of class: http://www.eas.iis.fraunhofer.de/moont#MComponent
+2024-03-27 16:56:13 Modelica component not translated to IFC: re_pum_VT2	 it is of class: http://www.eas.iis.fraunhofer.de/msl#Modelica.Blocks.Sources.RealExpression
+2024-03-27 16:56:13 Modelica component not translated to IFC: re_twv_EH	 it is of class: http://www.eas.iis.fraunhofer.de/moont#MComponent
+2024-03-27 16:56:13 Modelica component not translated to IFC: re_twv_EH	 it is of class: http://www.eas.iis.fraunhofer.de/msl#Modelica.Blocks.Sources.RealExpression
+2024-03-27 16:56:13 Modelica component not translated to IFC: re_twv_EK	 it is of class: http://www.eas.iis.fraunhofer.de/moont#MComponent
+2024-03-27 16:56:13 Modelica component not translated to IFC: re_twv_EK	 it is of class: http://www.eas.iis.fraunhofer.de/msl#Modelica.Blocks.Sources.RealExpression
+2024-03-27 16:56:13 Modelica component not translated to IFC: senp_EH_5	 it is of class: http://www.eas.iis.fraunhofer.de/moont#MComponent
+2024-03-27 16:56:13 Modelica component not translated to IFC: senp_EH_5	 it is of class: http://www.eas.iis.fraunhofer.de/aix#AixLib.Fluid.Sensors.Pressure
+2024-03-27 16:56:13 Modelica component not translated to IFC: senp_EK_5	 it is of class: http://www.eas.iis.fraunhofer.de/moont#MComponent
+2024-03-27 16:56:13 Modelica component not translated to IFC: senp_EK_5	 it is of class: http://www.eas.iis.fraunhofer.de/aix#AixLib.Fluid.Sensors.Pressure
+2024-03-27 16:56:13 Modelica component not translated to IFC: senp_VH_2	 it is of class: http://www.eas.iis.fraunhofer.de/moont#MComponent
+2024-03-27 16:56:13 Modelica component not translated to IFC: senp_VH_2	 it is of class: http://www.eas.iis.fraunhofer.de/aix#AixLib.Fluid.Sensors.Pressure
+2024-03-27 16:56:13 Modelica component not translated to IFC: senp_VK_2	 it is of class: http://www.eas.iis.fraunhofer.de/moont#MComponent
+2024-03-27 16:56:13 Modelica component not translated to IFC: senp_VK_2	 it is of class: http://www.eas.iis.fraunhofer.de/aix#AixLib.Fluid.Sensors.Pressure
+2024-03-27 16:56:13 Modelica component not translated to IFC: senp_VS_11	 it is of class: http://www.eas.iis.fraunhofer.de/moont#MComponent
+2024-03-27 16:56:13 Modelica component not translated to IFC: senp_VS_11	 it is of class: http://www.eas.iis.fraunhofer.de/aix#AixLib.Fluid.Sensors.Pressure
+2024-03-27 16:56:13 Modelica component not translated to IFC: senp_VS_14	 it is of class: http://www.eas.iis.fraunhofer.de/moont#MComponent
+2024-03-27 16:56:13 Modelica component not translated to IFC: senp_VS_14	 it is of class: http://www.eas.iis.fraunhofer.de/aix#AixLib.Fluid.Sensors.Pressure
+2024-03-27 16:56:13 Modelica component not translated to IFC: senp_VS_16	 it is of class: http://www.eas.iis.fraunhofer.de/moont#MComponent
+2024-03-27 16:56:13 Modelica component not translated to IFC: senp_VS_16	 it is of class: http://www.eas.iis.fraunhofer.de/aix#AixLib.Fluid.Sensors.Pressure
+2024-03-27 16:56:13 Modelica component not translated to IFC: senp_VS_17	 it is of class: http://www.eas.iis.fraunhofer.de/moont#MComponent
+2024-03-27 16:56:13 Modelica component not translated to IFC: senp_VS_17	 it is of class: http://www.eas.iis.fraunhofer.de/aix#AixLib.Fluid.Sensors.Pressure
+2024-03-27 16:56:13 Modelica component not translated to IFC: senp_VT_2	 it is of class: http://www.eas.iis.fraunhofer.de/moont#MComponent
+2024-03-27 16:56:13 Modelica component not translated to IFC: senp_VT_2	 it is of class: http://www.eas.iis.fraunhofer.de/aix#AixLib.Fluid.Sensors.Pressure
+2024-03-27 16:56:13 Modelica component not translated to IFC: tt_KK	 it is of class: http://www.eas.iis.fraunhofer.de/moont#MComponent
+2024-03-27 16:56:13 Modelica component not translated to IFC: tt_KK	 it is of class: http://www.eas.iis.fraunhofer.de/msl#Modelica.Blocks.Sources.TimeTable
+2024-03-27 16:56:13 Modelica component not translated to IFC: tt_VH	 it is of class: http://www.eas.iis.fraunhofer.de/moont#MComponent
+2024-03-27 16:56:13 Modelica component not translated to IFC: tt_VH	 it is of class: http://www.eas.iis.fraunhofer.de/msl#Modelica.Blocks.Sources.TimeTable
+2024-03-27 16:56:13 Modelica component not translated to IFC: tt_VK	 it is of class: http://www.eas.iis.fraunhofer.de/moont#MComponent
+2024-03-27 16:56:13 Modelica component not translated to IFC: tt_VK	 it is of class: http://www.eas.iis.fraunhofer.de/msl#Modelica.Blocks.Sources.TimeTable
+2024-03-27 16:56:13 Modelica component not translated to IFC: tt_VT	 it is of class: http://www.eas.iis.fraunhofer.de/moont#MComponent
+2024-03-27 16:56:13 Modelica component not translated to IFC: tt_VT	 it is of class: http://www.eas.iis.fraunhofer.de/msl#Modelica.Blocks.Sources.TimeTable
+2024-03-27 16:56:13 adding placement properties to objects...
+2024-03-27 16:56:31 generating port connections...
+2024-03-27 16:56:38 generating Nests Relations...
+2024-03-27 16:56:52 adding Modelica meta info and parameters as properties to objects...
+2024-03-27 16:58:48 writing file c:/_DATEN/WORKSPACES/IntelliJ/MO-x-IFC/examples/SIM2BIM/B_HIL/hil_ifc.ttl
+2024-03-27 16:58:49 finished succesfully

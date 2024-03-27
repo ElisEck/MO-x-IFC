@@ -34,7 +34,8 @@ public class ModelicaFileAntlrParserTest {
      * liest die Inhalte eines Ordners in eine interne ModelicaLibrary und schreibt diese anschließend als ttl wieder raus
      */
     public void convertModelicaLibraryToGraph(){
-        String outputBasePath = "C:\\_DATEN\\WORKSPACES\\IntelliJ\\mo-x-ifc\\src\\test\\java\\output\\";
+        String outputBasePath = "C:\\_DATEN\\WORKSPACES\\IntelliJ\\mo-x-ifc\\examples\\SIM2BIM\\";
+        //convertModelicaLibraryToGraph("hil", "HIL EAS", "c:/_DATEN/Modelica/__MSL4/HIL/", "HIL", outputBasePath);
         convertModelicaLibraryToGraph("ex", "LBDCG_example", "c:\\_DATEN\\WORKSPACES\\IntelliJ\\mo-x-ifc\\src\\test\\resources\\C_HeatPumpPlant\\LBDCG_example\\", "knowledge graph representing the Modelica LBDCG_example package","v1.0.1-1.0.0", outputBasePath);
         convertModelicaLibraryToGraph("libeas", "LibEAS", "c:\\_DATEN\\Modelica\\_Libraries_intern\\LibEAS\\", "Modelica LibEAS (v3.3.0) ontology", "v3.3.0-1.0.1", outputBasePath);
         convertModelicaLibraryToGraph("aix", "AixLib", "c:\\_DATEN\\Modelica\\_Libraries_extern\\AixLib 1.0.0\\", "Modelica AixLib (v1.0.0) ontology", "v1.0.0-1.0.0", outputBasePath);
