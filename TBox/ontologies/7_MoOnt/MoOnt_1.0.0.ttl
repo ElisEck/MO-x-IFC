@@ -1,0 +1,620 @@
+@prefix : <https://w3id.org/moont/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix moont: <https://w3id.org/moont/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@base <https://w3id.org/moont/> .
+
+<https://w3id.org/moont/> rdf:type owl:Ontology ;
+                           dcterms:abstract "This ontology is intended to provide information contained in Modelica simulation models for other interested stakeholders besides the simulation engineer. A usecase comprising bidirectional translation between IFC and Modelica is described in this paper: https://doi.org/10.24406/publica-fhg-412499." ;
+                           dcterms:created "2023-07-25" ,
+                                           "CC BY-SA 4.0" ;
+                           dcterms:creator <https://orcid.org/0000-0003-4396-5307> ,
+                                           <https://www.linkedin.com/in/elisabeth-eckst%C3%A4dt-18689115a/> ,
+                                           "Elisabeth Eckstädt" ;
+                           dcterms:description "This ontology defines the terms and relations in the Modelica Language."@en ;
+                           dcterms:issued "2021-06-09" ;
+                           dcterms:source <https://github.com/ElisEck/MO-x-IFC/tree/main/src/main/resources/ontologies/7_MoOnt> ,
+                                          "http://www.wolfram.com/wsm-rdf/" ;
+                           dcterms:title "Modelica Language Ontology"@en ;
+                           rdfs:label "Modelica Language Ontology" ;
+                           owl:backwardCompatibleWith "0.9.2" ;
+                           owl:priorVersion <https://eliseck.github.io/MO-x-IFC/ontology.ttl> ;
+                           owl:versionInfo "v1.0.0" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/abstract
+dcterms:abstract rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/created
+dcterms:created rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+dcterms:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+dcterms:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/issued
+dcterms:issued rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+dcterms:license rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/modified
+dcterms:modified rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/source
+dcterms:source rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+dcterms:title rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2002/07/owl#backwardCompatibleWith
+owl:backwardCompatibleWith rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://w3id.org/moont/ModelicaObjectProperty
+moont:ModelicaObjectProperty rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/moont/algorithm
+moont:algorithm rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf moont:ModelicaObjectProperty ;
+                rdfs:domain moont:MAbstractClass ;
+                rdfs:range moont:MAlgorithm .
+
+
+###  https://w3id.org/moont/baseClass
+moont:baseClass rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf moont:ModelicaObjectProperty ;
+                rdfs:domain [ rdf:type owl:Class ;
+                              owl:unionOf ( moont:MDerives
+                                            moont:MExtends
+                                          )
+                            ] ;
+                rdfs:range moont:MAbstractClass .
+
+
+###  https://w3id.org/moont/componentModification
+moont:componentModification rdf:type owl:ObjectProperty ;
+                            rdfs:subPropertyOf moont:ModelicaObjectProperty ;
+                            rdfs:domain moont:MComponent .
+
+
+###  https://w3id.org/moont/componentRedeclaration
+moont:componentRedeclaration rdf:type owl:ObjectProperty ;
+                             rdfs:subPropertyOf moont:componentModification .
+
+
+###  https://w3id.org/moont/componentValueChange
+moont:componentValueChange rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf moont:componentModification .
+
+
+###  https://w3id.org/moont/connectedTo
+moont:connectedTo rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf moont:ModelicaObjectProperty ;
+                  rdfs:domain moont:MConnectorComponent ;
+                  rdfs:range moont:MConnectorComponent .
+
+
+###  https://w3id.org/moont/connection
+moont:connection rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf moont:ModelicaObjectProperty ;
+                 rdfs:domain [ rdf:type owl:Class ;
+                               owl:unionOf ( moont:MBlock
+                                             moont:MClass
+                                             moont:MModel
+                                           )
+                             ] ;
+                 rdfs:range moont:MConnection ;
+                 rdfs:label "connection"@en .
+
+
+###  https://w3id.org/moont/containedIn
+moont:containedIn rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf moont:ModelicaObjectProperty ;
+                  rdfs:domain moont:MAbstractClass ;
+                  rdfs:range moont:MAbstractClass .
+
+
+###  https://w3id.org/moont/derives
+moont:derives rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf moont:ModelicaObjectProperty ;
+              rdfs:domain moont:MAbstractClass ;
+              rdfs:range moont:MDerives ;
+              rdfs:label "derives"@en .
+
+
+###  https://w3id.org/moont/equation
+moont:equation rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf moont:ModelicaObjectProperty ;
+               rdfs:domain moont:MAbstractClass ;
+               rdfs:label "equation"@en .
+
+
+###  https://w3id.org/moont/extends
+moont:extends rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf moont:ModelicaObjectProperty ;
+              rdfs:domain moont:MAbstractClass ;
+              rdfs:range moont:MExtends ;
+              rdfs:label "extends"@en .
+
+
+###  https://w3id.org/moont/external
+moont:external rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf moont:ModelicaObjectProperty ;
+               rdfs:domain moont:MFunction ;
+               rdfs:range moont:MExternal ;
+               rdfs:label "external"@en .
+
+
+###  https://w3id.org/moont/fromPort
+moont:fromPort rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf moont:ModelicaObjectProperty ;
+               rdfs:domain moont:MConnection ;
+               rdfs:range moont:MConnectorComponent ;
+               rdfs:label "fromPort"@en .
+
+
+###  https://w3id.org/moont/hasPart
+moont:hasPart rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf moont:ModelicaObjectProperty ;
+              rdfs:domain moont:MAbstractClass ;
+              rdfs:range moont:MComponent ;
+              rdfs:label "hasPart"@en .
+
+
+###  https://w3id.org/moont/initialAlgorithm
+moont:initialAlgorithm rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf moont:ModelicaObjectProperty ;
+                       rdfs:domain moont:MAbstractClass ;
+                       rdfs:range moont:MAlgorithm ;
+                       rdfs:label "initialAlgorithm"@en .
+
+
+###  https://w3id.org/moont/items
+moont:items rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf moont:ModelicaObjectProperty ;
+            rdfs:domain moont:MEnumerationType ;
+            rdfs:range moont:MEnumerationLiteral ;
+            rdfs:label "items"@en .
+
+
+###  https://w3id.org/moont/statement
+moont:statement rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf moont:ModelicaObjectProperty ;
+                rdfs:domain moont:MAlgorithm ;
+                rdfs:range moont:MAlgorithm ;
+                rdfs:label "statement"@en .
+
+
+###  https://w3id.org/moont/toPort
+moont:toPort rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf moont:ModelicaObjectProperty ;
+             rdfs:domain moont:MConnection ;
+             rdfs:range moont:MConnectorComponent ;
+             rdfs:label "toPort"@en .
+
+
+###  https://w3id.org/moont/type
+moont:type rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf moont:ModelicaObjectProperty ;
+           rdfs:domain moont:MComponent ;
+           rdfs:range moont:MAbstractClass ;
+           rdfs:label "type"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://w3id.org/moont/ModelicaDataProperty
+moont:ModelicaDataProperty rdf:type owl:DatatypeProperty .
+
+
+###  https://w3id.org/moont/arraySubscripts
+moont:arraySubscripts rdf:type owl:DatatypeProperty ;
+                      rdfs:subPropertyOf moont:ModelicaDataProperty ;
+                      rdfs:domain [ rdf:type owl:Class ;
+                                    owl:unionOf ( moont:MComponent
+                                                  moont:MDerives
+                                                )
+                                  ] ;
+                      rdfs:range xsd:string ;
+                      rdfs:label "arraySubscripts"@en .
+
+
+###  https://w3id.org/moont/causality
+moont:causality rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf moont:ModelicaDataProperty ;
+                rdfs:domain [ rdf:type owl:Class ;
+                              owl:unionOf ( moont:MComponent
+                                            moont:MDerives
+                                          )
+                            ] ;
+                rdfs:label "causality"@en .
+
+
+###  https://w3id.org/moont/comment
+moont:comment rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf moont:ModelicaDataProperty ;
+              rdfs:domain [ rdf:type owl:Class ;
+                            owl:unionOf ( moont:MAbstractClass
+                                          moont:MComponent
+                                        )
+                          ] ;
+              rdfs:range xsd:string ;
+              rdfs:label "comment"@en .
+
+
+###  https://w3id.org/moont/condition
+moont:condition rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf moont:ModelicaDataProperty ;
+                rdfs:domain moont:MComponent ;
+                rdfs:range xsd:string ;
+                rdfs:label "condition"@en .
+
+
+###  https://w3id.org/moont/description
+moont:description rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf moont:ModelicaDataProperty ;
+                  rdfs:domain [ rdf:type owl:Class ;
+                                owl:unionOf ( moont:MComponent
+                                              moont:MConnection
+                                              moont:MEnumerationLiteral
+                                              moont:MEquation
+                                            )
+                              ] ;
+                  rdfs:range xsd:string ;
+                  rdfs:label "description"@en .
+
+
+###  https://w3id.org/moont/dynamicReference
+moont:dynamicReference rdf:type owl:DatatypeProperty ;
+                       rdfs:subPropertyOf moont:ModelicaDataProperty ;
+                       rdfs:domain moont:MComponent ;
+                       rdfs:label "dynamicReference"@en .
+
+
+###  https://w3id.org/moont/fromPortArraySubscripts
+moont:fromPortArraySubscripts rdf:type owl:DatatypeProperty ;
+                              rdfs:subPropertyOf moont:ModelicaDataProperty ;
+                              rdfs:domain moont:MConnection ;
+                              rdfs:range xsd:string ;
+                              rdfs:label "fromPortArraySubscripts"@en .
+
+
+###  https://w3id.org/moont/functionCall
+moont:functionCall rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf moont:ModelicaDataProperty ;
+                   rdfs:domain moont:MExternal ;
+                   rdfs:range xsd:string ;
+                   rdfs:label "functionCall"@en .
+
+
+###  https://w3id.org/moont/identifier
+moont:identifier rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf moont:ModelicaDataProperty ;
+                 rdfs:domain [ rdf:type owl:Class ;
+                               owl:unionOf ( moont:MComponent
+                                             moont:MEnumerationLiteral
+                                             moont:MExternal
+                                           )
+                             ] ;
+                 rdfs:range xsd:string ;
+                 rdfs:label "identifier"@en .
+
+
+###  https://w3id.org/moont/initial
+moont:initial rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf moont:ModelicaDataProperty ;
+              rdfs:domain moont:MEquation ;
+              rdfs:range xsd:boolean ;
+              rdfs:label "initial"@en .
+
+
+###  https://w3id.org/moont/isEncapsulated
+moont:isEncapsulated rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf moont:ModelicaDataProperty ;
+                     rdfs:domain moont:MAbstractClass ;
+                     rdfs:range xsd:boolean ;
+                     rdfs:label "isEncapsulated"@en .
+
+
+###  https://w3id.org/moont/isExpandable
+moont:isExpandable rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf moont:ModelicaDataProperty ;
+                   rdfs:domain moont:MConnector ;
+                   rdfs:range xsd:boolean ;
+                   rdfs:label "isExpandable"@en .
+
+
+###  https://w3id.org/moont/isFinal
+moont:isFinal rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf moont:ModelicaDataProperty ;
+              rdfs:domain moont:MComponent ;
+              rdfs:range xsd:boolean ;
+              rdfs:label "isFinal"@en .
+
+
+###  https://w3id.org/moont/isFlow
+moont:isFlow rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf moont:ModelicaDataProperty ;
+             rdfs:domain moont:MTypeComponent ;
+             rdfs:range xsd:boolean ;
+             rdfs:label "isFlow"@en .
+
+
+###  https://w3id.org/moont/isPartial
+moont:isPartial rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf moont:ModelicaDataProperty ;
+                rdfs:domain moont:MAbstractClass ;
+                rdfs:range xsd:boolean ;
+                rdfs:label "isPartial"@en .
+
+
+###  https://w3id.org/moont/isProtected
+moont:isProtected rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf moont:ModelicaDataProperty ;
+                  rdfs:domain moont:MComponent ;
+                  rdfs:range xsd:boolean ;
+                  rdfs:label "isProtected"@en .
+
+
+###  https://w3id.org/moont/language
+moont:language rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf moont:ModelicaDataProperty ;
+               rdfs:domain moont:MExternal ;
+               rdfs:range xsd:string ;
+               rdfs:label "language"@en .
+
+
+###  https://w3id.org/moont/modification
+moont:modification rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf moont:ModelicaDataProperty ;
+                   rdfs:domain [ rdf:type owl:Class ;
+                                 owl:unionOf ( moont:MComponent
+                                               moont:MDerives
+                                               moont:MExtends
+                                             )
+                               ] ;
+                   rdfs:range xsd:string ;
+                   rdfs:label "modification"@en .
+
+
+###  https://w3id.org/moont/placement_origin
+moont:placement_origin rdf:type owl:DatatypeProperty ;
+                       rdfs:subPropertyOf moont:ModelicaDataProperty ;
+                       rdfs:domain moont:MComponent ;
+                       rdfs:range xsd:string .
+
+
+###  https://w3id.org/moont/stringComment
+moont:stringComment rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf moont:ModelicaDataProperty ;
+                    rdfs:domain [ rdf:type owl:Class ;
+                                  owl:unionOf ( moont:MAbstractClass
+                                                moont:MComponent
+                                              )
+                                ] ;
+                    rdfs:range xsd:string .
+
+
+###  https://w3id.org/moont/toPortArraySubscripts
+moont:toPortArraySubscripts rdf:type owl:DatatypeProperty ;
+                            rdfs:subPropertyOf moont:ModelicaDataProperty ;
+                            rdfs:domain moont:MConnection ;
+                            rdfs:range xsd:string ;
+                            rdfs:label "toPortArraySubscripts"@en .
+
+
+###  https://w3id.org/moont/variability
+moont:variability rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf moont:ModelicaDataProperty ;
+                  rdfs:domain moont:MComponent ;
+                  rdfs:label "variability"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://w3id.org/moont/MAbstractClass
+moont:MAbstractClass rdf:type owl:Class ;
+                     rdfs:subClassOf moont:ModelicaClass ;
+                     rdfs:label "MAbstractClass"@en .
+
+
+###  https://w3id.org/moont/MAlgorithm
+moont:MAlgorithm rdf:type owl:Class ;
+                 rdfs:subClassOf moont:ModelicaClass ;
+                 rdfs:label "MAlgorithm"@en .
+
+
+###  https://w3id.org/moont/MBlock
+moont:MBlock rdf:type owl:Class ;
+             rdfs:subClassOf moont:MAbstractClass ;
+             rdfs:label "MBlock"@en .
+
+
+###  https://w3id.org/moont/MBooleanType
+moont:MBooleanType rdf:type owl:Class ;
+                   rdfs:subClassOf moont:MType ;
+                   rdfs:label "MBooleanType"@en .
+
+
+###  https://w3id.org/moont/MClass
+moont:MClass rdf:type owl:Class ;
+             rdfs:subClassOf moont:MAbstractClass ;
+             rdfs:label "MClass"@en .
+
+
+###  https://w3id.org/moont/MComponent
+moont:MComponent rdf:type owl:Class ;
+                 rdfs:subClassOf moont:ModelicaClass ;
+                 rdfs:label "MComponent"@en .
+
+
+###  https://w3id.org/moont/MConnection
+moont:MConnection rdf:type owl:Class ;
+                  rdfs:subClassOf moont:ModelicaClass ;
+                  rdfs:label "MConnection"@en .
+
+
+###  https://w3id.org/moont/MConnector
+moont:MConnector rdf:type owl:Class ;
+                 rdfs:subClassOf moont:MAbstractClass ;
+                 rdfs:label "MConnector"@en .
+
+
+###  https://w3id.org/moont/MConnectorComponent
+moont:MConnectorComponent rdf:type owl:Class ;
+                          rdfs:subClassOf moont:MComponent .
+
+
+###  https://w3id.org/moont/MDerives
+moont:MDerives rdf:type owl:Class ;
+               rdfs:subClassOf moont:ModelicaClass ;
+               rdfs:label "MDerives"@en .
+
+
+###  https://w3id.org/moont/MEnumerationBaseType
+moont:MEnumerationBaseType rdf:type owl:Class ;
+                           rdfs:subClassOf moont:MType ;
+                           rdfs:label "MEnumerationBaseType"@en .
+
+
+###  https://w3id.org/moont/MEnumerationLiteral
+moont:MEnumerationLiteral rdf:type owl:Class ;
+                          rdfs:subClassOf moont:ModelicaClass ;
+                          rdfs:label "MEnumerationLiteral"@en .
+
+
+###  https://w3id.org/moont/MEnumerationType
+moont:MEnumerationType rdf:type owl:Class ;
+                       rdfs:subClassOf moont:MType ;
+                       rdfs:label "MEnumerationType"@en .
+
+
+###  https://w3id.org/moont/MEquation
+moont:MEquation rdf:type owl:Class ;
+                rdfs:subClassOf moont:ModelicaClass ;
+                rdfs:label "MEquation"@en .
+
+
+###  https://w3id.org/moont/MExtends
+moont:MExtends rdf:type owl:Class ;
+               rdfs:subClassOf moont:ModelicaClass ;
+               rdfs:label "MExtends"@en .
+
+
+###  https://w3id.org/moont/MExternal
+moont:MExternal rdf:type owl:Class ;
+                rdfs:subClassOf moont:ModelicaClass ;
+                rdfs:label "MExternal"@en .
+
+
+###  https://w3id.org/moont/MFunction
+moont:MFunction rdf:type owl:Class ;
+                rdfs:subClassOf moont:MAbstractClass ;
+                rdfs:label "MFunction"@en .
+
+
+###  https://w3id.org/moont/MIntegerType
+moont:MIntegerType rdf:type owl:Class ;
+                   rdfs:subClassOf moont:MType ;
+                   rdfs:label "MIntegerType"@en .
+
+
+###  https://w3id.org/moont/MModel
+moont:MModel rdf:type owl:Class ;
+             rdfs:subClassOf moont:MAbstractClass ;
+             rdfs:label "MModel"@en .
+
+
+###  https://w3id.org/moont/MPackage
+moont:MPackage rdf:type owl:Class ;
+               rdfs:subClassOf moont:MAbstractClass ;
+               rdfs:label "MPackage"@en .
+
+
+###  https://w3id.org/moont/MParameterComponent
+moont:MParameterComponent rdf:type owl:Class ;
+                          rdfs:subClassOf moont:MComponent .
+
+
+###  https://w3id.org/moont/MRealType
+moont:MRealType rdf:type owl:Class ;
+                rdfs:subClassOf moont:MType ;
+                rdfs:label "MRealType"@en .
+
+
+###  https://w3id.org/moont/MRecord
+moont:MRecord rdf:type owl:Class ;
+              rdfs:subClassOf moont:MAbstractClass ;
+              rdfs:label "MRecord"@en .
+
+
+###  https://w3id.org/moont/MStringType
+moont:MStringType rdf:type owl:Class ;
+                  rdfs:subClassOf moont:MType ;
+                  rdfs:label "MStringType"@en .
+
+
+###  https://w3id.org/moont/MType
+moont:MType rdf:type owl:Class ;
+            rdfs:subClassOf moont:MAbstractClass ;
+            rdfs:label "MType"@en .
+
+
+###  https://w3id.org/moont/MTypeComponent
+moont:MTypeComponent rdf:type owl:Class ;
+                     rdfs:subClassOf moont:MComponent ;
+                     rdfs:label "MTypeComponent"@en .
+
+
+###  https://w3id.org/moont/ModelicaClass
+moont:ModelicaClass rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://w3id.org/moont/BooleanType
+moont:BooleanType rdf:type owl:NamedIndividual ,
+                           moont:MBooleanType .
+
+
+###  https://w3id.org/moont/IntegerType
+moont:IntegerType rdf:type owl:NamedIndividual ,
+                           moont:MIntegerType .
+
+
+###  https://w3id.org/moont/RealType
+moont:RealType rdf:type owl:NamedIndividual ,
+                        moont:MRealType .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
