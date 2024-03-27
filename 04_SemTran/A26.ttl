@@ -1,0 +1,793 @@
+@prefix : <https://w3id.org/aimaix/> .
+@prefix aix: <https://w3id.org/aix/> .
+@prefix ifc: <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix list: <https://w3id.org/list#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix moont: <https://w3id.org/moont/> .
+@prefix aimaix: <https://w3id.org/aimaix/> .
+@prefix express: <https://w3id.org/express#> .
+@base <https://w3id.org/aim/> .
+
+<https://w3id.org/aimaix/> rdf:type owl:Ontology ;
+                         <http://purl.org/dc/terms/abstract> "This ontology is intended to allow for a translation between IFC models (version 4.0.2.1) and Modelica models from the AixLib. It uses the MoOnt (/MO-x-IFC/tree/main/src/main/resources/ontologies/7_MoOnt) ontology as well as the AixLib ontology (/MO-x-IFC/blob/main/src/main/resources/ontologies/8_ModelicaLibraries/AixLib.ttl). A usecase comprising bidirectional translation between IFC and Modelica is described in this paper: https://doi.org/10.24406/publica-fhg-412499." ;
+                         <http://purl.org/dc/terms/created> "2023-07-26" ,
+                                                            "CC BY-SA 4.0" ;
+                         <http://purl.org/dc/terms/creator> <https://orcid.org/0000-0003-4396-5307> ,
+                                                            <https://www.linkedin.com/in/elisabeth-eckst%C3%A4dt-18689115a/> ,
+                                                            "Elisabeth Eckstaedt" ;
+                         <http://purl.org/dc/terms/description> "This ontology defines the alignment from IFC to Modelica for plant simulation (HVAC equipment)."@en ;
+                         <http://purl.org/dc/terms/issued> "2023-07-26" ;
+                         <http://purl.org/dc/terms/source> <https://github.com/ElisEck/MO-x-IFC/tree/main/src/main/resources/alignments> ;
+                         <http://purl.org/dc/terms/title> "Alignment IFC Modelica (AixLib)"@en ;
+                         rdfs:label "Alignment IFC Modelica (AixLib)" ;
+                         owl:versionInfo "v0.5.0" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/abstract
+<http://purl.org/dc/terms/abstract> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/issued
+<http://purl.org/dc/terms/issued> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/source
+<http://purl.org/dc/terms/source> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#connectedTo_IfcPort
+ifc:connectedTo_IfcPort rdf:type owl:ObjectProperty .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#description_IfcRoot
+ifc:description_IfcRoot rdf:type owl:ObjectProperty .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#hasProperties_IfcPropertySet
+ifc:hasProperties_IfcPropertySet rdf:type owl:ObjectProperty .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isNestedBy_IfcObjectDefinition
+ifc:isNestedBy_IfcObjectDefinition rdf:type owl:ObjectProperty .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject
+ifc:isTypedBy_IfcObject rdf:type owl:ObjectProperty .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#name_IfcProperty
+ifc:name_IfcProperty rdf:type owl:ObjectProperty .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#name_IfcRoot
+ifc:name_IfcRoot rdf:type owl:ObjectProperty .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcFlowInstrumentType
+ifc:predefinedType_IfcFlowInstrumentType rdf:type owl:ObjectProperty .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcHeatExchangerType
+ifc:predefinedType_IfcHeatExchangerType rdf:type owl:ObjectProperty .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcPipeFittingType
+ifc:predefinedType_IfcPipeFittingType rdf:type owl:ObjectProperty .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcPipeSegmentType
+ifc:predefinedType_IfcPipeSegmentType rdf:type owl:ObjectProperty .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcPumpType
+ifc:predefinedType_IfcPumpType rdf:type owl:ObjectProperty .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcValveType
+ifc:predefinedType_IfcValveType rdf:type owl:ObjectProperty .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedObjects_IfcRelDefinesByProperties
+ifc:relatedObjects_IfcRelDefinesByProperties rdf:type owl:ObjectProperty ;
+                                             owl:inverseOf :irdbp_IfcObject .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedObjects_IfcRelNests
+ifc:relatedObjects_IfcRelNests rdf:type owl:ObjectProperty .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedPort_IfcRelConnectsPorts
+ifc:relatedPort_IfcRelConnectsPorts rdf:type owl:ObjectProperty .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingPropertyDefinition_IfcRelDefinesByProperties
+ifc:relatingPropertyDefinition_IfcRelDefinesByProperties rdf:type owl:ObjectProperty .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType
+ifc:relatingType_IfcRelDefinesByType rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/aim/connectedFrom
+:connectedFrom rdf:type owl:ObjectProperty ;
+               owl:inverseOf moont:connectedTo .
+
+
+###  https://w3id.org/aim/irdbp_IfcObject
+:irdbp_IfcObject rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/aim/object_has_property
+:object_has_property rdf:type owl:ObjectProperty ;
+                     owl:propertyChainAxiom ( :irdbp_IfcObject
+                                              ifc:relatingPropertyDefinition_IfcRelDefinesByProperties
+                                              ifc:hasProperties_IfcPropertySet
+                                            ) .
+
+
+###  https://w3id.org/aim/object_has_x_coordinate
+:object_has_x_coordinate rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf :object_has_property ;
+                         rdfs:range :IfcPropertySingleValue_x_coord .
+
+
+###  https://w3id.org/aim/property_has_value
+:property_has_value rdf:type owl:ObjectProperty ;
+                    rdfs:range :IfcPropertySingleValue_x_coord .
+
+
+###  https://w3id.org/express#hasSet
+express:hasSet rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/list#hasContents
+list:hasContents rdf:type owl:ObjectProperty .
+list:hasNext rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/list#isFollowedBy
+list:isFollowedBy rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/moont/comment
+moont:comment rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/moont/connectedTo
+moont:connectedTo rdf:type owl:ObjectProperty ;
+                  owl:propertyChainAxiom ( ifc:connectedTo_IfcPort
+                                           ifc:relatedPort_IfcRelConnectsPorts
+                                         ) .
+
+
+###  https://w3id.org/moont/hasPart (handles up to 6 ports per component)
+moont:hasPart rdf:type owl:ObjectProperty ;
+              owl:propertyChainAxiom ( ifc:isNestedBy_IfcObjectDefinition
+                                       ifc:relatedObjects_IfcRelNests
+                                       list:hasContents
+                                     ) ,
+                                     ( ifc:isNestedBy_IfcObjectDefinition
+                                       ifc:relatedObjects_IfcRelNests
+                                       list:hasNext
+                                       list:hasContents
+                                     ),
+                                     ( ifc:isNestedBy_IfcObjectDefinition
+                                       ifc:relatedObjects_IfcRelNests
+                                       list:hasNext
+                                       list:hasNext
+                                       list:hasContents
+                                     ),
+                                     ( ifc:isNestedBy_IfcObjectDefinition
+                                       ifc:relatedObjects_IfcRelNests
+                                       list:hasNext
+                                       list:hasNext
+                                       list:hasNext
+                                       list:hasContents
+                                     ),
+                                     ( ifc:isNestedBy_IfcObjectDefinition
+                                       ifc:relatedObjects_IfcRelNests
+                                       list:hasNext
+                                       list:hasNext
+                                       list:hasNext
+                                       list:hasNext
+                                       list:hasContents
+                                     ),
+                                     ( ifc:isNestedBy_IfcObjectDefinition
+                                       ifc:relatedObjects_IfcRelNests
+                                       list:hasNext
+                                       list:hasNext
+                                       list:hasNext
+                                       list:hasNext
+                                       list:hasNext
+                                       list:hasContents
+                                     ) .
+
+
+###  https://w3id.org/moont/identifier
+moont:identifier rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://w3id.org/express#hasDouble
+express:hasDouble rdf:type owl:DatatypeProperty .
+
+
+###  https://w3id.org/express#hasInteger
+express:hasInteger rdf:type owl:DatatypeProperty .
+
+
+###  https://w3id.org/express#hasString
+express:hasString rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://w3id.org/aim/FI_P
+:FI_P rdf:type owl:Class ;
+      owl:equivalentClass aix:AixLib.Fluid.Sensors.Temperature ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ifc:isTypedBy_IfcObject ;
+                            owl:someValuesFrom :IfcRelDefinesByType_FI_P
+                          ] .
+
+
+###  https://w3id.org/aim/HE_P
+:HE_P rdf:type owl:Class ;
+      owl:equivalentClass aix:AixLib.Fluid.HeatExchangers.ConstantEffectiveness ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ifc:isTypedBy_IfcObject ;
+                            owl:someValuesFrom :IfcRelDefinedByType_HE_P
+                          ] .
+
+
+###  https://w3id.org/aim/IfcDistributionPort_1
+:IfcDistributionPort_1 rdf:type owl:Class ;
+                       owl:equivalentClass [ rdf:type owl:Restriction ;
+                                             owl:onProperty ifc:description_IfcRoot ;
+                                             owl:allValuesFrom :IfcText_port_1
+                                           ] .
+
+
+###  https://w3id.org/aim/IfcDistributionPort_2
+:IfcDistributionPort_2 rdf:type owl:Class ;
+                       owl:equivalentClass [ rdf:type owl:Restriction ;
+                                             owl:onProperty ifc:description_IfcRoot ;
+                                             owl:allValuesFrom :IfcText_port_2
+                                           ] .
+
+
+###  https://w3id.org/aim/IfcDistributionPort_3
+:IfcDistributionPort_3 rdf:type owl:Class ;
+                       owl:equivalentClass [ rdf:type owl:Restriction ;
+                                             owl:onProperty ifc:description_IfcRoot ;
+                                             owl:allValuesFrom :IfcText_port_3
+                                           ] .
+
+
+###  https://w3id.org/aim/IfcDistributionPort_a
+:IfcDistributionPort_a rdf:type owl:Class ;
+                       owl:equivalentClass [ rdf:type owl:Restriction ;
+                                             owl:onProperty ifc:description_IfcRoot ;
+                                             owl:allValuesFrom :IfcText_port_a
+                                           ] .
+
+
+###  https://w3id.org/aim/IfcDistributionPort_b
+:IfcDistributionPort_b rdf:type owl:Class ;
+                       owl:equivalentClass [ rdf:type owl:Restriction ;
+                                             owl:onProperty ifc:description_IfcRoot ;
+                                             owl:allValuesFrom :IfcText_port_b
+                                           ] .
+
+
+###  https://w3id.org/aim/IfcFlowInstrumentType_PRESSUREGAUGE
+:IfcFlowInstrumentType_PRESSUREGAUGE rdf:type owl:Class ;
+                                     owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                           owl:onProperty ifc:predefinedType_IfcFlowInstrumentType ;
+                                                           owl:hasValue ifc:PRESSUREGAUGE
+                                                         ] .
+
+
+###  https://w3id.org/aim/IfcHeatExchangerType_PLATE
+:IfcHeatExchangerType_PLATE rdf:type owl:Class ;
+                            owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                  owl:onProperty ifc:predefinedType_IfcHeatExchangerType ;
+                                                  owl:hasValue ifc:PLATE
+                                                ] .
+
+
+###  https://w3id.org/aim/IfcIdentifier_of_x_coordinate
+:IfcIdentifier_of_x_coordinate rdf:type owl:Class ;
+                               owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                     owl:onProperty express:hasString ;
+                                                     owl:hasValue "x coordinate"
+                                                   ] .
+
+
+###  https://w3id.org/aim/IfcIdentifier_of_y_coordinate
+:IfcIdentifier_of_y_coordinate rdf:type owl:Class ;
+                               owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                     owl:onProperty express:hasString ;
+                                                     owl:hasValue "y coordinate"
+                                                   ] .
+
+
+###  https://w3id.org/aim/IfcLabel_layout_position
+:IfcLabel_layout_position rdf:type owl:Class ;
+                          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                owl:onProperty express:hasString ;
+                                                owl:hasValue "Graph_EE"
+                                              ] .
+
+
+###  https://w3id.org/aim/IfcPipeFittingType_BEND
+:IfcPipeFittingType_BEND rdf:type owl:Class ;
+                         owl:equivalentClass [ rdf:type owl:Restriction ;
+                                               owl:onProperty ifc:predefinedType_IfcPipeFittingType ;
+                                               owl:hasValue ifc:BEND
+                                             ] .
+
+
+###  https://w3id.org/aim/IfcPipeFittingType_CONNECTOR
+:IfcPipeFittingType_CONNECTOR rdf:type owl:Class ;
+                              owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                    owl:onProperty ifc:predefinedType_IfcPipeFittingType ;
+                                                    owl:hasValue ifc:CONNECTOR
+                                                  ] .
+
+
+###  https://w3id.org/aim/IfcPipeFittingType_JUNCTION
+:IfcPipeFittingType_JUNCTION rdf:type owl:Class ;
+                             owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                   owl:onProperty ifc:predefinedType_IfcPipeFittingType ;
+                                                   owl:hasValue ifc:JUNCTION
+                                                 ] .
+
+
+###  https://w3id.org/aim/IfcPipeSegmentType_RIGIDSEGMENT
+:IfcPipeSegmentType_RIGIDSEGMENT rdf:type owl:Class ;
+                                 owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                       owl:onProperty ifc:predefinedType_IfcPipeSegmentType ;
+                                                       owl:hasValue ifc:RIGIDSEGMENT
+                                                     ] .
+
+
+###  https://w3id.org/aim/IfcPipeSegmentType_USERDEFINED
+:IfcPipeSegmentType_USERDEFINED rdf:type owl:Class ;
+                                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                      owl:onProperty ifc:predefinedType_IfcPipeSegmentType ;
+                                                      owl:hasValue ifc:USERDEFINED
+                                                    ] .
+
+
+###  https://w3id.org/aim/IfcPropertySet_layout_position
+:IfcPropertySet_layout_position rdf:type owl:Class ;
+                                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                      owl:onProperty ifc:name_IfcRoot ;
+                                                      owl:allValuesFrom :IfcLabel_layout_position
+                                                    ] .
+
+
+###  https://w3id.org/aim/IfcPropertySingleValue_x_coord
+:IfcPropertySingleValue_x_coord rdf:type owl:Class ;
+                                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                      owl:onProperty ifc:name_IfcProperty ;
+                                                      owl:allValuesFrom :IfcIdentifier_of_x_coordinate
+                                                    ] .
+
+
+###  https://w3id.org/aim/IfcPropertySingleValue_y_coord
+:IfcPropertySingleValue_y_coord rdf:type owl:Class ;
+                                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                      owl:onProperty ifc:name_IfcProperty ;
+                                                      owl:allValuesFrom :IfcIdentifier_of_y_coordinate
+                                                    ] .
+
+
+###  https://w3id.org/aim/IfcPumpType_CIRCULATOR
+:IfcPumpType_CIRCULATOR rdf:type owl:Class ;
+                        owl:equivalentClass [ rdf:type owl:Restriction ;
+                                              owl:onProperty ifc:predefinedType_IfcPumpType ;
+                                              owl:hasValue ifc:CIRCULATOR
+                                            ] .
+
+
+###  https://w3id.org/aim/IfcRelDefinedByType_HE_P
+:IfcRelDefinedByType_HE_P rdf:type owl:Class ;
+                          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                owl:onProperty ifc:relatingType_IfcRelDefinesByType ;
+                                                owl:someValuesFrom :IfcHeatExchangerType_PLATE
+                                              ] .
+
+
+###  https://w3id.org/aim/IfcRelDefinesByType_FI_P
+:IfcRelDefinesByType_FI_P rdf:type owl:Class ;
+                          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                owl:onProperty ifc:relatingType_IfcRelDefinesByType ;
+                                                owl:someValuesFrom :IfcFlowInstrumentType_PRESSUREGAUGE
+                                              ] .
+
+
+###  https://w3id.org/aim/IfcRelDefinesByType_PF_B
+:IfcRelDefinesByType_PF_B rdf:type owl:Class ;
+                          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                owl:onProperty ifc:relatingType_IfcRelDefinesByType ;
+                                                owl:someValuesFrom :IfcPipeFittingType_BEND
+                                              ] .
+
+
+###  https://w3id.org/aim/IfcRelDefinesByType_PF_C
+:IfcRelDefinesByType_PF_C rdf:type owl:Class ;
+                          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                owl:onProperty ifc:relatingType_IfcRelDefinesByType ;
+                                                owl:someValuesFrom :IfcPipeFittingType_CONNECTOR
+                                              ] .
+
+
+###  https://w3id.org/aim/IfcRelDefinesByType_PF_J
+:IfcRelDefinesByType_PF_J rdf:type owl:Class ;
+                          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                owl:onProperty ifc:relatingType_IfcRelDefinesByType ;
+                                                owl:someValuesFrom :IfcPipeFittingType_JUNCTION
+                                              ] .
+
+
+###  https://w3id.org/aim/IfcRelDefinesByType_PS_R
+:IfcRelDefinesByType_PS_R rdf:type owl:Class ;
+                          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                owl:onProperty ifc:relatingType_IfcRelDefinesByType ;
+                                                owl:someValuesFrom :IfcPipeSegmentType_RIGIDSEGMENT
+                                              ] .
+
+
+###  https://w3id.org/aim/IfcRelDefinesByType_PS_U
+:IfcRelDefinesByType_PS_U rdf:type owl:Class ;
+                          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                owl:onProperty ifc:relatingType_IfcRelDefinesByType ;
+                                                owl:someValuesFrom :IfcPipeSegmentType_USERDEFINED
+                                              ] .
+
+
+###  https://w3id.org/aim/IfcRelDefinesByType_P_C
+:IfcRelDefinesByType_P_C rdf:type owl:Class ;
+                         owl:equivalentClass [ rdf:type owl:Restriction ;
+                                               owl:onProperty ifc:relatingType_IfcRelDefinesByType ;
+                                               owl:someValuesFrom :IfcPumpType_CIRCULATOR
+                                             ] .
+
+
+###  https://w3id.org/aim/IfcRelDefinesByType_V_C
+:IfcRelDefinesByType_V_C rdf:type owl:Class ;
+                         owl:equivalentClass [ rdf:type owl:Restriction ;
+                                               owl:onProperty ifc:relatingType_IfcRelDefinesByType ;
+                                               owl:someValuesFrom :IfcValveType_CHECK
+                                             ] .
+
+
+###  https://w3id.org/aim/IfcRelDefinesByType_V_I
+:IfcRelDefinesByType_V_I rdf:type owl:Class ;
+                         owl:equivalentClass [ rdf:type owl:Restriction ;
+                                               owl:onProperty ifc:relatingType_IfcRelDefinesByType ;
+                                               owl:someValuesFrom :IfcValveType_ISOLATING
+                                             ] .
+
+
+###  https://w3id.org/aim/IfcRelDefinesByType_V_M
+:IfcRelDefinesByType_V_M rdf:type owl:Class ;
+                         owl:equivalentClass [ rdf:type owl:Restriction ;
+                                               owl:onProperty ifc:relatingType_IfcRelDefinesByType ;
+                                               owl:someValuesFrom :IfcValveType_MIXING
+                                             ] .
+											 
+###  https://w3id.org/aim/IfcRelDefinesByType_C_H
+:IfcRelDefinesByType_C_H rdf:type owl:Class ;
+                         owl:equivalentClass [ rdf:type owl:Restriction ;
+                                               owl:onProperty ifc:relatingType_IfcRelDefinesByType ;
+                                               owl:someValuesFrom :IfcCoilType_HYDRONIC
+                                             ] .
+
+
+###  https://w3id.org/aim/IfcText_port_1
+:IfcText_port_1 rdf:type owl:Class ;
+                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                      owl:onProperty express:hasString ;
+                                      owl:hasValue "port_1"
+                                    ] .
+
+
+###  https://w3id.org/aim/IfcText_port_2
+:IfcText_port_2 rdf:type owl:Class ;
+                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                      owl:onProperty express:hasString ;
+                                      owl:hasValue "port_2"
+                                    ] .
+
+
+###  https://w3id.org/aim/IfcText_port_3
+:IfcText_port_3 rdf:type owl:Class ;
+                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                      owl:onProperty express:hasString ;
+                                      owl:hasValue "port_3"
+                                    ] .
+
+
+###  https://w3id.org/aim/IfcText_port_a
+:IfcText_port_a rdf:type owl:Class ;
+                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                      owl:onProperty express:hasString ;
+                                      owl:hasValue "port_a"
+                                    ] .
+
+
+###  https://w3id.org/aim/IfcText_port_b
+:IfcText_port_b rdf:type owl:Class ;
+                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                      owl:onProperty express:hasString ;
+                                      owl:hasValue "port_b"
+                                    ] .
+
+
+###  https://w3id.org/aim/IfcValveType_CHECK
+:IfcValveType_CHECK rdf:type owl:Class ;
+                    owl:equivalentClass [ rdf:type owl:Restriction ;
+                                          owl:onProperty ifc:predefinedType_IfcValveType ;
+                                          owl:hasValue ifc:CHECK
+                                        ] .
+
+
+###  https://w3id.org/aim/IfcValveType_ISOLATING
+:IfcValveType_ISOLATING rdf:type owl:Class ;
+                        owl:equivalentClass [ rdf:type owl:Restriction ;
+                                              owl:onProperty ifc:predefinedType_IfcValveType ;
+                                              owl:hasValue ifc:ISOLATING
+                                            ] .
+
+
+###  https://w3id.org/aim/IfcValveType_MIXING
+:IfcValveType_MIXING rdf:type owl:Class ;
+                     owl:equivalentClass [ rdf:type owl:Restriction ;
+                                           owl:onProperty ifc:predefinedType_IfcValveType ;
+                                           owl:hasValue ifc:MIXING
+                                         ] .
+										 
+###  https://w3id.org/aim/IfcCoilType_HYDRONIC
+:IfcCoilType_HYDRONIC rdf:type owl:Class ;
+                     owl:equivalentClass [ rdf:type owl:Restriction ;
+                                           owl:onProperty ifc:predefinedType_IfcCoilType ;
+                                           owl:hasValue ifc:HYDRONICCOIL
+                                         ] .
+
+
+###  https://w3id.org/aim/PF_B
+:PF_B rdf:type owl:Class ;
+      owl:equivalentClass [ rdf:type owl:Restriction ;
+                            owl:onProperty ifc:isTypedBy_IfcObject ;
+                            owl:someValuesFrom :IfcRelDefinesByType_PF_B
+                          ] .
+
+
+###  https://w3id.org/aim/PF_C
+:PF_C rdf:type owl:Class ;
+      owl:equivalentClass [ rdf:type owl:Restriction ;
+                            owl:onProperty ifc:isTypedBy_IfcObject ;
+                            owl:someValuesFrom :IfcRelDefinesByType_PF_C
+                          ] .
+
+
+###  https://w3id.org/aim/PF_J
+:PF_J rdf:type owl:Class ;
+      owl:equivalentClass aix:AixLib.Fluid.FixedResistances.Junction ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty ifc:isTypedBy_IfcObject ;
+                            owl:someValuesFrom :IfcRelDefinesByType_PF_J
+                          ] .
+
+
+###  https://w3id.org/aim/PS_R
+:PS_R rdf:type owl:Class ;
+      owl:equivalentClass [ rdf:type owl:Restriction ;
+                            owl:onProperty ifc:isTypedBy_IfcObject ;
+                            owl:someValuesFrom :IfcRelDefinesByType_PS_R
+                          ] .
+
+
+###  https://w3id.org/aim/PS_U
+:PS_U rdf:type owl:Class ;
+      owl:equivalentClass [ rdf:type owl:Restriction ;
+                            owl:onProperty ifc:isTypedBy_IfcObject ;
+                            owl:someValuesFrom :IfcRelDefinesByType_PS_U
+                          ] .
+
+
+###  https://w3id.org/aim/P_C
+:P_C rdf:type owl:Class ;
+     owl:equivalentClass aix:AixLib.Fluid.Movers.FlowControlled_m_flow ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ifc:isTypedBy_IfcObject ;
+                           owl:someValuesFrom :IfcRelDefinesByType_P_C
+                         ] .
+
+
+###  https://w3id.org/aim/V_C
+:V_C rdf:type owl:Class ;
+     owl:equivalentClass aix:AixLib.Fluid.FixedResistances.CheckValve ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ifc:isTypedBy_IfcObject ;
+                           owl:someValuesFrom :IfcRelDefinesByType_V_C
+                         ] .
+
+
+###  https://w3id.org/aim/V_I
+:V_I rdf:type owl:Class ;
+     owl:equivalentClass aix:AixLib.Fluid.Actuators.Valves.TwoWayLinear ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ifc:isTypedBy_IfcObject ;
+                           owl:someValuesFrom :IfcRelDefinesByType_V_I
+                         ] .
+
+
+###  https://w3id.org/aim/V_M
+:V_M rdf:type owl:Class ;
+     owl:equivalentClass aix:AixLib.Fluid.Actuators.Valves.ThreeWayLinear ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ifc:isTypedBy_IfcObject ;
+                           owl:someValuesFrom :IfcRelDefinesByType_V_M
+                         ] .
+					
+###  https://w3id.org/aim/C_H
+:C_H rdf:type owl:Class ;
+     owl:equivalentClass aix:AixLib.Fluid.HeatExchangers.HeaterCooler_u ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty ifc:isTypedBy_IfcObject ;
+                           owl:someValuesFrom :IfcRelDefinesByType_C_H
+                         ] .
+
+
+
+###  https://w3id.org/aix/AixLib.Fluid.Actuators.Valves.ThreeWayLinear
+aix:AixLib.Fluid.Actuators.Valves.ThreeWayLinear rdf:type owl:Class .
+
+
+###  https://w3id.org/aix/AixLib.Fluid.Actuators.Valves.TwoWayLinear
+aix:AixLib.Fluid.Actuators.Valves.TwoWayLinear rdf:type owl:Class .
+
+
+###  https://w3id.org/aix/AixLib.Fluid.FixedResistances.CheckValve
+aix:AixLib.Fluid.FixedResistances.CheckValve rdf:type owl:Class .
+
+
+###  https://w3id.org/aix/AixLib.Fluid.FixedResistances.Junction
+aix:AixLib.Fluid.FixedResistances.Junction rdf:type owl:Class .
+
+
+###  https://w3id.org/aix/AixLib.Fluid.FixedResistances.PressureDrop
+aix:AixLib.Fluid.FixedResistances.PressureDrop rdf:type owl:Class ;
+                                               owl:equivalentClass [ rdf:type owl:Class ;
+                                                                     owl:unionOf ( :PF_B
+                                                                                   :PF_C
+                                                                                   :PS_R
+                                                                                   :PS_U
+                                                                                 )
+                                                                   ] .
+
+
+###  https://w3id.org/aix/AixLib.Fluid.HeatExchangers.ConstantEffectiveness
+aix:AixLib.Fluid.HeatExchangers.ConstantEffectiveness rdf:type owl:Class .
+
+
+###  https://w3id.org/aix/AixLib.Fluid.HeatExchangers.SensibleCooler_T
+aix:AixLib.Fluid.HeatExchangers.SensibleCooler_T rdf:type owl:Class .
+
+
+###  https://w3id.org/aix/AixLib.Fluid.Movers.FlowControlled_m_flow
+aix:AixLib.Fluid.Movers.FlowControlled_m_flow rdf:type owl:Class .
+
+
+###  https://w3id.org/aix/AixLib.Fluid.Sensors.Temperature
+aix:AixLib.Fluid.Sensors.Temperature rdf:type owl:Class .
+
+
+###  https://w3id.org/moont/MComponent
+moont:MComponent rdf:type owl:Class ;
+                 owl:equivalentClass [ rdf:type owl:Class ;
+                                       owl:unionOf ( :FI_P
+                                                     :HE_P
+                                                     :PF_B
+                                                     :PF_C
+                                                     :PF_J
+                                                     :PS_R
+                                                     :PS_U
+                                                     :P_C
+                                                     :V_C
+                                                     :V_I
+                                                     :V_M
+                                                     :C_H
+                                                   )
+                                     ] .
+
+
+###  https://w3id.org/moont/MConnectorComponent
+moont:MConnectorComponent rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#BEND
+ifc:BEND rdf:type owl:NamedIndividual .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#CHECK
+ifc:CHECK rdf:type owl:NamedIndividual .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#CIRCULATOR
+ifc:CIRCULATOR rdf:type owl:NamedIndividual .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#CONNECTOR
+ifc:CONNECTOR rdf:type owl:NamedIndividual .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#ISOLATING
+ifc:ISOLATING rdf:type owl:NamedIndividual .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#JUNCTION
+ifc:JUNCTION rdf:type owl:NamedIndividual .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#MIXING
+ifc:MIXING rdf:type owl:NamedIndividual .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#PLATE
+ifc:PLATE rdf:type owl:NamedIndividual .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#PRESSUREGAUGE
+ifc:PRESSUREGAUGE rdf:type owl:NamedIndividual .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#RIGIDSEGMENT
+ifc:RIGIDSEGMENT rdf:type owl:NamedIndividual .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#USERDEFINED
+ifc:USERDEFINED rdf:type owl:NamedIndividual .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
