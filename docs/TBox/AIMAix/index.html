@@ -1,0 +1,2312 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+ <link rel="stylesheet" href="resources/primer.css" media="screen" />    <link rel="stylesheet" href="resources/rec.css" media="screen" />    <link rel="stylesheet" href="resources/extra.css" media="screen" />    <link rel="stylesheet" href="resources/owl.css" media="screen" />    <title>Alignment IFC Modelica (AixLib)</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/aimaix/","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/aimaix/","name":"Alignment IFC Modelica (AixLib)", "headline":"This ontology defines the alignment from IFC to Modelica for plant simulation (HVAC equipment).", "datePublished":"2023-07-26", "version":"v0.5.0", "author":[{"@type":"Person","name":"https://orcid.org/0000-0003-4396-5307","url":"https://orcid.org/0000-0003-4396-5307"},{"@type":"Person","name":"https://www.linkedin.com/in/elisabeth-eckst%C3%A4dt-18689115a/","url":"https://www.linkedin.com/in/elisabeth-eckst%C3%A4dt-18689115a/"},{"@type":"Person","name":"Elisabeth Eckstaedt"}]}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+$(function(){
+    loadHash();
+}); $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ }; 
+   </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<h1>Alignment IFC Modelica (AixLib)</h1>
+<h2>Release 2023-07-26</h2>
+
+
+<dl>
+<dt>Latest version:</dt>
+<dd><a href="https://w3id.org/aimaix/">https://w3id.org/aimaix/</a></dd>
+<dt>Revision:</dt>
+<dd>v0.5.0</dd>
+<dt>Issued on: </dt>
+<dd>2023-07-26</dd>
+<dt>Authors:</dt>
+<dd><a href="https://orcid.org/0000-0003-4396-5307">https://orcid.org/0000-0003-4396-5307</a></dd><dd><a href="https://www.linkedin.com/in/elisabeth-eckst%C3%A4dt-18689115a/">https://www.linkedin.com/in/elisabeth-eckst%C3%A4dt-18689115a/</a></dd><dd>Elisabeth Eckstaedt</dd>
+
+<dt>Download serialization:</dt>
+   <dd><span>
+      <a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span>
+      <span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span>
+      <span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span>
+      <span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd>
+    <dt>License:</dt>
+   <dd>
+      <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="https://img.shields.io/badge/License-CC%20BY%20SA%204.0-blue.svg" alt="https://creativecommons.org/licenses/by-sa/4.0/" /></a>
+   </dd>
+   <dt>Cite as:</dt>
+<dd>Elisabeth Eckstaedt. Alignment IFC Modelica (AixLib). Revision: v0.5.0.</dd>
+</dl>
+
+<hr/>
+</div>
+<div class="status">
+<div>
+<span>Ontology Specification Draft</span>
+</div>
+</div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
+This ontology defines the alignment from IFC to Modelica for plant simulation (HVAC equipment).</span>
+</div>
+<div id="toc"></div> 
+
+<!--INTRODUCTION SECTION-->
+    <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This ontology defines the alignment from IFC to Modelica for plant simulation. Its focus is on HVAC equipment.</span>
+<div id="namespacedeclarations">
+<h3 id="ns" class="list">Namespace declarations</h3>
+<div id="ns" align="center">
+<table>
+<caption> <a href="#ns"> Table 1</a>: Namespaces used in the document </caption>
+<tbody>
+<tr><td><b>[Ontology NS Prefix]</b></td><td>&lt;https://w3id.org/aimaix/&gt;</td></tr>
+<tr><td></td><td></td></tr>
+<tr><td><b>aix</b></td><td>&lt;https://w3id.org/aix&gt;</td></tr>
+<tr><td><b>owl</b></td><td>&lt;http://www.w3.org/2002/07/owl&gt;</td></tr>
+<tr><td><b>rdf</b></td><td>&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns&gt;</td></tr>
+<tr><td><b>terms</b></td><td>&lt;http://purl.org/dc/terms&gt;</td></tr>
+<tr><td><b>xml</b></td><td>&lt;http://www.w3.org/XML/1998/namespace&gt;</td></tr>
+<tr><td><b>ifc</b></td><td>&lt;https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL&gt;</td></tr>
+<tr><td><b>moont</b></td><td>&lt;https://w3id.org/moont&gt;</td></tr>
+<tr><td><b>xsd</b></td><td>&lt;http://www.w3.org/2001/XMLSchema&gt;</td></tr>
+<tr><td><b>rdfs</b></td><td>&lt;http://www.w3.org/2000/01/rdf-schema&gt;</td></tr>
+<tr><td><b>express</b></td><td>&lt;https://w3id.org/express&gt;</td></tr>
+<tr><td><b>list</b></td><td>&lt;https://w3id.org/list&gt;</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+  
+
+<!--OVERVIEW SECTION-->
+    <div id="overview"><h2 id="overv" class="list">Alignment IFC Modelica (AixLib): Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This ontology has the following classes and properties.</span>
+<h4>Classes</h4>
+<ul xmlns:extra="https://w3id.org/extra#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#https://w3id.org/aix/AixLib.Fluid.FixedResistances.PressureDrop"
+         title="https://w3id.org/aix/AixLib.Fluid.FixedResistances.PressureDrop">
+         <span>aix lib. fluid. fixed resistances. pressure drop</span>
+      </a>
+   </li>
+   <li>
+      <a href="#C_H" title="https://w3id.org/aimaix/C_H">
+         <span>c h</span>
+      </a>
+   </li>
+   <li>
+      <a href="#FI_P" title="https://w3id.org/aimaix/FI_P">
+         <span>f i p</span>
+      </a>
+   </li>
+   <li>
+      <a href="#HE_P" title="https://w3id.org/aimaix/HE_P">
+         <span>h e p</span>
+      </a>
+   </li>
+   <li>
+      <a href="#IfcCoilType_HYDRONIC" title="https://w3id.org/aimaix/IfcCoilType_HYDRONIC">
+         <span>ifc coil type h y d r o n i c</span>
+      </a>
+   </li>
+   <li>
+      <a href="#IfcDistributionPort_1" title="https://w3id.org/aimaix/IfcDistributionPort_1">
+         <span>ifc distribution port 1</span>
+      </a>
+   </li>
+   <li>
+      <a href="#IfcDistributionPort_2" title="https://w3id.org/aimaix/IfcDistributionPort_2">
+         <span>ifc distribution port 2</span>
+      </a>
+   </li>
+   <li>
+      <a href="#IfcDistributionPort_3" title="https://w3id.org/aimaix/IfcDistributionPort_3">
+         <span>ifc distribution port 3</span>
+      </a>
+   </li>
+   <li>
+      <a href="#IfcDistributionPort_a" title="https://w3id.org/aimaix/IfcDistributionPort_a">
+         <span>ifc distribution port a</span>
+      </a>
+   </li>
+   <li>
+      <a href="#IfcDistributionPort_b" title="https://w3id.org/aimaix/IfcDistributionPort_b">
+         <span>ifc distribution port b</span>
+      </a>
+   </li>
+   <li>
+      <a href="#IfcFlowInstrumentType_PRESSUREGAUGE"
+         title="https://w3id.org/aimaix/IfcFlowInstrumentType_PRESSUREGAUGE">
+         <span>ifc flow instrument type p r e s s u r e g a u g e</span>
+      </a>
+   </li>
+   <li>
+      <a href="#IfcHeatExchangerType_PLATE"
+         title="https://w3id.org/aimaix/IfcHeatExchangerType_PLATE">
+         <span>ifc heat exchanger type p l a t e</span>
+      </a>
+   </li>
+   <li>
+      <a href="#IfcIdentifier_of_x_coordinate"
+         title="https://w3id.org/aimaix/IfcIdentifier_of_x_coordinate">
+         <span>ifc identifier of x coordinate</span>
+      </a>
+   </li>
+   <li>
+      <a href="#IfcIdentifier_of_y_coordinate"
+         title="https://w3id.org/aimaix/IfcIdentifier_of_y_coordinate">
+         <span>ifc identifier of y coordinate</span>
+      </a>
+   </li>
+   <li>
+      <a href="#IfcLabel_layout_position" title="https://w3id.org/aimaix/IfcLabel_layout_position">
+         <span>ifc label layout position</span>
+      </a>
+   </li>
+   <li>
+      <a href="#IfcPipeFittingType_BEND" title="https://w3id.org/aimaix/IfcPipeFittingType_BEND">
+         <span>ifc pipe fitting type b e n d</span>
+      </a>
+   </li>
+   <li>
+      <a href="#IfcPipeFittingType_CONNECTOR"
+         title="https://w3id.org/aimaix/IfcPipeFittingType_CONNECTOR">
+         <span>ifc pipe fitting type c o n n e c t o r</span>
+      </a>
+   </li>
+   <li>
+      <a href="#IfcPipeFittingType_JUNCTION"
+         title="https://w3id.org/aimaix/IfcPipeFittingType_JUNCTION">
+         <span>ifc pipe fitting type j u n c t i o n</span>
+      </a>
+   </li>
+   <li>
+      <a href="#IfcPipeSegmentType_RIGIDSEGMENT"
+         title="https://w3id.org/aimaix/IfcPipeSegmentType_RIGIDSEGMENT">
+         <span>ifc pipe segment type r i g i d s e g m e n t</span>
+      </a>
+   </li>
+   <li>
+      <a href="#IfcPipeSegmentType_USERDEFINED"
+         title="https://w3id.org/aimaix/IfcPipeSegmentType_USERDEFINED">
+         <span>ifc pipe segment type u s e r d e f i n e d</span>
+      </a>
+   </li>
+   <li>
+      <a href="#IfcPropertySet_layout_position"
+         title="https://w3id.org/aimaix/IfcPropertySet_layout_position">
+         <span>ifc property set layout position</span>
+      </a>
+   </li>
+   <li>
+      <a href="#IfcPropertySingleValue_x_coord"
+         title="https://w3id.org/aimaix/IfcPropertySingleValue_x_coord">
+         <span>ifc property single value x coord</span>
+      </a>
+   </li>
+   <li>
+      <a href="#IfcPropertySingleValue_y_coord"
+         title="https://w3id.org/aimaix/IfcPropertySingleValue_y_coord">
+         <span>ifc property single value y coord</span>
+      </a>
+   </li>
+   <li>
+      <a href="#IfcPumpType_CIRCULATOR" title="https://w3id.org/aimaix/IfcPumpType_CIRCULATOR">
+         <span>ifc pump type c i r c u l a t o r</span>
+      </a>
+   </li>
+   <li>
+      <a href="#IfcRelDefinedByType_HE_P" title="https://w3id.org/aimaix/IfcRelDefinedByType_HE_P">
+         <span>ifc rel defined by type h e p</span>
+      </a>
+   </li>
+   <li>
+      <a href="#IfcRelDefinesByType_C_H" title="https://w3id.org/aimaix/IfcRelDefinesByType_C_H">
+         <span>ifc rel defines by type c h</span>
+      </a>
+   </li>
+   <li>
+      <a href="#IfcRelDefinesByType_FI_P" title="https://w3id.org/aimaix/IfcRelDefinesByType_FI_P">
+         <span>ifc rel defines by type f i p</span>
+      </a>
+   </li>
+   <li>
+      <a href="#IfcRelDefinesByType_P_C" title="https://w3id.org/aimaix/IfcRelDefinesByType_P_C">
+         <span>ifc rel defines by type p c</span>
+      </a>
+   </li>
+   <li>
+      <a href="#IfcRelDefinesByType_PF_B" title="https://w3id.org/aimaix/IfcRelDefinesByType_PF_B">
+         <span>ifc rel defines by type p f b</span>
+      </a>
+   </li>
+   <li>
+      <a href="#IfcRelDefinesByType_PF_C" title="https://w3id.org/aimaix/IfcRelDefinesByType_PF_C">
+         <span>ifc rel defines by type p f c</span>
+      </a>
+   </li>
+   <li>
+      <a href="#IfcRelDefinesByType_PF_J" title="https://w3id.org/aimaix/IfcRelDefinesByType_PF_J">
+         <span>ifc rel defines by type p f j</span>
+      </a>
+   </li>
+   <li>
+      <a href="#IfcRelDefinesByType_PS_R" title="https://w3id.org/aimaix/IfcRelDefinesByType_PS_R">
+         <span>ifc rel defines by type p s r</span>
+      </a>
+   </li>
+   <li>
+      <a href="#IfcRelDefinesByType_PS_U" title="https://w3id.org/aimaix/IfcRelDefinesByType_PS_U">
+         <span>ifc rel defines by type p s u</span>
+      </a>
+   </li>
+   <li>
+      <a href="#IfcRelDefinesByType_V_C" title="https://w3id.org/aimaix/IfcRelDefinesByType_V_C">
+         <span>ifc rel defines by type v c</span>
+      </a>
+   </li>
+   <li>
+      <a href="#IfcRelDefinesByType_V_I" title="https://w3id.org/aimaix/IfcRelDefinesByType_V_I">
+         <span>ifc rel defines by type v i</span>
+      </a>
+   </li>
+   <li>
+      <a href="#IfcRelDefinesByType_V_M" title="https://w3id.org/aimaix/IfcRelDefinesByType_V_M">
+         <span>ifc rel defines by type v m</span>
+      </a>
+   </li>
+   <li>
+      <a href="#IfcText_port_1" title="https://w3id.org/aimaix/IfcText_port_1">
+         <span>ifc text port 1</span>
+      </a>
+   </li>
+   <li>
+      <a href="#IfcText_port_2" title="https://w3id.org/aimaix/IfcText_port_2">
+         <span>ifc text port 2</span>
+      </a>
+   </li>
+   <li>
+      <a href="#IfcText_port_3" title="https://w3id.org/aimaix/IfcText_port_3">
+         <span>ifc text port 3</span>
+      </a>
+   </li>
+   <li>
+      <a href="#IfcText_port_a" title="https://w3id.org/aimaix/IfcText_port_a">
+         <span>ifc text port a</span>
+      </a>
+   </li>
+   <li>
+      <a href="#IfcText_port_b" title="https://w3id.org/aimaix/IfcText_port_b">
+         <span>ifc text port b</span>
+      </a>
+   </li>
+   <li>
+      <a href="#IfcValveType_CHECK" title="https://w3id.org/aimaix/IfcValveType_CHECK">
+         <span>ifc valve type c h e c k</span>
+      </a>
+   </li>
+   <li>
+      <a href="#IfcValveType_ISOLATING" title="https://w3id.org/aimaix/IfcValveType_ISOLATING">
+         <span>ifc valve type i s o l a t i n g</span>
+      </a>
+   </li>
+   <li>
+      <a href="#IfcValveType_MIXING" title="https://w3id.org/aimaix/IfcValveType_MIXING">
+         <span>ifc valve type m i x i n g</span>
+      </a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/moont/MComponent" title="https://w3id.org/moont/MComponent">
+         <span>m component</span>
+      </a>
+   </li>
+   <li>
+      <a href="#P_C" title="https://w3id.org/aimaix/P_C">
+         <span>p c</span>
+      </a>
+   </li>
+   <li>
+      <a href="#PF_B" title="https://w3id.org/aimaix/PF_B">
+         <span>p f b</span>
+      </a>
+   </li>
+   <li>
+      <a href="#PF_C" title="https://w3id.org/aimaix/PF_C">
+         <span>p f c</span>
+      </a>
+   </li>
+   <li>
+      <a href="#PF_J" title="https://w3id.org/aimaix/PF_J">
+         <span>p f j</span>
+      </a>
+   </li>
+   <li>
+      <a href="#PS_R" title="https://w3id.org/aimaix/PS_R">
+         <span>p s r</span>
+      </a>
+   </li>
+   <li>
+      <a href="#PS_U" title="https://w3id.org/aimaix/PS_U">
+         <span>p s u</span>
+      </a>
+   </li>
+   <li>
+      <a href="#V_C" title="https://w3id.org/aimaix/V_C">
+         <span>v c</span>
+      </a>
+   </li>
+   <li>
+      <a href="#V_I" title="https://w3id.org/aimaix/V_I">
+         <span>v i</span>
+      </a>
+   </li>
+   <li>
+      <a href="#V_M" title="https://w3id.org/aimaix/V_M">
+         <span>v m</span>
+      </a>
+   </li>
+</ul><h4>Object Properties</h4><ul xmlns:extra="https://w3id.org/extra#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#connectedFrom" title="https://w3id.org/aimaix/connectedFrom">
+         <span>connected from</span>
+      </a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/moont/connectedTo" title="https://w3id.org/moont/connectedTo">
+         <span>connected to</span>
+      </a>
+   </li>
+   <li>
+      <a href="#https://w3id.org/moont/hasPart" title="https://w3id.org/moont/hasPart">
+         <span>has part</span>
+      </a>
+   </li>
+   <li>
+      <a href="#object_has_property" title="https://w3id.org/aimaix/object_has_property">
+         <span>object has property</span>
+      </a>
+   </li>
+   <li>
+      <a href="#object_has_x_coordinate" title="https://w3id.org/aimaix/object_has_x_coordinate">
+         <span>object has x coordinate</span>
+      </a>
+   </li>
+   <li>
+      <a href="#property_has_value" title="https://w3id.org/aimaix/property_has_value">
+         <span>property has value</span>
+      </a>
+   </li>
+   <li>
+      <a href="#https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedObjects_IfcRelDefinesByProperties"
+         title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedObjects_IfcRelDefinesByProperties">
+         <span>related objects ifc rel defines by properties</span>
+      </a>
+   </li>
+</ul>
+</div>
+  
+
+<!--DESCRIPTION SECTION-->
+    <div id="description"><h2 id="desc" class="list">Alignment IFC Modelica (AixLib): Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This is a placeholder text for the description of your ontology. The description should include an explanation and a diagram explaining how the classes are related, examples of usage, etc.</span>
+
+</div>
+   
+
+<!--CROSSREF SECTION-->
+   <div id="crossref"><h2 id="crossreference" class="list">Cross-reference for Alignment IFC Modelica (AixLib) classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by Alignment IFC Modelica (AixLib).
+<div xmlns:extra="https://w3id.org/extra#"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     id="classes">
+   <h3 id="classes-headline" class="list">Classes</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#https://w3id.org/aix/AixLib.Fluid.FixedResistances.PressureDrop"
+            title="https://w3id.org/aix/AixLib.Fluid.FixedResistances.PressureDrop">
+            <span>aix lib. fluid. fixed resistances. pressure drop</span>
+         </a>
+      </li>
+      <li>
+         <a href="#C_H" title="https://w3id.org/aimaix/C_H">
+            <span>c h</span>
+         </a>
+      </li>
+      <li>
+         <a href="#FI_P" title="https://w3id.org/aimaix/FI_P">
+            <span>f i p</span>
+         </a>
+      </li>
+      <li>
+         <a href="#HE_P" title="https://w3id.org/aimaix/HE_P">
+            <span>h e p</span>
+         </a>
+      </li>
+      <li>
+         <a href="#IfcCoilType_HYDRONIC" title="https://w3id.org/aimaix/IfcCoilType_HYDRONIC">
+            <span>ifc coil type h y d r o n i c</span>
+         </a>
+      </li>
+      <li>
+         <a href="#IfcDistributionPort_1" title="https://w3id.org/aimaix/IfcDistributionPort_1">
+            <span>ifc distribution port 1</span>
+         </a>
+      </li>
+      <li>
+         <a href="#IfcDistributionPort_2" title="https://w3id.org/aimaix/IfcDistributionPort_2">
+            <span>ifc distribution port 2</span>
+         </a>
+      </li>
+      <li>
+         <a href="#IfcDistributionPort_3" title="https://w3id.org/aimaix/IfcDistributionPort_3">
+            <span>ifc distribution port 3</span>
+         </a>
+      </li>
+      <li>
+         <a href="#IfcDistributionPort_a" title="https://w3id.org/aimaix/IfcDistributionPort_a">
+            <span>ifc distribution port a</span>
+         </a>
+      </li>
+      <li>
+         <a href="#IfcDistributionPort_b" title="https://w3id.org/aimaix/IfcDistributionPort_b">
+            <span>ifc distribution port b</span>
+         </a>
+      </li>
+      <li>
+         <a href="#IfcFlowInstrumentType_PRESSUREGAUGE"
+            title="https://w3id.org/aimaix/IfcFlowInstrumentType_PRESSUREGAUGE">
+            <span>ifc flow instrument type p r e s s u r e g a u g e</span>
+         </a>
+      </li>
+      <li>
+         <a href="#IfcHeatExchangerType_PLATE"
+            title="https://w3id.org/aimaix/IfcHeatExchangerType_PLATE">
+            <span>ifc heat exchanger type p l a t e</span>
+         </a>
+      </li>
+      <li>
+         <a href="#IfcIdentifier_of_x_coordinate"
+            title="https://w3id.org/aimaix/IfcIdentifier_of_x_coordinate">
+            <span>ifc identifier of x coordinate</span>
+         </a>
+      </li>
+      <li>
+         <a href="#IfcIdentifier_of_y_coordinate"
+            title="https://w3id.org/aimaix/IfcIdentifier_of_y_coordinate">
+            <span>ifc identifier of y coordinate</span>
+         </a>
+      </li>
+      <li>
+         <a href="#IfcLabel_layout_position" title="https://w3id.org/aimaix/IfcLabel_layout_position">
+            <span>ifc label layout position</span>
+         </a>
+      </li>
+      <li>
+         <a href="#IfcPipeFittingType_BEND" title="https://w3id.org/aimaix/IfcPipeFittingType_BEND">
+            <span>ifc pipe fitting type b e n d</span>
+         </a>
+      </li>
+      <li>
+         <a href="#IfcPipeFittingType_CONNECTOR"
+            title="https://w3id.org/aimaix/IfcPipeFittingType_CONNECTOR">
+            <span>ifc pipe fitting type c o n n e c t o r</span>
+         </a>
+      </li>
+      <li>
+         <a href="#IfcPipeFittingType_JUNCTION"
+            title="https://w3id.org/aimaix/IfcPipeFittingType_JUNCTION">
+            <span>ifc pipe fitting type j u n c t i o n</span>
+         </a>
+      </li>
+      <li>
+         <a href="#IfcPipeSegmentType_RIGIDSEGMENT"
+            title="https://w3id.org/aimaix/IfcPipeSegmentType_RIGIDSEGMENT">
+            <span>ifc pipe segment type r i g i d s e g m e n t</span>
+         </a>
+      </li>
+      <li>
+         <a href="#IfcPipeSegmentType_USERDEFINED"
+            title="https://w3id.org/aimaix/IfcPipeSegmentType_USERDEFINED">
+            <span>ifc pipe segment type u s e r d e f i n e d</span>
+         </a>
+      </li>
+      <li>
+         <a href="#IfcPropertySet_layout_position"
+            title="https://w3id.org/aimaix/IfcPropertySet_layout_position">
+            <span>ifc property set layout position</span>
+         </a>
+      </li>
+      <li>
+         <a href="#IfcPropertySingleValue_x_coord"
+            title="https://w3id.org/aimaix/IfcPropertySingleValue_x_coord">
+            <span>ifc property single value x coord</span>
+         </a>
+      </li>
+      <li>
+         <a href="#IfcPropertySingleValue_y_coord"
+            title="https://w3id.org/aimaix/IfcPropertySingleValue_y_coord">
+            <span>ifc property single value y coord</span>
+         </a>
+      </li>
+      <li>
+         <a href="#IfcPumpType_CIRCULATOR" title="https://w3id.org/aimaix/IfcPumpType_CIRCULATOR">
+            <span>ifc pump type c i r c u l a t o r</span>
+         </a>
+      </li>
+      <li>
+         <a href="#IfcRelDefinedByType_HE_P" title="https://w3id.org/aimaix/IfcRelDefinedByType_HE_P">
+            <span>ifc rel defined by type h e p</span>
+         </a>
+      </li>
+      <li>
+         <a href="#IfcRelDefinesByType_C_H" title="https://w3id.org/aimaix/IfcRelDefinesByType_C_H">
+            <span>ifc rel defines by type c h</span>
+         </a>
+      </li>
+      <li>
+         <a href="#IfcRelDefinesByType_FI_P" title="https://w3id.org/aimaix/IfcRelDefinesByType_FI_P">
+            <span>ifc rel defines by type f i p</span>
+         </a>
+      </li>
+      <li>
+         <a href="#IfcRelDefinesByType_P_C" title="https://w3id.org/aimaix/IfcRelDefinesByType_P_C">
+            <span>ifc rel defines by type p c</span>
+         </a>
+      </li>
+      <li>
+         <a href="#IfcRelDefinesByType_PF_B" title="https://w3id.org/aimaix/IfcRelDefinesByType_PF_B">
+            <span>ifc rel defines by type p f b</span>
+         </a>
+      </li>
+      <li>
+         <a href="#IfcRelDefinesByType_PF_C" title="https://w3id.org/aimaix/IfcRelDefinesByType_PF_C">
+            <span>ifc rel defines by type p f c</span>
+         </a>
+      </li>
+      <li>
+         <a href="#IfcRelDefinesByType_PF_J" title="https://w3id.org/aimaix/IfcRelDefinesByType_PF_J">
+            <span>ifc rel defines by type p f j</span>
+         </a>
+      </li>
+      <li>
+         <a href="#IfcRelDefinesByType_PS_R" title="https://w3id.org/aimaix/IfcRelDefinesByType_PS_R">
+            <span>ifc rel defines by type p s r</span>
+         </a>
+      </li>
+      <li>
+         <a href="#IfcRelDefinesByType_PS_U" title="https://w3id.org/aimaix/IfcRelDefinesByType_PS_U">
+            <span>ifc rel defines by type p s u</span>
+         </a>
+      </li>
+      <li>
+         <a href="#IfcRelDefinesByType_V_C" title="https://w3id.org/aimaix/IfcRelDefinesByType_V_C">
+            <span>ifc rel defines by type v c</span>
+         </a>
+      </li>
+      <li>
+         <a href="#IfcRelDefinesByType_V_I" title="https://w3id.org/aimaix/IfcRelDefinesByType_V_I">
+            <span>ifc rel defines by type v i</span>
+         </a>
+      </li>
+      <li>
+         <a href="#IfcRelDefinesByType_V_M" title="https://w3id.org/aimaix/IfcRelDefinesByType_V_M">
+            <span>ifc rel defines by type v m</span>
+         </a>
+      </li>
+      <li>
+         <a href="#IfcText_port_1" title="https://w3id.org/aimaix/IfcText_port_1">
+            <span>ifc text port 1</span>
+         </a>
+      </li>
+      <li>
+         <a href="#IfcText_port_2" title="https://w3id.org/aimaix/IfcText_port_2">
+            <span>ifc text port 2</span>
+         </a>
+      </li>
+      <li>
+         <a href="#IfcText_port_3" title="https://w3id.org/aimaix/IfcText_port_3">
+            <span>ifc text port 3</span>
+         </a>
+      </li>
+      <li>
+         <a href="#IfcText_port_a" title="https://w3id.org/aimaix/IfcText_port_a">
+            <span>ifc text port a</span>
+         </a>
+      </li>
+      <li>
+         <a href="#IfcText_port_b" title="https://w3id.org/aimaix/IfcText_port_b">
+            <span>ifc text port b</span>
+         </a>
+      </li>
+      <li>
+         <a href="#IfcValveType_CHECK" title="https://w3id.org/aimaix/IfcValveType_CHECK">
+            <span>ifc valve type c h e c k</span>
+         </a>
+      </li>
+      <li>
+         <a href="#IfcValveType_ISOLATING" title="https://w3id.org/aimaix/IfcValveType_ISOLATING">
+            <span>ifc valve type i s o l a t i n g</span>
+         </a>
+      </li>
+      <li>
+         <a href="#IfcValveType_MIXING" title="https://w3id.org/aimaix/IfcValveType_MIXING">
+            <span>ifc valve type m i x i n g</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/moont/MComponent" title="https://w3id.org/moont/MComponent">
+            <span>m component</span>
+         </a>
+      </li>
+      <li>
+         <a href="#P_C" title="https://w3id.org/aimaix/P_C">
+            <span>p c</span>
+         </a>
+      </li>
+      <li>
+         <a href="#PF_B" title="https://w3id.org/aimaix/PF_B">
+            <span>p f b</span>
+         </a>
+      </li>
+      <li>
+         <a href="#PF_C" title="https://w3id.org/aimaix/PF_C">
+            <span>p f c</span>
+         </a>
+      </li>
+      <li>
+         <a href="#PF_J" title="https://w3id.org/aimaix/PF_J">
+            <span>p f j</span>
+         </a>
+      </li>
+      <li>
+         <a href="#PS_R" title="https://w3id.org/aimaix/PS_R">
+            <span>p s r</span>
+         </a>
+      </li>
+      <li>
+         <a href="#PS_U" title="https://w3id.org/aimaix/PS_U">
+            <span>p s u</span>
+         </a>
+      </li>
+      <li>
+         <a href="#V_C" title="https://w3id.org/aimaix/V_C">
+            <span>v c</span>
+         </a>
+      </li>
+      <li>
+         <a href="#V_I" title="https://w3id.org/aimaix/V_I">
+            <span>v i</span>
+         </a>
+      </li>
+      <li>
+         <a href="#V_M" title="https://w3id.org/aimaix/V_M">
+            <span>v m</span>
+         </a>
+      </li>
+   </ul>
+   <div class="entity" id="https://w3id.org/aix/AixLib.Fluid.FixedResistances.PressureDrop">
+      <h3>aix lib. fluid. fixed resistances. pressure drop<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aix/AixLib.Fluid.FixedResistances.PressureDrop</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="#PF_B" title="https://w3id.org/aimaix/PF_B">p f b</a>
+            <sup class="type-c" title="class">c</sup> 
+            <span class="logic">or</span> 
+            <a href="#PF_C" title="https://w3id.org/aimaix/PF_C">p f c</a>
+            <sup class="type-c" title="class">c</sup> 
+            <span class="logic">or</span> 
+            <a href="#PS_R" title="https://w3id.org/aimaix/PS_R">p s r</a>
+            <sup class="type-c" title="class">c</sup> 
+            <span class="logic">or</span> 
+            <a href="#PS_U" title="https://w3id.org/aimaix/PS_U">p s u</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="C_H">
+      <h3>c h<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/C_H</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="https://w3id.org/aix/AixLib.Fluid.HeatExchangers.HeaterCooler_u"
+               target="_blank"
+               title="https://w3id.org/aix/AixLib.Fluid.HeatExchangers.HeaterCooler_u">aix lib. fluid. heat exchangers. heater cooler u</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject">is typed by ifc object</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">some</span> 
+            <a href="#IfcRelDefinesByType_C_H" title="https://w3id.org/aimaix/IfcRelDefinesByType_C_H">ifc rel defines by type c h</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="FI_P">
+      <h3>f i p<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/FI_P</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="https://w3id.org/aix/AixLib.Fluid.Sensors.Temperature"
+               target="_blank"
+               title="https://w3id.org/aix/AixLib.Fluid.Sensors.Temperature">aix lib. fluid. sensors. temperature</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject">is typed by ifc object</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">some</span> 
+            <a href="#IfcRelDefinesByType_FI_P" title="https://w3id.org/aimaix/IfcRelDefinesByType_FI_P">ifc rel defines by type f i p</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="HE_P">
+      <h3>h e p<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/HE_P</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="https://w3id.org/aix/AixLib.Fluid.HeatExchangers.ConstantEffectiveness"
+               target="_blank"
+               title="https://w3id.org/aix/AixLib.Fluid.HeatExchangers.ConstantEffectiveness">aix lib. fluid. heat exchangers. constant effectiveness</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject">is typed by ifc object</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">some</span> 
+            <a href="#IfcRelDefinedByType_HE_P" title="https://w3id.org/aimaix/IfcRelDefinedByType_HE_P">ifc rel defined by type h e p</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="IfcCoilType_HYDRONIC">
+      <h3>ifc coil type h y d r o n i c<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/IfcCoilType_HYDRONIC</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcCoilType"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcCoilType">predefined type ifc coil type</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">value</span> 
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#HYDRONICCOIL"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#HYDRONICCOIL">h y d r o n i c c o i l</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="IfcDistributionPort_1">
+      <h3>ifc distribution port 1<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/IfcDistributionPort_1</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#description_IfcRoot"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#description_IfcRoot">description ifc root</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">only</span> 
+            <a href="#IfcText_port_1" title="https://w3id.org/aimaix/IfcText_port_1">ifc text port 1</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="IfcDistributionPort_2">
+      <h3>ifc distribution port 2<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/IfcDistributionPort_2</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#description_IfcRoot"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#description_IfcRoot">description ifc root</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">only</span> 
+            <a href="#IfcText_port_2" title="https://w3id.org/aimaix/IfcText_port_2">ifc text port 2</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="IfcDistributionPort_3">
+      <h3>ifc distribution port 3<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/IfcDistributionPort_3</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#description_IfcRoot"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#description_IfcRoot">description ifc root</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">only</span> 
+            <a href="#IfcText_port_3" title="https://w3id.org/aimaix/IfcText_port_3">ifc text port 3</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="IfcDistributionPort_a">
+      <h3>ifc distribution port a<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/IfcDistributionPort_a</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#description_IfcRoot"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#description_IfcRoot">description ifc root</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">only</span> 
+            <a href="#IfcText_port_a" title="https://w3id.org/aimaix/IfcText_port_a">ifc text port a</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="IfcDistributionPort_b">
+      <h3>ifc distribution port b<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/IfcDistributionPort_b</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#description_IfcRoot"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#description_IfcRoot">description ifc root</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">only</span> 
+            <a href="#IfcText_port_b" title="https://w3id.org/aimaix/IfcText_port_b">ifc text port b</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="IfcFlowInstrumentType_PRESSUREGAUGE">
+      <h3>ifc flow instrument type p r e s s u r e g a u g e<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/IfcFlowInstrumentType_PRESSUREGAUGE</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcFlowInstrumentType"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcFlowInstrumentType">predefined type ifc flow instrument type</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">value</span> 
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#PRESSUREGAUGE"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#PRESSUREGAUGE">p r e s s u r e g a u g e</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="IfcHeatExchangerType_PLATE">
+      <h3>ifc heat exchanger type p l a t e<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/IfcHeatExchangerType_PLATE</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcHeatExchangerType"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcHeatExchangerType">predefined type ifc heat exchanger type</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">value</span> 
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#PLATE"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#PLATE">p l a t e</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="IfcIdentifier_of_x_coordinate">
+      <h3>ifc identifier of x coordinate<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/IfcIdentifier_of_x_coordinate</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="https://w3id.org/express#hasString"
+               target="_blank"
+               title="https://w3id.org/express#hasString">has string</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="logic">value</span> x coordinate</dd>
+      </dl>
+   </div>
+   <div class="entity" id="IfcIdentifier_of_y_coordinate">
+      <h3>ifc identifier of y coordinate<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/IfcIdentifier_of_y_coordinate</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="https://w3id.org/express#hasString"
+               target="_blank"
+               title="https://w3id.org/express#hasString">has string</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="logic">value</span> y coordinate</dd>
+      </dl>
+   </div>
+   <div class="entity" id="IfcLabel_layout_position">
+      <h3>ifc label layout position<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/IfcLabel_layout_position</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="https://w3id.org/express#hasString"
+               target="_blank"
+               title="https://w3id.org/express#hasString">has string</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="logic">value</span> Graph_EE</dd>
+      </dl>
+   </div>
+   <div class="entity" id="IfcPipeFittingType_BEND">
+      <h3>ifc pipe fitting type b e n d<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/IfcPipeFittingType_BEND</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcPipeFittingType"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcPipeFittingType">predefined type ifc pipe fitting type</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">value</span> 
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#BEND"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#BEND">b e n d</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="IfcPipeFittingType_CONNECTOR">
+      <h3>ifc pipe fitting type c o n n e c t o r<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/IfcPipeFittingType_CONNECTOR</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcPipeFittingType"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcPipeFittingType">predefined type ifc pipe fitting type</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">value</span> 
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#CONNECTOR"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#CONNECTOR">c o n n e c t o r</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="IfcPipeFittingType_JUNCTION">
+      <h3>ifc pipe fitting type j u n c t i o n<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/IfcPipeFittingType_JUNCTION</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcPipeFittingType"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcPipeFittingType">predefined type ifc pipe fitting type</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">value</span> 
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#JUNCTION"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#JUNCTION">j u n c t i o n</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="IfcPipeSegmentType_RIGIDSEGMENT">
+      <h3>ifc pipe segment type r i g i d s e g m e n t<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/IfcPipeSegmentType_RIGIDSEGMENT</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcPipeSegmentType"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcPipeSegmentType">predefined type ifc pipe segment type</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">value</span> 
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#RIGIDSEGMENT"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#RIGIDSEGMENT">r i g i d s e g m e n t</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="IfcPipeSegmentType_USERDEFINED">
+      <h3>ifc pipe segment type u s e r d e f i n e d<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/IfcPipeSegmentType_USERDEFINED</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcPipeSegmentType"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcPipeSegmentType">predefined type ifc pipe segment type</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">value</span> 
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#USERDEFINED"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#USERDEFINED">u s e r d e f i n e d</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="IfcPropertySet_layout_position">
+      <h3>ifc property set layout position<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/IfcPropertySet_layout_position</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#name_IfcRoot"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#name_IfcRoot">name ifc root</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">only</span> 
+            <a href="#IfcLabel_layout_position" title="https://w3id.org/aimaix/IfcLabel_layout_position">ifc label layout position</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="IfcPropertySingleValue_x_coord">
+      <h3>ifc property single value x coord<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/IfcPropertySingleValue_x_coord</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#name_IfcProperty"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#name_IfcProperty">name ifc property</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">only</span> 
+            <a href="#IfcIdentifier_of_x_coordinate"
+               title="https://w3id.org/aimaix/IfcIdentifier_of_x_coordinate">ifc identifier of x coordinate</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#object_has_x_coordinate" title="https://w3id.org/aimaix/object_has_x_coordinate">object has x coordinate</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#property_has_value" title="https://w3id.org/aimaix/property_has_value">property has value</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="IfcPropertySingleValue_y_coord">
+      <h3>ifc property single value y coord<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/IfcPropertySingleValue_y_coord</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#name_IfcProperty"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#name_IfcProperty">name ifc property</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">only</span> 
+            <a href="#IfcIdentifier_of_y_coordinate"
+               title="https://w3id.org/aimaix/IfcIdentifier_of_y_coordinate">ifc identifier of y coordinate</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="IfcPumpType_CIRCULATOR">
+      <h3>ifc pump type c i r c u l a t o r<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/IfcPumpType_CIRCULATOR</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcPumpType"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcPumpType">predefined type ifc pump type</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">value</span> 
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#CIRCULATOR"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#CIRCULATOR">c i r c u l a t o r</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="IfcRelDefinedByType_HE_P">
+      <h3>ifc rel defined by type h e p<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/IfcRelDefinedByType_HE_P</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType">relating type ifc rel defines by type</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">some</span> 
+            <a href="#IfcHeatExchangerType_PLATE"
+               title="https://w3id.org/aimaix/IfcHeatExchangerType_PLATE">ifc heat exchanger type p l a t e</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="IfcRelDefinesByType_C_H">
+      <h3>ifc rel defines by type c h<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/IfcRelDefinesByType_C_H</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType">relating type ifc rel defines by type</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">some</span> 
+            <a href="#IfcCoilType_HYDRONIC" title="https://w3id.org/aimaix/IfcCoilType_HYDRONIC">ifc coil type h y d r o n i c</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="IfcRelDefinesByType_FI_P">
+      <h3>ifc rel defines by type f i p<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/IfcRelDefinesByType_FI_P</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType">relating type ifc rel defines by type</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">some</span> 
+            <a href="#IfcFlowInstrumentType_PRESSUREGAUGE"
+               title="https://w3id.org/aimaix/IfcFlowInstrumentType_PRESSUREGAUGE">ifc flow instrument type p r e s s u r e g a u g e</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="IfcRelDefinesByType_P_C">
+      <h3>ifc rel defines by type p c<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/IfcRelDefinesByType_P_C</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType">relating type ifc rel defines by type</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">some</span> 
+            <a href="#IfcPumpType_CIRCULATOR" title="https://w3id.org/aimaix/IfcPumpType_CIRCULATOR">ifc pump type c i r c u l a t o r</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="IfcRelDefinesByType_PF_B">
+      <h3>ifc rel defines by type p f b<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/IfcRelDefinesByType_PF_B</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType">relating type ifc rel defines by type</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">some</span> 
+            <a href="#IfcPipeFittingType_BEND" title="https://w3id.org/aimaix/IfcPipeFittingType_BEND">ifc pipe fitting type b e n d</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="IfcRelDefinesByType_PF_C">
+      <h3>ifc rel defines by type p f c<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/IfcRelDefinesByType_PF_C</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType">relating type ifc rel defines by type</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">some</span> 
+            <a href="#IfcPipeFittingType_CONNECTOR"
+               title="https://w3id.org/aimaix/IfcPipeFittingType_CONNECTOR">ifc pipe fitting type c o n n e c t o r</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="IfcRelDefinesByType_PF_J">
+      <h3>ifc rel defines by type p f j<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/IfcRelDefinesByType_PF_J</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType">relating type ifc rel defines by type</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">some</span> 
+            <a href="#IfcPipeFittingType_JUNCTION"
+               title="https://w3id.org/aimaix/IfcPipeFittingType_JUNCTION">ifc pipe fitting type j u n c t i o n</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="IfcRelDefinesByType_PS_R">
+      <h3>ifc rel defines by type p s r<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/IfcRelDefinesByType_PS_R</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType">relating type ifc rel defines by type</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">some</span> 
+            <a href="#IfcPipeSegmentType_RIGIDSEGMENT"
+               title="https://w3id.org/aimaix/IfcPipeSegmentType_RIGIDSEGMENT">ifc pipe segment type r i g i d s e g m e n t</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="IfcRelDefinesByType_PS_U">
+      <h3>ifc rel defines by type p s u<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/IfcRelDefinesByType_PS_U</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType">relating type ifc rel defines by type</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">some</span> 
+            <a href="#IfcPipeSegmentType_USERDEFINED"
+               title="https://w3id.org/aimaix/IfcPipeSegmentType_USERDEFINED">ifc pipe segment type u s e r d e f i n e d</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="IfcRelDefinesByType_V_C">
+      <h3>ifc rel defines by type v c<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/IfcRelDefinesByType_V_C</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType">relating type ifc rel defines by type</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">some</span> 
+            <a href="#IfcValveType_CHECK" title="https://w3id.org/aimaix/IfcValveType_CHECK">ifc valve type c h e c k</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="IfcRelDefinesByType_V_I">
+      <h3>ifc rel defines by type v i<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/IfcRelDefinesByType_V_I</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType">relating type ifc rel defines by type</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">some</span> 
+            <a href="#IfcValveType_ISOLATING" title="https://w3id.org/aimaix/IfcValveType_ISOLATING">ifc valve type i s o l a t i n g</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="IfcRelDefinesByType_V_M">
+      <h3>ifc rel defines by type v m<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/IfcRelDefinesByType_V_M</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType">relating type ifc rel defines by type</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">some</span> 
+            <a href="#IfcValveType_MIXING" title="https://w3id.org/aimaix/IfcValveType_MIXING">ifc valve type m i x i n g</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="IfcText_port_1">
+      <h3>ifc text port 1<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/IfcText_port_1</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="https://w3id.org/express#hasString"
+               target="_blank"
+               title="https://w3id.org/express#hasString">has string</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="logic">value</span> port_1</dd>
+      </dl>
+   </div>
+   <div class="entity" id="IfcText_port_2">
+      <h3>ifc text port 2<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/IfcText_port_2</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="https://w3id.org/express#hasString"
+               target="_blank"
+               title="https://w3id.org/express#hasString">has string</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="logic">value</span> port_2</dd>
+      </dl>
+   </div>
+   <div class="entity" id="IfcText_port_3">
+      <h3>ifc text port 3<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/IfcText_port_3</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="https://w3id.org/express#hasString"
+               target="_blank"
+               title="https://w3id.org/express#hasString">has string</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="logic">value</span> port_3</dd>
+      </dl>
+   </div>
+   <div class="entity" id="IfcText_port_a">
+      <h3>ifc text port a<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/IfcText_port_a</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="https://w3id.org/express#hasString"
+               target="_blank"
+               title="https://w3id.org/express#hasString">has string</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="logic">value</span> port_a</dd>
+      </dl>
+   </div>
+   <div class="entity" id="IfcText_port_b">
+      <h3>ifc text port b<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/IfcText_port_b</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="https://w3id.org/express#hasString"
+               target="_blank"
+               title="https://w3id.org/express#hasString">has string</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="logic">value</span> port_b</dd>
+      </dl>
+   </div>
+   <div class="entity" id="IfcValveType_CHECK">
+      <h3>ifc valve type c h e c k<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/IfcValveType_CHECK</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcValveType"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcValveType">predefined type ifc valve type</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">value</span> 
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#CHECK"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#CHECK">c h e c k</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="IfcValveType_ISOLATING">
+      <h3>ifc valve type i s o l a t i n g<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/IfcValveType_ISOLATING</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcValveType"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcValveType">predefined type ifc valve type</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">value</span> 
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#ISOLATING"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#ISOLATING">i s o l a t i n g</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="IfcValveType_MIXING">
+      <h3>ifc valve type m i x i n g<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/IfcValveType_MIXING</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcValveType"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcValveType">predefined type ifc valve type</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">value</span> 
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#MIXING"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#MIXING">m i x i n g</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/moont/MComponent">
+      <h3>m component<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/MComponent</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="#C_H" title="https://w3id.org/aimaix/C_H">c h</a>
+            <sup class="type-c" title="class">c</sup> 
+            <span class="logic">or</span> 
+            <a href="#FI_P" title="https://w3id.org/aimaix/FI_P">f i p</a>
+            <sup class="type-c" title="class">c</sup> 
+            <span class="logic">or</span> 
+            <a href="#HE_P" title="https://w3id.org/aimaix/HE_P">h e p</a>
+            <sup class="type-c" title="class">c</sup> 
+            <span class="logic">or</span> 
+            <a href="#PF_B" title="https://w3id.org/aimaix/PF_B">p f b</a>
+            <sup class="type-c" title="class">c</sup> 
+            <span class="logic">or</span> 
+            <a href="#PF_C" title="https://w3id.org/aimaix/PF_C">p f c</a>
+            <sup class="type-c" title="class">c</sup> 
+            <span class="logic">or</span> 
+            <a href="#PF_J" title="https://w3id.org/aimaix/PF_J">p f j</a>
+            <sup class="type-c" title="class">c</sup> 
+            <span class="logic">or</span> 
+            <a href="#PS_R" title="https://w3id.org/aimaix/PS_R">p s r</a>
+            <sup class="type-c" title="class">c</sup> 
+            <span class="logic">or</span> 
+            <a href="#PS_U" title="https://w3id.org/aimaix/PS_U">p s u</a>
+            <sup class="type-c" title="class">c</sup> 
+            <span class="logic">or</span> 
+            <a href="#P_C" title="https://w3id.org/aimaix/P_C">p c</a>
+            <sup class="type-c" title="class">c</sup> 
+            <span class="logic">or</span> 
+            <a href="#V_C" title="https://w3id.org/aimaix/V_C">v c</a>
+            <sup class="type-c" title="class">c</sup> 
+            <span class="logic">or</span> 
+            <a href="#V_I" title="https://w3id.org/aimaix/V_I">v i</a>
+            <sup class="type-c" title="class">c</sup> 
+            <span class="logic">or</span> 
+            <a href="#V_M" title="https://w3id.org/aimaix/V_M">v m</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="P_C">
+      <h3>p c<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/P_C</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="https://w3id.org/aix/AixLib.Fluid.Movers.FlowControlled_m_flow"
+               target="_blank"
+               title="https://w3id.org/aix/AixLib.Fluid.Movers.FlowControlled_m_flow">aix lib. fluid. movers. flow controlled m flow</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject">is typed by ifc object</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">some</span> 
+            <a href="#IfcRelDefinesByType_P_C" title="https://w3id.org/aimaix/IfcRelDefinesByType_P_C">ifc rel defines by type p c</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="PF_B">
+      <h3>p f b<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/PF_B</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject">is typed by ifc object</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">some</span> 
+            <a href="#IfcRelDefinesByType_PF_B" title="https://w3id.org/aimaix/IfcRelDefinesByType_PF_B">ifc rel defines by type p f b</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="PF_C">
+      <h3>p f c<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/PF_C</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject">is typed by ifc object</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">some</span> 
+            <a href="#IfcRelDefinesByType_PF_C" title="https://w3id.org/aimaix/IfcRelDefinesByType_PF_C">ifc rel defines by type p f c</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="PF_J">
+      <h3>p f j<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/PF_J</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="https://w3id.org/aix/AixLib.Fluid.FixedResistances.Junction"
+               target="_blank"
+               title="https://w3id.org/aix/AixLib.Fluid.FixedResistances.Junction">aix lib. fluid. fixed resistances. junction</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject">is typed by ifc object</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">some</span> 
+            <a href="#IfcRelDefinesByType_PF_J" title="https://w3id.org/aimaix/IfcRelDefinesByType_PF_J">ifc rel defines by type p f j</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="PS_R">
+      <h3>p s r<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/PS_R</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject">is typed by ifc object</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">some</span> 
+            <a href="#IfcRelDefinesByType_PS_R" title="https://w3id.org/aimaix/IfcRelDefinesByType_PS_R">ifc rel defines by type p s r</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="PS_U">
+      <h3>p s u<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/PS_U</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject">is typed by ifc object</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">some</span> 
+            <a href="#IfcRelDefinesByType_PS_U" title="https://w3id.org/aimaix/IfcRelDefinesByType_PS_U">ifc rel defines by type p s u</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="V_C">
+      <h3>v c<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/V_C</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="https://w3id.org/aix/AixLib.Fluid.FixedResistances.CheckValve"
+               target="_blank"
+               title="https://w3id.org/aix/AixLib.Fluid.FixedResistances.CheckValve">aix lib. fluid. fixed resistances. check valve</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject">is typed by ifc object</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">some</span> 
+            <a href="#IfcRelDefinesByType_V_C" title="https://w3id.org/aimaix/IfcRelDefinesByType_V_C">ifc rel defines by type v c</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="V_I">
+      <h3>v i<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/V_I</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="https://w3id.org/aix/AixLib.Fluid.Actuators.Valves.TwoWayLinear"
+               target="_blank"
+               title="https://w3id.org/aix/AixLib.Fluid.Actuators.Valves.TwoWayLinear">aix lib. fluid. actuators. valves. two way linear</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject">is typed by ifc object</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">some</span> 
+            <a href="#IfcRelDefinesByType_V_I" title="https://w3id.org/aimaix/IfcRelDefinesByType_V_I">ifc rel defines by type v i</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="V_M">
+      <h3>v m<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/V_M</p>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="https://w3id.org/aix/AixLib.Fluid.Actuators.Valves.ThreeWayLinear"
+               target="_blank"
+               title="https://w3id.org/aix/AixLib.Fluid.Actuators.Valves.ThreeWayLinear">aix lib. fluid. actuators. valves. three way linear</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject"
+               target="_blank"
+               title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject">is typed by ifc object</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">some</span> 
+            <a href="#IfcRelDefinesByType_V_M" title="https://w3id.org/aimaix/IfcRelDefinesByType_V_M">ifc rel defines by type v m</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+</div><div xmlns:extra="https://w3id.org/extra#"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     id="objectproperties">
+   <h3 id="properties" class="list">Object Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#connectedFrom" title="https://w3id.org/aimaix/connectedFrom">
+            <span>connected from</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/moont/connectedTo" title="https://w3id.org/moont/connectedTo">
+            <span>connected to</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/moont/hasPart" title="https://w3id.org/moont/hasPart">
+            <span>has part</span>
+         </a>
+      </li>
+      <li>
+         <a href="#object_has_property" title="https://w3id.org/aimaix/object_has_property">
+            <span>object has property</span>
+         </a>
+      </li>
+      <li>
+         <a href="#object_has_x_coordinate" title="https://w3id.org/aimaix/object_has_x_coordinate">
+            <span>object has x coordinate</span>
+         </a>
+      </li>
+      <li>
+         <a href="#property_has_value" title="https://w3id.org/aimaix/property_has_value">
+            <span>property has value</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedObjects_IfcRelDefinesByProperties"
+            title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedObjects_IfcRelDefinesByProperties">
+            <span>related objects ifc rel defines by properties</span>
+         </a>
+      </li>
+   </ul>
+   <div class="entity" id="connectedFrom">
+      <h3>connected from<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/connectedFrom</p>
+      <div class="description">
+         <dl>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#https://w3id.org/moont/connectedTo" title="https://w3id.org/moont/connectedTo">connected to</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://w3id.org/moont/connectedTo">
+      <h3>connected to<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/connectedTo</p>
+      <div class="description">
+         <dl>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#connectedFrom" title="https://w3id.org/aimaix/connectedFrom">connected from</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has sub-property chains</dt>
+            <dd>
+               <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#connectedTo_IfcPort"
+                  target="_blank"
+                  title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#connectedTo_IfcPort">connected to ifc port</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">o</span> 
+               <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedPort_IfcRelConnectsPorts"
+                  target="_blank"
+                  title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedPort_IfcRelConnectsPorts">related port ifc rel connects ports</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://w3id.org/moont/hasPart">
+      <h3>has part<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/moont/hasPart</p>
+      <div class="description">
+         <dl>
+            <dt>has sub-property chains</dt>
+            <dd>
+               <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isNestedBy_IfcObjectDefinition"
+                  target="_blank"
+                  title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isNestedBy_IfcObjectDefinition">is nested by ifc object definition</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">o</span> 
+               <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedObjects_IfcRelNests"
+                  target="_blank"
+                  title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedObjects_IfcRelNests">related objects ifc rel nests</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">o</span> 
+               <a href="https://w3id.org/list#hasContents"
+                  target="_blank"
+                  title="https://w3id.org/list#hasContents">has contents</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dd>
+               <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isNestedBy_IfcObjectDefinition"
+                  target="_blank"
+                  title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isNestedBy_IfcObjectDefinition">is nested by ifc object definition</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">o</span> 
+               <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedObjects_IfcRelNests"
+                  target="_blank"
+                  title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedObjects_IfcRelNests">related objects ifc rel nests</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">o</span> 
+               <a href="https://w3id.org/list#hasNext"
+                  target="_blank"
+                  title="https://w3id.org/list#hasNext">has next</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">o</span> 
+               <a href="https://w3id.org/list#hasContents"
+                  target="_blank"
+                  title="https://w3id.org/list#hasContents">has contents</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dd>
+               <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isNestedBy_IfcObjectDefinition"
+                  target="_blank"
+                  title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isNestedBy_IfcObjectDefinition">is nested by ifc object definition</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">o</span> 
+               <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedObjects_IfcRelNests"
+                  target="_blank"
+                  title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedObjects_IfcRelNests">related objects ifc rel nests</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">o</span> 
+               <a href="https://w3id.org/list#hasNext"
+                  target="_blank"
+                  title="https://w3id.org/list#hasNext">has next</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">o</span> 
+               <a href="https://w3id.org/list#hasNext"
+                  target="_blank"
+                  title="https://w3id.org/list#hasNext">has next</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">o</span> 
+               <a href="https://w3id.org/list#hasContents"
+                  target="_blank"
+                  title="https://w3id.org/list#hasContents">has contents</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dd>
+               <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isNestedBy_IfcObjectDefinition"
+                  target="_blank"
+                  title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isNestedBy_IfcObjectDefinition">is nested by ifc object definition</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">o</span> 
+               <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedObjects_IfcRelNests"
+                  target="_blank"
+                  title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedObjects_IfcRelNests">related objects ifc rel nests</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">o</span> 
+               <a href="https://w3id.org/list#hasNext"
+                  target="_blank"
+                  title="https://w3id.org/list#hasNext">has next</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">o</span> 
+               <a href="https://w3id.org/list#hasNext"
+                  target="_blank"
+                  title="https://w3id.org/list#hasNext">has next</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">o</span> 
+               <a href="https://w3id.org/list#hasNext"
+                  target="_blank"
+                  title="https://w3id.org/list#hasNext">has next</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">o</span> 
+               <a href="https://w3id.org/list#hasContents"
+                  target="_blank"
+                  title="https://w3id.org/list#hasContents">has contents</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dd>
+               <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isNestedBy_IfcObjectDefinition"
+                  target="_blank"
+                  title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isNestedBy_IfcObjectDefinition">is nested by ifc object definition</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">o</span> 
+               <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedObjects_IfcRelNests"
+                  target="_blank"
+                  title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedObjects_IfcRelNests">related objects ifc rel nests</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">o</span> 
+               <a href="https://w3id.org/list#hasNext"
+                  target="_blank"
+                  title="https://w3id.org/list#hasNext">has next</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">o</span> 
+               <a href="https://w3id.org/list#hasNext"
+                  target="_blank"
+                  title="https://w3id.org/list#hasNext">has next</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">o</span> 
+               <a href="https://w3id.org/list#hasNext"
+                  target="_blank"
+                  title="https://w3id.org/list#hasNext">has next</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">o</span> 
+               <a href="https://w3id.org/list#hasNext"
+                  target="_blank"
+                  title="https://w3id.org/list#hasNext">has next</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">o</span> 
+               <a href="https://w3id.org/list#hasContents"
+                  target="_blank"
+                  title="https://w3id.org/list#hasContents">has contents</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dd>
+               <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isNestedBy_IfcObjectDefinition"
+                  target="_blank"
+                  title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isNestedBy_IfcObjectDefinition">is nested by ifc object definition</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">o</span> 
+               <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedObjects_IfcRelNests"
+                  target="_blank"
+                  title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedObjects_IfcRelNests">related objects ifc rel nests</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">o</span> 
+               <a href="https://w3id.org/list#hasNext"
+                  target="_blank"
+                  title="https://w3id.org/list#hasNext">has next</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">o</span> 
+               <a href="https://w3id.org/list#hasNext"
+                  target="_blank"
+                  title="https://w3id.org/list#hasNext">has next</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">o</span> 
+               <a href="https://w3id.org/list#hasNext"
+                  target="_blank"
+                  title="https://w3id.org/list#hasNext">has next</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">o</span> 
+               <a href="https://w3id.org/list#hasNext"
+                  target="_blank"
+                  title="https://w3id.org/list#hasNext">has next</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">o</span> 
+               <a href="https://w3id.org/list#hasNext"
+                  target="_blank"
+                  title="https://w3id.org/list#hasNext">has next</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">o</span> 
+               <a href="https://w3id.org/list#hasContents"
+                  target="_blank"
+                  title="https://w3id.org/list#hasContents">has contents</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="object_has_property">
+      <h3>object has property<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/object_has_property</p>
+      <div class="description">
+         <dl>
+            <dt>has sub-properties</dt>
+            <dd>
+               <a href="#object_has_x_coordinate" title="https://w3id.org/aimaix/object_has_x_coordinate">object has x coordinate</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has sub-property chains</dt>
+            <dd>
+               <a href="https://w3id.org/aimaix/irdbp_IfcObject"
+                  target="_blank"
+                  title="https://w3id.org/aimaix/irdbp_IfcObject">irdbp ifc object</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">o</span> 
+               <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingPropertyDefinition_IfcRelDefinesByProperties"
+                  target="_blank"
+                  title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingPropertyDefinition_IfcRelDefinesByProperties">relating property definition ifc rel defines by properties</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">o</span> 
+               <a href="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#hasProperties_IfcPropertySet"
+                  target="_blank"
+                  title="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#hasProperties_IfcPropertySet">has properties ifc property set</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="object_has_x_coordinate">
+      <h3>object has x coordinate<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/object_has_x_coordinate</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#object_has_property" title="https://w3id.org/aimaix/object_has_property">object has property</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#IfcPropertySingleValue_x_coord"
+                  title="https://w3id.org/aimaix/IfcPropertySingleValue_x_coord">ifc property single value x coord</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="property_has_value">
+      <h3>property has value<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/aimaix/property_has_value</p>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="#IfcPropertySingleValue_x_coord"
+                  title="https://w3id.org/aimaix/IfcPropertySingleValue_x_coord">ifc property single value x coord</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedObjects_IfcRelDefinesByProperties">
+      <h3>related objects ifc rel defines by properties<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedObjects_IfcRelDefinesByProperties</p>
+      <div class="description">
+         <dl>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="https://w3id.org/aimaix/irdbp_IfcObject"
+                  target="_blank"
+                  title="https://w3id.org/aimaix/irdbp_IfcObject">irdbp ifc object</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+</div>
+</div>
+</div>
+    
+
+<!--REFERENCES SECTION-->
+  <div id="references">
+<h2 id="ref" class="list">References <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+Add your references here. It is recommended to have them as a list.</span>
+
+</div>
+<div id="acknowledgments">
+<h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+</div>
+
+
+</div>
+</body>
+</html>

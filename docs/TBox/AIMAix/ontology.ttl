@@ -1,0 +1,804 @@
+@prefix : <https://w3id.org/aimaix/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://w3id.org/aimaix/> .
+
+<https://w3id.org/aimaix/> rdf:type owl:Ontology ;
+                            <http://purl.org/dc/terms/abstract> "This ontology is intended to allow for a translation between IFC models (version 4.0.2.1) and Modelica models from the AixLib. It uses the MoOnt (/MO-x-IFC/tree/main/src/main/resources/ontologies/7_MoOnt) ontology as well as the AixLib ontology (/MO-x-IFC/blob/main/src/main/resources/ontologies/8_ModelicaLibraries/AixLib.ttl). A usecase comprising bidirectional translation between IFC and Modelica is described in this paper: https://doi.org/10.24406/publica-fhg-412499." ;
+                            <http://purl.org/dc/terms/created> "2023-07-26" ,
+                                                               "CC BY-SA 4.0" ;
+                            <http://purl.org/dc/terms/creator> <https://orcid.org/0000-0003-4396-5307> ,
+                                                               <https://www.linkedin.com/in/elisabeth-eckst%C3%A4dt-18689115a/> ,
+                                                               "Elisabeth Eckstaedt" ;
+                            <http://purl.org/dc/terms/description> "This ontology defines the alignment from IFC to Modelica for plant simulation (HVAC equipment)."@en ;
+                            <http://purl.org/dc/terms/issued> "2023-07-26" ;
+                            <http://purl.org/dc/terms/source> <https://github.com/ElisEck/MO-x-IFC/tree/main/src/main/resources/alignments> ;
+                            <http://purl.org/dc/terms/title> "Alignment IFC Modelica (AixLib)"@en ;
+                            rdfs:label "Alignment IFC Modelica (AixLib)" ;
+                            owl:versionInfo "v0.5.0" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/abstract
+<http://purl.org/dc/terms/abstract> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/issued
+<http://purl.org/dc/terms/issued> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/source
+<http://purl.org/dc/terms/source> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#connectedTo_IfcPort
+<https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#connectedTo_IfcPort> rdf:type owl:ObjectProperty .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#description_IfcRoot
+<https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#description_IfcRoot> rdf:type owl:ObjectProperty .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#hasProperties_IfcPropertySet
+<https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#hasProperties_IfcPropertySet> rdf:type owl:ObjectProperty .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isNestedBy_IfcObjectDefinition
+<https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isNestedBy_IfcObjectDefinition> rdf:type owl:ObjectProperty .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject
+<https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject> rdf:type owl:ObjectProperty .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#name_IfcProperty
+<https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#name_IfcProperty> rdf:type owl:ObjectProperty .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#name_IfcRoot
+<https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#name_IfcRoot> rdf:type owl:ObjectProperty .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcCoilType
+<https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcCoilType> rdf:type owl:ObjectProperty .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcFlowInstrumentType
+<https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcFlowInstrumentType> rdf:type owl:ObjectProperty .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcHeatExchangerType
+<https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcHeatExchangerType> rdf:type owl:ObjectProperty .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcPipeFittingType
+<https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcPipeFittingType> rdf:type owl:ObjectProperty .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcPipeSegmentType
+<https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcPipeSegmentType> rdf:type owl:ObjectProperty .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcPumpType
+<https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcPumpType> rdf:type owl:ObjectProperty .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcValveType
+<https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcValveType> rdf:type owl:ObjectProperty .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedObjects_IfcRelDefinesByProperties
+<https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedObjects_IfcRelDefinesByProperties> rdf:type owl:ObjectProperty ;
+                                                                                                         owl:inverseOf :irdbp_IfcObject .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedObjects_IfcRelNests
+<https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedObjects_IfcRelNests> rdf:type owl:ObjectProperty .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedPort_IfcRelConnectsPorts
+<https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedPort_IfcRelConnectsPorts> rdf:type owl:ObjectProperty .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingPropertyDefinition_IfcRelDefinesByProperties
+<https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingPropertyDefinition_IfcRelDefinesByProperties> rdf:type owl:ObjectProperty .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType
+<https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType> rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/aimaix/connectedFrom
+:connectedFrom rdf:type owl:ObjectProperty ;
+               owl:inverseOf <https://w3id.org/moont/connectedTo> .
+
+
+###  https://w3id.org/aimaix/irdbp_IfcObject
+:irdbp_IfcObject rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/aimaix/object_has_property
+:object_has_property rdf:type owl:ObjectProperty ;
+                     owl:propertyChainAxiom ( :irdbp_IfcObject
+                                              <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingPropertyDefinition_IfcRelDefinesByProperties>
+                                              <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#hasProperties_IfcPropertySet>
+                                            ) .
+
+
+###  https://w3id.org/aimaix/object_has_x_coordinate
+:object_has_x_coordinate rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf :object_has_property ;
+                         rdfs:range :IfcPropertySingleValue_x_coord .
+
+
+###  https://w3id.org/aimaix/property_has_value
+:property_has_value rdf:type owl:ObjectProperty ;
+                    rdfs:range :IfcPropertySingleValue_x_coord .
+
+
+###  https://w3id.org/express#hasSet
+<https://w3id.org/express#hasSet> rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/list#hasContents
+<https://w3id.org/list#hasContents> rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/list#hasNext
+<https://w3id.org/list#hasNext> rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/list#isFollowedBy
+<https://w3id.org/list#isFollowedBy> rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/moont/comment
+<https://w3id.org/moont/comment> rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/moont/connectedTo
+<https://w3id.org/moont/connectedTo> rdf:type owl:ObjectProperty ;
+                                     owl:propertyChainAxiom ( <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#connectedTo_IfcPort>
+                                                              <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedPort_IfcRelConnectsPorts>
+                                                            ) .
+
+
+###  https://w3id.org/moont/hasPart
+<https://w3id.org/moont/hasPart> rdf:type owl:ObjectProperty ;
+                                 owl:propertyChainAxiom ( <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isNestedBy_IfcObjectDefinition>
+                                                          <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedObjects_IfcRelNests>
+                                                          <https://w3id.org/list#hasContents>
+                                                        ) ,
+                                                        ( <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isNestedBy_IfcObjectDefinition>
+                                                          <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedObjects_IfcRelNests>
+                                                          <https://w3id.org/list#hasNext>
+                                                          <https://w3id.org/list#hasContents>
+                                                        ) ,
+                                                        ( <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isNestedBy_IfcObjectDefinition>
+                                                          <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedObjects_IfcRelNests>
+                                                          <https://w3id.org/list#hasNext>
+                                                          <https://w3id.org/list#hasNext>
+                                                          <https://w3id.org/list#hasContents>
+                                                        ) ,
+                                                        ( <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isNestedBy_IfcObjectDefinition>
+                                                          <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedObjects_IfcRelNests>
+                                                          <https://w3id.org/list#hasNext>
+                                                          <https://w3id.org/list#hasNext>
+                                                          <https://w3id.org/list#hasNext>
+                                                          <https://w3id.org/list#hasContents>
+                                                        ) ,
+                                                        ( <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isNestedBy_IfcObjectDefinition>
+                                                          <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedObjects_IfcRelNests>
+                                                          <https://w3id.org/list#hasNext>
+                                                          <https://w3id.org/list#hasNext>
+                                                          <https://w3id.org/list#hasNext>
+                                                          <https://w3id.org/list#hasNext>
+                                                          <https://w3id.org/list#hasContents>
+                                                        ) ,
+                                                        ( <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isNestedBy_IfcObjectDefinition>
+                                                          <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedObjects_IfcRelNests>
+                                                          <https://w3id.org/list#hasNext>
+                                                          <https://w3id.org/list#hasNext>
+                                                          <https://w3id.org/list#hasNext>
+                                                          <https://w3id.org/list#hasNext>
+                                                          <https://w3id.org/list#hasNext>
+                                                          <https://w3id.org/list#hasContents>
+                                                        ) .
+
+
+###  https://w3id.org/moont/identifier
+<https://w3id.org/moont/identifier> rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://w3id.org/express#hasDouble
+<https://w3id.org/express#hasDouble> rdf:type owl:DatatypeProperty .
+
+
+###  https://w3id.org/express#hasInteger
+<https://w3id.org/express#hasInteger> rdf:type owl:DatatypeProperty .
+
+
+###  https://w3id.org/express#hasString
+<https://w3id.org/express#hasString> rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://w3id.org/aimaix/C_H
+:C_H rdf:type owl:Class ;
+     owl:equivalentClass <https://w3id.org/aix/AixLib.Fluid.HeatExchangers.HeaterCooler_u> ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject> ;
+                           owl:someValuesFrom :IfcRelDefinesByType_C_H
+                         ] .
+
+
+###  https://w3id.org/aimaix/FI_P
+:FI_P rdf:type owl:Class ;
+      owl:equivalentClass <https://w3id.org/aix/AixLib.Fluid.Sensors.Temperature> ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject> ;
+                            owl:someValuesFrom :IfcRelDefinesByType_FI_P
+                          ] .
+
+
+###  https://w3id.org/aimaix/HE_P
+:HE_P rdf:type owl:Class ;
+      owl:equivalentClass <https://w3id.org/aix/AixLib.Fluid.HeatExchangers.ConstantEffectiveness> ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject> ;
+                            owl:someValuesFrom :IfcRelDefinedByType_HE_P
+                          ] .
+
+
+###  https://w3id.org/aimaix/IfcCoilType_HYDRONIC
+:IfcCoilType_HYDRONIC rdf:type owl:Class ;
+                      owl:equivalentClass [ rdf:type owl:Restriction ;
+                                            owl:onProperty <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcCoilType> ;
+                                            owl:hasValue <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#HYDRONICCOIL>
+                                          ] .
+
+
+###  https://w3id.org/aimaix/IfcDistributionPort_1
+:IfcDistributionPort_1 rdf:type owl:Class ;
+                       owl:equivalentClass [ rdf:type owl:Restriction ;
+                                             owl:onProperty <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#description_IfcRoot> ;
+                                             owl:allValuesFrom :IfcText_port_1
+                                           ] .
+
+
+###  https://w3id.org/aimaix/IfcDistributionPort_2
+:IfcDistributionPort_2 rdf:type owl:Class ;
+                       owl:equivalentClass [ rdf:type owl:Restriction ;
+                                             owl:onProperty <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#description_IfcRoot> ;
+                                             owl:allValuesFrom :IfcText_port_2
+                                           ] .
+
+
+###  https://w3id.org/aimaix/IfcDistributionPort_3
+:IfcDistributionPort_3 rdf:type owl:Class ;
+                       owl:equivalentClass [ rdf:type owl:Restriction ;
+                                             owl:onProperty <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#description_IfcRoot> ;
+                                             owl:allValuesFrom :IfcText_port_3
+                                           ] .
+
+
+###  https://w3id.org/aimaix/IfcDistributionPort_a
+:IfcDistributionPort_a rdf:type owl:Class ;
+                       owl:equivalentClass [ rdf:type owl:Restriction ;
+                                             owl:onProperty <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#description_IfcRoot> ;
+                                             owl:allValuesFrom :IfcText_port_a
+                                           ] .
+
+
+###  https://w3id.org/aimaix/IfcDistributionPort_b
+:IfcDistributionPort_b rdf:type owl:Class ;
+                       owl:equivalentClass [ rdf:type owl:Restriction ;
+                                             owl:onProperty <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#description_IfcRoot> ;
+                                             owl:allValuesFrom :IfcText_port_b
+                                           ] .
+
+
+###  https://w3id.org/aimaix/IfcFlowInstrumentType_PRESSUREGAUGE
+:IfcFlowInstrumentType_PRESSUREGAUGE rdf:type owl:Class ;
+                                     owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                           owl:onProperty <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcFlowInstrumentType> ;
+                                                           owl:hasValue <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#PRESSUREGAUGE>
+                                                         ] .
+
+
+###  https://w3id.org/aimaix/IfcHeatExchangerType_PLATE
+:IfcHeatExchangerType_PLATE rdf:type owl:Class ;
+                            owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                  owl:onProperty <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcHeatExchangerType> ;
+                                                  owl:hasValue <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#PLATE>
+                                                ] .
+
+
+###  https://w3id.org/aimaix/IfcIdentifier_of_x_coordinate
+:IfcIdentifier_of_x_coordinate rdf:type owl:Class ;
+                               owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                     owl:onProperty <https://w3id.org/express#hasString> ;
+                                                     owl:hasValue "x coordinate"
+                                                   ] .
+
+
+###  https://w3id.org/aimaix/IfcIdentifier_of_y_coordinate
+:IfcIdentifier_of_y_coordinate rdf:type owl:Class ;
+                               owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                     owl:onProperty <https://w3id.org/express#hasString> ;
+                                                     owl:hasValue "y coordinate"
+                                                   ] .
+
+
+###  https://w3id.org/aimaix/IfcLabel_layout_position
+:IfcLabel_layout_position rdf:type owl:Class ;
+                          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                owl:onProperty <https://w3id.org/express#hasString> ;
+                                                owl:hasValue "Graph_EE"
+                                              ] .
+
+
+###  https://w3id.org/aimaix/IfcPipeFittingType_BEND
+:IfcPipeFittingType_BEND rdf:type owl:Class ;
+                         owl:equivalentClass [ rdf:type owl:Restriction ;
+                                               owl:onProperty <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcPipeFittingType> ;
+                                               owl:hasValue <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#BEND>
+                                             ] .
+
+
+###  https://w3id.org/aimaix/IfcPipeFittingType_CONNECTOR
+:IfcPipeFittingType_CONNECTOR rdf:type owl:Class ;
+                              owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                    owl:onProperty <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcPipeFittingType> ;
+                                                    owl:hasValue <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#CONNECTOR>
+                                                  ] .
+
+
+###  https://w3id.org/aimaix/IfcPipeFittingType_JUNCTION
+:IfcPipeFittingType_JUNCTION rdf:type owl:Class ;
+                             owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                   owl:onProperty <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcPipeFittingType> ;
+                                                   owl:hasValue <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#JUNCTION>
+                                                 ] .
+
+
+###  https://w3id.org/aimaix/IfcPipeSegmentType_RIGIDSEGMENT
+:IfcPipeSegmentType_RIGIDSEGMENT rdf:type owl:Class ;
+                                 owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                       owl:onProperty <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcPipeSegmentType> ;
+                                                       owl:hasValue <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#RIGIDSEGMENT>
+                                                     ] .
+
+
+###  https://w3id.org/aimaix/IfcPipeSegmentType_USERDEFINED
+:IfcPipeSegmentType_USERDEFINED rdf:type owl:Class ;
+                                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                      owl:onProperty <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcPipeSegmentType> ;
+                                                      owl:hasValue <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#USERDEFINED>
+                                                    ] .
+
+
+###  https://w3id.org/aimaix/IfcPropertySet_layout_position
+:IfcPropertySet_layout_position rdf:type owl:Class ;
+                                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                      owl:onProperty <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#name_IfcRoot> ;
+                                                      owl:allValuesFrom :IfcLabel_layout_position
+                                                    ] .
+
+
+###  https://w3id.org/aimaix/IfcPropertySingleValue_x_coord
+:IfcPropertySingleValue_x_coord rdf:type owl:Class ;
+                                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                      owl:onProperty <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#name_IfcProperty> ;
+                                                      owl:allValuesFrom :IfcIdentifier_of_x_coordinate
+                                                    ] .
+
+
+###  https://w3id.org/aimaix/IfcPropertySingleValue_y_coord
+:IfcPropertySingleValue_y_coord rdf:type owl:Class ;
+                                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                      owl:onProperty <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#name_IfcProperty> ;
+                                                      owl:allValuesFrom :IfcIdentifier_of_y_coordinate
+                                                    ] .
+
+
+###  https://w3id.org/aimaix/IfcPumpType_CIRCULATOR
+:IfcPumpType_CIRCULATOR rdf:type owl:Class ;
+                        owl:equivalentClass [ rdf:type owl:Restriction ;
+                                              owl:onProperty <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcPumpType> ;
+                                              owl:hasValue <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#CIRCULATOR>
+                                            ] .
+
+
+###  https://w3id.org/aimaix/IfcRelDefinedByType_HE_P
+:IfcRelDefinedByType_HE_P rdf:type owl:Class ;
+                          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                owl:onProperty <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType> ;
+                                                owl:someValuesFrom :IfcHeatExchangerType_PLATE
+                                              ] .
+
+
+###  https://w3id.org/aimaix/IfcRelDefinesByType_C_H
+:IfcRelDefinesByType_C_H rdf:type owl:Class ;
+                         owl:equivalentClass [ rdf:type owl:Restriction ;
+                                               owl:onProperty <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType> ;
+                                               owl:someValuesFrom :IfcCoilType_HYDRONIC
+                                             ] .
+
+
+###  https://w3id.org/aimaix/IfcRelDefinesByType_FI_P
+:IfcRelDefinesByType_FI_P rdf:type owl:Class ;
+                          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                owl:onProperty <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType> ;
+                                                owl:someValuesFrom :IfcFlowInstrumentType_PRESSUREGAUGE
+                                              ] .
+
+
+###  https://w3id.org/aimaix/IfcRelDefinesByType_PF_B
+:IfcRelDefinesByType_PF_B rdf:type owl:Class ;
+                          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                owl:onProperty <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType> ;
+                                                owl:someValuesFrom :IfcPipeFittingType_BEND
+                                              ] .
+
+
+###  https://w3id.org/aimaix/IfcRelDefinesByType_PF_C
+:IfcRelDefinesByType_PF_C rdf:type owl:Class ;
+                          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                owl:onProperty <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType> ;
+                                                owl:someValuesFrom :IfcPipeFittingType_CONNECTOR
+                                              ] .
+
+
+###  https://w3id.org/aimaix/IfcRelDefinesByType_PF_J
+:IfcRelDefinesByType_PF_J rdf:type owl:Class ;
+                          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                owl:onProperty <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType> ;
+                                                owl:someValuesFrom :IfcPipeFittingType_JUNCTION
+                                              ] .
+
+
+###  https://w3id.org/aimaix/IfcRelDefinesByType_PS_R
+:IfcRelDefinesByType_PS_R rdf:type owl:Class ;
+                          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                owl:onProperty <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType> ;
+                                                owl:someValuesFrom :IfcPipeSegmentType_RIGIDSEGMENT
+                                              ] .
+
+
+###  https://w3id.org/aimaix/IfcRelDefinesByType_PS_U
+:IfcRelDefinesByType_PS_U rdf:type owl:Class ;
+                          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                owl:onProperty <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType> ;
+                                                owl:someValuesFrom :IfcPipeSegmentType_USERDEFINED
+                                              ] .
+
+
+###  https://w3id.org/aimaix/IfcRelDefinesByType_P_C
+:IfcRelDefinesByType_P_C rdf:type owl:Class ;
+                         owl:equivalentClass [ rdf:type owl:Restriction ;
+                                               owl:onProperty <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType> ;
+                                               owl:someValuesFrom :IfcPumpType_CIRCULATOR
+                                             ] .
+
+
+###  https://w3id.org/aimaix/IfcRelDefinesByType_V_C
+:IfcRelDefinesByType_V_C rdf:type owl:Class ;
+                         owl:equivalentClass [ rdf:type owl:Restriction ;
+                                               owl:onProperty <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType> ;
+                                               owl:someValuesFrom :IfcValveType_CHECK
+                                             ] .
+
+
+###  https://w3id.org/aimaix/IfcRelDefinesByType_V_I
+:IfcRelDefinesByType_V_I rdf:type owl:Class ;
+                         owl:equivalentClass [ rdf:type owl:Restriction ;
+                                               owl:onProperty <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType> ;
+                                               owl:someValuesFrom :IfcValveType_ISOLATING
+                                             ] .
+
+
+###  https://w3id.org/aimaix/IfcRelDefinesByType_V_M
+:IfcRelDefinesByType_V_M rdf:type owl:Class ;
+                         owl:equivalentClass [ rdf:type owl:Restriction ;
+                                               owl:onProperty <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType> ;
+                                               owl:someValuesFrom :IfcValveType_MIXING
+                                             ] .
+
+
+###  https://w3id.org/aimaix/IfcText_port_1
+:IfcText_port_1 rdf:type owl:Class ;
+                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                      owl:onProperty <https://w3id.org/express#hasString> ;
+                                      owl:hasValue "port_1"
+                                    ] .
+
+
+###  https://w3id.org/aimaix/IfcText_port_2
+:IfcText_port_2 rdf:type owl:Class ;
+                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                      owl:onProperty <https://w3id.org/express#hasString> ;
+                                      owl:hasValue "port_2"
+                                    ] .
+
+
+###  https://w3id.org/aimaix/IfcText_port_3
+:IfcText_port_3 rdf:type owl:Class ;
+                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                      owl:onProperty <https://w3id.org/express#hasString> ;
+                                      owl:hasValue "port_3"
+                                    ] .
+
+
+###  https://w3id.org/aimaix/IfcText_port_a
+:IfcText_port_a rdf:type owl:Class ;
+                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                      owl:onProperty <https://w3id.org/express#hasString> ;
+                                      owl:hasValue "port_a"
+                                    ] .
+
+
+###  https://w3id.org/aimaix/IfcText_port_b
+:IfcText_port_b rdf:type owl:Class ;
+                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                      owl:onProperty <https://w3id.org/express#hasString> ;
+                                      owl:hasValue "port_b"
+                                    ] .
+
+
+###  https://w3id.org/aimaix/IfcValveType_CHECK
+:IfcValveType_CHECK rdf:type owl:Class ;
+                    owl:equivalentClass [ rdf:type owl:Restriction ;
+                                          owl:onProperty <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcValveType> ;
+                                          owl:hasValue <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#CHECK>
+                                        ] .
+
+
+###  https://w3id.org/aimaix/IfcValveType_ISOLATING
+:IfcValveType_ISOLATING rdf:type owl:Class ;
+                        owl:equivalentClass [ rdf:type owl:Restriction ;
+                                              owl:onProperty <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcValveType> ;
+                                              owl:hasValue <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#ISOLATING>
+                                            ] .
+
+
+###  https://w3id.org/aimaix/IfcValveType_MIXING
+:IfcValveType_MIXING rdf:type owl:Class ;
+                     owl:equivalentClass [ rdf:type owl:Restriction ;
+                                           owl:onProperty <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcValveType> ;
+                                           owl:hasValue <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#MIXING>
+                                         ] .
+
+
+###  https://w3id.org/aimaix/PF_B
+:PF_B rdf:type owl:Class ;
+      owl:equivalentClass [ rdf:type owl:Restriction ;
+                            owl:onProperty <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject> ;
+                            owl:someValuesFrom :IfcRelDefinesByType_PF_B
+                          ] .
+
+
+###  https://w3id.org/aimaix/PF_C
+:PF_C rdf:type owl:Class ;
+      owl:equivalentClass [ rdf:type owl:Restriction ;
+                            owl:onProperty <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject> ;
+                            owl:someValuesFrom :IfcRelDefinesByType_PF_C
+                          ] .
+
+
+###  https://w3id.org/aimaix/PF_J
+:PF_J rdf:type owl:Class ;
+      owl:equivalentClass <https://w3id.org/aix/AixLib.Fluid.FixedResistances.Junction> ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject> ;
+                            owl:someValuesFrom :IfcRelDefinesByType_PF_J
+                          ] .
+
+
+###  https://w3id.org/aimaix/PS_R
+:PS_R rdf:type owl:Class ;
+      owl:equivalentClass [ rdf:type owl:Restriction ;
+                            owl:onProperty <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject> ;
+                            owl:someValuesFrom :IfcRelDefinesByType_PS_R
+                          ] .
+
+
+###  https://w3id.org/aimaix/PS_U
+:PS_U rdf:type owl:Class ;
+      owl:equivalentClass [ rdf:type owl:Restriction ;
+                            owl:onProperty <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject> ;
+                            owl:someValuesFrom :IfcRelDefinesByType_PS_U
+                          ] .
+
+
+###  https://w3id.org/aimaix/P_C
+:P_C rdf:type owl:Class ;
+     owl:equivalentClass <https://w3id.org/aix/AixLib.Fluid.Movers.FlowControlled_m_flow> ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject> ;
+                           owl:someValuesFrom :IfcRelDefinesByType_P_C
+                         ] .
+
+
+###  https://w3id.org/aimaix/V_C
+:V_C rdf:type owl:Class ;
+     owl:equivalentClass <https://w3id.org/aix/AixLib.Fluid.FixedResistances.CheckValve> ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject> ;
+                           owl:someValuesFrom :IfcRelDefinesByType_V_C
+                         ] .
+
+
+###  https://w3id.org/aimaix/V_I
+:V_I rdf:type owl:Class ;
+     owl:equivalentClass <https://w3id.org/aix/AixLib.Fluid.Actuators.Valves.TwoWayLinear> ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject> ;
+                           owl:someValuesFrom :IfcRelDefinesByType_V_I
+                         ] .
+
+
+###  https://w3id.org/aimaix/V_M
+:V_M rdf:type owl:Class ;
+     owl:equivalentClass <https://w3id.org/aix/AixLib.Fluid.Actuators.Valves.ThreeWayLinear> ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject> ;
+                           owl:someValuesFrom :IfcRelDefinesByType_V_M
+                         ] .
+
+
+###  https://w3id.org/aix/AixLib.Fluid.Actuators.Valves.ThreeWayLinear
+<https://w3id.org/aix/AixLib.Fluid.Actuators.Valves.ThreeWayLinear> rdf:type owl:Class .
+
+
+###  https://w3id.org/aix/AixLib.Fluid.Actuators.Valves.TwoWayLinear
+<https://w3id.org/aix/AixLib.Fluid.Actuators.Valves.TwoWayLinear> rdf:type owl:Class .
+
+
+###  https://w3id.org/aix/AixLib.Fluid.FixedResistances.CheckValve
+<https://w3id.org/aix/AixLib.Fluid.FixedResistances.CheckValve> rdf:type owl:Class .
+
+
+###  https://w3id.org/aix/AixLib.Fluid.FixedResistances.Junction
+<https://w3id.org/aix/AixLib.Fluid.FixedResistances.Junction> rdf:type owl:Class .
+
+
+###  https://w3id.org/aix/AixLib.Fluid.FixedResistances.PressureDrop
+<https://w3id.org/aix/AixLib.Fluid.FixedResistances.PressureDrop> rdf:type owl:Class ;
+                                                                  owl:equivalentClass [ rdf:type owl:Class ;
+                                                                                        owl:unionOf ( :PF_B
+                                                                                                      :PF_C
+                                                                                                      :PS_R
+                                                                                                      :PS_U
+                                                                                                    )
+                                                                                      ] .
+
+
+###  https://w3id.org/aix/AixLib.Fluid.HeatExchangers.ConstantEffectiveness
+<https://w3id.org/aix/AixLib.Fluid.HeatExchangers.ConstantEffectiveness> rdf:type owl:Class .
+
+
+###  https://w3id.org/aix/AixLib.Fluid.HeatExchangers.HeaterCooler_u
+<https://w3id.org/aix/AixLib.Fluid.HeatExchangers.HeaterCooler_u> rdf:type owl:Class .
+
+
+###  https://w3id.org/aix/AixLib.Fluid.HeatExchangers.SensibleCooler_T
+<https://w3id.org/aix/AixLib.Fluid.HeatExchangers.SensibleCooler_T> rdf:type owl:Class .
+
+
+###  https://w3id.org/aix/AixLib.Fluid.Movers.FlowControlled_m_flow
+<https://w3id.org/aix/AixLib.Fluid.Movers.FlowControlled_m_flow> rdf:type owl:Class .
+
+
+###  https://w3id.org/aix/AixLib.Fluid.Sensors.Temperature
+<https://w3id.org/aix/AixLib.Fluid.Sensors.Temperature> rdf:type owl:Class .
+
+
+###  https://w3id.org/moont/MComponent
+<https://w3id.org/moont/MComponent> rdf:type owl:Class ;
+                                    owl:equivalentClass [ rdf:type owl:Class ;
+                                                          owl:unionOf ( :C_H
+                                                                        :FI_P
+                                                                        :HE_P
+                                                                        :PF_B
+                                                                        :PF_C
+                                                                        :PF_J
+                                                                        :PS_R
+                                                                        :PS_U
+                                                                        :P_C
+                                                                        :V_C
+                                                                        :V_I
+                                                                        :V_M
+                                                                      )
+                                                        ] .
+
+
+###  https://w3id.org/moont/MConnectorComponent
+<https://w3id.org/moont/MConnectorComponent> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#BEND
+<https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#BEND> rdf:type owl:NamedIndividual .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#CHECK
+<https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#CHECK> rdf:type owl:NamedIndividual .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#CIRCULATOR
+<https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#CIRCULATOR> rdf:type owl:NamedIndividual .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#CONNECTOR
+<https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#CONNECTOR> rdf:type owl:NamedIndividual .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#HYDRONICCOIL
+<https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#HYDRONICCOIL> rdf:type owl:NamedIndividual .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#ISOLATING
+<https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#ISOLATING> rdf:type owl:NamedIndividual .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#JUNCTION
+<https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#JUNCTION> rdf:type owl:NamedIndividual .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#MIXING
+<https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#MIXING> rdf:type owl:NamedIndividual .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#PLATE
+<https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#PLATE> rdf:type owl:NamedIndividual .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#PRESSUREGAUGE
+<https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#PRESSUREGAUGE> rdf:type owl:NamedIndividual .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#RIGIDSEGMENT
+<https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#RIGIDSEGMENT> rdf:type owl:NamedIndividual .
+
+
+###  https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#USERDEFINED
+<https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#USERDEFINED> rdf:type owl:NamedIndividual .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

@@ -1,0 +1,1193 @@
+[ {
+  "@id" : "_:genid39",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://w3id.org/aimaix/IfcRelDefinesByType_C_H"
+  } ]
+}, {
+  "@id" : "_:genid40",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://w3id.org/aimaix/IfcRelDefinesByType_FI_P"
+  } ]
+}, {
+  "@id" : "_:genid41",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://w3id.org/aimaix/IfcRelDefinedByType_HE_P"
+  } ]
+}, {
+  "@id" : "_:genid42",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#HYDRONICCOIL"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcCoilType"
+  } ]
+}, {
+  "@id" : "_:genid43",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "https://w3id.org/aimaix/IfcText_port_1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#description_IfcRoot"
+  } ]
+}, {
+  "@id" : "_:genid44",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "https://w3id.org/aimaix/IfcText_port_2"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#description_IfcRoot"
+  } ]
+}, {
+  "@id" : "_:genid45",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "https://w3id.org/aimaix/IfcText_port_3"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#description_IfcRoot"
+  } ]
+}, {
+  "@id" : "_:genid46",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "https://w3id.org/aimaix/IfcText_port_a"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#description_IfcRoot"
+  } ]
+}, {
+  "@id" : "_:genid47",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "https://w3id.org/aimaix/IfcText_port_b"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#description_IfcRoot"
+  } ]
+}, {
+  "@id" : "_:genid48",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#PRESSUREGAUGE"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcFlowInstrumentType"
+  } ]
+}, {
+  "@id" : "_:genid49",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#PLATE"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcHeatExchangerType"
+  } ]
+}, {
+  "@id" : "_:genid50",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@value" : "x coordinate"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/express#hasString"
+  } ]
+}, {
+  "@id" : "_:genid51",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@value" : "y coordinate"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/express#hasString"
+  } ]
+}, {
+  "@id" : "_:genid52",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@value" : "Graph_EE"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/express#hasString"
+  } ]
+}, {
+  "@id" : "_:genid53",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#BEND"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcPipeFittingType"
+  } ]
+}, {
+  "@id" : "_:genid54",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#CONNECTOR"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcPipeFittingType"
+  } ]
+}, {
+  "@id" : "_:genid55",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#JUNCTION"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcPipeFittingType"
+  } ]
+}, {
+  "@id" : "_:genid56",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#RIGIDSEGMENT"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcPipeSegmentType"
+  } ]
+}, {
+  "@id" : "_:genid57",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#USERDEFINED"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcPipeSegmentType"
+  } ]
+}, {
+  "@id" : "_:genid58",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "https://w3id.org/aimaix/IfcLabel_layout_position"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#name_IfcRoot"
+  } ]
+}, {
+  "@id" : "_:genid59",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "https://w3id.org/aimaix/IfcIdentifier_of_x_coordinate"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#name_IfcProperty"
+  } ]
+}, {
+  "@id" : "_:genid60",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "https://w3id.org/aimaix/IfcIdentifier_of_y_coordinate"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#name_IfcProperty"
+  } ]
+}, {
+  "@id" : "_:genid61",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#CIRCULATOR"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcPumpType"
+  } ]
+}, {
+  "@id" : "_:genid62",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://w3id.org/aimaix/IfcHeatExchangerType_PLATE"
+  } ]
+}, {
+  "@id" : "_:genid63",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://w3id.org/aimaix/IfcCoilType_HYDRONIC"
+  } ]
+}, {
+  "@id" : "_:genid64",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://w3id.org/aimaix/IfcFlowInstrumentType_PRESSUREGAUGE"
+  } ]
+}, {
+  "@id" : "_:genid65",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://w3id.org/aimaix/IfcPipeFittingType_BEND"
+  } ]
+}, {
+  "@id" : "_:genid66",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://w3id.org/aimaix/IfcPipeFittingType_CONNECTOR"
+  } ]
+}, {
+  "@id" : "_:genid67",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://w3id.org/aimaix/IfcPipeFittingType_JUNCTION"
+  } ]
+}, {
+  "@id" : "_:genid68",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://w3id.org/aimaix/IfcPipeSegmentType_RIGIDSEGMENT"
+  } ]
+}, {
+  "@id" : "_:genid69",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://w3id.org/aimaix/IfcPipeSegmentType_USERDEFINED"
+  } ]
+}, {
+  "@id" : "_:genid70",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://w3id.org/aimaix/IfcPumpType_CIRCULATOR"
+  } ]
+}, {
+  "@id" : "_:genid71",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://w3id.org/aimaix/IfcValveType_CHECK"
+  } ]
+}, {
+  "@id" : "_:genid72",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://w3id.org/aimaix/IfcValveType_ISOLATING"
+  } ]
+}, {
+  "@id" : "_:genid73",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://w3id.org/aimaix/IfcValveType_MIXING"
+  } ]
+}, {
+  "@id" : "_:genid74",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@value" : "port_1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/express#hasString"
+  } ]
+}, {
+  "@id" : "_:genid75",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@value" : "port_2"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/express#hasString"
+  } ]
+}, {
+  "@id" : "_:genid76",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@value" : "port_3"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/express#hasString"
+  } ]
+}, {
+  "@id" : "_:genid77",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@value" : "port_a"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/express#hasString"
+  } ]
+}, {
+  "@id" : "_:genid78",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@value" : "port_b"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/express#hasString"
+  } ]
+}, {
+  "@id" : "_:genid79",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#CHECK"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcValveType"
+  } ]
+}, {
+  "@id" : "_:genid80",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#ISOLATING"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcValveType"
+  } ]
+}, {
+  "@id" : "_:genid81",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#hasValue" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#MIXING"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcValveType"
+  } ]
+}, {
+  "@id" : "_:genid82",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://w3id.org/aimaix/IfcRelDefinesByType_PF_B"
+  } ]
+}, {
+  "@id" : "_:genid83",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://w3id.org/aimaix/IfcRelDefinesByType_PF_C"
+  } ]
+}, {
+  "@id" : "_:genid84",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://w3id.org/aimaix/IfcRelDefinesByType_PF_J"
+  } ]
+}, {
+  "@id" : "_:genid85",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://w3id.org/aimaix/IfcRelDefinesByType_PS_R"
+  } ]
+}, {
+  "@id" : "_:genid86",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://w3id.org/aimaix/IfcRelDefinesByType_PS_U"
+  } ]
+}, {
+  "@id" : "_:genid87",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://w3id.org/aimaix/IfcRelDefinesByType_P_C"
+  } ]
+}, {
+  "@id" : "_:genid88",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://w3id.org/aimaix/IfcRelDefinesByType_V_C"
+  } ]
+}, {
+  "@id" : "_:genid89",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://w3id.org/aimaix/IfcRelDefinesByType_V_I"
+  } ]
+}, {
+  "@id" : "_:genid90",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "https://w3id.org/aimaix/IfcRelDefinesByType_V_M"
+  } ]
+}, {
+  "@id" : "_:genid91",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/aimaix/PF_B"
+    }, {
+      "@id" : "https://w3id.org/aimaix/PF_C"
+    }, {
+      "@id" : "https://w3id.org/aimaix/PS_R"
+    }, {
+      "@id" : "https://w3id.org/aimaix/PS_U"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid96",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/aimaix/C_H"
+    }, {
+      "@id" : "https://w3id.org/aimaix/FI_P"
+    }, {
+      "@id" : "https://w3id.org/aimaix/HE_P"
+    }, {
+      "@id" : "https://w3id.org/aimaix/PF_B"
+    }, {
+      "@id" : "https://w3id.org/aimaix/PF_C"
+    }, {
+      "@id" : "https://w3id.org/aimaix/PF_J"
+    }, {
+      "@id" : "https://w3id.org/aimaix/PS_R"
+    }, {
+      "@id" : "https://w3id.org/aimaix/PS_U"
+    }, {
+      "@id" : "https://w3id.org/aimaix/P_C"
+    }, {
+      "@id" : "https://w3id.org/aimaix/V_C"
+    }, {
+      "@id" : "https://w3id.org/aimaix/V_I"
+    }, {
+      "@id" : "https://w3id.org/aimaix/V_M"
+    } ]
+  } ]
+}, {
+  "@id" : "http://purl.org/dc/terms/abstract",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/created",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/creator",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/description",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/issued",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/source",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/title",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#BEND",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#CHECK",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#CIRCULATOR",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#CONNECTOR",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#HYDRONICCOIL",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#ISOLATING",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#JUNCTION",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#MIXING",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#PLATE",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#PRESSUREGAUGE",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#RIGIDSEGMENT",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#USERDEFINED",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#connectedTo_IfcPort",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#description_IfcRoot",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#hasProperties_IfcPropertySet",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isNestedBy_IfcObjectDefinition",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#name_IfcProperty",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#name_IfcRoot",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcCoilType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcFlowInstrumentType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcHeatExchangerType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcPipeFittingType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcPipeSegmentType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcPumpType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcValveType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedObjects_IfcRelDefinesByProperties",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://w3id.org/aimaix/irdbp_IfcObject"
+  } ]
+}, {
+  "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedObjects_IfcRelNests",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedPort_IfcRelConnectsPorts",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingPropertyDefinition_IfcRelDefinesByProperties",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "https://w3id.org/aimaix/",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
+  "http://purl.org/dc/terms/abstract" : [ {
+    "@value" : "This ontology is intended to allow for a translation between IFC models (version 4.0.2.1) and Modelica models from the AixLib. It uses the MoOnt (/MO-x-IFC/tree/main/src/main/resources/ontologies/7_MoOnt) ontology as well as the AixLib ontology (/MO-x-IFC/blob/main/src/main/resources/ontologies/8_ModelicaLibraries/AixLib.ttl). A usecase comprising bidirectional translation between IFC and Modelica is described in this paper: https://doi.org/10.24406/publica-fhg-412499."
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2023-07-26"
+  }, {
+    "@value" : "CC BY-SA 4.0"
+  } ],
+  "http://purl.org/dc/terms/creator" : [ {
+    "@id" : "https://orcid.org/0000-0003-4396-5307"
+  }, {
+    "@id" : "https://www.linkedin.com/in/elisabeth-eckst%C3%A4dt-18689115a/"
+  }, {
+    "@value" : "Elisabeth Eckstaedt"
+  } ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "This ontology defines the alignment from IFC to Modelica for plant simulation (HVAC equipment)."
+  } ],
+  "http://purl.org/dc/terms/issued" : [ {
+    "@value" : "2023-07-26"
+  } ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@id" : "https://github.com/ElisEck/MO-x-IFC/tree/main/src/main/resources/alignments"
+  } ],
+  "http://purl.org/dc/terms/title" : [ {
+    "@language" : "en",
+    "@value" : "Alignment IFC Modelica (AixLib)"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Alignment IFC Modelica (AixLib)"
+  } ],
+  "http://www.w3.org/2002/07/owl#versionInfo" : [ {
+    "@value" : "v0.5.0"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/C_H",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "https://w3id.org/aix/AixLib.Fluid.HeatExchangers.HeaterCooler_u"
+  }, {
+    "@id" : "_:genid39"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/FI_P",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "https://w3id.org/aix/AixLib.Fluid.Sensors.Temperature"
+  }, {
+    "@id" : "_:genid40"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/HE_P",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "https://w3id.org/aix/AixLib.Fluid.HeatExchangers.ConstantEffectiveness"
+  }, {
+    "@id" : "_:genid41"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/IfcCoilType_HYDRONIC",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid42"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/IfcDistributionPort_1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid43"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/IfcDistributionPort_2",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid44"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/IfcDistributionPort_3",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid45"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/IfcDistributionPort_a",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid46"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/IfcDistributionPort_b",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid47"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/IfcFlowInstrumentType_PRESSUREGAUGE",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid48"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/IfcHeatExchangerType_PLATE",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid49"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/IfcIdentifier_of_x_coordinate",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid50"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/IfcIdentifier_of_y_coordinate",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid51"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/IfcLabel_layout_position",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid52"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/IfcPipeFittingType_BEND",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid53"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/IfcPipeFittingType_CONNECTOR",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid54"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/IfcPipeFittingType_JUNCTION",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid55"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/IfcPipeSegmentType_RIGIDSEGMENT",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid56"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/IfcPipeSegmentType_USERDEFINED",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid57"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/IfcPropertySet_layout_position",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid58"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/IfcPropertySingleValue_x_coord",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid59"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/IfcPropertySingleValue_y_coord",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid60"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/IfcPumpType_CIRCULATOR",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid61"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/IfcRelDefinedByType_HE_P",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid62"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/IfcRelDefinesByType_C_H",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid63"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/IfcRelDefinesByType_FI_P",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid64"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/IfcRelDefinesByType_PF_B",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid65"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/IfcRelDefinesByType_PF_C",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid66"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/IfcRelDefinesByType_PF_J",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid67"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/IfcRelDefinesByType_PS_R",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid68"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/IfcRelDefinesByType_PS_U",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid69"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/IfcRelDefinesByType_P_C",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid70"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/IfcRelDefinesByType_V_C",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid71"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/IfcRelDefinesByType_V_I",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid72"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/IfcRelDefinesByType_V_M",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid73"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/IfcText_port_1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid74"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/IfcText_port_2",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid75"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/IfcText_port_3",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid76"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/IfcText_port_a",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid77"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/IfcText_port_b",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid78"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/IfcValveType_CHECK",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid79"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/IfcValveType_ISOLATING",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid80"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/IfcValveType_MIXING",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid81"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/PF_B",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid82"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/PF_C",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid83"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/PF_J",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "https://w3id.org/aix/AixLib.Fluid.FixedResistances.Junction"
+  }, {
+    "@id" : "_:genid84"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/PS_R",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid85"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/PS_U",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid86"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/P_C",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "https://w3id.org/aix/AixLib.Fluid.Movers.FlowControlled_m_flow"
+  }, {
+    "@id" : "_:genid87"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/V_C",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "https://w3id.org/aix/AixLib.Fluid.FixedResistances.CheckValve"
+  }, {
+    "@id" : "_:genid88"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/V_I",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "https://w3id.org/aix/AixLib.Fluid.Actuators.Valves.TwoWayLinear"
+  }, {
+    "@id" : "_:genid89"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/V_M",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "https://w3id.org/aix/AixLib.Fluid.Actuators.Valves.ThreeWayLinear"
+  }, {
+    "@id" : "_:genid90"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/connectedFrom",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://w3id.org/moont/connectedTo"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/irdbp_IfcObject",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "https://w3id.org/aimaix/object_has_property",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2002/07/owl#propertyChainAxiom" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/aimaix/irdbp_IfcObject"
+    }, {
+      "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingPropertyDefinition_IfcRelDefinesByProperties"
+    }, {
+      "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#hasProperties_IfcPropertySet"
+    } ]
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/object_has_x_coordinate",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/aimaix/IfcPropertySingleValue_x_coord"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://w3id.org/aimaix/object_has_property"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aimaix/property_has_value",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/aimaix/IfcPropertySingleValue_x_coord"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aix/AixLib.Fluid.Actuators.Valves.ThreeWayLinear",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://w3id.org/aix/AixLib.Fluid.Actuators.Valves.TwoWayLinear",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://w3id.org/aix/AixLib.Fluid.FixedResistances.CheckValve",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://w3id.org/aix/AixLib.Fluid.FixedResistances.Junction",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://w3id.org/aix/AixLib.Fluid.FixedResistances.PressureDrop",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid91"
+  } ]
+}, {
+  "@id" : "https://w3id.org/aix/AixLib.Fluid.HeatExchangers.ConstantEffectiveness",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://w3id.org/aix/AixLib.Fluid.HeatExchangers.HeaterCooler_u",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://w3id.org/aix/AixLib.Fluid.HeatExchangers.SensibleCooler_T",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://w3id.org/aix/AixLib.Fluid.Movers.FlowControlled_m_flow",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://w3id.org/aix/AixLib.Fluid.Sensors.Temperature",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://w3id.org/express#hasDouble",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ]
+}, {
+  "@id" : "https://w3id.org/express#hasInteger",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ]
+}, {
+  "@id" : "https://w3id.org/express#hasSet",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "https://w3id.org/express#hasString",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ]
+}, {
+  "@id" : "https://w3id.org/list#hasContents",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "https://w3id.org/list#hasNext",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "https://w3id.org/list#isFollowedBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "https://w3id.org/moont/MComponent",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "_:genid96"
+  } ]
+}, {
+  "@id" : "https://w3id.org/moont/MConnectorComponent",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://w3id.org/moont/comment",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "https://w3id.org/moont/connectedTo",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2002/07/owl#propertyChainAxiom" : [ {
+    "@list" : [ {
+      "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#connectedTo_IfcPort"
+    }, {
+      "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedPort_IfcRelConnectsPorts"
+    } ]
+  } ]
+}, {
+  "@id" : "https://w3id.org/moont/hasPart",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2002/07/owl#propertyChainAxiom" : [ {
+    "@list" : [ {
+      "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isNestedBy_IfcObjectDefinition"
+    }, {
+      "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedObjects_IfcRelNests"
+    }, {
+      "@id" : "https://w3id.org/list#hasContents"
+    } ]
+  }, {
+    "@list" : [ {
+      "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isNestedBy_IfcObjectDefinition"
+    }, {
+      "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedObjects_IfcRelNests"
+    }, {
+      "@id" : "https://w3id.org/list#hasNext"
+    }, {
+      "@id" : "https://w3id.org/list#hasContents"
+    } ]
+  }, {
+    "@list" : [ {
+      "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isNestedBy_IfcObjectDefinition"
+    }, {
+      "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedObjects_IfcRelNests"
+    }, {
+      "@id" : "https://w3id.org/list#hasNext"
+    }, {
+      "@id" : "https://w3id.org/list#hasNext"
+    }, {
+      "@id" : "https://w3id.org/list#hasContents"
+    } ]
+  }, {
+    "@list" : [ {
+      "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isNestedBy_IfcObjectDefinition"
+    }, {
+      "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedObjects_IfcRelNests"
+    }, {
+      "@id" : "https://w3id.org/list#hasNext"
+    }, {
+      "@id" : "https://w3id.org/list#hasNext"
+    }, {
+      "@id" : "https://w3id.org/list#hasNext"
+    }, {
+      "@id" : "https://w3id.org/list#hasContents"
+    } ]
+  }, {
+    "@list" : [ {
+      "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isNestedBy_IfcObjectDefinition"
+    }, {
+      "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedObjects_IfcRelNests"
+    }, {
+      "@id" : "https://w3id.org/list#hasNext"
+    }, {
+      "@id" : "https://w3id.org/list#hasNext"
+    }, {
+      "@id" : "https://w3id.org/list#hasNext"
+    }, {
+      "@id" : "https://w3id.org/list#hasNext"
+    }, {
+      "@id" : "https://w3id.org/list#hasContents"
+    } ]
+  }, {
+    "@list" : [ {
+      "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isNestedBy_IfcObjectDefinition"
+    }, {
+      "@id" : "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedObjects_IfcRelNests"
+    }, {
+      "@id" : "https://w3id.org/list#hasNext"
+    }, {
+      "@id" : "https://w3id.org/list#hasNext"
+    }, {
+      "@id" : "https://w3id.org/list#hasNext"
+    }, {
+      "@id" : "https://w3id.org/list#hasNext"
+    }, {
+      "@id" : "https://w3id.org/list#hasNext"
+    }, {
+      "@id" : "https://w3id.org/list#hasContents"
+    } ]
+  } ]
+}, {
+  "@id" : "https://w3id.org/moont/identifier",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+} ]

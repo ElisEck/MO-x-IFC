@@ -1,0 +1,1384 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://w3id.org/aimaix/"
+     xml:base="https://w3id.org/aimaix/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:terms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="https://w3id.org/aimaix/">
+        <terms:abstract>This ontology is intended to allow for a translation between IFC models (version 4.0.2.1) and Modelica models from the AixLib. It uses the MoOnt (/MO-x-IFC/tree/main/src/main/resources/ontologies/7_MoOnt) ontology as well as the AixLib ontology (/MO-x-IFC/blob/main/src/main/resources/ontologies/8_ModelicaLibraries/AixLib.ttl). A usecase comprising bidirectional translation between IFC and Modelica is described in this paper: https://doi.org/10.24406/publica-fhg-412499.</terms:abstract>
+        <terms:created>2023-07-26</terms:created>
+        <terms:created>CC BY-SA 4.0</terms:created>
+        <terms:creator rdf:resource="https://orcid.org/0000-0003-4396-5307"/>
+        <terms:creator rdf:resource="https://www.linkedin.com/in/elisabeth-eckst%C3%A4dt-18689115a/"/>
+        <terms:creator>Elisabeth Eckstaedt</terms:creator>
+        <terms:description xml:lang="en">This ontology defines the alignment from IFC to Modelica for plant simulation (HVAC equipment).</terms:description>
+        <terms:issued>2023-07-26</terms:issued>
+        <terms:source rdf:resource="https://github.com/ElisEck/MO-x-IFC/tree/main/src/main/resources/alignments"/>
+        <terms:title xml:lang="en">Alignment IFC Modelica (AixLib)</terms:title>
+        <rdfs:label>Alignment IFC Modelica (AixLib)</rdfs:label>
+        <owl:versionInfo>v0.5.0</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/terms/abstract -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/abstract"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/created -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/issued -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/issued"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/source -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/source"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#connectedTo_IfcPort -->
+
+
+    <owl:ObjectProperty rdf:about="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#connectedTo_IfcPort"/>
+    
+
+
+    <!-- https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#description_IfcRoot -->
+
+
+    <owl:ObjectProperty rdf:about="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#description_IfcRoot"/>
+    
+
+
+    <!-- https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#hasProperties_IfcPropertySet -->
+
+
+    <owl:ObjectProperty rdf:about="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#hasProperties_IfcPropertySet"/>
+    
+
+
+    <!-- https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isNestedBy_IfcObjectDefinition -->
+
+
+    <owl:ObjectProperty rdf:about="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isNestedBy_IfcObjectDefinition"/>
+    
+
+
+    <!-- https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject -->
+
+
+    <owl:ObjectProperty rdf:about="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject"/>
+    
+
+
+    <!-- https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#name_IfcProperty -->
+
+
+    <owl:ObjectProperty rdf:about="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#name_IfcProperty"/>
+    
+
+
+    <!-- https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#name_IfcRoot -->
+
+
+    <owl:ObjectProperty rdf:about="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#name_IfcRoot"/>
+    
+
+
+    <!-- https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcCoilType -->
+
+
+    <owl:ObjectProperty rdf:about="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcCoilType"/>
+    
+
+
+    <!-- https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcFlowInstrumentType -->
+
+
+    <owl:ObjectProperty rdf:about="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcFlowInstrumentType"/>
+    
+
+
+    <!-- https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcHeatExchangerType -->
+
+
+    <owl:ObjectProperty rdf:about="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcHeatExchangerType"/>
+    
+
+
+    <!-- https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcPipeFittingType -->
+
+
+    <owl:ObjectProperty rdf:about="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcPipeFittingType"/>
+    
+
+
+    <!-- https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcPipeSegmentType -->
+
+
+    <owl:ObjectProperty rdf:about="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcPipeSegmentType"/>
+    
+
+
+    <!-- https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcPumpType -->
+
+
+    <owl:ObjectProperty rdf:about="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcPumpType"/>
+    
+
+
+    <!-- https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcValveType -->
+
+
+    <owl:ObjectProperty rdf:about="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcValveType"/>
+    
+
+
+    <!-- https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedObjects_IfcRelDefinesByProperties -->
+
+
+    <owl:ObjectProperty rdf:about="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedObjects_IfcRelDefinesByProperties">
+        <owl:inverseOf rdf:resource="https://w3id.org/aimaix/irdbp_IfcObject"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedObjects_IfcRelNests -->
+
+
+    <owl:ObjectProperty rdf:about="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedObjects_IfcRelNests"/>
+    
+
+
+    <!-- https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedPort_IfcRelConnectsPorts -->
+
+
+    <owl:ObjectProperty rdf:about="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedPort_IfcRelConnectsPorts"/>
+    
+
+
+    <!-- https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingPropertyDefinition_IfcRelDefinesByProperties -->
+
+
+    <owl:ObjectProperty rdf:about="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingPropertyDefinition_IfcRelDefinesByProperties"/>
+    
+
+
+    <!-- https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType -->
+
+
+    <owl:ObjectProperty rdf:about="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType"/>
+    
+
+
+    <!-- https://w3id.org/aimaix/connectedFrom -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/aimaix/connectedFrom">
+        <owl:inverseOf rdf:resource="https://w3id.org/moont/connectedTo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/aimaix/irdbp_IfcObject -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/aimaix/irdbp_IfcObject"/>
+    
+
+
+    <!-- https://w3id.org/aimaix/object_has_property -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/aimaix/object_has_property">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/aimaix/irdbp_IfcObject"/>
+            <rdf:Description rdf:about="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingPropertyDefinition_IfcRelDefinesByProperties"/>
+            <rdf:Description rdf:about="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#hasProperties_IfcPropertySet"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/aimaix/object_has_x_coordinate -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/aimaix/object_has_x_coordinate">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/aimaix/object_has_property"/>
+        <rdfs:range rdf:resource="https://w3id.org/aimaix/IfcPropertySingleValue_x_coord"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/aimaix/property_has_value -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/aimaix/property_has_value">
+        <rdfs:range rdf:resource="https://w3id.org/aimaix/IfcPropertySingleValue_x_coord"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/express#hasSet -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/express#hasSet"/>
+    
+
+
+    <!-- https://w3id.org/list#hasContents -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/list#hasContents"/>
+    
+
+
+    <!-- https://w3id.org/list#hasNext -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/list#hasNext"/>
+    
+
+
+    <!-- https://w3id.org/list#isFollowedBy -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/list#isFollowedBy"/>
+    
+
+
+    <!-- https://w3id.org/moont/comment -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/moont/comment"/>
+    
+
+
+    <!-- https://w3id.org/moont/connectedTo -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/moont/connectedTo">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#connectedTo_IfcPort"/>
+            <rdf:Description rdf:about="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedPort_IfcRelConnectsPorts"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/moont/hasPart -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/moont/hasPart">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isNestedBy_IfcObjectDefinition"/>
+            <rdf:Description rdf:about="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedObjects_IfcRelNests"/>
+            <rdf:Description rdf:about="https://w3id.org/list#hasContents"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isNestedBy_IfcObjectDefinition"/>
+            <rdf:Description rdf:about="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedObjects_IfcRelNests"/>
+            <rdf:Description rdf:about="https://w3id.org/list#hasNext"/>
+            <rdf:Description rdf:about="https://w3id.org/list#hasContents"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isNestedBy_IfcObjectDefinition"/>
+            <rdf:Description rdf:about="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedObjects_IfcRelNests"/>
+            <rdf:Description rdf:about="https://w3id.org/list#hasNext"/>
+            <rdf:Description rdf:about="https://w3id.org/list#hasNext"/>
+            <rdf:Description rdf:about="https://w3id.org/list#hasContents"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isNestedBy_IfcObjectDefinition"/>
+            <rdf:Description rdf:about="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedObjects_IfcRelNests"/>
+            <rdf:Description rdf:about="https://w3id.org/list#hasNext"/>
+            <rdf:Description rdf:about="https://w3id.org/list#hasNext"/>
+            <rdf:Description rdf:about="https://w3id.org/list#hasNext"/>
+            <rdf:Description rdf:about="https://w3id.org/list#hasContents"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isNestedBy_IfcObjectDefinition"/>
+            <rdf:Description rdf:about="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedObjects_IfcRelNests"/>
+            <rdf:Description rdf:about="https://w3id.org/list#hasNext"/>
+            <rdf:Description rdf:about="https://w3id.org/list#hasNext"/>
+            <rdf:Description rdf:about="https://w3id.org/list#hasNext"/>
+            <rdf:Description rdf:about="https://w3id.org/list#hasNext"/>
+            <rdf:Description rdf:about="https://w3id.org/list#hasContents"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isNestedBy_IfcObjectDefinition"/>
+            <rdf:Description rdf:about="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatedObjects_IfcRelNests"/>
+            <rdf:Description rdf:about="https://w3id.org/list#hasNext"/>
+            <rdf:Description rdf:about="https://w3id.org/list#hasNext"/>
+            <rdf:Description rdf:about="https://w3id.org/list#hasNext"/>
+            <rdf:Description rdf:about="https://w3id.org/list#hasNext"/>
+            <rdf:Description rdf:about="https://w3id.org/list#hasNext"/>
+            <rdf:Description rdf:about="https://w3id.org/list#hasContents"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/moont/identifier -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/moont/identifier"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/express#hasDouble -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/express#hasDouble"/>
+    
+
+
+    <!-- https://w3id.org/express#hasInteger -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/express#hasInteger"/>
+    
+
+
+    <!-- https://w3id.org/express#hasString -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/express#hasString"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/aimaix/C_H -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aimaix/C_H">
+        <owl:equivalentClass rdf:resource="https://w3id.org/aix/AixLib.Fluid.HeatExchangers.HeaterCooler_u"/>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/aimaix/IfcRelDefinesByType_C_H"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aimaix/FI_P -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aimaix/FI_P">
+        <owl:equivalentClass rdf:resource="https://w3id.org/aix/AixLib.Fluid.Sensors.Temperature"/>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/aimaix/IfcRelDefinesByType_FI_P"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aimaix/HE_P -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aimaix/HE_P">
+        <owl:equivalentClass rdf:resource="https://w3id.org/aix/AixLib.Fluid.HeatExchangers.ConstantEffectiveness"/>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/aimaix/IfcRelDefinedByType_HE_P"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aimaix/IfcCoilType_HYDRONIC -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aimaix/IfcCoilType_HYDRONIC">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcCoilType"/>
+                <owl:hasValue rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#HYDRONICCOIL"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aimaix/IfcDistributionPort_1 -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aimaix/IfcDistributionPort_1">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#description_IfcRoot"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/aimaix/IfcText_port_1"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aimaix/IfcDistributionPort_2 -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aimaix/IfcDistributionPort_2">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#description_IfcRoot"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/aimaix/IfcText_port_2"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aimaix/IfcDistributionPort_3 -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aimaix/IfcDistributionPort_3">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#description_IfcRoot"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/aimaix/IfcText_port_3"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aimaix/IfcDistributionPort_a -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aimaix/IfcDistributionPort_a">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#description_IfcRoot"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/aimaix/IfcText_port_a"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aimaix/IfcDistributionPort_b -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aimaix/IfcDistributionPort_b">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#description_IfcRoot"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/aimaix/IfcText_port_b"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aimaix/IfcFlowInstrumentType_PRESSUREGAUGE -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aimaix/IfcFlowInstrumentType_PRESSUREGAUGE">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcFlowInstrumentType"/>
+                <owl:hasValue rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#PRESSUREGAUGE"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aimaix/IfcHeatExchangerType_PLATE -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aimaix/IfcHeatExchangerType_PLATE">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcHeatExchangerType"/>
+                <owl:hasValue rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#PLATE"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aimaix/IfcIdentifier_of_x_coordinate -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aimaix/IfcIdentifier_of_x_coordinate">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/express#hasString"/>
+                <owl:hasValue>x coordinate</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aimaix/IfcIdentifier_of_y_coordinate -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aimaix/IfcIdentifier_of_y_coordinate">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/express#hasString"/>
+                <owl:hasValue>y coordinate</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aimaix/IfcLabel_layout_position -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aimaix/IfcLabel_layout_position">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/express#hasString"/>
+                <owl:hasValue>Graph_EE</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aimaix/IfcPipeFittingType_BEND -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aimaix/IfcPipeFittingType_BEND">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcPipeFittingType"/>
+                <owl:hasValue rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#BEND"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aimaix/IfcPipeFittingType_CONNECTOR -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aimaix/IfcPipeFittingType_CONNECTOR">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcPipeFittingType"/>
+                <owl:hasValue rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#CONNECTOR"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aimaix/IfcPipeFittingType_JUNCTION -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aimaix/IfcPipeFittingType_JUNCTION">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcPipeFittingType"/>
+                <owl:hasValue rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#JUNCTION"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aimaix/IfcPipeSegmentType_RIGIDSEGMENT -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aimaix/IfcPipeSegmentType_RIGIDSEGMENT">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcPipeSegmentType"/>
+                <owl:hasValue rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#RIGIDSEGMENT"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aimaix/IfcPipeSegmentType_USERDEFINED -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aimaix/IfcPipeSegmentType_USERDEFINED">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcPipeSegmentType"/>
+                <owl:hasValue rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#USERDEFINED"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aimaix/IfcPropertySet_layout_position -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aimaix/IfcPropertySet_layout_position">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#name_IfcRoot"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/aimaix/IfcLabel_layout_position"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aimaix/IfcPropertySingleValue_x_coord -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aimaix/IfcPropertySingleValue_x_coord">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#name_IfcProperty"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/aimaix/IfcIdentifier_of_x_coordinate"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aimaix/IfcPropertySingleValue_y_coord -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aimaix/IfcPropertySingleValue_y_coord">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#name_IfcProperty"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/aimaix/IfcIdentifier_of_y_coordinate"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aimaix/IfcPumpType_CIRCULATOR -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aimaix/IfcPumpType_CIRCULATOR">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcPumpType"/>
+                <owl:hasValue rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#CIRCULATOR"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aimaix/IfcRelDefinedByType_HE_P -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aimaix/IfcRelDefinedByType_HE_P">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/aimaix/IfcHeatExchangerType_PLATE"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aimaix/IfcRelDefinesByType_C_H -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aimaix/IfcRelDefinesByType_C_H">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/aimaix/IfcCoilType_HYDRONIC"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aimaix/IfcRelDefinesByType_FI_P -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aimaix/IfcRelDefinesByType_FI_P">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/aimaix/IfcFlowInstrumentType_PRESSUREGAUGE"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aimaix/IfcRelDefinesByType_PF_B -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aimaix/IfcRelDefinesByType_PF_B">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/aimaix/IfcPipeFittingType_BEND"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aimaix/IfcRelDefinesByType_PF_C -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aimaix/IfcRelDefinesByType_PF_C">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/aimaix/IfcPipeFittingType_CONNECTOR"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aimaix/IfcRelDefinesByType_PF_J -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aimaix/IfcRelDefinesByType_PF_J">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/aimaix/IfcPipeFittingType_JUNCTION"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aimaix/IfcRelDefinesByType_PS_R -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aimaix/IfcRelDefinesByType_PS_R">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/aimaix/IfcPipeSegmentType_RIGIDSEGMENT"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aimaix/IfcRelDefinesByType_PS_U -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aimaix/IfcRelDefinesByType_PS_U">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/aimaix/IfcPipeSegmentType_USERDEFINED"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aimaix/IfcRelDefinesByType_P_C -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aimaix/IfcRelDefinesByType_P_C">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/aimaix/IfcPumpType_CIRCULATOR"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aimaix/IfcRelDefinesByType_V_C -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aimaix/IfcRelDefinesByType_V_C">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/aimaix/IfcValveType_CHECK"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aimaix/IfcRelDefinesByType_V_I -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aimaix/IfcRelDefinesByType_V_I">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/aimaix/IfcValveType_ISOLATING"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aimaix/IfcRelDefinesByType_V_M -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aimaix/IfcRelDefinesByType_V_M">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#relatingType_IfcRelDefinesByType"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/aimaix/IfcValveType_MIXING"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aimaix/IfcText_port_1 -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aimaix/IfcText_port_1">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/express#hasString"/>
+                <owl:hasValue>port_1</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aimaix/IfcText_port_2 -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aimaix/IfcText_port_2">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/express#hasString"/>
+                <owl:hasValue>port_2</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aimaix/IfcText_port_3 -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aimaix/IfcText_port_3">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/express#hasString"/>
+                <owl:hasValue>port_3</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aimaix/IfcText_port_a -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aimaix/IfcText_port_a">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/express#hasString"/>
+                <owl:hasValue>port_a</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aimaix/IfcText_port_b -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aimaix/IfcText_port_b">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/express#hasString"/>
+                <owl:hasValue>port_b</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aimaix/IfcValveType_CHECK -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aimaix/IfcValveType_CHECK">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcValveType"/>
+                <owl:hasValue rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#CHECK"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aimaix/IfcValveType_ISOLATING -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aimaix/IfcValveType_ISOLATING">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcValveType"/>
+                <owl:hasValue rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#ISOLATING"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aimaix/IfcValveType_MIXING -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aimaix/IfcValveType_MIXING">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#predefinedType_IfcValveType"/>
+                <owl:hasValue rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#MIXING"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aimaix/PF_B -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aimaix/PF_B">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/aimaix/IfcRelDefinesByType_PF_B"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aimaix/PF_C -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aimaix/PF_C">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/aimaix/IfcRelDefinesByType_PF_C"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aimaix/PF_J -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aimaix/PF_J">
+        <owl:equivalentClass rdf:resource="https://w3id.org/aix/AixLib.Fluid.FixedResistances.Junction"/>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/aimaix/IfcRelDefinesByType_PF_J"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aimaix/PS_R -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aimaix/PS_R">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/aimaix/IfcRelDefinesByType_PS_R"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aimaix/PS_U -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aimaix/PS_U">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/aimaix/IfcRelDefinesByType_PS_U"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aimaix/P_C -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aimaix/P_C">
+        <owl:equivalentClass rdf:resource="https://w3id.org/aix/AixLib.Fluid.Movers.FlowControlled_m_flow"/>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/aimaix/IfcRelDefinesByType_P_C"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aimaix/V_C -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aimaix/V_C">
+        <owl:equivalentClass rdf:resource="https://w3id.org/aix/AixLib.Fluid.FixedResistances.CheckValve"/>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/aimaix/IfcRelDefinesByType_V_C"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aimaix/V_I -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aimaix/V_I">
+        <owl:equivalentClass rdf:resource="https://w3id.org/aix/AixLib.Fluid.Actuators.Valves.TwoWayLinear"/>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/aimaix/IfcRelDefinesByType_V_I"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aimaix/V_M -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aimaix/V_M">
+        <owl:equivalentClass rdf:resource="https://w3id.org/aix/AixLib.Fluid.Actuators.Valves.ThreeWayLinear"/>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#isTypedBy_IfcObject"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/aimaix/IfcRelDefinesByType_V_M"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aix/AixLib.Fluid.Actuators.Valves.ThreeWayLinear -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aix/AixLib.Fluid.Actuators.Valves.ThreeWayLinear"/>
+    
+
+
+    <!-- https://w3id.org/aix/AixLib.Fluid.Actuators.Valves.TwoWayLinear -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aix/AixLib.Fluid.Actuators.Valves.TwoWayLinear"/>
+    
+
+
+    <!-- https://w3id.org/aix/AixLib.Fluid.FixedResistances.CheckValve -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aix/AixLib.Fluid.FixedResistances.CheckValve"/>
+    
+
+
+    <!-- https://w3id.org/aix/AixLib.Fluid.FixedResistances.Junction -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aix/AixLib.Fluid.FixedResistances.Junction"/>
+    
+
+
+    <!-- https://w3id.org/aix/AixLib.Fluid.FixedResistances.PressureDrop -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aix/AixLib.Fluid.FixedResistances.PressureDrop">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/aimaix/PF_B"/>
+                    <rdf:Description rdf:about="https://w3id.org/aimaix/PF_C"/>
+                    <rdf:Description rdf:about="https://w3id.org/aimaix/PS_R"/>
+                    <rdf:Description rdf:about="https://w3id.org/aimaix/PS_U"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/aix/AixLib.Fluid.HeatExchangers.ConstantEffectiveness -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aix/AixLib.Fluid.HeatExchangers.ConstantEffectiveness"/>
+    
+
+
+    <!-- https://w3id.org/aix/AixLib.Fluid.HeatExchangers.HeaterCooler_u -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aix/AixLib.Fluid.HeatExchangers.HeaterCooler_u"/>
+    
+
+
+    <!-- https://w3id.org/aix/AixLib.Fluid.HeatExchangers.SensibleCooler_T -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aix/AixLib.Fluid.HeatExchangers.SensibleCooler_T"/>
+    
+
+
+    <!-- https://w3id.org/aix/AixLib.Fluid.Movers.FlowControlled_m_flow -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aix/AixLib.Fluid.Movers.FlowControlled_m_flow"/>
+    
+
+
+    <!-- https://w3id.org/aix/AixLib.Fluid.Sensors.Temperature -->
+
+
+    <owl:Class rdf:about="https://w3id.org/aix/AixLib.Fluid.Sensors.Temperature"/>
+    
+
+
+    <!-- https://w3id.org/moont/MComponent -->
+
+
+    <owl:Class rdf:about="https://w3id.org/moont/MComponent">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/aimaix/C_H"/>
+                    <rdf:Description rdf:about="https://w3id.org/aimaix/FI_P"/>
+                    <rdf:Description rdf:about="https://w3id.org/aimaix/HE_P"/>
+                    <rdf:Description rdf:about="https://w3id.org/aimaix/PF_B"/>
+                    <rdf:Description rdf:about="https://w3id.org/aimaix/PF_C"/>
+                    <rdf:Description rdf:about="https://w3id.org/aimaix/PF_J"/>
+                    <rdf:Description rdf:about="https://w3id.org/aimaix/PS_R"/>
+                    <rdf:Description rdf:about="https://w3id.org/aimaix/PS_U"/>
+                    <rdf:Description rdf:about="https://w3id.org/aimaix/P_C"/>
+                    <rdf:Description rdf:about="https://w3id.org/aimaix/V_C"/>
+                    <rdf:Description rdf:about="https://w3id.org/aimaix/V_I"/>
+                    <rdf:Description rdf:about="https://w3id.org/aimaix/V_M"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/moont/MConnectorComponent -->
+
+
+    <owl:Class rdf:about="https://w3id.org/moont/MConnectorComponent"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#BEND -->
+
+
+    <owl:NamedIndividual rdf:about="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#BEND"/>
+    
+
+
+    <!-- https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#CHECK -->
+
+
+    <owl:NamedIndividual rdf:about="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#CHECK"/>
+    
+
+
+    <!-- https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#CIRCULATOR -->
+
+
+    <owl:NamedIndividual rdf:about="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#CIRCULATOR"/>
+    
+
+
+    <!-- https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#CONNECTOR -->
+
+
+    <owl:NamedIndividual rdf:about="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#CONNECTOR"/>
+    
+
+
+    <!-- https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#HYDRONICCOIL -->
+
+
+    <owl:NamedIndividual rdf:about="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#HYDRONICCOIL"/>
+    
+
+
+    <!-- https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#ISOLATING -->
+
+
+    <owl:NamedIndividual rdf:about="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#ISOLATING"/>
+    
+
+
+    <!-- https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#JUNCTION -->
+
+
+    <owl:NamedIndividual rdf:about="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#JUNCTION"/>
+    
+
+
+    <!-- https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#MIXING -->
+
+
+    <owl:NamedIndividual rdf:about="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#MIXING"/>
+    
+
+
+    <!-- https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#PLATE -->
+
+
+    <owl:NamedIndividual rdf:about="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#PLATE"/>
+    
+
+
+    <!-- https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#PRESSUREGAUGE -->
+
+
+    <owl:NamedIndividual rdf:about="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#PRESSUREGAUGE"/>
+    
+
+
+    <!-- https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#RIGIDSEGMENT -->
+
+
+    <owl:NamedIndividual rdf:about="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#RIGIDSEGMENT"/>
+    
+
+
+    <!-- https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#USERDEFINED -->
+
+
+    <owl:NamedIndividual rdf:about="https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL#USERDEFINED"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+
