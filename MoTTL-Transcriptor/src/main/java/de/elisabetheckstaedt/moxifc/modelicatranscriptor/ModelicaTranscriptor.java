@@ -39,7 +39,7 @@ public class ModelicaTranscriptor {
         ontologyTitle.setRequired(true);
         options.addOption(ontologyTitle);
 
-        Option ontologyVersion = new Option("v", PARAM_VERSION, true, "combined version number of Modelica package and the ontology v8.0.0-1.0.0");
+        Option ontologyVersion = new Option("v", PARAM_VERSION, true, "combined version number of Modelica package and the ontology v8.0.0-1.0.0"); //TODO ändern zu source_path bzw. Fallunterscheidung (für Modelica-Libs macht es Sinn eine Version anzugegeben, für Modelica-Simulationsfiles macht es mehr Sinn deren Pfad anzugeben
         ontologyVersion.setRequired(true);
         options.addOption(ontologyVersion);
 
@@ -55,8 +55,9 @@ public class ModelicaTranscriptor {
 
             System.exit(1);
         }
-
-        convertModelicaLibraryToGraph(cmd.getOptionValue(PARAM_PREFIX), cmd.getOptionValue(PARAM_NAME), cmd.getOptionValue(PARAM_INPUT), cmd.getOptionValue(PARAM_TITLE), cmd.getOptionValue(PARAM_VERSION), cmd.getOptionValue(PARAM_OUTPUT));
+        String userName = "eckstaedt"; //TODO automatisch auslesen aus OS
+        String machineName = "troll918"; //TODO automatisch auslesen aus OS
+        convertModelicaLibraryToGraph(cmd.getOptionValue(PARAM_PREFIX), cmd.getOptionValue(PARAM_NAME), cmd.getOptionValue(PARAM_INPUT), cmd.getOptionValue(PARAM_TITLE), cmd.getOptionValue(PARAM_VERSION), cmd.getOptionValue(PARAM_OUTPUT), userName, machineName);
     }
 
     /**
@@ -64,10 +65,10 @@ public class ModelicaTranscriptor {
      * @param longName   z.B. AixLib
      * @param sourcePath Ordner der das Wurzel package.mo enthält z.B. C:\Program Files\Dymola 2021\Modelica\Library\Modelica 3.2.3\
      */
-    private static void convertModelicaLibraryToGraph(String prefix, String longName, String sourcePath, String ontologyTitle, String ontologyVersion, String outputBasePath) {
+    private static void convertModelicaLibraryToGraph(String prefix, String longName, String sourcePath, String ontologyTitle, String source_path, String outputBasePath, String userName, String machineName) {
         ModelicaLibrary ml = new ModelicaLibrary(prefix, prefix, Path.of(sourcePath));
         String filename = String.format("%s\\%s_%s_fullclean.ttl", outputBasePath, prefix, getCurrentDateFormatted());
-        ml.serializeAsTTL(filename, prefix, longName, "fullclean", ontologyTitle, ontologyVersion);
+        ml.serializeAsTTL(filename, prefix, longName, "fullclean", ontologyTitle, source_path, userName, machineName);
     }
 
     private static String getCurrentDateFormatted() {

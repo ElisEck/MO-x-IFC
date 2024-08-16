@@ -8,6 +8,7 @@ import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 import java.util.Arrays;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import static de.elisabetheckstaedt.moxifc.modelicatranscriptor.parser.Helper.cleanStringFromLineBreaks;
@@ -155,8 +156,8 @@ public class ModelicaObject {
                             zf +=  "\t moont:identifier \"" + comp + "\"." + NEWLINE;
                             zf += objectName + " moont:hasPart " + objectName + "." + comp +  "." + NEWLINE;
                         } else if (comp.startsWith("redeclare")) {
-                            zf += objectName   + " moont:modification \"" + maskSpecialCharacter(cleanStringFromLineBreaks(mod)) + "\"^^xsd:string;" + NEWLINE;
-                            zf +=  "\t moont:identifier \"" + comp + "\"." + NEWLINE;
+                            zf += objectName   + " moont:modification \"" + maskSpecialCharacter(cleanStringFromLineBreaks(mod)) + "\"^^xsd:string." + NEWLINE;
+                            //zf +=  "\t moont:identifier \"" + comp + "\"." + NEWLINE; //auskommentiert 1.11.23
                             //                                zf += objectName + " moont:hasPart " + objectName + "." + comp +  "." + NEWLINE;
                         } else {//equation assigned to a variable
                             try {//if possible: evaluate
@@ -176,6 +177,34 @@ public class ModelicaObject {
             }
         }
         return zf;
+    }
+
+    Optional<String> extractPlacementFromAnnotation() {
+        //annotation(Placement(transformation(extent={{-10,-10},{10,10}},rotation=0,origin={670,-270})))
+        int start = this.annotation.indexOf("origin=");
+        if (start != -1) {
+            int end = this.annotation.indexOf("}", start);
+            String zf = "\"" + this.annotation.substring(start+7, end+1) + "\"^^xsd:string";
+            return Optional.of(zf);
+            //coord_string = "\"{" + str(res[3]) + ", " + str(res[4]) + "}\""
+        }
+        start = this.annotation.indexOf("extent={{");
+        if (start != -1) {
+            int end = this.annotation.indexOf("}}", start);
+            String zf = this.annotation.substring(start+9, end);
+            int komma_1 = zf.indexOf(",", 0);
+            int trennung_1 = zf.indexOf("},{", komma_1);
+            int komma_2 = zf.indexOf(",", trennung_1+3);
+            String x1 = zf.substring(0, komma_1);
+            String y1 = zf.substring(komma_1+1, trennung_1);
+            String x2 = zf.substring(trennung_1+3, komma_2);
+            String y2 = zf.substring(komma_2+1, zf.length());
+            Double x = (double) Math.round((Double.parseDouble(x1) + Double.parseDouble(x2)) / 2);
+            Double y = (double) Math.round((Double.parseDouble(y1) + Double.parseDouble(y2)) / 2);
+            String res = "\"{" + String.format("%.0f",x) + ","+ String.format("%.0f",y) + "}\"^^xsd:string";
+            return Optional.of(res);
+            }
+        return Optional.empty();
     }
 
     public String getStringComment() {

@@ -112,12 +112,12 @@ public class ModelicaLibrary {
     }
 
 
-    public void serializeAsTTL(String filename, String prefix, String libraryRootName, String serializingOption, String ontologyTitle, String ontologyVersion) {
+    public void serializeAsTTL(String filename, String prefix, String libraryRootName, String serializingOption, String ontologyTitle, String source_path, String userName, String machineName) {
         this.prefix = prefix;
         try {
             FileWriter myWriter = new FileWriter(filename, UTF_8);
 
-            writeHeader(myWriter, ontologyTitle, ontologyVersion);
+            writeHeader(myWriter, ontologyTitle, source_path, userName, machineName);
 
             replaceRelativePaths(libraryRootName);
 
@@ -126,6 +126,8 @@ public class ModelicaLibrary {
                     if (serializingOption.equals("full")) {
                         myWriter.write(mk.serializeAsTTL(prefix));
                     } else if (serializingOption.equals("fullclean")) {
+                        myWriter.write(cleanttl(mk.serializeAsTTL(prefix)));
+                    } else if (serializingOption.equals("moont100")) {
                         myWriter.write(cleanttl(mk.serializeAsTTL(prefix)));
                     } else {
                         myWriter.write(mk.serializeAsTTLHeaderAndParents(prefix));
@@ -212,10 +214,10 @@ public class ModelicaLibrary {
      * @param myWriter
      * @throws IOException
      */
-    private void writeHeader(FileWriter myWriter, String ontologyTitle, String ontologyVersion) throws IOException {
+    private void writeHeader(FileWriter myWriter, String ontologyTitle, String source_path, String userName, String machineName) throws IOException {
         myWriter.write("@prefix " + prefix + ":    <http://www.eas.iis.fraunhofer.de/" + prefix + "#> ." + NEWLINE);
-        myWriter.write("@prefix moont:    <http://www.eas.iis.fraunhofer.de/moont#> ." + NEWLINE);
-        //TODO Header entschlacken
+        myWriter.write("@prefix moont:    <http://w3id.org/moont#> ." + NEWLINE); //TODO Verweis incl. Versionierung
+        //TODO Header entschlacken (nur die notwendigen prefixes, korrekte Links (ggf. mit Version))
         myWriter.write("@prefix msl:    <http://www.eas.iis.fraunhofer.de/msl#> ." + NEWLINE);
         myWriter.write("@prefix bs:    <http://www.eas.iis.fraunhofer.de/bs#> ." + NEWLINE);
         myWriter.write("@prefix aix:    <http://www.eas.iis.fraunhofer.de/aix#> ." + NEWLINE);
@@ -229,10 +231,12 @@ public class ModelicaLibrary {
         myWriter.write("@prefix dcterms:  <http://purl.org/dc/terms#> ." + NEWLINE);
         myWriter.write(prefix + ": rdf:type owl:Ontology ;" + NEWLINE);
         myWriter.write("\t dcterms:title \"" + ontologyTitle + "\"@en ;" + NEWLINE);
-        myWriter.write("\t dcterms:creator \"Elisabeth Eckstädt using MoTTL transcriptor\" ;" + NEWLINE);
-        SimpleDateFormat sdf3 = new SimpleDateFormat("yyyy-MM-dd");
-        myWriter.write("\t dcterms:issued \"" + sdf3.format(new Timestamp(System.currentTimeMillis())) + "\";" + NEWLINE);
-        myWriter.write("\t owl:versionInfo \"" + ontologyVersion + "\";" + NEWLINE);
+        myWriter.write("\t dcterms:creator \"MoTTL transcriptor 1.1.0" + " executed by " + userName + " on " + machineName + "\";" + NEWLINE); //TODO automatische richtige Transcriptor Version einsetzen
+        SimpleDateFormat sdf3 = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        myWriter.write("\t dcterms:issued \"" + sdf3.format(new Timestamp(System.currentTimeMillis())) + "\";" + NEWLINE); //TODO Zeile verursacht Probleme beim Einlesen mit Protege, aber nicht bei der Weiterverarbeitung mit SemanticScripting (rdflib)
+        myWriter.write("\t dcterms:source \"" + source_path + "\";" + NEWLINE);
+        //myWriter.write("\t owl:versionInfo \"" + ontologyVersion + "\";" + NEWLINE);
+        //TODO Header entschlacken (nur die notwendigen imports)
         myWriter.write("\t owl:imports msl: ;" + NEWLINE);
         myWriter.write("\t owl:imports mbl: ;" + NEWLINE);
         myWriter.write("\t owl:imports aix: ;" + NEWLINE);

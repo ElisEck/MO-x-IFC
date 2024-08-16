@@ -141,7 +141,7 @@ public class TreeNode<T> implements Iterable<TreeNode<T>>{
      * @return true, wenn der Knoten ein Kind dieses Namens hat
      * @throws NullPointerException
      */
-    public static boolean hasChildWithName(TreeNode<String> node, String name) throws NullPointerException{
+    public static boolean hasChildWithName(TreeNode<String> node, String name) {
         return node.getChildren().stream().anyMatch((TreeNode<String> t) -> t.getData().equals(name));
     }
 }

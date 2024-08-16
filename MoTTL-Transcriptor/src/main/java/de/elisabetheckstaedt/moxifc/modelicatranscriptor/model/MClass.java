@@ -157,7 +157,11 @@ public class MClass {
                 zf += "\t" + " a " + attachPrefixToModelicaName(mo.mClass.name, backupPrefix) + "." + NEWLINE;
             }
             //transcribe modifications
-            zf = mo.writeObjectModificationsToTTL(zf, owlPrefix +":"+ container + "." + name + "." + mo.name, container + "." + name);
+            zf = mo.writeObjectModificationsToTTL(zf, owlPrefix +":"+ container + "." + name + "." + mo.name, container + "." + name); //TODO check: das überschreibt doch den String, oder?
+            var placement = mo.extractPlacementFromAnnotation();
+            if (placement.isPresent()) {
+                zf += owlPrefix +":"+ container + "." + name + "." + mo.name   + " moont:placement_origin " + placement.get() + "."+ NEWLINE;
+            }
         }
         return zf;
     }
