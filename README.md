@@ -2,19 +2,24 @@
 
 This repository contains tools for a bidirectional Modelica-IFC-Translation.
 
-Concept presented at EG-ICE 2021: ["Bidirectional coupling of Building Information Modeling and Building Simulation using ontologies"](https://publica.fraunhofer.de/handle/publica/412499) 
+- Concept presented at EG-ICE 2021: ["Bidirectional coupling of Building Information Modeling and Building Simulation using ontologies"](https://publica.fraunhofer.de/handle/publica/412499)
+- concept described in detail in PhD thesis (submitted for assesment, German): [Simulation von Gebäude-Anlagentechnik in der BIM-basierten Planung energieeffizienter Gebäude - Anbindung von Modelica-Modellen an OpenBIM-IFC-Modelle mittels semantischer Technologien](docs/Diss_V036_A.pdf)
+- MoTTL-Transcriptor including example presented at EC3 2023 ["Representing Modelica Models as Knowledge Graphs Using The MoOnt Ontology"](https://doi.org/10.35490/EC3.2023.173)
+- BIM2SIM workflow will be presented at ECPPM 2024 (Sept 2024). A link for this paper will be published here, as soon as it is available: "BIM2SIM: Automated Generation of Modelica Models from IFC Files for HVAC Plants using Knowledge Graphs"
 
 to clone this repository (including submodules) use
 ```
 git clone --recurse-submodules https://github.com/ElisEck/MO-x-IFC`
 ```
 # Converters
+Eight converters have been developed/published. The figure shows the input and output files (boxes) of each converter (green or magenta arrow).
+![overview converters fpr Workflows BIM2SIM and SIM2BIM](docs/Abb33 eng.svg)
 ## Schematizer (converter 02)
 ## IFC2RDF (converter 03)
 this is a copy of the used binary from https://github.com/pipauwel/IFCtoRDF
 ## SemTran (converter 04)
 ## TTL2MO (converter 05)
-## MoTTL-Transcriptor v.0.9 (converter 07)
+## MoTTL-Transcriptor (converter 07)
 
 This component transcribes Modelica packages to knowledge graphs. It was developed as a Java tool and is delivered as a *.jar.
 
