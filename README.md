@@ -13,7 +13,7 @@ git clone --recurse-submodules https://github.com/ElisEck/MO-x-IFC`
 ```
 # Converters
 Eight converters have been developed/published. The figure shows the input and output files (boxes) of each converter (green or magenta arrow).
-![overview converters fpr Workflows BIM2SIM and SIM2BIM](docs/Abb33 eng.svg)
+![overview converters for Workflows BIM2SIM and SIM2BIM](docs/Abb33eng.svg)
 ## Schematizer (converter 02)
 ## IFC2RDF (converter 03)
 this is a copy of the used binary from https://github.com/pipauwel/IFCtoRDF
